@@ -64,7 +64,6 @@ macro_rules! link {
 #[doc(hidden)]
 macro_rules! link {
     ($library:literal $abi:literal $(#[$($doc:tt)*])* fn $name:ident($($arg:ident: $argty:ty),*)->$ret:ty) => (
-        #[link(name = "windows")]
         extern $abi {
             $(#[$($doc)*])*
             pub fn $name($($arg: $argty),*) -> $ret;
