@@ -1,9 +1,8 @@
-#[cfg_attr(windows, link(name = "windows"))]
 extern "cdecl" {
     #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
     pub fn SnmpUtilDbgPrint(nloglevel: SNMP_LOG, szformat: ::windows_sys::core::PCSTR);
 }
-#[cfg_attr(windows, link(name = "windows"))]
+
 extern "system" {
     #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
     pub fn SnmpCancelMsg(session: isize, reqid: i32) -> u32;

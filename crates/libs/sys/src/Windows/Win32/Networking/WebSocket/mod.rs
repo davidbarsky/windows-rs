@@ -1,4 +1,3 @@
-#[cfg_attr(windows, link(name = "windows"))]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Networking_WebSocket\"`*"]
     pub fn WebSocketAbortHandle(hwebsocket: WEB_SOCKET_HANDLE);

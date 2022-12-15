@@ -1,10 +1,9 @@
-#[cfg_attr(windows, link(name = "windows"))]
 extern "cdecl" {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn TraceMessage(loggerhandle: u64, messageflags: TRACE_MESSAGE_FLAGS, messageguid: *const ::windows_sys::core::GUID, messagenumber: u16) -> super::super::super::Foundation::WIN32_ERROR;
 }
-#[cfg_attr(windows, link(name = "windows"))]
+
 extern "system" {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Etw\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]

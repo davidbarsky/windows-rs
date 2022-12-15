@@ -1,6 +1,6 @@
 #[cfg(feature = "Win32_Security_Authorization_UI")]
 pub mod UI;
-#[cfg_attr(windows, link(name = "windows"))]
+
 extern "cdecl" {
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
@@ -12,7 +12,7 @@ extern "cdecl" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn AuthzReportSecurityEvent(dwflags: u32, heventprovider: AUTHZ_SECURITY_EVENT_PROVIDER_HANDLE, dwauditid: u32, pusersid: super::super::Foundation::PSID, dwcount: u32) -> super::super::Foundation::BOOL;
 }
-#[cfg_attr(windows, link(name = "windows"))]
+
 extern "system" {
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]

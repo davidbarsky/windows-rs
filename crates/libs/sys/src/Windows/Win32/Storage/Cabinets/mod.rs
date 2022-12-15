@@ -1,4 +1,3 @@
-#[cfg_attr(windows, link(name = "windows"))]
 extern "cdecl" {
     #[doc = "*Required features: `\"Win32_Storage_Cabinets\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]

@@ -1,4 +1,3 @@
-#[cfg_attr(windows, link(name = "windows"))]
 extern "system" {
     #[doc = "*Required features: `\"Win32_System_HostComputeNetwork\"`*"]
     pub fn HcnCloseEndpoint(endpoint: *const ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;

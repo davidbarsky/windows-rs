@@ -1,4 +1,3 @@
-#[cfg_attr(windows, link(name = "windows"))]
 extern "cdecl" {
     #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
     pub fn alljoyn_message_parseargs(msg: alljoyn_message, signature: ::windows_sys::core::PCSTR) -> QStatus;
@@ -19,7 +18,7 @@ extern "cdecl" {
     #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
     pub fn alljoyn_msgarg_set_and_stabilize(arg: alljoyn_msgarg, signature: ::windows_sys::core::PCSTR) -> QStatus;
 }
-#[cfg_attr(windows, link(name = "windows"))]
+
 extern "system" {
     #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]

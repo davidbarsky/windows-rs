@@ -1,4 +1,3 @@
-#[cfg_attr(windows, link(name = "windows"))]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Graphics_DirectWrite\"`*"]
     pub fn DWriteCreateFactory(factorytype: DWRITE_FACTORY_TYPE, iid: *const ::windows_sys::core::GUID, factory: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;

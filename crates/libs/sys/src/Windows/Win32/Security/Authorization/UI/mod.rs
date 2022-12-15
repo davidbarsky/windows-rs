@@ -1,4 +1,3 @@
-#[cfg_attr(windows, link(name = "windows"))]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Security_Authorization_UI\"`, `\"Win32_UI_Controls\"`*"]
     #[cfg(feature = "Win32_UI_Controls")]

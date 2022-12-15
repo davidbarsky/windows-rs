@@ -26,14 +26,14 @@ pub mod Printing;
 pub mod Shell;
 #[cfg(feature = "Win32_System_WinRT_Storage")]
 pub mod Storage;
-#[cfg_attr(windows, link(name = "windows"))]
+
 extern "cdecl" {
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
     pub fn CreateControlInput(riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
     pub fn CreateControlInputEx(pcorewindow: ::windows_sys::core::IUnknown, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;
 }
-#[cfg_attr(windows, link(name = "windows"))]
+
 extern "system" {
     #[doc = "*Required features: `\"Win32_System_WinRT\"`*"]
     pub fn CoDecodeProxy(dwclientpid: u32, ui64proxyaddress: u64, pserverinformation: *mut ServerInformation) -> ::windows_sys::core::HRESULT;

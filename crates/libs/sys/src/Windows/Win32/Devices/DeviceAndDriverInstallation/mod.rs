@@ -1,11 +1,10 @@
-#[cfg_attr(windows, link(name = "windows"))]
 extern "cdecl" {
     #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
     pub fn SetupWriteTextLog(logtoken: u64, category: u32, flags: u32, messagestr: ::windows_sys::core::PCSTR);
     #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
     pub fn SetupWriteTextLogError(logtoken: u64, category: u32, logflags: u32, error: u32, messagestr: ::windows_sys::core::PCSTR);
 }
-#[cfg_attr(windows, link(name = "windows"))]
+
 extern "system" {
     #[doc = "*Required features: `\"Win32_Devices_DeviceAndDriverInstallation\"`*"]
     pub fn CMP_WaitNoPendingInstallEvents(dwtimeout: u32) -> u32;

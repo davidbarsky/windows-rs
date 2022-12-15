@@ -1,4 +1,3 @@
-#[cfg_attr(windows, link(name = "windows"))]
 extern "cdecl" {
     #[doc = "*Required features: `\"Win32_Networking_Ldap\"`*"]
     pub fn LdapGetLastError() -> u32;

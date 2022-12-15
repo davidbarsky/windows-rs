@@ -1,4 +1,3 @@
-#[cfg_attr(windows, link(name = "windows"))]
 extern "system" {
     #[doc = "*Required features: `\"Win32_System_Com_Marshal\"`*"]
     pub fn BSTR_UserFree(param0: *const u32, param1: *const ::windows_sys::core::BSTR);

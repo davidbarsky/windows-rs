@@ -1,4 +1,3 @@
-#[cfg_attr(windows, link(name = "windows"))]
 extern "cdecl" {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetShell\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
@@ -9,7 +8,7 @@ extern "cdecl" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn PrintMessageFromModule(hmodule: super::super::Foundation::HANDLE, dwmsgid: u32) -> u32;
 }
-#[cfg_attr(windows, link(name = "windows"))]
+
 extern "system" {
     #[doc = "*Required features: `\"Win32_NetworkManagement_NetShell\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]

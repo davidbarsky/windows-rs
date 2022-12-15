@@ -1,4 +1,3 @@
-#[cfg_attr(windows, link(name = "windows"))]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Devices_PortableDevices\"`*"]
     pub fn DMProcessConfigXMLFiltered(pszxmlin: ::windows_sys::core::PCWSTR, rgszallowedcspnodes: *const ::windows_sys::core::PWSTR, dwnumallowedcspnodes: u32, pbstrxmlout: *mut ::windows_sys::core::BSTR) -> ::windows_sys::core::HRESULT;

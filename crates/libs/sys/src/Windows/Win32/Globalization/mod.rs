@@ -1,4 +1,3 @@
-#[cfg_attr(windows, link(name = "windows"))]
 extern "cdecl" {
     #[doc = "*Required features: `\"Win32_Globalization\"`*"]
     pub fn UCNV_FROM_U_CALLBACK_ESCAPE(context: *const ::core::ffi::c_void, fromuargs: *mut UConverterFromUnicodeArgs, codeunits: *const u16, length: i32, codepoint: i32, reason: UConverterCallbackReason, err: *mut UErrorCode);
@@ -2051,7 +2050,7 @@ extern "cdecl" {
     #[doc = "*Required features: `\"Win32_Globalization\"`*"]
     pub fn utrans_unregisterID(id: *const u16, idlength: i32);
 }
-#[cfg_attr(windows, link(name = "windows"))]
+
 extern "system" {
     #[doc = "*Required features: `\"Win32_Globalization\"`*"]
     pub fn CompareStringA(locale: u32, dwcmpflags: u32, lpstring1: *const i8, cchcount1: i32, lpstring2: *const i8, cchcount2: i32) -> i32;

@@ -1,4 +1,3 @@
-#[cfg_attr(windows, link(name = "windows"))]
 extern "cdecl" {
     #[doc = "*Required features: `\"Win32_System_DeploymentServices\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
@@ -10,7 +9,7 @@ extern "cdecl" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn WdsTransportServerTrace(hprovider: super::super::Foundation::HANDLE, severity: u32, pwszformat: ::windows_sys::core::PCWSTR) -> ::windows_sys::core::HRESULT;
 }
-#[cfg_attr(windows, link(name = "windows"))]
+
 extern "system" {
     #[doc = "*Required features: `\"Win32_System_DeploymentServices\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]

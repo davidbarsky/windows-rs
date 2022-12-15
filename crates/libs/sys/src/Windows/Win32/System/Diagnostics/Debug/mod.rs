@@ -1,10 +1,9 @@
-#[cfg_attr(windows, link(name = "windows"))]
 extern "cdecl" {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`, `\"Win32_System_Kernel\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]
     pub fn RtlRestoreContext(contextrecord: *const CONTEXT, exceptionrecord: *const EXCEPTION_RECORD);
 }
-#[cfg_attr(windows, link(name = "windows"))]
+
 extern "system" {
     #[doc = "*Required features: `\"Win32_System_Diagnostics_Debug\"`, `\"Win32_Foundation\"`, `\"Win32_System_Kernel\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Kernel"))]

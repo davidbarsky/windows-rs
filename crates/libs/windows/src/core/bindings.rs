@@ -1,7 +1,6 @@
 use super::*;
 use std::ffi::c_void;
 
-#[cfg_attr(windows, link(name = "windows"))]
 extern "system" {
     pub fn CloseHandle(handle: isize) -> i32;
     pub fn GetLastError() -> u32;

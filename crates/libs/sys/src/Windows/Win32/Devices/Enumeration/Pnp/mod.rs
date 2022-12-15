@@ -1,4 +1,3 @@
-#[cfg_attr(windows, link(name = "windows"))]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Devices_Enumeration_Pnp\"`*"]
     pub fn SwDeviceClose(hswdevice: HSWDEVICE);

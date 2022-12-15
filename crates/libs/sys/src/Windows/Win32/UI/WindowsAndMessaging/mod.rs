@@ -1,11 +1,10 @@
-#[cfg_attr(windows, link(name = "windows"))]
 extern "cdecl" {
     #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
     pub fn wsprintfA(param0: ::windows_sys::core::PSTR, param1: ::windows_sys::core::PCSTR) -> i32;
     #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
     pub fn wsprintfW(param0: ::windows_sys::core::PWSTR, param1: ::windows_sys::core::PCWSTR) -> i32;
 }
-#[cfg_attr(windows, link(name = "windows"))]
+
 extern "system" {
     #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]

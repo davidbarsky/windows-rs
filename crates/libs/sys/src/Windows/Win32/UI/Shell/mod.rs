@@ -2,7 +2,7 @@
 pub mod Common;
 #[cfg(feature = "Win32_UI_Shell_PropertiesSystem")]
 pub mod PropertiesSystem;
-#[cfg_attr(windows, link(name = "windows"))]
+
 extern "cdecl" {
     #[doc = "*Required features: `\"Win32_UI_Shell\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
@@ -15,7 +15,7 @@ extern "cdecl" {
     #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
     pub fn wnsprintfW(pszdest: ::windows_sys::core::PWSTR, cchdest: i32, pszfmt: ::windows_sys::core::PCWSTR) -> i32;
 }
-#[cfg_attr(windows, link(name = "windows"))]
+
 extern "system" {
     #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
     pub fn AssocCreate(clsid: ::windows_sys::core::GUID, riid: *const ::windows_sys::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys::core::HRESULT;

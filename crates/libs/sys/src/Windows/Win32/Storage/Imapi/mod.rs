@@ -1,4 +1,3 @@
-#[cfg_attr(windows, link(name = "windows"))]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
     pub fn CloseIMsgSession(lpmsgsess: *mut _MSGSESS);

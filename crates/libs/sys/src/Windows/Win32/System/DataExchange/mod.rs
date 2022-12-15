@@ -1,4 +1,3 @@
-#[cfg_attr(windows, link(name = "windows"))]
 extern "system" {
     #[doc = "*Required features: `\"Win32_System_DataExchange\"`*"]
     pub fn AddAtomA(lpstring: ::windows_sys::core::PCSTR) -> u16;
