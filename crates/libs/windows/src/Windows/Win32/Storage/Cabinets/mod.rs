@@ -7,7 +7,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn FCIAddFile(hfci: *const ::core::ffi::c_void, pszsourcefile: ::windows::core::PCSTR, pszfilename: ::windows::core::PCSTR, fexecute: super::super::Foundation::BOOL, pfnfcignc: *mut ::core::ffi::c_void, pfnfcis: *mut ::core::ffi::c_void, pfnfcigoi: *mut ::core::ffi::c_void, typecompress: u16) -> super::super::Foundation::BOOL;
     }
@@ -17,7 +16,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn FCICreate(perf: *const ERF, pfnfcifp: PFNFCIFILEPLACED, pfna: PFNFCIALLOC, pfnf: PFNFCIFREE, pfnopen: PFNFCIOPEN, pfnread: PFNFCIREAD, pfnwrite: PFNFCIWRITE, pfnclose: PFNFCICLOSE, pfnseek: PFNFCISEEK, pfndelete: PFNFCIDELETE, pfnfcigtf: PFNFCIGETTEMPFILE, pccab: *const CCAB, pv: ::core::option::Option<*const ::core::ffi::c_void>) -> *mut ::core::ffi::c_void {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn FCICreate(perf: *const ERF, pfnfcifp: *mut ::core::ffi::c_void, pfna: *mut ::core::ffi::c_void, pfnf: *mut ::core::ffi::c_void, pfnopen: *mut ::core::ffi::c_void, pfnread: *mut ::core::ffi::c_void, pfnwrite: *mut ::core::ffi::c_void, pfnclose: *mut ::core::ffi::c_void, pfnseek: *mut ::core::ffi::c_void, pfndelete: *mut ::core::ffi::c_void, pfnfcigtf: *mut ::core::ffi::c_void, pccab: *const CCAB, pv: *const ::core::ffi::c_void) -> *mut ::core::ffi::c_void;
     }
@@ -27,7 +25,6 @@ pub unsafe fn FCICreate(perf: *const ERF, pfnfcifp: PFNFCIFILEPLACED, pfna: PFNF
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn FCIDestroy(hfci: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn FCIDestroy(hfci: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -40,7 +37,6 @@ pub unsafe fn FCIFlushCabinet<'a, P0>(hfci: *const ::core::ffi::c_void, fgetnext
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn FCIFlushCabinet(hfci: *const ::core::ffi::c_void, fgetnextcab: super::super::Foundation::BOOL, pfnfcignc: *mut ::core::ffi::c_void, pfnfcis: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -50,7 +46,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn FCIFlushFolder(hfci: *const ::core::ffi::c_void, pfnfcignc: PFNFCIGETNEXTCABINET, pfnfcis: PFNFCISTATUS) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn FCIFlushFolder(hfci: *const ::core::ffi::c_void, pfnfcignc: *mut ::core::ffi::c_void, pfnfcis: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -64,7 +59,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn FDICopy(hfdi: *const ::core::ffi::c_void, pszcabinet: ::windows::core::PCSTR, pszcabpath: ::windows::core::PCSTR, flags: i32, pfnfdin: *mut ::core::ffi::c_void, pfnfdid: *mut ::core::ffi::c_void, pvuser: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -74,7 +68,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn FDICreate(pfnalloc: PFNALLOC, pfnfree: PFNFREE, pfnopen: PFNOPEN, pfnread: PFNREAD, pfnwrite: PFNWRITE, pfnclose: PFNCLOSE, pfnseek: PFNSEEK, cputype: FDICREATE_CPU_TYPE, perf: *mut ERF) -> *mut ::core::ffi::c_void {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn FDICreate(pfnalloc: *mut ::core::ffi::c_void, pfnfree: *mut ::core::ffi::c_void, pfnopen: *mut ::core::ffi::c_void, pfnread: *mut ::core::ffi::c_void, pfnwrite: *mut ::core::ffi::c_void, pfnclose: *mut ::core::ffi::c_void, pfnseek: *mut ::core::ffi::c_void, cputype: FDICREATE_CPU_TYPE, perf: *mut ERF) -> *mut ::core::ffi::c_void;
     }
@@ -84,7 +77,6 @@ pub unsafe fn FDICreate(pfnalloc: PFNALLOC, pfnfree: PFNFREE, pfnopen: PFNOPEN, 
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn FDIDestroy(hfdi: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn FDIDestroy(hfdi: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -94,7 +86,6 @@ pub unsafe fn FDIDestroy(hfdi: *const ::core::ffi::c_void) -> super::super::Foun
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn FDIIsCabinet(hfdi: *const ::core::ffi::c_void, hf: isize, pfdici: ::core::option::Option<*mut FDICABINETINFO>) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn FDIIsCabinet(hfdi: *const ::core::ffi::c_void, hf: isize, pfdici: *mut FDICABINETINFO) -> super::super::Foundation::BOOL;
     }
@@ -107,7 +98,6 @@ pub unsafe fn FDITruncateCabinet<'a, P0>(hfdi: *const ::core::ffi::c_void, pszca
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn FDITruncateCabinet(hfdi: *const ::core::ffi::c_void, pszcabinetname: ::windows::core::PCSTR, ifoldertodelete: u16) -> super::super::Foundation::BOOL;
     }

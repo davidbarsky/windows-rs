@@ -7,7 +7,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DSCreateISecurityInfoObject(pwszobjectpath: ::windows::core::PCWSTR, pwszobjectclass: ::windows::core::PCWSTR, dwflags: u32, ppsi: *mut *mut ::core::ffi::c_void, pfnreadsd: *mut ::core::ffi::c_void, pfnwritesd: *mut ::core::ffi::c_void, lpcontext: super::super::Foundation::LPARAM) -> ::windows::core::HRESULT;
     }
@@ -25,7 +24,6 @@ where
     P4: ::std::convert::Into<::windows::core::PCWSTR>,
     P5: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DSCreateISecurityInfoObjectEx(pwszobjectpath: ::windows::core::PCWSTR, pwszobjectclass: ::windows::core::PCWSTR, pwszserver: ::windows::core::PCWSTR, pwszusername: ::windows::core::PCWSTR, pwszpassword: ::windows::core::PCWSTR, dwflags: u32, ppsi: *mut *mut ::core::ffi::c_void, pfnreadsd: *mut ::core::ffi::c_void, pfnwritesd: *mut ::core::ffi::c_void, lpcontext: super::super::Foundation::LPARAM) -> ::windows::core::HRESULT;
     }
@@ -40,7 +38,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DSCreateSecurityPage(pwszobjectpath: ::windows::core::PCWSTR, pwszobjectclass: ::windows::core::PCWSTR, dwflags: u32, phpage: *mut super::super::UI::Controls::HPROPSHEETPAGE, pfnreadsd: *mut ::core::ffi::c_void, pfnwritesd: *mut ::core::ffi::c_void, lpcontext: super::super::Foundation::LPARAM) -> ::windows::core::HRESULT;
     }
@@ -57,7 +54,6 @@ where
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
     P4: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DSEditSecurity(hwndowner: super::super::Foundation::HWND, pwszobjectpath: ::windows::core::PCWSTR, pwszobjectclass: ::windows::core::PCWSTR, dwflags: u32, pwszcaption: ::windows::core::PCWSTR, pfnreadsd: *mut ::core::ffi::c_void, pfnwritesd: *mut ::core::ffi::c_void, lpcontext: super::super::Foundation::LPARAM) -> ::windows::core::HRESULT;
     }

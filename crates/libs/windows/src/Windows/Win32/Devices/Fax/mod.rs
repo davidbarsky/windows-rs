@@ -2,7 +2,6 @@
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn CanSendToFaxRecipient() -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CanSendToFaxRecipient() -> super::super::Foundation::BOOL;
     }
@@ -15,7 +14,6 @@ pub unsafe fn FaxAbort<'a, P0>(faxhandle: P0, jobid: u32) -> super::super::Found
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxAbort(faxhandle: super::super::Foundation::HANDLE, jobid: u32) -> super::super::Foundation::BOOL;
     }
@@ -28,7 +26,6 @@ pub unsafe fn FaxAccessCheck<'a, P0>(faxhandle: P0, accessmask: u32) -> super::s
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxAccessCheck(faxhandle: super::super::Foundation::HANDLE, accessmask: u32) -> super::super::Foundation::BOOL;
     }
@@ -41,7 +38,6 @@ pub unsafe fn FaxClose<'a, P0>(faxhandle: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxClose(faxhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -51,7 +47,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn FaxCompleteJobParamsA(jobparams: *mut *mut FAX_JOB_PARAMA, coverpageinfo: *mut *mut FAX_COVERPAGE_INFOA) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxCompleteJobParamsA(jobparams: *mut *mut FAX_JOB_PARAMA, coverpageinfo: *mut *mut FAX_COVERPAGE_INFOA) -> super::super::Foundation::BOOL;
     }
@@ -61,7 +56,6 @@ pub unsafe fn FaxCompleteJobParamsA(jobparams: *mut *mut FAX_JOB_PARAMA, coverpa
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn FaxCompleteJobParamsW(jobparams: *mut *mut FAX_JOB_PARAMW, coverpageinfo: *mut *mut FAX_COVERPAGE_INFOW) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxCompleteJobParamsW(jobparams: *mut *mut FAX_JOB_PARAMW, coverpageinfo: *mut *mut FAX_COVERPAGE_INFOW) -> super::super::Foundation::BOOL;
     }
@@ -74,7 +68,6 @@ pub unsafe fn FaxConnectFaxServerA<'a, P0>(machinename: P0, faxhandle: *mut supe
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxConnectFaxServerA(machinename: ::windows::core::PCSTR, faxhandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -87,7 +80,6 @@ pub unsafe fn FaxConnectFaxServerW<'a, P0>(machinename: P0, faxhandle: *mut supe
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxConnectFaxServerW(machinename: ::windows::core::PCWSTR, faxhandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -102,7 +94,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxEnableRoutingMethodA(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows::core::PCSTR, enabled: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -117,7 +108,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxEnableRoutingMethodW(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows::core::PCWSTR, enabled: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -130,7 +120,6 @@ pub unsafe fn FaxEnumGlobalRoutingInfoA<'a, P0>(faxhandle: P0, routinginfo: *mut
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxEnumGlobalRoutingInfoA(faxhandle: super::super::Foundation::HANDLE, routinginfo: *mut *mut FAX_GLOBAL_ROUTING_INFOA, methodsreturned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -143,7 +132,6 @@ pub unsafe fn FaxEnumGlobalRoutingInfoW<'a, P0>(faxhandle: P0, routinginfo: *mut
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxEnumGlobalRoutingInfoW(faxhandle: super::super::Foundation::HANDLE, routinginfo: *mut *mut FAX_GLOBAL_ROUTING_INFOW, methodsreturned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -156,7 +144,6 @@ pub unsafe fn FaxEnumJobsA<'a, P0>(faxhandle: P0, jobentry: *mut *mut FAX_JOB_EN
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxEnumJobsA(faxhandle: super::super::Foundation::HANDLE, jobentry: *mut *mut FAX_JOB_ENTRYA, jobsreturned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -169,7 +156,6 @@ pub unsafe fn FaxEnumJobsW<'a, P0>(faxhandle: P0, jobentry: *mut *mut FAX_JOB_EN
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxEnumJobsW(faxhandle: super::super::Foundation::HANDLE, jobentry: *mut *mut FAX_JOB_ENTRYW, jobsreturned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -182,7 +168,6 @@ pub unsafe fn FaxEnumPortsA<'a, P0>(faxhandle: P0, portinfo: *mut *mut FAX_PORT_
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxEnumPortsA(faxhandle: super::super::Foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOA, portsreturned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -195,7 +180,6 @@ pub unsafe fn FaxEnumPortsW<'a, P0>(faxhandle: P0, portinfo: *mut *mut FAX_PORT_
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxEnumPortsW(faxhandle: super::super::Foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOW, portsreturned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -208,7 +192,6 @@ pub unsafe fn FaxEnumRoutingMethodsA<'a, P0>(faxporthandle: P0, routingmethod: *
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxEnumRoutingMethodsA(faxporthandle: super::super::Foundation::HANDLE, routingmethod: *mut *mut FAX_ROUTING_METHODA, methodsreturned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -221,7 +204,6 @@ pub unsafe fn FaxEnumRoutingMethodsW<'a, P0>(faxporthandle: P0, routingmethod: *
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxEnumRoutingMethodsW(faxporthandle: super::super::Foundation::HANDLE, routingmethod: *mut *mut FAX_ROUTING_METHODW, methodsreturned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -230,7 +212,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_Fax\"`*"]
 #[inline]
 pub unsafe fn FaxFreeBuffer(buffer: *mut ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxFreeBuffer(buffer: *mut ::core::ffi::c_void);
     }
@@ -243,7 +224,6 @@ pub unsafe fn FaxGetConfigurationA<'a, P0>(faxhandle: P0, faxconfig: *mut *mut F
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxGetConfigurationA(faxhandle: super::super::Foundation::HANDLE, faxconfig: *mut *mut FAX_CONFIGURATIONA) -> super::super::Foundation::BOOL;
     }
@@ -256,7 +236,6 @@ pub unsafe fn FaxGetConfigurationW<'a, P0>(faxhandle: P0, faxconfig: *mut *mut F
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxGetConfigurationW(faxhandle: super::super::Foundation::HANDLE, faxconfig: *mut *mut FAX_CONFIGURATIONW) -> super::super::Foundation::BOOL;
     }
@@ -269,7 +248,6 @@ pub unsafe fn FaxGetDeviceStatusA<'a, P0>(faxporthandle: P0, devicestatus: *mut 
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxGetDeviceStatusA(faxporthandle: super::super::Foundation::HANDLE, devicestatus: *mut *mut FAX_DEVICE_STATUSA) -> super::super::Foundation::BOOL;
     }
@@ -282,7 +260,6 @@ pub unsafe fn FaxGetDeviceStatusW<'a, P0>(faxporthandle: P0, devicestatus: *mut 
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxGetDeviceStatusW(faxporthandle: super::super::Foundation::HANDLE, devicestatus: *mut *mut FAX_DEVICE_STATUSW) -> super::super::Foundation::BOOL;
     }
@@ -295,7 +272,6 @@ pub unsafe fn FaxGetJobA<'a, P0>(faxhandle: P0, jobid: u32, jobentry: *mut *mut 
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxGetJobA(faxhandle: super::super::Foundation::HANDLE, jobid: u32, jobentry: *mut *mut FAX_JOB_ENTRYA) -> super::super::Foundation::BOOL;
     }
@@ -308,7 +284,6 @@ pub unsafe fn FaxGetJobW<'a, P0>(faxhandle: P0, jobid: u32, jobentry: *mut *mut 
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxGetJobW(faxhandle: super::super::Foundation::HANDLE, jobid: u32, jobentry: *mut *mut FAX_JOB_ENTRYW) -> super::super::Foundation::BOOL;
     }
@@ -321,7 +296,6 @@ pub unsafe fn FaxGetLoggingCategoriesA<'a, P0>(faxhandle: P0, categories: *mut *
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxGetLoggingCategoriesA(faxhandle: super::super::Foundation::HANDLE, categories: *mut *mut FAX_LOG_CATEGORYA, numbercategories: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -334,7 +308,6 @@ pub unsafe fn FaxGetLoggingCategoriesW<'a, P0>(faxhandle: P0, categories: *mut *
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxGetLoggingCategoriesW(faxhandle: super::super::Foundation::HANDLE, categories: *mut *mut FAX_LOG_CATEGORYW, numbercategories: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -347,7 +320,6 @@ pub unsafe fn FaxGetPageData<'a, P0>(faxhandle: P0, jobid: u32, buffer: *mut *mu
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxGetPageData(faxhandle: super::super::Foundation::HANDLE, jobid: u32, buffer: *mut *mut u8, buffersize: *mut u32, imagewidth: *mut u32, imageheight: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -360,7 +332,6 @@ pub unsafe fn FaxGetPortA<'a, P0>(faxporthandle: P0, portinfo: *mut *mut FAX_POR
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxGetPortA(faxporthandle: super::super::Foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOA) -> super::super::Foundation::BOOL;
     }
@@ -373,7 +344,6 @@ pub unsafe fn FaxGetPortW<'a, P0>(faxporthandle: P0, portinfo: *mut *mut FAX_POR
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxGetPortW(faxporthandle: super::super::Foundation::HANDLE, portinfo: *mut *mut FAX_PORT_INFOW) -> super::super::Foundation::BOOL;
     }
@@ -387,7 +357,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxGetRoutingInfoA(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows::core::PCSTR, routinginfobuffer: *mut *mut u8, routinginfobuffersize: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -401,7 +370,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxGetRoutingInfoW(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows::core::PCWSTR, routinginfobuffer: *mut *mut u8, routinginfobuffersize: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -416,7 +384,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P2: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxInitializeEventQueue(faxhandle: super::super::Foundation::HANDLE, completionport: super::super::Foundation::HANDLE, completionkey: usize, hwnd: super::super::Foundation::HWND, messagestart: u32) -> super::super::Foundation::BOOL;
     }
@@ -429,7 +396,6 @@ pub unsafe fn FaxOpenPort<'a, P0>(faxhandle: P0, deviceid: u32, flags: u32, faxp
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxOpenPort(faxhandle: super::super::Foundation::HANDLE, deviceid: u32, flags: u32, faxporthandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -439,7 +405,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
 pub unsafe fn FaxPrintCoverPageA(faxcontextinfo: *const FAX_CONTEXT_INFOA, coverpageinfo: *const FAX_COVERPAGE_INFOA) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxPrintCoverPageA(faxcontextinfo: *const FAX_CONTEXT_INFOA, coverpageinfo: *const FAX_COVERPAGE_INFOA) -> super::super::Foundation::BOOL;
     }
@@ -449,7 +414,6 @@ pub unsafe fn FaxPrintCoverPageA(faxcontextinfo: *const FAX_CONTEXT_INFOA, cover
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
 pub unsafe fn FaxPrintCoverPageW(faxcontextinfo: *const FAX_CONTEXT_INFOW, coverpageinfo: *const FAX_COVERPAGE_INFOW) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxPrintCoverPageW(faxcontextinfo: *const FAX_CONTEXT_INFOW, coverpageinfo: *const FAX_COVERPAGE_INFOW) -> super::super::Foundation::BOOL;
     }
@@ -465,7 +429,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxRegisterRoutingExtensionW(faxhandle: super::super::Foundation::HANDLE, extensionname: ::windows::core::PCWSTR, friendlyname: ::windows::core::PCWSTR, imagename: ::windows::core::PCWSTR, callback: *mut ::core::ffi::c_void, context: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -481,7 +444,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxRegisterServiceProviderW(deviceprovider: ::windows::core::PCWSTR, friendlyname: ::windows::core::PCWSTR, imagename: ::windows::core::PCWSTR, tspname: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -495,7 +457,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxSendDocumentA(faxhandle: super::super::Foundation::HANDLE, filename: ::windows::core::PCSTR, jobparams: *mut FAX_JOB_PARAMA, coverpageinfo: *const FAX_COVERPAGE_INFOA, faxjobid: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -509,7 +470,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxSendDocumentForBroadcastA(faxhandle: super::super::Foundation::HANDLE, filename: ::windows::core::PCSTR, faxjobid: *mut u32, faxrecipientcallback: *mut ::core::ffi::c_void, context: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -523,7 +483,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxSendDocumentForBroadcastW(faxhandle: super::super::Foundation::HANDLE, filename: ::windows::core::PCWSTR, faxjobid: *mut u32, faxrecipientcallback: *mut ::core::ffi::c_void, context: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -537,7 +496,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxSendDocumentW(faxhandle: super::super::Foundation::HANDLE, filename: ::windows::core::PCWSTR, jobparams: *mut FAX_JOB_PARAMW, coverpageinfo: *const FAX_COVERPAGE_INFOW, faxjobid: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -550,7 +508,6 @@ pub unsafe fn FaxSetConfigurationA<'a, P0>(faxhandle: P0, faxconfig: *const FAX_
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxSetConfigurationA(faxhandle: super::super::Foundation::HANDLE, faxconfig: *const FAX_CONFIGURATIONA) -> super::super::Foundation::BOOL;
     }
@@ -563,7 +520,6 @@ pub unsafe fn FaxSetConfigurationW<'a, P0>(faxhandle: P0, faxconfig: *const FAX_
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxSetConfigurationW(faxhandle: super::super::Foundation::HANDLE, faxconfig: *const FAX_CONFIGURATIONW) -> super::super::Foundation::BOOL;
     }
@@ -576,7 +532,6 @@ pub unsafe fn FaxSetGlobalRoutingInfoA<'a, P0>(faxhandle: P0, routinginfo: *cons
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxSetGlobalRoutingInfoA(faxhandle: super::super::Foundation::HANDLE, routinginfo: *const FAX_GLOBAL_ROUTING_INFOA) -> super::super::Foundation::BOOL;
     }
@@ -589,7 +544,6 @@ pub unsafe fn FaxSetGlobalRoutingInfoW<'a, P0>(faxhandle: P0, routinginfo: *cons
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxSetGlobalRoutingInfoW(faxhandle: super::super::Foundation::HANDLE, routinginfo: *const FAX_GLOBAL_ROUTING_INFOW) -> super::super::Foundation::BOOL;
     }
@@ -602,7 +556,6 @@ pub unsafe fn FaxSetJobA<'a, P0>(faxhandle: P0, jobid: u32, command: u32, jobent
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxSetJobA(faxhandle: super::super::Foundation::HANDLE, jobid: u32, command: u32, jobentry: *const FAX_JOB_ENTRYA) -> super::super::Foundation::BOOL;
     }
@@ -615,7 +568,6 @@ pub unsafe fn FaxSetJobW<'a, P0>(faxhandle: P0, jobid: u32, command: u32, jobent
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxSetJobW(faxhandle: super::super::Foundation::HANDLE, jobid: u32, command: u32, jobentry: *const FAX_JOB_ENTRYW) -> super::super::Foundation::BOOL;
     }
@@ -628,7 +580,6 @@ pub unsafe fn FaxSetLoggingCategoriesA<'a, P0>(faxhandle: P0, categories: *const
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxSetLoggingCategoriesA(faxhandle: super::super::Foundation::HANDLE, categories: *const FAX_LOG_CATEGORYA, numbercategories: u32) -> super::super::Foundation::BOOL;
     }
@@ -641,7 +592,6 @@ pub unsafe fn FaxSetLoggingCategoriesW<'a, P0>(faxhandle: P0, categories: *const
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxSetLoggingCategoriesW(faxhandle: super::super::Foundation::HANDLE, categories: *const FAX_LOG_CATEGORYW, numbercategories: u32) -> super::super::Foundation::BOOL;
     }
@@ -654,7 +604,6 @@ pub unsafe fn FaxSetPortA<'a, P0>(faxporthandle: P0, portinfo: *const FAX_PORT_I
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxSetPortA(faxporthandle: super::super::Foundation::HANDLE, portinfo: *const FAX_PORT_INFOA) -> super::super::Foundation::BOOL;
     }
@@ -667,7 +616,6 @@ pub unsafe fn FaxSetPortW<'a, P0>(faxporthandle: P0, portinfo: *const FAX_PORT_I
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxSetPortW(faxporthandle: super::super::Foundation::HANDLE, portinfo: *const FAX_PORT_INFOW) -> super::super::Foundation::BOOL;
     }
@@ -681,7 +629,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxSetRoutingInfoA(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows::core::PCSTR, routinginfobuffer: *const u8, routinginfobuffersize: u32) -> super::super::Foundation::BOOL;
     }
@@ -695,7 +642,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxSetRoutingInfoW(faxporthandle: super::super::Foundation::HANDLE, routingguid: ::windows::core::PCWSTR, routinginfobuffer: *const u8, routinginfobuffersize: u32) -> super::super::Foundation::BOOL;
     }
@@ -708,7 +654,6 @@ pub unsafe fn FaxStartPrintJobA<'a, P0>(printername: P0, printinfo: *const FAX_P
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxStartPrintJobA(printername: ::windows::core::PCSTR, printinfo: *const FAX_PRINT_INFOA, faxjobid: *mut u32, faxcontextinfo: *mut FAX_CONTEXT_INFOA) -> super::super::Foundation::BOOL;
     }
@@ -721,7 +666,6 @@ pub unsafe fn FaxStartPrintJobW<'a, P0>(printername: P0, printinfo: *const FAX_P
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxStartPrintJobW(printername: ::windows::core::PCWSTR, printinfo: *const FAX_PRINT_INFOW, faxjobid: *mut u32, faxcontextinfo: *mut FAX_CONTEXT_INFOW) -> super::super::Foundation::BOOL;
     }
@@ -734,7 +678,6 @@ pub unsafe fn FaxUnregisterServiceProviderW<'a, P0>(deviceprovider: P0) -> super
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FaxUnregisterServiceProviderW(deviceprovider: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -746,7 +689,6 @@ pub unsafe fn SendToFaxRecipient<'a, P0>(sndmode: SendToMode, lpfilename: P0) ->
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SendToFaxRecipient(sndmode: SendToMode, lpfilename: ::windows::core::PCWSTR) -> u32;
     }
@@ -760,7 +702,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StiCreateInstanceW(hinst: super::super::Foundation::HINSTANCE, dwver: u32, ppsti: *mut *mut ::core::ffi::c_void, punkouter: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }

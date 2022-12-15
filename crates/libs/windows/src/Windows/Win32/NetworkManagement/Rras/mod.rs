@@ -5,7 +5,6 @@ pub unsafe fn MgmAddGroupMembershipEntry<'a, P0>(hprotocol: P0, dwsourceaddr: u3
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MgmAddGroupMembershipEntry(hprotocol: super::super::Foundation::HANDLE, dwsourceaddr: u32, dwsourcemask: u32, dwgroupaddr: u32, dwgroupmask: u32, dwifindex: u32, dwifnexthopipaddr: u32, dwflags: u32) -> u32;
     }
@@ -18,7 +17,6 @@ pub unsafe fn MgmDeRegisterMProtocol<'a, P0>(hprotocol: P0) -> u32
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MgmDeRegisterMProtocol(hprotocol: super::super::Foundation::HANDLE) -> u32;
     }
@@ -31,7 +29,6 @@ pub unsafe fn MgmDeleteGroupMembershipEntry<'a, P0>(hprotocol: P0, dwsourceaddr:
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MgmDeleteGroupMembershipEntry(hprotocol: super::super::Foundation::HANDLE, dwsourceaddr: u32, dwsourcemask: u32, dwgroupaddr: u32, dwgroupmask: u32, dwifindex: u32, dwifnexthopipaddr: u32, dwflags: u32) -> u32;
     }
@@ -40,7 +37,6 @@ where
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MgmGetFirstMfe(pdwbuffersize: *mut u32, pbbuffer: *mut u8, pdwnumentries: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MgmGetFirstMfe(pdwbuffersize: *mut u32, pbbuffer: *mut u8, pdwnumentries: *mut u32) -> u32;
     }
@@ -49,7 +45,6 @@ pub unsafe fn MgmGetFirstMfe(pdwbuffersize: *mut u32, pbbuffer: *mut u8, pdwnume
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MgmGetFirstMfeStats(pdwbuffersize: *mut u32, pbbuffer: *mut u8, pdwnumentries: *mut u32, dwflags: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MgmGetFirstMfeStats(pdwbuffersize: *mut u32, pbbuffer: *mut u8, pdwnumentries: *mut u32, dwflags: u32) -> u32;
     }
@@ -59,7 +54,6 @@ pub unsafe fn MgmGetFirstMfeStats(pdwbuffersize: *mut u32, pbbuffer: *mut u8, pd
 #[cfg(feature = "Win32_NetworkManagement_IpHelper")]
 #[inline]
 pub unsafe fn MgmGetMfe(pimm: *mut super::IpHelper::MIB_IPMCAST_MFE, pdwbuffersize: *mut u32, pbbuffer: *mut u8) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MgmGetMfe(pimm: *mut super::IpHelper::MIB_IPMCAST_MFE, pdwbuffersize: *mut u32, pbbuffer: *mut u8) -> u32;
     }
@@ -69,7 +63,6 @@ pub unsafe fn MgmGetMfe(pimm: *mut super::IpHelper::MIB_IPMCAST_MFE, pdwbuffersi
 #[cfg(feature = "Win32_NetworkManagement_IpHelper")]
 #[inline]
 pub unsafe fn MgmGetMfeStats(pimm: *mut super::IpHelper::MIB_IPMCAST_MFE, pdwbuffersize: *mut u32, pbbuffer: *mut u8, dwflags: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MgmGetMfeStats(pimm: *mut super::IpHelper::MIB_IPMCAST_MFE, pdwbuffersize: *mut u32, pbbuffer: *mut u8, dwflags: u32) -> u32;
     }
@@ -79,7 +72,6 @@ pub unsafe fn MgmGetMfeStats(pimm: *mut super::IpHelper::MIB_IPMCAST_MFE, pdwbuf
 #[cfg(feature = "Win32_NetworkManagement_IpHelper")]
 #[inline]
 pub unsafe fn MgmGetNextMfe(pimmstart: *mut super::IpHelper::MIB_IPMCAST_MFE, pdwbuffersize: *mut u32, pbbuffer: *mut u8, pdwnumentries: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MgmGetNextMfe(pimmstart: *mut super::IpHelper::MIB_IPMCAST_MFE, pdwbuffersize: *mut u32, pbbuffer: *mut u8, pdwnumentries: *mut u32) -> u32;
     }
@@ -89,7 +81,6 @@ pub unsafe fn MgmGetNextMfe(pimmstart: *mut super::IpHelper::MIB_IPMCAST_MFE, pd
 #[cfg(feature = "Win32_NetworkManagement_IpHelper")]
 #[inline]
 pub unsafe fn MgmGetNextMfeStats(pimmstart: *mut super::IpHelper::MIB_IPMCAST_MFE, pdwbuffersize: *mut u32, pbbuffer: *mut u8, pdwnumentries: *mut u32, dwflags: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MgmGetNextMfeStats(pimmstart: *mut super::IpHelper::MIB_IPMCAST_MFE, pdwbuffersize: *mut u32, pbbuffer: *mut u8, pdwnumentries: *mut u32, dwflags: u32) -> u32;
     }
@@ -98,7 +89,6 @@ pub unsafe fn MgmGetNextMfeStats(pimmstart: *mut super::IpHelper::MIB_IPMCAST_MF
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MgmGetProtocolOnInterface(dwifindex: u32, dwifnexthopaddr: u32, pdwifprotocolid: *mut u32, pdwifcomponentid: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MgmGetProtocolOnInterface(dwifindex: u32, dwifnexthopaddr: u32, pdwifprotocolid: *mut u32, pdwifcomponentid: *mut u32) -> u32;
     }
@@ -111,7 +101,6 @@ pub unsafe fn MgmGroupEnumerationEnd<'a, P0>(henum: P0) -> u32
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MgmGroupEnumerationEnd(henum: super::super::Foundation::HANDLE) -> u32;
     }
@@ -124,7 +113,6 @@ pub unsafe fn MgmGroupEnumerationGetNext<'a, P0>(henum: P0, pdwbuffersize: *mut 
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MgmGroupEnumerationGetNext(henum: super::super::Foundation::HANDLE, pdwbuffersize: *mut u32, pbbuffer: *mut u8, pdwnumentries: *mut u32) -> u32;
     }
@@ -137,7 +125,6 @@ pub unsafe fn MgmGroupEnumerationStart<'a, P0>(hprotocol: P0, metenumtype: MGM_E
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MgmGroupEnumerationStart(hprotocol: super::super::Foundation::HANDLE, metenumtype: MGM_ENUM_TYPES, phenumhandle: *mut super::super::Foundation::HANDLE) -> u32;
     }
@@ -147,7 +134,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn MgmRegisterMProtocol(prpiinfo: *mut ROUTING_PROTOCOL_CONFIG, dwprotocolid: u32, dwcomponentid: u32, phprotocol: *mut super::super::Foundation::HANDLE) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MgmRegisterMProtocol(prpiinfo: *mut ROUTING_PROTOCOL_CONFIG, dwprotocolid: u32, dwcomponentid: u32, phprotocol: *mut super::super::Foundation::HANDLE) -> u32;
     }
@@ -160,7 +146,6 @@ pub unsafe fn MgmReleaseInterfaceOwnership<'a, P0>(hprotocol: P0, dwifindex: u32
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MgmReleaseInterfaceOwnership(hprotocol: super::super::Foundation::HANDLE, dwifindex: u32, dwifnexthopaddr: u32) -> u32;
     }
@@ -173,7 +158,6 @@ pub unsafe fn MgmTakeInterfaceOwnership<'a, P0>(hprotocol: P0, dwifindex: u32, d
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MgmTakeInterfaceOwnership(hprotocol: super::super::Foundation::HANDLE, dwifindex: u32, dwifnexthopaddr: u32) -> u32;
     }
@@ -182,7 +166,6 @@ where
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprAdminBufferFree(pbuffer: *const ::core::ffi::c_void) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminBufferFree(pbuffer: *const ::core::ffi::c_void) -> u32;
     }
@@ -195,7 +178,6 @@ pub unsafe fn MprAdminConnectionClearStats<'a, P0>(hrasserver: isize, hrasconnec
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminConnectionClearStats(hrasserver: isize, hrasconnection: super::super::Foundation::HANDLE) -> u32;
     }
@@ -204,7 +186,6 @@ where
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprAdminConnectionEnum(hrasserver: isize, dwlevel: u32, lplpbbuffer: *mut *mut u8, dwprefmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, lpdwresumehandle: ::core::option::Option<*const u32>) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminConnectionEnum(hrasserver: isize, dwlevel: u32, lplpbbuffer: *mut *mut u8, dwprefmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, lpdwresumehandle: *const u32) -> u32;
     }
@@ -214,7 +195,6 @@ pub unsafe fn MprAdminConnectionEnum(hrasserver: isize, dwlevel: u32, lplpbbuffe
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn MprAdminConnectionEnumEx(hrasserver: isize, pobjectheader: *const MPRAPI_OBJECT_HEADER, dwpreferedmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, pprasconn: *mut *mut RAS_CONNECTION_EX, lpdwresumehandle: *const u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminConnectionEnumEx(hrasserver: isize, pobjectheader: *const MPRAPI_OBJECT_HEADER, dwpreferedmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, pprasconn: *mut *mut RAS_CONNECTION_EX, lpdwresumehandle: *const u32) -> u32;
     }
@@ -227,7 +207,6 @@ pub unsafe fn MprAdminConnectionGetInfo<'a, P0>(hrasserver: isize, dwlevel: u32,
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminConnectionGetInfo(hrasserver: isize, dwlevel: u32, hrasconnection: super::super::Foundation::HANDLE, lplpbbuffer: *mut *mut u8) -> u32;
     }
@@ -240,7 +219,6 @@ pub unsafe fn MprAdminConnectionGetInfoEx<'a, P0>(hrasserver: isize, hrasconnect
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminConnectionGetInfoEx(hrasserver: isize, hrasconnection: super::super::Foundation::HANDLE, prasconnection: *mut RAS_CONNECTION_EX) -> u32;
     }
@@ -255,7 +233,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminConnectionRemoveQuarantine(hrasserver: super::super::Foundation::HANDLE, hrasconnection: super::super::Foundation::HANDLE, fisipaddress: super::super::Foundation::BOOL) -> u32;
     }
@@ -268,7 +245,6 @@ pub unsafe fn MprAdminDeregisterConnectionNotification<'a, P0>(hmprserver: isize
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminDeregisterConnectionNotification(hmprserver: isize, heventnotification: super::super::Foundation::HANDLE) -> u32;
     }
@@ -277,7 +253,6 @@ where
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprAdminDeviceEnum(hmprserver: isize, dwlevel: u32, lplpbbuffer: *mut *mut u8, lpdwtotalentries: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminDeviceEnum(hmprserver: isize, dwlevel: u32, lplpbbuffer: *mut *mut u8, lpdwtotalentries: *mut u32) -> u32;
     }
@@ -292,7 +267,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminEstablishDomainRasServer(pszdomain: ::windows::core::PCWSTR, pszmachine: ::windows::core::PCWSTR, benable: super::super::Foundation::BOOL) -> u32;
     }
@@ -301,7 +275,6 @@ where
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprAdminGetErrorString(dwerror: u32, lplpwserrorstring: *mut ::windows::core::PWSTR) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminGetErrorString(dwerror: u32, lplpwserrorstring: *mut ::windows::core::PWSTR) -> u32;
     }
@@ -314,7 +287,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminGetPDCServer(lpszdomain: ::windows::core::PCWSTR, lpszserver: ::windows::core::PCWSTR, lpszpdcserver: ::windows::core::PWSTR) -> u32;
     }
@@ -329,7 +301,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminInterfaceConnect(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, hevent: super::super::Foundation::HANDLE, fsynchronous: super::super::Foundation::BOOL) -> u32;
     }
@@ -339,7 +310,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn MprAdminInterfaceCreate(hmprserver: isize, dwlevel: u32, lpbbuffer: *const u8, phinterface: *mut super::super::Foundation::HANDLE) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminInterfaceCreate(hmprserver: isize, dwlevel: u32, lpbbuffer: *const u8, phinterface: *mut super::super::Foundation::HANDLE) -> u32;
     }
@@ -352,7 +322,6 @@ pub unsafe fn MprAdminInterfaceDelete<'a, P0>(hmprserver: isize, hinterface: P0)
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminInterfaceDelete(hmprserver: isize, hinterface: super::super::Foundation::HANDLE) -> u32;
     }
@@ -365,7 +334,6 @@ pub unsafe fn MprAdminInterfaceDeviceGetInfo<'a, P0>(hmprserver: isize, hinterfa
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminInterfaceDeviceGetInfo(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, dwindex: u32, dwlevel: u32, lplpbuffer: *mut *mut u8) -> u32;
     }
@@ -378,7 +346,6 @@ pub unsafe fn MprAdminInterfaceDeviceSetInfo<'a, P0>(hmprserver: isize, hinterfa
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminInterfaceDeviceSetInfo(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, dwindex: u32, dwlevel: u32, lpbbuffer: *const u8) -> u32;
     }
@@ -391,7 +358,6 @@ pub unsafe fn MprAdminInterfaceDisconnect<'a, P0>(hmprserver: isize, hinterface:
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminInterfaceDisconnect(hmprserver: isize, hinterface: super::super::Foundation::HANDLE) -> u32;
     }
@@ -400,7 +366,6 @@ where
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprAdminInterfaceEnum(hmprserver: isize, dwlevel: u32, lplpbbuffer: *mut *mut u8, dwprefmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, lpdwresumehandle: ::core::option::Option<*const u32>) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminInterfaceEnum(hmprserver: isize, dwlevel: u32, lplpbbuffer: *mut *mut u8, dwprefmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, lpdwresumehandle: *const u32) -> u32;
     }
@@ -413,7 +378,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminInterfaceGetCredentials(lpwsserver: ::windows::core::PCWSTR, lpwsinterfacename: ::windows::core::PCWSTR, lpwsusername: ::windows::core::PWSTR, lpwspassword: ::windows::core::PWSTR, lpwsdomainname: ::windows::core::PWSTR) -> u32;
     }
@@ -426,7 +390,6 @@ pub unsafe fn MprAdminInterfaceGetCredentialsEx<'a, P0>(hmprserver: isize, hinte
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminInterfaceGetCredentialsEx(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, dwlevel: u32, lplpbbuffer: *mut *mut u8) -> u32;
     }
@@ -439,7 +402,6 @@ pub unsafe fn MprAdminInterfaceGetCustomInfoEx<'a, P0>(hmprserver: isize, hinter
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminInterfaceGetCustomInfoEx(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, pcustominfo: *mut MPR_IF_CUSTOMINFOEX2) -> u32;
     }
@@ -453,7 +415,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminInterfaceGetHandle(hmprserver: isize, lpwsinterfacename: ::windows::core::PCWSTR, phinterface: *mut super::super::Foundation::HANDLE, fincludeclientinterfaces: super::super::Foundation::BOOL) -> u32;
     }
@@ -466,7 +427,6 @@ pub unsafe fn MprAdminInterfaceGetInfo<'a, P0>(hmprserver: isize, hinterface: P0
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminInterfaceGetInfo(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, dwlevel: u32, lplpbbuffer: *const *const u8) -> u32;
     }
@@ -479,7 +439,6 @@ pub unsafe fn MprAdminInterfaceQueryUpdateResult<'a, P0>(hmprserver: isize, hint
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminInterfaceQueryUpdateResult(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, dwprotocolid: u32, lpdwupdateresult: *mut u32) -> u32;
     }
@@ -495,7 +454,6 @@ where
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
     P4: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminInterfaceSetCredentials(lpwsserver: ::windows::core::PCWSTR, lpwsinterfacename: ::windows::core::PCWSTR, lpwsusername: ::windows::core::PCWSTR, lpwsdomainname: ::windows::core::PCWSTR, lpwspassword: ::windows::core::PCWSTR) -> u32;
     }
@@ -508,7 +466,6 @@ pub unsafe fn MprAdminInterfaceSetCredentialsEx<'a, P0>(hmprserver: isize, hinte
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminInterfaceSetCredentialsEx(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, dwlevel: u32, lpbbuffer: *const u8) -> u32;
     }
@@ -521,7 +478,6 @@ pub unsafe fn MprAdminInterfaceSetCustomInfoEx<'a, P0>(hmprserver: isize, hinter
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminInterfaceSetCustomInfoEx(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, pcustominfo: *const MPR_IF_CUSTOMINFOEX2) -> u32;
     }
@@ -534,7 +490,6 @@ pub unsafe fn MprAdminInterfaceSetInfo<'a, P0>(hmprserver: isize, hinterface: P0
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminInterfaceSetInfo(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, dwlevel: u32, lpbbuffer: *const u8) -> u32;
     }
@@ -547,7 +502,6 @@ pub unsafe fn MprAdminInterfaceTransportAdd<'a, P0>(hmprserver: isize, hinterfac
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminInterfaceTransportAdd(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, dwtransportid: u32, pinterfaceinfo: *const u8, dwinterfaceinfosize: u32) -> u32;
     }
@@ -560,7 +514,6 @@ pub unsafe fn MprAdminInterfaceTransportGetInfo<'a, P0>(hmprserver: isize, hinte
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminInterfaceTransportGetInfo(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, dwtransportid: u32, ppinterfaceinfo: *mut *mut u8, lpdwinterfaceinfosize: *mut u32) -> u32;
     }
@@ -573,7 +526,6 @@ pub unsafe fn MprAdminInterfaceTransportRemove<'a, P0>(hmprserver: isize, hinter
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminInterfaceTransportRemove(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, dwtransportid: u32) -> u32;
     }
@@ -586,7 +538,6 @@ pub unsafe fn MprAdminInterfaceTransportSetInfo<'a, P0>(hmprserver: isize, hinte
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminInterfaceTransportSetInfo(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, dwtransportid: u32, pinterfaceinfo: *const u8, dwinterfaceinfosize: u32) -> u32;
     }
@@ -599,7 +550,6 @@ pub unsafe fn MprAdminInterfaceUpdatePhonebookInfo<'a, P0>(hmprserver: isize, hi
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminInterfaceUpdatePhonebookInfo(hmprserver: isize, hinterface: super::super::Foundation::HANDLE) -> u32;
     }
@@ -613,7 +563,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminInterfaceUpdateRoutes(hmprserver: isize, hinterface: super::super::Foundation::HANDLE, dwprotocolid: u32, hevent: super::super::Foundation::HANDLE) -> u32;
     }
@@ -627,7 +576,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminIsDomainRasServer(pszdomain: ::windows::core::PCWSTR, pszmachine: ::windows::core::PCWSTR, pbisrasserver: *mut super::super::Foundation::BOOL) -> u32;
     }
@@ -640,7 +588,6 @@ pub unsafe fn MprAdminIsServiceInitialized<'a, P0>(lpwsservername: P0, fisservic
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminIsServiceInitialized(lpwsservername: ::windows::core::PCWSTR, fisserviceinitialized: *const super::super::Foundation::BOOL) -> u32;
     }
@@ -653,7 +600,6 @@ pub unsafe fn MprAdminIsServiceRunning<'a, P0>(lpwsservername: P0) -> super::sup
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminIsServiceRunning(lpwsservername: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -662,7 +608,6 @@ where
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprAdminMIBBufferFree(pbuffer: *const ::core::ffi::c_void) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminMIBBufferFree(pbuffer: *const ::core::ffi::c_void) -> u32;
     }
@@ -671,7 +616,6 @@ pub unsafe fn MprAdminMIBBufferFree(pbuffer: *const ::core::ffi::c_void) -> u32 
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprAdminMIBEntryCreate(hmibserver: isize, dwpid: u32, dwroutingpid: u32, lpentry: *const ::core::ffi::c_void, dwentrysize: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminMIBEntryCreate(hmibserver: isize, dwpid: u32, dwroutingpid: u32, lpentry: *const ::core::ffi::c_void, dwentrysize: u32) -> u32;
     }
@@ -680,7 +624,6 @@ pub unsafe fn MprAdminMIBEntryCreate(hmibserver: isize, dwpid: u32, dwroutingpid
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprAdminMIBEntryDelete(hmibserver: isize, dwprotocolid: u32, dwroutingpid: u32, lpentry: *const ::core::ffi::c_void, dwentrysize: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminMIBEntryDelete(hmibserver: isize, dwprotocolid: u32, dwroutingpid: u32, lpentry: *const ::core::ffi::c_void, dwentrysize: u32) -> u32;
     }
@@ -689,7 +632,6 @@ pub unsafe fn MprAdminMIBEntryDelete(hmibserver: isize, dwprotocolid: u32, dwrou
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprAdminMIBEntryGet(hmibserver: isize, dwprotocolid: u32, dwroutingpid: u32, lpinentry: *const ::core::ffi::c_void, dwinentrysize: u32, lplpoutentry: *mut *mut ::core::ffi::c_void, lpoutentrysize: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminMIBEntryGet(hmibserver: isize, dwprotocolid: u32, dwroutingpid: u32, lpinentry: *const ::core::ffi::c_void, dwinentrysize: u32, lplpoutentry: *mut *mut ::core::ffi::c_void, lpoutentrysize: *mut u32) -> u32;
     }
@@ -698,7 +640,6 @@ pub unsafe fn MprAdminMIBEntryGet(hmibserver: isize, dwprotocolid: u32, dwroutin
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprAdminMIBEntryGetFirst(hmibserver: isize, dwprotocolid: u32, dwroutingpid: u32, lpinentry: *const ::core::ffi::c_void, dwinentrysize: u32, lplpoutentry: *mut *mut ::core::ffi::c_void, lpoutentrysize: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminMIBEntryGetFirst(hmibserver: isize, dwprotocolid: u32, dwroutingpid: u32, lpinentry: *const ::core::ffi::c_void, dwinentrysize: u32, lplpoutentry: *mut *mut ::core::ffi::c_void, lpoutentrysize: *mut u32) -> u32;
     }
@@ -707,7 +648,6 @@ pub unsafe fn MprAdminMIBEntryGetFirst(hmibserver: isize, dwprotocolid: u32, dwr
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprAdminMIBEntryGetNext(hmibserver: isize, dwprotocolid: u32, dwroutingpid: u32, lpinentry: *const ::core::ffi::c_void, dwinentrysize: u32, lplpoutentry: *mut *mut ::core::ffi::c_void, lpoutentrysize: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminMIBEntryGetNext(hmibserver: isize, dwprotocolid: u32, dwroutingpid: u32, lpinentry: *const ::core::ffi::c_void, dwinentrysize: u32, lplpoutentry: *mut *mut ::core::ffi::c_void, lpoutentrysize: *mut u32) -> u32;
     }
@@ -716,7 +656,6 @@ pub unsafe fn MprAdminMIBEntryGetNext(hmibserver: isize, dwprotocolid: u32, dwro
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprAdminMIBEntrySet(hmibserver: isize, dwprotocolid: u32, dwroutingpid: u32, lpentry: *const ::core::ffi::c_void, dwentrysize: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminMIBEntrySet(hmibserver: isize, dwprotocolid: u32, dwroutingpid: u32, lpentry: *const ::core::ffi::c_void, dwentrysize: u32) -> u32;
     }
@@ -728,7 +667,6 @@ pub unsafe fn MprAdminMIBServerConnect<'a, P0>(lpwsservername: P0, phmibserver: 
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminMIBServerConnect(lpwsservername: ::windows::core::PCWSTR, phmibserver: *mut isize) -> u32;
     }
@@ -737,7 +675,6 @@ where
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprAdminMIBServerDisconnect(hmibserver: isize) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminMIBServerDisconnect(hmibserver: isize);
     }
@@ -750,7 +687,6 @@ pub unsafe fn MprAdminPortClearStats<'a, P0>(hrasserver: isize, hport: P0) -> u3
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminPortClearStats(hrasserver: isize, hport: super::super::Foundation::HANDLE) -> u32;
     }
@@ -763,7 +699,6 @@ pub unsafe fn MprAdminPortDisconnect<'a, P0>(hrasserver: isize, hport: P0) -> u3
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminPortDisconnect(hrasserver: isize, hport: super::super::Foundation::HANDLE) -> u32;
     }
@@ -776,7 +711,6 @@ pub unsafe fn MprAdminPortEnum<'a, P0>(hrasserver: isize, dwlevel: u32, hrasconn
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminPortEnum(hrasserver: isize, dwlevel: u32, hrasconnection: super::super::Foundation::HANDLE, lplpbbuffer: *mut *mut u8, dwprefmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, lpdwresumehandle: *const u32) -> u32;
     }
@@ -789,7 +723,6 @@ pub unsafe fn MprAdminPortGetInfo<'a, P0>(hrasserver: isize, dwlevel: u32, hport
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminPortGetInfo(hrasserver: isize, dwlevel: u32, hport: super::super::Foundation::HANDLE, lplpbbuffer: *mut *mut u8) -> u32;
     }
@@ -802,7 +735,6 @@ pub unsafe fn MprAdminPortReset<'a, P0>(hrasserver: isize, hport: P0) -> u32
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminPortReset(hrasserver: isize, hport: super::super::Foundation::HANDLE) -> u32;
     }
@@ -815,7 +747,6 @@ pub unsafe fn MprAdminRegisterConnectionNotification<'a, P0>(hmprserver: isize, 
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminRegisterConnectionNotification(hmprserver: isize, heventnotification: super::super::Foundation::HANDLE) -> u32;
     }
@@ -829,7 +760,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminSendUserMessage(hmprserver: isize, hconnection: super::super::Foundation::HANDLE, lpwszmessage: ::windows::core::PCWSTR) -> u32;
     }
@@ -841,7 +771,6 @@ pub unsafe fn MprAdminServerConnect<'a, P0>(lpwsservername: P0, phmprserver: *mu
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminServerConnect(lpwsservername: ::windows::core::PCWSTR, phmprserver: *mut isize) -> u32;
     }
@@ -850,7 +779,6 @@ where
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprAdminServerDisconnect(hmprserver: isize) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminServerDisconnect(hmprserver: isize);
     }
@@ -859,7 +787,6 @@ pub unsafe fn MprAdminServerDisconnect(hmprserver: isize) {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprAdminServerGetCredentials(hmprserver: isize, dwlevel: u32, lplpbbuffer: *const *const u8) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminServerGetCredentials(hmprserver: isize, dwlevel: u32, lplpbbuffer: *const *const u8) -> u32;
     }
@@ -868,7 +795,6 @@ pub unsafe fn MprAdminServerGetCredentials(hmprserver: isize, dwlevel: u32, lplp
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprAdminServerGetInfo(hmprserver: isize, dwlevel: u32, lplpbbuffer: *mut *mut u8) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminServerGetInfo(hmprserver: isize, dwlevel: u32, lplpbbuffer: *mut *mut u8) -> u32;
     }
@@ -878,7 +804,6 @@ pub unsafe fn MprAdminServerGetInfo(hmprserver: isize, dwlevel: u32, lplpbbuffer
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
 #[inline]
 pub unsafe fn MprAdminServerGetInfoEx(hmprserver: isize, pserverinfo: *mut MPR_SERVER_EX1) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminServerGetInfoEx(hmprserver: isize, pserverinfo: *mut MPR_SERVER_EX1) -> u32;
     }
@@ -887,7 +812,6 @@ pub unsafe fn MprAdminServerGetInfoEx(hmprserver: isize, pserverinfo: *mut MPR_S
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprAdminServerSetCredentials(hmprserver: isize, dwlevel: u32, lpbbuffer: *const u8) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminServerSetCredentials(hmprserver: isize, dwlevel: u32, lpbbuffer: *const u8) -> u32;
     }
@@ -896,7 +820,6 @@ pub unsafe fn MprAdminServerSetCredentials(hmprserver: isize, dwlevel: u32, lpbb
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprAdminServerSetInfo(hmprserver: isize, dwlevel: u32, lpbbuffer: *const u8) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminServerSetInfo(hmprserver: isize, dwlevel: u32, lpbbuffer: *const u8) -> u32;
     }
@@ -906,7 +829,6 @@ pub unsafe fn MprAdminServerSetInfo(hmprserver: isize, dwlevel: u32, lpbbuffer: 
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
 #[inline]
 pub unsafe fn MprAdminServerSetInfoEx(hmprserver: isize, pserverinfo: *const MPR_SERVER_SET_CONFIG_EX1) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminServerSetInfoEx(hmprserver: isize, pserverinfo: *const MPR_SERVER_SET_CONFIG_EX1) -> u32;
     }
@@ -919,7 +841,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminTransportCreate(hmprserver: isize, dwtransportid: u32, lpwstransportname: ::windows::core::PCWSTR, pglobalinfo: *const u8, dwglobalinfosize: u32, pclientinterfaceinfo: *const u8, dwclientinterfaceinfosize: u32, lpwsdllpath: ::windows::core::PCWSTR) -> u32;
     }
@@ -928,7 +849,6 @@ where
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprAdminTransportGetInfo(hmprserver: isize, dwtransportid: u32, ppglobalinfo: ::core::option::Option<*mut *mut u8>, lpdwglobalinfosize: ::core::option::Option<*mut u32>, ppclientinterfaceinfo: ::core::option::Option<*mut *mut u8>, lpdwclientinterfaceinfosize: ::core::option::Option<*mut u32>) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminTransportGetInfo(hmprserver: isize, dwtransportid: u32, ppglobalinfo: *mut *mut u8, lpdwglobalinfosize: *mut u32, ppclientinterfaceinfo: *mut *mut u8, lpdwclientinterfaceinfosize: *mut u32) -> u32;
     }
@@ -937,7 +857,6 @@ pub unsafe fn MprAdminTransportGetInfo(hmprserver: isize, dwtransportid: u32, pp
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprAdminTransportSetInfo(hmprserver: isize, dwtransportid: u32, pglobalinfo: ::core::option::Option<*const u8>, dwglobalinfosize: u32, pclientinterfaceinfo: ::core::option::Option<*const u8>, dwclientinterfaceinfosize: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminTransportSetInfo(hmprserver: isize, dwtransportid: u32, pglobalinfo: *const u8, dwglobalinfosize: u32, pclientinterfaceinfo: *const u8, dwclientinterfaceinfosize: u32) -> u32;
     }
@@ -950,7 +869,6 @@ pub unsafe fn MprAdminUpdateConnection<'a, P0>(hrasserver: isize, hrasconnection
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminUpdateConnection(hrasserver: isize, hrasconnection: super::super::Foundation::HANDLE, prasupdateconnection: *const RAS_UPDATE_CONNECTION) -> u32;
     }
@@ -963,7 +881,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminUserGetInfo(lpszserver: ::windows::core::PCWSTR, lpszuser: ::windows::core::PCWSTR, dwlevel: u32, lpbbuffer: *mut u8) -> u32;
     }
@@ -976,7 +893,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprAdminUserSetInfo(lpszserver: ::windows::core::PCWSTR, lpszuser: ::windows::core::PCWSTR, dwlevel: u32, lpbbuffer: *const u8) -> u32;
     }
@@ -985,7 +901,6 @@ where
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprConfigBufferFree(pbuffer: *const ::core::ffi::c_void) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigBufferFree(pbuffer: *const ::core::ffi::c_void) -> u32;
     }
@@ -998,7 +913,6 @@ pub unsafe fn MprConfigFilterGetInfo<'a, P0>(hmprconfig: P0, dwlevel: u32, dwtra
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigFilterGetInfo(hmprconfig: super::super::Foundation::HANDLE, dwlevel: u32, dwtransportid: u32, lpbuffer: *mut u8) -> u32;
     }
@@ -1011,7 +925,6 @@ pub unsafe fn MprConfigFilterSetInfo<'a, P0>(hmprconfig: P0, dwlevel: u32, dwtra
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigFilterSetInfo(hmprconfig: super::super::Foundation::HANDLE, dwlevel: u32, dwtransportid: u32, lpbuffer: *const u8) -> u32;
     }
@@ -1025,7 +938,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigGetFriendlyName(hmprconfig: super::super::Foundation::HANDLE, pszguidname: ::windows::core::PCWSTR, pszbuffer: ::windows::core::PWSTR, dwbuffersize: u32) -> u32;
     }
@@ -1039,7 +951,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigGetGuidName(hmprconfig: super::super::Foundation::HANDLE, pszfriendlyname: ::windows::core::PCWSTR, pszbuffer: ::windows::core::PWSTR, dwbuffersize: u32) -> u32;
     }
@@ -1052,7 +963,6 @@ pub unsafe fn MprConfigInterfaceCreate<'a, P0>(hmprconfig: P0, dwlevel: u32, lpb
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigInterfaceCreate(hmprconfig: super::super::Foundation::HANDLE, dwlevel: u32, lpbbuffer: *const u8, phrouterinterface: *mut super::super::Foundation::HANDLE) -> u32;
     }
@@ -1066,7 +976,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigInterfaceDelete(hmprconfig: super::super::Foundation::HANDLE, hrouterinterface: super::super::Foundation::HANDLE) -> u32;
     }
@@ -1079,7 +988,6 @@ pub unsafe fn MprConfigInterfaceEnum<'a, P0>(hmprconfig: P0, dwlevel: u32, lplpb
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigInterfaceEnum(hmprconfig: super::super::Foundation::HANDLE, dwlevel: u32, lplpbuffer: *mut *mut u8, dwprefmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, lpdwresumehandle: *mut u32) -> u32;
     }
@@ -1093,7 +1001,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigInterfaceGetCustomInfoEx(hmprconfig: super::super::Foundation::HANDLE, hrouterinterface: super::super::Foundation::HANDLE, pcustominfo: *mut MPR_IF_CUSTOMINFOEX2) -> u32;
     }
@@ -1107,7 +1014,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigInterfaceGetHandle(hmprconfig: super::super::Foundation::HANDLE, lpwsinterfacename: ::windows::core::PCWSTR, phrouterinterface: *mut super::super::Foundation::HANDLE) -> u32;
     }
@@ -1121,7 +1027,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigInterfaceGetInfo(hmprconfig: super::super::Foundation::HANDLE, hrouterinterface: super::super::Foundation::HANDLE, dwlevel: u32, lplpbuffer: *mut *mut u8, lpdwbuffersize: *mut u32) -> u32;
     }
@@ -1135,7 +1040,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigInterfaceSetCustomInfoEx(hmprconfig: super::super::Foundation::HANDLE, hrouterinterface: super::super::Foundation::HANDLE, pcustominfo: *const MPR_IF_CUSTOMINFOEX2) -> u32;
     }
@@ -1149,7 +1053,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigInterfaceSetInfo(hmprconfig: super::super::Foundation::HANDLE, hrouterinterface: super::super::Foundation::HANDLE, dwlevel: u32, lpbbuffer: *const u8) -> u32;
     }
@@ -1164,7 +1067,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigInterfaceTransportAdd(hmprconfig: super::super::Foundation::HANDLE, hrouterinterface: super::super::Foundation::HANDLE, dwtransportid: u32, lpwstransportname: ::windows::core::PCWSTR, pinterfaceinfo: *const u8, dwinterfaceinfosize: u32, phrouteriftransport: *mut super::super::Foundation::HANDLE) -> u32;
     }
@@ -1178,7 +1080,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigInterfaceTransportEnum(hmprconfig: super::super::Foundation::HANDLE, hrouterinterface: super::super::Foundation::HANDLE, dwlevel: u32, lplpbuffer: *mut *mut u8, dwprefmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, lpdwresumehandle: *mut u32) -> u32;
     }
@@ -1192,7 +1093,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigInterfaceTransportGetHandle(hmprconfig: super::super::Foundation::HANDLE, hrouterinterface: super::super::Foundation::HANDLE, dwtransportid: u32, phrouteriftransport: *mut super::super::Foundation::HANDLE) -> u32;
     }
@@ -1207,7 +1107,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P2: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigInterfaceTransportGetInfo(hmprconfig: super::super::Foundation::HANDLE, hrouterinterface: super::super::Foundation::HANDLE, hrouteriftransport: super::super::Foundation::HANDLE, ppinterfaceinfo: *mut *mut u8, lpdwinterfaceinfosize: *mut u32) -> u32;
     }
@@ -1222,7 +1121,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P2: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigInterfaceTransportRemove(hmprconfig: super::super::Foundation::HANDLE, hrouterinterface: super::super::Foundation::HANDLE, hrouteriftransport: super::super::Foundation::HANDLE) -> u32;
     }
@@ -1237,7 +1135,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P2: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigInterfaceTransportSetInfo(hmprconfig: super::super::Foundation::HANDLE, hrouterinterface: super::super::Foundation::HANDLE, hrouteriftransport: super::super::Foundation::HANDLE, pinterfaceinfo: *const u8, dwinterfaceinfosize: u32) -> u32;
     }
@@ -1251,7 +1148,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigServerBackup(hmprconfig: super::super::Foundation::HANDLE, lpwspath: ::windows::core::PCWSTR) -> u32;
     }
@@ -1264,7 +1160,6 @@ pub unsafe fn MprConfigServerConnect<'a, P0>(lpwsservername: P0, phmprconfig: *m
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigServerConnect(lpwsservername: ::windows::core::PCWSTR, phmprconfig: *mut super::super::Foundation::HANDLE) -> u32;
     }
@@ -1277,7 +1172,6 @@ pub unsafe fn MprConfigServerDisconnect<'a, P0>(hmprconfig: P0)
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigServerDisconnect(hmprconfig: super::super::Foundation::HANDLE);
     }
@@ -1290,7 +1184,6 @@ pub unsafe fn MprConfigServerGetInfo<'a, P0>(hmprconfig: P0, dwlevel: u32, lplpb
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigServerGetInfo(hmprconfig: super::super::Foundation::HANDLE, dwlevel: u32, lplpbbuffer: *mut *mut u8) -> u32;
     }
@@ -1303,7 +1196,6 @@ pub unsafe fn MprConfigServerGetInfoEx<'a, P0>(hmprconfig: P0, pserverinfo: *mut
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigServerGetInfoEx(hmprconfig: super::super::Foundation::HANDLE, pserverinfo: *mut MPR_SERVER_EX1) -> u32;
     }
@@ -1312,7 +1204,6 @@ where
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprConfigServerInstall(dwlevel: u32, pbuffer: *const ::core::ffi::c_void) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigServerInstall(dwlevel: u32, pbuffer: *const ::core::ffi::c_void) -> u32;
     }
@@ -1325,7 +1216,6 @@ pub unsafe fn MprConfigServerRefresh<'a, P0>(hmprconfig: P0) -> u32
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigServerRefresh(hmprconfig: super::super::Foundation::HANDLE) -> u32;
     }
@@ -1339,7 +1229,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigServerRestore(hmprconfig: super::super::Foundation::HANDLE, lpwspath: ::windows::core::PCWSTR) -> u32;
     }
@@ -1348,7 +1237,6 @@ where
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprConfigServerSetInfo(hmprserver: isize, dwlevel: u32, lpbbuffer: *const u8) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigServerSetInfo(hmprserver: isize, dwlevel: u32, lpbbuffer: *const u8) -> u32;
     }
@@ -1361,7 +1249,6 @@ pub unsafe fn MprConfigServerSetInfoEx<'a, P0>(hmprconfig: P0, psetserverconfig:
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigServerSetInfoEx(hmprconfig: super::super::Foundation::HANDLE, psetserverconfig: *const MPR_SERVER_SET_CONFIG_EX1) -> u32;
     }
@@ -1376,7 +1263,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigTransportCreate(hmprconfig: super::super::Foundation::HANDLE, dwtransportid: u32, lpwstransportname: ::windows::core::PCWSTR, pglobalinfo: *const u8, dwglobalinfosize: u32, pclientinterfaceinfo: *const u8, dwclientinterfaceinfosize: u32, lpwsdllpath: ::windows::core::PCWSTR, phroutertransport: *mut super::super::Foundation::HANDLE) -> u32;
     }
@@ -1390,7 +1276,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigTransportDelete(hmprconfig: super::super::Foundation::HANDLE, hroutertransport: super::super::Foundation::HANDLE) -> u32;
     }
@@ -1403,7 +1288,6 @@ pub unsafe fn MprConfigTransportEnum<'a, P0>(hmprconfig: P0, dwlevel: u32, lplpb
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigTransportEnum(hmprconfig: super::super::Foundation::HANDLE, dwlevel: u32, lplpbuffer: *mut *mut u8, dwprefmaxlen: u32, lpdwentriesread: *mut u32, lpdwtotalentries: *mut u32, lpdwresumehandle: *mut u32) -> u32;
     }
@@ -1416,7 +1300,6 @@ pub unsafe fn MprConfigTransportGetHandle<'a, P0>(hmprconfig: P0, dwtransportid:
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigTransportGetHandle(hmprconfig: super::super::Foundation::HANDLE, dwtransportid: u32, phroutertransport: *mut super::super::Foundation::HANDLE) -> u32;
     }
@@ -1430,7 +1313,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigTransportGetInfo(hmprconfig: super::super::Foundation::HANDLE, hroutertransport: super::super::Foundation::HANDLE, ppglobalinfo: *mut *mut u8, lpdwglobalinfosize: *mut u32, ppclientinterfaceinfo: *mut *mut u8, lpdwclientinterfaceinfosize: *mut u32, lplpwsdllpath: *mut ::windows::core::PWSTR) -> u32;
     }
@@ -1445,7 +1327,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprConfigTransportSetInfo(hmprconfig: super::super::Foundation::HANDLE, hroutertransport: super::super::Foundation::HANDLE, pglobalinfo: *const u8, dwglobalinfosize: u32, pclientinterfaceinfo: *const u8, dwclientinterfaceinfosize: u32, lpwsdllpath: ::windows::core::PCWSTR) -> u32;
     }
@@ -1454,7 +1335,6 @@ where
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprInfoBlockAdd(lpheader: *const ::core::ffi::c_void, dwinfotype: u32, dwitemsize: u32, dwitemcount: u32, lpitemdata: *const u8, lplpnewheader: *mut *mut ::core::ffi::c_void) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprInfoBlockAdd(lpheader: *const ::core::ffi::c_void, dwinfotype: u32, dwitemsize: u32, dwitemcount: u32, lpitemdata: *const u8, lplpnewheader: *mut *mut ::core::ffi::c_void) -> u32;
     }
@@ -1463,7 +1343,6 @@ pub unsafe fn MprInfoBlockAdd(lpheader: *const ::core::ffi::c_void, dwinfotype: 
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprInfoBlockFind(lpheader: *const ::core::ffi::c_void, dwinfotype: u32, lpdwitemsize: *mut u32, lpdwitemcount: *mut u32, lplpitemdata: *mut *mut u8) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprInfoBlockFind(lpheader: *const ::core::ffi::c_void, dwinfotype: u32, lpdwitemsize: *mut u32, lpdwitemcount: *mut u32, lplpitemdata: *mut *mut u8) -> u32;
     }
@@ -1472,7 +1351,6 @@ pub unsafe fn MprInfoBlockFind(lpheader: *const ::core::ffi::c_void, dwinfotype:
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprInfoBlockQuerySize(lpheader: *const ::core::ffi::c_void) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprInfoBlockQuerySize(lpheader: *const ::core::ffi::c_void) -> u32;
     }
@@ -1481,7 +1359,6 @@ pub unsafe fn MprInfoBlockQuerySize(lpheader: *const ::core::ffi::c_void) -> u32
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprInfoBlockRemove(lpheader: *const ::core::ffi::c_void, dwinfotype: u32, lplpnewheader: *mut *mut ::core::ffi::c_void) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprInfoBlockRemove(lpheader: *const ::core::ffi::c_void, dwinfotype: u32, lplpnewheader: *mut *mut ::core::ffi::c_void) -> u32;
     }
@@ -1490,7 +1367,6 @@ pub unsafe fn MprInfoBlockRemove(lpheader: *const ::core::ffi::c_void, dwinfotyp
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprInfoBlockSet(lpheader: *const ::core::ffi::c_void, dwinfotype: u32, dwitemsize: u32, dwitemcount: u32, lpitemdata: *const u8, lplpnewheader: *mut *mut ::core::ffi::c_void) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprInfoBlockSet(lpheader: *const ::core::ffi::c_void, dwinfotype: u32, dwitemsize: u32, dwitemcount: u32, lpitemdata: *const u8, lplpnewheader: *mut *mut ::core::ffi::c_void) -> u32;
     }
@@ -1499,7 +1375,6 @@ pub unsafe fn MprInfoBlockSet(lpheader: *const ::core::ffi::c_void, dwinfotype: 
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprInfoCreate(dwversion: u32, lplpnewheader: *mut *mut ::core::ffi::c_void) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprInfoCreate(dwversion: u32, lplpnewheader: *mut *mut ::core::ffi::c_void) -> u32;
     }
@@ -1508,7 +1383,6 @@ pub unsafe fn MprInfoCreate(dwversion: u32, lplpnewheader: *mut *mut ::core::ffi
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprInfoDelete(lpheader: *const ::core::ffi::c_void) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprInfoDelete(lpheader: *const ::core::ffi::c_void) -> u32;
     }
@@ -1517,7 +1391,6 @@ pub unsafe fn MprInfoDelete(lpheader: *const ::core::ffi::c_void) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprInfoDuplicate(lpheader: *const ::core::ffi::c_void, lplpnewheader: *mut *mut ::core::ffi::c_void) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprInfoDuplicate(lpheader: *const ::core::ffi::c_void, lplpnewheader: *mut *mut ::core::ffi::c_void) -> u32;
     }
@@ -1526,7 +1399,6 @@ pub unsafe fn MprInfoDuplicate(lpheader: *const ::core::ffi::c_void, lplpnewhead
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn MprInfoRemoveAll(lpheader: *const ::core::ffi::c_void, lplpnewheader: *mut *mut ::core::ffi::c_void) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MprInfoRemoveAll(lpheader: *const ::core::ffi::c_void, lplpnewheader: *mut *mut ::core::ffi::c_void) -> u32;
     }
@@ -1538,7 +1410,6 @@ pub unsafe fn RasClearConnectionStatistics<'a, P0>(hrasconn: P0) -> u32
 where
     P0: ::std::convert::Into<HRASCONN>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasClearConnectionStatistics(hrasconn: HRASCONN) -> u32;
     }
@@ -1550,7 +1421,6 @@ pub unsafe fn RasClearLinkStatistics<'a, P0>(hrasconn: P0, dwsubentry: u32) -> u
 where
     P0: ::std::convert::Into<HRASCONN>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasClearLinkStatistics(hrasconn: HRASCONN, dwsubentry: u32) -> u32;
     }
@@ -1564,7 +1434,6 @@ where
     P0: ::std::convert::Into<HRASCONN>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasConnectionNotificationA(param0: HRASCONN, param1: super::super::Foundation::HANDLE, param2: u32) -> u32;
     }
@@ -1578,7 +1447,6 @@ where
     P0: ::std::convert::Into<HRASCONN>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasConnectionNotificationW(param0: HRASCONN, param1: super::super::Foundation::HANDLE, param2: u32) -> u32;
     }
@@ -1592,7 +1460,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasCreatePhonebookEntryA(param0: super::super::Foundation::HWND, param1: ::windows::core::PCSTR) -> u32;
     }
@@ -1606,7 +1473,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasCreatePhonebookEntryW(param0: super::super::Foundation::HWND, param1: ::windows::core::PCWSTR) -> u32;
     }
@@ -1619,7 +1485,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasDeleteEntryA(param0: ::windows::core::PCSTR, param1: ::windows::core::PCSTR) -> u32;
     }
@@ -1632,7 +1497,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasDeleteEntryW(param0: ::windows::core::PCWSTR, param1: ::windows::core::PCWSTR) -> u32;
     }
@@ -1645,7 +1509,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasDeleteSubEntryA(pszphonebook: ::windows::core::PCSTR, pszentry: ::windows::core::PCSTR, dwsubentryid: u32) -> u32;
     }
@@ -1658,7 +1521,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasDeleteSubEntryW(pszphonebook: ::windows::core::PCWSTR, pszentry: ::windows::core::PCWSTR, dwsubentryid: u32) -> u32;
     }
@@ -1671,7 +1533,6 @@ pub unsafe fn RasDialA<'a, P0>(param0: ::core::option::Option<*const RASDIALEXTE
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasDialA(param0: *const RASDIALEXTENSIONS, param1: ::windows::core::PCSTR, param2: *const RASDIALPARAMSA, param3: u32, param4: *const ::core::ffi::c_void, param5: *mut HRASCONN) -> u32;
     }
@@ -1686,7 +1547,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasDialDlgA(lpszphonebook: ::windows::core::PCSTR, lpszentry: ::windows::core::PCSTR, lpszphonenumber: ::windows::core::PCSTR, lpinfo: *mut RASDIALDLG) -> super::super::Foundation::BOOL;
     }
@@ -1701,7 +1561,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasDialDlgW(lpszphonebook: ::windows::core::PCWSTR, lpszentry: ::windows::core::PCWSTR, lpszphonenumber: ::windows::core::PCWSTR, lpinfo: *mut RASDIALDLG) -> super::super::Foundation::BOOL;
     }
@@ -1714,7 +1573,6 @@ pub unsafe fn RasDialW<'a, P0>(param0: ::core::option::Option<*const RASDIALEXTE
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasDialW(param0: *const RASDIALEXTENSIONS, param1: ::windows::core::PCWSTR, param2: *const RASDIALPARAMSW, param3: u32, param4: *const ::core::ffi::c_void, param5: *mut HRASCONN) -> u32;
     }
@@ -1729,7 +1587,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasEditPhonebookEntryA(param0: super::super::Foundation::HWND, param1: ::windows::core::PCSTR, param2: ::windows::core::PCSTR) -> u32;
     }
@@ -1744,7 +1601,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasEditPhonebookEntryW(param0: super::super::Foundation::HWND, param1: ::windows::core::PCWSTR, param2: ::windows::core::PCWSTR) -> u32;
     }
@@ -1758,7 +1614,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasEntryDlgA(lpszphonebook: ::windows::core::PCSTR, lpszentry: ::windows::core::PCSTR, lpinfo: *mut RASENTRYDLGA) -> super::super::Foundation::BOOL;
     }
@@ -1772,7 +1627,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasEntryDlgW(lpszphonebook: ::windows::core::PCWSTR, lpszentry: ::windows::core::PCWSTR, lpinfo: *mut RASENTRYDLGW) -> super::super::Foundation::BOOL;
     }
@@ -1781,7 +1635,6 @@ where
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RasEnumAutodialAddressesA(lpprasautodialaddresses: ::core::option::Option<*mut ::windows::core::PSTR>, lpdwcbrasautodialaddresses: *mut u32, lpdwcrasautodialaddresses: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasEnumAutodialAddressesA(lpprasautodialaddresses: *mut ::windows::core::PSTR, lpdwcbrasautodialaddresses: *mut u32, lpdwcrasautodialaddresses: *mut u32) -> u32;
     }
@@ -1790,7 +1643,6 @@ pub unsafe fn RasEnumAutodialAddressesA(lpprasautodialaddresses: ::core::option:
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RasEnumAutodialAddressesW(lpprasautodialaddresses: ::core::option::Option<*mut ::windows::core::PWSTR>, lpdwcbrasautodialaddresses: *mut u32, lpdwcrasautodialaddresses: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasEnumAutodialAddressesW(lpprasautodialaddresses: *mut ::windows::core::PWSTR, lpdwcbrasautodialaddresses: *mut u32, lpdwcrasautodialaddresses: *mut u32) -> u32;
     }
@@ -1800,7 +1652,6 @@ pub unsafe fn RasEnumAutodialAddressesW(lpprasautodialaddresses: ::core::option:
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RasEnumConnectionsA(param0: ::core::option::Option<*mut RASCONNA>, param1: *mut u32, param2: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasEnumConnectionsA(param0: *mut RASCONNA, param1: *mut u32, param2: *mut u32) -> u32;
     }
@@ -1810,7 +1661,6 @@ pub unsafe fn RasEnumConnectionsA(param0: ::core::option::Option<*mut RASCONNA>,
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RasEnumConnectionsW(param0: ::core::option::Option<*mut RASCONNW>, param1: *mut u32, param2: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasEnumConnectionsW(param0: *mut RASCONNW, param1: *mut u32, param2: *mut u32) -> u32;
     }
@@ -1820,7 +1670,6 @@ pub unsafe fn RasEnumConnectionsW(param0: ::core::option::Option<*mut RASCONNW>,
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RasEnumDevicesA(param0: ::core::option::Option<*mut RASDEVINFOA>, param1: *mut u32, param2: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasEnumDevicesA(param0: *mut RASDEVINFOA, param1: *mut u32, param2: *mut u32) -> u32;
     }
@@ -1829,7 +1678,6 @@ pub unsafe fn RasEnumDevicesA(param0: ::core::option::Option<*mut RASDEVINFOA>, 
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RasEnumDevicesW(param0: ::core::option::Option<*mut RASDEVINFOW>, param1: *mut u32, param2: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasEnumDevicesW(param0: *mut RASDEVINFOW, param1: *mut u32, param2: *mut u32) -> u32;
     }
@@ -1843,7 +1691,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasEnumEntriesA(param0: ::windows::core::PCSTR, param1: ::windows::core::PCSTR, param2: *mut RASENTRYNAMEA, param3: *mut u32, param4: *mut u32) -> u32;
     }
@@ -1856,7 +1703,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasEnumEntriesW(param0: ::windows::core::PCWSTR, param1: ::windows::core::PCWSTR, param2: *mut RASENTRYNAMEW, param3: *mut u32, param4: *mut u32) -> u32;
     }
@@ -1866,7 +1712,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RasFreeEapUserIdentityA(praseapuseridentity: *const RASEAPUSERIDENTITYA) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasFreeEapUserIdentityA(praseapuseridentity: *const RASEAPUSERIDENTITYA);
     }
@@ -1875,7 +1720,6 @@ pub unsafe fn RasFreeEapUserIdentityA(praseapuseridentity: *const RASEAPUSERIDEN
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RasFreeEapUserIdentityW(praseapuseridentity: *const RASEAPUSERIDENTITYW) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasFreeEapUserIdentityW(praseapuseridentity: *const RASEAPUSERIDENTITYW);
     }
@@ -1888,7 +1732,6 @@ pub unsafe fn RasGetAutodialAddressA<'a, P0>(param0: P0, param1: ::core::option:
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetAutodialAddressA(param0: ::windows::core::PCSTR, param1: *const u32, param2: *mut RASAUTODIALENTRYA, param3: *mut u32, param4: *mut u32) -> u32;
     }
@@ -1900,7 +1743,6 @@ pub unsafe fn RasGetAutodialAddressW<'a, P0>(param0: P0, param1: ::core::option:
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetAutodialAddressW(param0: ::windows::core::PCWSTR, param1: *const u32, param2: *mut RASAUTODIALENTRYW, param3: *mut u32, param4: *mut u32) -> u32;
     }
@@ -1909,7 +1751,6 @@ where
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RasGetAutodialEnableA(param0: u32, param1: *mut i32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetAutodialEnableA(param0: u32, param1: *mut i32) -> u32;
     }
@@ -1918,7 +1759,6 @@ pub unsafe fn RasGetAutodialEnableA(param0: u32, param1: *mut i32) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RasGetAutodialEnableW(param0: u32, param1: *mut i32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetAutodialEnableW(param0: u32, param1: *mut i32) -> u32;
     }
@@ -1927,7 +1767,6 @@ pub unsafe fn RasGetAutodialEnableW(param0: u32, param1: *mut i32) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RasGetAutodialParamA(param0: u32, param1: *mut ::core::ffi::c_void, param2: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetAutodialParamA(param0: u32, param1: *mut ::core::ffi::c_void, param2: *mut u32) -> u32;
     }
@@ -1936,7 +1775,6 @@ pub unsafe fn RasGetAutodialParamA(param0: u32, param1: *mut ::core::ffi::c_void
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RasGetAutodialParamW(param0: u32, param1: *mut ::core::ffi::c_void, param2: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetAutodialParamW(param0: u32, param1: *mut ::core::ffi::c_void, param2: *mut u32) -> u32;
     }
@@ -1949,7 +1787,6 @@ pub unsafe fn RasGetConnectStatusA<'a, P0>(param0: P0, param1: *mut RASCONNSTATU
 where
     P0: ::std::convert::Into<HRASCONN>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetConnectStatusA(param0: HRASCONN, param1: *mut RASCONNSTATUSA) -> u32;
     }
@@ -1962,7 +1799,6 @@ pub unsafe fn RasGetConnectStatusW<'a, P0>(param0: P0, param1: *mut RASCONNSTATU
 where
     P0: ::std::convert::Into<HRASCONN>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetConnectStatusW(param0: HRASCONN, param1: *mut RASCONNSTATUSW) -> u32;
     }
@@ -1974,7 +1810,6 @@ pub unsafe fn RasGetConnectionStatistics<'a, P0>(hrasconn: P0, lpstatistics: *mu
 where
     P0: ::std::convert::Into<HRASCONN>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetConnectionStatistics(hrasconn: HRASCONN, lpstatistics: *mut RAS_STATS) -> u32;
     }
@@ -1983,7 +1818,6 @@ where
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RasGetCountryInfoA(param0: ::core::option::Option<*mut RASCTRYINFO>, param1: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetCountryInfoA(param0: *mut RASCTRYINFO, param1: *mut u32) -> u32;
     }
@@ -1992,7 +1826,6 @@ pub unsafe fn RasGetCountryInfoA(param0: ::core::option::Option<*mut RASCTRYINFO
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RasGetCountryInfoW(param0: ::core::option::Option<*mut RASCTRYINFO>, param1: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetCountryInfoW(param0: *mut RASCTRYINFO, param1: *mut u32) -> u32;
     }
@@ -2006,7 +1839,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetCredentialsA(param0: ::windows::core::PCSTR, param1: ::windows::core::PCSTR, param2: *mut RASCREDENTIALSA) -> u32;
     }
@@ -2019,7 +1851,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetCredentialsW(param0: ::windows::core::PCWSTR, param1: ::windows::core::PCWSTR, param2: *mut RASCREDENTIALSW) -> u32;
     }
@@ -2032,7 +1863,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetCustomAuthDataA(pszphonebook: ::windows::core::PCSTR, pszentry: ::windows::core::PCSTR, pbcustomauthdata: *mut u8, pdwsizeofcustomauthdata: *mut u32) -> u32;
     }
@@ -2045,7 +1875,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetCustomAuthDataW(pszphonebook: ::windows::core::PCWSTR, pszentry: ::windows::core::PCWSTR, pbcustomauthdata: *mut u8, pdwsizeofcustomauthdata: *mut u32) -> u32;
     }
@@ -2060,7 +1889,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetEapUserDataA(htoken: super::super::Foundation::HANDLE, pszphonebook: ::windows::core::PCSTR, pszentry: ::windows::core::PCSTR, pbeapdata: *mut u8, pdwsizeofeapdata: *mut u32) -> u32;
     }
@@ -2075,7 +1903,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetEapUserDataW(htoken: super::super::Foundation::HANDLE, pszphonebook: ::windows::core::PCWSTR, pszentry: ::windows::core::PCWSTR, pbeapdata: *mut u8, pdwsizeofeapdata: *mut u32) -> u32;
     }
@@ -2090,7 +1917,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetEapUserIdentityA(pszphonebook: ::windows::core::PCSTR, pszentry: ::windows::core::PCSTR, dwflags: u32, hwnd: super::super::Foundation::HWND, ppraseapuseridentity: *mut *mut RASEAPUSERIDENTITYA) -> u32;
     }
@@ -2105,7 +1931,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetEapUserIdentityW(pszphonebook: ::windows::core::PCWSTR, pszentry: ::windows::core::PCWSTR, dwflags: u32, hwnd: super::super::Foundation::HWND, ppraseapuseridentity: *mut *mut RASEAPUSERIDENTITYW) -> u32;
     }
@@ -2118,7 +1943,6 @@ pub unsafe fn RasGetEntryDialParamsA<'a, P0>(param0: P0, param1: *mut RASDIALPAR
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetEntryDialParamsA(param0: ::windows::core::PCSTR, param1: *mut RASDIALPARAMSA, param2: *mut i32) -> u32;
     }
@@ -2130,7 +1954,6 @@ pub unsafe fn RasGetEntryDialParamsW<'a, P0>(param0: P0, param1: *mut RASDIALPAR
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetEntryDialParamsW(param0: ::windows::core::PCWSTR, param1: *mut RASDIALPARAMSW, param2: *mut i32) -> u32;
     }
@@ -2144,7 +1967,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetEntryPropertiesA(param0: ::windows::core::PCSTR, param1: ::windows::core::PCSTR, param2: *mut RASENTRYA, param3: *mut u32, param4: *mut u8, param5: *mut u32) -> u32;
     }
@@ -2158,7 +1980,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetEntryPropertiesW(param0: ::windows::core::PCWSTR, param1: ::windows::core::PCWSTR, param2: *mut RASENTRYW, param3: *mut u32, param4: *mut u8, param5: *mut u32) -> u32;
     }
@@ -2167,7 +1988,6 @@ where
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RasGetErrorStringA(resourceid: u32, lpszstring: &mut [u8]) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetErrorStringA(resourceid: u32, lpszstring: ::windows::core::PSTR, inbufsize: u32) -> u32;
     }
@@ -2176,7 +1996,6 @@ pub unsafe fn RasGetErrorStringA(resourceid: u32, lpszstring: &mut [u8]) -> u32 
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RasGetErrorStringW(resourceid: u32, lpszstring: &mut [u16]) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetErrorStringW(resourceid: u32, lpszstring: ::windows::core::PWSTR, inbufsize: u32) -> u32;
     }
@@ -2188,7 +2007,6 @@ pub unsafe fn RasGetLinkStatistics<'a, P0>(hrasconn: P0, dwsubentry: u32, lpstat
 where
     P0: ::std::convert::Into<HRASCONN>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetLinkStatistics(hrasconn: HRASCONN, dwsubentry: u32, lpstatistics: *mut RAS_STATS) -> u32;
     }
@@ -2197,7 +2015,6 @@ where
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RasGetPCscf(lpszpcscf: ::windows::core::PWSTR) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetPCscf(lpszpcscf: ::windows::core::PWSTR) -> u32;
     }
@@ -2209,7 +2026,6 @@ pub unsafe fn RasGetProjectionInfoA<'a, P0>(param0: P0, param1: RASPROJECTION, p
 where
     P0: ::std::convert::Into<HRASCONN>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetProjectionInfoA(param0: HRASCONN, param1: RASPROJECTION, param2: *mut ::core::ffi::c_void, param3: *mut u32) -> u32;
     }
@@ -2222,7 +2038,6 @@ pub unsafe fn RasGetProjectionInfoEx<'a, P0>(hrasconn: P0, prasprojection: ::cor
 where
     P0: ::std::convert::Into<HRASCONN>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetProjectionInfoEx(hrasconn: HRASCONN, prasprojection: *mut RAS_PROJECTION_INFO, lpdwsize: *mut u32) -> u32;
     }
@@ -2234,7 +2049,6 @@ pub unsafe fn RasGetProjectionInfoW<'a, P0>(param0: P0, param1: RASPROJECTION, p
 where
     P0: ::std::convert::Into<HRASCONN>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetProjectionInfoW(param0: HRASCONN, param1: RASPROJECTION, param2: *mut ::core::ffi::c_void, param3: *mut u32) -> u32;
     }
@@ -2246,7 +2060,6 @@ pub unsafe fn RasGetSubEntryHandleA<'a, P0>(param0: P0, param1: u32, param2: *mu
 where
     P0: ::std::convert::Into<HRASCONN>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetSubEntryHandleA(param0: HRASCONN, param1: u32, param2: *mut HRASCONN) -> u32;
     }
@@ -2258,7 +2071,6 @@ pub unsafe fn RasGetSubEntryHandleW<'a, P0>(param0: P0, param1: u32, param2: *mu
 where
     P0: ::std::convert::Into<HRASCONN>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetSubEntryHandleW(param0: HRASCONN, param1: u32, param2: *mut HRASCONN) -> u32;
     }
@@ -2272,7 +2084,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetSubEntryPropertiesA(param0: ::windows::core::PCSTR, param1: ::windows::core::PCSTR, param2: u32, param3: *mut RASSUBENTRYA, param4: *mut u32, param5: *mut u8, param6: *mut u32) -> u32;
     }
@@ -2285,7 +2096,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasGetSubEntryPropertiesW(param0: ::windows::core::PCWSTR, param1: ::windows::core::PCWSTR, param2: u32, param3: *mut RASSUBENTRYW, param4: *mut u32, param5: *mut u8, param6: *mut u32) -> u32;
     }
@@ -2297,7 +2107,6 @@ pub unsafe fn RasHangUpA<'a, P0>(param0: P0) -> u32
 where
     P0: ::std::convert::Into<HRASCONN>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasHangUpA(param0: HRASCONN) -> u32;
     }
@@ -2309,7 +2118,6 @@ pub unsafe fn RasHangUpW<'a, P0>(param0: P0) -> u32
 where
     P0: ::std::convert::Into<HRASCONN>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasHangUpW(param0: HRASCONN) -> u32;
     }
@@ -2323,7 +2131,6 @@ where
     P0: ::std::convert::Into<HRASCONN>,
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasInvokeEapUI(param0: HRASCONN, param1: u32, param2: *const RASDIALEXTENSIONS, param3: super::super::Foundation::HWND) -> u32;
     }
@@ -2337,7 +2144,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasPhonebookDlgA(lpszphonebook: ::windows::core::PCSTR, lpszentry: ::windows::core::PCSTR, lpinfo: *mut RASPBDLGA) -> super::super::Foundation::BOOL;
     }
@@ -2351,7 +2157,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasPhonebookDlgW(lpszphonebook: ::windows::core::PCWSTR, lpszentry: ::windows::core::PCWSTR, lpinfo: *mut RASPBDLGW) -> super::super::Foundation::BOOL;
     }
@@ -2365,7 +2170,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasRenameEntryA(param0: ::windows::core::PCSTR, param1: ::windows::core::PCSTR, param2: ::windows::core::PCSTR) -> u32;
     }
@@ -2379,7 +2183,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasRenameEntryW(param0: ::windows::core::PCWSTR, param1: ::windows::core::PCWSTR, param2: ::windows::core::PCWSTR) -> u32;
     }
@@ -2392,7 +2195,6 @@ pub unsafe fn RasSetAutodialAddressA<'a, P0>(param0: P0, param1: u32, param2: ::
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasSetAutodialAddressA(param0: ::windows::core::PCSTR, param1: u32, param2: *const RASAUTODIALENTRYA, param3: u32, param4: u32) -> u32;
     }
@@ -2404,7 +2206,6 @@ pub unsafe fn RasSetAutodialAddressW<'a, P0>(param0: P0, param1: u32, param2: ::
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasSetAutodialAddressW(param0: ::windows::core::PCWSTR, param1: u32, param2: *const RASAUTODIALENTRYW, param3: u32, param4: u32) -> u32;
     }
@@ -2417,7 +2218,6 @@ pub unsafe fn RasSetAutodialEnableA<'a, P0>(param0: u32, param1: P0) -> u32
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasSetAutodialEnableA(param0: u32, param1: super::super::Foundation::BOOL) -> u32;
     }
@@ -2430,7 +2230,6 @@ pub unsafe fn RasSetAutodialEnableW<'a, P0>(param0: u32, param1: P0) -> u32
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasSetAutodialEnableW(param0: u32, param1: super::super::Foundation::BOOL) -> u32;
     }
@@ -2439,7 +2238,6 @@ where
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RasSetAutodialParamA(param0: u32, param1: *const ::core::ffi::c_void, param2: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasSetAutodialParamA(param0: u32, param1: *const ::core::ffi::c_void, param2: u32) -> u32;
     }
@@ -2448,7 +2246,6 @@ pub unsafe fn RasSetAutodialParamA(param0: u32, param1: *const ::core::ffi::c_vo
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RasSetAutodialParamW(param0: u32, param1: *const ::core::ffi::c_void, param2: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasSetAutodialParamW(param0: u32, param1: *const ::core::ffi::c_void, param2: u32) -> u32;
     }
@@ -2463,7 +2260,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasSetCredentialsA(param0: ::windows::core::PCSTR, param1: ::windows::core::PCSTR, param2: *const RASCREDENTIALSA, param3: super::super::Foundation::BOOL) -> u32;
     }
@@ -2478,7 +2274,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasSetCredentialsW(param0: ::windows::core::PCWSTR, param1: ::windows::core::PCWSTR, param2: *const RASCREDENTIALSW, param3: super::super::Foundation::BOOL) -> u32;
     }
@@ -2491,7 +2286,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasSetCustomAuthDataA(pszphonebook: ::windows::core::PCSTR, pszentry: ::windows::core::PCSTR, pbcustomauthdata: *const u8, dwsizeofcustomauthdata: u32) -> u32;
     }
@@ -2504,7 +2298,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasSetCustomAuthDataW(pszphonebook: ::windows::core::PCWSTR, pszentry: ::windows::core::PCWSTR, pbcustomauthdata: *const u8, dwsizeofcustomauthdata: u32) -> u32;
     }
@@ -2519,7 +2312,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasSetEapUserDataA(htoken: super::super::Foundation::HANDLE, pszphonebook: ::windows::core::PCSTR, pszentry: ::windows::core::PCSTR, pbeapdata: *const u8, dwsizeofeapdata: u32) -> u32;
     }
@@ -2534,7 +2326,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasSetEapUserDataW(htoken: super::super::Foundation::HANDLE, pszphonebook: ::windows::core::PCWSTR, pszentry: ::windows::core::PCWSTR, pbeapdata: *const u8, dwsizeofeapdata: u32) -> u32;
     }
@@ -2548,7 +2339,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasSetEntryDialParamsA(param0: ::windows::core::PCSTR, param1: *const RASDIALPARAMSA, param2: super::super::Foundation::BOOL) -> u32;
     }
@@ -2562,7 +2352,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasSetEntryDialParamsW(param0: ::windows::core::PCWSTR, param1: *const RASDIALPARAMSW, param2: super::super::Foundation::BOOL) -> u32;
     }
@@ -2576,7 +2365,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasSetEntryPropertiesA(param0: ::windows::core::PCSTR, param1: ::windows::core::PCSTR, param2: *const RASENTRYA, param3: u32, param4: *const u8, param5: u32) -> u32;
     }
@@ -2590,7 +2378,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasSetEntryPropertiesW(param0: ::windows::core::PCWSTR, param1: ::windows::core::PCWSTR, param2: *const RASENTRYW, param3: u32, param4: *const u8, param5: u32) -> u32;
     }
@@ -2604,7 +2391,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasSetSubEntryPropertiesA(param0: ::windows::core::PCSTR, param1: ::windows::core::PCSTR, param2: u32, param3: *const RASSUBENTRYA, param4: u32, param5: *const u8, param6: u32) -> u32;
     }
@@ -2617,7 +2403,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasSetSubEntryPropertiesW(param0: ::windows::core::PCWSTR, param1: ::windows::core::PCWSTR, param2: u32, param3: *const RASSUBENTRYW, param4: u32, param5: *const u8, param6: u32) -> u32;
     }
@@ -2630,7 +2415,6 @@ pub unsafe fn RasUpdateConnection<'a, P0>(hrasconn: P0, lprasupdateconn: *const 
 where
     P0: ::std::convert::Into<HRASCONN>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasUpdateConnection(hrasconn: HRASCONN, lprasupdateconn: *const RASUPDATECONN) -> u32;
     }
@@ -2643,7 +2427,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasValidateEntryNameA(param0: ::windows::core::PCSTR, param1: ::windows::core::PCSTR) -> u32;
     }
@@ -2656,7 +2439,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RasValidateEntryNameW(param0: ::windows::core::PCWSTR, param1: ::windows::core::PCWSTR) -> u32;
     }
@@ -2665,7 +2447,6 @@ where
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmAddNextHop(rtmreghandle: isize, nexthopinfo: *mut RTM_NEXTHOP_INFO, nexthophandle: *mut isize, changeflags: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmAddNextHop(rtmreghandle: isize, nexthopinfo: *mut RTM_NEXTHOP_INFO, nexthophandle: *mut isize, changeflags: *mut u32) -> u32;
     }
@@ -2674,7 +2455,6 @@ pub unsafe fn RtmAddNextHop(rtmreghandle: isize, nexthopinfo: *mut RTM_NEXTHOP_I
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmAddRouteToDest(rtmreghandle: isize, routehandle: *mut isize, destaddress: *mut RTM_NET_ADDRESS, routeinfo: *mut RTM_ROUTE_INFO, timetolive: u32, routelisthandle: isize, notifytype: u32, notifyhandle: isize, changeflags: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmAddRouteToDest(rtmreghandle: isize, routehandle: *mut isize, destaddress: *mut RTM_NET_ADDRESS, routeinfo: *mut RTM_ROUTE_INFO, timetolive: u32, routelisthandle: isize, notifytype: u32, notifyhandle: isize, changeflags: *mut u32) -> u32;
     }
@@ -2687,7 +2467,6 @@ pub unsafe fn RtmBlockMethods<'a, P0>(rtmreghandle: isize, targethandle: P0, tar
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmBlockMethods(rtmreghandle: isize, targethandle: super::super::Foundation::HANDLE, targettype: u8, blockingflag: u32) -> u32;
     }
@@ -2697,7 +2476,6 @@ where
 #[cfg(feature = "Win32_Networking_WinSock")]
 #[inline]
 pub unsafe fn RtmConvertIpv6AddressAndLengthToNetAddress(pnetaddress: *mut RTM_NET_ADDRESS, address: super::super::Networking::WinSock::IN6_ADDR, dwlength: u32, dwaddresssize: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmConvertIpv6AddressAndLengthToNetAddress(pnetaddress: *mut RTM_NET_ADDRESS, address: super::super::Networking::WinSock::IN6_ADDR, dwlength: u32, dwaddresssize: u32) -> u32;
     }
@@ -2707,7 +2485,6 @@ pub unsafe fn RtmConvertIpv6AddressAndLengthToNetAddress(pnetaddress: *mut RTM_N
 #[cfg(feature = "Win32_Networking_WinSock")]
 #[inline]
 pub unsafe fn RtmConvertNetAddressToIpv6AddressAndLength(pnetaddress: *mut RTM_NET_ADDRESS, paddress: *mut super::super::Networking::WinSock::IN6_ADDR, plength: *mut u32, dwaddresssize: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmConvertNetAddressToIpv6AddressAndLength(pnetaddress: *mut RTM_NET_ADDRESS, paddress: *mut super::super::Networking::WinSock::IN6_ADDR, plength: *mut u32, dwaddresssize: u32) -> u32;
     }
@@ -2716,7 +2493,6 @@ pub unsafe fn RtmConvertNetAddressToIpv6AddressAndLength(pnetaddress: *mut RTM_N
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmCreateDestEnum(rtmreghandle: isize, targetviews: u32, enumflags: u32, netaddress: *mut RTM_NET_ADDRESS, protocolid: u32, rtmenumhandle: *mut isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmCreateDestEnum(rtmreghandle: isize, targetviews: u32, enumflags: u32, netaddress: *mut RTM_NET_ADDRESS, protocolid: u32, rtmenumhandle: *mut isize) -> u32;
     }
@@ -2725,7 +2501,6 @@ pub unsafe fn RtmCreateDestEnum(rtmreghandle: isize, targetviews: u32, enumflags
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmCreateNextHopEnum(rtmreghandle: isize, enumflags: u32, netaddress: *mut RTM_NET_ADDRESS, rtmenumhandle: *mut isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmCreateNextHopEnum(rtmreghandle: isize, enumflags: u32, netaddress: *mut RTM_NET_ADDRESS, rtmenumhandle: *mut isize) -> u32;
     }
@@ -2734,7 +2509,6 @@ pub unsafe fn RtmCreateNextHopEnum(rtmreghandle: isize, enumflags: u32, netaddre
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmCreateRouteEnum(rtmreghandle: isize, desthandle: isize, targetviews: u32, enumflags: u32, startdest: *mut RTM_NET_ADDRESS, matchingflags: u32, criteriaroute: *mut RTM_ROUTE_INFO, criteriainterface: u32, rtmenumhandle: *mut isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmCreateRouteEnum(rtmreghandle: isize, desthandle: isize, targetviews: u32, enumflags: u32, startdest: *mut RTM_NET_ADDRESS, matchingflags: u32, criteriaroute: *mut RTM_ROUTE_INFO, criteriainterface: u32, rtmenumhandle: *mut isize) -> u32;
     }
@@ -2743,7 +2517,6 @@ pub unsafe fn RtmCreateRouteEnum(rtmreghandle: isize, desthandle: isize, targetv
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmCreateRouteList(rtmreghandle: isize, routelisthandle: *mut isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmCreateRouteList(rtmreghandle: isize, routelisthandle: *mut isize) -> u32;
     }
@@ -2752,7 +2525,6 @@ pub unsafe fn RtmCreateRouteList(rtmreghandle: isize, routelisthandle: *mut isiz
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmCreateRouteListEnum(rtmreghandle: isize, routelisthandle: isize, rtmenumhandle: *mut isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmCreateRouteListEnum(rtmreghandle: isize, routelisthandle: isize, rtmenumhandle: *mut isize) -> u32;
     }
@@ -2761,7 +2533,6 @@ pub unsafe fn RtmCreateRouteListEnum(rtmreghandle: isize, routelisthandle: isize
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmDeleteEnumHandle(rtmreghandle: isize, enumhandle: isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmDeleteEnumHandle(rtmreghandle: isize, enumhandle: isize) -> u32;
     }
@@ -2770,7 +2541,6 @@ pub unsafe fn RtmDeleteEnumHandle(rtmreghandle: isize, enumhandle: isize) -> u32
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmDeleteNextHop(rtmreghandle: isize, nexthophandle: isize, nexthopinfo: *mut RTM_NEXTHOP_INFO) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmDeleteNextHop(rtmreghandle: isize, nexthophandle: isize, nexthopinfo: *mut RTM_NEXTHOP_INFO) -> u32;
     }
@@ -2779,7 +2549,6 @@ pub unsafe fn RtmDeleteNextHop(rtmreghandle: isize, nexthophandle: isize, nextho
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmDeleteRouteList(rtmreghandle: isize, routelisthandle: isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmDeleteRouteList(rtmreghandle: isize, routelisthandle: isize) -> u32;
     }
@@ -2788,7 +2557,6 @@ pub unsafe fn RtmDeleteRouteList(rtmreghandle: isize, routelisthandle: isize) ->
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmDeleteRouteToDest(rtmreghandle: isize, routehandle: isize, changeflags: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmDeleteRouteToDest(rtmreghandle: isize, routehandle: isize, changeflags: *mut u32) -> u32;
     }
@@ -2797,7 +2565,6 @@ pub unsafe fn RtmDeleteRouteToDest(rtmreghandle: isize, routehandle: isize, chan
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmDeregisterEntity(rtmreghandle: isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmDeregisterEntity(rtmreghandle: isize) -> u32;
     }
@@ -2806,7 +2573,6 @@ pub unsafe fn RtmDeregisterEntity(rtmreghandle: isize) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmDeregisterFromChangeNotification(rtmreghandle: isize, notifyhandle: isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmDeregisterFromChangeNotification(rtmreghandle: isize, notifyhandle: isize) -> u32;
     }
@@ -2815,7 +2581,6 @@ pub unsafe fn RtmDeregisterFromChangeNotification(rtmreghandle: isize, notifyhan
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmFindNextHop(rtmreghandle: isize, nexthopinfo: *mut RTM_NEXTHOP_INFO, nexthophandle: *mut isize, nexthoppointer: *mut *mut RTM_NEXTHOP_INFO) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmFindNextHop(rtmreghandle: isize, nexthopinfo: *mut RTM_NEXTHOP_INFO, nexthophandle: *mut isize, nexthoppointer: *mut *mut RTM_NEXTHOP_INFO) -> u32;
     }
@@ -2825,7 +2590,6 @@ pub unsafe fn RtmFindNextHop(rtmreghandle: isize, nexthopinfo: *mut RTM_NEXTHOP_
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RtmGetChangeStatus(rtmreghandle: isize, notifyhandle: isize, desthandle: isize, changestatus: *mut super::super::Foundation::BOOL) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmGetChangeStatus(rtmreghandle: isize, notifyhandle: isize, desthandle: isize, changestatus: *mut super::super::Foundation::BOOL) -> u32;
     }
@@ -2835,7 +2599,6 @@ pub unsafe fn RtmGetChangeStatus(rtmreghandle: isize, notifyhandle: isize, desth
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RtmGetChangedDests(rtmreghandle: isize, notifyhandle: isize, numdests: *mut u32, changeddests: *mut RTM_DEST_INFO) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmGetChangedDests(rtmreghandle: isize, notifyhandle: isize, numdests: *mut u32, changeddests: *mut RTM_DEST_INFO) -> u32;
     }
@@ -2845,7 +2608,6 @@ pub unsafe fn RtmGetChangedDests(rtmreghandle: isize, notifyhandle: isize, numde
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RtmGetDestInfo(rtmreghandle: isize, desthandle: isize, protocolid: u32, targetviews: u32, destinfo: *mut RTM_DEST_INFO) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmGetDestInfo(rtmreghandle: isize, desthandle: isize, protocolid: u32, targetviews: u32, destinfo: *mut RTM_DEST_INFO) -> u32;
     }
@@ -2854,7 +2616,6 @@ pub unsafe fn RtmGetDestInfo(rtmreghandle: isize, desthandle: isize, protocolid:
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmGetEntityInfo(rtmreghandle: isize, entityhandle: isize, entityinfo: *mut RTM_ENTITY_INFO) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmGetEntityInfo(rtmreghandle: isize, entityhandle: isize, entityinfo: *mut RTM_ENTITY_INFO) -> u32;
     }
@@ -2863,7 +2624,6 @@ pub unsafe fn RtmGetEntityInfo(rtmreghandle: isize, entityhandle: isize, entityi
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmGetEntityMethods(rtmreghandle: isize, entityhandle: isize, nummethods: *mut u32, exptmethods: *mut RTM_ENTITY_EXPORT_METHOD) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmGetEntityMethods(rtmreghandle: isize, entityhandle: isize, nummethods: *mut u32, exptmethods: *mut *mut ::core::ffi::c_void) -> u32;
     }
@@ -2873,7 +2633,6 @@ pub unsafe fn RtmGetEntityMethods(rtmreghandle: isize, entityhandle: isize, numm
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RtmGetEnumDests(rtmreghandle: isize, enumhandle: isize, numdests: *mut u32, destinfos: *mut RTM_DEST_INFO) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmGetEnumDests(rtmreghandle: isize, enumhandle: isize, numdests: *mut u32, destinfos: *mut RTM_DEST_INFO) -> u32;
     }
@@ -2882,7 +2641,6 @@ pub unsafe fn RtmGetEnumDests(rtmreghandle: isize, enumhandle: isize, numdests: 
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmGetEnumNextHops(rtmreghandle: isize, enumhandle: isize, numnexthops: *mut u32, nexthophandles: *mut isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmGetEnumNextHops(rtmreghandle: isize, enumhandle: isize, numnexthops: *mut u32, nexthophandles: *mut isize) -> u32;
     }
@@ -2891,7 +2649,6 @@ pub unsafe fn RtmGetEnumNextHops(rtmreghandle: isize, enumhandle: isize, numnext
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmGetEnumRoutes(rtmreghandle: isize, enumhandle: isize, numroutes: *mut u32, routehandles: *mut isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmGetEnumRoutes(rtmreghandle: isize, enumhandle: isize, numroutes: *mut u32, routehandles: *mut isize) -> u32;
     }
@@ -2901,7 +2658,6 @@ pub unsafe fn RtmGetEnumRoutes(rtmreghandle: isize, enumhandle: isize, numroutes
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RtmGetExactMatchDestination(rtmreghandle: isize, destaddress: *mut RTM_NET_ADDRESS, protocolid: u32, targetviews: u32, destinfo: *mut RTM_DEST_INFO) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmGetExactMatchDestination(rtmreghandle: isize, destaddress: *mut RTM_NET_ADDRESS, protocolid: u32, targetviews: u32, destinfo: *mut RTM_DEST_INFO) -> u32;
     }
@@ -2910,7 +2666,6 @@ pub unsafe fn RtmGetExactMatchDestination(rtmreghandle: isize, destaddress: *mut
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmGetExactMatchRoute(rtmreghandle: isize, destaddress: *mut RTM_NET_ADDRESS, matchingflags: u32, routeinfo: *mut RTM_ROUTE_INFO, interfaceindex: u32, targetviews: u32, routehandle: *mut isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmGetExactMatchRoute(rtmreghandle: isize, destaddress: *mut RTM_NET_ADDRESS, matchingflags: u32, routeinfo: *mut RTM_ROUTE_INFO, interfaceindex: u32, targetviews: u32, routehandle: *mut isize) -> u32;
     }
@@ -2920,7 +2675,6 @@ pub unsafe fn RtmGetExactMatchRoute(rtmreghandle: isize, destaddress: *mut RTM_N
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RtmGetLessSpecificDestination(rtmreghandle: isize, desthandle: isize, protocolid: u32, targetviews: u32, destinfo: *mut RTM_DEST_INFO) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmGetLessSpecificDestination(rtmreghandle: isize, desthandle: isize, protocolid: u32, targetviews: u32, destinfo: *mut RTM_DEST_INFO) -> u32;
     }
@@ -2929,7 +2683,6 @@ pub unsafe fn RtmGetLessSpecificDestination(rtmreghandle: isize, desthandle: isi
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmGetListEnumRoutes(rtmreghandle: isize, enumhandle: isize, numroutes: *mut u32, routehandles: *mut isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmGetListEnumRoutes(rtmreghandle: isize, enumhandle: isize, numroutes: *mut u32, routehandles: *mut isize) -> u32;
     }
@@ -2939,7 +2692,6 @@ pub unsafe fn RtmGetListEnumRoutes(rtmreghandle: isize, enumhandle: isize, numro
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RtmGetMostSpecificDestination(rtmreghandle: isize, destaddress: *mut RTM_NET_ADDRESS, protocolid: u32, targetviews: u32, destinfo: *mut RTM_DEST_INFO) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmGetMostSpecificDestination(rtmreghandle: isize, destaddress: *mut RTM_NET_ADDRESS, protocolid: u32, targetviews: u32, destinfo: *mut RTM_DEST_INFO) -> u32;
     }
@@ -2948,7 +2700,6 @@ pub unsafe fn RtmGetMostSpecificDestination(rtmreghandle: isize, destaddress: *m
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmGetNextHopInfo(rtmreghandle: isize, nexthophandle: isize, nexthopinfo: *mut RTM_NEXTHOP_INFO) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmGetNextHopInfo(rtmreghandle: isize, nexthophandle: isize, nexthopinfo: *mut RTM_NEXTHOP_INFO) -> u32;
     }
@@ -2957,7 +2708,6 @@ pub unsafe fn RtmGetNextHopInfo(rtmreghandle: isize, nexthophandle: isize, nexth
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmGetNextHopPointer(rtmreghandle: isize, nexthophandle: isize, nexthoppointer: *mut *mut RTM_NEXTHOP_INFO) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmGetNextHopPointer(rtmreghandle: isize, nexthophandle: isize, nexthoppointer: *mut *mut RTM_NEXTHOP_INFO) -> u32;
     }
@@ -2966,7 +2716,6 @@ pub unsafe fn RtmGetNextHopPointer(rtmreghandle: isize, nexthophandle: isize, ne
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmGetOpaqueInformationPointer(rtmreghandle: isize, desthandle: isize, opaqueinfopointer: *mut *mut ::core::ffi::c_void) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmGetOpaqueInformationPointer(rtmreghandle: isize, desthandle: isize, opaqueinfopointer: *mut *mut ::core::ffi::c_void) -> u32;
     }
@@ -2975,7 +2724,6 @@ pub unsafe fn RtmGetOpaqueInformationPointer(rtmreghandle: isize, desthandle: is
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmGetRegisteredEntities(rtmreghandle: isize, numentities: *mut u32, entityhandles: *mut isize, entityinfos: *mut RTM_ENTITY_INFO) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmGetRegisteredEntities(rtmreghandle: isize, numentities: *mut u32, entityhandles: *mut isize, entityinfos: *mut RTM_ENTITY_INFO) -> u32;
     }
@@ -2984,7 +2732,6 @@ pub unsafe fn RtmGetRegisteredEntities(rtmreghandle: isize, numentities: *mut u3
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmGetRouteInfo(rtmreghandle: isize, routehandle: isize, routeinfo: *mut RTM_ROUTE_INFO, destaddress: *mut RTM_NET_ADDRESS) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmGetRouteInfo(rtmreghandle: isize, routehandle: isize, routeinfo: *mut RTM_ROUTE_INFO, destaddress: *mut RTM_NET_ADDRESS) -> u32;
     }
@@ -2993,7 +2740,6 @@ pub unsafe fn RtmGetRouteInfo(rtmreghandle: isize, routehandle: isize, routeinfo
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmGetRoutePointer(rtmreghandle: isize, routehandle: isize, routepointer: *mut *mut RTM_ROUTE_INFO) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmGetRoutePointer(rtmreghandle: isize, routehandle: isize, routepointer: *mut *mut RTM_ROUTE_INFO) -> u32;
     }
@@ -3002,7 +2748,6 @@ pub unsafe fn RtmGetRoutePointer(rtmreghandle: isize, routehandle: isize, routep
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmHoldDestination(rtmreghandle: isize, desthandle: isize, targetviews: u32, holdtime: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmHoldDestination(rtmreghandle: isize, desthandle: isize, targetviews: u32, holdtime: u32) -> u32;
     }
@@ -3011,7 +2756,6 @@ pub unsafe fn RtmHoldDestination(rtmreghandle: isize, desthandle: isize, targetv
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmIgnoreChangedDests(rtmreghandle: isize, notifyhandle: isize, numdests: u32, changeddests: *mut isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmIgnoreChangedDests(rtmreghandle: isize, notifyhandle: isize, numdests: u32, changeddests: *mut isize) -> u32;
     }
@@ -3020,7 +2764,6 @@ pub unsafe fn RtmIgnoreChangedDests(rtmreghandle: isize, notifyhandle: isize, nu
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmInsertInRouteList(rtmreghandle: isize, routelisthandle: isize, numroutes: u32, routehandles: *mut isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmInsertInRouteList(rtmreghandle: isize, routelisthandle: isize, numroutes: u32, routehandles: *mut isize) -> u32;
     }
@@ -3029,7 +2772,6 @@ pub unsafe fn RtmInsertInRouteList(rtmreghandle: isize, routelisthandle: isize, 
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmInvokeMethod(rtmreghandle: isize, entityhandle: isize, input: *mut RTM_ENTITY_METHOD_INPUT, outputsize: *mut u32, output: *mut RTM_ENTITY_METHOD_OUTPUT) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmInvokeMethod(rtmreghandle: isize, entityhandle: isize, input: *mut RTM_ENTITY_METHOD_INPUT, outputsize: *mut u32, output: *mut RTM_ENTITY_METHOD_OUTPUT) -> u32;
     }
@@ -3038,7 +2780,6 @@ pub unsafe fn RtmInvokeMethod(rtmreghandle: isize, entityhandle: isize, input: *
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmIsBestRoute(rtmreghandle: isize, routehandle: isize, bestinviews: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmIsBestRoute(rtmreghandle: isize, routehandle: isize, bestinviews: *mut u32) -> u32;
     }
@@ -3048,7 +2789,6 @@ pub unsafe fn RtmIsBestRoute(rtmreghandle: isize, routehandle: isize, bestinview
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RtmIsMarkedForChangeNotification(rtmreghandle: isize, notifyhandle: isize, desthandle: isize, destmarked: *mut super::super::Foundation::BOOL) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmIsMarkedForChangeNotification(rtmreghandle: isize, notifyhandle: isize, desthandle: isize, destmarked: *mut super::super::Foundation::BOOL) -> u32;
     }
@@ -3062,7 +2802,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmLockDestination(rtmreghandle: isize, desthandle: isize, exclusive: super::super::Foundation::BOOL, lockdest: super::super::Foundation::BOOL) -> u32;
     }
@@ -3076,7 +2815,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmLockNextHop(rtmreghandle: isize, nexthophandle: isize, exclusive: super::super::Foundation::BOOL, locknexthop: super::super::Foundation::BOOL, nexthoppointer: *mut *mut RTM_NEXTHOP_INFO) -> u32;
     }
@@ -3090,7 +2828,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmLockRoute(rtmreghandle: isize, routehandle: isize, exclusive: super::super::Foundation::BOOL, lockroute: super::super::Foundation::BOOL, routepointer: *mut *mut RTM_ROUTE_INFO) -> u32;
     }
@@ -3103,7 +2840,6 @@ pub unsafe fn RtmMarkDestForChangeNotification<'a, P0>(rtmreghandle: isize, noti
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmMarkDestForChangeNotification(rtmreghandle: isize, notifyhandle: isize, desthandle: isize, markdest: super::super::Foundation::BOOL) -> u32;
     }
@@ -3113,7 +2849,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RtmReferenceHandles(rtmreghandle: isize, numhandles: u32, rtmhandles: *mut super::super::Foundation::HANDLE) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmReferenceHandles(rtmreghandle: isize, numhandles: u32, rtmhandles: *mut super::super::Foundation::HANDLE) -> u32;
     }
@@ -3126,7 +2861,6 @@ pub unsafe fn RtmRegisterEntity<'a, P0>(rtmentityinfo: *mut RTM_ENTITY_INFO, exp
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmRegisterEntity(rtmentityinfo: *mut RTM_ENTITY_INFO, exportmethods: *mut RTM_ENTITY_EXPORT_METHODS, eventcallback: *mut ::core::ffi::c_void, reserveopaquepointer: super::super::Foundation::BOOL, rtmregprofile: *mut RTM_REGN_PROFILE, rtmreghandle: *mut isize) -> u32;
     }
@@ -3135,7 +2869,6 @@ where
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmRegisterForChangeNotification(rtmreghandle: isize, targetviews: u32, notifyflags: u32, notifycontext: *mut ::core::ffi::c_void, notifyhandle: *mut isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmRegisterForChangeNotification(rtmreghandle: isize, targetviews: u32, notifyflags: u32, notifycontext: *mut ::core::ffi::c_void, notifyhandle: *mut isize) -> u32;
     }
@@ -3145,7 +2878,6 @@ pub unsafe fn RtmRegisterForChangeNotification(rtmreghandle: isize, targetviews:
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RtmReleaseChangedDests(rtmreghandle: isize, notifyhandle: isize, numdests: u32, changeddests: *mut RTM_DEST_INFO) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmReleaseChangedDests(rtmreghandle: isize, notifyhandle: isize, numdests: u32, changeddests: *mut RTM_DEST_INFO) -> u32;
     }
@@ -3155,7 +2887,6 @@ pub unsafe fn RtmReleaseChangedDests(rtmreghandle: isize, notifyhandle: isize, n
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RtmReleaseDestInfo(rtmreghandle: isize, destinfo: *mut RTM_DEST_INFO) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmReleaseDestInfo(rtmreghandle: isize, destinfo: *mut RTM_DEST_INFO) -> u32;
     }
@@ -3165,7 +2896,6 @@ pub unsafe fn RtmReleaseDestInfo(rtmreghandle: isize, destinfo: *mut RTM_DEST_IN
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RtmReleaseDests(rtmreghandle: isize, numdests: u32, destinfos: *mut RTM_DEST_INFO) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmReleaseDests(rtmreghandle: isize, numdests: u32, destinfos: *mut RTM_DEST_INFO) -> u32;
     }
@@ -3174,7 +2904,6 @@ pub unsafe fn RtmReleaseDests(rtmreghandle: isize, numdests: u32, destinfos: *mu
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmReleaseEntities(rtmreghandle: isize, numentities: u32, entityhandles: *mut isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmReleaseEntities(rtmreghandle: isize, numentities: u32, entityhandles: *mut isize) -> u32;
     }
@@ -3183,7 +2912,6 @@ pub unsafe fn RtmReleaseEntities(rtmreghandle: isize, numentities: u32, entityha
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmReleaseEntityInfo(rtmreghandle: isize, entityinfo: *mut RTM_ENTITY_INFO) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmReleaseEntityInfo(rtmreghandle: isize, entityinfo: *mut RTM_ENTITY_INFO) -> u32;
     }
@@ -3192,7 +2920,6 @@ pub unsafe fn RtmReleaseEntityInfo(rtmreghandle: isize, entityinfo: *mut RTM_ENT
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmReleaseNextHopInfo(rtmreghandle: isize, nexthopinfo: *mut RTM_NEXTHOP_INFO) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmReleaseNextHopInfo(rtmreghandle: isize, nexthopinfo: *mut RTM_NEXTHOP_INFO) -> u32;
     }
@@ -3201,7 +2928,6 @@ pub unsafe fn RtmReleaseNextHopInfo(rtmreghandle: isize, nexthopinfo: *mut RTM_N
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmReleaseNextHops(rtmreghandle: isize, numnexthops: u32, nexthophandles: *mut isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmReleaseNextHops(rtmreghandle: isize, numnexthops: u32, nexthophandles: *mut isize) -> u32;
     }
@@ -3210,7 +2936,6 @@ pub unsafe fn RtmReleaseNextHops(rtmreghandle: isize, numnexthops: u32, nexthoph
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmReleaseRouteInfo(rtmreghandle: isize, routeinfo: *mut RTM_ROUTE_INFO) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmReleaseRouteInfo(rtmreghandle: isize, routeinfo: *mut RTM_ROUTE_INFO) -> u32;
     }
@@ -3219,7 +2944,6 @@ pub unsafe fn RtmReleaseRouteInfo(rtmreghandle: isize, routeinfo: *mut RTM_ROUTE
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmReleaseRoutes(rtmreghandle: isize, numroutes: u32, routehandles: *mut isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmReleaseRoutes(rtmreghandle: isize, numroutes: u32, routehandles: *mut isize) -> u32;
     }
@@ -3228,7 +2952,6 @@ pub unsafe fn RtmReleaseRoutes(rtmreghandle: isize, numroutes: u32, routehandles
 #[doc = "*Required features: `\"Win32_NetworkManagement_Rras\"`*"]
 #[inline]
 pub unsafe fn RtmUpdateAndUnlockRoute(rtmreghandle: isize, routehandle: isize, timetolive: u32, routelisthandle: isize, notifytype: u32, notifyhandle: isize, changeflags: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtmUpdateAndUnlockRoute(rtmreghandle: isize, routehandle: isize, timetolive: u32, routelisthandle: isize, notifytype: u32, notifyhandle: isize, changeflags: *mut u32) -> u32;
     }

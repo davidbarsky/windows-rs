@@ -5,7 +5,6 @@ pub unsafe fn CloseGestureInfoHandle<'a, P0>(hgestureinfo: P0) -> super::super::
 where
     P0: ::std::convert::Into<HGESTUREINFO>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CloseGestureInfoHandle(hgestureinfo: HGESTUREINFO) -> super::super::super::Foundation::BOOL;
     }
@@ -18,7 +17,6 @@ pub unsafe fn CloseTouchInputHandle<'a, P0>(htouchinput: P0) -> super::super::su
 where
     P0: ::std::convert::Into<HTOUCHINPUT>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CloseTouchInputHandle(htouchinput: HTOUCHINPUT) -> super::super::super::Foundation::BOOL;
     }
@@ -31,7 +29,6 @@ pub unsafe fn GetGestureConfig<'a, P0>(hwnd: P0, dwreserved: u32, dwflags: u32, 
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetGestureConfig(hwnd: super::super::super::Foundation::HWND, dwreserved: u32, dwflags: u32, pcids: *const u32, pgestureconfig: *mut GESTURECONFIG, cbsize: u32) -> super::super::super::Foundation::BOOL;
     }
@@ -44,7 +41,6 @@ pub unsafe fn GetGestureExtraArgs<'a, P0>(hgestureinfo: P0, pextraargs: &mut [u8
 where
     P0: ::std::convert::Into<HGESTUREINFO>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetGestureExtraArgs(hgestureinfo: HGESTUREINFO, cbextraargs: u32, pextraargs: *mut u8) -> super::super::super::Foundation::BOOL;
     }
@@ -57,7 +53,6 @@ pub unsafe fn GetGestureInfo<'a, P0>(hgestureinfo: P0, pgestureinfo: *mut GESTUR
 where
     P0: ::std::convert::Into<HGESTUREINFO>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetGestureInfo(hgestureinfo: HGESTUREINFO, pgestureinfo: *mut GESTUREINFO) -> super::super::super::Foundation::BOOL;
     }
@@ -70,7 +65,6 @@ pub unsafe fn GetTouchInputInfo<'a, P0>(htouchinput: P0, pinputs: &mut [TOUCHINP
 where
     P0: ::std::convert::Into<HTOUCHINPUT>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetTouchInputInfo(htouchinput: HTOUCHINPUT, cinputs: u32, pinputs: *mut TOUCHINPUT, cbsize: i32) -> super::super::super::Foundation::BOOL;
     }
@@ -83,7 +77,6 @@ pub unsafe fn IsTouchWindow<'a, P0>(hwnd: P0, pulflags: ::core::option::Option<*
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsTouchWindow(hwnd: super::super::super::Foundation::HWND, pulflags: *mut u32) -> super::super::super::Foundation::BOOL;
     }
@@ -96,7 +89,6 @@ pub unsafe fn RegisterTouchWindow<'a, P0>(hwnd: P0, ulflags: REGISTER_TOUCH_WIND
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterTouchWindow(hwnd: super::super::super::Foundation::HWND, ulflags: REGISTER_TOUCH_WINDOW_FLAGS) -> super::super::super::Foundation::BOOL;
     }
@@ -109,7 +101,6 @@ pub unsafe fn SetGestureConfig<'a, P0>(hwnd: P0, dwreserved: u32, pgestureconfig
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetGestureConfig(hwnd: super::super::super::Foundation::HWND, dwreserved: u32, cids: u32, pgestureconfig: *const GESTURECONFIG, cbsize: u32) -> super::super::super::Foundation::BOOL;
     }
@@ -122,7 +113,6 @@ pub unsafe fn UnregisterTouchWindow<'a, P0>(hwnd: P0) -> super::super::super::Fo
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UnregisterTouchWindow(hwnd: super::super::super::Foundation::HWND) -> super::super::super::Foundation::BOOL;
     }

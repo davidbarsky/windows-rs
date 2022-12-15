@@ -4,7 +4,6 @@ pub unsafe fn DXCoreCreateAdapterFactory<T>() -> ::windows::core::Result<T>
 where
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DXCoreCreateAdapterFactory(riid: *const ::windows::core::GUID, ppvfactory: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }

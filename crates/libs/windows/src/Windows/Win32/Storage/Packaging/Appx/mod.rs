@@ -1,7 +1,6 @@
 #[doc = "*Required features: `\"Win32_Storage_Packaging_Appx\"`*"]
 #[inline]
 pub unsafe fn ActivatePackageVirtualizationContext(context: *const PACKAGE_VIRTUALIZATION_CONTEXT_HANDLE__) -> ::windows::core::Result<usize> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ActivatePackageVirtualizationContext(context: *const PACKAGE_VIRTUALIZATION_CONTEXT_HANDLE__, cookie: *mut usize) -> ::windows::core::HRESULT;
     }
@@ -14,7 +13,6 @@ pub unsafe fn AddPackageDependency<'a, P0>(packagedependencyid: P0, rank: i32, o
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddPackageDependency(packagedependencyid: ::windows::core::PCWSTR, rank: i32, options: AddPackageDependencyOptions, packagedependencycontext: *mut *mut PACKAGEDEPENDENCY_CONTEXT__, packagefullname: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -27,7 +25,6 @@ pub unsafe fn AppPolicyGetClrCompat<'a, P0>(processtoken: P0, policy: *mut AppPo
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AppPolicyGetClrCompat(processtoken: super::super::super::Foundation::HANDLE, policy: *mut AppPolicyClrCompat) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -40,7 +37,6 @@ pub unsafe fn AppPolicyGetCreateFileAccess<'a, P0>(processtoken: P0, policy: *mu
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AppPolicyGetCreateFileAccess(processtoken: super::super::super::Foundation::HANDLE, policy: *mut AppPolicyCreateFileAccess) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -53,7 +49,6 @@ pub unsafe fn AppPolicyGetLifecycleManagement<'a, P0>(processtoken: P0, policy: 
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AppPolicyGetLifecycleManagement(processtoken: super::super::super::Foundation::HANDLE, policy: *mut AppPolicyLifecycleManagement) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -66,7 +61,6 @@ pub unsafe fn AppPolicyGetMediaFoundationCodecLoading<'a, P0>(processtoken: P0, 
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AppPolicyGetMediaFoundationCodecLoading(processtoken: super::super::super::Foundation::HANDLE, policy: *mut AppPolicyMediaFoundationCodecLoading) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -79,7 +73,6 @@ pub unsafe fn AppPolicyGetProcessTerminationMethod<'a, P0>(processtoken: P0, pol
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AppPolicyGetProcessTerminationMethod(processtoken: super::super::super::Foundation::HANDLE, policy: *mut AppPolicyProcessTerminationMethod) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -92,7 +85,6 @@ pub unsafe fn AppPolicyGetShowDeveloperDiagnostic<'a, P0>(processtoken: P0, poli
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AppPolicyGetShowDeveloperDiagnostic(processtoken: super::super::super::Foundation::HANDLE, policy: *mut AppPolicyShowDeveloperDiagnostic) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -105,7 +97,6 @@ pub unsafe fn AppPolicyGetThreadInitializationType<'a, P0>(processtoken: P0, pol
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AppPolicyGetThreadInitializationType(processtoken: super::super::super::Foundation::HANDLE, policy: *mut AppPolicyThreadInitializationType) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -118,7 +109,6 @@ pub unsafe fn AppPolicyGetWindowingModel<'a, P0>(processtoken: P0, policy: *mut 
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AppPolicyGetWindowingModel(processtoken: super::super::super::Foundation::HANDLE, policy: *mut AppPolicyWindowingModel) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -131,7 +121,6 @@ pub unsafe fn CheckIsMSIXPackage<'a, P0>(packagefullname: P0) -> ::windows::core
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CheckIsMSIXPackage(packagefullname: ::windows::core::PCWSTR, ismsixpackage: *mut super::super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
     }
@@ -142,7 +131,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ClosePackageInfo(packageinforeference: *const _PACKAGE_INFO_REFERENCE) -> super::super::super::Foundation::WIN32_ERROR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ClosePackageInfo(packageinforeference: *const _PACKAGE_INFO_REFERENCE) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -154,7 +142,6 @@ pub unsafe fn CreatePackageVirtualizationContext<'a, P0>(packagefamilyname: P0) 
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreatePackageVirtualizationContext(packagefamilyname: ::windows::core::PCWSTR, context: *mut *mut PACKAGE_VIRTUALIZATION_CONTEXT_HANDLE__) -> ::windows::core::HRESULT;
     }
@@ -164,7 +151,6 @@ where
 #[doc = "*Required features: `\"Win32_Storage_Packaging_Appx\"`*"]
 #[inline]
 pub unsafe fn DeactivatePackageVirtualizationContext(cookie: usize) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeactivatePackageVirtualizationContext(cookie: usize);
     }
@@ -176,7 +162,6 @@ pub unsafe fn DeletePackageDependency<'a, P0>(packagedependencyid: P0) -> ::wind
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeletePackageDependency(packagedependencyid: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -185,7 +170,6 @@ where
 #[doc = "*Required features: `\"Win32_Storage_Packaging_Appx\"`*"]
 #[inline]
 pub unsafe fn DuplicatePackageVirtualizationContext(sourcecontext: *const PACKAGE_VIRTUALIZATION_CONTEXT_HANDLE__) -> ::windows::core::Result<*mut PACKAGE_VIRTUALIZATION_CONTEXT_HANDLE__> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DuplicatePackageVirtualizationContext(sourcecontext: *const PACKAGE_VIRTUALIZATION_CONTEXT_HANDLE__, destcontext: *mut *mut PACKAGE_VIRTUALIZATION_CONTEXT_HANDLE__) -> ::windows::core::HRESULT;
     }
@@ -199,7 +183,6 @@ pub unsafe fn FindPackagesByPackageFamily<'a, P0>(packagefamilyname: P0, package
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindPackagesByPackageFamily(packagefamilyname: ::windows::core::PCWSTR, packagefilters: u32, count: *mut u32, packagefullnames: *mut ::windows::core::PWSTR, bufferlength: *mut u32, buffer: ::windows::core::PWSTR, packageproperties: *mut u32) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -213,7 +196,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FormatApplicationUserModelId(packagefamilyname: ::windows::core::PCWSTR, packagerelativeapplicationid: ::windows::core::PCWSTR, applicationusermodelidlength: *mut u32, applicationusermodelid: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -226,7 +208,6 @@ pub unsafe fn GetApplicationUserModelId<'a, P0>(hprocess: P0, applicationusermod
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetApplicationUserModelId(hprocess: super::super::super::Foundation::HANDLE, applicationusermodelidlength: *mut u32, applicationusermodelid: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -239,7 +220,6 @@ pub unsafe fn GetApplicationUserModelIdFromToken<'a, P0>(token: P0, applicationu
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetApplicationUserModelIdFromToken(token: super::super::super::Foundation::HANDLE, applicationusermodelidlength: *mut u32, applicationusermodelid: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -249,7 +229,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetCurrentApplicationUserModelId(applicationusermodelidlength: *mut u32, applicationusermodelid: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCurrentApplicationUserModelId(applicationusermodelidlength: *mut u32, applicationusermodelid: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -259,7 +238,6 @@ pub unsafe fn GetCurrentApplicationUserModelId(applicationusermodelidlength: *mu
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetCurrentPackageFamilyName(packagefamilynamelength: *mut u32, packagefamilyname: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCurrentPackageFamilyName(packagefamilynamelength: *mut u32, packagefamilyname: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -269,7 +247,6 @@ pub unsafe fn GetCurrentPackageFamilyName(packagefamilynamelength: *mut u32, pac
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetCurrentPackageFullName(packagefullnamelength: *mut u32, packagefullname: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCurrentPackageFullName(packagefullnamelength: *mut u32, packagefullname: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -279,7 +256,6 @@ pub unsafe fn GetCurrentPackageFullName(packagefullnamelength: *mut u32, package
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetCurrentPackageId(bufferlength: *mut u32, buffer: ::core::option::Option<*mut u8>) -> super::super::super::Foundation::WIN32_ERROR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCurrentPackageId(bufferlength: *mut u32, buffer: *mut u8) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -289,7 +265,6 @@ pub unsafe fn GetCurrentPackageId(bufferlength: *mut u32, buffer: ::core::option
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetCurrentPackageInfo(flags: u32, bufferlength: *mut u32, buffer: ::core::option::Option<*mut u8>, count: ::core::option::Option<*mut u32>) -> super::super::super::Foundation::WIN32_ERROR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCurrentPackageInfo(flags: u32, bufferlength: *mut u32, buffer: *mut u8, count: *mut u32) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -299,7 +274,6 @@ pub unsafe fn GetCurrentPackageInfo(flags: u32, bufferlength: *mut u32, buffer: 
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetCurrentPackageInfo2(flags: u32, packagepathtype: PackagePathType, bufferlength: *mut u32, buffer: ::core::option::Option<*mut u8>, count: ::core::option::Option<*mut u32>) -> super::super::super::Foundation::WIN32_ERROR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCurrentPackageInfo2(flags: u32, packagepathtype: PackagePathType, bufferlength: *mut u32, buffer: *mut u8, count: *mut u32) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -309,7 +283,6 @@ pub unsafe fn GetCurrentPackageInfo2(flags: u32, packagepathtype: PackagePathTyp
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetCurrentPackagePath(pathlength: *mut u32, path: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCurrentPackagePath(pathlength: *mut u32, path: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -319,7 +292,6 @@ pub unsafe fn GetCurrentPackagePath(pathlength: *mut u32, path: ::windows::core:
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetCurrentPackagePath2(packagepathtype: PackagePathType, pathlength: *mut u32, path: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCurrentPackagePath2(packagepathtype: PackagePathType, pathlength: *mut u32, path: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -328,7 +300,6 @@ pub unsafe fn GetCurrentPackagePath2(packagepathtype: PackagePathType, pathlengt
 #[doc = "*Required features: `\"Win32_Storage_Packaging_Appx\"`*"]
 #[inline]
 pub unsafe fn GetCurrentPackageVirtualizationContext() -> *mut PACKAGE_VIRTUALIZATION_CONTEXT_HANDLE__ {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCurrentPackageVirtualizationContext() -> *mut PACKAGE_VIRTUALIZATION_CONTEXT_HANDLE__;
     }
@@ -337,7 +308,6 @@ pub unsafe fn GetCurrentPackageVirtualizationContext() -> *mut PACKAGE_VIRTUALIZ
 #[doc = "*Required features: `\"Win32_Storage_Packaging_Appx\"`*"]
 #[inline]
 pub unsafe fn GetIdForPackageDependencyContext(packagedependencycontext: *const PACKAGEDEPENDENCY_CONTEXT__) -> ::windows::core::Result<::windows::core::PWSTR> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetIdForPackageDependencyContext(packagedependencycontext: *const PACKAGEDEPENDENCY_CONTEXT__, packagedependencyid: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -348,7 +318,6 @@ pub unsafe fn GetIdForPackageDependencyContext(packagedependencycontext: *const 
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetPackageApplicationIds(packageinforeference: *const _PACKAGE_INFO_REFERENCE, bufferlength: *mut u32, buffer: ::core::option::Option<*mut u8>, count: ::core::option::Option<*mut u32>) -> super::super::super::Foundation::WIN32_ERROR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPackageApplicationIds(packageinforeference: *const _PACKAGE_INFO_REFERENCE, bufferlength: *mut u32, buffer: *mut u8, count: *mut u32) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -361,7 +330,6 @@ pub unsafe fn GetPackageFamilyName<'a, P0>(hprocess: P0, packagefamilynamelength
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPackageFamilyName(hprocess: super::super::super::Foundation::HANDLE, packagefamilynamelength: *mut u32, packagefamilyname: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -374,7 +342,6 @@ pub unsafe fn GetPackageFamilyNameFromToken<'a, P0>(token: P0, packagefamilyname
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPackageFamilyNameFromToken(token: super::super::super::Foundation::HANDLE, packagefamilynamelength: *mut u32, packagefamilyname: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -387,7 +354,6 @@ pub unsafe fn GetPackageFullName<'a, P0>(hprocess: P0, packagefullnamelength: *m
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPackageFullName(hprocess: super::super::super::Foundation::HANDLE, packagefullnamelength: *mut u32, packagefullname: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -400,7 +366,6 @@ pub unsafe fn GetPackageFullNameFromToken<'a, P0>(token: P0, packagefullnameleng
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPackageFullNameFromToken(token: super::super::super::Foundation::HANDLE, packagefullnamelength: *mut u32, packagefullname: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -413,7 +378,6 @@ pub unsafe fn GetPackageId<'a, P0>(hprocess: P0, bufferlength: *mut u32, buffer:
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPackageId(hprocess: super::super::super::Foundation::HANDLE, bufferlength: *mut u32, buffer: *mut u8) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -423,7 +387,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetPackageInfo(packageinforeference: *const _PACKAGE_INFO_REFERENCE, flags: u32, bufferlength: *mut u32, buffer: ::core::option::Option<*mut u8>, count: ::core::option::Option<*mut u32>) -> super::super::super::Foundation::WIN32_ERROR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPackageInfo(packageinforeference: *const _PACKAGE_INFO_REFERENCE, flags: u32, bufferlength: *mut u32, buffer: *mut u8, count: *mut u32) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -433,7 +396,6 @@ pub unsafe fn GetPackageInfo(packageinforeference: *const _PACKAGE_INFO_REFERENC
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetPackageInfo2(packageinforeference: *const _PACKAGE_INFO_REFERENCE, flags: u32, packagepathtype: PackagePathType, bufferlength: *mut u32, buffer: ::core::option::Option<*mut u8>, count: ::core::option::Option<*mut u32>) -> super::super::super::Foundation::WIN32_ERROR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPackageInfo2(packageinforeference: *const _PACKAGE_INFO_REFERENCE, flags: u32, packagepathtype: PackagePathType, bufferlength: *mut u32, buffer: *mut u8, count: *mut u32) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -443,7 +405,6 @@ pub unsafe fn GetPackageInfo2(packageinforeference: *const _PACKAGE_INFO_REFEREN
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetPackagePath(packageid: *const PACKAGE_ID, reserved: u32, pathlength: *mut u32, path: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPackagePath(packageid: *const PACKAGE_ID, reserved: u32, pathlength: *mut u32, path: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -456,7 +417,6 @@ pub unsafe fn GetPackagePathByFullName<'a, P0>(packagefullname: P0, pathlength: 
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPackagePathByFullName(packagefullname: ::windows::core::PCWSTR, pathlength: *mut u32, path: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -469,7 +429,6 @@ pub unsafe fn GetPackagePathByFullName2<'a, P0>(packagefullname: P0, packagepath
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPackagePathByFullName2(packagefullname: ::windows::core::PCWSTR, packagepathtype: PackagePathType, pathlength: *mut u32, path: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -482,7 +441,6 @@ pub unsafe fn GetPackagesByPackageFamily<'a, P0>(packagefamilyname: P0, count: *
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPackagesByPackageFamily(packagefamilyname: ::windows::core::PCWSTR, count: *mut u32, packagefullnames: *mut ::windows::core::PWSTR, bufferlength: *mut u32, buffer: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -495,7 +453,6 @@ pub unsafe fn GetProcessesInVirtualizationContext<'a, P0>(packagefamilyname: P0,
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetProcessesInVirtualizationContext(packagefamilyname: ::windows::core::PCWSTR, count: *mut u32, processes: *mut *mut super::super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
     }
@@ -507,7 +464,6 @@ pub unsafe fn GetResolvedPackageFullNameForPackageDependency<'a, P0>(packagedepe
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetResolvedPackageFullNameForPackageDependency(packagedependencyid: ::windows::core::PCWSTR, packagefullname: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -521,7 +477,6 @@ pub unsafe fn GetStagedPackageOrigin<'a, P0>(packagefullname: P0, origin: *mut P
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetStagedPackageOrigin(packagefullname: ::windows::core::PCWSTR, origin: *mut PackageOrigin) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -534,7 +489,6 @@ pub unsafe fn GetStagedPackagePathByFullName<'a, P0>(packagefullname: P0, pathle
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetStagedPackagePathByFullName(packagefullname: ::windows::core::PCWSTR, pathlength: *mut u32, path: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -547,7 +501,6 @@ pub unsafe fn GetStagedPackagePathByFullName2<'a, P0>(packagefullname: P0, packa
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetStagedPackagePathByFullName2(packagefullname: ::windows::core::PCWSTR, packagepathtype: PackagePathType, pathlength: *mut u32, path: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -560,7 +513,6 @@ pub unsafe fn OpenPackageInfoByFullName<'a, P0>(packagefullname: P0, reserved: u
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenPackageInfoByFullName(packagefullname: ::windows::core::PCWSTR, reserved: u32, packageinforeference: *mut *mut _PACKAGE_INFO_REFERENCE) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -574,7 +526,6 @@ where
     P0: ::std::convert::Into<super::super::super::Foundation::PSID>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenPackageInfoByFullNameForUser(usersid: super::super::super::Foundation::PSID, packagefullname: ::windows::core::PCWSTR, reserved: u32, packageinforeference: *mut *mut _PACKAGE_INFO_REFERENCE) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -587,7 +538,6 @@ pub unsafe fn PackageFamilyNameFromFullName<'a, P0>(packagefullname: P0, package
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PackageFamilyNameFromFullName(packagefullname: ::windows::core::PCWSTR, packagefamilynamelength: *mut u32, packagefamilyname: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -597,7 +547,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PackageFamilyNameFromId(packageid: *const PACKAGE_ID, packagefamilynamelength: *mut u32, packagefamilyname: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PackageFamilyNameFromId(packageid: *const PACKAGE_ID, packagefamilynamelength: *mut u32, packagefamilyname: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -607,7 +556,6 @@ pub unsafe fn PackageFamilyNameFromId(packageid: *const PACKAGE_ID, packagefamil
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PackageFullNameFromId(packageid: *const PACKAGE_ID, packagefullnamelength: *mut u32, packagefullname: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PackageFullNameFromId(packageid: *const PACKAGE_ID, packagefullnamelength: *mut u32, packagefullname: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -620,7 +568,6 @@ pub unsafe fn PackageIdFromFullName<'a, P0>(packagefullname: P0, flags: u32, buf
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PackageIdFromFullName(packagefullname: ::windows::core::PCWSTR, flags: u32, bufferlength: *mut u32, buffer: *mut u8) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -633,7 +580,6 @@ pub unsafe fn PackageNameAndPublisherIdFromFamilyName<'a, P0>(packagefamilyname:
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PackageNameAndPublisherIdFromFamilyName(packagefamilyname: ::windows::core::PCWSTR, packagenamelength: *mut u32, packagename: ::windows::core::PWSTR, packagepublisheridlength: *mut u32, packagepublisherid: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -646,7 +592,6 @@ pub unsafe fn ParseApplicationUserModelId<'a, P0>(applicationusermodelid: P0, pa
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ParseApplicationUserModelId(applicationusermodelid: ::windows::core::PCWSTR, packagefamilynamelength: *mut u32, packagefamilyname: ::windows::core::PWSTR, packagerelativeapplicationidlength: *mut u32, packagerelativeapplicationid: ::windows::core::PWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -655,7 +600,6 @@ where
 #[doc = "*Required features: `\"Win32_Storage_Packaging_Appx\"`*"]
 #[inline]
 pub unsafe fn ReleasePackageVirtualizationContext(context: *const PACKAGE_VIRTUALIZATION_CONTEXT_HANDLE__) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReleasePackageVirtualizationContext(context: *const PACKAGE_VIRTUALIZATION_CONTEXT_HANDLE__);
     }
@@ -664,7 +608,6 @@ pub unsafe fn ReleasePackageVirtualizationContext(context: *const PACKAGE_VIRTUA
 #[doc = "*Required features: `\"Win32_Storage_Packaging_Appx\"`*"]
 #[inline]
 pub unsafe fn RemovePackageDependency(packagedependencycontext: *const PACKAGEDEPENDENCY_CONTEXT__) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RemovePackageDependency(packagedependencycontext: *const PACKAGEDEPENDENCY_CONTEXT__) -> ::windows::core::HRESULT;
     }
@@ -679,7 +622,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TryCreatePackageDependency(user: super::super::super::Foundation::PSID, packagefamilyname: ::windows::core::PCWSTR, minversion: PACKAGE_VERSION, packagedependencyprocessorarchitectures: PackageDependencyProcessorArchitectures, lifetimekind: PackageDependencyLifetimeKind, lifetimeartifact: ::windows::core::PCWSTR, options: CreatePackageDependencyOptions, packagedependencyid: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -693,7 +635,6 @@ pub unsafe fn VerifyApplicationUserModelId<'a, P0>(applicationusermodelid: P0) -
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn VerifyApplicationUserModelId(applicationusermodelid: ::windows::core::PCWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -706,7 +647,6 @@ pub unsafe fn VerifyPackageFamilyName<'a, P0>(packagefamilyname: P0) -> super::s
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn VerifyPackageFamilyName(packagefamilyname: ::windows::core::PCWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -719,7 +659,6 @@ pub unsafe fn VerifyPackageFullName<'a, P0>(packagefullname: P0) -> super::super
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn VerifyPackageFullName(packagefullname: ::windows::core::PCWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -729,7 +668,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn VerifyPackageId(packageid: *const PACKAGE_ID) -> super::super::super::Foundation::WIN32_ERROR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn VerifyPackageId(packageid: *const PACKAGE_ID) -> super::super::super::Foundation::WIN32_ERROR;
     }
@@ -742,7 +680,6 @@ pub unsafe fn VerifyPackageRelativeApplicationId<'a, P0>(packagerelativeapplicat
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn VerifyPackageRelativeApplicationId(packagerelativeapplicationid: ::windows::core::PCWSTR) -> super::super::super::Foundation::WIN32_ERROR;
     }

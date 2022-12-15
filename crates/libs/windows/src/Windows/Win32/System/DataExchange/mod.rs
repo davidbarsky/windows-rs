@@ -4,7 +4,6 @@ pub unsafe fn AddAtomA<'a, P0>(lpstring: P0) -> u16
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddAtomA(lpstring: ::windows::core::PCSTR) -> u16;
     }
@@ -16,7 +15,6 @@ pub unsafe fn AddAtomW<'a, P0>(lpstring: P0) -> u16
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddAtomW(lpstring: ::windows::core::PCWSTR) -> u16;
     }
@@ -29,7 +27,6 @@ pub unsafe fn AddClipboardFormatListener<'a, P0>(hwnd: P0) -> super::super::Foun
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddClipboardFormatListener(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -43,7 +40,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ChangeClipboardChain(hwndremove: super::super::Foundation::HWND, hwndnewnext: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -53,7 +49,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn CloseClipboard() -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CloseClipboard() -> super::super::Foundation::BOOL;
     }
@@ -62,7 +57,6 @@ pub unsafe fn CloseClipboard() -> super::super::Foundation::BOOL {
 #[doc = "*Required features: `\"Win32_System_DataExchange\"`*"]
 #[inline]
 pub unsafe fn CountClipboardFormats() -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CountClipboardFormats() -> i32;
     }
@@ -75,7 +69,6 @@ pub unsafe fn DdeAbandonTransaction<'a, P0>(idinst: u32, hconv: P0, idtransactio
 where
     P0: ::std::convert::Into<HCONV>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeAbandonTransaction(idinst: u32, hconv: HCONV, idtransaction: u32) -> super::super::Foundation::BOOL;
     }
@@ -87,7 +80,6 @@ pub unsafe fn DdeAccessData<'a, P0>(hdata: P0, pcbdatasize: ::core::option::Opti
 where
     P0: ::std::convert::Into<HDDEDATA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeAccessData(hdata: HDDEDATA, pcbdatasize: *mut u32) -> *mut u8;
     }
@@ -99,7 +91,6 @@ pub unsafe fn DdeAddData<'a, P0>(hdata: P0, psrc: &[u8], cboff: u32) -> HDDEDATA
 where
     P0: ::std::convert::Into<HDDEDATA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeAddData(hdata: HDDEDATA, psrc: *const u8, cb: u32, cboff: u32) -> HDDEDATA;
     }
@@ -112,7 +103,6 @@ where
     P0: ::std::convert::Into<HCONV>,
     P1: ::std::convert::Into<HSZ>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeClientTransaction(pdata: *const u8, cbdata: u32, hconv: HCONV, hszitem: HSZ, wfmt: u32, wtype: DDE_CLIENT_TRANSACTION_TYPE, dwtimeout: u32, pdwresult: *mut u32) -> HDDEDATA;
     }
@@ -125,7 +115,6 @@ where
     P0: ::std::convert::Into<HSZ>,
     P1: ::std::convert::Into<HSZ>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeCmpStringHandles(hsz1: HSZ, hsz2: HSZ) -> i32;
     }
@@ -139,7 +128,6 @@ where
     P0: ::std::convert::Into<HSZ>,
     P1: ::std::convert::Into<HSZ>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeConnect(idinst: u32, hszservice: HSZ, hsztopic: HSZ, pcc: *const CONVCONTEXT) -> HCONV;
     }
@@ -154,7 +142,6 @@ where
     P1: ::std::convert::Into<HSZ>,
     P2: ::std::convert::Into<HCONVLIST>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeConnectList(idinst: u32, hszservice: HSZ, hsztopic: HSZ, hconvlist: HCONVLIST, pcc: *const CONVCONTEXT) -> HCONVLIST;
     }
@@ -166,7 +153,6 @@ pub unsafe fn DdeCreateDataHandle<'a, P0>(idinst: u32, psrc: ::core::option::Opt
 where
     P0: ::std::convert::Into<HSZ>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeCreateDataHandle(idinst: u32, psrc: *const u8, cb: u32, cboff: u32, hszitem: HSZ, wfmt: u32, afcmd: u32) -> HDDEDATA;
     }
@@ -178,7 +164,6 @@ pub unsafe fn DdeCreateStringHandleA<'a, P0>(idinst: u32, psz: P0, icodepage: i3
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeCreateStringHandleA(idinst: u32, psz: ::windows::core::PCSTR, icodepage: i32) -> HSZ;
     }
@@ -190,7 +175,6 @@ pub unsafe fn DdeCreateStringHandleW<'a, P0>(idinst: u32, psz: P0, icodepage: i3
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeCreateStringHandleW(idinst: u32, psz: ::windows::core::PCWSTR, icodepage: i32) -> HSZ;
     }
@@ -203,7 +187,6 @@ pub unsafe fn DdeDisconnect<'a, P0>(hconv: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<HCONV>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeDisconnect(hconv: HCONV) -> super::super::Foundation::BOOL;
     }
@@ -216,7 +199,6 @@ pub unsafe fn DdeDisconnectList<'a, P0>(hconvlist: P0) -> super::super::Foundati
 where
     P0: ::std::convert::Into<HCONVLIST>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeDisconnectList(hconvlist: HCONVLIST) -> super::super::Foundation::BOOL;
     }
@@ -229,7 +211,6 @@ pub unsafe fn DdeEnableCallback<'a, P0>(idinst: u32, hconv: P0, wcmd: DDE_ENABLE
 where
     P0: ::std::convert::Into<HCONV>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeEnableCallback(idinst: u32, hconv: HCONV, wcmd: DDE_ENABLE_CALLBACK_CMD) -> super::super::Foundation::BOOL;
     }
@@ -242,7 +223,6 @@ pub unsafe fn DdeFreeDataHandle<'a, P0>(hdata: P0) -> super::super::Foundation::
 where
     P0: ::std::convert::Into<HDDEDATA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeFreeDataHandle(hdata: HDDEDATA) -> super::super::Foundation::BOOL;
     }
@@ -255,7 +235,6 @@ pub unsafe fn DdeFreeStringHandle<'a, P0>(idinst: u32, hsz: P0) -> super::super:
 where
     P0: ::std::convert::Into<HSZ>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeFreeStringHandle(idinst: u32, hsz: HSZ) -> super::super::Foundation::BOOL;
     }
@@ -267,7 +246,6 @@ pub unsafe fn DdeGetData<'a, P0>(hdata: P0, pdst: ::core::option::Option<&mut [u
 where
     P0: ::std::convert::Into<HDDEDATA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeGetData(hdata: HDDEDATA, pdst: *mut u8, cbmax: u32, cboff: u32) -> u32;
     }
@@ -276,7 +254,6 @@ where
 #[doc = "*Required features: `\"Win32_System_DataExchange\"`*"]
 #[inline]
 pub unsafe fn DdeGetLastError(idinst: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeGetLastError(idinst: u32) -> u32;
     }
@@ -289,7 +266,6 @@ pub unsafe fn DdeImpersonateClient<'a, P0>(hconv: P0) -> super::super::Foundatio
 where
     P0: ::std::convert::Into<HCONV>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeImpersonateClient(hconv: HCONV) -> super::super::Foundation::BOOL;
     }
@@ -298,7 +274,6 @@ where
 #[doc = "*Required features: `\"Win32_System_DataExchange\"`*"]
 #[inline]
 pub unsafe fn DdeInitializeA(pidinst: *mut u32, pfncallback: PFNCALLBACK, afcmd: DDE_INITIALIZE_COMMAND, ulres: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeInitializeA(pidinst: *mut u32, pfncallback: *mut ::core::ffi::c_void, afcmd: DDE_INITIALIZE_COMMAND, ulres: u32) -> u32;
     }
@@ -307,7 +282,6 @@ pub unsafe fn DdeInitializeA(pidinst: *mut u32, pfncallback: PFNCALLBACK, afcmd:
 #[doc = "*Required features: `\"Win32_System_DataExchange\"`*"]
 #[inline]
 pub unsafe fn DdeInitializeW(pidinst: *mut u32, pfncallback: PFNCALLBACK, afcmd: DDE_INITIALIZE_COMMAND, ulres: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeInitializeW(pidinst: *mut u32, pfncallback: *mut ::core::ffi::c_void, afcmd: DDE_INITIALIZE_COMMAND, ulres: u32) -> u32;
     }
@@ -320,7 +294,6 @@ pub unsafe fn DdeKeepStringHandle<'a, P0>(idinst: u32, hsz: P0) -> super::super:
 where
     P0: ::std::convert::Into<HSZ>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeKeepStringHandle(idinst: u32, hsz: HSZ) -> super::super::Foundation::BOOL;
     }
@@ -333,7 +306,6 @@ where
     P0: ::std::convert::Into<HSZ>,
     P1: ::std::convert::Into<HSZ>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeNameService(idinst: u32, hsz1: HSZ, hsz2: HSZ, afcmd: DDE_NAME_SERVICE_CMD) -> HDDEDATA;
     }
@@ -347,7 +319,6 @@ where
     P0: ::std::convert::Into<HSZ>,
     P1: ::std::convert::Into<HSZ>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdePostAdvise(idinst: u32, hsztopic: HSZ, hszitem: HSZ) -> super::super::Foundation::BOOL;
     }
@@ -360,7 +331,6 @@ pub unsafe fn DdeQueryConvInfo<'a, P0>(hconv: P0, idtransaction: u32, pconvinfo:
 where
     P0: ::std::convert::Into<HCONV>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeQueryConvInfo(hconv: HCONV, idtransaction: u32, pconvinfo: *mut CONVINFO) -> u32;
     }
@@ -373,7 +343,6 @@ where
     P0: ::std::convert::Into<HCONVLIST>,
     P1: ::std::convert::Into<HCONV>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeQueryNextServer(hconvlist: HCONVLIST, hconvprev: HCONV) -> HCONV;
     }
@@ -385,7 +354,6 @@ pub unsafe fn DdeQueryStringA<'a, P0>(idinst: u32, hsz: P0, psz: ::core::option:
 where
     P0: ::std::convert::Into<HSZ>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeQueryStringA(idinst: u32, hsz: HSZ, psz: ::windows::core::PSTR, cchmax: u32, icodepage: i32) -> u32;
     }
@@ -397,7 +365,6 @@ pub unsafe fn DdeQueryStringW<'a, P0>(idinst: u32, hsz: P0, psz: ::core::option:
 where
     P0: ::std::convert::Into<HSZ>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeQueryStringW(idinst: u32, hsz: HSZ, psz: ::windows::core::PWSTR, cchmax: u32, icodepage: i32) -> u32;
     }
@@ -409,7 +376,6 @@ pub unsafe fn DdeReconnect<'a, P0>(hconv: P0) -> HCONV
 where
     P0: ::std::convert::Into<HCONV>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeReconnect(hconv: HCONV) -> HCONV;
     }
@@ -422,7 +388,6 @@ pub unsafe fn DdeSetQualityOfService<'a, P0>(hwndclient: P0, pqosnew: *const sup
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeSetQualityOfService(hwndclient: super::super::Foundation::HWND, pqosnew: *const super::super::Security::SECURITY_QUALITY_OF_SERVICE, pqosprev: *mut super::super::Security::SECURITY_QUALITY_OF_SERVICE) -> super::super::Foundation::BOOL;
     }
@@ -435,7 +400,6 @@ pub unsafe fn DdeSetUserHandle<'a, P0>(hconv: P0, id: u32, huser: usize) -> supe
 where
     P0: ::std::convert::Into<HCONV>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeSetUserHandle(hconv: HCONV, id: u32, huser: usize) -> super::super::Foundation::BOOL;
     }
@@ -448,7 +412,6 @@ pub unsafe fn DdeUnaccessData<'a, P0>(hdata: P0) -> super::super::Foundation::BO
 where
     P0: ::std::convert::Into<HDDEDATA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeUnaccessData(hdata: HDDEDATA) -> super::super::Foundation::BOOL;
     }
@@ -458,7 +421,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DdeUninitialize(idinst: u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DdeUninitialize(idinst: u32) -> super::super::Foundation::BOOL;
     }
@@ -467,7 +429,6 @@ pub unsafe fn DdeUninitialize(idinst: u32) -> super::super::Foundation::BOOL {
 #[doc = "*Required features: `\"Win32_System_DataExchange\"`*"]
 #[inline]
 pub unsafe fn DeleteAtom(natom: u16) -> u16 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeleteAtom(natom: u16) -> u16;
     }
@@ -477,7 +438,6 @@ pub unsafe fn DeleteAtom(natom: u16) -> u16 {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn EmptyClipboard() -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EmptyClipboard() -> super::super::Foundation::BOOL;
     }
@@ -486,7 +446,6 @@ pub unsafe fn EmptyClipboard() -> super::super::Foundation::BOOL {
 #[doc = "*Required features: `\"Win32_System_DataExchange\"`*"]
 #[inline]
 pub unsafe fn EnumClipboardFormats(format: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumClipboardFormats(format: u32) -> u32;
     }
@@ -498,7 +457,6 @@ pub unsafe fn FindAtomA<'a, P0>(lpstring: P0) -> u16
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindAtomA(lpstring: ::windows::core::PCSTR) -> u16;
     }
@@ -510,7 +468,6 @@ pub unsafe fn FindAtomW<'a, P0>(lpstring: P0) -> u16
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindAtomW(lpstring: ::windows::core::PCWSTR) -> u16;
     }
@@ -523,7 +480,6 @@ pub unsafe fn FreeDDElParam<'a, P0>(msg: u32, lparam: P0) -> super::super::Found
 where
     P0: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FreeDDElParam(msg: u32, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
     }
@@ -532,7 +488,6 @@ where
 #[doc = "*Required features: `\"Win32_System_DataExchange\"`*"]
 #[inline]
 pub unsafe fn GetAtomNameA(natom: u16, lpbuffer: &mut [u8]) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetAtomNameA(natom: u16, lpbuffer: ::windows::core::PSTR, nsize: i32) -> u32;
     }
@@ -541,7 +496,6 @@ pub unsafe fn GetAtomNameA(natom: u16, lpbuffer: &mut [u8]) -> u32 {
 #[doc = "*Required features: `\"Win32_System_DataExchange\"`*"]
 #[inline]
 pub unsafe fn GetAtomNameW(natom: u16, lpbuffer: &mut [u16]) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetAtomNameW(natom: u16, lpbuffer: ::windows::core::PWSTR, nsize: i32) -> u32;
     }
@@ -551,7 +505,6 @@ pub unsafe fn GetAtomNameW(natom: u16, lpbuffer: &mut [u16]) -> u32 {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetClipboardData(uformat: u32) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetClipboardData(uformat: u32) -> super::super::Foundation::HANDLE;
     }
@@ -561,7 +514,6 @@ pub unsafe fn GetClipboardData(uformat: u32) -> ::windows::core::Result<super::s
 #[doc = "*Required features: `\"Win32_System_DataExchange\"`*"]
 #[inline]
 pub unsafe fn GetClipboardFormatNameA(format: u32, lpszformatname: &mut [u8]) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetClipboardFormatNameA(format: u32, lpszformatname: ::windows::core::PSTR, cchmaxcount: i32) -> i32;
     }
@@ -570,7 +522,6 @@ pub unsafe fn GetClipboardFormatNameA(format: u32, lpszformatname: &mut [u8]) ->
 #[doc = "*Required features: `\"Win32_System_DataExchange\"`*"]
 #[inline]
 pub unsafe fn GetClipboardFormatNameW(format: u32, lpszformatname: &mut [u16]) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetClipboardFormatNameW(format: u32, lpszformatname: ::windows::core::PWSTR, cchmaxcount: i32) -> i32;
     }
@@ -580,7 +531,6 @@ pub unsafe fn GetClipboardFormatNameW(format: u32, lpszformatname: &mut [u16]) -
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetClipboardOwner() -> super::super::Foundation::HWND {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetClipboardOwner() -> super::super::Foundation::HWND;
     }
@@ -589,7 +539,6 @@ pub unsafe fn GetClipboardOwner() -> super::super::Foundation::HWND {
 #[doc = "*Required features: `\"Win32_System_DataExchange\"`*"]
 #[inline]
 pub unsafe fn GetClipboardSequenceNumber() -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetClipboardSequenceNumber() -> u32;
     }
@@ -599,7 +548,6 @@ pub unsafe fn GetClipboardSequenceNumber() -> u32 {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetClipboardViewer() -> super::super::Foundation::HWND {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetClipboardViewer() -> super::super::Foundation::HWND;
     }
@@ -609,7 +557,6 @@ pub unsafe fn GetClipboardViewer() -> super::super::Foundation::HWND {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetOpenClipboardWindow() -> super::super::Foundation::HWND {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetOpenClipboardWindow() -> super::super::Foundation::HWND;
     }
@@ -618,7 +565,6 @@ pub unsafe fn GetOpenClipboardWindow() -> super::super::Foundation::HWND {
 #[doc = "*Required features: `\"Win32_System_DataExchange\"`*"]
 #[inline]
 pub unsafe fn GetPriorityClipboardFormat(paformatprioritylist: &[u32]) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPriorityClipboardFormat(paformatprioritylist: *const u32, cformats: i32) -> i32;
     }
@@ -628,7 +574,6 @@ pub unsafe fn GetPriorityClipboardFormat(paformatprioritylist: &[u32]) -> i32 {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetUpdatedClipboardFormats(lpuiformats: &mut [u32], pcformatsout: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetUpdatedClipboardFormats(lpuiformats: *mut u32, cformats: u32, pcformatsout: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -640,7 +585,6 @@ pub unsafe fn GlobalAddAtomA<'a, P0>(lpstring: P0) -> u16
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GlobalAddAtomA(lpstring: ::windows::core::PCSTR) -> u16;
     }
@@ -652,7 +596,6 @@ pub unsafe fn GlobalAddAtomExA<'a, P0>(lpstring: P0, flags: u32) -> u16
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GlobalAddAtomExA(lpstring: ::windows::core::PCSTR, flags: u32) -> u16;
     }
@@ -664,7 +607,6 @@ pub unsafe fn GlobalAddAtomExW<'a, P0>(lpstring: P0, flags: u32) -> u16
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GlobalAddAtomExW(lpstring: ::windows::core::PCWSTR, flags: u32) -> u16;
     }
@@ -676,7 +618,6 @@ pub unsafe fn GlobalAddAtomW<'a, P0>(lpstring: P0) -> u16
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GlobalAddAtomW(lpstring: ::windows::core::PCWSTR) -> u16;
     }
@@ -685,7 +626,6 @@ where
 #[doc = "*Required features: `\"Win32_System_DataExchange\"`*"]
 #[inline]
 pub unsafe fn GlobalDeleteAtom(natom: u16) -> u16 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GlobalDeleteAtom(natom: u16) -> u16;
     }
@@ -697,7 +637,6 @@ pub unsafe fn GlobalFindAtomA<'a, P0>(lpstring: P0) -> u16
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GlobalFindAtomA(lpstring: ::windows::core::PCSTR) -> u16;
     }
@@ -709,7 +648,6 @@ pub unsafe fn GlobalFindAtomW<'a, P0>(lpstring: P0) -> u16
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GlobalFindAtomW(lpstring: ::windows::core::PCWSTR) -> u16;
     }
@@ -718,7 +656,6 @@ where
 #[doc = "*Required features: `\"Win32_System_DataExchange\"`*"]
 #[inline]
 pub unsafe fn GlobalGetAtomNameA(natom: u16, lpbuffer: &mut [u8]) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GlobalGetAtomNameA(natom: u16, lpbuffer: ::windows::core::PSTR, nsize: i32) -> u32;
     }
@@ -727,7 +664,6 @@ pub unsafe fn GlobalGetAtomNameA(natom: u16, lpbuffer: &mut [u8]) -> u32 {
 #[doc = "*Required features: `\"Win32_System_DataExchange\"`*"]
 #[inline]
 pub unsafe fn GlobalGetAtomNameW(natom: u16, lpbuffer: &mut [u16]) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GlobalGetAtomNameW(natom: u16, lpbuffer: ::windows::core::PWSTR, nsize: i32) -> u32;
     }
@@ -741,7 +677,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImpersonateDdeClientWindow(hwndclient: super::super::Foundation::HWND, hwndserver: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -751,7 +686,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn InitAtomTable(nsize: u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InitAtomTable(nsize: u32) -> super::super::Foundation::BOOL;
     }
@@ -761,7 +695,6 @@ pub unsafe fn InitAtomTable(nsize: u32) -> super::super::Foundation::BOOL {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn IsClipboardFormatAvailable(format: u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsClipboardFormatAvailable(format: u32) -> super::super::Foundation::BOOL;
     }
@@ -774,7 +707,6 @@ pub unsafe fn OpenClipboard<'a, P0>(hwndnewowner: P0) -> super::super::Foundatio
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenClipboard(hwndnewowner: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -784,7 +716,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PackDDElParam(msg: u32, uilo: usize, uihi: usize) -> super::super::Foundation::LPARAM {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PackDDElParam(msg: u32, uilo: usize, uihi: usize) -> super::super::Foundation::LPARAM;
     }
@@ -796,7 +727,6 @@ pub unsafe fn RegisterClipboardFormatA<'a, P0>(lpszformat: P0) -> u32
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterClipboardFormatA(lpszformat: ::windows::core::PCSTR) -> u32;
     }
@@ -808,7 +738,6 @@ pub unsafe fn RegisterClipboardFormatW<'a, P0>(lpszformat: P0) -> u32
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterClipboardFormatW(lpszformat: ::windows::core::PCWSTR) -> u32;
     }
@@ -821,7 +750,6 @@ pub unsafe fn RemoveClipboardFormatListener<'a, P0>(hwnd: P0) -> super::super::F
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RemoveClipboardFormatListener(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -834,7 +762,6 @@ pub unsafe fn ReuseDDElParam<'a, P0>(lparam: P0, msgin: u32, msgout: u32, uilo: 
 where
     P0: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReuseDDElParam(lparam: super::super::Foundation::LPARAM, msgin: u32, msgout: u32, uilo: usize, uihi: usize) -> super::super::Foundation::LPARAM;
     }
@@ -847,7 +774,6 @@ pub unsafe fn SetClipboardData<'a, P0>(uformat: u32, hmem: P0) -> ::windows::cor
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetClipboardData(uformat: u32, hmem: super::super::Foundation::HANDLE) -> super::super::Foundation::HANDLE;
     }
@@ -861,7 +787,6 @@ pub unsafe fn SetClipboardViewer<'a, P0>(hwndnewviewer: P0) -> super::super::Fou
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetClipboardViewer(hwndnewviewer: super::super::Foundation::HWND) -> super::super::Foundation::HWND;
     }
@@ -874,7 +799,6 @@ pub unsafe fn SetWinMetaFileBits<'a, P0>(lpmeta16data: &[u8], hdcref: P0, lpmfp:
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetWinMetaFileBits(nsize: u32, lpmeta16data: *const u8, hdcref: super::super::Graphics::Gdi::HDC, lpmfp: *const METAFILEPICT) -> super::super::Graphics::Gdi::HENHMETAFILE;
     }
@@ -887,7 +811,6 @@ pub unsafe fn UnpackDDElParam<'a, P0>(msg: u32, lparam: P0, puilo: *mut usize, p
 where
     P0: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UnpackDDElParam(msg: u32, lparam: super::super::Foundation::LPARAM, puilo: *mut usize, puihi: *mut usize) -> super::super::Foundation::BOOL;
     }

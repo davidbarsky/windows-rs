@@ -5,7 +5,6 @@ pub unsafe fn IsDestinationReachableA<'a, P0>(lpszdestination: P0, lpqocinfo: *m
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsDestinationReachableA(lpszdestination: ::windows::core::PCSTR, lpqocinfo: *mut QOCINFO) -> super::super::Foundation::BOOL;
     }
@@ -18,7 +17,6 @@ pub unsafe fn IsDestinationReachableW<'a, P0>(lpszdestination: P0, lpqocinfo: *m
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsDestinationReachableW(lpszdestination: ::windows::core::PCWSTR, lpqocinfo: *mut QOCINFO) -> super::super::Foundation::BOOL;
     }
@@ -28,7 +26,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn IsNetworkAlive(lpdwflags: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsNetworkAlive(lpdwflags: *mut u32) -> super::super::Foundation::BOOL;
     }

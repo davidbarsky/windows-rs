@@ -6,7 +6,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P1: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BroadcastSystemMessageA(flags: u32, lpinfo: *mut u32, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> i32;
     }
@@ -20,7 +19,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P1: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BroadcastSystemMessageExA(flags: BROADCAST_SYSTEM_MESSAGE_FLAGS, lpinfo: *mut BROADCAST_SYSTEM_MESSAGE_INFO, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, pbsminfo: *mut BSMINFO) -> i32;
     }
@@ -34,7 +32,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P1: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BroadcastSystemMessageExW(flags: BROADCAST_SYSTEM_MESSAGE_FLAGS, lpinfo: *mut BROADCAST_SYSTEM_MESSAGE_INFO, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, pbsminfo: *mut BSMINFO) -> i32;
     }
@@ -48,7 +45,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P1: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BroadcastSystemMessageW(flags: BROADCAST_SYSTEM_MESSAGE_FLAGS, lpinfo: *mut BROADCAST_SYSTEM_MESSAGE_INFO, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> i32;
     }
@@ -61,7 +57,6 @@ pub unsafe fn CloseDesktop<'a, P0>(hdesktop: P0) -> super::super::Foundation::BO
 where
     P0: ::std::convert::Into<HDESK>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CloseDesktop(hdesktop: HDESK) -> super::super::Foundation::BOOL;
     }
@@ -74,7 +69,6 @@ pub unsafe fn CloseWindowStation<'a, P0>(hwinsta: P0) -> super::super::Foundatio
 where
     P0: ::std::convert::Into<HWINSTA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CloseWindowStation(hwinsta: HWINSTA) -> super::super::Foundation::BOOL;
     }
@@ -88,7 +82,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateDesktopA(lpszdesktop: ::windows::core::PCSTR, lpszdevice: ::windows::core::PCSTR, pdevmode: *mut super::super::Graphics::Gdi::DEVMODEA, dwflags: DESKTOP_CONTROL_FLAGS, dwdesiredaccess: u32, lpsa: *const super::super::Security::SECURITY_ATTRIBUTES) -> HDESK;
     }
@@ -103,7 +96,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateDesktopExA(lpszdesktop: ::windows::core::PCSTR, lpszdevice: ::windows::core::PCSTR, pdevmode: *mut super::super::Graphics::Gdi::DEVMODEA, dwflags: DESKTOP_CONTROL_FLAGS, dwdesiredaccess: u32, lpsa: *const super::super::Security::SECURITY_ATTRIBUTES, ulheapsize: u32, pvoid: *mut ::core::ffi::c_void) -> HDESK;
     }
@@ -118,7 +110,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateDesktopExW(lpszdesktop: ::windows::core::PCWSTR, lpszdevice: ::windows::core::PCWSTR, pdevmode: *mut super::super::Graphics::Gdi::DEVMODEW, dwflags: DESKTOP_CONTROL_FLAGS, dwdesiredaccess: u32, lpsa: *const super::super::Security::SECURITY_ATTRIBUTES, ulheapsize: u32, pvoid: *mut ::core::ffi::c_void) -> HDESK;
     }
@@ -133,7 +124,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateDesktopW(lpszdesktop: ::windows::core::PCWSTR, lpszdevice: ::windows::core::PCWSTR, pdevmode: *mut super::super::Graphics::Gdi::DEVMODEW, dwflags: DESKTOP_CONTROL_FLAGS, dwdesiredaccess: u32, lpsa: *const super::super::Security::SECURITY_ATTRIBUTES) -> HDESK;
     }
@@ -147,7 +137,6 @@ pub unsafe fn CreateWindowStationA<'a, P0>(lpwinsta: P0, dwflags: u32, dwdesired
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateWindowStationA(lpwinsta: ::windows::core::PCSTR, dwflags: u32, dwdesiredaccess: u32, lpsa: *const super::super::Security::SECURITY_ATTRIBUTES) -> HWINSTA;
     }
@@ -161,7 +150,6 @@ pub unsafe fn CreateWindowStationW<'a, P0>(lpwinsta: P0, dwflags: u32, dwdesired
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateWindowStationW(lpwinsta: ::windows::core::PCWSTR, dwflags: u32, dwdesiredaccess: u32, lpsa: *const super::super::Security::SECURITY_ATTRIBUTES) -> HWINSTA;
     }
@@ -176,7 +164,6 @@ where
     P0: ::std::convert::Into<HDESK>,
     P1: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumDesktopWindows(hdesktop: HDESK, lpfn: *mut ::core::ffi::c_void, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
     }
@@ -190,7 +177,6 @@ where
     P0: ::std::convert::Into<HWINSTA>,
     P1: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumDesktopsA(hwinsta: HWINSTA, lpenumfunc: *mut ::core::ffi::c_void, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
     }
@@ -204,7 +190,6 @@ where
     P0: ::std::convert::Into<HWINSTA>,
     P1: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumDesktopsW(hwinsta: HWINSTA, lpenumfunc: *mut ::core::ffi::c_void, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
     }
@@ -217,7 +202,6 @@ pub unsafe fn EnumWindowStationsA<'a, P0>(lpenumfunc: WINSTAENUMPROCA, lparam: P
 where
     P0: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumWindowStationsA(lpenumfunc: *mut ::core::ffi::c_void, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
     }
@@ -230,7 +214,6 @@ pub unsafe fn EnumWindowStationsW<'a, P0>(lpenumfunc: WINSTAENUMPROCW, lparam: P
 where
     P0: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumWindowStationsW(lpenumfunc: *mut ::core::ffi::c_void, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
     }
@@ -239,7 +222,6 @@ where
 #[doc = "*Required features: `\"Win32_System_StationsAndDesktops\"`*"]
 #[inline]
 pub unsafe fn GetProcessWindowStation() -> ::windows::core::Result<HWINSTA> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetProcessWindowStation() -> HWINSTA;
     }
@@ -249,7 +231,6 @@ pub unsafe fn GetProcessWindowStation() -> ::windows::core::Result<HWINSTA> {
 #[doc = "*Required features: `\"Win32_System_StationsAndDesktops\"`*"]
 #[inline]
 pub unsafe fn GetThreadDesktop(dwthreadid: u32) -> ::windows::core::Result<HDESK> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThreadDesktop(dwthreadid: u32) -> HDESK;
     }
@@ -263,7 +244,6 @@ pub unsafe fn GetUserObjectInformationA<'a, P0>(hobj: P0, nindex: USER_OBJECT_IN
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetUserObjectInformationA(hobj: super::super::Foundation::HANDLE, nindex: USER_OBJECT_INFORMATION_INDEX, pvinfo: *mut ::core::ffi::c_void, nlength: u32, lpnlengthneeded: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -276,7 +256,6 @@ pub unsafe fn GetUserObjectInformationW<'a, P0>(hobj: P0, nindex: USER_OBJECT_IN
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetUserObjectInformationW(hobj: super::super::Foundation::HANDLE, nindex: USER_OBJECT_INFORMATION_INDEX, pvinfo: *mut ::core::ffi::c_void, nlength: u32, lpnlengthneeded: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -290,7 +269,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenDesktopA(lpszdesktop: ::windows::core::PCSTR, dwflags: DESKTOP_CONTROL_FLAGS, finherit: super::super::Foundation::BOOL, dwdesiredaccess: u32) -> HDESK;
     }
@@ -305,7 +283,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenDesktopW(lpszdesktop: ::windows::core::PCWSTR, dwflags: DESKTOP_CONTROL_FLAGS, finherit: super::super::Foundation::BOOL, dwdesiredaccess: u32) -> HDESK;
     }
@@ -319,7 +296,6 @@ pub unsafe fn OpenInputDesktop<'a, P0>(dwflags: DESKTOP_CONTROL_FLAGS, finherit:
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenInputDesktop(dwflags: DESKTOP_CONTROL_FLAGS, finherit: super::super::Foundation::BOOL, dwdesiredaccess: u32) -> HDESK;
     }
@@ -334,7 +310,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenWindowStationA(lpszwinsta: ::windows::core::PCSTR, finherit: super::super::Foundation::BOOL, dwdesiredaccess: u32) -> HWINSTA;
     }
@@ -349,7 +324,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenWindowStationW(lpszwinsta: ::windows::core::PCWSTR, finherit: super::super::Foundation::BOOL, dwdesiredaccess: u32) -> HWINSTA;
     }
@@ -363,7 +337,6 @@ pub unsafe fn SetProcessWindowStation<'a, P0>(hwinsta: P0) -> super::super::Foun
 where
     P0: ::std::convert::Into<HWINSTA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetProcessWindowStation(hwinsta: HWINSTA) -> super::super::Foundation::BOOL;
     }
@@ -376,7 +349,6 @@ pub unsafe fn SetThreadDesktop<'a, P0>(hdesktop: P0) -> super::super::Foundation
 where
     P0: ::std::convert::Into<HDESK>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetThreadDesktop(hdesktop: HDESK) -> super::super::Foundation::BOOL;
     }
@@ -389,7 +361,6 @@ pub unsafe fn SetUserObjectInformationA<'a, P0>(hobj: P0, nindex: i32, pvinfo: *
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetUserObjectInformationA(hobj: super::super::Foundation::HANDLE, nindex: i32, pvinfo: *const ::core::ffi::c_void, nlength: u32) -> super::super::Foundation::BOOL;
     }
@@ -402,7 +373,6 @@ pub unsafe fn SetUserObjectInformationW<'a, P0>(hobj: P0, nindex: i32, pvinfo: *
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetUserObjectInformationW(hobj: super::super::Foundation::HANDLE, nindex: i32, pvinfo: *const ::core::ffi::c_void, nlength: u32) -> super::super::Foundation::BOOL;
     }
@@ -415,7 +385,6 @@ pub unsafe fn SwitchDesktop<'a, P0>(hdesktop: P0) -> super::super::Foundation::B
 where
     P0: ::std::convert::Into<HDESK>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SwitchDesktop(hdesktop: HDESK) -> super::super::Foundation::BOOL;
     }

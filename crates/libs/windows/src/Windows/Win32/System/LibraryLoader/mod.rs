@@ -4,7 +4,6 @@ pub unsafe fn AddDllDirectory<'a, P0>(newdirectory: P0) -> *mut ::core::ffi::c_v
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddDllDirectory(newdirectory: ::windows::core::PCWSTR) -> *mut ::core::ffi::c_void;
     }
@@ -18,7 +17,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BeginUpdateResourceA(pfilename: ::windows::core::PCSTR, bdeleteexistingresources: super::super::Foundation::BOOL) -> super::super::Foundation::HANDLE;
     }
@@ -33,7 +31,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BeginUpdateResourceW(pfilename: ::windows::core::PCWSTR, bdeleteexistingresources: super::super::Foundation::BOOL) -> super::super::Foundation::HANDLE;
     }
@@ -47,7 +44,6 @@ pub unsafe fn DisableThreadLibraryCalls<'a, P0>(hlibmodule: P0) -> super::super:
 where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DisableThreadLibraryCalls(hlibmodule: super::super::Foundation::HINSTANCE) -> super::super::Foundation::BOOL;
     }
@@ -61,7 +57,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EndUpdateResourceA(hupdate: super::super::Foundation::HANDLE, fdiscard: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -75,7 +70,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EndUpdateResourceW(hupdate: super::super::Foundation::HANDLE, fdiscard: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -90,7 +84,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumResourceLanguagesA(hmodule: super::super::Foundation::HINSTANCE, lptype: ::windows::core::PCSTR, lpname: ::windows::core::PCSTR, lpenumfunc: *mut ::core::ffi::c_void, lparam: isize) -> super::super::Foundation::BOOL;
     }
@@ -105,7 +98,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumResourceLanguagesExA(hmodule: super::super::Foundation::HINSTANCE, lptype: ::windows::core::PCSTR, lpname: ::windows::core::PCSTR, lpenumfunc: *mut ::core::ffi::c_void, lparam: isize, dwflags: u32, langid: u16) -> super::super::Foundation::BOOL;
     }
@@ -120,7 +112,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumResourceLanguagesExW(hmodule: super::super::Foundation::HINSTANCE, lptype: ::windows::core::PCWSTR, lpname: ::windows::core::PCWSTR, lpenumfunc: *mut ::core::ffi::c_void, lparam: isize, dwflags: u32, langid: u16) -> super::super::Foundation::BOOL;
     }
@@ -135,7 +126,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumResourceLanguagesW(hmodule: super::super::Foundation::HINSTANCE, lptype: ::windows::core::PCWSTR, lpname: ::windows::core::PCWSTR, lpenumfunc: *mut ::core::ffi::c_void, lparam: isize) -> super::super::Foundation::BOOL;
     }
@@ -149,7 +139,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumResourceNamesA(hmodule: super::super::Foundation::HINSTANCE, lptype: ::windows::core::PCSTR, lpenumfunc: *mut ::core::ffi::c_void, lparam: isize) -> super::super::Foundation::BOOL;
     }
@@ -163,7 +152,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumResourceNamesExA(hmodule: super::super::Foundation::HINSTANCE, lptype: ::windows::core::PCSTR, lpenumfunc: *mut ::core::ffi::c_void, lparam: isize, dwflags: u32, langid: u16) -> super::super::Foundation::BOOL;
     }
@@ -177,7 +165,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumResourceNamesExW(hmodule: super::super::Foundation::HINSTANCE, lptype: ::windows::core::PCWSTR, lpenumfunc: *mut ::core::ffi::c_void, lparam: isize, dwflags: u32, langid: u16) -> super::super::Foundation::BOOL;
     }
@@ -191,7 +178,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumResourceNamesW(hmodule: super::super::Foundation::HINSTANCE, lptype: ::windows::core::PCWSTR, lpenumfunc: *mut ::core::ffi::c_void, lparam: isize) -> super::super::Foundation::BOOL;
     }
@@ -204,7 +190,6 @@ pub unsafe fn EnumResourceTypesA<'a, P0>(hmodule: P0, lpenumfunc: ENUMRESTYPEPRO
 where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumResourceTypesA(hmodule: super::super::Foundation::HINSTANCE, lpenumfunc: *mut ::core::ffi::c_void, lparam: isize) -> super::super::Foundation::BOOL;
     }
@@ -217,7 +202,6 @@ pub unsafe fn EnumResourceTypesExA<'a, P0>(hmodule: P0, lpenumfunc: ENUMRESTYPEP
 where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumResourceTypesExA(hmodule: super::super::Foundation::HINSTANCE, lpenumfunc: *mut ::core::ffi::c_void, lparam: isize, dwflags: u32, langid: u16) -> super::super::Foundation::BOOL;
     }
@@ -230,7 +214,6 @@ pub unsafe fn EnumResourceTypesExW<'a, P0>(hmodule: P0, lpenumfunc: ENUMRESTYPEP
 where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumResourceTypesExW(hmodule: super::super::Foundation::HINSTANCE, lpenumfunc: *mut ::core::ffi::c_void, lparam: isize, dwflags: u32, langid: u16) -> super::super::Foundation::BOOL;
     }
@@ -243,7 +226,6 @@ pub unsafe fn EnumResourceTypesW<'a, P0>(hmodule: P0, lpenumfunc: ENUMRESTYPEPRO
 where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumResourceTypesW(hmodule: super::super::Foundation::HINSTANCE, lpenumfunc: *mut ::core::ffi::c_void, lparam: isize) -> super::super::Foundation::BOOL;
     }
@@ -258,7 +240,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindResourceA(hmodule: super::super::Foundation::HINSTANCE, lpname: ::windows::core::PCSTR, lptype: ::windows::core::PCSTR) -> super::super::Foundation::HRSRC;
     }
@@ -274,7 +255,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindResourceExA(hmodule: super::super::Foundation::HINSTANCE, lptype: ::windows::core::PCSTR, lpname: ::windows::core::PCSTR, wlanguage: u16) -> super::super::Foundation::HRSRC;
     }
@@ -290,7 +270,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindResourceExW(hmodule: super::super::Foundation::HINSTANCE, lptype: ::windows::core::PCWSTR, lpname: ::windows::core::PCWSTR, wlanguage: u16) -> super::super::Foundation::HRSRC;
     }
@@ -305,7 +284,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindResourceW(hmodule: super::super::Foundation::HINSTANCE, lpname: ::windows::core::PCWSTR, lptype: ::windows::core::PCWSTR) -> super::super::Foundation::HRSRC;
     }
@@ -318,7 +296,6 @@ pub unsafe fn FreeLibrary<'a, P0>(hlibmodule: P0) -> super::super::Foundation::B
 where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FreeLibrary(hlibmodule: super::super::Foundation::HINSTANCE) -> super::super::Foundation::BOOL;
     }
@@ -331,7 +308,6 @@ pub unsafe fn FreeLibraryAndExitThread<'a, P0>(hlibmodule: P0, dwexitcode: u32) 
 where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FreeLibraryAndExitThread(hlibmodule: super::super::Foundation::HINSTANCE, dwexitcode: u32) -> !;
     }
@@ -341,7 +317,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn FreeResource(hresdata: isize) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FreeResource(hresdata: isize) -> super::super::Foundation::BOOL;
     }
@@ -350,7 +325,6 @@ pub unsafe fn FreeResource(hresdata: isize) -> super::super::Foundation::BOOL {
 #[doc = "*Required features: `\"Win32_System_LibraryLoader\"`*"]
 #[inline]
 pub unsafe fn GetDllDirectoryA(lpbuffer: ::core::option::Option<&mut [u8]>) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDllDirectoryA(nbufferlength: u32, lpbuffer: ::windows::core::PSTR) -> u32;
     }
@@ -359,7 +333,6 @@ pub unsafe fn GetDllDirectoryA(lpbuffer: ::core::option::Option<&mut [u8]>) -> u
 #[doc = "*Required features: `\"Win32_System_LibraryLoader\"`*"]
 #[inline]
 pub unsafe fn GetDllDirectoryW(lpbuffer: ::core::option::Option<&mut [u16]>) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDllDirectoryW(nbufferlength: u32, lpbuffer: ::windows::core::PWSTR) -> u32;
     }
@@ -372,7 +345,6 @@ pub unsafe fn GetModuleFileNameA<'a, P0>(hmodule: P0, lpfilename: &mut [u8]) -> 
 where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetModuleFileNameA(hmodule: super::super::Foundation::HINSTANCE, lpfilename: ::windows::core::PSTR, nsize: u32) -> u32;
     }
@@ -385,7 +357,6 @@ pub unsafe fn GetModuleFileNameW<'a, P0>(hmodule: P0, lpfilename: &mut [u16]) ->
 where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetModuleFileNameW(hmodule: super::super::Foundation::HINSTANCE, lpfilename: ::windows::core::PWSTR, nsize: u32) -> u32;
     }
@@ -398,7 +369,6 @@ pub unsafe fn GetModuleHandleA<'a, P0>(lpmodulename: P0) -> ::windows::core::Res
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetModuleHandleA(lpmodulename: ::windows::core::PCSTR) -> super::super::Foundation::HINSTANCE;
     }
@@ -412,7 +382,6 @@ pub unsafe fn GetModuleHandleExA<'a, P0>(dwflags: u32, lpmodulename: P0, phmodul
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetModuleHandleExA(dwflags: u32, lpmodulename: ::windows::core::PCSTR, phmodule: *mut super::super::Foundation::HINSTANCE) -> super::super::Foundation::BOOL;
     }
@@ -425,7 +394,6 @@ pub unsafe fn GetModuleHandleExW<'a, P0>(dwflags: u32, lpmodulename: P0, phmodul
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetModuleHandleExW(dwflags: u32, lpmodulename: ::windows::core::PCWSTR, phmodule: *mut super::super::Foundation::HINSTANCE) -> super::super::Foundation::BOOL;
     }
@@ -438,7 +406,6 @@ pub unsafe fn GetModuleHandleW<'a, P0>(lpmodulename: P0) -> ::windows::core::Res
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetModuleHandleW(lpmodulename: ::windows::core::PCWSTR) -> super::super::Foundation::HINSTANCE;
     }
@@ -453,7 +420,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetProcAddress(hmodule: super::super::Foundation::HINSTANCE, lpprocname: ::windows::core::PCSTR) -> super::super::Foundation::FARPROC;
     }
@@ -466,7 +432,6 @@ pub unsafe fn LoadLibraryA<'a, P0>(lplibfilename: P0) -> ::windows::core::Result
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadLibraryA(lplibfilename: ::windows::core::PCSTR) -> super::super::Foundation::HINSTANCE;
     }
@@ -481,7 +446,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadLibraryExA(lplibfilename: ::windows::core::PCSTR, hfile: super::super::Foundation::HANDLE, dwflags: LOAD_LIBRARY_FLAGS) -> super::super::Foundation::HINSTANCE;
     }
@@ -496,7 +460,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadLibraryExW(lplibfilename: ::windows::core::PCWSTR, hfile: super::super::Foundation::HANDLE, dwflags: LOAD_LIBRARY_FLAGS) -> super::super::Foundation::HINSTANCE;
     }
@@ -510,7 +473,6 @@ pub unsafe fn LoadLibraryW<'a, P0>(lplibfilename: P0) -> ::windows::core::Result
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadLibraryW(lplibfilename: ::windows::core::PCWSTR) -> super::super::Foundation::HINSTANCE;
     }
@@ -523,7 +485,6 @@ pub unsafe fn LoadModule<'a, P0>(lpmodulename: P0, lpparameterblock: *const ::co
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadModule(lpmodulename: ::windows::core::PCSTR, lpparameterblock: *const ::core::ffi::c_void) -> u32;
     }
@@ -536,7 +497,6 @@ pub unsafe fn LoadPackagedLibrary<'a, P0>(lpwlibfilename: P0, reserved: u32) -> 
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadPackagedLibrary(lpwlibfilename: ::windows::core::PCWSTR, reserved: u32) -> super::super::Foundation::HINSTANCE;
     }
@@ -551,7 +511,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<super::super::Foundation::HRSRC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadResource(hmodule: super::super::Foundation::HINSTANCE, hresinfo: super::super::Foundation::HRSRC) -> isize;
     }
@@ -560,7 +519,6 @@ where
 #[doc = "*Required features: `\"Win32_System_LibraryLoader\"`*"]
 #[inline]
 pub unsafe fn LockResource(hresdata: isize) -> *mut ::core::ffi::c_void {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LockResource(hresdata: isize) -> *mut ::core::ffi::c_void;
     }
@@ -570,7 +528,6 @@ pub unsafe fn LockResource(hresdata: isize) -> *mut ::core::ffi::c_void {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RemoveDllDirectory(cookie: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RemoveDllDirectory(cookie: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -580,7 +537,6 @@ pub unsafe fn RemoveDllDirectory(cookie: *const ::core::ffi::c_void) -> super::s
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SetDefaultDllDirectories(directoryflags: LOAD_LIBRARY_FLAGS) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetDefaultDllDirectories(directoryflags: LOAD_LIBRARY_FLAGS) -> super::super::Foundation::BOOL;
     }
@@ -593,7 +549,6 @@ pub unsafe fn SetDllDirectoryA<'a, P0>(lppathname: P0) -> super::super::Foundati
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetDllDirectoryA(lppathname: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -606,7 +561,6 @@ pub unsafe fn SetDllDirectoryW<'a, P0>(lppathname: P0) -> super::super::Foundati
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetDllDirectoryW(lppathname: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -620,7 +574,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<super::super::Foundation::HRSRC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SizeofResource(hmodule: super::super::Foundation::HINSTANCE, hresinfo: super::super::Foundation::HRSRC) -> u32;
     }
@@ -635,7 +588,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UpdateResourceA(hupdate: super::super::Foundation::HANDLE, lptype: ::windows::core::PCSTR, lpname: ::windows::core::PCSTR, wlanguage: u16, lpdata: *const ::core::ffi::c_void, cb: u32) -> super::super::Foundation::BOOL;
     }
@@ -650,7 +602,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UpdateResourceW(hupdate: super::super::Foundation::HANDLE, lptype: ::windows::core::PCWSTR, lpname: ::windows::core::PCWSTR, wlanguage: u16, lpdata: *const ::core::ffi::c_void, cb: u32) -> super::super::Foundation::BOOL;
     }

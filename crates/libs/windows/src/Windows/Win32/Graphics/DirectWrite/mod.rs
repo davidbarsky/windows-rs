@@ -4,7 +4,6 @@ pub unsafe fn DWriteCreateFactory<T>(factorytype: DWRITE_FACTORY_TYPE) -> ::wind
 where
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DWriteCreateFactory(factorytype: DWRITE_FACTORY_TYPE, iid: *const ::windows::core::GUID, factory: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }

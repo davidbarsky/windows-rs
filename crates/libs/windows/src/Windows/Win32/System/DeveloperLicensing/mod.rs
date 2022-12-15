@@ -5,7 +5,6 @@ pub unsafe fn AcquireDeveloperLicense<'a, P0>(hwndparent: P0) -> ::windows::core
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AcquireDeveloperLicense(hwndparent: super::super::Foundation::HWND, pexpiration: *mut super::super::Foundation::FILETIME) -> ::windows::core::HRESULT;
     }
@@ -16,7 +15,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn CheckDeveloperLicense() -> ::windows::core::Result<super::super::Foundation::FILETIME> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CheckDeveloperLicense(pexpiration: *mut super::super::Foundation::FILETIME) -> ::windows::core::HRESULT;
     }
@@ -30,7 +28,6 @@ pub unsafe fn RemoveDeveloperLicense<'a, P0>(hwndparent: P0) -> ::windows::core:
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RemoveDeveloperLicense(hwndparent: super::super::Foundation::HWND) -> ::windows::core::HRESULT;
     }

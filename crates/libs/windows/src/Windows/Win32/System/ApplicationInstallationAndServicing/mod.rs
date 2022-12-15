@@ -5,7 +5,6 @@ pub unsafe fn ActivateActCtx<'a, P0>(hactctx: P0, lpcookie: *mut usize) -> super
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ActivateActCtx(hactctx: super::super::Foundation::HANDLE, lpcookie: *mut usize) -> super::super::Foundation::BOOL;
     }
@@ -18,7 +17,6 @@ pub unsafe fn AddRefActCtx<'a, P0>(hactctx: P0)
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddRefActCtx(hactctx: super::super::Foundation::HANDLE);
     }
@@ -33,7 +31,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ApplyDeltaA(applyflags: i64, lpsourcename: ::windows::core::PCSTR, lpdeltaname: ::windows::core::PCSTR, lptargetname: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -43,7 +40,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ApplyDeltaB(applyflags: i64, source: DELTA_INPUT, delta: DELTA_INPUT, lptarget: *mut DELTA_OUTPUT) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ApplyDeltaB(applyflags: i64, source: DELTA_INPUT, delta: DELTA_INPUT, lptarget: *mut DELTA_OUTPUT) -> super::super::Foundation::BOOL;
     }
@@ -53,7 +49,6 @@ pub unsafe fn ApplyDeltaB(applyflags: i64, source: DELTA_INPUT, delta: DELTA_INP
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ApplyDeltaGetReverseB(applyflags: i64, source: DELTA_INPUT, delta: DELTA_INPUT, lpreversefiletime: ::core::option::Option<*const super::super::Foundation::FILETIME>, lptarget: *mut DELTA_OUTPUT, lptargetreverse: *mut DELTA_OUTPUT) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ApplyDeltaGetReverseB(applyflags: i64, source: DELTA_INPUT, delta: DELTA_INPUT, lpreversefiletime: *const super::super::Foundation::FILETIME, lptarget: *mut DELTA_OUTPUT, lptargetreverse: *mut DELTA_OUTPUT) -> super::super::Foundation::BOOL;
     }
@@ -63,7 +58,6 @@ pub unsafe fn ApplyDeltaGetReverseB(applyflags: i64, source: DELTA_INPUT, delta:
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ApplyDeltaProvidedB(applyflags: i64, source: DELTA_INPUT, delta: DELTA_INPUT, lptarget: *mut ::core::ffi::c_void, utargetsize: usize) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ApplyDeltaProvidedB(applyflags: i64, source: DELTA_INPUT, delta: DELTA_INPUT, lptarget: *mut ::core::ffi::c_void, utargetsize: usize) -> super::super::Foundation::BOOL;
     }
@@ -78,7 +72,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ApplyDeltaW(applyflags: i64, lpsourcename: ::windows::core::PCWSTR, lpdeltaname: ::windows::core::PCWSTR, lptargetname: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -93,7 +86,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ApplyPatchToFileA(patchfilename: ::windows::core::PCSTR, oldfilename: ::windows::core::PCSTR, newfilename: ::windows::core::PCSTR, applyoptionflags: u32) -> super::super::Foundation::BOOL;
     }
@@ -103,7 +95,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ApplyPatchToFileByBuffers(patchfilemapped: &[u8], oldfilemapped: ::core::option::Option<&[u8]>, newfilebuffer: &mut [u8], newfileactualsize: ::core::option::Option<*mut u32>, newfiletime: ::core::option::Option<*mut super::super::Foundation::FILETIME>, applyoptionflags: u32, progresscallback: PPATCH_PROGRESS_CALLBACK, callbackcontext: ::core::option::Option<*const ::core::ffi::c_void>) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ApplyPatchToFileByBuffers(patchfilemapped: *const u8, patchfilesize: u32, oldfilemapped: *const u8, oldfilesize: u32, newfilebuffer: *mut *mut u8, newfilebuffersize: u32, newfileactualsize: *mut u32, newfiletime: *mut super::super::Foundation::FILETIME, applyoptionflags: u32, progresscallback: *mut ::core::ffi::c_void, callbackcontext: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -130,7 +121,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P2: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ApplyPatchToFileByHandles(patchfilehandle: super::super::Foundation::HANDLE, oldfilehandle: super::super::Foundation::HANDLE, newfilehandle: super::super::Foundation::HANDLE, applyoptionflags: u32) -> super::super::Foundation::BOOL;
     }
@@ -145,7 +135,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P2: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ApplyPatchToFileByHandlesEx(patchfilehandle: super::super::Foundation::HANDLE, oldfilehandle: super::super::Foundation::HANDLE, newfilehandle: super::super::Foundation::HANDLE, applyoptionflags: u32, progresscallback: *mut ::core::ffi::c_void, callbackcontext: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -160,7 +149,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ApplyPatchToFileExA(patchfilename: ::windows::core::PCSTR, oldfilename: ::windows::core::PCSTR, newfilename: ::windows::core::PCSTR, applyoptionflags: u32, progresscallback: *mut ::core::ffi::c_void, callbackcontext: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -175,7 +163,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ApplyPatchToFileExW(patchfilename: ::windows::core::PCWSTR, oldfilename: ::windows::core::PCWSTR, newfilename: ::windows::core::PCWSTR, applyoptionflags: u32, progresscallback: *mut ::core::ffi::c_void, callbackcontext: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -190,7 +177,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ApplyPatchToFileW(patchfilename: ::windows::core::PCWSTR, oldfilename: ::windows::core::PCWSTR, newfilename: ::windows::core::PCWSTR, applyoptionflags: u32) -> super::super::Foundation::BOOL;
     }
@@ -200,7 +186,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn CreateActCtxA(pactctx: *const ACTCTXA) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateActCtxA(pactctx: *const ACTCTXA) -> super::super::Foundation::HANDLE;
     }
@@ -211,7 +196,6 @@ pub unsafe fn CreateActCtxA(pactctx: *const ACTCTXA) -> ::windows::core::Result<
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn CreateActCtxW(pactctx: *const ACTCTXW) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateActCtxW(pactctx: *const ACTCTXW) -> super::super::Foundation::HANDLE;
     }
@@ -229,7 +213,6 @@ where
     P3: ::std::convert::Into<::windows::core::PCSTR>,
     P4: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateDeltaA(filetypeset: i64, setflags: i64, resetflags: i64, lpsourcename: ::windows::core::PCSTR, lptargetname: ::windows::core::PCSTR, lpsourceoptionsname: ::windows::core::PCSTR, lptargetoptionsname: ::windows::core::PCSTR, globaloptions: DELTA_INPUT, lptargetfiletime: *const super::super::Foundation::FILETIME, hashalgid: u32, lpdeltaname: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -239,7 +222,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn CreateDeltaB(filetypeset: i64, setflags: i64, resetflags: i64, source: DELTA_INPUT, target: DELTA_INPUT, sourceoptions: DELTA_INPUT, targetoptions: DELTA_INPUT, globaloptions: DELTA_INPUT, lptargetfiletime: ::core::option::Option<*const super::super::Foundation::FILETIME>, hashalgid: u32, lpdelta: *mut DELTA_OUTPUT) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateDeltaB(filetypeset: i64, setflags: i64, resetflags: i64, source: DELTA_INPUT, target: DELTA_INPUT, sourceoptions: DELTA_INPUT, targetoptions: DELTA_INPUT, globaloptions: DELTA_INPUT, lptargetfiletime: *const super::super::Foundation::FILETIME, hashalgid: u32, lpdelta: *mut DELTA_OUTPUT) -> super::super::Foundation::BOOL;
     }
@@ -256,7 +238,6 @@ where
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
     P4: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateDeltaW(filetypeset: i64, setflags: i64, resetflags: i64, lpsourcename: ::windows::core::PCWSTR, lptargetname: ::windows::core::PCWSTR, lpsourceoptionsname: ::windows::core::PCWSTR, lptargetoptionsname: ::windows::core::PCWSTR, globaloptions: DELTA_INPUT, lptargetfiletime: *const super::super::Foundation::FILETIME, hashalgid: u32, lpdeltaname: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -271,7 +252,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreatePatchFileA(oldfilename: ::windows::core::PCSTR, newfilename: ::windows::core::PCSTR, patchfilename: ::windows::core::PCSTR, optionflags: u32, optiondata: *const PATCH_OPTION_DATA) -> super::super::Foundation::BOOL;
     }
@@ -286,7 +266,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P2: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreatePatchFileByHandles(oldfilehandle: super::super::Foundation::HANDLE, newfilehandle: super::super::Foundation::HANDLE, patchfilehandle: super::super::Foundation::HANDLE, optionflags: u32, optiondata: *const PATCH_OPTION_DATA) -> super::super::Foundation::BOOL;
     }
@@ -300,7 +279,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreatePatchFileByHandlesEx(oldfilecount: u32, oldfileinfoarray: *const PATCH_OLD_FILE_INFO_H, newfilehandle: super::super::Foundation::HANDLE, patchfilehandle: super::super::Foundation::HANDLE, optionflags: u32, optiondata: *const PATCH_OPTION_DATA, progresscallback: *mut ::core::ffi::c_void, callbackcontext: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -314,7 +292,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreatePatchFileExA(oldfilecount: u32, oldfileinfoarray: *const PATCH_OLD_FILE_INFO_A, newfilename: ::windows::core::PCSTR, patchfilename: ::windows::core::PCSTR, optionflags: u32, optiondata: *const PATCH_OPTION_DATA, progresscallback: *mut ::core::ffi::c_void, callbackcontext: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -328,7 +305,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreatePatchFileExW(oldfilecount: u32, oldfileinfoarray: *const PATCH_OLD_FILE_INFO_W, newfilename: ::windows::core::PCWSTR, patchfilename: ::windows::core::PCWSTR, optionflags: u32, optiondata: *const PATCH_OPTION_DATA, progresscallback: *mut ::core::ffi::c_void, callbackcontext: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -343,7 +319,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreatePatchFileW(oldfilename: ::windows::core::PCWSTR, newfilename: ::windows::core::PCWSTR, patchfilename: ::windows::core::PCWSTR, optionflags: u32, optiondata: *const PATCH_OPTION_DATA) -> super::super::Foundation::BOOL;
     }
@@ -353,7 +328,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DeactivateActCtx(dwflags: u32, ulcookie: usize) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeactivateActCtx(dwflags: u32, ulcookie: usize) -> super::super::Foundation::BOOL;
     }
@@ -363,7 +337,6 @@ pub unsafe fn DeactivateActCtx(dwflags: u32, ulcookie: usize) -> super::super::F
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DeltaFree(lpmemory: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeltaFree(lpmemory: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -373,7 +346,6 @@ pub unsafe fn DeltaFree(lpmemory: *const ::core::ffi::c_void) -> super::super::F
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DeltaNormalizeProvidedB(filetypeset: i64, normalizeflags: i64, normalizeoptions: DELTA_INPUT, lpsource: *mut ::core::ffi::c_void, usourcesize: usize) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeltaNormalizeProvidedB(filetypeset: i64, normalizeflags: i64, normalizeoptions: DELTA_INPUT, lpsource: *mut ::core::ffi::c_void, usourcesize: usize) -> super::super::Foundation::BOOL;
     }
@@ -387,7 +359,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ExtractPatchHeaderToFileA(patchfilename: ::windows::core::PCSTR, patchheaderfilename: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -401,7 +372,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ExtractPatchHeaderToFileByHandles(patchfilehandle: super::super::Foundation::HANDLE, patchheaderfilehandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -415,7 +385,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ExtractPatchHeaderToFileW(patchfilename: ::windows::core::PCWSTR, patchheaderfilename: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -425,7 +394,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_WindowsProgramming"))]
 #[inline]
 pub unsafe fn FindActCtxSectionGuid(dwflags: u32, lpextensionguid: ::core::option::Option<*const ::windows::core::GUID>, ulsectionid: u32, lpguidtofind: ::core::option::Option<*const ::windows::core::GUID>, returneddata: *mut ACTCTX_SECTION_KEYED_DATA) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindActCtxSectionGuid(dwflags: u32, lpextensionguid: *const ::windows::core::GUID, ulsectionid: u32, lpguidtofind: *const ::windows::core::GUID, returneddata: *mut ACTCTX_SECTION_KEYED_DATA) -> super::super::Foundation::BOOL;
     }
@@ -438,7 +406,6 @@ pub unsafe fn FindActCtxSectionStringA<'a, P0>(dwflags: u32, lpextensionguid: ::
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindActCtxSectionStringA(dwflags: u32, lpextensionguid: *const ::windows::core::GUID, ulsectionid: u32, lpstringtofind: ::windows::core::PCSTR, returneddata: *mut ACTCTX_SECTION_KEYED_DATA) -> super::super::Foundation::BOOL;
     }
@@ -451,7 +418,6 @@ pub unsafe fn FindActCtxSectionStringW<'a, P0>(dwflags: u32, lpextensionguid: ::
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindActCtxSectionStringW(dwflags: u32, lpextensionguid: *const ::windows::core::GUID, ulsectionid: u32, lpstringtofind: ::windows::core::PCWSTR, returneddata: *mut ACTCTX_SECTION_KEYED_DATA) -> super::super::Foundation::BOOL;
     }
@@ -461,7 +427,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetCurrentActCtx(lphactctx: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCurrentActCtx(lphactctx: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -474,7 +439,6 @@ pub unsafe fn GetDeltaInfoA<'a, P0>(lpdeltaname: P0, lpheaderinfo: *mut DELTA_HE
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDeltaInfoA(lpdeltaname: ::windows::core::PCSTR, lpheaderinfo: *mut DELTA_HEADER_INFO) -> super::super::Foundation::BOOL;
     }
@@ -484,7 +448,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetDeltaInfoB(delta: DELTA_INPUT, lpheaderinfo: *mut DELTA_HEADER_INFO) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDeltaInfoB(delta: DELTA_INPUT, lpheaderinfo: *mut DELTA_HEADER_INFO) -> super::super::Foundation::BOOL;
     }
@@ -497,7 +460,6 @@ pub unsafe fn GetDeltaInfoW<'a, P0>(lpdeltaname: P0, lpheaderinfo: *mut DELTA_HE
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDeltaInfoW(lpdeltaname: ::windows::core::PCWSTR, lpheaderinfo: *mut DELTA_HEADER_INFO) -> super::super::Foundation::BOOL;
     }
@@ -510,7 +472,6 @@ pub unsafe fn GetDeltaSignatureA<'a, P0>(filetypeset: i64, hashalgid: u32, lpsou
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDeltaSignatureA(filetypeset: i64, hashalgid: u32, lpsourcename: ::windows::core::PCSTR, lphash: *mut DELTA_HASH) -> super::super::Foundation::BOOL;
     }
@@ -520,7 +481,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetDeltaSignatureB(filetypeset: i64, hashalgid: u32, source: DELTA_INPUT, lphash: *mut DELTA_HASH) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDeltaSignatureB(filetypeset: i64, hashalgid: u32, source: DELTA_INPUT, lphash: *mut DELTA_HASH) -> super::super::Foundation::BOOL;
     }
@@ -533,7 +493,6 @@ pub unsafe fn GetDeltaSignatureW<'a, P0>(filetypeset: i64, hashalgid: u32, lpsou
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDeltaSignatureW(filetypeset: i64, hashalgid: u32, lpsourcename: ::windows::core::PCWSTR, lphash: *mut DELTA_HASH) -> super::super::Foundation::BOOL;
     }
@@ -546,7 +505,6 @@ pub unsafe fn GetFilePatchSignatureA<'a, P0>(filename: P0, optionflags: u32, opt
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFilePatchSignatureA(filename: ::windows::core::PCSTR, optionflags: u32, optiondata: *const ::core::ffi::c_void, ignorerangecount: u32, ignorerangearray: *const PATCH_IGNORE_RANGE, retainrangecount: u32, retainrangearray: *const PATCH_RETAIN_RANGE, signaturebuffersize: u32, signaturebuffer: ::windows::core::PSTR) -> super::super::Foundation::BOOL;
     }
@@ -566,7 +524,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetFilePatchSignatureByBuffer(filebufferwritable: &mut [u8], optionflags: u32, optiondata: ::core::option::Option<*const ::core::ffi::c_void>, ignorerangearray: ::core::option::Option<&[PATCH_IGNORE_RANGE]>, retainrangearray: ::core::option::Option<&[PATCH_RETAIN_RANGE]>, signaturebuffer: &mut [u8]) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFilePatchSignatureByBuffer(filebufferwritable: *mut u8, filesize: u32, optionflags: u32, optiondata: *const ::core::ffi::c_void, ignorerangecount: u32, ignorerangearray: *const PATCH_IGNORE_RANGE, retainrangecount: u32, retainrangearray: *const PATCH_RETAIN_RANGE, signaturebuffersize: u32, signaturebuffer: ::windows::core::PSTR) -> super::super::Foundation::BOOL;
     }
@@ -590,7 +547,6 @@ pub unsafe fn GetFilePatchSignatureByHandle<'a, P0>(filehandle: P0, optionflags:
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFilePatchSignatureByHandle(filehandle: super::super::Foundation::HANDLE, optionflags: u32, optiondata: *const ::core::ffi::c_void, ignorerangecount: u32, ignorerangearray: *const PATCH_IGNORE_RANGE, retainrangecount: u32, retainrangearray: *const PATCH_RETAIN_RANGE, signaturebuffersize: u32, signaturebuffer: ::windows::core::PSTR) -> super::super::Foundation::BOOL;
     }
@@ -613,7 +569,6 @@ pub unsafe fn GetFilePatchSignatureW<'a, P0>(filename: P0, optionflags: u32, opt
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFilePatchSignatureW(filename: ::windows::core::PCWSTR, optionflags: u32, optiondata: *const ::core::ffi::c_void, ignorerangecount: u32, ignorerangearray: *const PATCH_IGNORE_RANGE, retainrangecount: u32, retainrangearray: *const PATCH_RETAIN_RANGE, signaturebuffersize: u32, signaturebuffer: ::windows::core::PWSTR) -> super::super::Foundation::BOOL;
     }
@@ -637,7 +592,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiAdvertiseProductA(szpackagepath: ::windows::core::PCSTR, szscriptfilepath: ::windows::core::PCSTR, sztransforms: ::windows::core::PCSTR, lgidlanguage: u16) -> u32;
     }
@@ -651,7 +605,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiAdvertiseProductExA(szpackagepath: ::windows::core::PCSTR, szscriptfilepath: ::windows::core::PCSTR, sztransforms: ::windows::core::PCSTR, lgidlanguage: u16, dwplatform: u32, dwoptions: u32) -> u32;
     }
@@ -665,7 +618,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiAdvertiseProductExW(szpackagepath: ::windows::core::PCWSTR, szscriptfilepath: ::windows::core::PCWSTR, sztransforms: ::windows::core::PCWSTR, lgidlanguage: u16, dwplatform: u32, dwoptions: u32) -> u32;
     }
@@ -679,7 +631,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiAdvertiseProductW(szpackagepath: ::windows::core::PCWSTR, szscriptfilepath: ::windows::core::PCWSTR, sztransforms: ::windows::core::PCWSTR, lgidlanguage: u16) -> u32;
     }
@@ -693,7 +644,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiAdvertiseScriptA(szscriptfile: ::windows::core::PCSTR, dwflags: u32, phregdata: *const super::Registry::HKEY, fremoveitems: super::super::Foundation::BOOL) -> u32;
     }
@@ -707,7 +657,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiAdvertiseScriptW(szscriptfile: ::windows::core::PCWSTR, dwflags: u32, phregdata: *const super::Registry::HKEY, fremoveitems: super::super::Foundation::BOOL) -> u32;
     }
@@ -721,7 +670,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiApplyMultiplePatchesA(szpatchpackages: ::windows::core::PCSTR, szproductcode: ::windows::core::PCSTR, szpropertieslist: ::windows::core::PCSTR) -> u32;
     }
@@ -735,7 +683,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiApplyMultiplePatchesW(szpatchpackages: ::windows::core::PCWSTR, szproductcode: ::windows::core::PCWSTR, szpropertieslist: ::windows::core::PCWSTR) -> u32;
     }
@@ -749,7 +696,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiApplyPatchA(szpatchpackage: ::windows::core::PCSTR, szinstallpackage: ::windows::core::PCSTR, einstalltype: INSTALLTYPE, szcommandline: ::windows::core::PCSTR) -> u32;
     }
@@ -763,7 +709,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiApplyPatchW(szpatchpackage: ::windows::core::PCWSTR, szinstallpackage: ::windows::core::PCWSTR, einstalltype: INSTALLTYPE, szcommandline: ::windows::core::PCWSTR) -> u32;
     }
@@ -776,7 +721,6 @@ pub unsafe fn MsiBeginTransactionA<'a, P0>(szname: P0, dwtransactionattributes: 
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiBeginTransactionA(szname: ::windows::core::PCSTR, dwtransactionattributes: u32, phtransactionhandle: *mut MSIHANDLE, phchangeofownerevent: *mut super::super::Foundation::HANDLE) -> u32;
     }
@@ -789,7 +733,6 @@ pub unsafe fn MsiBeginTransactionW<'a, P0>(szname: P0, dwtransactionattributes: 
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiBeginTransactionW(szname: ::windows::core::PCWSTR, dwtransactionattributes: u32, phtransactionhandle: *mut MSIHANDLE, phchangeofownerevent: *mut super::super::Foundation::HANDLE) -> u32;
     }
@@ -798,7 +741,6 @@ where
 #[doc = "*Required features: `\"Win32_System_ApplicationInstallationAndServicing\"`*"]
 #[inline]
 pub unsafe fn MsiCloseAllHandles() -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiCloseAllHandles() -> u32;
     }
@@ -810,7 +752,6 @@ pub unsafe fn MsiCloseHandle<'a, P0>(hany: P0) -> u32
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiCloseHandle(hany: MSIHANDLE) -> u32;
     }
@@ -822,7 +763,6 @@ pub unsafe fn MsiCollectUserInfoA<'a, P0>(szproduct: P0) -> u32
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiCollectUserInfoA(szproduct: ::windows::core::PCSTR) -> u32;
     }
@@ -834,7 +774,6 @@ pub unsafe fn MsiCollectUserInfoW<'a, P0>(szproduct: P0) -> u32
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiCollectUserInfoW(szproduct: ::windows::core::PCWSTR) -> u32;
     }
@@ -847,7 +786,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiConfigureFeatureA(szproduct: ::windows::core::PCSTR, szfeature: ::windows::core::PCSTR, einstallstate: INSTALLSTATE) -> u32;
     }
@@ -860,7 +798,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiConfigureFeatureW(szproduct: ::windows::core::PCWSTR, szfeature: ::windows::core::PCWSTR, einstallstate: INSTALLSTATE) -> u32;
     }
@@ -872,7 +809,6 @@ pub unsafe fn MsiConfigureProductA<'a, P0>(szproduct: P0, iinstalllevel: INSTALL
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiConfigureProductA(szproduct: ::windows::core::PCSTR, iinstalllevel: INSTALLLEVEL, einstallstate: INSTALLSTATE) -> u32;
     }
@@ -885,7 +821,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiConfigureProductExA(szproduct: ::windows::core::PCSTR, iinstalllevel: INSTALLLEVEL, einstallstate: INSTALLSTATE, szcommandline: ::windows::core::PCSTR) -> u32;
     }
@@ -898,7 +833,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiConfigureProductExW(szproduct: ::windows::core::PCWSTR, iinstalllevel: INSTALLLEVEL, einstallstate: INSTALLSTATE, szcommandline: ::windows::core::PCWSTR) -> u32;
     }
@@ -910,7 +844,6 @@ pub unsafe fn MsiConfigureProductW<'a, P0>(szproduct: P0, iinstalllevel: INSTALL
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiConfigureProductW(szproduct: ::windows::core::PCWSTR, iinstalllevel: INSTALLLEVEL, einstallstate: INSTALLSTATE) -> u32;
     }
@@ -919,7 +852,6 @@ where
 #[doc = "*Required features: `\"Win32_System_ApplicationInstallationAndServicing\"`*"]
 #[inline]
 pub unsafe fn MsiCreateRecord(cparams: u32) -> MSIHANDLE {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiCreateRecord(cparams: u32) -> MSIHANDLE;
     }
@@ -933,7 +865,6 @@ where
     P1: ::std::convert::Into<MSIHANDLE>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiCreateTransformSummaryInfoA(hdatabase: MSIHANDLE, hdatabasereference: MSIHANDLE, sztransformfile: ::windows::core::PCSTR, ierrorconditions: MSITRANSFORM_ERROR, ivalidation: MSITRANSFORM_VALIDATE) -> u32;
     }
@@ -947,7 +878,6 @@ where
     P1: ::std::convert::Into<MSIHANDLE>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiCreateTransformSummaryInfoW(hdatabase: MSIHANDLE, hdatabasereference: MSIHANDLE, sztransformfile: ::windows::core::PCWSTR, ierrorconditions: MSITRANSFORM_ERROR, ivalidation: MSITRANSFORM_VALIDATE) -> u32;
     }
@@ -960,7 +890,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiDatabaseApplyTransformA(hdatabase: MSIHANDLE, sztransformfile: ::windows::core::PCSTR, ierrorconditions: MSITRANSFORM_ERROR) -> u32;
     }
@@ -973,7 +902,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiDatabaseApplyTransformW(hdatabase: MSIHANDLE, sztransformfile: ::windows::core::PCWSTR, ierrorconditions: MSITRANSFORM_ERROR) -> u32;
     }
@@ -985,7 +913,6 @@ pub unsafe fn MsiDatabaseCommit<'a, P0>(hdatabase: P0) -> u32
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiDatabaseCommit(hdatabase: MSIHANDLE) -> u32;
     }
@@ -1000,7 +927,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiDatabaseExportA(hdatabase: MSIHANDLE, sztablename: ::windows::core::PCSTR, szfolderpath: ::windows::core::PCSTR, szfilename: ::windows::core::PCSTR) -> u32;
     }
@@ -1015,7 +941,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiDatabaseExportW(hdatabase: MSIHANDLE, sztablename: ::windows::core::PCWSTR, szfolderpath: ::windows::core::PCWSTR, szfilename: ::windows::core::PCWSTR) -> u32;
     }
@@ -1029,7 +954,6 @@ where
     P1: ::std::convert::Into<MSIHANDLE>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiDatabaseGenerateTransformA(hdatabase: MSIHANDLE, hdatabasereference: MSIHANDLE, sztransformfile: ::windows::core::PCSTR, ireserved1: i32, ireserved2: i32) -> u32;
     }
@@ -1043,7 +967,6 @@ where
     P1: ::std::convert::Into<MSIHANDLE>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiDatabaseGenerateTransformW(hdatabase: MSIHANDLE, hdatabasereference: MSIHANDLE, sztransformfile: ::windows::core::PCWSTR, ireserved1: i32, ireserved2: i32) -> u32;
     }
@@ -1056,7 +979,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiDatabaseGetPrimaryKeysA(hdatabase: MSIHANDLE, sztablename: ::windows::core::PCSTR, phrecord: *mut MSIHANDLE) -> u32;
     }
@@ -1069,7 +991,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiDatabaseGetPrimaryKeysW(hdatabase: MSIHANDLE, sztablename: ::windows::core::PCWSTR, phrecord: *mut MSIHANDLE) -> u32;
     }
@@ -1083,7 +1004,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiDatabaseImportA(hdatabase: MSIHANDLE, szfolderpath: ::windows::core::PCSTR, szfilename: ::windows::core::PCSTR) -> u32;
     }
@@ -1097,7 +1017,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiDatabaseImportW(hdatabase: MSIHANDLE, szfolderpath: ::windows::core::PCWSTR, szfilename: ::windows::core::PCWSTR) -> u32;
     }
@@ -1110,7 +1029,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiDatabaseIsTablePersistentA(hdatabase: MSIHANDLE, sztablename: ::windows::core::PCSTR) -> MSICONDITION;
     }
@@ -1123,7 +1041,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiDatabaseIsTablePersistentW(hdatabase: MSIHANDLE, sztablename: ::windows::core::PCWSTR) -> MSICONDITION;
     }
@@ -1137,7 +1054,6 @@ where
     P1: ::std::convert::Into<MSIHANDLE>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiDatabaseMergeA(hdatabase: MSIHANDLE, hdatabasemerge: MSIHANDLE, sztablename: ::windows::core::PCSTR) -> u32;
     }
@@ -1151,7 +1067,6 @@ where
     P1: ::std::convert::Into<MSIHANDLE>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiDatabaseMergeW(hdatabase: MSIHANDLE, hdatabasemerge: MSIHANDLE, sztablename: ::windows::core::PCWSTR) -> u32;
     }
@@ -1164,7 +1079,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiDatabaseOpenViewA(hdatabase: MSIHANDLE, szquery: ::windows::core::PCSTR, phview: *mut MSIHANDLE) -> u32;
     }
@@ -1177,7 +1091,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiDatabaseOpenViewW(hdatabase: MSIHANDLE, szquery: ::windows::core::PCWSTR, phview: *mut MSIHANDLE) -> u32;
     }
@@ -1189,7 +1102,6 @@ pub unsafe fn MsiDetermineApplicablePatchesA<'a, P0>(szproductpackagepath: P0, p
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiDetermineApplicablePatchesA(szproductpackagepath: ::windows::core::PCSTR, cpatchinfo: u32, ppatchinfo: *mut MSIPATCHSEQUENCEINFOA) -> u32;
     }
@@ -1201,7 +1113,6 @@ pub unsafe fn MsiDetermineApplicablePatchesW<'a, P0>(szproductpackagepath: P0, p
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiDetermineApplicablePatchesW(szproductpackagepath: ::windows::core::PCWSTR, cpatchinfo: u32, ppatchinfo: *mut MSIPATCHSEQUENCEINFOW) -> u32;
     }
@@ -1214,7 +1125,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiDeterminePatchSequenceA(szproductcode: ::windows::core::PCSTR, szusersid: ::windows::core::PCSTR, dwcontext: MSIINSTALLCONTEXT, cpatchinfo: u32, ppatchinfo: *mut MSIPATCHSEQUENCEINFOA) -> u32;
     }
@@ -1227,7 +1137,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiDeterminePatchSequenceW(szproductcode: ::windows::core::PCWSTR, szusersid: ::windows::core::PCWSTR, dwcontext: MSIINSTALLCONTEXT, cpatchinfo: u32, ppatchinfo: *mut MSIPATCHSEQUENCEINFOW) -> u32;
     }
@@ -1240,7 +1149,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiDoActionA(hinstall: MSIHANDLE, szaction: ::windows::core::PCSTR) -> u32;
     }
@@ -1253,7 +1161,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiDoActionW(hinstall: MSIHANDLE, szaction: ::windows::core::PCWSTR) -> u32;
     }
@@ -1265,7 +1172,6 @@ pub unsafe fn MsiEnableLogA<'a, P0>(dwlogmode: INSTALLLOGMODE, szlogfile: P0, dw
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnableLogA(dwlogmode: INSTALLLOGMODE, szlogfile: ::windows::core::PCSTR, dwlogattributes: u32) -> u32;
     }
@@ -1277,7 +1183,6 @@ pub unsafe fn MsiEnableLogW<'a, P0>(dwlogmode: INSTALLLOGMODE, szlogfile: P0, dw
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnableLogW(dwlogmode: INSTALLLOGMODE, szlogfile: ::windows::core::PCWSTR, dwlogattributes: u32) -> u32;
     }
@@ -1289,7 +1194,6 @@ pub unsafe fn MsiEnableUIPreview<'a, P0>(hdatabase: P0, phpreview: *mut MSIHANDL
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnableUIPreview(hdatabase: MSIHANDLE, phpreview: *mut MSIHANDLE) -> u32;
     }
@@ -1298,7 +1202,6 @@ where
 #[doc = "*Required features: `\"Win32_System_ApplicationInstallationAndServicing\"`*"]
 #[inline]
 pub unsafe fn MsiEndTransaction(dwtransactionstate: MSITRANSACTIONSTATE) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEndTransaction(dwtransactionstate: MSITRANSACTIONSTATE) -> u32;
     }
@@ -1310,7 +1213,6 @@ pub unsafe fn MsiEnumClientsA<'a, P0>(szcomponent: P0, iproductindex: u32, lppro
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnumClientsA(szcomponent: ::windows::core::PCSTR, iproductindex: u32, lpproductbuf: ::windows::core::PSTR) -> u32;
     }
@@ -1323,7 +1225,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnumClientsExA(szcomponent: ::windows::core::PCSTR, szusersid: ::windows::core::PCSTR, dwcontext: MSIINSTALLCONTEXT, dwproductindex: u32, szproductbuf: ::windows::core::PSTR, pdwinstalledcontext: *mut MSIINSTALLCONTEXT, szsid: ::windows::core::PSTR, pcchsid: *mut u32) -> u32;
     }
@@ -1336,7 +1237,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnumClientsExW(szcomponent: ::windows::core::PCWSTR, szusersid: ::windows::core::PCWSTR, dwcontext: MSIINSTALLCONTEXT, dwproductindex: u32, szproductbuf: ::windows::core::PWSTR, pdwinstalledcontext: *mut MSIINSTALLCONTEXT, szsid: ::windows::core::PWSTR, pcchsid: *mut u32) -> u32;
     }
@@ -1348,7 +1248,6 @@ pub unsafe fn MsiEnumClientsW<'a, P0>(szcomponent: P0, iproductindex: u32, lppro
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnumClientsW(szcomponent: ::windows::core::PCWSTR, iproductindex: u32, lpproductbuf: ::windows::core::PWSTR) -> u32;
     }
@@ -1361,7 +1260,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnumComponentCostsA(hinstall: MSIHANDLE, szcomponent: ::windows::core::PCSTR, dwindex: u32, istate: INSTALLSTATE, szdrivebuf: ::windows::core::PSTR, pcchdrivebuf: *mut u32, picost: *mut i32, pitempcost: *mut i32) -> u32;
     }
@@ -1374,7 +1272,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnumComponentCostsW(hinstall: MSIHANDLE, szcomponent: ::windows::core::PCWSTR, dwindex: u32, istate: INSTALLSTATE, szdrivebuf: ::windows::core::PWSTR, pcchdrivebuf: *mut u32, picost: *mut i32, pitempcost: *mut i32) -> u32;
     }
@@ -1386,7 +1283,6 @@ pub unsafe fn MsiEnumComponentQualifiersA<'a, P0>(szcomponent: P0, iindex: u32, 
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnumComponentQualifiersA(szcomponent: ::windows::core::PCSTR, iindex: u32, lpqualifierbuf: ::windows::core::PSTR, pcchqualifierbuf: *mut u32, lpapplicationdatabuf: ::windows::core::PSTR, pcchapplicationdatabuf: *mut u32) -> u32;
     }
@@ -1398,7 +1294,6 @@ pub unsafe fn MsiEnumComponentQualifiersW<'a, P0>(szcomponent: P0, iindex: u32, 
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnumComponentQualifiersW(szcomponent: ::windows::core::PCWSTR, iindex: u32, lpqualifierbuf: ::windows::core::PWSTR, pcchqualifierbuf: *mut u32, lpapplicationdatabuf: ::windows::core::PWSTR, pcchapplicationdatabuf: *mut u32) -> u32;
     }
@@ -1407,7 +1302,6 @@ where
 #[doc = "*Required features: `\"Win32_System_ApplicationInstallationAndServicing\"`*"]
 #[inline]
 pub unsafe fn MsiEnumComponentsA(icomponentindex: u32, lpcomponentbuf: ::windows::core::PSTR) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnumComponentsA(icomponentindex: u32, lpcomponentbuf: ::windows::core::PSTR) -> u32;
     }
@@ -1419,7 +1313,6 @@ pub unsafe fn MsiEnumComponentsExA<'a, P0>(szusersid: P0, dwcontext: u32, dwinde
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnumComponentsExA(szusersid: ::windows::core::PCSTR, dwcontext: u32, dwindex: u32, szinstalledcomponentcode: ::windows::core::PSTR, pdwinstalledcontext: *mut MSIINSTALLCONTEXT, szsid: ::windows::core::PSTR, pcchsid: *mut u32) -> u32;
     }
@@ -1431,7 +1324,6 @@ pub unsafe fn MsiEnumComponentsExW<'a, P0>(szusersid: P0, dwcontext: u32, dwinde
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnumComponentsExW(szusersid: ::windows::core::PCWSTR, dwcontext: u32, dwindex: u32, szinstalledcomponentcode: ::windows::core::PWSTR, pdwinstalledcontext: *mut MSIINSTALLCONTEXT, szsid: ::windows::core::PWSTR, pcchsid: *mut u32) -> u32;
     }
@@ -1440,7 +1332,6 @@ where
 #[doc = "*Required features: `\"Win32_System_ApplicationInstallationAndServicing\"`*"]
 #[inline]
 pub unsafe fn MsiEnumComponentsW(icomponentindex: u32, lpcomponentbuf: ::windows::core::PWSTR) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnumComponentsW(icomponentindex: u32, lpcomponentbuf: ::windows::core::PWSTR) -> u32;
     }
@@ -1452,7 +1343,6 @@ pub unsafe fn MsiEnumFeaturesA<'a, P0>(szproduct: P0, ifeatureindex: u32, lpfeat
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnumFeaturesA(szproduct: ::windows::core::PCSTR, ifeatureindex: u32, lpfeaturebuf: ::windows::core::PSTR, lpparentbuf: ::windows::core::PSTR) -> u32;
     }
@@ -1464,7 +1354,6 @@ pub unsafe fn MsiEnumFeaturesW<'a, P0>(szproduct: P0, ifeatureindex: u32, lpfeat
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnumFeaturesW(szproduct: ::windows::core::PCWSTR, ifeatureindex: u32, lpfeaturebuf: ::windows::core::PWSTR, lpparentbuf: ::windows::core::PWSTR) -> u32;
     }
@@ -1476,7 +1365,6 @@ pub unsafe fn MsiEnumPatchesA<'a, P0>(szproduct: P0, ipatchindex: u32, lppatchbu
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnumPatchesA(szproduct: ::windows::core::PCSTR, ipatchindex: u32, lppatchbuf: ::windows::core::PSTR, lptransformsbuf: ::windows::core::PSTR, pcchtransformsbuf: *mut u32) -> u32;
     }
@@ -1489,7 +1377,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnumPatchesExA(szproductcode: ::windows::core::PCSTR, szusersid: ::windows::core::PCSTR, dwcontext: u32, dwfilter: u32, dwindex: u32, szpatchcode: ::windows::core::PSTR, sztargetproductcode: ::windows::core::PSTR, pdwtargetproductcontext: *mut MSIINSTALLCONTEXT, sztargetusersid: ::windows::core::PSTR, pcchtargetusersid: *mut u32) -> u32;
     }
@@ -1502,7 +1389,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnumPatchesExW(szproductcode: ::windows::core::PCWSTR, szusersid: ::windows::core::PCWSTR, dwcontext: u32, dwfilter: u32, dwindex: u32, szpatchcode: ::windows::core::PWSTR, sztargetproductcode: ::windows::core::PWSTR, pdwtargetproductcontext: *mut MSIINSTALLCONTEXT, sztargetusersid: ::windows::core::PWSTR, pcchtargetusersid: *mut u32) -> u32;
     }
@@ -1514,7 +1400,6 @@ pub unsafe fn MsiEnumPatchesW<'a, P0>(szproduct: P0, ipatchindex: u32, lppatchbu
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnumPatchesW(szproduct: ::windows::core::PCWSTR, ipatchindex: u32, lppatchbuf: ::windows::core::PWSTR, lptransformsbuf: ::windows::core::PWSTR, pcchtransformsbuf: *mut u32) -> u32;
     }
@@ -1523,7 +1408,6 @@ where
 #[doc = "*Required features: `\"Win32_System_ApplicationInstallationAndServicing\"`*"]
 #[inline]
 pub unsafe fn MsiEnumProductsA(iproductindex: u32, lpproductbuf: ::windows::core::PSTR) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnumProductsA(iproductindex: u32, lpproductbuf: ::windows::core::PSTR) -> u32;
     }
@@ -1536,7 +1420,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnumProductsExA(szproductcode: ::windows::core::PCSTR, szusersid: ::windows::core::PCSTR, dwcontext: u32, dwindex: u32, szinstalledproductcode: ::windows::core::PSTR, pdwinstalledcontext: *mut MSIINSTALLCONTEXT, szsid: ::windows::core::PSTR, pcchsid: *mut u32) -> u32;
     }
@@ -1549,7 +1432,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnumProductsExW(szproductcode: ::windows::core::PCWSTR, szusersid: ::windows::core::PCWSTR, dwcontext: u32, dwindex: u32, szinstalledproductcode: ::windows::core::PWSTR, pdwinstalledcontext: *mut MSIINSTALLCONTEXT, szsid: ::windows::core::PWSTR, pcchsid: *mut u32) -> u32;
     }
@@ -1558,7 +1440,6 @@ where
 #[doc = "*Required features: `\"Win32_System_ApplicationInstallationAndServicing\"`*"]
 #[inline]
 pub unsafe fn MsiEnumProductsW(iproductindex: u32, lpproductbuf: ::windows::core::PWSTR) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnumProductsW(iproductindex: u32, lpproductbuf: ::windows::core::PWSTR) -> u32;
     }
@@ -1570,7 +1451,6 @@ pub unsafe fn MsiEnumRelatedProductsA<'a, P0>(lpupgradecode: P0, dwreserved: u32
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnumRelatedProductsA(lpupgradecode: ::windows::core::PCSTR, dwreserved: u32, iproductindex: u32, lpproductbuf: ::windows::core::PSTR) -> u32;
     }
@@ -1582,7 +1462,6 @@ pub unsafe fn MsiEnumRelatedProductsW<'a, P0>(lpupgradecode: P0, dwreserved: u32
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEnumRelatedProductsW(lpupgradecode: ::windows::core::PCWSTR, dwreserved: u32, iproductindex: u32, lpproductbuf: ::windows::core::PWSTR) -> u32;
     }
@@ -1595,7 +1474,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEvaluateConditionA(hinstall: MSIHANDLE, szcondition: ::windows::core::PCSTR) -> MSICONDITION;
     }
@@ -1608,7 +1486,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiEvaluateConditionW(hinstall: MSIHANDLE, szcondition: ::windows::core::PCWSTR) -> MSICONDITION;
     }
@@ -1620,7 +1497,6 @@ pub unsafe fn MsiExtractPatchXMLDataA<'a, P0>(szpatchpath: P0, dwreserved: u32, 
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiExtractPatchXMLDataA(szpatchpath: ::windows::core::PCSTR, dwreserved: u32, szxmldata: ::windows::core::PSTR, pcchxmldata: *mut u32) -> u32;
     }
@@ -1632,7 +1508,6 @@ pub unsafe fn MsiExtractPatchXMLDataW<'a, P0>(szpatchpath: P0, dwreserved: u32, 
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiExtractPatchXMLDataW(szpatchpath: ::windows::core::PCWSTR, dwreserved: u32, szxmldata: ::windows::core::PWSTR, pcchxmldata: *mut u32) -> u32;
     }
@@ -1645,7 +1520,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiFormatRecordA(hinstall: MSIHANDLE, hrecord: MSIHANDLE, szresultbuf: ::windows::core::PSTR, pcchresultbuf: *mut u32) -> u32;
     }
@@ -1658,7 +1532,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiFormatRecordW(hinstall: MSIHANDLE, hrecord: MSIHANDLE, szresultbuf: ::windows::core::PWSTR, pcchresultbuf: *mut u32) -> u32;
     }
@@ -1670,7 +1543,6 @@ pub unsafe fn MsiGetActiveDatabase<'a, P0>(hinstall: P0) -> MSIHANDLE
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetActiveDatabase(hinstall: MSIHANDLE) -> MSIHANDLE;
     }
@@ -1683,7 +1555,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetComponentPathA(szproduct: ::windows::core::PCSTR, szcomponent: ::windows::core::PCSTR, lppathbuf: ::windows::core::PSTR, pcchbuf: *mut u32) -> INSTALLSTATE;
     }
@@ -1697,7 +1568,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetComponentPathExA(szproductcode: ::windows::core::PCSTR, szcomponentcode: ::windows::core::PCSTR, szusersid: ::windows::core::PCSTR, dwcontext: MSIINSTALLCONTEXT, lpoutpathbuffer: ::windows::core::PSTR, pcchoutpathbuffer: *mut u32) -> INSTALLSTATE;
     }
@@ -1711,7 +1581,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetComponentPathExW(szproductcode: ::windows::core::PCWSTR, szcomponentcode: ::windows::core::PCWSTR, szusersid: ::windows::core::PCWSTR, dwcontext: MSIINSTALLCONTEXT, lpoutpathbuffer: ::windows::core::PWSTR, pcchoutpathbuffer: *mut u32) -> INSTALLSTATE;
     }
@@ -1724,7 +1593,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetComponentPathW(szproduct: ::windows::core::PCWSTR, szcomponent: ::windows::core::PCWSTR, lppathbuf: ::windows::core::PWSTR, pcchbuf: *mut u32) -> INSTALLSTATE;
     }
@@ -1737,7 +1605,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetComponentStateA(hinstall: MSIHANDLE, szcomponent: ::windows::core::PCSTR, piinstalled: *mut INSTALLSTATE, piaction: *mut INSTALLSTATE) -> u32;
     }
@@ -1750,7 +1617,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetComponentStateW(hinstall: MSIHANDLE, szcomponent: ::windows::core::PCWSTR, piinstalled: *mut INSTALLSTATE, piaction: *mut INSTALLSTATE) -> u32;
     }
@@ -1762,7 +1628,6 @@ pub unsafe fn MsiGetDatabaseState<'a, P0>(hdatabase: P0) -> MSIDBSTATE
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetDatabaseState(hdatabase: MSIHANDLE) -> MSIDBSTATE;
     }
@@ -1775,7 +1640,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetFeatureCostA(hinstall: MSIHANDLE, szfeature: ::windows::core::PCSTR, icosttree: MSICOSTTREE, istate: INSTALLSTATE, picost: *mut i32) -> u32;
     }
@@ -1788,7 +1652,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetFeatureCostW(hinstall: MSIHANDLE, szfeature: ::windows::core::PCWSTR, icosttree: MSICOSTTREE, istate: INSTALLSTATE, picost: *mut i32) -> u32;
     }
@@ -1801,7 +1664,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetFeatureInfoA(hproduct: MSIHANDLE, szfeature: ::windows::core::PCSTR, lpattributes: *mut u32, lptitlebuf: ::windows::core::PSTR, pcchtitlebuf: *mut u32, lphelpbuf: ::windows::core::PSTR, pcchhelpbuf: *mut u32) -> u32;
     }
@@ -1814,7 +1676,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetFeatureInfoW(hproduct: MSIHANDLE, szfeature: ::windows::core::PCWSTR, lpattributes: *mut u32, lptitlebuf: ::windows::core::PWSTR, pcchtitlebuf: *mut u32, lphelpbuf: ::windows::core::PWSTR, pcchhelpbuf: *mut u32) -> u32;
     }
@@ -1827,7 +1688,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetFeatureStateA(hinstall: MSIHANDLE, szfeature: ::windows::core::PCSTR, piinstalled: *mut INSTALLSTATE, piaction: *mut INSTALLSTATE) -> u32;
     }
@@ -1840,7 +1700,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetFeatureStateW(hinstall: MSIHANDLE, szfeature: ::windows::core::PCWSTR, piinstalled: *mut INSTALLSTATE, piaction: *mut INSTALLSTATE) -> u32;
     }
@@ -1853,7 +1712,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetFeatureUsageA(szproduct: ::windows::core::PCSTR, szfeature: ::windows::core::PCSTR, pdwusecount: *mut u32, pwdateused: *mut u16) -> u32;
     }
@@ -1866,7 +1724,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetFeatureUsageW(szproduct: ::windows::core::PCWSTR, szfeature: ::windows::core::PCWSTR, pdwusecount: *mut u32, pwdateused: *mut u16) -> u32;
     }
@@ -1879,7 +1736,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetFeatureValidStatesA(hinstall: MSIHANDLE, szfeature: ::windows::core::PCSTR, lpinstallstates: *mut u32) -> u32;
     }
@@ -1892,7 +1748,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetFeatureValidStatesW(hinstall: MSIHANDLE, szfeature: ::windows::core::PCWSTR, lpinstallstates: *mut u32) -> u32;
     }
@@ -1904,7 +1759,6 @@ pub unsafe fn MsiGetFileHashA<'a, P0>(szfilepath: P0, dwoptions: u32, phash: *mu
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetFileHashA(szfilepath: ::windows::core::PCSTR, dwoptions: u32, phash: *mut MSIFILEHASHINFO) -> u32;
     }
@@ -1916,7 +1770,6 @@ pub unsafe fn MsiGetFileHashW<'a, P0>(szfilepath: P0, dwoptions: u32, phash: *mu
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetFileHashW(szfilepath: ::windows::core::PCWSTR, dwoptions: u32, phash: *mut MSIFILEHASHINFO) -> u32;
     }
@@ -1929,7 +1782,6 @@ pub unsafe fn MsiGetFileSignatureInformationA<'a, P0>(szsignedobjectpath: P0, dw
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetFileSignatureInformationA(szsignedobjectpath: ::windows::core::PCSTR, dwflags: u32, ppccertcontext: *mut *mut super::super::Security::Cryptography::CERT_CONTEXT, pbhashdata: *mut u8, pcbhashdata: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -1942,7 +1794,6 @@ pub unsafe fn MsiGetFileSignatureInformationW<'a, P0>(szsignedobjectpath: P0, dw
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetFileSignatureInformationW(szsignedobjectpath: ::windows::core::PCWSTR, dwflags: u32, ppccertcontext: *mut *mut super::super::Security::Cryptography::CERT_CONTEXT, pbhashdata: *mut u8, pcbhashdata: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -1954,7 +1805,6 @@ pub unsafe fn MsiGetFileVersionA<'a, P0>(szfilepath: P0, lpversionbuf: ::windows
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetFileVersionA(szfilepath: ::windows::core::PCSTR, lpversionbuf: ::windows::core::PSTR, pcchversionbuf: *mut u32, lplangbuf: ::windows::core::PSTR, pcchlangbuf: *mut u32) -> u32;
     }
@@ -1966,7 +1816,6 @@ pub unsafe fn MsiGetFileVersionW<'a, P0>(szfilepath: P0, lpversionbuf: ::windows
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetFileVersionW(szfilepath: ::windows::core::PCWSTR, lpversionbuf: ::windows::core::PWSTR, pcchversionbuf: *mut u32, lplangbuf: ::windows::core::PWSTR, pcchlangbuf: *mut u32) -> u32;
     }
@@ -1978,7 +1827,6 @@ pub unsafe fn MsiGetLanguage<'a, P0>(hinstall: P0) -> u16
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetLanguage(hinstall: MSIHANDLE) -> u16;
     }
@@ -1987,7 +1835,6 @@ where
 #[doc = "*Required features: `\"Win32_System_ApplicationInstallationAndServicing\"`*"]
 #[inline]
 pub unsafe fn MsiGetLastErrorRecord() -> MSIHANDLE {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetLastErrorRecord() -> MSIHANDLE;
     }
@@ -2000,7 +1847,6 @@ pub unsafe fn MsiGetMode<'a, P0>(hinstall: P0, erunmode: MSIRUNMODE) -> super::s
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetMode(hinstall: MSIHANDLE, erunmode: MSIRUNMODE) -> super::super::Foundation::BOOL;
     }
@@ -2013,7 +1859,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetPatchFileListA(szproductcode: ::windows::core::PCSTR, szpatchpackages: ::windows::core::PCSTR, pcfiles: *mut u32, pphfilerecords: *mut *mut MSIHANDLE) -> u32;
     }
@@ -2026,7 +1871,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetPatchFileListW(szproductcode: ::windows::core::PCWSTR, szpatchpackages: ::windows::core::PCWSTR, pcfiles: *mut u32, pphfilerecords: *mut *mut MSIHANDLE) -> u32;
     }
@@ -2039,7 +1883,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetPatchInfoA(szpatch: ::windows::core::PCSTR, szattribute: ::windows::core::PCSTR, lpvaluebuf: ::windows::core::PSTR, pcchvaluebuf: *mut u32) -> u32;
     }
@@ -2054,7 +1897,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetPatchInfoExA(szpatchcode: ::windows::core::PCSTR, szproductcode: ::windows::core::PCSTR, szusersid: ::windows::core::PCSTR, dwcontext: MSIINSTALLCONTEXT, szproperty: ::windows::core::PCSTR, lpvalue: ::windows::core::PSTR, pcchvalue: *mut u32) -> u32;
     }
@@ -2069,7 +1911,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetPatchInfoExW(szpatchcode: ::windows::core::PCWSTR, szproductcode: ::windows::core::PCWSTR, szusersid: ::windows::core::PCWSTR, dwcontext: MSIINSTALLCONTEXT, szproperty: ::windows::core::PCWSTR, lpvalue: ::windows::core::PWSTR, pcchvalue: *mut u32) -> u32;
     }
@@ -2082,7 +1923,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetPatchInfoW(szpatch: ::windows::core::PCWSTR, szattribute: ::windows::core::PCWSTR, lpvaluebuf: ::windows::core::PWSTR, pcchvaluebuf: *mut u32) -> u32;
     }
@@ -2094,7 +1934,6 @@ pub unsafe fn MsiGetProductCodeA<'a, P0>(szcomponent: P0, lpbuf39: ::windows::co
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetProductCodeA(szcomponent: ::windows::core::PCSTR, lpbuf39: ::windows::core::PSTR) -> u32;
     }
@@ -2106,7 +1945,6 @@ pub unsafe fn MsiGetProductCodeW<'a, P0>(szcomponent: P0, lpbuf39: ::windows::co
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetProductCodeW(szcomponent: ::windows::core::PCWSTR, lpbuf39: ::windows::core::PWSTR) -> u32;
     }
@@ -2119,7 +1957,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetProductInfoA(szproduct: ::windows::core::PCSTR, szattribute: ::windows::core::PCSTR, lpvaluebuf: ::windows::core::PSTR, pcchvaluebuf: *mut u32) -> u32;
     }
@@ -2133,7 +1970,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetProductInfoExA(szproductcode: ::windows::core::PCSTR, szusersid: ::windows::core::PCSTR, dwcontext: MSIINSTALLCONTEXT, szproperty: ::windows::core::PCSTR, szvalue: ::windows::core::PSTR, pcchvalue: *mut u32) -> u32;
     }
@@ -2147,7 +1983,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetProductInfoExW(szproductcode: ::windows::core::PCWSTR, szusersid: ::windows::core::PCWSTR, dwcontext: MSIINSTALLCONTEXT, szproperty: ::windows::core::PCWSTR, szvalue: ::windows::core::PWSTR, pcchvalue: *mut u32) -> u32;
     }
@@ -2159,7 +1994,6 @@ pub unsafe fn MsiGetProductInfoFromScriptA<'a, P0>(szscriptfile: P0, lpproductbu
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetProductInfoFromScriptA(szscriptfile: ::windows::core::PCSTR, lpproductbuf39: ::windows::core::PSTR, plgidlanguage: *mut u16, pdwversion: *mut u32, lpnamebuf: ::windows::core::PSTR, pcchnamebuf: *mut u32, lppackagebuf: ::windows::core::PSTR, pcchpackagebuf: *mut u32) -> u32;
     }
@@ -2171,7 +2005,6 @@ pub unsafe fn MsiGetProductInfoFromScriptW<'a, P0>(szscriptfile: P0, lpproductbu
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetProductInfoFromScriptW(szscriptfile: ::windows::core::PCWSTR, lpproductbuf39: ::windows::core::PWSTR, plgidlanguage: *mut u16, pdwversion: *mut u32, lpnamebuf: ::windows::core::PWSTR, pcchnamebuf: *mut u32, lppackagebuf: ::windows::core::PWSTR, pcchpackagebuf: *mut u32) -> u32;
     }
@@ -2184,7 +2017,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetProductInfoW(szproduct: ::windows::core::PCWSTR, szattribute: ::windows::core::PCWSTR, lpvaluebuf: ::windows::core::PWSTR, pcchvaluebuf: *mut u32) -> u32;
     }
@@ -2197,7 +2029,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetProductPropertyA(hproduct: MSIHANDLE, szproperty: ::windows::core::PCSTR, lpvaluebuf: ::windows::core::PSTR, pcchvaluebuf: *mut u32) -> u32;
     }
@@ -2210,7 +2041,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetProductPropertyW(hproduct: MSIHANDLE, szproperty: ::windows::core::PCWSTR, lpvaluebuf: ::windows::core::PWSTR, pcchvaluebuf: *mut u32) -> u32;
     }
@@ -2223,7 +2053,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetPropertyA(hinstall: MSIHANDLE, szname: ::windows::core::PCSTR, szvaluebuf: ::windows::core::PSTR, pcchvaluebuf: *mut u32) -> u32;
     }
@@ -2236,7 +2065,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetPropertyW(hinstall: MSIHANDLE, szname: ::windows::core::PCWSTR, szvaluebuf: ::windows::core::PWSTR, pcchvaluebuf: *mut u32) -> u32;
     }
@@ -2248,7 +2076,6 @@ pub unsafe fn MsiGetShortcutTargetA<'a, P0>(szshortcutpath: P0, szproductcode: :
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetShortcutTargetA(szshortcutpath: ::windows::core::PCSTR, szproductcode: ::windows::core::PSTR, szfeatureid: ::windows::core::PSTR, szcomponentcode: ::windows::core::PSTR) -> u32;
     }
@@ -2260,7 +2087,6 @@ pub unsafe fn MsiGetShortcutTargetW<'a, P0>(szshortcutpath: P0, szproductcode: :
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetShortcutTargetW(szshortcutpath: ::windows::core::PCWSTR, szproductcode: ::windows::core::PWSTR, szfeatureid: ::windows::core::PWSTR, szcomponentcode: ::windows::core::PWSTR) -> u32;
     }
@@ -2273,7 +2099,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetSourcePathA(hinstall: MSIHANDLE, szfolder: ::windows::core::PCSTR, szpathbuf: ::windows::core::PSTR, pcchpathbuf: *mut u32) -> u32;
     }
@@ -2286,7 +2111,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetSourcePathW(hinstall: MSIHANDLE, szfolder: ::windows::core::PCWSTR, szpathbuf: ::windows::core::PWSTR, pcchpathbuf: *mut u32) -> u32;
     }
@@ -2299,7 +2123,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetSummaryInformationA(hdatabase: MSIHANDLE, szdatabasepath: ::windows::core::PCSTR, uiupdatecount: u32, phsummaryinfo: *mut MSIHANDLE) -> u32;
     }
@@ -2312,7 +2135,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetSummaryInformationW(hdatabase: MSIHANDLE, szdatabasepath: ::windows::core::PCWSTR, uiupdatecount: u32, phsummaryinfo: *mut MSIHANDLE) -> u32;
     }
@@ -2325,7 +2147,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetTargetPathA(hinstall: MSIHANDLE, szfolder: ::windows::core::PCSTR, szpathbuf: ::windows::core::PSTR, pcchpathbuf: *mut u32) -> u32;
     }
@@ -2338,7 +2159,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetTargetPathW(hinstall: MSIHANDLE, szfolder: ::windows::core::PCWSTR, szpathbuf: ::windows::core::PWSTR, pcchpathbuf: *mut u32) -> u32;
     }
@@ -2350,7 +2170,6 @@ pub unsafe fn MsiGetUserInfoA<'a, P0>(szproduct: P0, lpusernamebuf: ::windows::c
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetUserInfoA(szproduct: ::windows::core::PCSTR, lpusernamebuf: ::windows::core::PSTR, pcchusernamebuf: *mut u32, lporgnamebuf: ::windows::core::PSTR, pcchorgnamebuf: *mut u32, lpserialbuf: ::windows::core::PSTR, pcchserialbuf: *mut u32) -> USERINFOSTATE;
     }
@@ -2362,7 +2181,6 @@ pub unsafe fn MsiGetUserInfoW<'a, P0>(szproduct: P0, lpusernamebuf: ::windows::c
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiGetUserInfoW(szproduct: ::windows::core::PCWSTR, lpusernamebuf: ::windows::core::PWSTR, pcchusernamebuf: *mut u32, lporgnamebuf: ::windows::core::PWSTR, pcchorgnamebuf: *mut u32, lpserialbuf: ::windows::core::PWSTR, pcchserialbuf: *mut u32) -> USERINFOSTATE;
     }
@@ -2375,7 +2193,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiInstallMissingComponentA(szproduct: ::windows::core::PCSTR, szcomponent: ::windows::core::PCSTR, einstallstate: INSTALLSTATE) -> u32;
     }
@@ -2388,7 +2205,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiInstallMissingComponentW(szproduct: ::windows::core::PCWSTR, szcomponent: ::windows::core::PCWSTR, einstallstate: INSTALLSTATE) -> u32;
     }
@@ -2401,7 +2217,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiInstallMissingFileA(szproduct: ::windows::core::PCSTR, szfile: ::windows::core::PCSTR) -> u32;
     }
@@ -2414,7 +2229,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiInstallMissingFileW(szproduct: ::windows::core::PCWSTR, szfile: ::windows::core::PCWSTR) -> u32;
     }
@@ -2427,7 +2241,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiInstallProductA(szpackagepath: ::windows::core::PCSTR, szcommandline: ::windows::core::PCSTR) -> u32;
     }
@@ -2440,7 +2253,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiInstallProductW(szpackagepath: ::windows::core::PCWSTR, szcommandline: ::windows::core::PCWSTR) -> u32;
     }
@@ -2453,7 +2265,6 @@ pub unsafe fn MsiIsProductElevatedA<'a, P0>(szproduct: P0, pfelevated: *mut supe
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiIsProductElevatedA(szproduct: ::windows::core::PCSTR, pfelevated: *mut super::super::Foundation::BOOL) -> u32;
     }
@@ -2466,7 +2277,6 @@ pub unsafe fn MsiIsProductElevatedW<'a, P0>(szproduct: P0, pfelevated: *mut supe
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiIsProductElevatedW(szproduct: ::windows::core::PCWSTR, pfelevated: *mut super::super::Foundation::BOOL) -> u32;
     }
@@ -2479,7 +2289,6 @@ pub unsafe fn MsiJoinTransaction<'a, P0>(htransactionhandle: P0, dwtransactionat
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiJoinTransaction(htransactionhandle: MSIHANDLE, dwtransactionattributes: u32, phchangeofownerevent: *mut super::super::Foundation::HANDLE) -> u32;
     }
@@ -2491,7 +2300,6 @@ pub unsafe fn MsiLocateComponentA<'a, P0>(szcomponent: P0, lppathbuf: ::windows:
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiLocateComponentA(szcomponent: ::windows::core::PCSTR, lppathbuf: ::windows::core::PSTR, pcchbuf: *mut u32) -> INSTALLSTATE;
     }
@@ -2503,7 +2311,6 @@ pub unsafe fn MsiLocateComponentW<'a, P0>(szcomponent: P0, lppathbuf: ::windows:
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiLocateComponentW(szcomponent: ::windows::core::PCWSTR, lppathbuf: ::windows::core::PWSTR, pcchbuf: *mut u32) -> INSTALLSTATE;
     }
@@ -2516,7 +2323,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiNotifySidChangeA(poldsid: ::windows::core::PCSTR, pnewsid: ::windows::core::PCSTR) -> u32;
     }
@@ -2529,7 +2335,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiNotifySidChangeW(poldsid: ::windows::core::PCWSTR, pnewsid: ::windows::core::PCWSTR) -> u32;
     }
@@ -2542,7 +2347,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiOpenDatabaseA(szdatabasepath: ::windows::core::PCSTR, szpersist: ::windows::core::PCSTR, phdatabase: *mut MSIHANDLE) -> u32;
     }
@@ -2555,7 +2359,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiOpenDatabaseW(szdatabasepath: ::windows::core::PCWSTR, szpersist: ::windows::core::PCWSTR, phdatabase: *mut MSIHANDLE) -> u32;
     }
@@ -2567,7 +2370,6 @@ pub unsafe fn MsiOpenPackageA<'a, P0>(szpackagepath: P0, hproduct: *mut MSIHANDL
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiOpenPackageA(szpackagepath: ::windows::core::PCSTR, hproduct: *mut MSIHANDLE) -> u32;
     }
@@ -2579,7 +2381,6 @@ pub unsafe fn MsiOpenPackageExA<'a, P0>(szpackagepath: P0, dwoptions: u32, hprod
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiOpenPackageExA(szpackagepath: ::windows::core::PCSTR, dwoptions: u32, hproduct: *mut MSIHANDLE) -> u32;
     }
@@ -2591,7 +2392,6 @@ pub unsafe fn MsiOpenPackageExW<'a, P0>(szpackagepath: P0, dwoptions: u32, hprod
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiOpenPackageExW(szpackagepath: ::windows::core::PCWSTR, dwoptions: u32, hproduct: *mut MSIHANDLE) -> u32;
     }
@@ -2603,7 +2403,6 @@ pub unsafe fn MsiOpenPackageW<'a, P0>(szpackagepath: P0, hproduct: *mut MSIHANDL
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiOpenPackageW(szpackagepath: ::windows::core::PCWSTR, hproduct: *mut MSIHANDLE) -> u32;
     }
@@ -2615,7 +2414,6 @@ pub unsafe fn MsiOpenProductA<'a, P0>(szproduct: P0, hproduct: *mut MSIHANDLE) -
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiOpenProductA(szproduct: ::windows::core::PCSTR, hproduct: *mut MSIHANDLE) -> u32;
     }
@@ -2627,7 +2425,6 @@ pub unsafe fn MsiOpenProductW<'a, P0>(szproduct: P0, hproduct: *mut MSIHANDLE) -
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiOpenProductW(szproduct: ::windows::core::PCWSTR, hproduct: *mut MSIHANDLE) -> u32;
     }
@@ -2641,7 +2438,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiPreviewBillboardA(hpreview: MSIHANDLE, szcontrolname: ::windows::core::PCSTR, szbillboard: ::windows::core::PCSTR) -> u32;
     }
@@ -2655,7 +2451,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiPreviewBillboardW(hpreview: MSIHANDLE, szcontrolname: ::windows::core::PCWSTR, szbillboard: ::windows::core::PCWSTR) -> u32;
     }
@@ -2668,7 +2463,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiPreviewDialogA(hpreview: MSIHANDLE, szdialogname: ::windows::core::PCSTR) -> u32;
     }
@@ -2681,7 +2475,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiPreviewDialogW(hpreview: MSIHANDLE, szdialogname: ::windows::core::PCWSTR) -> u32;
     }
@@ -2698,7 +2491,6 @@ where
     P3: ::std::convert::Into<super::super::Foundation::BOOL>,
     P4: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiProcessAdvertiseScriptA(szscriptfile: ::windows::core::PCSTR, sziconfolder: ::windows::core::PCSTR, hregdata: super::Registry::HKEY, fshortcuts: super::super::Foundation::BOOL, fremoveitems: super::super::Foundation::BOOL) -> u32;
     }
@@ -2715,7 +2507,6 @@ where
     P3: ::std::convert::Into<super::super::Foundation::BOOL>,
     P4: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiProcessAdvertiseScriptW(szscriptfile: ::windows::core::PCWSTR, sziconfolder: ::windows::core::PCWSTR, hregdata: super::Registry::HKEY, fshortcuts: super::super::Foundation::BOOL, fremoveitems: super::super::Foundation::BOOL) -> u32;
     }
@@ -2728,7 +2519,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiProcessMessage(hinstall: MSIHANDLE, emessagetype: INSTALLMESSAGE, hrecord: MSIHANDLE) -> i32;
     }
@@ -2741,7 +2531,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiProvideAssemblyA(szassemblyname: ::windows::core::PCSTR, szappcontext: ::windows::core::PCSTR, dwinstallmode: INSTALLMODE, dwassemblyinfo: MSIASSEMBLYINFO, lppathbuf: ::windows::core::PSTR, pcchpathbuf: *mut u32) -> u32;
     }
@@ -2754,7 +2543,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiProvideAssemblyW(szassemblyname: ::windows::core::PCWSTR, szappcontext: ::windows::core::PCWSTR, dwinstallmode: INSTALLMODE, dwassemblyinfo: MSIASSEMBLYINFO, lppathbuf: ::windows::core::PWSTR, pcchpathbuf: *mut u32) -> u32;
     }
@@ -2768,7 +2556,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiProvideComponentA(szproduct: ::windows::core::PCSTR, szfeature: ::windows::core::PCSTR, szcomponent: ::windows::core::PCSTR, dwinstallmode: INSTALLMODE, lppathbuf: ::windows::core::PSTR, pcchpathbuf: *mut u32) -> u32;
     }
@@ -2782,7 +2569,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiProvideComponentW(szproduct: ::windows::core::PCWSTR, szfeature: ::windows::core::PCWSTR, szcomponent: ::windows::core::PCWSTR, dwinstallmode: INSTALLMODE, lppathbuf: ::windows::core::PWSTR, pcchpathbuf: *mut u32) -> u32;
     }
@@ -2795,7 +2581,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiProvideQualifiedComponentA(szcategory: ::windows::core::PCSTR, szqualifier: ::windows::core::PCSTR, dwinstallmode: INSTALLMODE, lppathbuf: ::windows::core::PSTR, pcchpathbuf: *mut u32) -> u32;
     }
@@ -2809,7 +2594,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiProvideQualifiedComponentExA(szcategory: ::windows::core::PCSTR, szqualifier: ::windows::core::PCSTR, dwinstallmode: INSTALLMODE, szproduct: ::windows::core::PCSTR, dwunused1: u32, dwunused2: u32, lppathbuf: ::windows::core::PSTR, pcchpathbuf: *mut u32) -> u32;
     }
@@ -2823,7 +2607,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiProvideQualifiedComponentExW(szcategory: ::windows::core::PCWSTR, szqualifier: ::windows::core::PCWSTR, dwinstallmode: INSTALLMODE, szproduct: ::windows::core::PCWSTR, dwunused1: u32, dwunused2: u32, lppathbuf: ::windows::core::PWSTR, pcchpathbuf: *mut u32) -> u32;
     }
@@ -2836,7 +2619,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiProvideQualifiedComponentW(szcategory: ::windows::core::PCWSTR, szqualifier: ::windows::core::PCWSTR, dwinstallmode: INSTALLMODE, lppathbuf: ::windows::core::PWSTR, pcchpathbuf: *mut u32) -> u32;
     }
@@ -2850,7 +2632,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiQueryComponentStateA(szproductcode: ::windows::core::PCSTR, szusersid: ::windows::core::PCSTR, dwcontext: MSIINSTALLCONTEXT, szcomponentcode: ::windows::core::PCSTR, pdwstate: *mut INSTALLSTATE) -> u32;
     }
@@ -2864,7 +2645,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiQueryComponentStateW(szproductcode: ::windows::core::PCWSTR, szusersid: ::windows::core::PCWSTR, dwcontext: MSIINSTALLCONTEXT, szcomponentcode: ::windows::core::PCWSTR, pdwstate: *mut INSTALLSTATE) -> u32;
     }
@@ -2877,7 +2657,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiQueryFeatureStateA(szproduct: ::windows::core::PCSTR, szfeature: ::windows::core::PCSTR) -> INSTALLSTATE;
     }
@@ -2891,7 +2670,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiQueryFeatureStateExA(szproductcode: ::windows::core::PCSTR, szusersid: ::windows::core::PCSTR, dwcontext: MSIINSTALLCONTEXT, szfeature: ::windows::core::PCSTR, pdwstate: *mut INSTALLSTATE) -> u32;
     }
@@ -2905,7 +2683,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiQueryFeatureStateExW(szproductcode: ::windows::core::PCWSTR, szusersid: ::windows::core::PCWSTR, dwcontext: MSIINSTALLCONTEXT, szfeature: ::windows::core::PCWSTR, pdwstate: *mut INSTALLSTATE) -> u32;
     }
@@ -2918,7 +2695,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiQueryFeatureStateW(szproduct: ::windows::core::PCWSTR, szfeature: ::windows::core::PCWSTR) -> INSTALLSTATE;
     }
@@ -2930,7 +2706,6 @@ pub unsafe fn MsiQueryProductStateA<'a, P0>(szproduct: P0) -> INSTALLSTATE
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiQueryProductStateA(szproduct: ::windows::core::PCSTR) -> INSTALLSTATE;
     }
@@ -2942,7 +2717,6 @@ pub unsafe fn MsiQueryProductStateW<'a, P0>(szproduct: P0) -> INSTALLSTATE
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiQueryProductStateW(szproduct: ::windows::core::PCWSTR) -> INSTALLSTATE;
     }
@@ -2954,7 +2728,6 @@ pub unsafe fn MsiRecordClearData<'a, P0>(hrecord: P0) -> u32
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiRecordClearData(hrecord: MSIHANDLE) -> u32;
     }
@@ -2966,7 +2739,6 @@ pub unsafe fn MsiRecordDataSize<'a, P0>(hrecord: P0, ifield: u32) -> u32
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiRecordDataSize(hrecord: MSIHANDLE, ifield: u32) -> u32;
     }
@@ -2978,7 +2750,6 @@ pub unsafe fn MsiRecordGetFieldCount<'a, P0>(hrecord: P0) -> u32
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiRecordGetFieldCount(hrecord: MSIHANDLE) -> u32;
     }
@@ -2990,7 +2761,6 @@ pub unsafe fn MsiRecordGetInteger<'a, P0>(hrecord: P0, ifield: u32) -> i32
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiRecordGetInteger(hrecord: MSIHANDLE, ifield: u32) -> i32;
     }
@@ -3002,7 +2772,6 @@ pub unsafe fn MsiRecordGetStringA<'a, P0>(hrecord: P0, ifield: u32, szvaluebuf: 
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiRecordGetStringA(hrecord: MSIHANDLE, ifield: u32, szvaluebuf: ::windows::core::PSTR, pcchvaluebuf: *mut u32) -> u32;
     }
@@ -3014,7 +2783,6 @@ pub unsafe fn MsiRecordGetStringW<'a, P0>(hrecord: P0, ifield: u32, szvaluebuf: 
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiRecordGetStringW(hrecord: MSIHANDLE, ifield: u32, szvaluebuf: ::windows::core::PWSTR, pcchvaluebuf: *mut u32) -> u32;
     }
@@ -3027,7 +2795,6 @@ pub unsafe fn MsiRecordIsNull<'a, P0>(hrecord: P0, ifield: u32) -> super::super:
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiRecordIsNull(hrecord: MSIHANDLE, ifield: u32) -> super::super::Foundation::BOOL;
     }
@@ -3039,7 +2806,6 @@ pub unsafe fn MsiRecordReadStream<'a, P0>(hrecord: P0, ifield: u32, szdatabuf: :
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiRecordReadStream(hrecord: MSIHANDLE, ifield: u32, szdatabuf: ::windows::core::PSTR, pcbdatabuf: *mut u32) -> u32;
     }
@@ -3051,7 +2817,6 @@ pub unsafe fn MsiRecordSetInteger<'a, P0>(hrecord: P0, ifield: u32, ivalue: i32)
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiRecordSetInteger(hrecord: MSIHANDLE, ifield: u32, ivalue: i32) -> u32;
     }
@@ -3064,7 +2829,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiRecordSetStreamA(hrecord: MSIHANDLE, ifield: u32, szfilepath: ::windows::core::PCSTR) -> u32;
     }
@@ -3077,7 +2841,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiRecordSetStreamW(hrecord: MSIHANDLE, ifield: u32, szfilepath: ::windows::core::PCWSTR) -> u32;
     }
@@ -3090,7 +2853,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiRecordSetStringA(hrecord: MSIHANDLE, ifield: u32, szvalue: ::windows::core::PCSTR) -> u32;
     }
@@ -3103,7 +2865,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiRecordSetStringW(hrecord: MSIHANDLE, ifield: u32, szvalue: ::windows::core::PCWSTR) -> u32;
     }
@@ -3116,7 +2877,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiReinstallFeatureA(szproduct: ::windows::core::PCSTR, szfeature: ::windows::core::PCSTR, dwreinstallmode: REINSTALLMODE) -> u32;
     }
@@ -3129,7 +2889,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiReinstallFeatureW(szproduct: ::windows::core::PCWSTR, szfeature: ::windows::core::PCWSTR, dwreinstallmode: REINSTALLMODE) -> u32;
     }
@@ -3141,7 +2900,6 @@ pub unsafe fn MsiReinstallProductA<'a, P0>(szproduct: P0, szreinstallmode: REINS
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiReinstallProductA(szproduct: ::windows::core::PCSTR, szreinstallmode: REINSTALLMODE) -> u32;
     }
@@ -3153,7 +2911,6 @@ pub unsafe fn MsiReinstallProductW<'a, P0>(szproduct: P0, szreinstallmode: REINS
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiReinstallProductW(szproduct: ::windows::core::PCWSTR, szreinstallmode: REINSTALLMODE) -> u32;
     }
@@ -3167,7 +2924,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiRemovePatchesA(szpatchlist: ::windows::core::PCSTR, szproductcode: ::windows::core::PCSTR, euninstalltype: INSTALLTYPE, szpropertylist: ::windows::core::PCSTR) -> u32;
     }
@@ -3181,7 +2937,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiRemovePatchesW(szpatchlist: ::windows::core::PCWSTR, szproductcode: ::windows::core::PCWSTR, euninstalltype: INSTALLTYPE, szpropertylist: ::windows::core::PCWSTR) -> u32;
     }
@@ -3194,7 +2949,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSequenceA(hinstall: MSIHANDLE, sztable: ::windows::core::PCSTR, isequencemode: i32) -> u32;
     }
@@ -3207,7 +2961,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSequenceW(hinstall: MSIHANDLE, sztable: ::windows::core::PCWSTR, isequencemode: i32) -> u32;
     }
@@ -3220,7 +2973,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSetComponentStateA(hinstall: MSIHANDLE, szcomponent: ::windows::core::PCSTR, istate: INSTALLSTATE) -> u32;
     }
@@ -3233,7 +2985,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSetComponentStateW(hinstall: MSIHANDLE, szcomponent: ::windows::core::PCWSTR, istate: INSTALLSTATE) -> u32;
     }
@@ -3242,7 +2993,6 @@ where
 #[doc = "*Required features: `\"Win32_System_ApplicationInstallationAndServicing\"`*"]
 #[inline]
 pub unsafe fn MsiSetExternalUIA(puihandler: INSTALLUI_HANDLERA, dwmessagefilter: u32, pvcontext: ::core::option::Option<*const ::core::ffi::c_void>) -> INSTALLUI_HANDLERA {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSetExternalUIA(puihandler: *mut ::core::ffi::c_void, dwmessagefilter: u32, pvcontext: *const ::core::ffi::c_void) -> INSTALLUI_HANDLERA;
     }
@@ -3251,7 +3001,6 @@ pub unsafe fn MsiSetExternalUIA(puihandler: INSTALLUI_HANDLERA, dwmessagefilter:
 #[doc = "*Required features: `\"Win32_System_ApplicationInstallationAndServicing\"`*"]
 #[inline]
 pub unsafe fn MsiSetExternalUIRecord(puihandler: PINSTALLUI_HANDLER_RECORD, dwmessagefilter: u32, pvcontext: ::core::option::Option<*const ::core::ffi::c_void>, ppuiprevhandler: PINSTALLUI_HANDLER_RECORD) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSetExternalUIRecord(puihandler: *mut ::core::ffi::c_void, dwmessagefilter: u32, pvcontext: *const ::core::ffi::c_void, ppuiprevhandler: *mut ::core::ffi::c_void) -> u32;
     }
@@ -3260,7 +3009,6 @@ pub unsafe fn MsiSetExternalUIRecord(puihandler: PINSTALLUI_HANDLER_RECORD, dwme
 #[doc = "*Required features: `\"Win32_System_ApplicationInstallationAndServicing\"`*"]
 #[inline]
 pub unsafe fn MsiSetExternalUIW(puihandler: INSTALLUI_HANDLERW, dwmessagefilter: u32, pvcontext: ::core::option::Option<*const ::core::ffi::c_void>) -> INSTALLUI_HANDLERW {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSetExternalUIW(puihandler: *mut ::core::ffi::c_void, dwmessagefilter: u32, pvcontext: *const ::core::ffi::c_void) -> INSTALLUI_HANDLERW;
     }
@@ -3273,7 +3021,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSetFeatureAttributesA(hinstall: MSIHANDLE, szfeature: ::windows::core::PCSTR, dwattributes: u32) -> u32;
     }
@@ -3286,7 +3033,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSetFeatureAttributesW(hinstall: MSIHANDLE, szfeature: ::windows::core::PCWSTR, dwattributes: u32) -> u32;
     }
@@ -3299,7 +3045,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSetFeatureStateA(hinstall: MSIHANDLE, szfeature: ::windows::core::PCSTR, istate: INSTALLSTATE) -> u32;
     }
@@ -3312,7 +3057,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSetFeatureStateW(hinstall: MSIHANDLE, szfeature: ::windows::core::PCWSTR, istate: INSTALLSTATE) -> u32;
     }
@@ -3324,7 +3068,6 @@ pub unsafe fn MsiSetInstallLevel<'a, P0>(hinstall: P0, iinstalllevel: i32) -> u3
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSetInstallLevel(hinstall: MSIHANDLE, iinstalllevel: i32) -> u32;
     }
@@ -3334,7 +3077,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn MsiSetInternalUI(dwuilevel: INSTALLUILEVEL, phwnd: ::core::option::Option<*mut super::super::Foundation::HWND>) -> INSTALLUILEVEL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSetInternalUI(dwuilevel: INSTALLUILEVEL, phwnd: *mut super::super::Foundation::HWND) -> INSTALLUILEVEL;
     }
@@ -3348,7 +3090,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSetMode(hinstall: MSIHANDLE, erunmode: MSIRUNMODE, fstate: super::super::Foundation::BOOL) -> u32;
     }
@@ -3362,7 +3103,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSetPropertyA(hinstall: MSIHANDLE, szname: ::windows::core::PCSTR, szvalue: ::windows::core::PCSTR) -> u32;
     }
@@ -3376,7 +3116,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSetPropertyW(hinstall: MSIHANDLE, szname: ::windows::core::PCWSTR, szvalue: ::windows::core::PCWSTR) -> u32;
     }
@@ -3390,7 +3129,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSetTargetPathA(hinstall: MSIHANDLE, szfolder: ::windows::core::PCSTR, szfolderpath: ::windows::core::PCSTR) -> u32;
     }
@@ -3404,7 +3142,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSetTargetPathW(hinstall: MSIHANDLE, szfolder: ::windows::core::PCWSTR, szfolderpath: ::windows::core::PCWSTR) -> u32;
     }
@@ -3419,7 +3156,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSourceListAddMediaDiskA(szproductcodeorpatchcode: ::windows::core::PCSTR, szusersid: ::windows::core::PCSTR, dwcontext: MSIINSTALLCONTEXT, dwoptions: u32, dwdiskid: u32, szvolumelabel: ::windows::core::PCSTR, szdiskprompt: ::windows::core::PCSTR) -> u32;
     }
@@ -3434,7 +3170,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSourceListAddMediaDiskW(szproductcodeorpatchcode: ::windows::core::PCWSTR, szusersid: ::windows::core::PCWSTR, dwcontext: MSIINSTALLCONTEXT, dwoptions: u32, dwdiskid: u32, szvolumelabel: ::windows::core::PCWSTR, szdiskprompt: ::windows::core::PCWSTR) -> u32;
     }
@@ -3448,7 +3183,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSourceListAddSourceA(szproduct: ::windows::core::PCSTR, szusername: ::windows::core::PCSTR, dwreserved: u32, szsource: ::windows::core::PCSTR) -> u32;
     }
@@ -3462,7 +3196,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSourceListAddSourceExA(szproductcodeorpatchcode: ::windows::core::PCSTR, szusersid: ::windows::core::PCSTR, dwcontext: MSIINSTALLCONTEXT, dwoptions: u32, szsource: ::windows::core::PCSTR, dwindex: u32) -> u32;
     }
@@ -3476,7 +3209,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSourceListAddSourceExW(szproductcodeorpatchcode: ::windows::core::PCWSTR, szusersid: ::windows::core::PCWSTR, dwcontext: MSIINSTALLCONTEXT, dwoptions: u32, szsource: ::windows::core::PCWSTR, dwindex: u32) -> u32;
     }
@@ -3490,7 +3222,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSourceListAddSourceW(szproduct: ::windows::core::PCWSTR, szusername: ::windows::core::PCWSTR, dwreserved: u32, szsource: ::windows::core::PCWSTR) -> u32;
     }
@@ -3503,7 +3234,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSourceListClearAllA(szproduct: ::windows::core::PCSTR, szusername: ::windows::core::PCSTR, dwreserved: u32) -> u32;
     }
@@ -3516,7 +3246,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSourceListClearAllExA(szproductcodeorpatchcode: ::windows::core::PCSTR, szusersid: ::windows::core::PCSTR, dwcontext: MSIINSTALLCONTEXT, dwoptions: u32) -> u32;
     }
@@ -3529,7 +3258,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSourceListClearAllExW(szproductcodeorpatchcode: ::windows::core::PCWSTR, szusersid: ::windows::core::PCWSTR, dwcontext: MSIINSTALLCONTEXT, dwoptions: u32) -> u32;
     }
@@ -3542,7 +3270,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSourceListClearAllW(szproduct: ::windows::core::PCWSTR, szusername: ::windows::core::PCWSTR, dwreserved: u32) -> u32;
     }
@@ -3555,7 +3282,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSourceListClearMediaDiskA(szproductcodeorpatchcode: ::windows::core::PCSTR, szusersid: ::windows::core::PCSTR, dwcontext: MSIINSTALLCONTEXT, dwoptions: u32, dwdiskid: u32) -> u32;
     }
@@ -3568,7 +3294,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSourceListClearMediaDiskW(szproductcodeorpatchcode: ::windows::core::PCWSTR, szusersid: ::windows::core::PCWSTR, dwcontext: MSIINSTALLCONTEXT, dwoptions: u32, dwdiskid: u32) -> u32;
     }
@@ -3582,7 +3307,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSourceListClearSourceA(szproductcodeorpatchcode: ::windows::core::PCSTR, szusersid: ::windows::core::PCSTR, dwcontext: MSIINSTALLCONTEXT, dwoptions: u32, szsource: ::windows::core::PCSTR) -> u32;
     }
@@ -3596,7 +3320,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSourceListClearSourceW(szproductcodeorpatchcode: ::windows::core::PCWSTR, szusersid: ::windows::core::PCWSTR, dwcontext: MSIINSTALLCONTEXT, dwoptions: u32, szsource: ::windows::core::PCWSTR) -> u32;
     }
@@ -3609,7 +3332,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSourceListEnumMediaDisksA(szproductcodeorpatchcode: ::windows::core::PCSTR, szusersid: ::windows::core::PCSTR, dwcontext: MSIINSTALLCONTEXT, dwoptions: u32, dwindex: u32, pdwdiskid: *mut u32, szvolumelabel: ::windows::core::PSTR, pcchvolumelabel: *mut u32, szdiskprompt: ::windows::core::PSTR, pcchdiskprompt: *mut u32) -> u32;
     }
@@ -3622,7 +3344,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSourceListEnumMediaDisksW(szproductcodeorpatchcode: ::windows::core::PCWSTR, szusersid: ::windows::core::PCWSTR, dwcontext: MSIINSTALLCONTEXT, dwoptions: u32, dwindex: u32, pdwdiskid: *mut u32, szvolumelabel: ::windows::core::PWSTR, pcchvolumelabel: *mut u32, szdiskprompt: ::windows::core::PWSTR, pcchdiskprompt: *mut u32) -> u32;
     }
@@ -3635,7 +3356,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSourceListEnumSourcesA(szproductcodeorpatchcode: ::windows::core::PCSTR, szusersid: ::windows::core::PCSTR, dwcontext: MSIINSTALLCONTEXT, dwoptions: u32, dwindex: u32, szsource: ::windows::core::PSTR, pcchsource: *mut u32) -> u32;
     }
@@ -3648,7 +3368,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSourceListEnumSourcesW(szproductcodeorpatchcode: ::windows::core::PCWSTR, szusersid: ::windows::core::PCWSTR, dwcontext: MSIINSTALLCONTEXT, dwoptions: u32, dwindex: u32, szsource: ::windows::core::PWSTR, pcchsource: *mut u32) -> u32;
     }
@@ -3661,7 +3380,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSourceListForceResolutionA(szproduct: ::windows::core::PCSTR, szusername: ::windows::core::PCSTR, dwreserved: u32) -> u32;
     }
@@ -3674,7 +3392,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSourceListForceResolutionExA(szproductcodeorpatchcode: ::windows::core::PCSTR, szusersid: ::windows::core::PCSTR, dwcontext: MSIINSTALLCONTEXT, dwoptions: u32) -> u32;
     }
@@ -3687,7 +3404,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSourceListForceResolutionExW(szproductcodeorpatchcode: ::windows::core::PCWSTR, szusersid: ::windows::core::PCWSTR, dwcontext: MSIINSTALLCONTEXT, dwoptions: u32) -> u32;
     }
@@ -3700,7 +3416,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSourceListForceResolutionW(szproduct: ::windows::core::PCWSTR, szusername: ::windows::core::PCWSTR, dwreserved: u32) -> u32;
     }
@@ -3714,7 +3429,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSourceListGetInfoA(szproductcodeorpatchcode: ::windows::core::PCSTR, szusersid: ::windows::core::PCSTR, dwcontext: MSIINSTALLCONTEXT, dwoptions: u32, szproperty: ::windows::core::PCSTR, szvalue: ::windows::core::PSTR, pcchvalue: *mut u32) -> u32;
     }
@@ -3728,7 +3442,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSourceListGetInfoW(szproductcodeorpatchcode: ::windows::core::PCWSTR, szusersid: ::windows::core::PCWSTR, dwcontext: MSIINSTALLCONTEXT, dwoptions: u32, szproperty: ::windows::core::PCWSTR, szvalue: ::windows::core::PWSTR, pcchvalue: *mut u32) -> u32;
     }
@@ -3743,7 +3456,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSourceListSetInfoA(szproductcodeorpatchcode: ::windows::core::PCSTR, szusersid: ::windows::core::PCSTR, dwcontext: MSIINSTALLCONTEXT, dwoptions: u32, szproperty: ::windows::core::PCSTR, szvalue: ::windows::core::PCSTR) -> u32;
     }
@@ -3758,7 +3470,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSourceListSetInfoW(szproductcodeorpatchcode: ::windows::core::PCWSTR, szusersid: ::windows::core::PCWSTR, dwcontext: MSIINSTALLCONTEXT, dwoptions: u32, szproperty: ::windows::core::PCWSTR, szvalue: ::windows::core::PCWSTR) -> u32;
     }
@@ -3771,7 +3482,6 @@ pub unsafe fn MsiSummaryInfoGetPropertyA<'a, P0>(hsummaryinfo: P0, uiproperty: u
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSummaryInfoGetPropertyA(hsummaryinfo: MSIHANDLE, uiproperty: u32, puidatatype: *mut u32, pivalue: *mut i32, pftvalue: *mut super::super::Foundation::FILETIME, szvaluebuf: ::windows::core::PSTR, pcchvaluebuf: *mut u32) -> u32;
     }
@@ -3783,7 +3493,6 @@ pub unsafe fn MsiSummaryInfoGetPropertyCount<'a, P0>(hsummaryinfo: P0, puiproper
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSummaryInfoGetPropertyCount(hsummaryinfo: MSIHANDLE, puipropertycount: *mut u32) -> u32;
     }
@@ -3796,7 +3505,6 @@ pub unsafe fn MsiSummaryInfoGetPropertyW<'a, P0>(hsummaryinfo: P0, uiproperty: u
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSummaryInfoGetPropertyW(hsummaryinfo: MSIHANDLE, uiproperty: u32, puidatatype: *mut u32, pivalue: *mut i32, pftvalue: *mut super::super::Foundation::FILETIME, szvaluebuf: ::windows::core::PWSTR, pcchvaluebuf: *mut u32) -> u32;
     }
@@ -3808,7 +3516,6 @@ pub unsafe fn MsiSummaryInfoPersist<'a, P0>(hsummaryinfo: P0) -> u32
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSummaryInfoPersist(hsummaryinfo: MSIHANDLE) -> u32;
     }
@@ -3822,7 +3529,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSummaryInfoSetPropertyA(hsummaryinfo: MSIHANDLE, uiproperty: u32, uidatatype: u32, ivalue: i32, pftvalue: *mut super::super::Foundation::FILETIME, szvalue: ::windows::core::PCSTR) -> u32;
     }
@@ -3836,7 +3542,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiSummaryInfoSetPropertyW(hsummaryinfo: MSIHANDLE, uiproperty: u32, uidatatype: u32, ivalue: i32, pftvalue: *mut super::super::Foundation::FILETIME, szvalue: ::windows::core::PCWSTR) -> u32;
     }
@@ -3849,7 +3554,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiUseFeatureA(szproduct: ::windows::core::PCSTR, szfeature: ::windows::core::PCSTR) -> INSTALLSTATE;
     }
@@ -3862,7 +3566,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiUseFeatureExA(szproduct: ::windows::core::PCSTR, szfeature: ::windows::core::PCSTR, dwinstallmode: u32, dwreserved: u32) -> INSTALLSTATE;
     }
@@ -3875,7 +3578,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiUseFeatureExW(szproduct: ::windows::core::PCWSTR, szfeature: ::windows::core::PCWSTR, dwinstallmode: u32, dwreserved: u32) -> INSTALLSTATE;
     }
@@ -3888,7 +3590,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiUseFeatureW(szproduct: ::windows::core::PCWSTR, szfeature: ::windows::core::PCWSTR) -> INSTALLSTATE;
     }
@@ -3900,7 +3601,6 @@ pub unsafe fn MsiVerifyDiskSpace<'a, P0>(hinstall: P0) -> u32
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiVerifyDiskSpace(hinstall: MSIHANDLE) -> u32;
     }
@@ -3912,7 +3612,6 @@ pub unsafe fn MsiVerifyPackageA<'a, P0>(szpackagepath: P0) -> u32
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiVerifyPackageA(szpackagepath: ::windows::core::PCSTR) -> u32;
     }
@@ -3924,7 +3623,6 @@ pub unsafe fn MsiVerifyPackageW<'a, P0>(szpackagepath: P0) -> u32
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiVerifyPackageW(szpackagepath: ::windows::core::PCWSTR) -> u32;
     }
@@ -3936,7 +3634,6 @@ pub unsafe fn MsiViewClose<'a, P0>(hview: P0) -> u32
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiViewClose(hview: MSIHANDLE) -> u32;
     }
@@ -3949,7 +3646,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiViewExecute(hview: MSIHANDLE, hrecord: MSIHANDLE) -> u32;
     }
@@ -3961,7 +3657,6 @@ pub unsafe fn MsiViewFetch<'a, P0>(hview: P0, phrecord: *mut MSIHANDLE) -> u32
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiViewFetch(hview: MSIHANDLE, phrecord: *mut MSIHANDLE) -> u32;
     }
@@ -3973,7 +3668,6 @@ pub unsafe fn MsiViewGetColumnInfo<'a, P0>(hview: P0, ecolumninfo: MSICOLINFO, p
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiViewGetColumnInfo(hview: MSIHANDLE, ecolumninfo: MSICOLINFO, phrecord: *mut MSIHANDLE) -> u32;
     }
@@ -3985,7 +3679,6 @@ pub unsafe fn MsiViewGetErrorA<'a, P0>(hview: P0, szcolumnnamebuffer: ::windows:
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiViewGetErrorA(hview: MSIHANDLE, szcolumnnamebuffer: ::windows::core::PSTR, pcchbuf: *mut u32) -> MSIDBERROR;
     }
@@ -3997,7 +3690,6 @@ pub unsafe fn MsiViewGetErrorW<'a, P0>(hview: P0, szcolumnnamebuffer: ::windows:
 where
     P0: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiViewGetErrorW(hview: MSIHANDLE, szcolumnnamebuffer: ::windows::core::PWSTR, pcchbuf: *mut u32) -> MSIDBERROR;
     }
@@ -4010,7 +3702,6 @@ where
     P0: ::std::convert::Into<MSIHANDLE>,
     P1: ::std::convert::Into<MSIHANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsiViewModify(hview: MSIHANDLE, emodifymode: MSIMODIFY, hrecord: MSIHANDLE) -> u32;
     }
@@ -4020,7 +3711,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn NormalizeFileForPatchSignature(filebuffer: *mut ::core::ffi::c_void, filesize: u32, optionflags: u32, optiondata: ::core::option::Option<*const PATCH_OPTION_DATA>, newfilecoffbase: u32, newfilecofftime: u32, ignorerangearray: ::core::option::Option<&[PATCH_IGNORE_RANGE]>, retainrangearray: ::core::option::Option<&[PATCH_RETAIN_RANGE]>) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NormalizeFileForPatchSignature(filebuffer: *mut ::core::ffi::c_void, filesize: u32, optionflags: u32, optiondata: *const PATCH_OPTION_DATA, newfilecoffbase: u32, newfilecofftime: u32, ignorerangecount: u32, ignorerangearray: *const PATCH_IGNORE_RANGE, retainrangecount: u32, retainrangearray: *const PATCH_RETAIN_RANGE) -> i32;
     }
@@ -4046,7 +3736,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn QueryActCtxSettingsW(dwflags: u32, hactctx: super::super::Foundation::HANDLE, settingsnamespace: ::windows::core::PCWSTR, settingname: ::windows::core::PCWSTR, pvbuffer: ::windows::core::PWSTR, dwbuffer: usize, pdwwrittenorrequired: *mut usize) -> super::super::Foundation::BOOL;
     }
@@ -4059,7 +3748,6 @@ pub unsafe fn QueryActCtxW<'a, P0>(dwflags: u32, hactctx: P0, pvsubinstance: ::c
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn QueryActCtxW(dwflags: u32, hactctx: super::super::Foundation::HANDLE, pvsubinstance: *const ::core::ffi::c_void, ulinfoclass: u32, pvbuffer: *mut ::core::ffi::c_void, cbbuffer: usize, pcbwrittenorrequired: *mut usize) -> super::super::Foundation::BOOL;
     }
@@ -4072,7 +3760,6 @@ pub unsafe fn ReleaseActCtx<'a, P0>(hactctx: P0)
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReleaseActCtx(hactctx: super::super::Foundation::HANDLE);
     }
@@ -4085,7 +3772,6 @@ pub unsafe fn SfcGetNextProtectedFile<'a, P0>(rpchandle: P0, protfiledata: *mut 
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SfcGetNextProtectedFile(rpchandle: super::super::Foundation::HANDLE, protfiledata: *mut PROTECTED_FILE_DATA) -> super::super::Foundation::BOOL;
     }
@@ -4099,7 +3785,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SfcIsFileProtected(rpchandle: super::super::Foundation::HANDLE, protfilename: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -4113,7 +3798,6 @@ where
     P0: ::std::convert::Into<super::Registry::HKEY>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SfcIsKeyProtected(keyhandle: super::Registry::HKEY, subkeyname: ::windows::core::PCWSTR, keysam: u32) -> super::super::Foundation::BOOL;
     }
@@ -4126,7 +3810,6 @@ pub unsafe fn SfpVerifyFile<'a, P0>(pszfilename: P0, pszerror: &[u8]) -> super::
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SfpVerifyFile(pszfilename: ::windows::core::PCSTR, pszerror: ::windows::core::PCSTR, dwerrsize: u32) -> super::super::Foundation::BOOL;
     }
@@ -4140,7 +3823,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TestApplyPatchToFileA(patchfilename: ::windows::core::PCSTR, oldfilename: ::windows::core::PCSTR, applyoptionflags: u32) -> super::super::Foundation::BOOL;
     }
@@ -4150,7 +3832,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn TestApplyPatchToFileByBuffers(patchfilebuffer: &[u8], oldfilebuffer: ::core::option::Option<&[u8]>, newfilesize: ::core::option::Option<*mut u32>, applyoptionflags: u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TestApplyPatchToFileByBuffers(patchfilebuffer: *const u8, patchfilesize: u32, oldfilebuffer: *const u8, oldfilesize: u32, newfilesize: *mut u32, applyoptionflags: u32) -> super::super::Foundation::BOOL;
     }
@@ -4164,7 +3845,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TestApplyPatchToFileByHandles(patchfilehandle: super::super::Foundation::HANDLE, oldfilehandle: super::super::Foundation::HANDLE, applyoptionflags: u32) -> super::super::Foundation::BOOL;
     }
@@ -4178,7 +3858,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TestApplyPatchToFileW(patchfilename: ::windows::core::PCWSTR, oldfilename: ::windows::core::PCWSTR, applyoptionflags: u32) -> super::super::Foundation::BOOL;
     }
@@ -4191,7 +3870,6 @@ pub unsafe fn ZombifyActCtx<'a, P0>(hactctx: P0) -> super::super::Foundation::BO
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ZombifyActCtx(hactctx: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }

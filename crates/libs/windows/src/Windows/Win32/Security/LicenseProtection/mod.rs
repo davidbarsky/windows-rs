@@ -4,7 +4,6 @@ pub unsafe fn RegisterLicenseKeyWithExpiration<'a, P0>(licensekey: P0, validityi
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterLicenseKeyWithExpiration(licensekey: ::windows::core::PCWSTR, validityindays: u32, status: *mut LicenseProtectionStatus) -> ::windows::core::HRESULT;
     }
@@ -18,7 +17,6 @@ pub unsafe fn ValidateLicenseKeyProtection<'a, P0>(licensekey: P0, notvalidbefor
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ValidateLicenseKeyProtection(licensekey: ::windows::core::PCWSTR, notvalidbefore: *mut super::super::Foundation::FILETIME, notvalidafter: *mut super::super::Foundation::FILETIME, status: *mut LicenseProtectionStatus) -> ::windows::core::HRESULT;
     }

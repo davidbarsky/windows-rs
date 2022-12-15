@@ -7,7 +7,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateAppContainerProfile(pszappcontainername: ::windows::core::PCWSTR, pszdisplayname: ::windows::core::PCWSTR, pszdescription: ::windows::core::PCWSTR, pcapabilities: *const super::SID_AND_ATTRIBUTES, dwcapabilitycount: u32, ppsidappcontainersid: *mut super::super::Foundation::PSID) -> ::windows::core::HRESULT;
     }
@@ -20,7 +19,6 @@ pub unsafe fn DeleteAppContainerProfile<'a, P0>(pszappcontainername: P0) -> ::wi
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeleteAppContainerProfile(pszappcontainername: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -33,7 +31,6 @@ pub unsafe fn DeriveAppContainerSidFromAppContainerName<'a, P0>(pszappcontainern
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeriveAppContainerSidFromAppContainerName(pszappcontainername: ::windows::core::PCWSTR, ppsidappcontainersid: *mut super::super::Foundation::PSID) -> ::windows::core::HRESULT;
     }
@@ -48,7 +45,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::PSID>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeriveRestrictedAppContainerSidFromAppContainerSidAndRestrictedName(psidappcontainersid: super::super::Foundation::PSID, pszrestrictedappcontainername: ::windows::core::PCWSTR, ppsidrestrictedappcontainersid: *mut super::super::Foundation::PSID) -> ::windows::core::HRESULT;
     }
@@ -61,7 +57,6 @@ pub unsafe fn GetAppContainerFolderPath<'a, P0>(pszappcontainersid: P0) -> ::win
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetAppContainerFolderPath(pszappcontainersid: ::windows::core::PCWSTR, ppszpath: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -76,7 +71,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::PSID>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetAppContainerNamedObjectPath(token: super::super::Foundation::HANDLE, appcontainersid: super::super::Foundation::PSID, objectpathlength: u32, objectpath: ::windows::core::PWSTR, returnlength: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -86,7 +80,6 @@ where
 #[cfg(feature = "Win32_System_Registry")]
 #[inline]
 pub unsafe fn GetAppContainerRegistryLocation(desiredaccess: u32) -> ::windows::core::Result<super::super::System::Registry::HKEY> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetAppContainerRegistryLocation(desiredaccess: u32, phappcontainerkey: *mut super::super::System::Registry::HKEY) -> ::windows::core::HRESULT;
     }
@@ -97,7 +90,6 @@ pub unsafe fn GetAppContainerRegistryLocation(desiredaccess: u32) -> ::windows::
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn IsProcessInIsolatedContainer() -> ::windows::core::Result<super::super::Foundation::BOOL> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsProcessInIsolatedContainer(isprocessinisolatedcontainer: *mut super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
     }
@@ -108,7 +100,6 @@ pub unsafe fn IsProcessInIsolatedContainer() -> ::windows::core::Result<super::s
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn IsProcessInIsolatedWindowsEnvironment() -> ::windows::core::Result<super::super::Foundation::BOOL> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsProcessInIsolatedWindowsEnvironment(isprocessinisolatedwindowsenvironment: *mut super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
     }
@@ -119,7 +110,6 @@ pub unsafe fn IsProcessInIsolatedWindowsEnvironment() -> ::windows::core::Result
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn IsProcessInWDAGContainer(reserved: *const ::core::ffi::c_void) -> ::windows::core::Result<super::super::Foundation::BOOL> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsProcessInWDAGContainer(reserved: *const ::core::ffi::c_void, isprocessinwdagcontainer: *mut super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
     }

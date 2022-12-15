@@ -6,7 +6,6 @@ where
     P0: ::std::convert::Into<EventLogHandle>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BackupEventLogA(heventlog: EventLogHandle, lpbackupfilename: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -20,7 +19,6 @@ where
     P0: ::std::convert::Into<EventLogHandle>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BackupEventLogW(heventlog: EventLogHandle, lpbackupfilename: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -34,7 +32,6 @@ where
     P0: ::std::convert::Into<EventLogHandle>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ClearEventLogA(heventlog: EventLogHandle, lpbackupfilename: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -48,7 +45,6 @@ where
     P0: ::std::convert::Into<EventLogHandle>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ClearEventLogW(heventlog: EventLogHandle, lpbackupfilename: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -61,7 +57,6 @@ pub unsafe fn CloseEventLog<'a, P0>(heventlog: P0) -> super::super::Foundation::
 where
     P0: ::std::convert::Into<EventLogHandle>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CloseEventLog(heventlog: EventLogHandle) -> super::super::Foundation::BOOL;
     }
@@ -74,7 +69,6 @@ pub unsafe fn DeregisterEventSource<'a, P0>(heventlog: P0) -> super::super::Foun
 where
     P0: ::std::convert::Into<EventSourceHandle>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeregisterEventSource(heventlog: EventSourceHandle) -> super::super::Foundation::BOOL;
     }
@@ -87,7 +81,6 @@ pub unsafe fn EvtArchiveExportedLog<'a, P0>(session: isize, logfilepath: P0, loc
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtArchiveExportedLog(session: isize, logfilepath: ::windows::core::PCWSTR, locale: u32, flags: u32) -> super::super::Foundation::BOOL;
     }
@@ -97,7 +90,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn EvtCancel(object: isize) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtCancel(object: isize) -> super::super::Foundation::BOOL;
     }
@@ -111,7 +103,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtClearLog(session: isize, channelpath: ::windows::core::PCWSTR, targetfilepath: ::windows::core::PCWSTR, flags: u32) -> super::super::Foundation::BOOL;
     }
@@ -121,7 +112,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn EvtClose(object: isize) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtClose(object: isize) -> super::super::Foundation::BOOL;
     }
@@ -133,7 +123,6 @@ pub unsafe fn EvtCreateBookmark<'a, P0>(bookmarkxml: P0) -> isize
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtCreateBookmark(bookmarkxml: ::windows::core::PCWSTR) -> isize;
     }
@@ -142,7 +131,6 @@ where
 #[doc = "*Required features: `\"Win32_System_EventLog\"`*"]
 #[inline]
 pub unsafe fn EvtCreateRenderContext(valuepaths: ::core::option::Option<&[::windows::core::PWSTR]>, flags: u32) -> isize {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtCreateRenderContext(valuepathscount: u32, valuepaths: *const ::windows::core::PWSTR, flags: u32) -> isize;
     }
@@ -157,7 +145,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtExportLog(session: isize, path: ::windows::core::PCWSTR, query: ::windows::core::PCWSTR, targetfilepath: ::windows::core::PCWSTR, flags: u32) -> super::super::Foundation::BOOL;
     }
@@ -167,7 +154,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn EvtFormatMessage(publishermetadata: isize, event: isize, messageid: u32, values: ::core::option::Option<&[EVT_VARIANT]>, flags: u32, buffer: ::core::option::Option<&mut [u16]>, bufferused: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtFormatMessage(publishermetadata: isize, event: isize, messageid: u32, valuecount: u32, values: *const EVT_VARIANT, flags: u32, buffersize: u32, buffer: ::windows::core::PWSTR, bufferused: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -177,7 +163,6 @@ pub unsafe fn EvtFormatMessage(publishermetadata: isize, event: isize, messageid
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn EvtGetChannelConfigProperty(channelconfig: isize, propertyid: EVT_CHANNEL_CONFIG_PROPERTY_ID, flags: u32, propertyvaluebuffersize: u32, propertyvaluebuffer: ::core::option::Option<*mut EVT_VARIANT>, propertyvaluebufferused: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtGetChannelConfigProperty(channelconfig: isize, propertyid: EVT_CHANNEL_CONFIG_PROPERTY_ID, flags: u32, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EVT_VARIANT, propertyvaluebufferused: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -187,7 +172,6 @@ pub unsafe fn EvtGetChannelConfigProperty(channelconfig: isize, propertyid: EVT_
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn EvtGetEventInfo(event: isize, propertyid: EVT_EVENT_PROPERTY_ID, propertyvaluebuffersize: u32, propertyvaluebuffer: ::core::option::Option<*mut EVT_VARIANT>, propertyvaluebufferused: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtGetEventInfo(event: isize, propertyid: EVT_EVENT_PROPERTY_ID, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EVT_VARIANT, propertyvaluebufferused: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -197,7 +181,6 @@ pub unsafe fn EvtGetEventInfo(event: isize, propertyid: EVT_EVENT_PROPERTY_ID, p
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn EvtGetEventMetadataProperty(eventmetadata: isize, propertyid: EVT_EVENT_METADATA_PROPERTY_ID, flags: u32, eventmetadatapropertybuffersize: u32, eventmetadatapropertybuffer: ::core::option::Option<*mut EVT_VARIANT>, eventmetadatapropertybufferused: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtGetEventMetadataProperty(eventmetadata: isize, propertyid: EVT_EVENT_METADATA_PROPERTY_ID, flags: u32, eventmetadatapropertybuffersize: u32, eventmetadatapropertybuffer: *mut EVT_VARIANT, eventmetadatapropertybufferused: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -206,7 +189,6 @@ pub unsafe fn EvtGetEventMetadataProperty(eventmetadata: isize, propertyid: EVT_
 #[doc = "*Required features: `\"Win32_System_EventLog\"`*"]
 #[inline]
 pub unsafe fn EvtGetExtendedStatus(buffer: ::core::option::Option<&mut [u16]>, bufferused: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtGetExtendedStatus(buffersize: u32, buffer: ::windows::core::PWSTR, bufferused: *mut u32) -> u32;
     }
@@ -216,7 +198,6 @@ pub unsafe fn EvtGetExtendedStatus(buffer: ::core::option::Option<&mut [u16]>, b
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn EvtGetLogInfo(log: isize, propertyid: EVT_LOG_PROPERTY_ID, propertyvaluebuffersize: u32, propertyvaluebuffer: ::core::option::Option<*mut EVT_VARIANT>, propertyvaluebufferused: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtGetLogInfo(log: isize, propertyid: EVT_LOG_PROPERTY_ID, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EVT_VARIANT, propertyvaluebufferused: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -226,7 +207,6 @@ pub unsafe fn EvtGetLogInfo(log: isize, propertyid: EVT_LOG_PROPERTY_ID, propert
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn EvtGetObjectArrayProperty(objectarray: isize, propertyid: u32, arrayindex: u32, flags: u32, propertyvaluebuffersize: u32, propertyvaluebuffer: ::core::option::Option<*mut EVT_VARIANT>, propertyvaluebufferused: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtGetObjectArrayProperty(objectarray: isize, propertyid: u32, arrayindex: u32, flags: u32, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EVT_VARIANT, propertyvaluebufferused: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -236,7 +216,6 @@ pub unsafe fn EvtGetObjectArrayProperty(objectarray: isize, propertyid: u32, arr
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn EvtGetObjectArraySize(objectarray: isize, objectarraysize: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtGetObjectArraySize(objectarray: isize, objectarraysize: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -246,7 +225,6 @@ pub unsafe fn EvtGetObjectArraySize(objectarray: isize, objectarraysize: *mut u3
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn EvtGetPublisherMetadataProperty(publishermetadata: isize, propertyid: EVT_PUBLISHER_METADATA_PROPERTY_ID, flags: u32, publishermetadatapropertybuffersize: u32, publishermetadatapropertybuffer: ::core::option::Option<*mut EVT_VARIANT>, publishermetadatapropertybufferused: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtGetPublisherMetadataProperty(publishermetadata: isize, propertyid: EVT_PUBLISHER_METADATA_PROPERTY_ID, flags: u32, publishermetadatapropertybuffersize: u32, publishermetadatapropertybuffer: *mut EVT_VARIANT, publishermetadatapropertybufferused: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -256,7 +234,6 @@ pub unsafe fn EvtGetPublisherMetadataProperty(publishermetadata: isize, property
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn EvtGetQueryInfo(queryorsubscription: isize, propertyid: EVT_QUERY_PROPERTY_ID, propertyvaluebuffersize: u32, propertyvaluebuffer: ::core::option::Option<*mut EVT_VARIANT>, propertyvaluebufferused: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtGetQueryInfo(queryorsubscription: isize, propertyid: EVT_QUERY_PROPERTY_ID, propertyvaluebuffersize: u32, propertyvaluebuffer: *mut EVT_VARIANT, propertyvaluebufferused: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -266,7 +243,6 @@ pub unsafe fn EvtGetQueryInfo(queryorsubscription: isize, propertyid: EVT_QUERY_
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn EvtNext(resultset: isize, events: &mut [isize], timeout: u32, flags: u32, returned: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtNext(resultset: isize, eventssize: u32, events: *mut isize, timeout: u32, flags: u32, returned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -276,7 +252,6 @@ pub unsafe fn EvtNext(resultset: isize, events: &mut [isize], timeout: u32, flag
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn EvtNextChannelPath(channelenum: isize, channelpathbuffer: ::core::option::Option<&mut [u16]>, channelpathbufferused: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtNextChannelPath(channelenum: isize, channelpathbuffersize: u32, channelpathbuffer: ::windows::core::PWSTR, channelpathbufferused: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -285,7 +260,6 @@ pub unsafe fn EvtNextChannelPath(channelenum: isize, channelpathbuffer: ::core::
 #[doc = "*Required features: `\"Win32_System_EventLog\"`*"]
 #[inline]
 pub unsafe fn EvtNextEventMetadata(eventmetadataenum: isize, flags: u32) -> isize {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtNextEventMetadata(eventmetadataenum: isize, flags: u32) -> isize;
     }
@@ -295,7 +269,6 @@ pub unsafe fn EvtNextEventMetadata(eventmetadataenum: isize, flags: u32) -> isiz
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn EvtNextPublisherId(publisherenum: isize, publisheridbuffer: ::core::option::Option<&mut [u16]>, publisheridbufferused: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtNextPublisherId(publisherenum: isize, publisheridbuffersize: u32, publisheridbuffer: ::windows::core::PWSTR, publisheridbufferused: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -307,7 +280,6 @@ pub unsafe fn EvtOpenChannelConfig<'a, P0>(session: isize, channelpath: P0, flag
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtOpenChannelConfig(session: isize, channelpath: ::windows::core::PCWSTR, flags: u32) -> isize;
     }
@@ -316,7 +288,6 @@ where
 #[doc = "*Required features: `\"Win32_System_EventLog\"`*"]
 #[inline]
 pub unsafe fn EvtOpenChannelEnum(session: isize, flags: u32) -> isize {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtOpenChannelEnum(session: isize, flags: u32) -> isize;
     }
@@ -325,7 +296,6 @@ pub unsafe fn EvtOpenChannelEnum(session: isize, flags: u32) -> isize {
 #[doc = "*Required features: `\"Win32_System_EventLog\"`*"]
 #[inline]
 pub unsafe fn EvtOpenEventMetadataEnum(publishermetadata: isize, flags: u32) -> isize {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtOpenEventMetadataEnum(publishermetadata: isize, flags: u32) -> isize;
     }
@@ -337,7 +307,6 @@ pub unsafe fn EvtOpenLog<'a, P0>(session: isize, path: P0, flags: u32) -> isize
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtOpenLog(session: isize, path: ::windows::core::PCWSTR, flags: u32) -> isize;
     }
@@ -346,7 +315,6 @@ where
 #[doc = "*Required features: `\"Win32_System_EventLog\"`*"]
 #[inline]
 pub unsafe fn EvtOpenPublisherEnum(session: isize, flags: u32) -> isize {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtOpenPublisherEnum(session: isize, flags: u32) -> isize;
     }
@@ -359,7 +327,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtOpenPublisherMetadata(session: isize, publisherid: ::windows::core::PCWSTR, logfilepath: ::windows::core::PCWSTR, locale: u32, flags: u32) -> isize;
     }
@@ -368,7 +335,6 @@ where
 #[doc = "*Required features: `\"Win32_System_EventLog\"`*"]
 #[inline]
 pub unsafe fn EvtOpenSession(loginclass: EVT_LOGIN_CLASS, login: *const ::core::ffi::c_void, timeout: u32, flags: u32) -> isize {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtOpenSession(loginclass: EVT_LOGIN_CLASS, login: *const ::core::ffi::c_void, timeout: u32, flags: u32) -> isize;
     }
@@ -381,7 +347,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtQuery(session: isize, path: ::windows::core::PCWSTR, query: ::windows::core::PCWSTR, flags: u32) -> isize;
     }
@@ -391,7 +356,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn EvtRender(context: isize, fragment: isize, flags: u32, buffersize: u32, buffer: ::core::option::Option<*mut ::core::ffi::c_void>, bufferused: *mut u32, propertycount: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtRender(context: isize, fragment: isize, flags: u32, buffersize: u32, buffer: *mut ::core::ffi::c_void, bufferused: *mut u32, propertycount: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -401,7 +365,6 @@ pub unsafe fn EvtRender(context: isize, fragment: isize, flags: u32, buffersize:
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn EvtSaveChannelConfig(channelconfig: isize, flags: u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtSaveChannelConfig(channelconfig: isize, flags: u32) -> super::super::Foundation::BOOL;
     }
@@ -411,7 +374,6 @@ pub unsafe fn EvtSaveChannelConfig(channelconfig: isize, flags: u32) -> super::s
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn EvtSeek(resultset: isize, position: i64, bookmark: isize, timeout: u32, flags: u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtSeek(resultset: isize, position: i64, bookmark: isize, timeout: u32, flags: u32) -> super::super::Foundation::BOOL;
     }
@@ -421,7 +383,6 @@ pub unsafe fn EvtSeek(resultset: isize, position: i64, bookmark: isize, timeout:
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn EvtSetChannelConfigProperty(channelconfig: isize, propertyid: EVT_CHANNEL_CONFIG_PROPERTY_ID, flags: u32, propertyvalue: *const EVT_VARIANT) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtSetChannelConfigProperty(channelconfig: isize, propertyid: EVT_CHANNEL_CONFIG_PROPERTY_ID, flags: u32, propertyvalue: *const EVT_VARIANT) -> super::super::Foundation::BOOL;
     }
@@ -436,7 +397,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtSubscribe(session: isize, signalevent: super::super::Foundation::HANDLE, channelpath: ::windows::core::PCWSTR, query: ::windows::core::PCWSTR, bookmark: isize, context: *const ::core::ffi::c_void, callback: *mut ::core::ffi::c_void, flags: u32) -> isize;
     }
@@ -446,7 +406,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn EvtUpdateBookmark(bookmark: isize, event: isize) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvtUpdateBookmark(bookmark: isize, event: isize) -> super::super::Foundation::BOOL;
     }
@@ -459,7 +418,6 @@ pub unsafe fn GetEventLogInformation<'a, P0>(heventlog: P0, dwinfolevel: u32, lp
 where
     P0: ::std::convert::Into<EventLogHandle>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetEventLogInformation(heventlog: EventLogHandle, dwinfolevel: u32, lpbuffer: *mut ::core::ffi::c_void, cbbufsize: u32, pcbbytesneeded: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -472,7 +430,6 @@ pub unsafe fn GetNumberOfEventLogRecords<'a, P0>(heventlog: P0, numberofrecords:
 where
     P0: ::std::convert::Into<EventLogHandle>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetNumberOfEventLogRecords(heventlog: EventLogHandle, numberofrecords: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -485,7 +442,6 @@ pub unsafe fn GetOldestEventLogRecord<'a, P0>(heventlog: P0, oldestrecord: *mut 
 where
     P0: ::std::convert::Into<EventLogHandle>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetOldestEventLogRecord(heventlog: EventLogHandle, oldestrecord: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -499,7 +455,6 @@ where
     P0: ::std::convert::Into<EventLogHandle>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NotifyChangeEventLog(heventlog: EventLogHandle, hevent: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -512,7 +467,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenBackupEventLogA(lpuncservername: ::windows::core::PCSTR, lpfilename: ::windows::core::PCSTR) -> EventLogHandle;
     }
@@ -526,7 +480,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenBackupEventLogW(lpuncservername: ::windows::core::PCWSTR, lpfilename: ::windows::core::PCWSTR) -> EventLogHandle;
     }
@@ -540,7 +493,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenEventLogA(lpuncservername: ::windows::core::PCSTR, lpsourcename: ::windows::core::PCSTR) -> EventLogHandle;
     }
@@ -554,7 +506,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenEventLogW(lpuncservername: ::windows::core::PCWSTR, lpsourcename: ::windows::core::PCWSTR) -> EventLogHandle;
     }
@@ -568,7 +519,6 @@ pub unsafe fn ReadEventLogA<'a, P0>(heventlog: P0, dwreadflags: READ_EVENT_LOG_R
 where
     P0: ::std::convert::Into<EventLogHandle>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReadEventLogA(heventlog: EventLogHandle, dwreadflags: READ_EVENT_LOG_READ_FLAGS, dwrecordoffset: u32, lpbuffer: *mut ::core::ffi::c_void, nnumberofbytestoread: u32, pnbytesread: *mut u32, pnminnumberofbytesneeded: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -581,7 +531,6 @@ pub unsafe fn ReadEventLogW<'a, P0>(heventlog: P0, dwreadflags: READ_EVENT_LOG_R
 where
     P0: ::std::convert::Into<EventLogHandle>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReadEventLogW(heventlog: EventLogHandle, dwreadflags: READ_EVENT_LOG_READ_FLAGS, dwrecordoffset: u32, lpbuffer: *mut ::core::ffi::c_void, nnumberofbytestoread: u32, pnbytesread: *mut u32, pnminnumberofbytesneeded: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -594,7 +543,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterEventSourceA(lpuncservername: ::windows::core::PCSTR, lpsourcename: ::windows::core::PCSTR) -> EventSourceHandle;
     }
@@ -608,7 +556,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterEventSourceW(lpuncservername: ::windows::core::PCWSTR, lpsourcename: ::windows::core::PCWSTR) -> EventSourceHandle;
     }
@@ -623,7 +570,6 @@ where
     P0: ::std::convert::Into<EventSourceHandle>,
     P1: ::std::convert::Into<super::super::Foundation::PSID>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReportEventA(heventlog: EventSourceHandle, wtype: REPORT_EVENT_TYPE, wcategory: u16, dweventid: u32, lpusersid: super::super::Foundation::PSID, wnumstrings: u16, dwdatasize: u32, lpstrings: *const ::windows::core::PSTR, lprawdata: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -637,7 +583,6 @@ where
     P0: ::std::convert::Into<EventSourceHandle>,
     P1: ::std::convert::Into<super::super::Foundation::PSID>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReportEventW(heventlog: EventSourceHandle, wtype: REPORT_EVENT_TYPE, wcategory: u16, dweventid: u32, lpusersid: super::super::Foundation::PSID, wnumstrings: u16, dwdatasize: u32, lpstrings: *const ::windows::core::PWSTR, lprawdata: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }

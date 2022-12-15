@@ -81,7 +81,7 @@ pub fn namespace(gen: &Gen, tree: &Tree) -> String {
         let functions = functions.values();
         if gen.sys {
             tokens.combine(&quote! {
-                #[cfg_attr(windows, link(name = "windows"))]
+
                 extern #extern_abi {
                     #(#functions)*
                 }

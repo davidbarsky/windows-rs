@@ -5,7 +5,6 @@ pub unsafe fn DoMsCtfMonitor<'a, P0>(dwflags: u32, heventforservicestop: P0) -> 
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DoMsCtfMonitor(dwflags: u32, heventforservicestop: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -14,7 +13,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_TextServices\"`*"]
 #[inline]
 pub unsafe fn InitLocalMsCtfMonitor(dwflags: u32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InitLocalMsCtfMonitor(dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -23,7 +21,6 @@ pub unsafe fn InitLocalMsCtfMonitor(dwflags: u32) -> ::windows::core::Result<()>
 #[doc = "*Required features: `\"Win32_UI_TextServices\"`*"]
 #[inline]
 pub unsafe fn UninitLocalMsCtfMonitor() -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UninitLocalMsCtfMonitor() -> ::windows::core::HRESULT;
     }

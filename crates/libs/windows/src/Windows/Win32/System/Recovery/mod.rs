@@ -5,7 +5,6 @@ pub unsafe fn ApplicationRecoveryFinished<'a, P0>(bsuccess: P0)
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ApplicationRecoveryFinished(bsuccess: super::super::Foundation::BOOL);
     }
@@ -15,7 +14,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ApplicationRecoveryInProgress() -> ::windows::core::Result<super::super::Foundation::BOOL> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ApplicationRecoveryInProgress(pbcancelled: *mut super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
     }
@@ -29,7 +27,6 @@ pub unsafe fn GetApplicationRecoveryCallback<'a, P0>(hprocess: P0, precoverycall
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetApplicationRecoveryCallback(hprocess: super::super::Foundation::HANDLE, precoverycallback: *mut *mut ::core::ffi::c_void, ppvparameter: *mut *mut ::core::ffi::c_void, pdwpinginterval: *mut u32, pdwflags: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -42,7 +39,6 @@ pub unsafe fn GetApplicationRestartSettings<'a, P0>(hprocess: P0, pwzcommandline
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetApplicationRestartSettings(hprocess: super::super::Foundation::HANDLE, pwzcommandline: ::windows::core::PWSTR, pcchsize: *mut u32, pdwflags: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -52,7 +48,6 @@ where
 #[cfg(feature = "Win32_System_WindowsProgramming")]
 #[inline]
 pub unsafe fn RegisterApplicationRecoveryCallback(precoveycallback: super::WindowsProgramming::APPLICATION_RECOVERY_CALLBACK, pvparameter: ::core::option::Option<*const ::core::ffi::c_void>, dwpinginterval: u32, dwflags: u32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterApplicationRecoveryCallback(precoveycallback: *mut ::core::ffi::c_void, pvparameter: *const ::core::ffi::c_void, dwpinginterval: u32, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -64,7 +59,6 @@ pub unsafe fn RegisterApplicationRestart<'a, P0>(pwzcommandline: P0, dwflags: RE
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterApplicationRestart(pwzcommandline: ::windows::core::PCWSTR, dwflags: REGISTER_APPLICATION_RESTART_FLAGS) -> ::windows::core::HRESULT;
     }
@@ -73,7 +67,6 @@ where
 #[doc = "*Required features: `\"Win32_System_Recovery\"`*"]
 #[inline]
 pub unsafe fn UnregisterApplicationRecoveryCallback() -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UnregisterApplicationRecoveryCallback() -> ::windows::core::HRESULT;
     }
@@ -82,7 +75,6 @@ pub unsafe fn UnregisterApplicationRecoveryCallback() -> ::windows::core::Result
 #[doc = "*Required features: `\"Win32_System_Recovery\"`*"]
 #[inline]
 pub unsafe fn UnregisterApplicationRestart() -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UnregisterApplicationRestart() -> ::windows::core::HRESULT;
     }

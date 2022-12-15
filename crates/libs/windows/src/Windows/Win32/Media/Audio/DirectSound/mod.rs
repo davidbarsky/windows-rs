@@ -4,7 +4,6 @@ pub unsafe fn DirectSoundCaptureCreate<'a, P0>(pcguiddevice: ::core::option::Opt
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DirectSoundCaptureCreate(pcguiddevice: *const ::windows::core::GUID, ppdsc: *mut *mut ::core::ffi::c_void, punkouter: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -16,7 +15,6 @@ pub unsafe fn DirectSoundCaptureCreate8<'a, P0>(pcguiddevice: ::core::option::Op
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DirectSoundCaptureCreate8(pcguiddevice: *const ::windows::core::GUID, ppdsc8: *mut *mut ::core::ffi::c_void, punkouter: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -26,7 +24,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DirectSoundCaptureEnumerateA(pdsenumcallback: LPDSENUMCALLBACKA, pcontext: ::core::option::Option<*const ::core::ffi::c_void>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DirectSoundCaptureEnumerateA(pdsenumcallback: *mut ::core::ffi::c_void, pcontext: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -36,7 +33,6 @@ pub unsafe fn DirectSoundCaptureEnumerateA(pdsenumcallback: LPDSENUMCALLBACKA, p
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DirectSoundCaptureEnumerateW(pdsenumcallback: LPDSENUMCALLBACKW, pcontext: ::core::option::Option<*const ::core::ffi::c_void>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DirectSoundCaptureEnumerateW(pdsenumcallback: *mut ::core::ffi::c_void, pcontext: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -48,7 +44,6 @@ pub unsafe fn DirectSoundCreate<'a, P0>(pcguiddevice: ::core::option::Option<*co
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DirectSoundCreate(pcguiddevice: *const ::windows::core::GUID, ppds: *mut *mut ::core::ffi::c_void, punkouter: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -60,7 +55,6 @@ pub unsafe fn DirectSoundCreate8<'a, P0>(pcguiddevice: ::core::option::Option<*c
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DirectSoundCreate8(pcguiddevice: *const ::windows::core::GUID, ppds8: *mut *mut ::core::ffi::c_void, punkouter: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -70,7 +64,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DirectSoundEnumerateA(pdsenumcallback: LPDSENUMCALLBACKA, pcontext: ::core::option::Option<*const ::core::ffi::c_void>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DirectSoundEnumerateA(pdsenumcallback: *mut ::core::ffi::c_void, pcontext: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -80,7 +73,6 @@ pub unsafe fn DirectSoundEnumerateA(pdsenumcallback: LPDSENUMCALLBACKA, pcontext
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DirectSoundEnumerateW(pdsenumcallback: LPDSENUMCALLBACKW, pcontext: ::core::option::Option<*const ::core::ffi::c_void>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DirectSoundEnumerateW(pdsenumcallback: *mut ::core::ffi::c_void, pcontext: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -94,7 +86,6 @@ where
     P0: ::std::convert::Into<super::super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DirectSoundFullDuplexCreate(pcguidcapturedevice: *const ::windows::core::GUID, pcguidrenderdevice: *const ::windows::core::GUID, pcdscbufferdesc: *const DSCBUFFERDESC, pcdsbufferdesc: *const DSBUFFERDESC, hwnd: super::super::super::Foundation::HWND, dwlevel: u32, ppdsfd: *mut *mut ::core::ffi::c_void, ppdscbuffer8: *mut *mut ::core::ffi::c_void, ppdsbuffer8: *mut *mut ::core::ffi::c_void, punkouter: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -103,7 +94,6 @@ where
 #[doc = "*Required features: `\"Win32_Media_Audio_DirectSound\"`*"]
 #[inline]
 pub unsafe fn GetDeviceID(pguidsrc: ::core::option::Option<*const ::windows::core::GUID>) -> ::windows::core::Result<::windows::core::GUID> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDeviceID(pguidsrc: *const ::windows::core::GUID, pguiddest: *mut ::windows::core::GUID) -> ::windows::core::HRESULT;
     }

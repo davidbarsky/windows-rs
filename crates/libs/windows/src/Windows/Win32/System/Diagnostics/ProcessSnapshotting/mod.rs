@@ -5,7 +5,6 @@ pub unsafe fn PssCaptureSnapshot<'a, P0>(processhandle: P0, captureflags: PSS_CA
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PssCaptureSnapshot(processhandle: super::super::super::Foundation::HANDLE, captureflags: PSS_CAPTURE_FLAGS, threadcontextflags: u32, snapshothandle: *mut HPSS) -> u32;
     }
@@ -20,7 +19,6 @@ where
     P1: ::std::convert::Into<HPSS>,
     P2: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PssDuplicateSnapshot(sourceprocesshandle: super::super::super::Foundation::HANDLE, snapshothandle: HPSS, targetprocesshandle: super::super::super::Foundation::HANDLE, targetsnapshothandle: *mut HPSS, flags: PSS_DUPLICATE_FLAGS) -> u32;
     }
@@ -34,7 +32,6 @@ where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<HPSS>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PssFreeSnapshot(processhandle: super::super::super::Foundation::HANDLE, snapshothandle: HPSS) -> u32;
     }
@@ -46,7 +43,6 @@ pub unsafe fn PssQuerySnapshot<'a, P0>(snapshothandle: P0, informationclass: PSS
 where
     P0: ::std::convert::Into<HPSS>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PssQuerySnapshot(snapshothandle: HPSS, informationclass: PSS_QUERY_INFORMATION_CLASS, buffer: *mut ::core::ffi::c_void, bufferlength: u32) -> u32;
     }
@@ -55,7 +51,6 @@ where
 #[doc = "*Required features: `\"Win32_System_Diagnostics_ProcessSnapshotting\"`*"]
 #[inline]
 pub unsafe fn PssWalkMarkerCreate(allocator: ::core::option::Option<*const PSS_ALLOCATOR>, walkmarkerhandle: *mut HPSSWALK) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PssWalkMarkerCreate(allocator: *const PSS_ALLOCATOR, walkmarkerhandle: *mut HPSSWALK) -> u32;
     }
@@ -67,7 +62,6 @@ pub unsafe fn PssWalkMarkerFree<'a, P0>(walkmarkerhandle: P0) -> u32
 where
     P0: ::std::convert::Into<HPSSWALK>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PssWalkMarkerFree(walkmarkerhandle: HPSSWALK) -> u32;
     }
@@ -79,7 +73,6 @@ pub unsafe fn PssWalkMarkerGetPosition<'a, P0>(walkmarkerhandle: P0, position: *
 where
     P0: ::std::convert::Into<HPSSWALK>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PssWalkMarkerGetPosition(walkmarkerhandle: HPSSWALK, position: *mut usize) -> u32;
     }
@@ -91,7 +84,6 @@ pub unsafe fn PssWalkMarkerSeekToBeginning<'a, P0>(walkmarkerhandle: P0) -> u32
 where
     P0: ::std::convert::Into<HPSSWALK>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PssWalkMarkerSeekToBeginning(walkmarkerhandle: HPSSWALK) -> u32;
     }
@@ -103,7 +95,6 @@ pub unsafe fn PssWalkMarkerSetPosition<'a, P0>(walkmarkerhandle: P0, position: u
 where
     P0: ::std::convert::Into<HPSSWALK>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PssWalkMarkerSetPosition(walkmarkerhandle: HPSSWALK, position: usize) -> u32;
     }
@@ -116,7 +107,6 @@ where
     P0: ::std::convert::Into<HPSS>,
     P1: ::std::convert::Into<HPSSWALK>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PssWalkSnapshot(snapshothandle: HPSS, informationclass: PSS_WALK_INFORMATION_CLASS, walkmarkerhandle: HPSSWALK, buffer: *mut ::core::ffi::c_void, bufferlength: u32) -> u32;
     }

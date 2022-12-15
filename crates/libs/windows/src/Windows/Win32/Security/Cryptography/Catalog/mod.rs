@@ -2,7 +2,6 @@
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn CryptCATAdminAcquireContext(phcatadmin: *mut isize, pgsubsystem: ::core::option::Option<*const ::windows::core::GUID>, dwflags: u32) -> super::super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATAdminAcquireContext(phcatadmin: *mut isize, pgsubsystem: *const ::windows::core::GUID, dwflags: u32) -> super::super::super::Foundation::BOOL;
     }
@@ -15,7 +14,6 @@ pub unsafe fn CryptCATAdminAcquireContext2<'a, P0>(phcatadmin: *mut isize, pgsub
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATAdminAcquireContext2(phcatadmin: *mut isize, pgsubsystem: *const ::windows::core::GUID, pwszhashalgorithm: ::windows::core::PCWSTR, pstronghashpolicy: *const super::CERT_STRONG_SIGN_PARA, dwflags: u32) -> super::super::super::Foundation::BOOL;
     }
@@ -28,7 +26,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATAdminAddCatalog(hcatadmin: isize, pwszcatalogfile: ::windows::core::PCWSTR, pwszselectbasename: ::windows::core::PCWSTR, dwflags: u32) -> isize;
     }
@@ -41,7 +38,6 @@ pub unsafe fn CryptCATAdminCalcHashFromFileHandle<'a, P0>(hfile: P0, pcbhash: *m
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATAdminCalcHashFromFileHandle(hfile: super::super::super::Foundation::HANDLE, pcbhash: *mut u32, pbhash: *mut u8, dwflags: u32) -> super::super::super::Foundation::BOOL;
     }
@@ -54,7 +50,6 @@ pub unsafe fn CryptCATAdminCalcHashFromFileHandle2<'a, P0>(hcatadmin: isize, hfi
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATAdminCalcHashFromFileHandle2(hcatadmin: isize, hfile: super::super::super::Foundation::HANDLE, pcbhash: *mut u32, pbhash: *mut u8, dwflags: u32) -> super::super::super::Foundation::BOOL;
     }
@@ -63,7 +58,6 @@ where
 #[doc = "*Required features: `\"Win32_Security_Cryptography_Catalog\"`*"]
 #[inline]
 pub unsafe fn CryptCATAdminEnumCatalogFromHash(hcatadmin: isize, pbhash: &[u8], dwflags: u32, phprevcatinfo: ::core::option::Option<*mut isize>) -> isize {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATAdminEnumCatalogFromHash(hcatadmin: isize, pbhash: *const u8, cbhash: u32, dwflags: u32, phprevcatinfo: *mut isize) -> isize;
     }
@@ -76,7 +70,6 @@ pub unsafe fn CryptCATAdminPauseServiceForBackup<'a, P0>(dwflags: u32, fresume: 
 where
     P0: ::std::convert::Into<super::super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATAdminPauseServiceForBackup(dwflags: u32, fresume: super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL;
     }
@@ -86,7 +79,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn CryptCATAdminReleaseCatalogContext(hcatadmin: isize, hcatinfo: isize, dwflags: u32) -> super::super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATAdminReleaseCatalogContext(hcatadmin: isize, hcatinfo: isize, dwflags: u32) -> super::super::super::Foundation::BOOL;
     }
@@ -96,7 +88,6 @@ pub unsafe fn CryptCATAdminReleaseCatalogContext(hcatadmin: isize, hcatinfo: isi
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn CryptCATAdminReleaseContext(hcatadmin: isize, dwflags: u32) -> super::super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATAdminReleaseContext(hcatadmin: isize, dwflags: u32) -> super::super::super::Foundation::BOOL;
     }
@@ -109,7 +100,6 @@ pub unsafe fn CryptCATAdminRemoveCatalog<'a, P0>(hcatadmin: isize, pwszcatalogfi
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATAdminRemoveCatalog(hcatadmin: isize, pwszcatalogfile: ::windows::core::PCWSTR, dwflags: u32) -> super::super::super::Foundation::BOOL;
     }
@@ -122,7 +112,6 @@ pub unsafe fn CryptCATAdminResolveCatalogPath<'a, P0>(hcatadmin: isize, pwszcata
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATAdminResolveCatalogPath(hcatadmin: isize, pwszcatalogfile: ::windows::core::PCWSTR, pscatinfo: *mut CATALOG_INFO, dwflags: u32) -> super::super::super::Foundation::BOOL;
     }
@@ -136,7 +125,6 @@ where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATAllocSortedMemberInfo(hcatalog: super::super::super::Foundation::HANDLE, pwszreferencetag: ::windows::core::PCWSTR) -> *mut CRYPTCATMEMBER;
     }
@@ -146,7 +134,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn CryptCATCDFClose(pcdf: *mut CRYPTCATCDF) -> super::super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATCDFClose(pcdf: *mut CRYPTCATCDF) -> super::super::super::Foundation::BOOL;
     }
@@ -156,7 +143,6 @@ pub unsafe fn CryptCATCDFClose(pcdf: *mut CRYPTCATCDF) -> super::super::super::F
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography_Sip"))]
 #[inline]
 pub unsafe fn CryptCATCDFEnumAttributes(pcdf: *mut CRYPTCATCDF, pmember: *mut CRYPTCATMEMBER, pprevattr: *mut CRYPTCATATTRIBUTE, pfnparseerror: PFN_CDF_PARSE_ERROR_CALLBACK) -> *mut CRYPTCATATTRIBUTE {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATCDFEnumAttributes(pcdf: *mut CRYPTCATCDF, pmember: *mut CRYPTCATMEMBER, pprevattr: *mut CRYPTCATATTRIBUTE, pfnparseerror: *mut ::core::ffi::c_void) -> *mut CRYPTCATATTRIBUTE;
     }
@@ -166,7 +152,6 @@ pub unsafe fn CryptCATCDFEnumAttributes(pcdf: *mut CRYPTCATCDF, pmember: *mut CR
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn CryptCATCDFEnumCatAttributes(pcdf: *mut CRYPTCATCDF, pprevattr: *mut CRYPTCATATTRIBUTE, pfnparseerror: PFN_CDF_PARSE_ERROR_CALLBACK) -> *mut CRYPTCATATTRIBUTE {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATCDFEnumCatAttributes(pcdf: *mut CRYPTCATCDF, pprevattr: *mut CRYPTCATATTRIBUTE, pfnparseerror: *mut ::core::ffi::c_void) -> *mut CRYPTCATATTRIBUTE;
     }
@@ -176,7 +161,6 @@ pub unsafe fn CryptCATCDFEnumCatAttributes(pcdf: *mut CRYPTCATCDF, pprevattr: *m
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography_Sip"))]
 #[inline]
 pub unsafe fn CryptCATCDFEnumMembers(pcdf: *mut CRYPTCATCDF, pprevmember: *mut CRYPTCATMEMBER, pfnparseerror: PFN_CDF_PARSE_ERROR_CALLBACK) -> *mut CRYPTCATMEMBER {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATCDFEnumMembers(pcdf: *mut CRYPTCATCDF, pprevmember: *mut CRYPTCATMEMBER, pfnparseerror: *mut ::core::ffi::c_void) -> *mut CRYPTCATMEMBER;
     }
@@ -189,7 +173,6 @@ pub unsafe fn CryptCATCDFOpen<'a, P0>(pwszfilepath: P0, pfnparseerror: PFN_CDF_P
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATCDFOpen(pwszfilepath: ::windows::core::PCWSTR, pfnparseerror: *mut ::core::ffi::c_void) -> *mut CRYPTCATCDF;
     }
@@ -199,7 +182,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn CryptCATCatalogInfoFromContext(hcatinfo: isize, pscatinfo: *mut CATALOG_INFO, dwflags: u32) -> super::super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATCatalogInfoFromContext(hcatinfo: isize, pscatinfo: *mut CATALOG_INFO, dwflags: u32) -> super::super::super::Foundation::BOOL;
     }
@@ -212,7 +194,6 @@ pub unsafe fn CryptCATClose<'a, P0>(hcatalog: P0) -> super::super::super::Founda
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATClose(hcatalog: super::super::super::Foundation::HANDLE) -> super::super::super::Foundation::BOOL;
     }
@@ -225,7 +206,6 @@ pub unsafe fn CryptCATEnumerateAttr<'a, P0>(hcatalog: P0, pcatmember: *mut CRYPT
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATEnumerateAttr(hcatalog: super::super::super::Foundation::HANDLE, pcatmember: *mut CRYPTCATMEMBER, pprevattr: *mut CRYPTCATATTRIBUTE) -> *mut CRYPTCATATTRIBUTE;
     }
@@ -238,7 +218,6 @@ pub unsafe fn CryptCATEnumerateCatAttr<'a, P0>(hcatalog: P0, pprevattr: *mut CRY
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATEnumerateCatAttr(hcatalog: super::super::super::Foundation::HANDLE, pprevattr: *mut CRYPTCATATTRIBUTE) -> *mut CRYPTCATATTRIBUTE;
     }
@@ -251,7 +230,6 @@ pub unsafe fn CryptCATEnumerateMember<'a, P0>(hcatalog: P0, pprevmember: *mut CR
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATEnumerateMember(hcatalog: super::super::super::Foundation::HANDLE, pprevmember: *mut CRYPTCATMEMBER) -> *mut CRYPTCATMEMBER;
     }
@@ -264,7 +242,6 @@ pub unsafe fn CryptCATFreeSortedMemberInfo<'a, P0>(hcatalog: P0, pcatmember: *mu
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATFreeSortedMemberInfo(hcatalog: super::super::super::Foundation::HANDLE, pcatmember: *mut CRYPTCATMEMBER);
     }
@@ -278,7 +255,6 @@ where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATGetAttrInfo(hcatalog: super::super::super::Foundation::HANDLE, pcatmember: *mut CRYPTCATMEMBER, pwszreferencetag: ::windows::core::PCWSTR) -> *mut CRYPTCATATTRIBUTE;
     }
@@ -292,7 +268,6 @@ where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATGetCatAttrInfo(hcatalog: super::super::super::Foundation::HANDLE, pwszreferencetag: ::windows::core::PCWSTR) -> *mut CRYPTCATATTRIBUTE;
     }
@@ -306,7 +281,6 @@ where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATGetMemberInfo(hcatalog: super::super::super::Foundation::HANDLE, pwszreferencetag: ::windows::core::PCWSTR) -> *mut CRYPTCATMEMBER;
     }
@@ -316,7 +290,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn CryptCATHandleFromStore(pcatstore: *mut CRYPTCATSTORE) -> super::super::super::Foundation::HANDLE {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATHandleFromStore(pcatstore: *mut CRYPTCATSTORE) -> super::super::super::Foundation::HANDLE;
     }
@@ -329,7 +302,6 @@ pub unsafe fn CryptCATOpen<'a, P0>(pwszfilename: P0, fdwopenflags: CRYPTCAT_OPEN
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATOpen(pwszfilename: ::windows::core::PCWSTR, fdwopenflags: CRYPTCAT_OPEN_FLAGS, hprov: usize, dwpublicversion: CRYPTCAT_VERSION, dwencodingtype: u32) -> super::super::super::Foundation::HANDLE;
     }
@@ -342,7 +314,6 @@ pub unsafe fn CryptCATPersistStore<'a, P0>(hcatalog: P0) -> super::super::super:
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATPersistStore(hcatalog: super::super::super::Foundation::HANDLE) -> super::super::super::Foundation::BOOL;
     }
@@ -356,7 +327,6 @@ where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATPutAttrInfo(hcatalog: super::super::super::Foundation::HANDLE, pcatmember: *mut CRYPTCATMEMBER, pwszreferencetag: ::windows::core::PCWSTR, dwattrtypeandaction: u32, cbdata: u32, pbdata: *mut u8) -> *mut CRYPTCATATTRIBUTE;
     }
@@ -370,7 +340,6 @@ where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATPutCatAttrInfo(hcatalog: super::super::super::Foundation::HANDLE, pwszreferencetag: ::windows::core::PCWSTR, dwattrtypeandaction: u32, cbdata: u32, pbdata: *mut u8) -> *mut CRYPTCATATTRIBUTE;
     }
@@ -385,7 +354,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATPutMemberInfo(hcatalog: super::super::super::Foundation::HANDLE, pwszfilename: ::windows::core::PCWSTR, pwszreferencetag: ::windows::core::PCWSTR, pgsubjecttype: *mut ::windows::core::GUID, dwcertversion: u32, cbsipindirectdata: u32, pbsipindirectdata: *mut u8) -> *mut CRYPTCATMEMBER;
     }
@@ -398,7 +366,6 @@ pub unsafe fn CryptCATStoreFromHandle<'a, P0>(hcatalog: P0) -> *mut CRYPTCATSTOR
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CryptCATStoreFromHandle(hcatalog: super::super::super::Foundation::HANDLE) -> *mut CRYPTCATSTORE;
     }
@@ -412,7 +379,6 @@ where
     P0: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsCatalogFile(hfile: super::super::super::Foundation::HANDLE, pwszfilename: ::windows::core::PCWSTR) -> super::super::super::Foundation::BOOL;
     }

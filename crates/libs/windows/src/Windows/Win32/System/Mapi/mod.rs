@@ -1,7 +1,6 @@
 #[doc = "*Required features: `\"Win32_System_Mapi\"`*"]
 #[inline]
 pub unsafe fn MAPIFreeBuffer(pv: *mut ::core::ffi::c_void) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MAPIFreeBuffer(pv: *mut ::core::ffi::c_void) -> u32;
     }

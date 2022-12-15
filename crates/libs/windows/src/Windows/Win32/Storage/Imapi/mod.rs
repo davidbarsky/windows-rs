@@ -1,7 +1,6 @@
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
 #[inline]
 pub unsafe fn CloseIMsgSession(lpmsgsess: *mut _MSGSESS) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CloseIMsgSession(lpmsgsess: *mut _MSGSESS);
     }
@@ -11,7 +10,6 @@ pub unsafe fn CloseIMsgSession(lpmsgsess: *mut _MSGSESS) {
 #[cfg(feature = "Win32_System_AddressBook")]
 #[inline]
 pub unsafe fn GetAttribIMsgOnIStg(lpobject: *mut ::core::ffi::c_void, lpproptagarray: *mut super::super::System::AddressBook::SPropTagArray, lpppropattrarray: *mut *mut SPropAttrArray) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetAttribIMsgOnIStg(lpobject: *mut ::core::ffi::c_void, lpproptagarray: *mut super::super::System::AddressBook::SPropTagArray, lpppropattrarray: *mut *mut SPropAttrArray) -> ::windows::core::HRESULT;
     }
@@ -20,7 +18,6 @@ pub unsafe fn GetAttribIMsgOnIStg(lpobject: *mut ::core::ffi::c_void, lpproptaga
 #[doc = "*Required features: `\"Win32_Storage_Imapi\"`*"]
 #[inline]
 pub unsafe fn MapStorageSCode(stgscode: i32) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MapStorageSCode(stgscode: i32) -> i32;
     }
@@ -34,7 +31,6 @@ where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IMalloc>>,
     P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::StructuredStorage::IStorage>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenIMsgOnIStg(lpmsgsess: *mut _MSGSESS, lpallocatebuffer: *mut ::core::ffi::c_void, lpallocatemore: *mut ::core::ffi::c_void, lpfreebuffer: *mut ::core::ffi::c_void, lpmalloc: *mut ::core::ffi::c_void, lpmapisup: *mut ::core::ffi::c_void, lpstg: *mut ::core::ffi::c_void, lpfmsgcallrelease: *mut *mut ::core::ffi::c_void, ulcallerdata: u32, ulflags: u32, lppmsg: *mut *mut ::core::ffi::c_void) -> i32;
     }
@@ -47,7 +43,6 @@ pub unsafe fn OpenIMsgSession<'a, P0>(lpmalloc: P0, ulflags: u32, lppmsgsess: *m
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IMalloc>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenIMsgSession(lpmalloc: *mut ::core::ffi::c_void, ulflags: u32, lppmsgsess: *mut *mut _MSGSESS) -> i32;
     }
@@ -57,7 +52,6 @@ where
 #[cfg(feature = "Win32_System_AddressBook")]
 #[inline]
 pub unsafe fn SetAttribIMsgOnIStg(lpobject: *mut ::core::ffi::c_void, lpproptags: *mut super::super::System::AddressBook::SPropTagArray, lppropattrs: *mut SPropAttrArray, lpppropproblems: *mut *mut super::super::System::AddressBook::SPropProblemArray) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetAttribIMsgOnIStg(lpobject: *mut ::core::ffi::c_void, lpproptags: *mut super::super::System::AddressBook::SPropTagArray, lppropattrs: *mut SPropAttrArray, lpppropproblems: *mut *mut super::super::System::AddressBook::SPropProblemArray) -> ::windows::core::HRESULT;
     }

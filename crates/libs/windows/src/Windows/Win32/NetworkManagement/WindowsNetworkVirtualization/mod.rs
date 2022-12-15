@@ -2,7 +2,6 @@
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WnvOpen() -> super::super::Foundation::HANDLE {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WnvOpen() -> super::super::Foundation::HANDLE;
     }
@@ -15,7 +14,6 @@ pub unsafe fn WnvRequestNotification<'a, P0>(wnvhandle: P0, notificationparam: *
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WnvRequestNotification(wnvhandle: super::super::Foundation::HANDLE, notificationparam: *mut WNV_NOTIFICATION_PARAM, overlapped: *mut super::super::System::IO::OVERLAPPED, bytestransferred: *mut u32) -> u32;
     }

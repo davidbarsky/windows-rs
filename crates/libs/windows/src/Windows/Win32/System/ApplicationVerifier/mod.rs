@@ -5,7 +5,6 @@ pub unsafe fn VerifierEnumerateResource<'a, P0>(process: P0, flags: VERIFIER_ENU
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn VerifierEnumerateResource(process: super::super::Foundation::HANDLE, flags: VERIFIER_ENUM_RESOURCE_FLAGS, resourcetype: eAvrfResourceTypes, resourcecallback: *mut ::core::ffi::c_void, enumerationcontext: *mut ::core::ffi::c_void) -> u32;
     }

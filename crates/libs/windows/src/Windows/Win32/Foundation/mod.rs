@@ -4,7 +4,6 @@ pub unsafe fn CloseHandle<'a, P0>(hobject: P0) -> BOOL
 where
     P0: ::std::convert::Into<HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CloseHandle(hobject: HANDLE) -> BOOL;
     }
@@ -17,7 +16,6 @@ where
     P0: ::std::convert::Into<HANDLE>,
     P1: ::std::convert::Into<HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CompareObjectHandles(hfirstobjecthandle: HANDLE, hsecondobjecthandle: HANDLE) -> BOOL;
     }
@@ -32,7 +30,6 @@ where
     P2: ::std::convert::Into<HANDLE>,
     P3: ::std::convert::Into<BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DuplicateHandle(hsourceprocesshandle: HANDLE, hsourcehandle: HANDLE, htargetprocesshandle: HANDLE, lptargethandle: *mut HANDLE, dwdesiredaccess: u32, binherithandle: BOOL, dwoptions: DUPLICATE_HANDLE_OPTIONS) -> BOOL;
     }
@@ -44,7 +41,6 @@ pub unsafe fn GetHandleInformation<'a, P0>(hobject: P0, lpdwflags: *mut u32) -> 
 where
     P0: ::std::convert::Into<HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetHandleInformation(hobject: HANDLE, lpdwflags: *mut u32) -> BOOL;
     }
@@ -53,7 +49,6 @@ where
 #[doc = "*Required features: `\"Win32_Foundation\"`*"]
 #[inline]
 pub unsafe fn GetLastError() -> WIN32_ERROR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetLastError() -> WIN32_ERROR;
     }
@@ -65,7 +60,6 @@ pub unsafe fn RtlNtStatusToDosError<'a, P0>(status: P0) -> u32
 where
     P0: ::std::convert::Into<NTSTATUS>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RtlNtStatusToDosError(status: NTSTATUS) -> u32;
     }
@@ -77,7 +71,6 @@ pub unsafe fn SetHandleInformation<'a, P0>(hobject: P0, dwmask: u32, dwflags: HA
 where
     P0: ::std::convert::Into<HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetHandleInformation(hobject: HANDLE, dwmask: u32, dwflags: HANDLE_FLAGS) -> BOOL;
     }
@@ -86,7 +79,6 @@ where
 #[doc = "*Required features: `\"Win32_Foundation\"`*"]
 #[inline]
 pub unsafe fn SetLastError(dwerrcode: WIN32_ERROR) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetLastError(dwerrcode: WIN32_ERROR);
     }
@@ -95,7 +87,6 @@ pub unsafe fn SetLastError(dwerrcode: WIN32_ERROR) {
 #[doc = "*Required features: `\"Win32_Foundation\"`*"]
 #[inline]
 pub unsafe fn SetLastErrorEx(dwerrcode: WIN32_ERROR, dwtype: u32) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetLastErrorEx(dwerrcode: WIN32_ERROR, dwtype: u32);
     }
@@ -104,7 +95,6 @@ pub unsafe fn SetLastErrorEx(dwerrcode: WIN32_ERROR, dwtype: u32) {
 #[doc = "*Required features: `\"Win32_Foundation\"`*"]
 #[inline]
 pub unsafe fn SysAddRefString(bstrstring: &::windows::core::BSTR) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SysAddRefString(bstrstring: ::core::mem::ManuallyDrop<::windows::core::BSTR>) -> ::windows::core::HRESULT;
     }
@@ -116,7 +106,6 @@ pub unsafe fn SysAllocString<'a, P0>(psz: P0) -> ::windows::core::BSTR
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SysAllocString(psz: ::windows::core::PCWSTR) -> ::windows::core::BSTR;
     }
@@ -125,7 +114,6 @@ where
 #[doc = "*Required features: `\"Win32_Foundation\"`*"]
 #[inline]
 pub unsafe fn SysAllocStringByteLen(psz: ::core::option::Option<&[u8]>) -> ::windows::core::BSTR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SysAllocStringByteLen(psz: ::windows::core::PCSTR, len: u32) -> ::windows::core::BSTR;
     }
@@ -134,7 +122,6 @@ pub unsafe fn SysAllocStringByteLen(psz: ::core::option::Option<&[u8]>) -> ::win
 #[doc = "*Required features: `\"Win32_Foundation\"`*"]
 #[inline]
 pub unsafe fn SysAllocStringLen(strin: ::core::option::Option<&[u16]>) -> ::windows::core::BSTR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SysAllocStringLen(strin: ::windows::core::PCWSTR, ui: u32) -> ::windows::core::BSTR;
     }
@@ -143,7 +130,6 @@ pub unsafe fn SysAllocStringLen(strin: ::core::option::Option<&[u16]>) -> ::wind
 #[doc = "*Required features: `\"Win32_Foundation\"`*"]
 #[inline]
 pub unsafe fn SysFreeString(bstrstring: &::windows::core::BSTR) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SysFreeString(bstrstring: ::core::mem::ManuallyDrop<::windows::core::BSTR>);
     }
@@ -155,7 +141,6 @@ pub unsafe fn SysReAllocString<'a, P0>(pbstr: *mut ::windows::core::BSTR, psz: P
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SysReAllocString(pbstr: *mut ::core::mem::ManuallyDrop<::windows::core::BSTR>, psz: ::windows::core::PCWSTR) -> i32;
     }
@@ -167,7 +152,6 @@ pub unsafe fn SysReAllocStringLen<'a, P0>(pbstr: *mut ::windows::core::BSTR, psz
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SysReAllocStringLen(pbstr: *mut ::core::mem::ManuallyDrop<::windows::core::BSTR>, psz: ::windows::core::PCWSTR, len: u32) -> i32;
     }
@@ -176,7 +160,6 @@ where
 #[doc = "*Required features: `\"Win32_Foundation\"`*"]
 #[inline]
 pub unsafe fn SysReleaseString(bstrstring: &::windows::core::BSTR) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SysReleaseString(bstrstring: ::core::mem::ManuallyDrop<::windows::core::BSTR>);
     }
@@ -185,7 +168,6 @@ pub unsafe fn SysReleaseString(bstrstring: &::windows::core::BSTR) {
 #[doc = "*Required features: `\"Win32_Foundation\"`*"]
 #[inline]
 pub unsafe fn SysStringByteLen(bstr: &::windows::core::BSTR) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SysStringByteLen(bstr: ::core::mem::ManuallyDrop<::windows::core::BSTR>) -> u32;
     }
@@ -194,7 +176,6 @@ pub unsafe fn SysStringByteLen(bstr: &::windows::core::BSTR) -> u32 {
 #[doc = "*Required features: `\"Win32_Foundation\"`*"]
 #[inline]
 pub unsafe fn SysStringLen(pbstr: &::windows::core::BSTR) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SysStringLen(pbstr: ::core::mem::ManuallyDrop<::windows::core::BSTR>) -> u32;
     }

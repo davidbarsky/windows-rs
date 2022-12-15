@@ -1,7 +1,6 @@
 #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`*"]
 #[inline]
 pub unsafe fn WSManCloseCommand(commandhandle: ::core::option::Option<*mut WSMAN_COMMAND>, flags: u32, r#async: *const WSMAN_SHELL_ASYNC) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManCloseCommand(commandhandle: *mut WSMAN_COMMAND, flags: u32, r#async: *const WSMAN_SHELL_ASYNC);
     }
@@ -10,7 +9,6 @@ pub unsafe fn WSManCloseCommand(commandhandle: ::core::option::Option<*mut WSMAN
 #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`*"]
 #[inline]
 pub unsafe fn WSManCloseOperation(operationhandle: ::core::option::Option<*mut WSMAN_OPERATION>, flags: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManCloseOperation(operationhandle: *mut WSMAN_OPERATION, flags: u32) -> u32;
     }
@@ -19,7 +17,6 @@ pub unsafe fn WSManCloseOperation(operationhandle: ::core::option::Option<*mut W
 #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`*"]
 #[inline]
 pub unsafe fn WSManCloseSession(session: ::core::option::Option<*mut WSMAN_SESSION>, flags: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManCloseSession(session: *mut WSMAN_SESSION, flags: u32) -> u32;
     }
@@ -28,7 +25,6 @@ pub unsafe fn WSManCloseSession(session: ::core::option::Option<*mut WSMAN_SESSI
 #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`*"]
 #[inline]
 pub unsafe fn WSManCloseShell(shellhandle: ::core::option::Option<*mut WSMAN_SHELL>, flags: u32, r#async: *const WSMAN_SHELL_ASYNC) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManCloseShell(shellhandle: *mut WSMAN_SHELL, flags: u32, r#async: *const WSMAN_SHELL_ASYNC);
     }
@@ -42,7 +38,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManConnectShell(session: *mut WSMAN_SESSION, flags: u32, resourceuri: ::windows::core::PCWSTR, shellid: ::windows::core::PCWSTR, options: *const WSMAN_OPTION_SET, connectxml: *const WSMAN_DATA, r#async: *const WSMAN_SHELL_ASYNC, shell: *mut *mut WSMAN_SHELL);
     }
@@ -55,7 +50,6 @@ pub unsafe fn WSManConnectShellCommand<'a, P0>(shell: *mut WSMAN_SHELL, flags: u
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManConnectShellCommand(shell: *mut WSMAN_SHELL, flags: u32, commandid: ::windows::core::PCWSTR, options: *const WSMAN_OPTION_SET, connectxml: *const WSMAN_DATA, r#async: *const WSMAN_SHELL_ASYNC, command: *mut *mut WSMAN_COMMAND);
     }
@@ -67,7 +61,6 @@ pub unsafe fn WSManCreateSession<'a, P0>(apihandle: *const WSMAN_API, connection
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManCreateSession(apihandle: *const WSMAN_API, connection: ::windows::core::PCWSTR, flags: u32, serverauthenticationcredentials: *const WSMAN_AUTHENTICATION_CREDENTIALS, proxyinfo: *const WSMAN_PROXY_INFO, session: *mut *mut WSMAN_SESSION) -> u32;
     }
@@ -80,7 +73,6 @@ pub unsafe fn WSManCreateShell<'a, P0>(session: *mut WSMAN_SESSION, flags: u32, 
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManCreateShell(session: *mut WSMAN_SESSION, flags: u32, resourceuri: ::windows::core::PCWSTR, startupinfo: *const WSMAN_SHELL_STARTUP_INFO_V11, options: *const WSMAN_OPTION_SET, createxml: *const WSMAN_DATA, r#async: *const WSMAN_SHELL_ASYNC, shell: *mut *mut WSMAN_SHELL);
     }
@@ -94,7 +86,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManCreateShellEx(session: *mut WSMAN_SESSION, flags: u32, resourceuri: ::windows::core::PCWSTR, shellid: ::windows::core::PCWSTR, startupinfo: *const WSMAN_SHELL_STARTUP_INFO_V11, options: *const WSMAN_OPTION_SET, createxml: *const WSMAN_DATA, r#async: *const WSMAN_SHELL_ASYNC, shell: *mut *mut WSMAN_SHELL);
     }
@@ -103,7 +94,6 @@ where
 #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`*"]
 #[inline]
 pub unsafe fn WSManDeinitialize(apihandle: ::core::option::Option<*mut WSMAN_API>, flags: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManDeinitialize(apihandle: *mut WSMAN_API, flags: u32) -> u32;
     }
@@ -112,7 +102,6 @@ pub unsafe fn WSManDeinitialize(apihandle: ::core::option::Option<*mut WSMAN_API
 #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`*"]
 #[inline]
 pub unsafe fn WSManDisconnectShell(shell: *mut WSMAN_SHELL, flags: u32, disconnectinfo: *const WSMAN_SHELL_DISCONNECT_INFO, r#async: *const WSMAN_SHELL_ASYNC) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManDisconnectShell(shell: *mut WSMAN_SHELL, flags: u32, disconnectinfo: *const WSMAN_SHELL_DISCONNECT_INFO, r#async: *const WSMAN_SHELL_ASYNC);
     }
@@ -124,7 +113,6 @@ pub unsafe fn WSManGetErrorMessage<'a, P0>(apihandle: *const WSMAN_API, flags: u
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManGetErrorMessage(apihandle: *const WSMAN_API, flags: u32, languagecode: ::windows::core::PCWSTR, errorcode: u32, messagelength: u32, message: ::windows::core::PWSTR, messagelengthused: *mut u32) -> u32;
     }
@@ -133,7 +121,6 @@ where
 #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`*"]
 #[inline]
 pub unsafe fn WSManGetSessionOptionAsDword(session: *const WSMAN_SESSION, option: WSManSessionOption, value: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManGetSessionOptionAsDword(session: *const WSMAN_SESSION, option: WSManSessionOption, value: *mut u32) -> u32;
     }
@@ -142,7 +129,6 @@ pub unsafe fn WSManGetSessionOptionAsDword(session: *const WSMAN_SESSION, option
 #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`*"]
 #[inline]
 pub unsafe fn WSManGetSessionOptionAsString(session: *const WSMAN_SESSION, option: WSManSessionOption, string: ::core::option::Option<&mut [u16]>, stringlengthused: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManGetSessionOptionAsString(session: *const WSMAN_SESSION, option: WSManSessionOption, stringlength: u32, string: ::windows::core::PWSTR, stringlengthused: *mut u32) -> u32;
     }
@@ -151,7 +137,6 @@ pub unsafe fn WSManGetSessionOptionAsString(session: *const WSMAN_SESSION, optio
 #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`*"]
 #[inline]
 pub unsafe fn WSManInitialize(flags: u32, apihandle: *mut *mut WSMAN_API) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManInitialize(flags: u32, apihandle: *mut *mut WSMAN_API) -> u32;
     }
@@ -164,7 +149,6 @@ pub unsafe fn WSManPluginAuthzOperationComplete<'a, P0>(senderdetails: *const WS
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManPluginAuthzOperationComplete(senderdetails: *const WSMAN_SENDER_DETAILS, flags: u32, userauthorizationcontext: *const ::core::ffi::c_void, errorcode: u32, extendederrorinformation: ::windows::core::PCWSTR) -> u32;
     }
@@ -177,7 +161,6 @@ pub unsafe fn WSManPluginAuthzQueryQuotaComplete<'a, P0>(senderdetails: *const W
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManPluginAuthzQueryQuotaComplete(senderdetails: *const WSMAN_SENDER_DETAILS, flags: u32, quota: *const WSMAN_AUTHZ_QUOTA, errorcode: u32, extendederrorinformation: ::windows::core::PCWSTR) -> u32;
     }
@@ -192,7 +175,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManPluginAuthzUserComplete(senderdetails: *const WSMAN_SENDER_DETAILS, flags: u32, userauthorizationcontext: *const ::core::ffi::c_void, impersonationtoken: super::super::Foundation::HANDLE, userisadministrator: super::super::Foundation::BOOL, errorcode: u32, extendederrorinformation: ::windows::core::PCWSTR) -> u32;
     }
@@ -202,7 +184,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WSManPluginFreeRequestDetails(requestdetails: *const WSMAN_PLUGIN_REQUEST) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManPluginFreeRequestDetails(requestdetails: *const WSMAN_PLUGIN_REQUEST) -> u32;
     }
@@ -211,7 +192,6 @@ pub unsafe fn WSManPluginFreeRequestDetails(requestdetails: *const WSMAN_PLUGIN_
 #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`*"]
 #[inline]
 pub unsafe fn WSManPluginGetConfiguration(plugincontext: *const ::core::ffi::c_void, flags: u32, data: *mut WSMAN_DATA) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManPluginGetConfiguration(plugincontext: *const ::core::ffi::c_void, flags: u32, data: *mut WSMAN_DATA) -> u32;
     }
@@ -221,7 +201,6 @@ pub unsafe fn WSManPluginGetConfiguration(plugincontext: *const ::core::ffi::c_v
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WSManPluginGetOperationParameters(requestdetails: *const WSMAN_PLUGIN_REQUEST, flags: u32, data: *mut WSMAN_DATA) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManPluginGetOperationParameters(requestdetails: *const WSMAN_PLUGIN_REQUEST, flags: u32, data: *mut WSMAN_DATA) -> u32;
     }
@@ -234,7 +213,6 @@ pub unsafe fn WSManPluginOperationComplete<'a, P0>(requestdetails: *const WSMAN_
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManPluginOperationComplete(requestdetails: *const WSMAN_PLUGIN_REQUEST, flags: u32, errorcode: u32, extendedinformation: ::windows::core::PCWSTR) -> u32;
     }
@@ -248,7 +226,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManPluginReceiveResult(requestdetails: *const WSMAN_PLUGIN_REQUEST, flags: u32, stream: ::windows::core::PCWSTR, streamresult: *const WSMAN_DATA, commandstate: ::windows::core::PCWSTR, exitcode: u32) -> u32;
     }
@@ -257,7 +234,6 @@ where
 #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`*"]
 #[inline]
 pub unsafe fn WSManPluginReportCompletion(plugincontext: *const ::core::ffi::c_void, flags: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManPluginReportCompletion(plugincontext: *const ::core::ffi::c_void, flags: u32) -> u32;
     }
@@ -267,7 +243,6 @@ pub unsafe fn WSManPluginReportCompletion(plugincontext: *const ::core::ffi::c_v
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WSManPluginReportContext(requestdetails: *const WSMAN_PLUGIN_REQUEST, flags: u32, context: *const ::core::ffi::c_void) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManPluginReportContext(requestdetails: *const WSMAN_PLUGIN_REQUEST, flags: u32, context: *const ::core::ffi::c_void) -> u32;
     }
@@ -276,7 +251,6 @@ pub unsafe fn WSManPluginReportContext(requestdetails: *const WSMAN_PLUGIN_REQUE
 #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`*"]
 #[inline]
 pub unsafe fn WSManReceiveShellOutput(shell: *mut WSMAN_SHELL, command: ::core::option::Option<*const WSMAN_COMMAND>, flags: u32, desiredstreamset: ::core::option::Option<*const WSMAN_STREAM_ID_SET>, r#async: *const WSMAN_SHELL_ASYNC, receiveoperation: *mut *mut WSMAN_OPERATION) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManReceiveShellOutput(shell: *mut WSMAN_SHELL, command: *const WSMAN_COMMAND, flags: u32, desiredstreamset: *const WSMAN_STREAM_ID_SET, r#async: *const WSMAN_SHELL_ASYNC, receiveoperation: *mut *mut WSMAN_OPERATION);
     }
@@ -285,7 +259,6 @@ pub unsafe fn WSManReceiveShellOutput(shell: *mut WSMAN_SHELL, command: ::core::
 #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`*"]
 #[inline]
 pub unsafe fn WSManReconnectShell(shell: *mut WSMAN_SHELL, flags: u32, r#async: *const WSMAN_SHELL_ASYNC) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManReconnectShell(shell: *mut WSMAN_SHELL, flags: u32, r#async: *const WSMAN_SHELL_ASYNC);
     }
@@ -294,7 +267,6 @@ pub unsafe fn WSManReconnectShell(shell: *mut WSMAN_SHELL, flags: u32, r#async: 
 #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`*"]
 #[inline]
 pub unsafe fn WSManReconnectShellCommand(commandhandle: *mut WSMAN_COMMAND, flags: u32, r#async: *const WSMAN_SHELL_ASYNC) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManReconnectShellCommand(commandhandle: *mut WSMAN_COMMAND, flags: u32, r#async: *const WSMAN_SHELL_ASYNC);
     }
@@ -307,7 +279,6 @@ pub unsafe fn WSManRunShellCommand<'a, P0>(shell: *mut WSMAN_SHELL, flags: u32, 
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManRunShellCommand(shell: *mut WSMAN_SHELL, flags: u32, commandline: ::windows::core::PCWSTR, args: *const WSMAN_COMMAND_ARG_SET, options: *const WSMAN_OPTION_SET, r#async: *const WSMAN_SHELL_ASYNC, command: *mut *mut WSMAN_COMMAND);
     }
@@ -321,7 +292,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManRunShellCommandEx(shell: *mut WSMAN_SHELL, flags: u32, commandid: ::windows::core::PCWSTR, commandline: ::windows::core::PCWSTR, args: *const WSMAN_COMMAND_ARG_SET, options: *const WSMAN_OPTION_SET, r#async: *const WSMAN_SHELL_ASYNC, command: *mut *mut WSMAN_COMMAND);
     }
@@ -335,7 +305,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManSendShellInput(shell: *const WSMAN_SHELL, command: *const WSMAN_COMMAND, flags: u32, streamid: ::windows::core::PCWSTR, streamdata: *const WSMAN_DATA, endofstream: super::super::Foundation::BOOL, r#async: *const WSMAN_SHELL_ASYNC, sendoperation: *mut *mut WSMAN_OPERATION);
     }
@@ -344,7 +313,6 @@ where
 #[doc = "*Required features: `\"Win32_System_RemoteManagement\"`*"]
 #[inline]
 pub unsafe fn WSManSetSessionOption(session: *const WSMAN_SESSION, option: WSManSessionOption, data: *const WSMAN_DATA) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManSetSessionOption(session: *const WSMAN_SESSION, option: WSManSessionOption, data: *const WSMAN_DATA) -> u32;
     }
@@ -356,7 +324,6 @@ pub unsafe fn WSManSignalShell<'a, P0>(shell: *const WSMAN_SHELL, command: ::cor
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSManSignalShell(shell: *const WSMAN_SHELL, command: *const WSMAN_COMMAND, flags: u32, code: ::windows::core::PCWSTR, r#async: *const WSMAN_SHELL_ASYNC, signaloperation: *mut *mut WSMAN_OPERATION);
     }

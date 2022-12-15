@@ -4,7 +4,6 @@ pub unsafe fn SwDeviceClose<'a, P0>(hswdevice: P0)
 where
     P0: ::std::convert::Into<HSWDEVICE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SwDeviceClose(hswdevice: HSWDEVICE);
     }
@@ -18,7 +17,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SwDeviceCreate(pszenumeratorname: ::windows::core::PCWSTR, pszparentdeviceinstance: ::windows::core::PCWSTR, pcreateinfo: *const SW_DEVICE_CREATE_INFO, cpropertycount: u32, pproperties: *const super::super::Properties::DEVPROPERTY, pcallback: *mut ::core::ffi::c_void, pcontext: *const ::core::ffi::c_void, phswdevice: *mut isize) -> ::windows::core::HRESULT;
     }
@@ -31,7 +29,6 @@ pub unsafe fn SwDeviceGetLifetime<'a, P0>(hswdevice: P0) -> ::windows::core::Res
 where
     P0: ::std::convert::Into<HSWDEVICE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SwDeviceGetLifetime(hswdevice: HSWDEVICE, plifetime: *mut SW_DEVICE_LIFETIME) -> ::windows::core::HRESULT;
     }
@@ -46,7 +43,6 @@ where
     P0: ::std::convert::Into<HSWDEVICE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SwDeviceInterfacePropertySet(hswdevice: HSWDEVICE, pszdeviceinterfaceid: ::windows::core::PCWSTR, cpropertycount: u32, pproperties: *const super::super::Properties::DEVPROPERTY) -> ::windows::core::HRESULT;
     }
@@ -61,7 +57,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<super::super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SwDeviceInterfaceRegister(hswdevice: HSWDEVICE, pinterfaceclassguid: *const ::windows::core::GUID, pszreferencestring: ::windows::core::PCWSTR, cpropertycount: u32, pproperties: *const super::super::Properties::DEVPROPERTY, fenabled: super::super::super::Foundation::BOOL, ppszdeviceinterfaceid: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -77,7 +72,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<super::super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SwDeviceInterfaceSetState(hswdevice: HSWDEVICE, pszdeviceinterfaceid: ::windows::core::PCWSTR, fenabled: super::super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
     }
@@ -90,7 +84,6 @@ pub unsafe fn SwDevicePropertySet<'a, P0>(hswdevice: P0, pproperties: &[super::s
 where
     P0: ::std::convert::Into<HSWDEVICE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SwDevicePropertySet(hswdevice: HSWDEVICE, cpropertycount: u32, pproperties: *const super::super::Properties::DEVPROPERTY) -> ::windows::core::HRESULT;
     }
@@ -102,7 +95,6 @@ pub unsafe fn SwDeviceSetLifetime<'a, P0>(hswdevice: P0, lifetime: SW_DEVICE_LIF
 where
     P0: ::std::convert::Into<HSWDEVICE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SwDeviceSetLifetime(hswdevice: HSWDEVICE, lifetime: SW_DEVICE_LIFETIME) -> ::windows::core::HRESULT;
     }
@@ -111,7 +103,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_Enumeration_Pnp\"`*"]
 #[inline]
 pub unsafe fn SwMemFree(pmem: *const ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SwMemFree(pmem: *const ::core::ffi::c_void);
     }

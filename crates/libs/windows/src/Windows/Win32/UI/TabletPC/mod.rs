@@ -5,7 +5,6 @@ pub unsafe fn AddStroke<'a, P0>(hrc: P0, ppacketdesc: *const PACKET_DESCRIPTION,
 where
     P0: ::std::convert::Into<HRECOCONTEXT>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddStroke(hrc: HRECOCONTEXT, ppacketdesc: *const PACKET_DESCRIPTION, cbpacket: u32, ppacket: *const u8, pxform: *const super::super::Graphics::Gdi::XFORM) -> ::windows::core::HRESULT;
     }
@@ -18,7 +17,6 @@ where
     P0: ::std::convert::Into<HRECOWORDLIST>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddWordsToWordList(hwl: HRECOWORDLIST, pwcwords: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -32,7 +30,6 @@ where
     P0: ::std::convert::Into<HRECOCONTEXT>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AdviseInkChange(hrc: HRECOCONTEXT, bnewstroke: super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
     }
@@ -44,7 +41,6 @@ pub unsafe fn CreateContext<'a, P0>(hrec: P0, phrc: *mut HRECOCONTEXT) -> ::wind
 where
     P0: ::std::convert::Into<HRECOGNIZER>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateContext(hrec: HRECOGNIZER, phrc: *mut HRECOCONTEXT) -> ::windows::core::HRESULT;
     }
@@ -53,7 +49,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_TabletPC\"`*"]
 #[inline]
 pub unsafe fn CreateRecognizer(pclsid: *mut ::windows::core::GUID, phrec: *mut HRECOGNIZER) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateRecognizer(pclsid: *mut ::windows::core::GUID, phrec: *mut HRECOGNIZER) -> ::windows::core::HRESULT;
     }
@@ -65,7 +60,6 @@ pub unsafe fn DestroyContext<'a, P0>(hrc: P0) -> ::windows::core::Result<()>
 where
     P0: ::std::convert::Into<HRECOCONTEXT>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DestroyContext(hrc: HRECOCONTEXT) -> ::windows::core::HRESULT;
     }
@@ -77,7 +71,6 @@ pub unsafe fn DestroyRecognizer<'a, P0>(hrec: P0) -> ::windows::core::Result<()>
 where
     P0: ::std::convert::Into<HRECOGNIZER>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DestroyRecognizer(hrec: HRECOGNIZER) -> ::windows::core::HRESULT;
     }
@@ -89,7 +82,6 @@ pub unsafe fn DestroyWordList<'a, P0>(hwl: P0) -> ::windows::core::Result<()>
 where
     P0: ::std::convert::Into<HRECOWORDLIST>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DestroyWordList(hwl: HRECOWORDLIST) -> ::windows::core::HRESULT;
     }
@@ -101,7 +93,6 @@ pub unsafe fn EndInkInput<'a, P0>(hrc: P0) -> ::windows::core::Result<()>
 where
     P0: ::std::convert::Into<HRECOCONTEXT>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EndInkInput(hrc: HRECOCONTEXT) -> ::windows::core::HRESULT;
     }
@@ -110,7 +101,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_TabletPC\"`*"]
 #[inline]
 pub unsafe fn GetAllRecognizers(recognizerclsids: *mut *mut ::windows::core::GUID, count: *mut u32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetAllRecognizers(recognizerclsids: *mut *mut ::windows::core::GUID, count: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -122,7 +112,6 @@ pub unsafe fn GetBestResultString<'a, P0>(hrc: P0, pcsize: *mut u32, pwcbestresu
 where
     P0: ::std::convert::Into<HRECOCONTEXT>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetBestResultString(hrc: HRECOCONTEXT, pcsize: *mut u32, pwcbestresult: ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -134,7 +123,6 @@ pub unsafe fn GetLatticePtr<'a, P0>(hrc: P0, pplattice: *mut *mut RECO_LATTICE) 
 where
     P0: ::std::convert::Into<HRECOCONTEXT>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetLatticePtr(hrc: HRECOCONTEXT, pplattice: *mut *mut RECO_LATTICE) -> ::windows::core::HRESULT;
     }
@@ -146,7 +134,6 @@ pub unsafe fn GetLeftSeparator<'a, P0>(hrc: P0, pcsize: *mut u32, pwcleftseparat
 where
     P0: ::std::convert::Into<HRECOCONTEXT>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetLeftSeparator(hrc: HRECOCONTEXT, pcsize: *mut u32, pwcleftseparator: ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -158,7 +145,6 @@ pub unsafe fn GetRecoAttributes<'a, P0>(hrec: P0, precoattrs: *mut RECO_ATTRS) -
 where
     P0: ::std::convert::Into<HRECOGNIZER>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetRecoAttributes(hrec: HRECOGNIZER, precoattrs: *mut RECO_ATTRS) -> ::windows::core::HRESULT;
     }
@@ -170,7 +156,6 @@ pub unsafe fn GetResultPropertyList<'a, P0>(hrec: P0, ppropertycount: *mut u32, 
 where
     P0: ::std::convert::Into<HRECOGNIZER>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetResultPropertyList(hrec: HRECOGNIZER, ppropertycount: *mut u32, ppropertyguid: *mut ::windows::core::GUID) -> ::windows::core::HRESULT;
     }
@@ -182,7 +167,6 @@ pub unsafe fn GetRightSeparator<'a, P0>(hrc: P0, pcsize: *mut u32, pwcrightsepar
 where
     P0: ::std::convert::Into<HRECOCONTEXT>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetRightSeparator(hrc: HRECOCONTEXT, pcsize: *mut u32, pwcrightseparator: ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -194,7 +178,6 @@ pub unsafe fn GetUnicodeRanges<'a, P0>(hrec: P0, pcranges: *mut u32, pcr: *mut C
 where
     P0: ::std::convert::Into<HRECOGNIZER>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetUnicodeRanges(hrec: HRECOGNIZER, pcranges: *mut u32, pcr: *mut CHARACTER_RANGE) -> ::windows::core::HRESULT;
     }
@@ -207,7 +190,6 @@ where
     P0: ::std::convert::Into<HRECOCONTEXT>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsStringSupported(hrc: HRECOCONTEXT, wcstring: u32, pwcstring: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -216,7 +198,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_TabletPC\"`*"]
 #[inline]
 pub unsafe fn LoadCachedAttributes(clsid: ::windows::core::GUID, precoattributes: *mut RECO_ATTRS) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadCachedAttributes(clsid: ::windows::core::GUID, precoattributes: *mut RECO_ATTRS) -> ::windows::core::HRESULT;
     }
@@ -229,7 +210,6 @@ where
     P0: ::std::convert::Into<HRECOGNIZER>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MakeWordList(hrec: HRECOGNIZER, pbuffer: ::windows::core::PCWSTR, phwl: *mut HRECOWORDLIST) -> ::windows::core::HRESULT;
     }
@@ -242,7 +222,6 @@ pub unsafe fn Process<'a, P0>(hrc: P0, pbpartialprocessing: *mut super::super::F
 where
     P0: ::std::convert::Into<HRECOCONTEXT>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn Process(hrc: HRECOCONTEXT, pbpartialprocessing: *mut super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
     }
@@ -254,7 +233,6 @@ pub unsafe fn SetEnabledUnicodeRanges<'a, P0>(hrc: P0, cranges: u32, pcr: *mut C
 where
     P0: ::std::convert::Into<HRECOCONTEXT>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetEnabledUnicodeRanges(hrc: HRECOCONTEXT, cranges: u32, pcr: *mut CHARACTER_RANGE) -> ::windows::core::HRESULT;
     }
@@ -267,7 +245,6 @@ where
     P0: ::std::convert::Into<HRECOCONTEXT>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetFactoid(hrc: HRECOCONTEXT, cwcfactoid: u32, pwcfactoid: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -279,7 +256,6 @@ pub unsafe fn SetFlags<'a, P0>(hrc: P0, dwflags: u32) -> ::windows::core::Result
 where
     P0: ::std::convert::Into<HRECOCONTEXT>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetFlags(hrc: HRECOCONTEXT, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -291,7 +267,6 @@ pub unsafe fn SetGuide<'a, P0>(hrc: P0, pguide: *const RECO_GUIDE, iindex: u32) 
 where
     P0: ::std::convert::Into<HRECOCONTEXT>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetGuide(hrc: HRECOCONTEXT, pguide: *const RECO_GUIDE, iindex: u32) -> ::windows::core::HRESULT;
     }
@@ -303,7 +278,6 @@ pub unsafe fn SetTextContext<'a, P0>(hrc: P0, pwcbefore: &[u16], pwcafter: &[u16
 where
     P0: ::std::convert::Into<HRECOCONTEXT>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetTextContext(hrc: HRECOCONTEXT, cwcbefore: u32, pwcbefore: ::windows::core::PCWSTR, cwcafter: u32, pwcafter: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -316,7 +290,6 @@ where
     P0: ::std::convert::Into<HRECOCONTEXT>,
     P1: ::std::convert::Into<HRECOWORDLIST>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetWordList(hrc: HRECOCONTEXT, hwl: HRECOWORDLIST) -> ::windows::core::HRESULT;
     }

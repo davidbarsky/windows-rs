@@ -5,7 +5,6 @@ pub unsafe fn K32EmptyWorkingSet<'a, P0>(hprocess: P0) -> super::super::Foundati
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32EmptyWorkingSet(hprocess: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -15,7 +14,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn K32EnumDeviceDrivers(lpimagebase: *mut *mut ::core::ffi::c_void, cb: u32, lpcbneeded: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32EnumDeviceDrivers(lpimagebase: *mut *mut ::core::ffi::c_void, cb: u32, lpcbneeded: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -25,7 +23,6 @@ pub unsafe fn K32EnumDeviceDrivers(lpimagebase: *mut *mut ::core::ffi::c_void, c
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn K32EnumPageFilesA(pcallbackroutine: PENUM_PAGE_FILE_CALLBACKA, pcontext: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32EnumPageFilesA(pcallbackroutine: *mut ::core::ffi::c_void, pcontext: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -35,7 +32,6 @@ pub unsafe fn K32EnumPageFilesA(pcallbackroutine: PENUM_PAGE_FILE_CALLBACKA, pco
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn K32EnumPageFilesW(pcallbackroutine: PENUM_PAGE_FILE_CALLBACKW, pcontext: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32EnumPageFilesW(pcallbackroutine: *mut ::core::ffi::c_void, pcontext: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -48,7 +44,6 @@ pub unsafe fn K32EnumProcessModules<'a, P0>(hprocess: P0, lphmodule: *mut super:
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32EnumProcessModules(hprocess: super::super::Foundation::HANDLE, lphmodule: *mut super::super::Foundation::HINSTANCE, cb: u32, lpcbneeded: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -61,7 +56,6 @@ pub unsafe fn K32EnumProcessModulesEx<'a, P0>(hprocess: P0, lphmodule: *mut supe
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32EnumProcessModulesEx(hprocess: super::super::Foundation::HANDLE, lphmodule: *mut super::super::Foundation::HINSTANCE, cb: u32, lpcbneeded: *mut u32, dwfilterflag: ENUM_PROCESS_MODULES_EX_FLAGS) -> super::super::Foundation::BOOL;
     }
@@ -71,7 +65,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn K32EnumProcesses(lpidprocess: *mut u32, cb: u32, lpcbneeded: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32EnumProcesses(lpidprocess: *mut u32, cb: u32, lpcbneeded: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -80,7 +73,6 @@ pub unsafe fn K32EnumProcesses(lpidprocess: *mut u32, cb: u32, lpcbneeded: *mut 
 #[doc = "*Required features: `\"Win32_System_ProcessStatus\"`*"]
 #[inline]
 pub unsafe fn K32GetDeviceDriverBaseNameA(imagebase: *const ::core::ffi::c_void, lpfilename: &mut [u8]) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32GetDeviceDriverBaseNameA(imagebase: *const ::core::ffi::c_void, lpfilename: ::windows::core::PSTR, nsize: u32) -> u32;
     }
@@ -89,7 +81,6 @@ pub unsafe fn K32GetDeviceDriverBaseNameA(imagebase: *const ::core::ffi::c_void,
 #[doc = "*Required features: `\"Win32_System_ProcessStatus\"`*"]
 #[inline]
 pub unsafe fn K32GetDeviceDriverBaseNameW(imagebase: *const ::core::ffi::c_void, lpbasename: &mut [u16]) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32GetDeviceDriverBaseNameW(imagebase: *const ::core::ffi::c_void, lpbasename: ::windows::core::PWSTR, nsize: u32) -> u32;
     }
@@ -98,7 +89,6 @@ pub unsafe fn K32GetDeviceDriverBaseNameW(imagebase: *const ::core::ffi::c_void,
 #[doc = "*Required features: `\"Win32_System_ProcessStatus\"`*"]
 #[inline]
 pub unsafe fn K32GetDeviceDriverFileNameA(imagebase: *const ::core::ffi::c_void, lpfilename: &mut [u8]) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32GetDeviceDriverFileNameA(imagebase: *const ::core::ffi::c_void, lpfilename: ::windows::core::PSTR, nsize: u32) -> u32;
     }
@@ -107,7 +97,6 @@ pub unsafe fn K32GetDeviceDriverFileNameA(imagebase: *const ::core::ffi::c_void,
 #[doc = "*Required features: `\"Win32_System_ProcessStatus\"`*"]
 #[inline]
 pub unsafe fn K32GetDeviceDriverFileNameW(imagebase: *const ::core::ffi::c_void, lpfilename: &mut [u16]) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32GetDeviceDriverFileNameW(imagebase: *const ::core::ffi::c_void, lpfilename: ::windows::core::PWSTR, nsize: u32) -> u32;
     }
@@ -120,7 +109,6 @@ pub unsafe fn K32GetMappedFileNameA<'a, P0>(hprocess: P0, lpv: *const ::core::ff
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32GetMappedFileNameA(hprocess: super::super::Foundation::HANDLE, lpv: *const ::core::ffi::c_void, lpfilename: ::windows::core::PSTR, nsize: u32) -> u32;
     }
@@ -133,7 +121,6 @@ pub unsafe fn K32GetMappedFileNameW<'a, P0>(hprocess: P0, lpv: *const ::core::ff
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32GetMappedFileNameW(hprocess: super::super::Foundation::HANDLE, lpv: *const ::core::ffi::c_void, lpfilename: ::windows::core::PWSTR, nsize: u32) -> u32;
     }
@@ -147,7 +134,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32GetModuleBaseNameA(hprocess: super::super::Foundation::HANDLE, hmodule: super::super::Foundation::HINSTANCE, lpbasename: ::windows::core::PSTR, nsize: u32) -> u32;
     }
@@ -161,7 +147,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32GetModuleBaseNameW(hprocess: super::super::Foundation::HANDLE, hmodule: super::super::Foundation::HINSTANCE, lpbasename: ::windows::core::PWSTR, nsize: u32) -> u32;
     }
@@ -175,7 +160,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32GetModuleFileNameExA(hprocess: super::super::Foundation::HANDLE, hmodule: super::super::Foundation::HINSTANCE, lpfilename: ::windows::core::PSTR, nsize: u32) -> u32;
     }
@@ -189,7 +173,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32GetModuleFileNameExW(hprocess: super::super::Foundation::HANDLE, hmodule: super::super::Foundation::HINSTANCE, lpfilename: ::windows::core::PWSTR, nsize: u32) -> u32;
     }
@@ -203,7 +186,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32GetModuleInformation(hprocess: super::super::Foundation::HANDLE, hmodule: super::super::Foundation::HINSTANCE, lpmodinfo: *mut MODULEINFO, cb: u32) -> super::super::Foundation::BOOL;
     }
@@ -213,7 +195,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn K32GetPerformanceInfo(pperformanceinformation: *mut PERFORMANCE_INFORMATION, cb: u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32GetPerformanceInfo(pperformanceinformation: *mut PERFORMANCE_INFORMATION, cb: u32) -> super::super::Foundation::BOOL;
     }
@@ -226,7 +207,6 @@ pub unsafe fn K32GetProcessImageFileNameA<'a, P0>(hprocess: P0, lpimagefilename:
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32GetProcessImageFileNameA(hprocess: super::super::Foundation::HANDLE, lpimagefilename: ::windows::core::PSTR, nsize: u32) -> u32;
     }
@@ -239,7 +219,6 @@ pub unsafe fn K32GetProcessImageFileNameW<'a, P0>(hprocess: P0, lpimagefilename:
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32GetProcessImageFileNameW(hprocess: super::super::Foundation::HANDLE, lpimagefilename: ::windows::core::PWSTR, nsize: u32) -> u32;
     }
@@ -252,7 +231,6 @@ pub unsafe fn K32GetProcessMemoryInfo<'a, P0>(process: P0, ppsmemcounters: *mut 
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32GetProcessMemoryInfo(process: super::super::Foundation::HANDLE, ppsmemcounters: *mut PROCESS_MEMORY_COUNTERS, cb: u32) -> super::super::Foundation::BOOL;
     }
@@ -265,7 +243,6 @@ pub unsafe fn K32GetWsChanges<'a, P0>(hprocess: P0, lpwatchinfo: *mut PSAPI_WS_W
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32GetWsChanges(hprocess: super::super::Foundation::HANDLE, lpwatchinfo: *mut PSAPI_WS_WATCH_INFORMATION, cb: u32) -> super::super::Foundation::BOOL;
     }
@@ -278,7 +255,6 @@ pub unsafe fn K32GetWsChangesEx<'a, P0>(hprocess: P0, lpwatchinfoex: *mut PSAPI_
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32GetWsChangesEx(hprocess: super::super::Foundation::HANDLE, lpwatchinfoex: *mut PSAPI_WS_WATCH_INFORMATION_EX, cb: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -291,7 +267,6 @@ pub unsafe fn K32InitializeProcessForWsWatch<'a, P0>(hprocess: P0) -> super::sup
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32InitializeProcessForWsWatch(hprocess: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -304,7 +279,6 @@ pub unsafe fn K32QueryWorkingSet<'a, P0>(hprocess: P0, pv: *mut ::core::ffi::c_v
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32QueryWorkingSet(hprocess: super::super::Foundation::HANDLE, pv: *mut ::core::ffi::c_void, cb: u32) -> super::super::Foundation::BOOL;
     }
@@ -317,7 +291,6 @@ pub unsafe fn K32QueryWorkingSetEx<'a, P0>(hprocess: P0, pv: *mut ::core::ffi::c
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn K32QueryWorkingSetEx(hprocess: super::super::Foundation::HANDLE, pv: *mut ::core::ffi::c_void, cb: u32) -> super::super::Foundation::BOOL;
     }

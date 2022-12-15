@@ -18,7 +18,6 @@ pub unsafe fn BindMoniker<'a, P0>(pmk: P0, grfopt: u32, iidresult: *const ::wind
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IMoniker>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BindMoniker(pmk: *mut ::core::ffi::c_void, grfopt: u32, iidresult: *const ::windows::core::GUID, ppvresult: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -30,7 +29,6 @@ pub unsafe fn CLSIDFromProgID<'a, P0>(lpszprogid: P0) -> ::windows::core::Result
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CLSIDFromProgID(lpszprogid: ::windows::core::PCWSTR, lpclsid: *mut ::windows::core::GUID) -> ::windows::core::HRESULT;
     }
@@ -43,7 +41,6 @@ pub unsafe fn CLSIDFromProgIDEx<'a, P0>(lpszprogid: P0) -> ::windows::core::Resu
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CLSIDFromProgIDEx(lpszprogid: ::windows::core::PCWSTR, lpclsid: *mut ::windows::core::GUID) -> ::windows::core::HRESULT;
     }
@@ -56,7 +53,6 @@ pub unsafe fn CLSIDFromString<'a, P0>(lpsz: P0) -> ::windows::core::Result<::win
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CLSIDFromString(lpsz: ::windows::core::PCWSTR, pclsid: *mut ::windows::core::GUID) -> ::windows::core::HRESULT;
     }
@@ -66,7 +62,6 @@ where
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoAddRefServerProcess() -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoAddRefServerProcess() -> u32;
     }
@@ -78,7 +73,6 @@ pub unsafe fn CoAllowSetForegroundWindow<'a, P0>(punk: P0, lpvreserved: ::core::
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoAllowSetForegroundWindow(punk: *mut ::core::ffi::c_void, lpvreserved: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -87,7 +81,6 @@ where
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoAllowUnmarshalerCLSID(clsid: *const ::windows::core::GUID) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoAllowUnmarshalerCLSID(clsid: *const ::windows::core::GUID) -> ::windows::core::HRESULT;
     }
@@ -96,7 +89,6 @@ pub unsafe fn CoAllowUnmarshalerCLSID(clsid: *const ::windows::core::GUID) -> ::
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoBuildVersion() -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoBuildVersion() -> u32;
     }
@@ -105,7 +97,6 @@ pub unsafe fn CoBuildVersion() -> u32 {
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoCancelCall(dwthreadid: u32, ultimeout: u32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoCancelCall(dwthreadid: u32, ultimeout: u32) -> ::windows::core::HRESULT;
     }
@@ -117,7 +108,6 @@ pub unsafe fn CoCopyProxy<'a, P0>(pproxy: P0) -> ::windows::core::Result<::windo
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoCopyProxy(pproxy: *mut ::core::ffi::c_void, ppcopy: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -130,7 +120,6 @@ pub unsafe fn CoCreateFreeThreadedMarshaler<'a, P0>(punkouter: P0) -> ::windows:
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoCreateFreeThreadedMarshaler(punkouter: *mut ::core::ffi::c_void, ppunkmarshal: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -140,7 +129,6 @@ where
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoCreateGuid() -> ::windows::core::Result<::windows::core::GUID> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoCreateGuid(pguid: *mut ::windows::core::GUID) -> ::windows::core::HRESULT;
     }
@@ -154,7 +142,6 @@ where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoCreateInstance(rclsid: *const ::windows::core::GUID, punkouter: *mut ::core::ffi::c_void, dwclscontext: CLSCTX, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -167,7 +154,6 @@ pub unsafe fn CoCreateInstanceEx<'a, P0>(clsid: *const ::windows::core::GUID, pu
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoCreateInstanceEx(clsid: *const ::windows::core::GUID, punkouter: *mut ::core::ffi::c_void, dwclsctx: CLSCTX, pserverinfo: *const COSERVERINFO, dwcount: u32, presults: *mut MULTI_QI) -> ::windows::core::HRESULT;
     }
@@ -179,7 +165,6 @@ pub unsafe fn CoCreateInstanceFromApp<'a, P0>(clsid: *const ::windows::core::GUI
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoCreateInstanceFromApp(clsid: *const ::windows::core::GUID, punkouter: *mut ::core::ffi::c_void, dwclsctx: CLSCTX, reserved: *const ::core::ffi::c_void, dwcount: u32, presults: *mut MULTI_QI) -> ::windows::core::HRESULT;
     }
@@ -191,7 +176,6 @@ pub unsafe fn CoDecrementMTAUsage<'a, P0>(cookie: P0) -> ::windows::core::Result
 where
     P0: ::std::convert::Into<CO_MTA_USAGE_COOKIE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoDecrementMTAUsage(cookie: CO_MTA_USAGE_COOKIE) -> ::windows::core::HRESULT;
     }
@@ -200,7 +184,6 @@ where
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoDisableCallCancellation(preserved: ::core::option::Option<*const ::core::ffi::c_void>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoDisableCallCancellation(preserved: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -209,7 +192,6 @@ pub unsafe fn CoDisableCallCancellation(preserved: ::core::option::Option<*const
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoDisconnectContext(dwtimeout: u32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoDisconnectContext(dwtimeout: u32) -> ::windows::core::HRESULT;
     }
@@ -221,7 +203,6 @@ pub unsafe fn CoDisconnectObject<'a, P0>(punk: P0, dwreserved: u32) -> ::windows
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoDisconnectObject(punk: *mut ::core::ffi::c_void, dwreserved: u32) -> ::windows::core::HRESULT;
     }
@@ -231,7 +212,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn CoDosDateTimeToFileTime(ndosdate: u16, ndostime: u16, lpfiletime: *mut super::super::Foundation::FILETIME) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoDosDateTimeToFileTime(ndosdate: u16, ndostime: u16, lpfiletime: *mut super::super::Foundation::FILETIME) -> super::super::Foundation::BOOL;
     }
@@ -240,7 +220,6 @@ pub unsafe fn CoDosDateTimeToFileTime(ndosdate: u16, ndostime: u16, lpfiletime: 
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoEnableCallCancellation(preserved: ::core::option::Option<*const ::core::ffi::c_void>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoEnableCallCancellation(preserved: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -250,7 +229,6 @@ pub unsafe fn CoEnableCallCancellation(preserved: ::core::option::Option<*const 
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn CoFileTimeNow() -> ::windows::core::Result<super::super::Foundation::FILETIME> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoFileTimeNow(lpfiletime: *mut super::super::Foundation::FILETIME) -> ::windows::core::HRESULT;
     }
@@ -261,7 +239,6 @@ pub unsafe fn CoFileTimeNow() -> ::windows::core::Result<super::super::Foundatio
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn CoFileTimeToDosDateTime(lpfiletime: *const super::super::Foundation::FILETIME, lpdosdate: *mut u16, lpdostime: *mut u16) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoFileTimeToDosDateTime(lpfiletime: *const super::super::Foundation::FILETIME, lpdosdate: *mut u16, lpdostime: *mut u16) -> super::super::Foundation::BOOL;
     }
@@ -270,7 +247,6 @@ pub unsafe fn CoFileTimeToDosDateTime(lpfiletime: *const super::super::Foundatio
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoFreeAllLibraries() {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoFreeAllLibraries();
     }
@@ -283,7 +259,6 @@ pub unsafe fn CoFreeLibrary<'a, P0>(hinst: P0)
 where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoFreeLibrary(hinst: super::super::Foundation::HINSTANCE);
     }
@@ -292,7 +267,6 @@ where
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoFreeUnusedLibraries() {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoFreeUnusedLibraries();
     }
@@ -301,7 +275,6 @@ pub unsafe fn CoFreeUnusedLibraries() {
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoFreeUnusedLibrariesEx(dwunloaddelay: u32, dwreserved: u32) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoFreeUnusedLibrariesEx(dwunloaddelay: u32, dwreserved: u32);
     }
@@ -310,7 +283,6 @@ pub unsafe fn CoFreeUnusedLibrariesEx(dwunloaddelay: u32, dwreserved: u32) {
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoGetApartmentType(papttype: *mut APTTYPE, paptqualifier: *mut APTTYPEQUALIFIER) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoGetApartmentType(papttype: *mut APTTYPE, paptqualifier: *mut APTTYPEQUALIFIER) -> ::windows::core::HRESULT;
     }
@@ -319,7 +291,6 @@ pub unsafe fn CoGetApartmentType(papttype: *mut APTTYPE, paptqualifier: *mut APT
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoGetCallContext(riid: *const ::windows::core::GUID, ppinterface: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoGetCallContext(riid: *const ::windows::core::GUID, ppinterface: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -328,7 +299,6 @@ pub unsafe fn CoGetCallContext(riid: *const ::windows::core::GUID, ppinterface: 
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoGetCallerTID() -> ::windows::core::Result<u32> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoGetCallerTID(lpdwtid: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -338,7 +308,6 @@ pub unsafe fn CoGetCallerTID() -> ::windows::core::Result<u32> {
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoGetCancelObject(dwthreadid: u32, iid: *const ::windows::core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoGetCancelObject(dwthreadid: u32, iid: *const ::windows::core::GUID, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -347,7 +316,6 @@ pub unsafe fn CoGetCancelObject(dwthreadid: u32, iid: *const ::windows::core::GU
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoGetClassObject(rclsid: *const ::windows::core::GUID, dwclscontext: CLSCTX, pvreserved: ::core::option::Option<*const ::core::ffi::c_void>, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoGetClassObject(rclsid: *const ::windows::core::GUID, dwclscontext: CLSCTX, pvreserved: *const ::core::ffi::c_void, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -356,7 +324,6 @@ pub unsafe fn CoGetClassObject(rclsid: *const ::windows::core::GUID, dwclscontex
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoGetContextToken() -> ::windows::core::Result<usize> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoGetContextToken(ptoken: *mut usize) -> ::windows::core::HRESULT;
     }
@@ -366,7 +333,6 @@ pub unsafe fn CoGetContextToken() -> ::windows::core::Result<usize> {
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoGetCurrentLogicalThreadId() -> ::windows::core::Result<::windows::core::GUID> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoGetCurrentLogicalThreadId(pguid: *mut ::windows::core::GUID) -> ::windows::core::HRESULT;
     }
@@ -376,7 +342,6 @@ pub unsafe fn CoGetCurrentLogicalThreadId() -> ::windows::core::Result<::windows
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoGetCurrentProcess() -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoGetCurrentProcess() -> u32;
     }
@@ -385,7 +350,6 @@ pub unsafe fn CoGetCurrentProcess() -> u32 {
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoGetMalloc(dwmemcontext: u32) -> ::windows::core::Result<IMalloc> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoGetMalloc(dwmemcontext: u32, ppmalloc: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -398,7 +362,6 @@ pub unsafe fn CoGetObject<'a, P0>(pszname: P0, pbindoptions: ::core::option::Opt
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoGetObject(pszname: ::windows::core::PCWSTR, pbindoptions: *const BIND_OPTS, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -407,7 +370,6 @@ where
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoGetObjectContext(riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoGetObjectContext(riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -416,7 +378,6 @@ pub unsafe fn CoGetObjectContext(riid: *const ::windows::core::GUID, ppv: *mut *
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoGetPSClsid(riid: *const ::windows::core::GUID) -> ::windows::core::Result<::windows::core::GUID> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoGetPSClsid(riid: *const ::windows::core::GUID, pclsid: *mut ::windows::core::GUID) -> ::windows::core::HRESULT;
     }
@@ -427,7 +388,6 @@ pub unsafe fn CoGetPSClsid(riid: *const ::windows::core::GUID) -> ::windows::cor
 #[cfg(feature = "Win32_Security")]
 #[inline]
 pub unsafe fn CoGetSystemSecurityPermissions(comsdtype: COMSD, ppsd: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoGetSystemSecurityPermissions(comsdtype: COMSD, ppsd: *mut super::super::Security::PSECURITY_DESCRIPTOR) -> ::windows::core::HRESULT;
     }
@@ -436,7 +396,6 @@ pub unsafe fn CoGetSystemSecurityPermissions(comsdtype: COMSD, ppsd: *mut super:
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoGetTreatAsClass(clsidold: *const ::windows::core::GUID) -> ::windows::core::Result<::windows::core::GUID> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoGetTreatAsClass(clsidold: *const ::windows::core::GUID, pclsidnew: *mut ::windows::core::GUID) -> ::windows::core::HRESULT;
     }
@@ -446,7 +405,6 @@ pub unsafe fn CoGetTreatAsClass(clsidold: *const ::windows::core::GUID) -> ::win
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoImpersonateClient() -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoImpersonateClient() -> ::windows::core::HRESULT;
     }
@@ -455,7 +413,6 @@ pub unsafe fn CoImpersonateClient() -> ::windows::core::Result<()> {
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoIncrementMTAUsage() -> ::windows::core::Result<CO_MTA_USAGE_COOKIE> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoIncrementMTAUsage(pcookie: *mut CO_MTA_USAGE_COOKIE) -> ::windows::core::HRESULT;
     }
@@ -465,7 +422,6 @@ pub unsafe fn CoIncrementMTAUsage() -> ::windows::core::Result<CO_MTA_USAGE_COOK
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoInitialize(pvreserved: ::core::option::Option<*const ::core::ffi::c_void>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoInitialize(pvreserved: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -474,7 +430,6 @@ pub unsafe fn CoInitialize(pvreserved: ::core::option::Option<*const ::core::ffi
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoInitializeEx(pvreserved: ::core::option::Option<*const ::core::ffi::c_void>, dwcoinit: COINIT) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoInitializeEx(pvreserved: *const ::core::ffi::c_void, dwcoinit: COINIT) -> ::windows::core::HRESULT;
     }
@@ -487,7 +442,6 @@ pub unsafe fn CoInitializeSecurity<'a, P0>(psecdesc: P0, cauthsvc: i32, asauthsv
 where
     P0: ::std::convert::Into<super::super::Security::PSECURITY_DESCRIPTOR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoInitializeSecurity(psecdesc: super::super::Security::PSECURITY_DESCRIPTOR, cauthsvc: i32, asauthsvc: *const SOLE_AUTHENTICATION_SERVICE, preserved1: *const ::core::ffi::c_void, dwauthnlevel: RPC_C_AUTHN_LEVEL, dwimplevel: RPC_C_IMP_LEVEL, pauthlist: *const ::core::ffi::c_void, dwcapabilities: EOLE_AUTHENTICATION_CAPABILITIES, preserved3: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -500,7 +454,6 @@ where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IBindCtx>>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoInstall(pbc: *mut ::core::ffi::c_void, dwflags: u32, pclassspec: *const uCLSSPEC, pquery: *const QUERYCONTEXT, pszcodebase: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -512,7 +465,6 @@ pub unsafe fn CoInvalidateRemoteMachineBindings<'a, P0>(pszmachinename: P0) -> :
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoInvalidateRemoteMachineBindings(pszmachinename: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -525,7 +477,6 @@ pub unsafe fn CoIsHandlerConnected<'a, P0>(punk: P0) -> super::super::Foundation
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoIsHandlerConnected(punk: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -535,7 +486,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn CoIsOle1Class(rclsid: *const ::windows::core::GUID) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoIsOle1Class(rclsid: *const ::windows::core::GUID) -> super::super::Foundation::BOOL;
     }
@@ -549,7 +499,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoLoadLibrary(lpszlibname: ::windows::core::PCWSTR, bautofree: super::super::Foundation::BOOL) -> super::super::Foundation::HINSTANCE;
     }
@@ -564,7 +513,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoLockObjectExternal(punk: *mut ::core::ffi::c_void, flock: super::super::Foundation::BOOL, flastunlockreleases: super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
     }
@@ -573,7 +521,6 @@ where
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoQueryAuthenticationServices(pcauthsvc: *mut u32, asauthsvc: *mut *mut SOLE_AUTHENTICATION_SERVICE) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoQueryAuthenticationServices(pcauthsvc: *mut u32, asauthsvc: *mut *mut SOLE_AUTHENTICATION_SERVICE) -> ::windows::core::HRESULT;
     }
@@ -582,7 +529,6 @@ pub unsafe fn CoQueryAuthenticationServices(pcauthsvc: *mut u32, asauthsvc: *mut
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoQueryClientBlanket(pauthnsvc: ::core::option::Option<*mut u32>, pauthzsvc: ::core::option::Option<*mut u32>, pserverprincname: ::core::option::Option<*mut ::windows::core::PWSTR>, pauthnlevel: ::core::option::Option<*mut u32>, pimplevel: ::core::option::Option<*mut u32>, pprivs: ::core::option::Option<*mut *mut ::core::ffi::c_void>, pcapabilities: ::core::option::Option<*mut u32>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoQueryClientBlanket(pauthnsvc: *mut u32, pauthzsvc: *mut u32, pserverprincname: *mut ::windows::core::PWSTR, pauthnlevel: *mut u32, pimplevel: *mut u32, pprivs: *mut *mut ::core::ffi::c_void, pcapabilities: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -603,7 +549,6 @@ pub unsafe fn CoQueryProxyBlanket<'a, P0>(pproxy: P0, pwauthnsvc: ::core::option
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoQueryProxyBlanket(pproxy: *mut ::core::ffi::c_void, pwauthnsvc: *mut u32, pauthzsvc: *mut u32, pserverprincname: *mut ::windows::core::PWSTR, pauthnlevel: *mut u32, pimplevel: *mut u32, pauthinfo: *mut *mut ::core::ffi::c_void, pcapabilites: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -625,7 +570,6 @@ pub unsafe fn CoRegisterActivationFilter<'a, P0>(pactivationfilter: P0) -> ::win
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IActivationFilter>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoRegisterActivationFilter(pactivationfilter: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -637,7 +581,6 @@ pub unsafe fn CoRegisterChannelHook<'a, P0>(extensionuuid: *const ::windows::cor
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IChannelHook>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoRegisterChannelHook(extensionuuid: *const ::windows::core::GUID, pchannelhook: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -649,7 +592,6 @@ pub unsafe fn CoRegisterClassObject<'a, P0>(rclsid: *const ::windows::core::GUID
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoRegisterClassObject(rclsid: *const ::windows::core::GUID, punk: *mut ::core::ffi::c_void, dwclscontext: CLSCTX, flags: REGCLS, lpdwregister: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -662,7 +604,6 @@ pub unsafe fn CoRegisterDeviceCatalog<'a, P0>(deviceinstanceid: P0) -> ::windows
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoRegisterDeviceCatalog(deviceinstanceid: ::windows::core::PCWSTR, cookie: *mut CO_DEVICE_CATALOG_COOKIE) -> ::windows::core::HRESULT;
     }
@@ -675,7 +616,6 @@ pub unsafe fn CoRegisterInitializeSpy<'a, P0>(pspy: P0) -> ::windows::core::Resu
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IInitializeSpy>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoRegisterInitializeSpy(pspy: *mut ::core::ffi::c_void, pulicookie: *mut u64) -> ::windows::core::HRESULT;
     }
@@ -688,7 +628,6 @@ pub unsafe fn CoRegisterMallocSpy<'a, P0>(pmallocspy: P0) -> ::windows::core::Re
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IMallocSpy>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoRegisterMallocSpy(pmallocspy: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -697,7 +636,6 @@ where
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoRegisterPSClsid(riid: *const ::windows::core::GUID, rclsid: *const ::windows::core::GUID) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoRegisterPSClsid(riid: *const ::windows::core::GUID, rclsid: *const ::windows::core::GUID) -> ::windows::core::HRESULT;
     }
@@ -709,7 +647,6 @@ pub unsafe fn CoRegisterSurrogate<'a, P0>(psurrogate: P0) -> ::windows::core::Re
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ISurrogate>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoRegisterSurrogate(psurrogate: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -718,7 +655,6 @@ where
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoReleaseServerProcess() -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoReleaseServerProcess() -> u32;
     }
@@ -727,7 +663,6 @@ pub unsafe fn CoReleaseServerProcess() -> u32 {
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoResumeClassObjects() -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoResumeClassObjects() -> ::windows::core::HRESULT;
     }
@@ -736,7 +671,6 @@ pub unsafe fn CoResumeClassObjects() -> ::windows::core::Result<()> {
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoRevertToSelf() -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoRevertToSelf() -> ::windows::core::HRESULT;
     }
@@ -745,7 +679,6 @@ pub unsafe fn CoRevertToSelf() -> ::windows::core::Result<()> {
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoRevokeClassObject(dwregister: u32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoRevokeClassObject(dwregister: u32) -> ::windows::core::HRESULT;
     }
@@ -757,7 +690,6 @@ pub unsafe fn CoRevokeDeviceCatalog<'a, P0>(cookie: P0) -> ::windows::core::Resu
 where
     P0: ::std::convert::Into<CO_DEVICE_CATALOG_COOKIE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoRevokeDeviceCatalog(cookie: CO_DEVICE_CATALOG_COOKIE) -> ::windows::core::HRESULT;
     }
@@ -766,7 +698,6 @@ where
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoRevokeInitializeSpy(ulicookie: u64) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoRevokeInitializeSpy(ulicookie: u64) -> ::windows::core::HRESULT;
     }
@@ -775,7 +706,6 @@ pub unsafe fn CoRevokeInitializeSpy(ulicookie: u64) -> ::windows::core::Result<(
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoRevokeMallocSpy() -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoRevokeMallocSpy() -> ::windows::core::HRESULT;
     }
@@ -787,7 +717,6 @@ pub unsafe fn CoSetCancelObject<'a, P0>(punk: P0) -> ::windows::core::Result<()>
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoSetCancelObject(punk: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -800,7 +729,6 @@ where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoSetProxyBlanket(pproxy: *mut ::core::ffi::c_void, dwauthnsvc: u32, dwauthzsvc: u32, pserverprincname: ::windows::core::PCWSTR, dwauthnlevel: RPC_C_AUTHN_LEVEL, dwimplevel: RPC_C_IMP_LEVEL, pauthinfo: *const ::core::ffi::c_void, dwcapabilities: EOLE_AUTHENTICATION_CAPABILITIES) -> ::windows::core::HRESULT;
     }
@@ -809,7 +737,6 @@ where
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoSuspendClassObjects() -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoSuspendClassObjects() -> ::windows::core::HRESULT;
     }
@@ -821,7 +748,6 @@ pub unsafe fn CoSwitchCallContext<'a, P0>(pnewobject: P0) -> ::windows::core::Re
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoSwitchCallContext(pnewobject: *mut ::core::ffi::c_void, ppoldobject: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -831,7 +757,6 @@ where
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoTaskMemAlloc(cb: usize) -> *mut ::core::ffi::c_void {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoTaskMemAlloc(cb: usize) -> *mut ::core::ffi::c_void;
     }
@@ -840,7 +765,6 @@ pub unsafe fn CoTaskMemAlloc(cb: usize) -> *mut ::core::ffi::c_void {
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoTaskMemFree(pv: ::core::option::Option<*const ::core::ffi::c_void>) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoTaskMemFree(pv: *const ::core::ffi::c_void);
     }
@@ -849,7 +773,6 @@ pub unsafe fn CoTaskMemFree(pv: ::core::option::Option<*const ::core::ffi::c_voi
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoTaskMemRealloc(pv: ::core::option::Option<*const ::core::ffi::c_void>, cb: usize) -> *mut ::core::ffi::c_void {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoTaskMemRealloc(pv: *const ::core::ffi::c_void, cb: usize) -> *mut ::core::ffi::c_void;
     }
@@ -858,7 +781,6 @@ pub unsafe fn CoTaskMemRealloc(pv: ::core::option::Option<*const ::core::ffi::c_
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoTestCancel() -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoTestCancel() -> ::windows::core::HRESULT;
     }
@@ -867,7 +789,6 @@ pub unsafe fn CoTestCancel() -> ::windows::core::Result<()> {
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoTreatAsClass(clsidold: *const ::windows::core::GUID, clsidnew: *const ::windows::core::GUID) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoTreatAsClass(clsidold: *const ::windows::core::GUID, clsidnew: *const ::windows::core::GUID) -> ::windows::core::HRESULT;
     }
@@ -876,7 +797,6 @@ pub unsafe fn CoTreatAsClass(clsidold: *const ::windows::core::GUID, clsidnew: *
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CoUninitialize() {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoUninitialize();
     }
@@ -886,7 +806,6 @@ pub unsafe fn CoUninitialize() {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn CoWaitForMultipleHandles(dwflags: u32, dwtimeout: u32, phandles: &[super::super::Foundation::HANDLE]) -> ::windows::core::Result<u32> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoWaitForMultipleHandles(dwflags: u32, dwtimeout: u32, chandles: u32, phandles: *const super::super::Foundation::HANDLE, lpdwindex: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -897,7 +816,6 @@ pub unsafe fn CoWaitForMultipleHandles(dwflags: u32, dwtimeout: u32, phandles: &
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn CoWaitForMultipleObjects(dwflags: u32, dwtimeout: u32, phandles: &[super::super::Foundation::HANDLE]) -> ::windows::core::Result<u32> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoWaitForMultipleObjects(dwflags: u32, dwtimeout: u32, chandles: u32, phandles: *const super::super::Foundation::HANDLE, lpdwindex: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -907,7 +825,6 @@ pub unsafe fn CoWaitForMultipleObjects(dwflags: u32, dwtimeout: u32, phandles: &
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CreateAntiMoniker() -> ::windows::core::Result<IMoniker> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateAntiMoniker(ppmk: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -917,7 +834,6 @@ pub unsafe fn CreateAntiMoniker() -> ::windows::core::Result<IMoniker> {
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CreateBindCtx(reserved: u32) -> ::windows::core::Result<IBindCtx> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateBindCtx(reserved: u32, ppbc: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -927,7 +843,6 @@ pub unsafe fn CreateBindCtx(reserved: u32) -> ::windows::core::Result<IBindCtx> 
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CreateClassMoniker(rclsid: *const ::windows::core::GUID) -> ::windows::core::Result<IMoniker> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateClassMoniker(rclsid: *const ::windows::core::GUID, ppmk: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -937,7 +852,6 @@ pub unsafe fn CreateClassMoniker(rclsid: *const ::windows::core::GUID) -> ::wind
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn CreateDataAdviseHolder() -> ::windows::core::Result<IDataAdviseHolder> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateDataAdviseHolder(ppdaholder: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -950,7 +864,6 @@ pub unsafe fn CreateDataCache<'a, P0>(punkouter: P0, rclsid: *const ::windows::c
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateDataCache(punkouter: *mut ::core::ffi::c_void, rclsid: *const ::windows::core::GUID, iid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -962,7 +875,6 @@ pub unsafe fn CreateFileMoniker<'a, P0>(lpszpathname: P0) -> ::windows::core::Re
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateFileMoniker(lpszpathname: ::windows::core::PCWSTR, ppmk: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -976,7 +888,6 @@ where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IMoniker>>,
     P1: ::std::convert::Into<::windows::core::InParam<'a, IMoniker>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateGenericComposite(pmkfirst: *mut ::core::ffi::c_void, pmkrest: *mut ::core::ffi::c_void, ppmkcomposite: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -989,7 +900,6 @@ pub unsafe fn CreateIUriBuilder<'a, P0>(piuri: P0, dwflags: u32, dwreserved: usi
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IUri>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateIUriBuilder(piuri: *mut ::core::ffi::c_void, dwflags: u32, dwreserved: usize, ppiuribuilder: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1003,7 +913,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateItemMoniker(lpszdelim: ::windows::core::PCWSTR, lpszitem: ::windows::core::PCWSTR, ppmk: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1016,7 +925,6 @@ pub unsafe fn CreateObjrefMoniker<'a, P0>(punk: P0) -> ::windows::core::Result<I
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateObjrefMoniker(punk: *mut ::core::ffi::c_void, ppmk: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1029,7 +937,6 @@ pub unsafe fn CreatePointerMoniker<'a, P0>(punk: P0) -> ::windows::core::Result<
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreatePointerMoniker(punk: *mut ::core::ffi::c_void, ppmk: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1045,7 +952,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::InParam<'a, IBindStatusCallback>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateStdProgressIndicator(hwndparent: super::super::Foundation::HWND, psztitle: ::windows::core::PCWSTR, pibsccaller: *mut ::core::ffi::c_void, ppibsc: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1058,7 +964,6 @@ pub unsafe fn CreateUri<'a, P0>(pwzuri: P0, dwflags: URI_CREATE_FLAGS, dwreserve
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateUri(pwzuri: ::windows::core::PCWSTR, dwflags: URI_CREATE_FLAGS, dwreserved: usize, ppuri: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1071,7 +976,6 @@ pub unsafe fn CreateUriFromMultiByteString<'a, P0>(pszansiinputuri: P0, dwencodi
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateUriFromMultiByteString(pszansiinputuri: ::windows::core::PCSTR, dwencodingflags: u32, dwcodepage: u32, dwcreateflags: u32, dwreserved: usize, ppuri: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1085,7 +989,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateUriWithFragment(pwzuri: ::windows::core::PCWSTR, pwzfragment: ::windows::core::PCWSTR, dwflags: u32, dwreserved: usize, ppuri: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1095,7 +998,6 @@ where
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn DcomChannelSetHResult(pvreserved: ::core::option::Option<*const ::core::ffi::c_void>, pulreserved: ::core::option::Option<*const u32>, appshr: ::windows::core::HRESULT) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DcomChannelSetHResult(pvreserved: *const ::core::ffi::c_void, pulreserved: *const u32, appshr: ::windows::core::HRESULT) -> ::windows::core::HRESULT;
     }
@@ -1107,7 +1009,6 @@ pub unsafe fn GetClassFile<'a, P0>(szfilename: P0) -> ::windows::core::Result<::
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetClassFile(szfilename: ::windows::core::PCWSTR, pclsid: *mut ::windows::core::GUID) -> ::windows::core::HRESULT;
     }
@@ -1117,7 +1018,6 @@ where
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn GetErrorInfo(dwreserved: u32) -> ::windows::core::Result<IErrorInfo> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetErrorInfo(dwreserved: u32, pperrinfo: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1127,7 +1027,6 @@ pub unsafe fn GetErrorInfo(dwreserved: u32) -> ::windows::core::Result<IErrorInf
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn GetRunningObjectTable(reserved: u32) -> ::windows::core::Result<IRunningObjectTable> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetRunningObjectTable(reserved: u32, pprot: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1140,7 +1039,6 @@ pub unsafe fn IIDFromString<'a, P0>(lpsz: P0) -> ::windows::core::Result<::windo
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IIDFromString(lpsz: ::windows::core::PCWSTR, lpiid: *mut ::windows::core::GUID) -> ::windows::core::HRESULT;
     }
@@ -1154,7 +1052,6 @@ where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IBindCtx>>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MkParseDisplayName(pbc: *mut ::core::ffi::c_void, szusername: ::windows::core::PCWSTR, pcheaten: *mut u32, ppmk: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1167,7 +1064,6 @@ where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IMoniker>>,
     P1: ::std::convert::Into<::windows::core::InParam<'a, IMoniker>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MonikerCommonPrefixWith(pmkthis: *mut ::core::ffi::c_void, pmkother: *mut ::core::ffi::c_void, ppmkcommon: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1183,7 +1079,6 @@ where
     P1: ::std::convert::Into<::windows::core::InParam<'a, IMoniker>>,
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MonikerRelativePathTo(pmksrc: *mut ::core::ffi::c_void, pmkdest: *mut ::core::ffi::c_void, ppmkrelpath: *mut *mut ::core::ffi::c_void, dwreserved: super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
     }
@@ -1192,7 +1087,6 @@ where
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn ProgIDFromCLSID(clsid: *const ::windows::core::GUID) -> ::windows::core::Result<::windows::core::PWSTR> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ProgIDFromCLSID(clsid: *const ::windows::core::GUID, lplpszprogid: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -1205,7 +1099,6 @@ pub unsafe fn SetErrorInfo<'a, P0>(dwreserved: u32, perrinfo: P0) -> ::windows::
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IErrorInfo>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetErrorInfo(dwreserved: u32, perrinfo: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1214,7 +1107,6 @@ where
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn StringFromCLSID(rclsid: *const ::windows::core::GUID) -> ::windows::core::Result<::windows::core::PWSTR> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StringFromCLSID(rclsid: *const ::windows::core::GUID, lplpsz: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -1224,7 +1116,6 @@ pub unsafe fn StringFromCLSID(rclsid: *const ::windows::core::GUID) -> ::windows
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn StringFromGUID2(rguid: *const ::windows::core::GUID, lpsz: &mut [u16]) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StringFromGUID2(rguid: *const ::windows::core::GUID, lpsz: ::windows::core::PWSTR, cchmax: i32) -> i32;
     }
@@ -1233,7 +1124,6 @@ pub unsafe fn StringFromGUID2(rguid: *const ::windows::core::GUID, lpsz: &mut [u
 #[doc = "*Required features: `\"Win32_System_Com\"`*"]
 #[inline]
 pub unsafe fn StringFromIID(rclsid: *const ::windows::core::GUID) -> ::windows::core::Result<::windows::core::PWSTR> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StringFromIID(rclsid: *const ::windows::core::GUID, lplpsz: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }

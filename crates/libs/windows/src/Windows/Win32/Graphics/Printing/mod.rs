@@ -7,7 +7,6 @@ pub unsafe fn AbortPrinter<'a, P0>(hprinter: P0) -> super::super::Foundation::BO
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AbortPrinter(hprinter: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -20,7 +19,6 @@ pub unsafe fn AddFormA<'a, P0>(hprinter: P0, level: u32, pform: *const u8) -> su
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddFormA(hprinter: super::super::Foundation::HANDLE, level: u32, pform: *const u8) -> super::super::Foundation::BOOL;
     }
@@ -33,7 +31,6 @@ pub unsafe fn AddFormW<'a, P0>(hprinter: P0, level: u32, pform: *const u8) -> su
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddFormW(hprinter: super::super::Foundation::HANDLE, level: u32, pform: *const u8) -> super::super::Foundation::BOOL;
     }
@@ -46,7 +43,6 @@ pub unsafe fn AddJobA<'a, P0>(hprinter: P0, level: u32, pdata: ::core::option::O
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddJobA(hprinter: super::super::Foundation::HANDLE, level: u32, pdata: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -59,7 +55,6 @@ pub unsafe fn AddJobW<'a, P0>(hprinter: P0, level: u32, pdata: ::core::option::O
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddJobW(hprinter: super::super::Foundation::HANDLE, level: u32, pdata: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -72,7 +67,6 @@ pub unsafe fn AddMonitorA<'a, P0>(pname: P0, level: u32, pmonitors: ::core::opti
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddMonitorA(pname: ::windows::core::PCSTR, level: u32, pmonitors: *const u8) -> super::super::Foundation::BOOL;
     }
@@ -85,7 +79,6 @@ pub unsafe fn AddMonitorW<'a, P0>(pname: P0, level: u32, pmonitors: ::core::opti
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddMonitorW(pname: ::windows::core::PCWSTR, level: u32, pmonitors: *const u8) -> super::super::Foundation::BOOL;
     }
@@ -100,7 +93,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddPortA(pname: ::windows::core::PCSTR, hwnd: super::super::Foundation::HWND, pmonitorname: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -115,7 +107,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddPortW(pname: ::windows::core::PCWSTR, hwnd: super::super::Foundation::HWND, pmonitorname: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -128,7 +119,6 @@ pub unsafe fn AddPrintDeviceObject<'a, P0>(hprinter: P0) -> ::windows::core::Res
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddPrintDeviceObject(hprinter: super::super::Foundation::HANDLE, phdeviceobject: *mut super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
     }
@@ -145,7 +135,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddPrintProcessorA(pname: ::windows::core::PCSTR, penvironment: ::windows::core::PCSTR, ppathname: ::windows::core::PCSTR, pprintprocessorname: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -161,7 +150,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddPrintProcessorW(pname: ::windows::core::PCWSTR, penvironment: ::windows::core::PCWSTR, ppathname: ::windows::core::PCWSTR, pprintprocessorname: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -174,7 +162,6 @@ pub unsafe fn AddPrintProvidorA<'a, P0>(pname: P0, level: u32, pprovidorinfo: *c
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddPrintProvidorA(pname: ::windows::core::PCSTR, level: u32, pprovidorinfo: *const u8) -> super::super::Foundation::BOOL;
     }
@@ -187,7 +174,6 @@ pub unsafe fn AddPrintProvidorW<'a, P0>(pname: P0, level: u32, pprovidorinfo: *c
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddPrintProvidorW(pname: ::windows::core::PCWSTR, level: u32, pprovidorinfo: *const u8) -> super::super::Foundation::BOOL;
     }
@@ -200,7 +186,6 @@ pub unsafe fn AddPrinterA<'a, P0>(pname: P0, level: u32, pprinter: *const u8) ->
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddPrinterA(pname: ::windows::core::PCSTR, level: u32, pprinter: *const u8) -> super::super::Foundation::HANDLE;
     }
@@ -214,7 +199,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddPrinterConnection2A(hwnd: super::super::Foundation::HWND, pszname: ::windows::core::PCSTR, dwlevel: u32, pconnectioninfo: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -228,7 +212,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddPrinterConnection2W(hwnd: super::super::Foundation::HWND, pszname: ::windows::core::PCWSTR, dwlevel: u32, pconnectioninfo: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -241,7 +224,6 @@ pub unsafe fn AddPrinterConnectionA<'a, P0>(pname: P0) -> super::super::Foundati
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddPrinterConnectionA(pname: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -254,7 +236,6 @@ pub unsafe fn AddPrinterConnectionW<'a, P0>(pname: P0) -> super::super::Foundati
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddPrinterConnectionW(pname: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -267,7 +248,6 @@ pub unsafe fn AddPrinterDriverA<'a, P0>(pname: P0, level: u32, pdriverinfo: *con
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddPrinterDriverA(pname: ::windows::core::PCSTR, level: u32, pdriverinfo: *const u8) -> super::super::Foundation::BOOL;
     }
@@ -280,7 +260,6 @@ pub unsafe fn AddPrinterDriverExA<'a, P0>(pname: P0, level: u32, lpbdriverinfo: 
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddPrinterDriverExA(pname: ::windows::core::PCSTR, level: u32, lpbdriverinfo: *const u8, dwfilecopyflags: u32) -> super::super::Foundation::BOOL;
     }
@@ -293,7 +272,6 @@ pub unsafe fn AddPrinterDriverExW<'a, P0>(pname: P0, level: u32, lpbdriverinfo: 
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddPrinterDriverExW(pname: ::windows::core::PCWSTR, level: u32, lpbdriverinfo: *const u8, dwfilecopyflags: u32) -> super::super::Foundation::BOOL;
     }
@@ -306,7 +284,6 @@ pub unsafe fn AddPrinterDriverW<'a, P0>(pname: P0, level: u32, pdriverinfo: *con
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddPrinterDriverW(pname: ::windows::core::PCWSTR, level: u32, pdriverinfo: *const u8) -> super::super::Foundation::BOOL;
     }
@@ -319,7 +296,6 @@ pub unsafe fn AddPrinterW<'a, P0>(pname: P0, level: u32, pprinter: *const u8) ->
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddPrinterW(pname: ::windows::core::PCWSTR, level: u32, pprinter: *const u8) -> super::super::Foundation::HANDLE;
     }
@@ -334,7 +310,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AdvancedDocumentPropertiesA(hwnd: super::super::Foundation::HWND, hprinter: super::super::Foundation::HANDLE, pdevicename: ::windows::core::PCSTR, pdevmodeoutput: *mut super::Gdi::DEVMODEA, pdevmodeinput: *const super::Gdi::DEVMODEA) -> i32;
     }
@@ -349,7 +324,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AdvancedDocumentPropertiesW(hwnd: super::super::Foundation::HWND, hprinter: super::super::Foundation::HANDLE, pdevicename: ::windows::core::PCWSTR, pdevmodeoutput: *mut super::Gdi::DEVMODEW, pdevmodeinput: *const super::Gdi::DEVMODEW) -> i32;
     }
@@ -359,7 +333,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn AppendPrinterNotifyInfoData(pinfodest: *const PRINTER_NOTIFY_INFO, pdatasrc: ::core::option::Option<*const PRINTER_NOTIFY_INFO_DATA>, fdwflags: u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AppendPrinterNotifyInfoData(pinfodest: *const PRINTER_NOTIFY_INFO, pdatasrc: *const PRINTER_NOTIFY_INFO_DATA, fdwflags: u32) -> super::super::Foundation::BOOL;
     }
@@ -373,7 +346,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CallRouterFindFirstPrinterChangeNotification(hprinterrpc: super::super::Foundation::HANDLE, fdwfilterflags: u32, fdwoptions: u32, hnotify: super::super::Foundation::HANDLE, pprinternotifyoptions: *const PRINTER_NOTIFY_OPTIONS) -> u32;
     }
@@ -386,7 +358,6 @@ pub unsafe fn ClosePrinter<'a, P0>(hprinter: P0) -> super::super::Foundation::BO
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ClosePrinter(hprinter: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -400,7 +371,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CloseSpoolFileHandle(hprinter: super::super::Foundation::HANDLE, hspoolfile: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -414,7 +384,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CommitSpoolData(hprinter: super::super::Foundation::HANDLE, hspoolfile: super::super::Foundation::HANDLE, cbcommit: u32) -> super::super::Foundation::HANDLE;
     }
@@ -428,7 +397,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CommonPropertySheetUIA(hwndowner: super::super::Foundation::HWND, pfnpropsheetui: *mut ::core::ffi::c_void, lparam: super::super::Foundation::LPARAM, presult: *mut u32) -> i32;
     }
@@ -442,7 +410,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CommonPropertySheetUIW(hwndowner: super::super::Foundation::HWND, pfnpropsheetui: *mut ::core::ffi::c_void, lparam: super::super::Foundation::LPARAM, presult: *mut u32) -> i32;
     }
@@ -457,7 +424,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ConfigurePortA(pname: ::windows::core::PCSTR, hwnd: super::super::Foundation::HWND, pportname: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -472,7 +438,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ConfigurePortW(pname: ::windows::core::PCWSTR, hwnd: super::super::Foundation::HWND, pportname: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -485,7 +450,6 @@ pub unsafe fn ConnectToPrinterDlg<'a, P0>(hwnd: P0, flags: u32) -> super::super:
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ConnectToPrinterDlg(hwnd: super::super::Foundation::HWND, flags: u32) -> super::super::Foundation::HANDLE;
     }
@@ -499,7 +463,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CorePrinterDriverInstalledA(pszserver: ::windows::core::PCSTR, pszenvironment: ::windows::core::PCSTR, coredriverguid: ::windows::core::GUID, ftdriverdate: super::super::Foundation::FILETIME, dwldriverversion: u64, pbdriverinstalled: *mut super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
     }
@@ -514,7 +477,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CorePrinterDriverInstalledW(pszserver: ::windows::core::PCWSTR, pszenvironment: ::windows::core::PCWSTR, coredriverguid: ::windows::core::GUID, ftdriverdate: super::super::Foundation::FILETIME, dwldriverversion: u64, pbdriverinstalled: *mut super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
     }
@@ -528,7 +490,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::InParam<'a, IPrintAsyncNotifyCallback>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreatePrintAsyncNotifyChannel(pszname: ::windows::core::PCWSTR, pnotificationtype: *const ::windows::core::GUID, euserfilter: PrintAsyncNotifyUserFilter, econversationstyle: PrintAsyncNotifyConversationStyle, pcallback: *mut ::core::ffi::c_void, ppiasynchnotification: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -542,7 +503,6 @@ pub unsafe fn CreatePrinterIC<'a, P0>(hprinter: P0, pdevmode: ::core::option::Op
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreatePrinterIC(hprinter: super::super::Foundation::HANDLE, pdevmode: *const super::Gdi::DEVMODEW) -> super::super::Foundation::HANDLE;
     }
@@ -556,7 +516,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeleteFormA(hprinter: super::super::Foundation::HANDLE, pformname: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -570,7 +529,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeleteFormW(hprinter: super::super::Foundation::HANDLE, pformname: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -584,7 +542,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeleteJobNamedProperty(hprinter: super::super::Foundation::HANDLE, jobid: u32, pszname: ::windows::core::PCWSTR) -> u32;
     }
@@ -599,7 +556,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeleteMonitorA(pname: ::windows::core::PCSTR, penvironment: ::windows::core::PCSTR, pmonitorname: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -614,7 +570,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeleteMonitorW(pname: ::windows::core::PCWSTR, penvironment: ::windows::core::PCWSTR, pmonitorname: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -629,7 +584,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeletePortA(pname: ::windows::core::PCSTR, hwnd: super::super::Foundation::HWND, pportname: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -644,7 +598,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeletePortW(pname: ::windows::core::PCWSTR, hwnd: super::super::Foundation::HWND, pportname: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -659,7 +612,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeletePrintProcessorA(pname: ::windows::core::PCSTR, penvironment: ::windows::core::PCSTR, pprintprocessorname: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -674,7 +626,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeletePrintProcessorW(pname: ::windows::core::PCWSTR, penvironment: ::windows::core::PCWSTR, pprintprocessorname: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -689,7 +640,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeletePrintProvidorA(pname: ::windows::core::PCSTR, penvironment: ::windows::core::PCSTR, pprintprovidorname: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -704,7 +654,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeletePrintProvidorW(pname: ::windows::core::PCWSTR, penvironment: ::windows::core::PCWSTR, pprintprovidorname: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -717,7 +666,6 @@ pub unsafe fn DeletePrinter<'a, P0>(hprinter: P0) -> super::super::Foundation::B
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeletePrinter(hprinter: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -730,7 +678,6 @@ pub unsafe fn DeletePrinterConnectionA<'a, P0>(pname: P0) -> super::super::Found
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeletePrinterConnectionA(pname: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -743,7 +690,6 @@ pub unsafe fn DeletePrinterConnectionW<'a, P0>(pname: P0) -> super::super::Found
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeletePrinterConnectionW(pname: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -757,7 +703,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeletePrinterDataA(hprinter: super::super::Foundation::HANDLE, pvaluename: ::windows::core::PCSTR) -> u32;
     }
@@ -772,7 +717,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeletePrinterDataExA(hprinter: super::super::Foundation::HANDLE, pkeyname: ::windows::core::PCSTR, pvaluename: ::windows::core::PCSTR) -> u32;
     }
@@ -787,7 +731,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeletePrinterDataExW(hprinter: super::super::Foundation::HANDLE, pkeyname: ::windows::core::PCWSTR, pvaluename: ::windows::core::PCWSTR) -> u32;
     }
@@ -801,7 +744,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeletePrinterDataW(hprinter: super::super::Foundation::HANDLE, pvaluename: ::windows::core::PCWSTR) -> u32;
     }
@@ -816,7 +758,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeletePrinterDriverA(pname: ::windows::core::PCSTR, penvironment: ::windows::core::PCSTR, pdrivername: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -831,7 +772,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeletePrinterDriverExA(pname: ::windows::core::PCSTR, penvironment: ::windows::core::PCSTR, pdrivername: ::windows::core::PCSTR, dwdeleteflag: u32, dwversionflag: u32) -> super::super::Foundation::BOOL;
     }
@@ -846,7 +786,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeletePrinterDriverExW(pname: ::windows::core::PCWSTR, penvironment: ::windows::core::PCWSTR, pdrivername: ::windows::core::PCWSTR, dwdeleteflag: u32, dwversionflag: u32) -> super::super::Foundation::BOOL;
     }
@@ -860,7 +799,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeletePrinterDriverPackageA(pszserver: ::windows::core::PCSTR, pszinfpath: ::windows::core::PCSTR, pszenvironment: ::windows::core::PCSTR) -> ::windows::core::HRESULT;
     }
@@ -874,7 +812,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeletePrinterDriverPackageW(pszserver: ::windows::core::PCWSTR, pszinfpath: ::windows::core::PCWSTR, pszenvironment: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -889,7 +826,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeletePrinterDriverW(pname: ::windows::core::PCWSTR, penvironment: ::windows::core::PCWSTR, pdrivername: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -902,7 +838,6 @@ pub unsafe fn DeletePrinterIC<'a, P0>(hprinteric: P0) -> super::super::Foundatio
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeletePrinterIC(hprinteric: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -916,7 +851,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeletePrinterKeyA(hprinter: super::super::Foundation::HANDLE, pkeyname: ::windows::core::PCSTR) -> u32;
     }
@@ -930,7 +864,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeletePrinterKeyW(hprinter: super::super::Foundation::HANDLE, pkeyname: ::windows::core::PCWSTR) -> u32;
     }
@@ -943,7 +876,6 @@ pub unsafe fn DevQueryPrint<'a, P0>(hprinter: P0, pdevmode: *const super::Gdi::D
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DevQueryPrint(hprinter: super::super::Foundation::HANDLE, pdevmode: *const super::Gdi::DEVMODEA, presid: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -953,7 +885,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
 pub unsafe fn DevQueryPrintEx(pdqpinfo: *mut DEVQUERYPRINT_INFO) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DevQueryPrintEx(pdqpinfo: *mut DEVQUERYPRINT_INFO) -> super::super::Foundation::BOOL;
     }
@@ -968,7 +899,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DocumentPropertiesA(hwnd: super::super::Foundation::HWND, hprinter: super::super::Foundation::HANDLE, pdevicename: ::windows::core::PCSTR, pdevmodeoutput: *mut super::Gdi::DEVMODEA, pdevmodeinput: *const super::Gdi::DEVMODEA, fmode: u32) -> i32;
     }
@@ -983,7 +913,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DocumentPropertiesW(hwnd: super::super::Foundation::HWND, hprinter: super::super::Foundation::HANDLE, pdevicename: ::windows::core::PCWSTR, pdevmodeoutput: *mut super::Gdi::DEVMODEW, pdevmodeinput: *const super::Gdi::DEVMODEW, fmode: u32) -> i32;
     }
@@ -996,7 +925,6 @@ pub unsafe fn EndDocPrinter<'a, P0>(hprinter: P0) -> super::super::Foundation::B
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EndDocPrinter(hprinter: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -1009,7 +937,6 @@ pub unsafe fn EndPagePrinter<'a, P0>(hprinter: P0) -> super::super::Foundation::
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EndPagePrinter(hprinter: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -1022,7 +949,6 @@ pub unsafe fn EnumFormsA<'a, P0>(hprinter: P0, level: u32, pform: ::core::option
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumFormsA(hprinter: super::super::Foundation::HANDLE, level: u32, pform: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1035,7 +961,6 @@ pub unsafe fn EnumFormsW<'a, P0>(hprinter: P0, level: u32, pform: ::core::option
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumFormsW(hprinter: super::super::Foundation::HANDLE, level: u32, pform: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1048,7 +973,6 @@ pub unsafe fn EnumJobNamedProperties<'a, P0>(hprinter: P0, jobid: u32, pcpropert
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumJobNamedProperties(hprinter: super::super::Foundation::HANDLE, jobid: u32, pcproperties: *mut u32, ppproperties: *mut *mut PrintNamedProperty) -> u32;
     }
@@ -1061,7 +985,6 @@ pub unsafe fn EnumJobsA<'a, P0>(hprinter: P0, firstjob: u32, nojobs: u32, level:
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumJobsA(hprinter: super::super::Foundation::HANDLE, firstjob: u32, nojobs: u32, level: u32, pjob: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1074,7 +997,6 @@ pub unsafe fn EnumJobsW<'a, P0>(hprinter: P0, firstjob: u32, nojobs: u32, level:
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumJobsW(hprinter: super::super::Foundation::HANDLE, firstjob: u32, nojobs: u32, level: u32, pjob: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1087,7 +1009,6 @@ pub unsafe fn EnumMonitorsA<'a, P0>(pname: P0, level: u32, pmonitor: ::core::opt
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumMonitorsA(pname: ::windows::core::PCSTR, level: u32, pmonitor: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1100,7 +1021,6 @@ pub unsafe fn EnumMonitorsW<'a, P0>(pname: P0, level: u32, pmonitor: ::core::opt
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumMonitorsW(pname: ::windows::core::PCWSTR, level: u32, pmonitor: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1113,7 +1033,6 @@ pub unsafe fn EnumPortsA<'a, P0>(pname: P0, level: u32, pport: ::core::option::O
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumPortsA(pname: ::windows::core::PCSTR, level: u32, pport: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1126,7 +1045,6 @@ pub unsafe fn EnumPortsW<'a, P0>(pname: P0, level: u32, pport: ::core::option::O
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumPortsW(pname: ::windows::core::PCWSTR, level: u32, pport: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1140,7 +1058,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumPrintProcessorDatatypesA(pname: ::windows::core::PCSTR, pprintprocessorname: ::windows::core::PCSTR, level: u32, pdatatypes: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1154,7 +1071,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumPrintProcessorDatatypesW(pname: ::windows::core::PCWSTR, pprintprocessorname: ::windows::core::PCWSTR, level: u32, pdatatypes: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1168,7 +1084,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumPrintProcessorsA(pname: ::windows::core::PCSTR, penvironment: ::windows::core::PCSTR, level: u32, pprintprocessorinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1182,7 +1097,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumPrintProcessorsW(pname: ::windows::core::PCWSTR, penvironment: ::windows::core::PCWSTR, level: u32, pprintprocessorinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1195,7 +1109,6 @@ pub unsafe fn EnumPrinterDataA<'a, P0>(hprinter: P0, dwindex: u32, pvaluename: &
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumPrinterDataA(hprinter: super::super::Foundation::HANDLE, dwindex: u32, pvaluename: ::windows::core::PSTR, cbvaluename: u32, pcbvaluename: *mut u32, ptype: *mut u32, pdata: *mut u8, cbdata: u32, pcbdata: *mut u32) -> u32;
     }
@@ -1209,7 +1122,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumPrinterDataExA(hprinter: super::super::Foundation::HANDLE, pkeyname: ::windows::core::PCSTR, penumvalues: *mut u8, cbenumvalues: u32, pcbenumvalues: *mut u32, pnenumvalues: *mut u32) -> u32;
     }
@@ -1223,7 +1135,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumPrinterDataExW(hprinter: super::super::Foundation::HANDLE, pkeyname: ::windows::core::PCWSTR, penumvalues: *mut u8, cbenumvalues: u32, pcbenumvalues: *mut u32, pnenumvalues: *mut u32) -> u32;
     }
@@ -1236,7 +1147,6 @@ pub unsafe fn EnumPrinterDataW<'a, P0>(hprinter: P0, dwindex: u32, pvaluename: :
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumPrinterDataW(hprinter: super::super::Foundation::HANDLE, dwindex: u32, pvaluename: ::windows::core::PWSTR, cbvaluename: u32, pcbvaluename: *mut u32, ptype: *mut u32, pdata: *mut u8, cbdata: u32, pcbdata: *mut u32) -> u32;
     }
@@ -1250,7 +1160,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumPrinterDriversA(pname: ::windows::core::PCSTR, penvironment: ::windows::core::PCSTR, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1264,7 +1173,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumPrinterDriversW(pname: ::windows::core::PCWSTR, penvironment: ::windows::core::PCWSTR, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1278,7 +1186,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumPrinterKeyA(hprinter: super::super::Foundation::HANDLE, pkeyname: ::windows::core::PCSTR, psubkey: ::windows::core::PSTR, cbsubkey: u32, pcbsubkey: *mut u32) -> u32;
     }
@@ -1292,7 +1199,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumPrinterKeyW(hprinter: super::super::Foundation::HANDLE, pkeyname: ::windows::core::PCWSTR, psubkey: ::windows::core::PWSTR, cbsubkey: u32, pcbsubkey: *mut u32) -> u32;
     }
@@ -1305,7 +1211,6 @@ pub unsafe fn EnumPrintersA<'a, P0>(flags: u32, name: P0, level: u32, pprinteren
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumPrintersA(flags: u32, name: ::windows::core::PCSTR, level: u32, pprinterenum: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1318,7 +1223,6 @@ pub unsafe fn EnumPrintersW<'a, P0>(flags: u32, name: P0, level: u32, pprinteren
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumPrintersW(flags: u32, name: ::windows::core::PCWSTR, level: u32, pprinterenum: *mut u8, cbbuf: u32, pcbneeded: *mut u32, pcreturned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1335,7 +1239,6 @@ where
     P3: ::std::convert::Into<::windows::core::PCSTR>,
     P4: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ExtDeviceMode(hwnd: super::super::Foundation::HWND, hinst: super::super::Foundation::HANDLE, pdevmodeoutput: *mut super::Gdi::DEVMODEA, pdevicename: ::windows::core::PCSTR, pport: ::windows::core::PCSTR, pdevmodeinput: *const super::Gdi::DEVMODEA, pprofile: ::windows::core::PCSTR, fmode: u32) -> i32;
     }
@@ -1348,7 +1251,6 @@ pub unsafe fn FindClosePrinterChangeNotification<'a, P0>(hchange: P0) -> super::
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindClosePrinterChangeNotification(hchange: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -1361,7 +1263,6 @@ pub unsafe fn FindFirstPrinterChangeNotification<'a, P0>(hprinter: P0, fdwfilter
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindFirstPrinterChangeNotification(hprinter: super::super::Foundation::HANDLE, fdwfilter: u32, fdwoptions: u32, pprinternotifyoptions: *const ::core::ffi::c_void) -> super::super::Foundation::HANDLE;
     }
@@ -1374,7 +1275,6 @@ pub unsafe fn FindNextPrinterChangeNotification<'a, P0>(hchange: P0, pdwchange: 
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindNextPrinterChangeNotification(hchange: super::super::Foundation::HANDLE, pdwchange: *mut u32, pvreserved: *const ::core::ffi::c_void, ppprinternotifyinfo: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -1387,7 +1287,6 @@ pub unsafe fn FlushPrinter<'a, P0>(hprinter: P0, pbuf: ::core::option::Option<*c
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FlushPrinter(hprinter: super::super::Foundation::HANDLE, pbuf: *const ::core::ffi::c_void, cbbuf: u32, pcwritten: *mut u32, csleep: u32) -> super::super::Foundation::BOOL;
     }
@@ -1396,7 +1295,6 @@ where
 #[doc = "*Required features: `\"Win32_Graphics_Printing\"`*"]
 #[inline]
 pub unsafe fn FreePrintNamedPropertyArray(ppproperties: ::core::option::Option<&mut [*mut PrintNamedProperty]>) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FreePrintNamedPropertyArray(cproperties: u32, ppproperties: *mut *mut PrintNamedProperty);
     }
@@ -1405,7 +1303,6 @@ pub unsafe fn FreePrintNamedPropertyArray(ppproperties: ::core::option::Option<&
 #[doc = "*Required features: `\"Win32_Graphics_Printing\"`*"]
 #[inline]
 pub unsafe fn FreePrintPropertyValue(pvalue: *mut PrintPropertyValue) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FreePrintPropertyValue(pvalue: *mut PrintPropertyValue);
     }
@@ -1415,7 +1312,6 @@ pub unsafe fn FreePrintPropertyValue(pvalue: *mut PrintPropertyValue) {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn FreePrinterNotifyInfo(pprinternotifyinfo: *const PRINTER_NOTIFY_INFO) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FreePrinterNotifyInfo(pprinternotifyinfo: *const PRINTER_NOTIFY_INFO) -> super::super::Foundation::BOOL;
     }
@@ -1428,7 +1324,6 @@ pub unsafe fn GdiDeleteSpoolFileHandle<'a, P0>(spoolfilehandle: P0) -> super::su
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GdiDeleteSpoolFileHandle(spoolfilehandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -1441,7 +1336,6 @@ pub unsafe fn GdiEndDocEMF<'a, P0>(spoolfilehandle: P0) -> super::super::Foundat
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GdiEndDocEMF(spoolfilehandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -1454,7 +1348,6 @@ pub unsafe fn GdiEndPageEMF<'a, P0>(spoolfilehandle: P0, dwoptimization: u32) ->
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GdiEndPageEMF(spoolfilehandle: super::super::Foundation::HANDLE, dwoptimization: u32) -> super::super::Foundation::BOOL;
     }
@@ -1467,7 +1360,6 @@ pub unsafe fn GdiGetDC<'a, P0>(spoolfilehandle: P0) -> super::Gdi::HDC
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GdiGetDC(spoolfilehandle: super::super::Foundation::HANDLE) -> super::Gdi::HDC;
     }
@@ -1480,7 +1372,6 @@ pub unsafe fn GdiGetDevmodeForPage<'a, P0>(spoolfilehandle: P0, dwpagenumber: u3
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GdiGetDevmodeForPage(spoolfilehandle: super::super::Foundation::HANDLE, dwpagenumber: u32, pcurrdm: *mut *mut super::Gdi::DEVMODEW, plastdm: *mut *mut super::Gdi::DEVMODEW) -> super::super::Foundation::BOOL;
     }
@@ -1493,7 +1384,6 @@ pub unsafe fn GdiGetPageCount<'a, P0>(spoolfilehandle: P0) -> u32
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GdiGetPageCount(spoolfilehandle: super::super::Foundation::HANDLE) -> u32;
     }
@@ -1506,7 +1396,6 @@ pub unsafe fn GdiGetPageHandle<'a, P0>(spoolfilehandle: P0, page: u32, pdwpagety
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GdiGetPageHandle(spoolfilehandle: super::super::Foundation::HANDLE, page: u32, pdwpagetype: *mut u32) -> super::super::Foundation::HANDLE;
     }
@@ -1520,7 +1409,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GdiGetSpoolFileHandle(pwszprintername: ::windows::core::PCWSTR, pdevmode: *mut super::Gdi::DEVMODEW, pwszdocname: ::windows::core::PCWSTR) -> super::super::Foundation::HANDLE;
     }
@@ -1534,7 +1422,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GdiPlayPageEMF(spoolfilehandle: super::super::Foundation::HANDLE, hemf: super::super::Foundation::HANDLE, prectdocument: *mut super::super::Foundation::RECT, prectborder: *mut super::super::Foundation::RECT, prectclip: *mut super::super::Foundation::RECT) -> super::super::Foundation::BOOL;
     }
@@ -1547,7 +1434,6 @@ pub unsafe fn GdiResetDCEMF<'a, P0>(spoolfilehandle: P0, pcurrdm: *mut super::Gd
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GdiResetDCEMF(spoolfilehandle: super::super::Foundation::HANDLE, pcurrdm: *mut super::Gdi::DEVMODEW) -> super::super::Foundation::BOOL;
     }
@@ -1560,7 +1446,6 @@ pub unsafe fn GdiStartDocEMF<'a, P0>(spoolfilehandle: P0, pdocinfo: *mut super::
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GdiStartDocEMF(spoolfilehandle: super::super::Foundation::HANDLE, pdocinfo: *mut super::super::Storage::Xps::DOCINFOW) -> super::super::Foundation::BOOL;
     }
@@ -1573,7 +1458,6 @@ pub unsafe fn GdiStartPageEMF<'a, P0>(spoolfilehandle: P0) -> super::super::Foun
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GdiStartPageEMF(spoolfilehandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -1586,7 +1470,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GenerateCopyFilePaths(pszprintername: ::windows::core::PCWSTR, pszdirectory: ::windows::core::PCWSTR, psplclientinfo: *const u8, dwlevel: u32, pszsourcedir: ::windows::core::PWSTR, pcchsourcedirsize: *mut u32, psztargetdir: ::windows::core::PWSTR, pcchtargetdirsize: *mut u32, dwflags: u32) -> u32;
     }
@@ -1599,7 +1482,6 @@ pub unsafe fn GetCPSUIUserData<'a, P0>(hdlg: P0) -> usize
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCPSUIUserData(hdlg: super::super::Foundation::HWND) -> usize;
     }
@@ -1614,7 +1496,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCorePrinterDriversA(pszserver: ::windows::core::PCSTR, pszenvironment: ::windows::core::PCSTR, pszzcoredriverdependencies: ::windows::core::PCSTR, ccoreprinterdrivers: u32, pcoreprinterdrivers: *mut CORE_PRINTER_DRIVERA) -> ::windows::core::HRESULT;
     }
@@ -1629,7 +1510,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCorePrinterDriversW(pszserver: ::windows::core::PCWSTR, pszenvironment: ::windows::core::PCWSTR, pszzcoredriverdependencies: ::windows::core::PCWSTR, ccoreprinterdrivers: u32, pcoreprinterdrivers: *mut CORE_PRINTER_DRIVERW) -> ::windows::core::HRESULT;
     }
@@ -1639,7 +1519,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetDefaultPrinterA(pszbuffer: ::windows::core::PSTR, pcchbuffer: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDefaultPrinterA(pszbuffer: ::windows::core::PSTR, pcchbuffer: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1649,7 +1528,6 @@ pub unsafe fn GetDefaultPrinterA(pszbuffer: ::windows::core::PSTR, pcchbuffer: *
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetDefaultPrinterW(pszbuffer: ::windows::core::PWSTR, pcchbuffer: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDefaultPrinterW(pszbuffer: ::windows::core::PWSTR, pcchbuffer: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1663,7 +1541,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFormA(hprinter: super::super::Foundation::HANDLE, pformname: ::windows::core::PCSTR, level: u32, pform: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1677,7 +1554,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFormW(hprinter: super::super::Foundation::HANDLE, pformname: ::windows::core::PCWSTR, level: u32, pform: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1690,7 +1566,6 @@ pub unsafe fn GetJobA<'a, P0>(hprinter: P0, jobid: u32, level: u32, pjob: ::core
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetJobA(hprinter: super::super::Foundation::HANDLE, jobid: u32, level: u32, pjob: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1703,7 +1578,6 @@ pub unsafe fn GetJobAttributes<'a, P0>(pprintername: P0, pdevmode: *const super:
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetJobAttributes(pprintername: ::windows::core::PCWSTR, pdevmode: *const super::Gdi::DEVMODEW, pattributeinfo: *mut ATTRIBUTE_INFO_3) -> super::super::Foundation::BOOL;
     }
@@ -1716,7 +1590,6 @@ pub unsafe fn GetJobAttributesEx<'a, P0>(pprintername: P0, pdevmode: *const supe
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetJobAttributesEx(pprintername: ::windows::core::PCWSTR, pdevmode: *const super::Gdi::DEVMODEW, dwlevel: u32, pattributeinfo: *mut u8, nsize: u32, dwflags: u32) -> super::super::Foundation::BOOL;
     }
@@ -1730,7 +1603,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetJobNamedPropertyValue(hprinter: super::super::Foundation::HANDLE, jobid: u32, pszname: ::windows::core::PCWSTR, pvalue: *mut PrintPropertyValue) -> u32;
     }
@@ -1743,7 +1615,6 @@ pub unsafe fn GetJobW<'a, P0>(hprinter: P0, jobid: u32, level: u32, pjob: ::core
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetJobW(hprinter: super::super::Foundation::HANDLE, jobid: u32, level: u32, pjob: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1753,7 +1624,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetPrintExecutionData(pdata: *mut PRINT_EXECUTION_DATA) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPrintExecutionData(pdata: *mut PRINT_EXECUTION_DATA) -> super::super::Foundation::BOOL;
     }
@@ -1767,7 +1637,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPrintOutputInfo(hwnd: super::super::Foundation::HWND, pszprinter: ::windows::core::PCWSTR, phfile: *mut super::super::Foundation::HANDLE, ppszoutputfile: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -1781,7 +1650,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPrintProcessorDirectoryA(pname: ::windows::core::PCSTR, penvironment: ::windows::core::PCSTR, level: u32, pprintprocessorinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1795,7 +1663,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPrintProcessorDirectoryW(pname: ::windows::core::PCWSTR, penvironment: ::windows::core::PCWSTR, level: u32, pprintprocessorinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1808,7 +1675,6 @@ pub unsafe fn GetPrinterA<'a, P0>(hprinter: P0, level: u32, pprinter: ::core::op
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPrinterA(hprinter: super::super::Foundation::HANDLE, level: u32, pprinter: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1822,7 +1688,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPrinterDataA(hprinter: super::super::Foundation::HANDLE, pvaluename: ::windows::core::PCSTR, ptype: *mut u32, pdata: *mut u8, nsize: u32, pcbneeded: *mut u32) -> u32;
     }
@@ -1837,7 +1702,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPrinterDataExA(hprinter: super::super::Foundation::HANDLE, pkeyname: ::windows::core::PCSTR, pvaluename: ::windows::core::PCSTR, ptype: *mut u32, pdata: *mut u8, nsize: u32, pcbneeded: *mut u32) -> u32;
     }
@@ -1852,7 +1716,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPrinterDataExW(hprinter: super::super::Foundation::HANDLE, pkeyname: ::windows::core::PCWSTR, pvaluename: ::windows::core::PCWSTR, ptype: *mut u32, pdata: *mut u8, nsize: u32, pcbneeded: *mut u32) -> u32;
     }
@@ -1866,7 +1729,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPrinterDataW(hprinter: super::super::Foundation::HANDLE, pvaluename: ::windows::core::PCWSTR, ptype: *mut u32, pdata: *mut u8, nsize: u32, pcbneeded: *mut u32) -> u32;
     }
@@ -1881,7 +1743,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPrinterDriver2A(hwnd: super::super::Foundation::HWND, hprinter: super::super::Foundation::HANDLE, penvironment: ::windows::core::PCSTR, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1896,7 +1757,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPrinterDriver2W(hwnd: super::super::Foundation::HWND, hprinter: super::super::Foundation::HANDLE, penvironment: ::windows::core::PCWSTR, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1910,7 +1770,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPrinterDriverA(hprinter: super::super::Foundation::HANDLE, penvironment: ::windows::core::PCSTR, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1924,7 +1783,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPrinterDriverDirectoryA(pname: ::windows::core::PCSTR, penvironment: ::windows::core::PCSTR, level: u32, pdriverdirectory: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1938,7 +1796,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPrinterDriverDirectoryW(pname: ::windows::core::PCWSTR, penvironment: ::windows::core::PCWSTR, level: u32, pdriverdirectory: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1953,7 +1810,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPrinterDriverPackagePathA(pszserver: ::windows::core::PCSTR, pszenvironment: ::windows::core::PCSTR, pszlanguage: ::windows::core::PCSTR, pszpackageid: ::windows::core::PCSTR, pszdriverpackagecab: ::windows::core::PSTR, cchdriverpackagecab: u32, pcchrequiredsize: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -1968,7 +1824,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPrinterDriverPackagePathW(pszserver: ::windows::core::PCWSTR, pszenvironment: ::windows::core::PCWSTR, pszlanguage: ::windows::core::PCWSTR, pszpackageid: ::windows::core::PCWSTR, pszdriverpackagecab: ::windows::core::PWSTR, cchdriverpackagecab: u32, pcchrequiredsize: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -1982,7 +1837,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPrinterDriverW(hprinter: super::super::Foundation::HANDLE, penvironment: ::windows::core::PCWSTR, level: u32, pdriverinfo: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1995,7 +1849,6 @@ pub unsafe fn GetPrinterW<'a, P0>(hprinter: P0, level: u32, pprinter: ::core::op
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPrinterW(hprinter: super::super::Foundation::HANDLE, level: u32, pprinter: *mut u8, cbbuf: u32, pcbneeded: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -2008,7 +1861,6 @@ pub unsafe fn GetSpoolFileHandle<'a, P0>(hprinter: P0) -> super::super::Foundati
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetSpoolFileHandle(hprinter: super::super::Foundation::HANDLE) -> super::super::Foundation::HANDLE;
     }
@@ -2021,7 +1873,6 @@ pub unsafe fn ImpersonatePrinterClient<'a, P0>(htoken: P0) -> super::super::Foun
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImpersonatePrinterClient(htoken: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -2036,7 +1887,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InstallPrinterDriverFromPackageA(pszserver: ::windows::core::PCSTR, pszinfpath: ::windows::core::PCSTR, pszdrivername: ::windows::core::PCSTR, pszenvironment: ::windows::core::PCSTR, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -2051,7 +1901,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InstallPrinterDriverFromPackageW(pszserver: ::windows::core::PCWSTR, pszinfpath: ::windows::core::PCWSTR, pszdrivername: ::windows::core::PCWSTR, pszenvironment: ::windows::core::PCWSTR, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -2061,7 +1910,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
 pub unsafe fn IsValidDevmodeA(pdevmode: ::core::option::Option<*const super::Gdi::DEVMODEA>, devmodesize: usize) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsValidDevmodeA(pdevmode: *const super::Gdi::DEVMODEA, devmodesize: usize) -> super::super::Foundation::BOOL;
     }
@@ -2071,7 +1919,6 @@ pub unsafe fn IsValidDevmodeA(pdevmode: ::core::option::Option<*const super::Gdi
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
 pub unsafe fn IsValidDevmodeW(pdevmode: ::core::option::Option<*const super::Gdi::DEVMODEW>, devmodesize: usize) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsValidDevmodeW(pdevmode: *const super::Gdi::DEVMODEW, devmodesize: usize) -> super::super::Foundation::BOOL;
     }
@@ -2084,7 +1931,6 @@ pub unsafe fn OpenPrinter2A<'a, P0>(pprintername: P0, phprinter: *mut super::sup
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenPrinter2A(pprintername: ::windows::core::PCSTR, phprinter: *mut super::super::Foundation::HANDLE, pdefault: *const PRINTER_DEFAULTSA, poptions: *const PRINTER_OPTIONSA) -> super::super::Foundation::BOOL;
     }
@@ -2097,7 +1943,6 @@ pub unsafe fn OpenPrinter2W<'a, P0>(pprintername: P0, phprinter: *mut super::sup
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenPrinter2W(pprintername: ::windows::core::PCWSTR, phprinter: *mut super::super::Foundation::HANDLE, pdefault: *const PRINTER_DEFAULTSW, poptions: *const PRINTER_OPTIONSW) -> super::super::Foundation::BOOL;
     }
@@ -2110,7 +1955,6 @@ pub unsafe fn OpenPrinterA<'a, P0>(pprintername: P0, phprinter: *mut super::supe
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenPrinterA(pprintername: ::windows::core::PCSTR, phprinter: *mut super::super::Foundation::HANDLE, pdefault: *const PRINTER_DEFAULTSA) -> super::super::Foundation::BOOL;
     }
@@ -2123,7 +1967,6 @@ pub unsafe fn OpenPrinterW<'a, P0>(pprintername: P0, phprinter: *mut super::supe
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenPrinterW(pprintername: ::windows::core::PCWSTR, phprinter: *mut super::super::Foundation::HANDLE, pdefault: *const PRINTER_DEFAULTSW) -> super::super::Foundation::BOOL;
     }
@@ -2136,7 +1979,6 @@ pub unsafe fn PartialReplyPrinterChangeNotification<'a, P0>(hprinter: P0, pdatas
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PartialReplyPrinterChangeNotification(hprinter: super::super::Foundation::HANDLE, pdatasrc: *const PRINTER_NOTIFY_INFO_DATA) -> super::super::Foundation::BOOL;
     }
@@ -2149,7 +1991,6 @@ pub unsafe fn PlayGdiScriptOnPrinterIC<'a, P0>(hprinteric: P0, pin: &[u8], pout:
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PlayGdiScriptOnPrinterIC(hprinteric: super::super::Foundation::HANDLE, pin: *const u8, cin: u32, pout: *mut u8, cout: u32, ul: u32) -> super::super::Foundation::BOOL;
     }
@@ -2165,7 +2006,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PrinterMessageBoxA(hprinter: super::super::Foundation::HANDLE, error: u32, hwnd: super::super::Foundation::HWND, ptext: ::windows::core::PCSTR, pcaption: ::windows::core::PCSTR, dwtype: u32) -> u32;
     }
@@ -2181,7 +2021,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PrinterMessageBoxW(hprinter: super::super::Foundation::HANDLE, error: u32, hwnd: super::super::Foundation::HWND, ptext: ::windows::core::PCWSTR, pcaption: ::windows::core::PCWSTR, dwtype: u32) -> u32;
     }
@@ -2195,7 +2034,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PrinterProperties(hwnd: super::super::Foundation::HWND, hprinter: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -2208,7 +2046,6 @@ pub unsafe fn ProvidorFindClosePrinterChangeNotification<'a, P0>(hprinter: P0) -
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ProvidorFindClosePrinterChangeNotification(hprinter: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -2222,7 +2059,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ProvidorFindFirstPrinterChangeNotification(hprinter: super::super::Foundation::HANDLE, fdwflags: u32, fdwoptions: u32, hnotify: super::super::Foundation::HANDLE, pprinternotifyoptions: *const ::core::ffi::c_void, pvreserved1: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -2235,7 +2071,6 @@ pub unsafe fn ReadPrinter<'a, P0>(hprinter: P0, pbuf: *mut ::core::ffi::c_void, 
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReadPrinter(hprinter: super::super::Foundation::HANDLE, pbuf: *mut ::core::ffi::c_void, cbbuf: u32, pnobytesread: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -2249,7 +2084,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::InParam<'a, IPrintAsyncNotifyCallback>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterForPrintAsyncNotifications(pszname: ::windows::core::PCWSTR, pnotificationtype: *const ::windows::core::GUID, euserfilter: PrintAsyncNotifyUserFilter, econversationstyle: PrintAsyncNotifyConversationStyle, pcallback: *mut ::core::ffi::c_void, phnotify: *mut super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
     }
@@ -2263,7 +2097,6 @@ pub unsafe fn RemovePrintDeviceObject<'a, P0>(hdeviceobject: P0) -> ::windows::c
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RemovePrintDeviceObject(hdeviceobject: super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
     }
@@ -2276,7 +2109,6 @@ pub unsafe fn ReplyPrinterChangeNotification<'a, P0>(hprinter: P0, fdwchangeflag
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReplyPrinterChangeNotification(hprinter: super::super::Foundation::HANDLE, fdwchangeflags: u32, pdwresult: *mut u32, pprinternotifyinfo: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -2289,7 +2121,6 @@ pub unsafe fn ReplyPrinterChangeNotificationEx<'a, P0>(hnotify: P0, dwcolor: u32
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReplyPrinterChangeNotificationEx(hnotify: super::super::Foundation::HANDLE, dwcolor: u32, fdwflags: u32, pdwresult: *mut u32, pprinternotifyinfo: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -2302,7 +2133,6 @@ pub unsafe fn ReportJobProcessingProgress<'a, P0>(printerhandle: P0, jobid: u32,
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReportJobProcessingProgress(printerhandle: super::super::Foundation::HANDLE, jobid: u32, joboperation: EPrintXPSJobOperation, jobprogress: EPrintXPSJobProgress) -> ::windows::core::HRESULT;
     }
@@ -2315,7 +2145,6 @@ pub unsafe fn ResetPrinterA<'a, P0>(hprinter: P0, pdefault: ::core::option::Opti
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ResetPrinterA(hprinter: super::super::Foundation::HANDLE, pdefault: *const PRINTER_DEFAULTSA) -> super::super::Foundation::BOOL;
     }
@@ -2328,7 +2157,6 @@ pub unsafe fn ResetPrinterW<'a, P0>(hprinter: P0, pdefault: ::core::option::Opti
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ResetPrinterW(hprinter: super::super::Foundation::HANDLE, pdefault: *const PRINTER_DEFAULTSW) -> super::super::Foundation::BOOL;
     }
@@ -2338,7 +2166,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RevertToPrinterSelf() -> super::super::Foundation::HANDLE {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RevertToPrinterSelf() -> super::super::Foundation::HANDLE;
     }
@@ -2347,7 +2174,6 @@ pub unsafe fn RevertToPrinterSelf() -> super::super::Foundation::HANDLE {
 #[doc = "*Required features: `\"Win32_Graphics_Printing\"`*"]
 #[inline]
 pub unsafe fn RouterAllocBidiMem(numbytes: usize) -> *mut ::core::ffi::c_void {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RouterAllocBidiMem(numbytes: usize) -> *mut ::core::ffi::c_void;
     }
@@ -2357,7 +2183,6 @@ pub unsafe fn RouterAllocBidiMem(numbytes: usize) -> *mut ::core::ffi::c_void {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RouterAllocBidiResponseContainer(count: u32) -> *mut BIDI_RESPONSE_CONTAINER {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RouterAllocBidiResponseContainer(count: u32) -> *mut BIDI_RESPONSE_CONTAINER;
     }
@@ -2366,7 +2191,6 @@ pub unsafe fn RouterAllocBidiResponseContainer(count: u32) -> *mut BIDI_RESPONSE
 #[doc = "*Required features: `\"Win32_Graphics_Printing\"`*"]
 #[inline]
 pub unsafe fn RouterAllocPrinterNotifyInfo(cprinternotifyinfodata: u32) -> *mut PRINTER_NOTIFY_INFO {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RouterAllocPrinterNotifyInfo(cprinternotifyinfodata: u32) -> *mut PRINTER_NOTIFY_INFO;
     }
@@ -2375,7 +2199,6 @@ pub unsafe fn RouterAllocPrinterNotifyInfo(cprinternotifyinfodata: u32) -> *mut 
 #[doc = "*Required features: `\"Win32_Graphics_Printing\"`*"]
 #[inline]
 pub unsafe fn RouterFreeBidiMem(pmempointer: *const ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RouterFreeBidiMem(pmempointer: *const ::core::ffi::c_void);
     }
@@ -2385,7 +2208,6 @@ pub unsafe fn RouterFreeBidiMem(pmempointer: *const ::core::ffi::c_void) {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RouterFreeBidiResponseContainer(pdata: *const BIDI_RESPONSE_CONTAINER) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RouterFreeBidiResponseContainer(pdata: *const BIDI_RESPONSE_CONTAINER) -> u32;
     }
@@ -2395,7 +2217,6 @@ pub unsafe fn RouterFreeBidiResponseContainer(pdata: *const BIDI_RESPONSE_CONTAI
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RouterFreePrinterNotifyInfo(pinfo: ::core::option::Option<*const PRINTER_NOTIFY_INFO>) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RouterFreePrinterNotifyInfo(pinfo: *const PRINTER_NOTIFY_INFO) -> super::super::Foundation::BOOL;
     }
@@ -2408,7 +2229,6 @@ pub unsafe fn ScheduleJob<'a, P0>(hprinter: P0, jobid: u32) -> super::super::Fou
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ScheduleJob(hprinter: super::super::Foundation::HANDLE, jobid: u32) -> super::super::Foundation::BOOL;
     }
@@ -2421,7 +2241,6 @@ pub unsafe fn SetCPSUIUserData<'a, P0>(hdlg: P0, cpsuiuserdata: usize) -> super:
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetCPSUIUserData(hdlg: super::super::Foundation::HWND, cpsuiuserdata: usize) -> super::super::Foundation::BOOL;
     }
@@ -2434,7 +2253,6 @@ pub unsafe fn SetDefaultPrinterA<'a, P0>(pszprinter: P0) -> super::super::Founda
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetDefaultPrinterA(pszprinter: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -2447,7 +2265,6 @@ pub unsafe fn SetDefaultPrinterW<'a, P0>(pszprinter: P0) -> super::super::Founda
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetDefaultPrinterW(pszprinter: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -2461,7 +2278,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetFormA(hprinter: super::super::Foundation::HANDLE, pformname: ::windows::core::PCSTR, level: u32, pform: *const u8) -> super::super::Foundation::BOOL;
     }
@@ -2475,7 +2291,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetFormW(hprinter: super::super::Foundation::HANDLE, pformname: ::windows::core::PCWSTR, level: u32, pform: *const u8) -> super::super::Foundation::BOOL;
     }
@@ -2488,7 +2303,6 @@ pub unsafe fn SetJobA<'a, P0>(hprinter: P0, jobid: u32, level: u32, pjob: ::core
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetJobA(hprinter: super::super::Foundation::HANDLE, jobid: u32, level: u32, pjob: *const u8, command: u32) -> super::super::Foundation::BOOL;
     }
@@ -2501,7 +2315,6 @@ pub unsafe fn SetJobNamedProperty<'a, P0>(hprinter: P0, jobid: u32, pproperty: *
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetJobNamedProperty(hprinter: super::super::Foundation::HANDLE, jobid: u32, pproperty: *const PrintNamedProperty) -> u32;
     }
@@ -2514,7 +2327,6 @@ pub unsafe fn SetJobW<'a, P0>(hprinter: P0, jobid: u32, level: u32, pjob: ::core
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetJobW(hprinter: super::super::Foundation::HANDLE, jobid: u32, level: u32, pjob: *const u8, command: u32) -> super::super::Foundation::BOOL;
     }
@@ -2528,7 +2340,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetPortA(pname: ::windows::core::PCSTR, pportname: ::windows::core::PCSTR, dwlevel: u32, pportinfo: *const u8) -> super::super::Foundation::BOOL;
     }
@@ -2542,7 +2353,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetPortW(pname: ::windows::core::PCWSTR, pportname: ::windows::core::PCWSTR, dwlevel: u32, pportinfo: *const u8) -> super::super::Foundation::BOOL;
     }
@@ -2555,7 +2365,6 @@ pub unsafe fn SetPrinterA<'a, P0>(hprinter: P0, level: u32, pprinter: ::core::op
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetPrinterA(hprinter: super::super::Foundation::HANDLE, level: u32, pprinter: *const u8, command: u32) -> super::super::Foundation::BOOL;
     }
@@ -2569,7 +2378,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetPrinterDataA(hprinter: super::super::Foundation::HANDLE, pvaluename: ::windows::core::PCSTR, r#type: u32, pdata: *const u8, cbdata: u32) -> u32;
     }
@@ -2584,7 +2392,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetPrinterDataExA(hprinter: super::super::Foundation::HANDLE, pkeyname: ::windows::core::PCSTR, pvaluename: ::windows::core::PCSTR, r#type: u32, pdata: *const u8, cbdata: u32) -> u32;
     }
@@ -2599,7 +2406,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetPrinterDataExW(hprinter: super::super::Foundation::HANDLE, pkeyname: ::windows::core::PCWSTR, pvaluename: ::windows::core::PCWSTR, r#type: u32, pdata: *const u8, cbdata: u32) -> u32;
     }
@@ -2613,7 +2419,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetPrinterDataW(hprinter: super::super::Foundation::HANDLE, pvaluename: ::windows::core::PCWSTR, r#type: u32, pdata: *const u8, cbdata: u32) -> u32;
     }
@@ -2626,7 +2431,6 @@ pub unsafe fn SetPrinterW<'a, P0>(hprinter: P0, level: u32, pprinter: ::core::op
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetPrinterW(hprinter: super::super::Foundation::HANDLE, level: u32, pprinter: *const u8, command: u32) -> super::super::Foundation::BOOL;
     }
@@ -2639,7 +2443,6 @@ pub unsafe fn SplIsSessionZero<'a, P0>(hprinter: P0, jobid: u32, pissessionzero:
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SplIsSessionZero(hprinter: super::super::Foundation::HANDLE, jobid: u32, pissessionzero: *mut super::super::Foundation::BOOL) -> u32;
     }
@@ -2652,7 +2455,6 @@ pub unsafe fn SplPromptUIInUsersSession<'a, P0>(hprinter: P0, jobid: u32, puipar
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SplPromptUIInUsersSession(hprinter: super::super::Foundation::HANDLE, jobid: u32, puiparams: *const SHOWUIPARAMS, presponse: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -2666,7 +2468,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SpoolerCopyFileEvent(pszprintername: ::windows::core::PCWSTR, pszkey: ::windows::core::PCWSTR, dwcopyfileevent: u32) -> super::super::Foundation::BOOL;
     }
@@ -2679,7 +2480,6 @@ pub unsafe fn SpoolerFindClosePrinterChangeNotification<'a, P0>(hprinter: P0) ->
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SpoolerFindClosePrinterChangeNotification(hprinter: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -2692,7 +2492,6 @@ pub unsafe fn SpoolerFindFirstPrinterChangeNotification<'a, P0>(hprinter: P0, fd
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SpoolerFindFirstPrinterChangeNotification(hprinter: super::super::Foundation::HANDLE, fdwfilterflags: u32, fdwoptions: u32, pprinternotifyoptions: *const ::core::ffi::c_void, pvreserved: *const ::core::ffi::c_void, pnotificationconfig: *const ::core::ffi::c_void, phnotify: *mut super::super::Foundation::HANDLE, phevent: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -2705,7 +2504,6 @@ pub unsafe fn SpoolerFindNextPrinterChangeNotification<'a, P0>(hprinter: P0, pfd
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SpoolerFindNextPrinterChangeNotification(hprinter: super::super::Foundation::HANDLE, pfdwchange: *mut u32, pprinternotifyoptions: *const ::core::ffi::c_void, ppprinternotifyinfo: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -2714,7 +2512,6 @@ where
 #[doc = "*Required features: `\"Win32_Graphics_Printing\"`*"]
 #[inline]
 pub unsafe fn SpoolerFreePrinterNotifyInfo(pinfo: *const PRINTER_NOTIFY_INFO) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SpoolerFreePrinterNotifyInfo(pinfo: *const PRINTER_NOTIFY_INFO);
     }
@@ -2727,7 +2524,6 @@ pub unsafe fn SpoolerRefreshPrinterChangeNotification<'a, P0>(hprinter: P0, dwco
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SpoolerRefreshPrinterChangeNotification(hprinter: super::super::Foundation::HANDLE, dwcolor: u32, poptions: *const PRINTER_NOTIFY_OPTIONS, ppinfo: *mut *mut PRINTER_NOTIFY_INFO) -> super::super::Foundation::BOOL;
     }
@@ -2740,7 +2536,6 @@ pub unsafe fn StartDocPrinterA<'a, P0>(hprinter: P0, level: u32, pdocinfo: *cons
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StartDocPrinterA(hprinter: super::super::Foundation::HANDLE, level: u32, pdocinfo: *const DOC_INFO_1A) -> u32;
     }
@@ -2753,7 +2548,6 @@ pub unsafe fn StartDocPrinterW<'a, P0>(hprinter: P0, level: u32, pdocinfo: *cons
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StartDocPrinterW(hprinter: super::super::Foundation::HANDLE, level: u32, pdocinfo: *const DOC_INFO_1W) -> u32;
     }
@@ -2766,7 +2560,6 @@ pub unsafe fn StartPagePrinter<'a, P0>(hprinter: P0) -> super::super::Foundation
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StartPagePrinter(hprinter: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -2779,7 +2572,6 @@ pub unsafe fn UnRegisterForPrintAsyncNotifications<'a, P0>(param0: P0) -> ::wind
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UnRegisterForPrintAsyncNotifications(param0: super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
     }
@@ -2793,7 +2585,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UpdatePrintDeviceObject(hprinter: super::super::Foundation::HANDLE, hdeviceobject: super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
     }
@@ -2809,7 +2600,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UploadPrinterDriverPackageA(pszserver: ::windows::core::PCSTR, pszinfpath: ::windows::core::PCSTR, pszenvironment: ::windows::core::PCSTR, dwflags: u32, hwnd: super::super::Foundation::HWND, pszdestinfpath: ::windows::core::PSTR, pcchdestinfpath: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -2825,7 +2615,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UploadPrinterDriverPackageW(pszserver: ::windows::core::PCWSTR, pszinfpath: ::windows::core::PCWSTR, pszenvironment: ::windows::core::PCWSTR, dwflags: u32, hwnd: super::super::Foundation::HWND, pszdestinfpath: ::windows::core::PWSTR, pcchdestinfpath: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -2838,7 +2627,6 @@ pub unsafe fn WaitForPrinterChange<'a, P0>(hprinter: P0, flags: u32) -> u32
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WaitForPrinterChange(hprinter: super::super::Foundation::HANDLE, flags: u32) -> u32;
     }
@@ -2851,7 +2639,6 @@ pub unsafe fn WritePrinter<'a, P0>(hprinter: P0, pbuf: *const ::core::ffi::c_voi
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WritePrinter(hprinter: super::super::Foundation::HANDLE, pbuf: *const ::core::ffi::c_void, cbbuf: u32, pcwritten: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -2865,7 +2652,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn XcvDataW(hxcv: super::super::Foundation::HANDLE, pszdataname: ::windows::core::PCWSTR, pinputdata: *const u8, cbinputdata: u32, poutputdata: *mut u8, cboutputdata: u32, pcboutputneeded: *mut u32, pdwstatus: *mut u32) -> super::super::Foundation::BOOL;
     }

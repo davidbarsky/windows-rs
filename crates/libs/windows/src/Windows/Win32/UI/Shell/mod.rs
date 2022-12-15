@@ -12,7 +12,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn ShellMessageBoxA(happinst: super::super::Foundation::HINSTANCE, hwnd: super::super::Foundation::HWND, lpctext: ::windows::core::PCSTR, lpctitle: ::windows::core::PCSTR, fustyle: u32) -> i32;
     }
@@ -28,7 +27,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn ShellMessageBoxW(happinst: super::super::Foundation::HINSTANCE, hwnd: super::super::Foundation::HWND, lpctext: ::windows::core::PCWSTR, lpctitle: ::windows::core::PCWSTR, fustyle: u32) -> i32;
     }
@@ -40,7 +38,6 @@ pub unsafe fn wnsprintfA<'a, P0>(pszdest: &mut [u8], pszfmt: P0) -> i32
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn wnsprintfA(pszdest: ::windows::core::PSTR, cchdest: i32, pszfmt: ::windows::core::PCSTR) -> i32;
     }
@@ -52,7 +49,6 @@ pub unsafe fn wnsprintfW<'a, P0>(pszdest: &mut [u16], pszfmt: P0) -> i32
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn wnsprintfW(pszdest: ::windows::core::PWSTR, cchdest: i32, pszfmt: ::windows::core::PCWSTR) -> i32;
     }
@@ -64,7 +60,6 @@ pub unsafe fn AssocCreate<T>(clsid: ::windows::core::GUID) -> ::windows::core::R
 where
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AssocCreate(clsid: ::windows::core::GUID, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -78,7 +73,6 @@ pub unsafe fn AssocCreateForClasses<T>(rgclasses: &[ASSOCIATIONELEMENT]) -> ::wi
 where
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AssocCreateForClasses(rgclasses: *const ASSOCIATIONELEMENT, cclasses: u32, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -92,7 +86,6 @@ pub unsafe fn AssocGetDetailsOfPropKey<'a, P0>(psf: P0, pidl: *const Common::ITE
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IShellFolder>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AssocGetDetailsOfPropKey(psf: *mut ::core::ffi::c_void, pidl: *const Common::ITEMIDLIST, pkey: *const PropertiesSystem::PROPERTYKEY, pv: *mut super::super::System::Com::VARIANT, pffoundpropkey: *mut super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
     }
@@ -105,7 +98,6 @@ pub unsafe fn AssocGetPerceivedType<'a, P0>(pszext: P0, ptype: *mut Common::PERC
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AssocGetPerceivedType(pszext: ::windows::core::PCWSTR, ptype: *mut Common::PERCEIVED, pflag: *mut u32, ppsztype: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -118,7 +110,6 @@ pub unsafe fn AssocIsDangerous<'a, P0>(pszassoc: P0) -> super::super::Foundation
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AssocIsDangerous(pszassoc: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -132,7 +123,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AssocQueryKeyA(flags: u32, key: ASSOCKEY, pszassoc: ::windows::core::PCSTR, pszextra: ::windows::core::PCSTR, phkeyout: *mut super::super::System::Registry::HKEY) -> ::windows::core::HRESULT;
     }
@@ -147,7 +137,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AssocQueryKeyW(flags: u32, key: ASSOCKEY, pszassoc: ::windows::core::PCWSTR, pszextra: ::windows::core::PCWSTR, phkeyout: *mut super::super::System::Registry::HKEY) -> ::windows::core::HRESULT;
     }
@@ -161,7 +150,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AssocQueryStringA(flags: u32, str: ASSOCSTR, pszassoc: ::windows::core::PCSTR, pszextra: ::windows::core::PCSTR, pszout: ::windows::core::PSTR, pcchout: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -175,7 +163,6 @@ where
     P0: ::std::convert::Into<super::super::System::Registry::HKEY>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AssocQueryStringByKeyA(flags: u32, str: ASSOCSTR, hkassoc: super::super::System::Registry::HKEY, pszextra: ::windows::core::PCSTR, pszout: ::windows::core::PSTR, pcchout: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -189,7 +176,6 @@ where
     P0: ::std::convert::Into<super::super::System::Registry::HKEY>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AssocQueryStringByKeyW(flags: u32, str: ASSOCSTR, hkassoc: super::super::System::Registry::HKEY, pszextra: ::windows::core::PCWSTR, pszout: ::windows::core::PWSTR, pcchout: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -202,7 +188,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AssocQueryStringW(flags: u32, str: ASSOCSTR, pszassoc: ::windows::core::PCWSTR, pszextra: ::windows::core::PCWSTR, pszout: ::windows::core::PWSTR, pcchout: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -216,7 +201,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::InParam<'a, IShellFolder>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CDefFolderMenu_Create2(pidlfolder: *const Common::ITEMIDLIST, hwnd: super::super::Foundation::HWND, cidl: u32, apidl: *const *const Common::ITEMIDLIST, psf: *mut ::core::ffi::c_void, pfn: *mut ::core::ffi::c_void, nkeys: u32, ahkeys: *const super::super::System::Registry::HKEY, ppcm: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -227,7 +211,6 @@ where
 #[cfg(all(feature = "Win32_System_Com", feature = "Win32_UI_Shell_Common"))]
 #[inline]
 pub unsafe fn CIDLData_CreateFromIDArray(pidlfolder: *const Common::ITEMIDLIST, apidl: ::core::option::Option<&[*const Common::ITEMIDLIST]>) -> ::windows::core::Result<super::super::System::Com::IDataObject> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CIDLData_CreateFromIDArray(pidlfolder: *const Common::ITEMIDLIST, cidl: u32, apidl: *const *const Common::ITEMIDLIST, ppdtobj: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -238,7 +221,6 @@ pub unsafe fn CIDLData_CreateFromIDArray(pidlfolder: *const Common::ITEMIDLIST, 
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ChrCmpIA(w1: u16, w2: u16) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ChrCmpIA(w1: u16, w2: u16) -> super::super::Foundation::BOOL;
     }
@@ -248,7 +230,6 @@ pub unsafe fn ChrCmpIA(w1: u16, w2: u16) -> super::super::Foundation::BOOL {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ChrCmpIW(w1: u16, w2: u16) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ChrCmpIW(w1: u16, w2: u16) -> super::super::Foundation::BOOL;
     }
@@ -262,7 +243,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::COLORREF>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ColorAdjustLuma(clrrgb: super::super::Foundation::COLORREF, n: i32, fscale: super::super::Foundation::BOOL) -> super::super::Foundation::COLORREF;
     }
@@ -272,7 +252,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ColorHLSToRGB(whue: u16, wluminance: u16, wsaturation: u16) -> super::super::Foundation::COLORREF {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ColorHLSToRGB(whue: u16, wluminance: u16, wsaturation: u16) -> super::super::Foundation::COLORREF;
     }
@@ -285,7 +264,6 @@ pub unsafe fn ColorRGBToHLS<'a, P0>(clrrgb: P0, pwhue: *mut u16, pwluminance: *m
 where
     P0: ::std::convert::Into<super::super::Foundation::COLORREF>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ColorRGBToHLS(clrrgb: super::super::Foundation::COLORREF, pwhue: *mut u16, pwluminance: *mut u16, pwsaturation: *mut u16);
     }
@@ -297,7 +275,6 @@ pub unsafe fn CommandLineToArgvW<'a, P0>(lpcmdline: P0, pnumargs: *mut i32) -> *
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CommandLineToArgvW(lpcmdline: ::windows::core::PCWSTR, pnumargs: *mut i32) -> *mut ::windows::core::PWSTR;
     }
@@ -312,7 +289,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
     P2: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ConnectToConnectionPoint(punk: *mut ::core::ffi::c_void, riidevent: *const ::windows::core::GUID, fconnect: super::super::Foundation::BOOL, punktarget: *mut ::core::ffi::c_void, pdwcookie: *mut u32, ppcpout: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -325,7 +301,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateProfile(pszusersid: ::windows::core::PCWSTR, pszusername: ::windows::core::PCWSTR, pszprofilepath: ::windows::core::PWSTR, cchprofilepath: u32) -> ::windows::core::HRESULT;
     }
@@ -338,7 +313,6 @@ pub unsafe fn DAD_AutoScroll<'a, P0>(hwnd: P0, pad: *mut AUTO_SCROLL_DATA, pptno
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DAD_AutoScroll(hwnd: super::super::Foundation::HWND, pad: *mut AUTO_SCROLL_DATA, pptnow: *const super::super::Foundation::POINT) -> super::super::Foundation::BOOL;
     }
@@ -351,7 +325,6 @@ pub unsafe fn DAD_DragEnterEx<'a, P0>(hwndtarget: P0, ptstart: super::super::Fou
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DAD_DragEnterEx(hwndtarget: super::super::Foundation::HWND, ptstart: super::super::Foundation::POINT) -> super::super::Foundation::BOOL;
     }
@@ -365,7 +338,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IDataObject>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DAD_DragEnterEx2(hwndtarget: super::super::Foundation::HWND, ptstart: super::super::Foundation::POINT, pdtobject: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -375,7 +347,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DAD_DragLeave() -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DAD_DragLeave() -> super::super::Foundation::BOOL;
     }
@@ -385,7 +356,6 @@ pub unsafe fn DAD_DragLeave() -> super::super::Foundation::BOOL {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DAD_DragMove(pt: super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DAD_DragMove(pt: super::super::Foundation::POINT) -> super::super::Foundation::BOOL;
     }
@@ -398,7 +368,6 @@ pub unsafe fn DAD_SetDragImage<'a, P0>(him: P0, pptoffset: *mut super::super::Fo
 where
     P0: ::std::convert::Into<super::Controls::HIMAGELIST>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DAD_SetDragImage(him: super::Controls::HIMAGELIST, pptoffset: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL;
     }
@@ -411,7 +380,6 @@ pub unsafe fn DAD_ShowDragImage<'a, P0>(fshow: P0) -> super::super::Foundation::
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DAD_ShowDragImage(fshow: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -426,7 +394,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DefSubclassProc(hwnd: super::super::Foundation::HWND, umsg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
     }
@@ -441,7 +408,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeleteProfileA(lpsidstring: ::windows::core::PCSTR, lpprofilepath: ::windows::core::PCSTR, lpcomputername: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -456,7 +422,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeleteProfileW(lpsidstring: ::windows::core::PCWSTR, lpprofilepath: ::windows::core::PCWSTR, lpcomputername: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -465,7 +430,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn DoEnvironmentSubstA(pszsrc: &mut [u8]) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DoEnvironmentSubstA(pszsrc: ::windows::core::PSTR, cchsrc: u32) -> u32;
     }
@@ -474,7 +438,6 @@ pub unsafe fn DoEnvironmentSubstA(pszsrc: &mut [u8]) -> u32 {
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn DoEnvironmentSubstW(pszsrc: &mut [u16]) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DoEnvironmentSubstW(pszsrc: ::windows::core::PWSTR, cchsrc: u32) -> u32;
     }
@@ -488,7 +451,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DragAcceptFiles(hwnd: super::super::Foundation::HWND, faccept: super::super::Foundation::BOOL);
     }
@@ -500,7 +462,6 @@ pub unsafe fn DragFinish<'a, P0>(hdrop: P0)
 where
     P0: ::std::convert::Into<HDROP>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DragFinish(hdrop: HDROP);
     }
@@ -512,7 +473,6 @@ pub unsafe fn DragQueryFileA<'a, P0>(hdrop: P0, ifile: u32, lpszfile: ::core::op
 where
     P0: ::std::convert::Into<HDROP>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DragQueryFileA(hdrop: HDROP, ifile: u32, lpszfile: ::windows::core::PSTR, cch: u32) -> u32;
     }
@@ -524,7 +484,6 @@ pub unsafe fn DragQueryFileW<'a, P0>(hdrop: P0, ifile: u32, lpszfile: ::core::op
 where
     P0: ::std::convert::Into<HDROP>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DragQueryFileW(hdrop: HDROP, ifile: u32, lpszfile: ::windows::core::PWSTR, cch: u32) -> u32;
     }
@@ -537,7 +496,6 @@ pub unsafe fn DragQueryPoint<'a, P0>(hdrop: P0, ppt: *mut super::super::Foundati
 where
     P0: ::std::convert::Into<HDROP>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DragQueryPoint(hdrop: HDROP, ppt: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL;
     }
@@ -546,7 +504,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn DriveType(idrive: i32) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DriveType(idrive: i32) -> i32;
     }
@@ -560,7 +517,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<super::WindowsAndMessaging::HICON>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DuplicateIcon(hinst: super::super::Foundation::HINSTANCE, hicon: super::WindowsAndMessaging::HICON) -> super::WindowsAndMessaging::HICON;
     }
@@ -573,7 +529,6 @@ pub unsafe fn ExtractAssociatedIconA<'a, P0>(hinst: P0, psziconpath: &mut [u8; 1
 where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ExtractAssociatedIconA(hinst: super::super::Foundation::HINSTANCE, psziconpath: ::windows::core::PSTR, piicon: *mut u16) -> super::WindowsAndMessaging::HICON;
     }
@@ -586,7 +541,6 @@ pub unsafe fn ExtractAssociatedIconExA<'a, P0>(hinst: P0, psziconpath: &mut [u8;
 where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ExtractAssociatedIconExA(hinst: super::super::Foundation::HINSTANCE, psziconpath: ::windows::core::PSTR, piiconindex: *mut u16, piiconid: *mut u16) -> super::WindowsAndMessaging::HICON;
     }
@@ -599,7 +553,6 @@ pub unsafe fn ExtractAssociatedIconExW<'a, P0>(hinst: P0, psziconpath: &mut [u16
 where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ExtractAssociatedIconExW(hinst: super::super::Foundation::HINSTANCE, psziconpath: ::windows::core::PWSTR, piiconindex: *mut u16, piiconid: *mut u16) -> super::WindowsAndMessaging::HICON;
     }
@@ -612,7 +565,6 @@ pub unsafe fn ExtractAssociatedIconW<'a, P0>(hinst: P0, psziconpath: &mut [u16; 
 where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ExtractAssociatedIconW(hinst: super::super::Foundation::HINSTANCE, psziconpath: ::windows::core::PWSTR, piicon: *mut u16) -> super::WindowsAndMessaging::HICON;
     }
@@ -626,7 +578,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ExtractIconA(hinst: super::super::Foundation::HINSTANCE, pszexefilename: ::windows::core::PCSTR, niconindex: u32) -> super::WindowsAndMessaging::HICON;
     }
@@ -639,7 +590,6 @@ pub unsafe fn ExtractIconExA<'a, P0>(lpszfile: P0, niconindex: i32, phiconlarge:
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ExtractIconExA(lpszfile: ::windows::core::PCSTR, niconindex: i32, phiconlarge: *mut super::WindowsAndMessaging::HICON, phiconsmall: *mut super::WindowsAndMessaging::HICON, nicons: u32) -> u32;
     }
@@ -652,7 +602,6 @@ pub unsafe fn ExtractIconExW<'a, P0>(lpszfile: P0, niconindex: i32, phiconlarge:
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ExtractIconExW(lpszfile: ::windows::core::PCWSTR, niconindex: i32, phiconlarge: *mut super::WindowsAndMessaging::HICON, phiconsmall: *mut super::WindowsAndMessaging::HICON, nicons: u32) -> u32;
     }
@@ -666,7 +615,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ExtractIconW(hinst: super::super::Foundation::HINSTANCE, pszexefilename: ::windows::core::PCWSTR, niconindex: u32) -> super::WindowsAndMessaging::HICON;
     }
@@ -680,7 +628,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindExecutableA(lpfile: ::windows::core::PCSTR, lpdirectory: ::windows::core::PCSTR, lpresult: ::windows::core::PSTR) -> super::super::Foundation::HINSTANCE;
     }
@@ -694,7 +641,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindExecutableW(lpfile: ::windows::core::PCWSTR, lpdirectory: ::windows::core::PCWSTR, lpresult: ::windows::core::PWSTR) -> super::super::Foundation::HINSTANCE;
     }
@@ -703,7 +649,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn GetAcceptLanguagesA(pszlanguages: ::windows::core::PSTR, pcchlanguages: *mut u32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetAcceptLanguagesA(pszlanguages: ::windows::core::PSTR, pcchlanguages: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -712,7 +657,6 @@ pub unsafe fn GetAcceptLanguagesA(pszlanguages: ::windows::core::PSTR, pcchlangu
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn GetAcceptLanguagesW(pszlanguages: ::windows::core::PWSTR, pcchlanguages: *mut u32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetAcceptLanguagesW(pszlanguages: ::windows::core::PWSTR, pcchlanguages: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -722,7 +666,6 @@ pub unsafe fn GetAcceptLanguagesW(pszlanguages: ::windows::core::PWSTR, pcchlang
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetAllUsersProfileDirectoryA(lpprofiledir: ::windows::core::PSTR, lpcchsize: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetAllUsersProfileDirectoryA(lpprofiledir: ::windows::core::PSTR, lpcchsize: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -732,7 +675,6 @@ pub unsafe fn GetAllUsersProfileDirectoryA(lpprofiledir: ::windows::core::PSTR, 
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetAllUsersProfileDirectoryW(lpprofiledir: ::windows::core::PWSTR, lpcchsize: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetAllUsersProfileDirectoryW(lpprofiledir: ::windows::core::PWSTR, lpcchsize: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -741,7 +683,6 @@ pub unsafe fn GetAllUsersProfileDirectoryW(lpprofiledir: ::windows::core::PWSTR,
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn GetCurrentProcessExplicitAppUserModelID() -> ::windows::core::Result<::windows::core::PWSTR> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCurrentProcessExplicitAppUserModelID(appid: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -752,7 +693,6 @@ pub unsafe fn GetCurrentProcessExplicitAppUserModelID() -> ::windows::core::Resu
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetDefaultUserProfileDirectoryA(lpprofiledir: ::windows::core::PSTR, lpcchsize: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDefaultUserProfileDirectoryA(lpprofiledir: ::windows::core::PSTR, lpcchsize: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -762,7 +702,6 @@ pub unsafe fn GetDefaultUserProfileDirectoryA(lpprofiledir: ::windows::core::PST
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetDefaultUserProfileDirectoryW(lpprofiledir: ::windows::core::PWSTR, lpcchsize: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDefaultUserProfileDirectoryW(lpprofiledir: ::windows::core::PWSTR, lpcchsize: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -771,7 +710,6 @@ pub unsafe fn GetDefaultUserProfileDirectoryW(lpprofiledir: ::windows::core::PWS
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn GetDpiForShellUIComponent(param0: SHELL_UI_COMPONENT) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDpiForShellUIComponent(param0: SHELL_UI_COMPONENT) -> u32;
     }
@@ -788,7 +726,6 @@ where
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
     P4: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFileNameFromBrowse(hwnd: super::super::Foundation::HWND, pszfilepath: ::windows::core::PWSTR, cchfilepath: u32, pszworkingdir: ::windows::core::PCWSTR, pszdefext: ::windows::core::PCWSTR, pszfilters: ::windows::core::PCWSTR, psztitle: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -801,7 +738,6 @@ pub unsafe fn GetMenuContextHelpId<'a, P0>(param0: P0) -> u32
 where
     P0: ::std::convert::Into<super::WindowsAndMessaging::HMENU>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetMenuContextHelpId(param0: super::WindowsAndMessaging::HMENU) -> u32;
     }
@@ -814,7 +750,6 @@ pub unsafe fn GetMenuPosFromID<'a, P0>(hmenu: P0, id: u32) -> i32
 where
     P0: ::std::convert::Into<super::WindowsAndMessaging::HMENU>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetMenuPosFromID(hmenu: super::WindowsAndMessaging::HMENU, id: u32) -> i32;
     }
@@ -824,7 +759,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetProfileType(dwflags: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetProfileType(dwflags: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -834,7 +768,6 @@ pub unsafe fn GetProfileType(dwflags: *mut u32) -> super::super::Foundation::BOO
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetProfilesDirectoryA(lpprofiledir: ::windows::core::PSTR, lpcchsize: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetProfilesDirectoryA(lpprofiledir: ::windows::core::PSTR, lpcchsize: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -844,7 +777,6 @@ pub unsafe fn GetProfilesDirectoryA(lpprofiledir: ::windows::core::PSTR, lpcchsi
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetProfilesDirectoryW(lpprofiledir: ::windows::core::PWSTR, lpcchsize: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetProfilesDirectoryW(lpprofiledir: ::windows::core::PWSTR, lpcchsize: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -854,7 +786,6 @@ pub unsafe fn GetProfilesDirectoryW(lpprofiledir: ::windows::core::PWSTR, lpcchs
 #[cfg(feature = "Win32_UI_Shell_Common")]
 #[inline]
 pub unsafe fn GetScaleFactorForDevice(devicetype: DISPLAY_DEVICE_TYPE) -> Common::DEVICE_SCALE_FACTOR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetScaleFactorForDevice(devicetype: DISPLAY_DEVICE_TYPE) -> Common::DEVICE_SCALE_FACTOR;
     }
@@ -867,7 +798,6 @@ pub unsafe fn GetScaleFactorForMonitor<'a, P0>(hmon: P0) -> ::windows::core::Res
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HMONITOR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetScaleFactorForMonitor(hmon: super::super::Graphics::Gdi::HMONITOR, pscale: *mut Common::DEVICE_SCALE_FACTOR) -> ::windows::core::HRESULT;
     }
@@ -881,7 +811,6 @@ pub unsafe fn GetUserProfileDirectoryA<'a, P0>(htoken: P0, lpprofiledir: ::windo
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetUserProfileDirectoryA(htoken: super::super::Foundation::HANDLE, lpprofiledir: ::windows::core::PSTR, lpcchsize: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -894,7 +823,6 @@ pub unsafe fn GetUserProfileDirectoryW<'a, P0>(htoken: P0, lpprofiledir: ::windo
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetUserProfileDirectoryW(htoken: super::super::Foundation::HANDLE, lpprofiledir: ::windows::core::PWSTR, lpcchsize: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -907,7 +835,6 @@ pub unsafe fn GetWindowContextHelpId<'a, P0>(param0: P0) -> u32
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetWindowContextHelpId(param0: super::super::Foundation::HWND) -> u32;
     }
@@ -920,7 +847,6 @@ pub unsafe fn GetWindowSubclass<'a, P0>(hwnd: P0, pfnsubclass: SUBCLASSPROC, uid
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetWindowSubclass(hwnd: super::super::Foundation::HWND, pfnsubclass: *mut ::core::ffi::c_void, uidsubclass: usize, pdwrefdata: *mut usize) -> super::super::Foundation::BOOL;
     }
@@ -930,7 +856,6 @@ where
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
 pub unsafe fn HMONITOR_UserFree(param0: *const u32, param1: *const super::super::Graphics::Gdi::HMONITOR) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HMONITOR_UserFree(param0: *const u32, param1: *const super::super::Graphics::Gdi::HMONITOR);
     }
@@ -940,7 +865,6 @@ pub unsafe fn HMONITOR_UserFree(param0: *const u32, param1: *const super::super:
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
 pub unsafe fn HMONITOR_UserFree64(param0: *const u32, param1: *const super::super::Graphics::Gdi::HMONITOR) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HMONITOR_UserFree64(param0: *const u32, param1: *const super::super::Graphics::Gdi::HMONITOR);
     }
@@ -950,7 +874,6 @@ pub unsafe fn HMONITOR_UserFree64(param0: *const u32, param1: *const super::supe
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
 pub unsafe fn HMONITOR_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const super::super::Graphics::Gdi::HMONITOR) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HMONITOR_UserMarshal(param0: *const u32, param1: *mut u8, param2: *const super::super::Graphics::Gdi::HMONITOR) -> *mut u8;
     }
@@ -960,7 +883,6 @@ pub unsafe fn HMONITOR_UserMarshal(param0: *const u32, param1: *mut u8, param2: 
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
 pub unsafe fn HMONITOR_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const super::super::Graphics::Gdi::HMONITOR) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HMONITOR_UserMarshal64(param0: *const u32, param1: *mut u8, param2: *const super::super::Graphics::Gdi::HMONITOR) -> *mut u8;
     }
@@ -970,7 +892,6 @@ pub unsafe fn HMONITOR_UserMarshal64(param0: *const u32, param1: *mut u8, param2
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
 pub unsafe fn HMONITOR_UserSize(param0: *const u32, param1: u32, param2: *const super::super::Graphics::Gdi::HMONITOR) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HMONITOR_UserSize(param0: *const u32, param1: u32, param2: *const super::super::Graphics::Gdi::HMONITOR) -> u32;
     }
@@ -980,7 +901,6 @@ pub unsafe fn HMONITOR_UserSize(param0: *const u32, param1: u32, param2: *const 
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
 pub unsafe fn HMONITOR_UserSize64(param0: *const u32, param1: u32, param2: *const super::super::Graphics::Gdi::HMONITOR) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HMONITOR_UserSize64(param0: *const u32, param1: u32, param2: *const super::super::Graphics::Gdi::HMONITOR) -> u32;
     }
@@ -990,7 +910,6 @@ pub unsafe fn HMONITOR_UserSize64(param0: *const u32, param1: u32, param2: *cons
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
 pub unsafe fn HMONITOR_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut super::super::Graphics::Gdi::HMONITOR) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HMONITOR_UserUnmarshal(param0: *const u32, param1: *const u8, param2: *mut super::super::Graphics::Gdi::HMONITOR) -> *mut u8;
     }
@@ -1000,7 +919,6 @@ pub unsafe fn HMONITOR_UserUnmarshal(param0: *const u32, param1: *const u8, para
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
 pub unsafe fn HMONITOR_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut super::super::Graphics::Gdi::HMONITOR) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HMONITOR_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut super::super::Graphics::Gdi::HMONITOR) -> *mut u8;
     }
@@ -1009,7 +927,6 @@ pub unsafe fn HMONITOR_UserUnmarshal64(param0: *const u32, param1: *const u8, pa
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn HashData(pbdata: &[u8], pbhash: &mut [u8]) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HashData(pbdata: *const u8, cbdata: u32, pbhash: *mut u8, cbhash: u32) -> ::windows::core::HRESULT;
     }
@@ -1023,7 +940,6 @@ where
     P1: ::std::convert::Into<::windows::core::InParam<'a, IHlinkSite>>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkClone(pihl: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, pihlsiteforclone: *mut ::core::ffi::c_void, dwsitedata: u32, ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1037,7 +953,6 @@ where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkCreateBrowseContext(piunkouter: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1056,7 +971,6 @@ where
     P4: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkCreateExtensionServices(pwzadditionalheaders: ::windows::core::PCWSTR, phwnd: super::super::Foundation::HWND, pszusername: ::windows::core::PCWSTR, pszpassword: ::windows::core::PCWSTR, piunkouter: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1073,7 +987,6 @@ where
     P2: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkCreateFromData(pidataobj: *mut ::core::ffi::c_void, pihlsite: *mut ::core::ffi::c_void, dwsitedata: u32, piunkouter: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1092,7 +1005,6 @@ where
     P4: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkCreateFromMoniker(pimktrgt: *mut ::core::ffi::c_void, pwzlocation: ::windows::core::PCWSTR, pwzfriendlyname: ::windows::core::PCWSTR, pihlsite: *mut ::core::ffi::c_void, dwsitedata: u32, piunkouter: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1110,7 +1022,6 @@ where
     P4: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkCreateFromString(pwztarget: ::windows::core::PCWSTR, pwzlocation: ::windows::core::PCWSTR, pwzfriendlyname: ::windows::core::PCWSTR, pihlsite: *mut ::core::ffi::c_void, dwsitedata: u32, piunkouter: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1125,7 +1036,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkCreateShortcut(grfhlshortcutf: u32, pihl: *mut ::core::ffi::c_void, pwzdir: ::windows::core::PCWSTR, pwzfilename: ::windows::core::PCWSTR, ppwzshortcutfile: *mut ::windows::core::PWSTR, dwreserved: u32) -> ::windows::core::HRESULT;
     }
@@ -1141,7 +1051,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkCreateShortcutFromMoniker(grfhlshortcutf: u32, pimktarget: *mut ::core::ffi::c_void, pwzlocation: ::windows::core::PCWSTR, pwzdir: ::windows::core::PCWSTR, pwzfilename: ::windows::core::PCWSTR, ppwzshortcutfile: *mut ::windows::core::PWSTR, dwreserved: u32) -> ::windows::core::HRESULT;
     }
@@ -1156,7 +1065,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkCreateShortcutFromString(grfhlshortcutf: u32, pwztarget: ::windows::core::PCWSTR, pwzlocation: ::windows::core::PCWSTR, pwzdir: ::windows::core::PCWSTR, pwzfilename: ::windows::core::PCWSTR, ppwzshortcutfile: *mut ::windows::core::PWSTR, dwreserved: u32) -> ::windows::core::HRESULT;
     }
@@ -1165,7 +1073,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn HlinkGetSpecialReference(ureference: u32) -> ::windows::core::Result<::windows::core::PWSTR> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkGetSpecialReference(ureference: u32, ppwzreference: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -1179,7 +1086,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkGetValueFromParams(pwzparams: ::windows::core::PCWSTR, pwzname: ::windows::core::PCWSTR, ppwzvalue: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -1192,7 +1098,6 @@ pub unsafe fn HlinkIsShortcut<'a, P0>(pwzfilename: P0) -> ::windows::core::Resul
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkIsShortcut(pwzfilename: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -1209,7 +1114,6 @@ where
     P3: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IBindStatusCallback>>,
     P4: ::std::convert::Into<::windows::core::InParam<'a, IHlinkBrowseContext>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkNavigate(pihl: *mut ::core::ffi::c_void, pihlframe: *mut ::core::ffi::c_void, grfhlnf: u32, pbc: *mut ::core::ffi::c_void, pibsc: *mut ::core::ffi::c_void, pihlbc: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1228,7 +1132,6 @@ where
     P5: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IBindStatusCallback>>,
     P6: ::std::convert::Into<::windows::core::InParam<'a, IHlinkBrowseContext>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkNavigateToStringReference(pwztarget: ::windows::core::PCWSTR, pwzlocation: ::windows::core::PCWSTR, pihlsite: *mut ::core::ffi::c_void, dwsitedata: u32, pihlframe: *mut ::core::ffi::c_void, grfhlnf: u32, pibc: *mut ::core::ffi::c_void, pibsc: *mut ::core::ffi::c_void, pihlbc: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1245,7 +1148,6 @@ where
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
     P4: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkOnNavigate(pihlframe: *mut ::core::ffi::c_void, pihlbc: *mut ::core::ffi::c_void, grfhlnf: u32, pimktarget: *mut ::core::ffi::c_void, pwzlocation: ::windows::core::PCWSTR, pwzfriendlyname: ::windows::core::PCWSTR, puhlid: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -1260,7 +1162,6 @@ where
     P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IMoniker>>,
     P2: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IMoniker>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkOnRenameDocument(dwreserved: u32, pihlbc: *mut ::core::ffi::c_void, pimkold: *mut ::core::ffi::c_void, pimknew: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1275,7 +1176,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkParseDisplayName(pibc: *mut ::core::ffi::c_void, pwzdisplayname: ::windows::core::PCWSTR, fnoforceabs: super::super::Foundation::BOOL, pccheaten: *mut u32, ppimk: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1289,7 +1189,6 @@ where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IBindCtx>>,
     P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IMoniker>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkPreprocessMoniker(pibc: *mut ::core::ffi::c_void, pimkin: *mut ::core::ffi::c_void, ppimkout: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1303,7 +1202,6 @@ pub unsafe fn HlinkQueryCreateFromData<'a, P0>(pidataobj: P0) -> ::windows::core
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IDataObject>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkQueryCreateFromData(pidataobj: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1319,7 +1217,6 @@ where
     P2: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IBindStatusCallback>>,
     P3: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IMoniker>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkResolveMonikerForData(pimkreference: *mut ::core::ffi::c_void, reserved: u32, pibc: *mut ::core::ffi::c_void, cfmtetc: u32, rgfmtetc: *mut super::super::System::Com::FORMATETC, pibsc: *mut ::core::ffi::c_void, pimkbase: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1333,7 +1230,6 @@ where
     P1: ::std::convert::Into<::windows::core::InParam<'a, IHlinkSite>>,
     P2: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkResolveShortcut(pwzshortcutfilename: ::windows::core::PCWSTR, pihlsite: *mut ::core::ffi::c_void, dwsitedata: u32, piunkouter: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1346,7 +1242,6 @@ pub unsafe fn HlinkResolveShortcutToMoniker<'a, P0>(pwzshortcutfilename: P0, ppi
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkResolveShortcutToMoniker(pwzshortcutfilename: ::windows::core::PCWSTR, ppimktarget: *mut *mut ::core::ffi::c_void, ppwzlocation: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -1358,7 +1253,6 @@ pub unsafe fn HlinkResolveShortcutToString<'a, P0>(pwzshortcutfilename: P0, ppwz
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkResolveShortcutToString(pwzshortcutfilename: ::windows::core::PCWSTR, ppwztarget: *mut ::windows::core::PWSTR, ppwzlocation: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -1374,7 +1268,6 @@ where
     P2: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IBindStatusCallback>>,
     P3: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IMoniker>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkResolveStringForData(pwzreference: ::windows::core::PCWSTR, reserved: u32, pibc: *mut ::core::ffi::c_void, cfmtetc: u32, rgfmtetc: *mut super::super::System::Com::FORMATETC, pibsc: *mut ::core::ffi::c_void, pimkbase: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1386,7 +1279,6 @@ pub unsafe fn HlinkSetSpecialReference<'a, P0>(ureference: u32, pwzreference: P0
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkSetSpecialReference(ureference: u32, pwzreference: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -1398,7 +1290,6 @@ pub unsafe fn HlinkTranslateURL<'a, P0>(pwzurl: P0, grfflags: u32) -> ::windows:
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkTranslateURL(pwzurl: ::windows::core::PCWSTR, grfflags: u32, ppwztranslatedurl: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -1416,7 +1307,6 @@ where
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
     P4: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HlinkUpdateStackItem(pihlframe: *mut ::core::ffi::c_void, pihlbc: *mut ::core::ffi::c_void, uhlid: u32, pimktrgt: *mut ::core::ffi::c_void, pwzlocation: ::windows::core::PCWSTR, pwzfriendlyname: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -1429,7 +1319,6 @@ pub unsafe fn ILAppendID<'a, P0>(pidl: ::core::option::Option<*const Common::ITE
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ILAppendID(pidl: *const Common::ITEMIDLIST, pmkid: *const Common::SHITEMID, fappend: super::super::Foundation::BOOL) -> *mut Common::ITEMIDLIST;
     }
@@ -1439,7 +1328,6 @@ where
 #[cfg(feature = "Win32_UI_Shell_Common")]
 #[inline]
 pub unsafe fn ILClone(pidl: *const Common::ITEMIDLIST) -> *mut Common::ITEMIDLIST {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ILClone(pidl: *const Common::ITEMIDLIST) -> *mut Common::ITEMIDLIST;
     }
@@ -1449,7 +1337,6 @@ pub unsafe fn ILClone(pidl: *const Common::ITEMIDLIST) -> *mut Common::ITEMIDLIS
 #[cfg(feature = "Win32_UI_Shell_Common")]
 #[inline]
 pub unsafe fn ILCloneFirst(pidl: *const Common::ITEMIDLIST) -> *mut Common::ITEMIDLIST {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ILCloneFirst(pidl: *const Common::ITEMIDLIST) -> *mut Common::ITEMIDLIST;
     }
@@ -1459,7 +1346,6 @@ pub unsafe fn ILCloneFirst(pidl: *const Common::ITEMIDLIST) -> *mut Common::ITEM
 #[cfg(feature = "Win32_UI_Shell_Common")]
 #[inline]
 pub unsafe fn ILCombine(pidl1: ::core::option::Option<*const Common::ITEMIDLIST>, pidl2: ::core::option::Option<*const Common::ITEMIDLIST>) -> *mut Common::ITEMIDLIST {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ILCombine(pidl1: *const Common::ITEMIDLIST, pidl2: *const Common::ITEMIDLIST) -> *mut Common::ITEMIDLIST;
     }
@@ -1472,7 +1358,6 @@ pub unsafe fn ILCreateFromPathA<'a, P0>(pszpath: P0) -> *mut Common::ITEMIDLIST
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ILCreateFromPathA(pszpath: ::windows::core::PCSTR) -> *mut Common::ITEMIDLIST;
     }
@@ -1485,7 +1370,6 @@ pub unsafe fn ILCreateFromPathW<'a, P0>(pszpath: P0) -> *mut Common::ITEMIDLIST
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ILCreateFromPathW(pszpath: ::windows::core::PCWSTR) -> *mut Common::ITEMIDLIST;
     }
@@ -1495,7 +1379,6 @@ where
 #[cfg(feature = "Win32_UI_Shell_Common")]
 #[inline]
 pub unsafe fn ILFindChild(pidlparent: *const Common::ITEMIDLIST, pidlchild: *const Common::ITEMIDLIST) -> *mut Common::ITEMIDLIST {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ILFindChild(pidlparent: *const Common::ITEMIDLIST, pidlchild: *const Common::ITEMIDLIST) -> *mut Common::ITEMIDLIST;
     }
@@ -1505,7 +1388,6 @@ pub unsafe fn ILFindChild(pidlparent: *const Common::ITEMIDLIST, pidlchild: *con
 #[cfg(feature = "Win32_UI_Shell_Common")]
 #[inline]
 pub unsafe fn ILFindLastID(pidl: *const Common::ITEMIDLIST) -> *mut Common::ITEMIDLIST {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ILFindLastID(pidl: *const Common::ITEMIDLIST) -> *mut Common::ITEMIDLIST;
     }
@@ -1515,7 +1397,6 @@ pub unsafe fn ILFindLastID(pidl: *const Common::ITEMIDLIST) -> *mut Common::ITEM
 #[cfg(feature = "Win32_UI_Shell_Common")]
 #[inline]
 pub unsafe fn ILFree(pidl: ::core::option::Option<*const Common::ITEMIDLIST>) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ILFree(pidl: *const Common::ITEMIDLIST);
     }
@@ -1525,7 +1406,6 @@ pub unsafe fn ILFree(pidl: ::core::option::Option<*const Common::ITEMIDLIST>) {
 #[cfg(feature = "Win32_UI_Shell_Common")]
 #[inline]
 pub unsafe fn ILGetNext(pidl: ::core::option::Option<*const Common::ITEMIDLIST>) -> *mut Common::ITEMIDLIST {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ILGetNext(pidl: *const Common::ITEMIDLIST) -> *mut Common::ITEMIDLIST;
     }
@@ -1535,7 +1415,6 @@ pub unsafe fn ILGetNext(pidl: ::core::option::Option<*const Common::ITEMIDLIST>)
 #[cfg(feature = "Win32_UI_Shell_Common")]
 #[inline]
 pub unsafe fn ILGetSize(pidl: ::core::option::Option<*const Common::ITEMIDLIST>) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ILGetSize(pidl: *const Common::ITEMIDLIST) -> u32;
     }
@@ -1545,7 +1424,6 @@ pub unsafe fn ILGetSize(pidl: ::core::option::Option<*const Common::ITEMIDLIST>)
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
 #[inline]
 pub unsafe fn ILIsEqual(pidl1: *const Common::ITEMIDLIST, pidl2: *const Common::ITEMIDLIST) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ILIsEqual(pidl1: *const Common::ITEMIDLIST, pidl2: *const Common::ITEMIDLIST) -> super::super::Foundation::BOOL;
     }
@@ -1558,7 +1436,6 @@ pub unsafe fn ILIsParent<'a, P0>(pidl1: *const Common::ITEMIDLIST, pidl2: *const
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ILIsParent(pidl1: *const Common::ITEMIDLIST, pidl2: *const Common::ITEMIDLIST, fimmediate: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -1571,7 +1448,6 @@ pub unsafe fn ILLoadFromStreamEx<'a, P0>(pstm: P0) -> ::windows::core::Result<*m
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IStream>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ILLoadFromStreamEx(pstm: *mut ::core::ffi::c_void, pidl: *mut *mut Common::ITEMIDLIST) -> ::windows::core::HRESULT;
     }
@@ -1582,7 +1458,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
 #[inline]
 pub unsafe fn ILRemoveLastID(pidl: ::core::option::Option<*mut Common::ITEMIDLIST>) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ILRemoveLastID(pidl: *mut Common::ITEMIDLIST) -> super::super::Foundation::BOOL;
     }
@@ -1595,7 +1470,6 @@ pub unsafe fn ILSaveToStream<'a, P0>(pstm: P0, pidl: *const Common::ITEMIDLIST) 
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IStream>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ILSaveToStream(pstm: *mut ::core::ffi::c_void, pidl: *const Common::ITEMIDLIST) -> ::windows::core::HRESULT;
     }
@@ -1609,7 +1483,6 @@ where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IStream>>,
     P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IStream>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IStream_Copy(pstmfrom: *mut ::core::ffi::c_void, pstmto: *mut ::core::ffi::c_void, cb: u32) -> ::windows::core::HRESULT;
     }
@@ -1622,7 +1495,6 @@ pub unsafe fn IStream_Read<'a, P0>(pstm: P0, pv: *mut ::core::ffi::c_void, cb: u
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IStream>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IStream_Read(pstm: *mut ::core::ffi::c_void, pv: *mut ::core::ffi::c_void, cb: u32) -> ::windows::core::HRESULT;
     }
@@ -1635,7 +1507,6 @@ pub unsafe fn IStream_ReadPidl<'a, P0>(pstm: P0) -> ::windows::core::Result<*mut
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IStream>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IStream_ReadPidl(pstm: *mut ::core::ffi::c_void, ppidlout: *mut *mut Common::ITEMIDLIST) -> ::windows::core::HRESULT;
     }
@@ -1649,7 +1520,6 @@ pub unsafe fn IStream_ReadStr<'a, P0>(pstm: P0) -> ::windows::core::Result<::win
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IStream>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IStream_ReadStr(pstm: *mut ::core::ffi::c_void, ppsz: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -1663,7 +1533,6 @@ pub unsafe fn IStream_Reset<'a, P0>(pstm: P0) -> ::windows::core::Result<()>
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IStream>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IStream_Reset(pstm: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1676,7 +1545,6 @@ pub unsafe fn IStream_Size<'a, P0>(pstm: P0) -> ::windows::core::Result<u64>
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IStream>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IStream_Size(pstm: *mut ::core::ffi::c_void, pui: *mut u64) -> ::windows::core::HRESULT;
     }
@@ -1690,7 +1558,6 @@ pub unsafe fn IStream_Write<'a, P0>(pstm: P0, pv: *const ::core::ffi::c_void, cb
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IStream>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IStream_Write(pstm: *mut ::core::ffi::c_void, pv: *const ::core::ffi::c_void, cb: u32) -> ::windows::core::HRESULT;
     }
@@ -1703,7 +1570,6 @@ pub unsafe fn IStream_WritePidl<'a, P0>(pstm: P0, pidlwrite: *const Common::ITEM
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IStream>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IStream_WritePidl(pstm: *mut ::core::ffi::c_void, pidlwrite: *const Common::ITEMIDLIST) -> ::windows::core::HRESULT;
     }
@@ -1717,7 +1583,6 @@ where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IStream>>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IStream_WriteStr(pstm: *mut ::core::ffi::c_void, psz: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -1726,7 +1591,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn IUnknown_AtomicRelease(ppunk: ::core::option::Option<*mut *mut ::core::ffi::c_void>) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IUnknown_AtomicRelease(ppunk: *mut *mut ::core::ffi::c_void);
     }
@@ -1739,7 +1603,6 @@ where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IUnknown_GetSite(punk: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1753,7 +1616,6 @@ pub unsafe fn IUnknown_GetWindow<'a, P0>(punk: P0) -> ::windows::core::Result<su
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IUnknown_GetWindow(punk: *mut ::core::ffi::c_void, phwnd: *mut super::super::Foundation::HWND) -> ::windows::core::HRESULT;
     }
@@ -1767,7 +1629,6 @@ where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IUnknown_QueryService(punk: *mut ::core::ffi::c_void, guidservice: *const ::windows::core::GUID, riid: *const ::windows::core::GUID, ppvout: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1780,7 +1641,6 @@ pub unsafe fn IUnknown_Set<'a, P0>(ppunk: *mut ::core::option::Option<::windows:
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IUnknown_Set(ppunk: *mut *mut ::core::ffi::c_void, punk: *mut ::core::ffi::c_void);
     }
@@ -1793,7 +1653,6 @@ where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
     P1: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IUnknown_SetSite(punk: *mut ::core::ffi::c_void, punksite: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1806,7 +1665,6 @@ pub unsafe fn ImportPrivacySettings<'a, P0>(pszfilename: P0, pfparseprivacyprefe
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImportPrivacySettings(pszfilename: ::windows::core::PCWSTR, pfparseprivacypreferences: *mut super::super::Foundation::BOOL, pfparsepersiterules: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -1816,7 +1674,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn InitNetworkAddressControl() -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InitNetworkAddressControl() -> super::super::Foundation::BOOL;
     }
@@ -1831,7 +1688,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IntlStrEqWorkerA(fcasesens: super::super::Foundation::BOOL, lpstring1: ::windows::core::PCSTR, lpstring2: ::windows::core::PCSTR, nchar: i32) -> super::super::Foundation::BOOL;
     }
@@ -1846,7 +1702,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IntlStrEqWorkerW(fcasesens: super::super::Foundation::BOOL, lpstring1: ::windows::core::PCWSTR, lpstring2: ::windows::core::PCWSTR, nchar: i32) -> super::super::Foundation::BOOL;
     }
@@ -1859,7 +1714,6 @@ pub unsafe fn IsCharSpaceA<'a, P0>(wch: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<super::super::Foundation::CHAR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsCharSpaceA(wch: super::super::Foundation::CHAR) -> super::super::Foundation::BOOL;
     }
@@ -1869,7 +1723,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn IsCharSpaceW(wch: u16) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsCharSpaceW(wch: u16) -> super::super::Foundation::BOOL;
     }
@@ -1879,7 +1732,6 @@ pub unsafe fn IsCharSpaceW(wch: u16) -> super::super::Foundation::BOOL {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn IsInternetESCEnabled() -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsInternetESCEnabled() -> super::super::Foundation::BOOL;
     }
@@ -1892,7 +1744,6 @@ pub unsafe fn IsLFNDriveA<'a, P0>(pszpath: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsLFNDriveA(pszpath: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -1905,7 +1756,6 @@ pub unsafe fn IsLFNDriveW<'a, P0>(pszpath: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsLFNDriveW(pszpath: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -1914,7 +1764,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn IsNetDrive(idrive: i32) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsNetDrive(idrive: i32) -> i32;
     }
@@ -1924,7 +1773,6 @@ pub unsafe fn IsNetDrive(idrive: i32) -> i32 {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn IsOS(dwos: OS) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsOS(dwos: OS) -> super::super::Foundation::BOOL;
     }
@@ -1934,7 +1782,6 @@ pub unsafe fn IsOS(dwos: OS) -> super::super::Foundation::BOOL {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn IsUserAnAdmin() -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsUserAnAdmin() -> super::super::Foundation::BOOL;
     }
@@ -1947,7 +1794,6 @@ pub unsafe fn LoadUserProfileA<'a, P0>(htoken: P0, lpprofileinfo: *mut PROFILEIN
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadUserProfileA(htoken: super::super::Foundation::HANDLE, lpprofileinfo: *mut PROFILEINFOA) -> super::super::Foundation::BOOL;
     }
@@ -1960,7 +1806,6 @@ pub unsafe fn LoadUserProfileW<'a, P0>(htoken: P0, lpprofileinfo: *mut PROFILEIN
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadUserProfileW(htoken: super::super::Foundation::HANDLE, lpprofileinfo: *mut PROFILEINFOW) -> super::super::Foundation::BOOL;
     }
@@ -1975,7 +1820,6 @@ where
     P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IStream>>,
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OleSaveToStreamEx(piunk: *mut ::core::ffi::c_void, pistm: *mut ::core::ffi::c_void, fcleardirty: super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
     }
@@ -1990,7 +1834,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenRegStream(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows::core::PCWSTR, pszvalue: ::windows::core::PCWSTR, grfmode: u32) -> ::core::option::Option<super::super::System::Com::IStream>;
     }
@@ -2002,7 +1845,6 @@ pub unsafe fn ParseURLA<'a, P0>(pcszurl: P0, ppu: *mut PARSEDURLA) -> ::windows:
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ParseURLA(pcszurl: ::windows::core::PCSTR, ppu: *mut PARSEDURLA) -> ::windows::core::HRESULT;
     }
@@ -2014,7 +1856,6 @@ pub unsafe fn ParseURLW<'a, P0>(pcszurl: P0, ppu: *mut PARSEDURLW) -> ::windows:
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ParseURLW(pcszurl: ::windows::core::PCWSTR, ppu: *mut PARSEDURLW) -> ::windows::core::HRESULT;
     }
@@ -2023,7 +1864,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathAddBackslashA(pszpath: &mut [u8; 260]) -> ::windows::core::PSTR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathAddBackslashA(pszpath: ::windows::core::PSTR) -> ::windows::core::PSTR;
     }
@@ -2032,7 +1872,6 @@ pub unsafe fn PathAddBackslashA(pszpath: &mut [u8; 260]) -> ::windows::core::PST
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathAddBackslashW(pszpath: &mut [u16; 260]) -> ::windows::core::PWSTR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathAddBackslashW(pszpath: ::windows::core::PWSTR) -> ::windows::core::PWSTR;
     }
@@ -2045,7 +1884,6 @@ pub unsafe fn PathAddExtensionA<'a, P0>(pszpath: &mut [u8; 260], pszext: P0) -> 
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathAddExtensionA(pszpath: ::windows::core::PSTR, pszext: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -2058,7 +1896,6 @@ pub unsafe fn PathAddExtensionW<'a, P0>(pszpath: &mut [u16; 260], pszext: P0) ->
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathAddExtensionW(pszpath: ::windows::core::PWSTR, pszext: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -2070,7 +1907,6 @@ pub unsafe fn PathAllocCanonicalize<'a, P0>(pszpathin: P0, dwflags: PATHCCH_OPTI
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathAllocCanonicalize(pszpathin: ::windows::core::PCWSTR, dwflags: PATHCCH_OPTIONS, ppszpathout: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -2084,7 +1920,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathAllocCombine(pszpathin: ::windows::core::PCWSTR, pszmore: ::windows::core::PCWSTR, dwflags: PATHCCH_OPTIONS, ppszpathout: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -2098,7 +1933,6 @@ pub unsafe fn PathAppendA<'a, P0>(pszpath: &mut [u8; 260], pszmore: P0) -> super
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathAppendA(pszpath: ::windows::core::PSTR, pszmore: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -2111,7 +1945,6 @@ pub unsafe fn PathAppendW<'a, P0>(pszpath: &mut [u16; 260], pszmore: P0) -> supe
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathAppendW(pszpath: ::windows::core::PWSTR, pszmore: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -2120,7 +1953,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathBuildRootA(pszroot: &mut [u8; 4], idrive: i32) -> ::windows::core::PSTR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathBuildRootA(pszroot: ::windows::core::PSTR, idrive: i32) -> ::windows::core::PSTR;
     }
@@ -2129,7 +1961,6 @@ pub unsafe fn PathBuildRootA(pszroot: &mut [u8; 4], idrive: i32) -> ::windows::c
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathBuildRootW(pszroot: &mut [u16; 4], idrive: i32) -> ::windows::core::PWSTR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathBuildRootW(pszroot: ::windows::core::PWSTR, idrive: i32) -> ::windows::core::PWSTR;
     }
@@ -2142,7 +1973,6 @@ pub unsafe fn PathCanonicalizeA<'a, P0>(pszbuf: &mut [u8; 260], pszpath: P0) -> 
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCanonicalizeA(pszbuf: ::windows::core::PSTR, pszpath: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -2155,7 +1985,6 @@ pub unsafe fn PathCanonicalizeW<'a, P0>(pszbuf: &mut [u16; 260], pszpath: P0) ->
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCanonicalizeW(pszbuf: ::windows::core::PWSTR, pszpath: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -2164,7 +1993,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathCchAddBackslash(pszpath: &mut [u16]) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCchAddBackslash(pszpath: ::windows::core::PWSTR, cchpath: usize) -> ::windows::core::HRESULT;
     }
@@ -2173,7 +2001,6 @@ pub unsafe fn PathCchAddBackslash(pszpath: &mut [u16]) -> ::windows::core::Resul
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathCchAddBackslashEx(pszpath: &mut [u16], ppszend: ::core::option::Option<*mut ::windows::core::PWSTR>, pcchremaining: ::core::option::Option<*mut usize>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCchAddBackslashEx(pszpath: ::windows::core::PWSTR, cchpath: usize, ppszend: *mut ::windows::core::PWSTR, pcchremaining: *mut usize) -> ::windows::core::HRESULT;
     }
@@ -2185,7 +2012,6 @@ pub unsafe fn PathCchAddExtension<'a, P0>(pszpath: &mut [u16], pszext: P0) -> ::
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCchAddExtension(pszpath: ::windows::core::PWSTR, cchpath: usize, pszext: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -2197,7 +2023,6 @@ pub unsafe fn PathCchAppend<'a, P0>(pszpath: &mut [u16], pszmore: P0) -> ::windo
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCchAppend(pszpath: ::windows::core::PWSTR, cchpath: usize, pszmore: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -2209,7 +2034,6 @@ pub unsafe fn PathCchAppendEx<'a, P0>(pszpath: &mut [u16], pszmore: P0, dwflags:
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCchAppendEx(pszpath: ::windows::core::PWSTR, cchpath: usize, pszmore: ::windows::core::PCWSTR, dwflags: PATHCCH_OPTIONS) -> ::windows::core::HRESULT;
     }
@@ -2221,7 +2045,6 @@ pub unsafe fn PathCchCanonicalize<'a, P0>(pszpathout: &mut [u16], pszpathin: P0)
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCchCanonicalize(pszpathout: ::windows::core::PWSTR, cchpathout: usize, pszpathin: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -2233,7 +2056,6 @@ pub unsafe fn PathCchCanonicalizeEx<'a, P0>(pszpathout: &mut [u16], pszpathin: P
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCchCanonicalizeEx(pszpathout: ::windows::core::PWSTR, cchpathout: usize, pszpathin: ::windows::core::PCWSTR, dwflags: PATHCCH_OPTIONS) -> ::windows::core::HRESULT;
     }
@@ -2246,7 +2068,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCchCombine(pszpathout: ::windows::core::PWSTR, cchpathout: usize, pszpathin: ::windows::core::PCWSTR, pszmore: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -2259,7 +2080,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCchCombineEx(pszpathout: ::windows::core::PWSTR, cchpathout: usize, pszpathin: ::windows::core::PCWSTR, pszmore: ::windows::core::PCWSTR, dwflags: PATHCCH_OPTIONS) -> ::windows::core::HRESULT;
     }
@@ -2271,7 +2091,6 @@ pub unsafe fn PathCchFindExtension<'a, P0>(pszpath: P0, cchpath: usize) -> ::win
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCchFindExtension(pszpath: ::windows::core::PCWSTR, cchpath: usize, ppszext: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -2285,7 +2104,6 @@ pub unsafe fn PathCchIsRoot<'a, P0>(pszpath: P0) -> super::super::Foundation::BO
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCchIsRoot(pszpath: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -2294,7 +2112,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathCchRemoveBackslash(pszpath: &mut [u16]) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCchRemoveBackslash(pszpath: ::windows::core::PWSTR, cchpath: usize) -> ::windows::core::HRESULT;
     }
@@ -2303,7 +2120,6 @@ pub unsafe fn PathCchRemoveBackslash(pszpath: &mut [u16]) -> ::windows::core::Re
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathCchRemoveBackslashEx(pszpath: ::windows::core::PWSTR, cchpath: usize, ppszend: ::core::option::Option<*mut ::windows::core::PWSTR>, pcchremaining: ::core::option::Option<*mut usize>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCchRemoveBackslashEx(pszpath: ::windows::core::PWSTR, cchpath: usize, ppszend: *mut ::windows::core::PWSTR, pcchremaining: *mut usize) -> ::windows::core::HRESULT;
     }
@@ -2312,7 +2128,6 @@ pub unsafe fn PathCchRemoveBackslashEx(pszpath: ::windows::core::PWSTR, cchpath:
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathCchRemoveExtension(pszpath: ::windows::core::PWSTR, cchpath: usize) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCchRemoveExtension(pszpath: ::windows::core::PWSTR, cchpath: usize) -> ::windows::core::HRESULT;
     }
@@ -2321,7 +2136,6 @@ pub unsafe fn PathCchRemoveExtension(pszpath: ::windows::core::PWSTR, cchpath: u
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathCchRemoveFileSpec(pszpath: ::windows::core::PWSTR, cchpath: usize) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCchRemoveFileSpec(pszpath: ::windows::core::PWSTR, cchpath: usize) -> ::windows::core::HRESULT;
     }
@@ -2333,7 +2147,6 @@ pub unsafe fn PathCchRenameExtension<'a, P0>(pszpath: &mut [u16], pszext: P0) ->
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCchRenameExtension(pszpath: ::windows::core::PWSTR, cchpath: usize, pszext: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -2345,7 +2158,6 @@ pub unsafe fn PathCchSkipRoot<'a, P0>(pszpath: P0) -> ::windows::core::Result<::
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCchSkipRoot(pszpath: ::windows::core::PCWSTR, ppszrootend: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -2355,7 +2167,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathCchStripPrefix(pszpath: &mut [u16]) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCchStripPrefix(pszpath: ::windows::core::PWSTR, cchpath: usize) -> ::windows::core::HRESULT;
     }
@@ -2364,7 +2175,6 @@ pub unsafe fn PathCchStripPrefix(pszpath: &mut [u16]) -> ::windows::core::Result
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathCchStripToRoot(pszpath: ::windows::core::PWSTR, cchpath: usize) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCchStripToRoot(pszpath: ::windows::core::PWSTR, cchpath: usize) -> ::windows::core::HRESULT;
     }
@@ -2376,7 +2186,6 @@ pub unsafe fn PathCleanupSpec<'a, P0>(pszdir: P0, pszspec: ::windows::core::PWST
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCleanupSpec(pszdir: ::windows::core::PCWSTR, pszspec: ::windows::core::PWSTR) -> PCS_RET;
     }
@@ -2389,7 +2198,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCombineA(pszdest: ::windows::core::PSTR, pszdir: ::windows::core::PCSTR, pszfile: ::windows::core::PCSTR) -> ::windows::core::PSTR;
     }
@@ -2402,7 +2210,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCombineW(pszdest: ::windows::core::PWSTR, pszdir: ::windows::core::PCWSTR, pszfile: ::windows::core::PCWSTR) -> ::windows::core::PWSTR;
     }
@@ -2415,7 +2222,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCommonPrefixA(pszfile1: ::windows::core::PCSTR, pszfile2: ::windows::core::PCSTR, achpath: ::windows::core::PSTR) -> i32;
     }
@@ -2428,7 +2234,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCommonPrefixW(pszfile1: ::windows::core::PCWSTR, pszfile2: ::windows::core::PCWSTR, achpath: ::windows::core::PWSTR) -> i32;
     }
@@ -2441,7 +2246,6 @@ pub unsafe fn PathCompactPathA<'a, P0>(hdc: P0, pszpath: &mut [u8; 260], dx: u32
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCompactPathA(hdc: super::super::Graphics::Gdi::HDC, pszpath: ::windows::core::PSTR, dx: u32) -> super::super::Foundation::BOOL;
     }
@@ -2454,7 +2258,6 @@ pub unsafe fn PathCompactPathExA<'a, P0>(pszout: &mut [u8], pszsrc: P0, dwflags:
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCompactPathExA(pszout: ::windows::core::PSTR, pszsrc: ::windows::core::PCSTR, cchmax: u32, dwflags: u32) -> super::super::Foundation::BOOL;
     }
@@ -2467,7 +2270,6 @@ pub unsafe fn PathCompactPathExW<'a, P0>(pszout: &mut [u16], pszsrc: P0, dwflags
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCompactPathExW(pszout: ::windows::core::PWSTR, pszsrc: ::windows::core::PCWSTR, cchmax: u32, dwflags: u32) -> super::super::Foundation::BOOL;
     }
@@ -2480,7 +2282,6 @@ pub unsafe fn PathCompactPathW<'a, P0>(hdc: P0, pszpath: &mut [u16; 260], dx: u3
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCompactPathW(hdc: super::super::Graphics::Gdi::HDC, pszpath: ::windows::core::PWSTR, dx: u32) -> super::super::Foundation::BOOL;
     }
@@ -2492,7 +2293,6 @@ pub unsafe fn PathCreateFromUrlA<'a, P0>(pszurl: P0, pszpath: ::windows::core::P
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCreateFromUrlA(pszurl: ::windows::core::PCSTR, pszpath: ::windows::core::PSTR, pcchpath: *mut u32, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -2504,7 +2304,6 @@ pub unsafe fn PathCreateFromUrlAlloc<'a, P0>(pszin: P0, ppszout: *mut ::windows:
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCreateFromUrlAlloc(pszin: ::windows::core::PCWSTR, ppszout: *mut ::windows::core::PWSTR, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -2516,7 +2315,6 @@ pub unsafe fn PathCreateFromUrlW<'a, P0>(pszurl: P0, pszpath: ::windows::core::P
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathCreateFromUrlW(pszurl: ::windows::core::PCWSTR, pszpath: ::windows::core::PWSTR, pcchpath: *mut u32, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -2529,7 +2327,6 @@ pub unsafe fn PathFileExistsA<'a, P0>(pszpath: P0) -> super::super::Foundation::
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathFileExistsA(pszpath: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -2542,7 +2339,6 @@ pub unsafe fn PathFileExistsW<'a, P0>(pszpath: P0) -> super::super::Foundation::
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathFileExistsW(pszpath: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -2554,7 +2350,6 @@ pub unsafe fn PathFindExtensionA<'a, P0>(pszpath: P0) -> ::windows::core::PSTR
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathFindExtensionA(pszpath: ::windows::core::PCSTR) -> ::windows::core::PSTR;
     }
@@ -2566,7 +2361,6 @@ pub unsafe fn PathFindExtensionW<'a, P0>(pszpath: P0) -> ::windows::core::PWSTR
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathFindExtensionW(pszpath: ::windows::core::PCWSTR) -> ::windows::core::PWSTR;
     }
@@ -2578,7 +2372,6 @@ pub unsafe fn PathFindFileNameA<'a, P0>(pszpath: P0) -> ::windows::core::PSTR
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathFindFileNameA(pszpath: ::windows::core::PCSTR) -> ::windows::core::PSTR;
     }
@@ -2590,7 +2383,6 @@ pub unsafe fn PathFindFileNameW<'a, P0>(pszpath: P0) -> ::windows::core::PWSTR
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathFindFileNameW(pszpath: ::windows::core::PCWSTR) -> ::windows::core::PWSTR;
     }
@@ -2602,7 +2394,6 @@ pub unsafe fn PathFindNextComponentA<'a, P0>(pszpath: P0) -> ::windows::core::PS
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathFindNextComponentA(pszpath: ::windows::core::PCSTR) -> ::windows::core::PSTR;
     }
@@ -2614,7 +2405,6 @@ pub unsafe fn PathFindNextComponentW<'a, P0>(pszpath: P0) -> ::windows::core::PW
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathFindNextComponentW(pszpath: ::windows::core::PCWSTR) -> ::windows::core::PWSTR;
     }
@@ -2624,7 +2414,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PathFindOnPathA(pszpath: &mut [u8; 260], ppszotherdirs: ::core::option::Option<*const *const i8>) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathFindOnPathA(pszpath: ::windows::core::PSTR, ppszotherdirs: *const *const i8) -> super::super::Foundation::BOOL;
     }
@@ -2634,7 +2423,6 @@ pub unsafe fn PathFindOnPathA(pszpath: &mut [u8; 260], ppszotherdirs: ::core::op
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PathFindOnPathW(pszpath: &mut [u16; 260], ppszotherdirs: ::core::option::Option<*const *const u16>) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathFindOnPathW(pszpath: ::windows::core::PWSTR, ppszotherdirs: *const *const u16) -> super::super::Foundation::BOOL;
     }
@@ -2646,7 +2434,6 @@ pub unsafe fn PathFindSuffixArrayA<'a, P0>(pszpath: P0, apszsuffix: &[::windows:
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathFindSuffixArrayA(pszpath: ::windows::core::PCSTR, apszsuffix: *const ::windows::core::PSTR, iarraysize: i32) -> ::windows::core::PSTR;
     }
@@ -2658,7 +2445,6 @@ pub unsafe fn PathFindSuffixArrayW<'a, P0>(pszpath: P0, apszsuffix: &[::windows:
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathFindSuffixArrayW(pszpath: ::windows::core::PCWSTR, apszsuffix: *const ::windows::core::PWSTR, iarraysize: i32) -> ::windows::core::PWSTR;
     }
@@ -2670,7 +2456,6 @@ pub unsafe fn PathGetArgsA<'a, P0>(pszpath: P0) -> ::windows::core::PSTR
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathGetArgsA(pszpath: ::windows::core::PCSTR) -> ::windows::core::PSTR;
     }
@@ -2682,7 +2467,6 @@ pub unsafe fn PathGetArgsW<'a, P0>(pszpath: P0) -> ::windows::core::PWSTR
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathGetArgsW(pszpath: ::windows::core::PCWSTR) -> ::windows::core::PWSTR;
     }
@@ -2691,7 +2475,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathGetCharTypeA(ch: u8) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathGetCharTypeA(ch: u8) -> u32;
     }
@@ -2700,7 +2483,6 @@ pub unsafe fn PathGetCharTypeA(ch: u8) -> u32 {
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathGetCharTypeW(ch: u16) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathGetCharTypeW(ch: u16) -> u32;
     }
@@ -2712,7 +2494,6 @@ pub unsafe fn PathGetDriveNumberA<'a, P0>(pszpath: P0) -> i32
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathGetDriveNumberA(pszpath: ::windows::core::PCSTR) -> i32;
     }
@@ -2724,7 +2505,6 @@ pub unsafe fn PathGetDriveNumberW<'a, P0>(pszpath: P0) -> i32
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathGetDriveNumberW(pszpath: ::windows::core::PCWSTR) -> i32;
     }
@@ -2733,7 +2513,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathGetShortPath(pszlongpath: &mut [u16; 260]) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathGetShortPath(pszlongpath: ::windows::core::PWSTR);
     }
@@ -2747,7 +2526,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsContentTypeA(pszpath: ::windows::core::PCSTR, pszcontenttype: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -2761,7 +2539,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsContentTypeW(pszpath: ::windows::core::PCWSTR, pszcontenttype: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -2774,7 +2551,6 @@ pub unsafe fn PathIsDirectoryA<'a, P0>(pszpath: P0) -> super::super::Foundation:
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsDirectoryA(pszpath: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -2787,7 +2563,6 @@ pub unsafe fn PathIsDirectoryEmptyA<'a, P0>(pszpath: P0) -> super::super::Founda
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsDirectoryEmptyA(pszpath: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -2800,7 +2575,6 @@ pub unsafe fn PathIsDirectoryEmptyW<'a, P0>(pszpath: P0) -> super::super::Founda
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsDirectoryEmptyW(pszpath: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -2813,7 +2587,6 @@ pub unsafe fn PathIsDirectoryW<'a, P0>(pszpath: P0) -> super::super::Foundation:
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsDirectoryW(pszpath: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -2826,7 +2599,6 @@ pub unsafe fn PathIsExe<'a, P0>(pszpath: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsExe(pszpath: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -2839,7 +2611,6 @@ pub unsafe fn PathIsFileSpecA<'a, P0>(pszpath: P0) -> super::super::Foundation::
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsFileSpecA(pszpath: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -2852,7 +2623,6 @@ pub unsafe fn PathIsFileSpecW<'a, P0>(pszpath: P0) -> super::super::Foundation::
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsFileSpecW(pszpath: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -2865,7 +2635,6 @@ pub unsafe fn PathIsLFNFileSpecA<'a, P0>(pszname: P0) -> super::super::Foundatio
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsLFNFileSpecA(pszname: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -2878,7 +2647,6 @@ pub unsafe fn PathIsLFNFileSpecW<'a, P0>(pszname: P0) -> super::super::Foundatio
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsLFNFileSpecW(pszname: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -2891,7 +2659,6 @@ pub unsafe fn PathIsNetworkPathA<'a, P0>(pszpath: P0) -> super::super::Foundatio
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsNetworkPathA(pszpath: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -2904,7 +2671,6 @@ pub unsafe fn PathIsNetworkPathW<'a, P0>(pszpath: P0) -> super::super::Foundatio
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsNetworkPathW(pszpath: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -2918,7 +2684,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsPrefixA(pszprefix: ::windows::core::PCSTR, pszpath: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -2932,7 +2697,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsPrefixW(pszprefix: ::windows::core::PCWSTR, pszpath: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -2945,7 +2709,6 @@ pub unsafe fn PathIsRelativeA<'a, P0>(pszpath: P0) -> super::super::Foundation::
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsRelativeA(pszpath: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -2958,7 +2721,6 @@ pub unsafe fn PathIsRelativeW<'a, P0>(pszpath: P0) -> super::super::Foundation::
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsRelativeW(pszpath: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -2971,7 +2733,6 @@ pub unsafe fn PathIsRootA<'a, P0>(pszpath: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsRootA(pszpath: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -2984,7 +2745,6 @@ pub unsafe fn PathIsRootW<'a, P0>(pszpath: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsRootW(pszpath: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -2998,7 +2758,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsSameRootA(pszpath1: ::windows::core::PCSTR, pszpath2: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -3012,7 +2771,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsSameRootW(pszpath1: ::windows::core::PCWSTR, pszpath2: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -3025,7 +2783,6 @@ pub unsafe fn PathIsSlowA<'a, P0>(pszfile: P0, dwattr: u32) -> super::super::Fou
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsSlowA(pszfile: ::windows::core::PCSTR, dwattr: u32) -> super::super::Foundation::BOOL;
     }
@@ -3038,7 +2795,6 @@ pub unsafe fn PathIsSlowW<'a, P0>(pszfile: P0, dwattr: u32) -> super::super::Fou
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsSlowW(pszfile: ::windows::core::PCWSTR, dwattr: u32) -> super::super::Foundation::BOOL;
     }
@@ -3051,7 +2807,6 @@ pub unsafe fn PathIsSystemFolderA<'a, P0>(pszpath: P0, dwattrb: u32) -> super::s
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsSystemFolderA(pszpath: ::windows::core::PCSTR, dwattrb: u32) -> super::super::Foundation::BOOL;
     }
@@ -3064,7 +2819,6 @@ pub unsafe fn PathIsSystemFolderW<'a, P0>(pszpath: P0, dwattrb: u32) -> super::s
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsSystemFolderW(pszpath: ::windows::core::PCWSTR, dwattrb: u32) -> super::super::Foundation::BOOL;
     }
@@ -3077,7 +2831,6 @@ pub unsafe fn PathIsUNCA<'a, P0>(pszpath: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsUNCA(pszpath: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -3090,7 +2843,6 @@ pub unsafe fn PathIsUNCEx<'a, P0>(pszpath: P0, ppszserver: ::core::option::Optio
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsUNCEx(pszpath: ::windows::core::PCWSTR, ppszserver: *mut ::windows::core::PWSTR) -> super::super::Foundation::BOOL;
     }
@@ -3103,7 +2855,6 @@ pub unsafe fn PathIsUNCServerA<'a, P0>(pszpath: P0) -> super::super::Foundation:
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsUNCServerA(pszpath: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -3116,7 +2867,6 @@ pub unsafe fn PathIsUNCServerShareA<'a, P0>(pszpath: P0) -> super::super::Founda
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsUNCServerShareA(pszpath: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -3129,7 +2879,6 @@ pub unsafe fn PathIsUNCServerShareW<'a, P0>(pszpath: P0) -> super::super::Founda
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsUNCServerShareW(pszpath: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -3142,7 +2891,6 @@ pub unsafe fn PathIsUNCServerW<'a, P0>(pszpath: P0) -> super::super::Foundation:
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsUNCServerW(pszpath: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -3155,7 +2903,6 @@ pub unsafe fn PathIsUNCW<'a, P0>(pszpath: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsUNCW(pszpath: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -3168,7 +2915,6 @@ pub unsafe fn PathIsURLA<'a, P0>(pszpath: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsURLA(pszpath: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -3181,7 +2927,6 @@ pub unsafe fn PathIsURLW<'a, P0>(pszpath: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathIsURLW(pszpath: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -3191,7 +2936,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PathMakePrettyA(pszpath: ::windows::core::PSTR) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathMakePrettyA(pszpath: ::windows::core::PSTR) -> super::super::Foundation::BOOL;
     }
@@ -3201,7 +2945,6 @@ pub unsafe fn PathMakePrettyA(pszpath: ::windows::core::PSTR) -> super::super::F
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PathMakePrettyW(pszpath: ::windows::core::PWSTR) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathMakePrettyW(pszpath: ::windows::core::PWSTR) -> super::super::Foundation::BOOL;
     }
@@ -3214,7 +2957,6 @@ pub unsafe fn PathMakeSystemFolderA<'a, P0>(pszpath: P0) -> super::super::Founda
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathMakeSystemFolderA(pszpath: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -3227,7 +2969,6 @@ pub unsafe fn PathMakeSystemFolderW<'a, P0>(pszpath: P0) -> super::super::Founda
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathMakeSystemFolderW(pszpath: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -3242,7 +2983,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathMakeUniqueName(pszuniquename: ::windows::core::PWSTR, cchmax: u32, psztemplate: ::windows::core::PCWSTR, pszlongplate: ::windows::core::PCWSTR, pszdir: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -3256,7 +2996,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathMatchSpecA(pszfile: ::windows::core::PCSTR, pszspec: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -3269,7 +3008,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathMatchSpecExA(pszfile: ::windows::core::PCSTR, pszspec: ::windows::core::PCSTR, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -3282,7 +3020,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathMatchSpecExW(pszfile: ::windows::core::PCWSTR, pszspec: ::windows::core::PCWSTR, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -3296,7 +3033,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathMatchSpecW(pszfile: ::windows::core::PCWSTR, pszspec: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -3305,7 +3041,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathParseIconLocationA(psziconfile: ::windows::core::PSTR) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathParseIconLocationA(psziconfile: ::windows::core::PSTR) -> i32;
     }
@@ -3314,7 +3049,6 @@ pub unsafe fn PathParseIconLocationA(psziconfile: ::windows::core::PSTR) -> i32 
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathParseIconLocationW(psziconfile: ::windows::core::PWSTR) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathParseIconLocationW(psziconfile: ::windows::core::PWSTR) -> i32;
     }
@@ -3323,7 +3057,6 @@ pub unsafe fn PathParseIconLocationW(psziconfile: ::windows::core::PWSTR) -> i32
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathQualify(psz: ::windows::core::PWSTR) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathQualify(psz: ::windows::core::PWSTR);
     }
@@ -3333,7 +3066,6 @@ pub unsafe fn PathQualify(psz: ::windows::core::PWSTR) {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PathQuoteSpacesA(lpsz: &mut [u8; 260]) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathQuoteSpacesA(lpsz: ::windows::core::PSTR) -> super::super::Foundation::BOOL;
     }
@@ -3343,7 +3075,6 @@ pub unsafe fn PathQuoteSpacesA(lpsz: &mut [u8; 260]) -> super::super::Foundation
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PathQuoteSpacesW(lpsz: &mut [u16; 260]) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathQuoteSpacesW(lpsz: ::windows::core::PWSTR) -> super::super::Foundation::BOOL;
     }
@@ -3357,7 +3088,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathRelativePathToA(pszpath: ::windows::core::PSTR, pszfrom: ::windows::core::PCSTR, dwattrfrom: u32, pszto: ::windows::core::PCSTR, dwattrto: u32) -> super::super::Foundation::BOOL;
     }
@@ -3371,7 +3101,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathRelativePathToW(pszpath: ::windows::core::PWSTR, pszfrom: ::windows::core::PCWSTR, dwattrfrom: u32, pszto: ::windows::core::PCWSTR, dwattrto: u32) -> super::super::Foundation::BOOL;
     }
@@ -3380,7 +3109,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathRemoveArgsA(pszpath: ::windows::core::PSTR) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathRemoveArgsA(pszpath: ::windows::core::PSTR);
     }
@@ -3389,7 +3117,6 @@ pub unsafe fn PathRemoveArgsA(pszpath: ::windows::core::PSTR) {
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathRemoveArgsW(pszpath: ::windows::core::PWSTR) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathRemoveArgsW(pszpath: ::windows::core::PWSTR);
     }
@@ -3398,7 +3125,6 @@ pub unsafe fn PathRemoveArgsW(pszpath: ::windows::core::PWSTR) {
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathRemoveBackslashA(pszpath: ::windows::core::PSTR) -> ::windows::core::PSTR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathRemoveBackslashA(pszpath: ::windows::core::PSTR) -> ::windows::core::PSTR;
     }
@@ -3407,7 +3133,6 @@ pub unsafe fn PathRemoveBackslashA(pszpath: ::windows::core::PSTR) -> ::windows:
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathRemoveBackslashW(pszpath: ::windows::core::PWSTR) -> ::windows::core::PWSTR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathRemoveBackslashW(pszpath: ::windows::core::PWSTR) -> ::windows::core::PWSTR;
     }
@@ -3416,7 +3141,6 @@ pub unsafe fn PathRemoveBackslashW(pszpath: ::windows::core::PWSTR) -> ::windows
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathRemoveBlanksA(pszpath: ::windows::core::PSTR) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathRemoveBlanksA(pszpath: ::windows::core::PSTR);
     }
@@ -3425,7 +3149,6 @@ pub unsafe fn PathRemoveBlanksA(pszpath: ::windows::core::PSTR) {
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathRemoveBlanksW(pszpath: ::windows::core::PWSTR) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathRemoveBlanksW(pszpath: ::windows::core::PWSTR);
     }
@@ -3434,7 +3157,6 @@ pub unsafe fn PathRemoveBlanksW(pszpath: ::windows::core::PWSTR) {
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathRemoveExtensionA(pszpath: ::windows::core::PSTR) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathRemoveExtensionA(pszpath: ::windows::core::PSTR);
     }
@@ -3443,7 +3165,6 @@ pub unsafe fn PathRemoveExtensionA(pszpath: ::windows::core::PSTR) {
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathRemoveExtensionW(pszpath: ::windows::core::PWSTR) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathRemoveExtensionW(pszpath: ::windows::core::PWSTR);
     }
@@ -3453,7 +3174,6 @@ pub unsafe fn PathRemoveExtensionW(pszpath: ::windows::core::PWSTR) {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PathRemoveFileSpecA(pszpath: ::windows::core::PSTR) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathRemoveFileSpecA(pszpath: ::windows::core::PSTR) -> super::super::Foundation::BOOL;
     }
@@ -3463,7 +3183,6 @@ pub unsafe fn PathRemoveFileSpecA(pszpath: ::windows::core::PSTR) -> super::supe
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PathRemoveFileSpecW(pszpath: ::windows::core::PWSTR) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathRemoveFileSpecW(pszpath: ::windows::core::PWSTR) -> super::super::Foundation::BOOL;
     }
@@ -3476,7 +3195,6 @@ pub unsafe fn PathRenameExtensionA<'a, P0>(pszpath: &mut [u8; 260], pszext: P0) 
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathRenameExtensionA(pszpath: ::windows::core::PSTR, pszext: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -3489,7 +3207,6 @@ pub unsafe fn PathRenameExtensionW<'a, P0>(pszpath: &mut [u16; 260], pszext: P0)
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathRenameExtensionW(pszpath: ::windows::core::PWSTR, pszext: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -3498,7 +3215,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathResolve(pszpath: &mut [u16; 260], dirs: ::core::option::Option<*const *const u16>, fflags: PRF_FLAGS) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathResolve(pszpath: ::windows::core::PWSTR, dirs: *const *const u16, fflags: PRF_FLAGS) -> i32;
     }
@@ -3511,7 +3227,6 @@ pub unsafe fn PathSearchAndQualifyA<'a, P0>(pszpath: P0, pszbuf: &mut [u8]) -> s
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathSearchAndQualifyA(pszpath: ::windows::core::PCSTR, pszbuf: ::windows::core::PSTR, cchbuf: u32) -> super::super::Foundation::BOOL;
     }
@@ -3524,7 +3239,6 @@ pub unsafe fn PathSearchAndQualifyW<'a, P0>(pszpath: P0, pszbuf: &mut [u16]) -> 
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathSearchAndQualifyW(pszpath: ::windows::core::PCWSTR, pszbuf: ::windows::core::PWSTR, cchbuf: u32) -> super::super::Foundation::BOOL;
     }
@@ -3538,7 +3252,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathSetDlgItemPathA(hdlg: super::super::Foundation::HWND, id: i32, pszpath: ::windows::core::PCSTR);
     }
@@ -3552,7 +3265,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathSetDlgItemPathW(hdlg: super::super::Foundation::HWND, id: i32, pszpath: ::windows::core::PCWSTR);
     }
@@ -3564,7 +3276,6 @@ pub unsafe fn PathSkipRootA<'a, P0>(pszpath: P0) -> ::windows::core::PSTR
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathSkipRootA(pszpath: ::windows::core::PCSTR) -> ::windows::core::PSTR;
     }
@@ -3576,7 +3287,6 @@ pub unsafe fn PathSkipRootW<'a, P0>(pszpath: P0) -> ::windows::core::PWSTR
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathSkipRootW(pszpath: ::windows::core::PCWSTR) -> ::windows::core::PWSTR;
     }
@@ -3585,7 +3295,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathStripPathA(pszpath: ::windows::core::PSTR) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathStripPathA(pszpath: ::windows::core::PSTR);
     }
@@ -3594,7 +3303,6 @@ pub unsafe fn PathStripPathA(pszpath: ::windows::core::PSTR) {
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathStripPathW(pszpath: ::windows::core::PWSTR) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathStripPathW(pszpath: ::windows::core::PWSTR);
     }
@@ -3604,7 +3312,6 @@ pub unsafe fn PathStripPathW(pszpath: ::windows::core::PWSTR) {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PathStripToRootA(pszpath: ::windows::core::PSTR) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathStripToRootA(pszpath: ::windows::core::PSTR) -> super::super::Foundation::BOOL;
     }
@@ -3614,7 +3321,6 @@ pub unsafe fn PathStripToRootA(pszpath: ::windows::core::PSTR) -> super::super::
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PathStripToRootW(pszpath: ::windows::core::PWSTR) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathStripToRootW(pszpath: ::windows::core::PWSTR) -> super::super::Foundation::BOOL;
     }
@@ -3627,7 +3333,6 @@ pub unsafe fn PathUnExpandEnvStringsA<'a, P0>(pszpath: P0, pszbuf: &mut [u8]) ->
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathUnExpandEnvStringsA(pszpath: ::windows::core::PCSTR, pszbuf: ::windows::core::PSTR, cchbuf: u32) -> super::super::Foundation::BOOL;
     }
@@ -3640,7 +3345,6 @@ pub unsafe fn PathUnExpandEnvStringsW<'a, P0>(pszpath: P0, pszbuf: &mut [u16]) -
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathUnExpandEnvStringsW(pszpath: ::windows::core::PCWSTR, pszbuf: ::windows::core::PWSTR, cchbuf: u32) -> super::super::Foundation::BOOL;
     }
@@ -3649,7 +3353,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathUndecorateA(pszpath: ::windows::core::PSTR) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathUndecorateA(pszpath: ::windows::core::PSTR);
     }
@@ -3658,7 +3361,6 @@ pub unsafe fn PathUndecorateA(pszpath: ::windows::core::PSTR) {
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn PathUndecorateW(pszpath: ::windows::core::PWSTR) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathUndecorateW(pszpath: ::windows::core::PWSTR);
     }
@@ -3671,7 +3373,6 @@ pub unsafe fn PathUnmakeSystemFolderA<'a, P0>(pszpath: P0) -> super::super::Foun
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathUnmakeSystemFolderA(pszpath: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -3684,7 +3385,6 @@ pub unsafe fn PathUnmakeSystemFolderW<'a, P0>(pszpath: P0) -> super::super::Foun
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathUnmakeSystemFolderW(pszpath: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -3694,7 +3394,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PathUnquoteSpacesA(lpsz: ::windows::core::PSTR) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathUnquoteSpacesA(lpsz: ::windows::core::PSTR) -> super::super::Foundation::BOOL;
     }
@@ -3704,7 +3403,6 @@ pub unsafe fn PathUnquoteSpacesA(lpsz: ::windows::core::PSTR) -> super::super::F
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PathUnquoteSpacesW(lpsz: ::windows::core::PWSTR) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathUnquoteSpacesW(lpsz: ::windows::core::PWSTR) -> super::super::Foundation::BOOL;
     }
@@ -3719,7 +3417,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PathYetAnotherMakeUniqueName(pszuniquename: ::windows::core::PWSTR, pszpath: ::windows::core::PCWSTR, pszshort: ::windows::core::PCWSTR, pszfilespec: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -3732,7 +3429,6 @@ pub unsafe fn PickIconDlg<'a, P0>(hwnd: P0, psziconpath: &mut [u16], piiconindex
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PickIconDlg(hwnd: super::super::Foundation::HWND, psziconpath: ::windows::core::PWSTR, cchiconpath: u32, piiconindex: *mut i32) -> i32;
     }
@@ -3744,7 +3440,6 @@ pub unsafe fn QISearch<T>(that: *mut ::core::ffi::c_void, pqit: *const QITAB) ->
 where
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn QISearch(that: *mut ::core::ffi::c_void, pqit: *const QITAB, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -3755,7 +3450,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ReadCabinetState(pcs: *mut CABINETSTATE, clength: i32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReadCabinetState(pcs: *mut CABINETSTATE, clength: i32) -> super::super::Foundation::BOOL;
     }
@@ -3768,7 +3462,6 @@ pub unsafe fn RealDriveType<'a, P0>(idrive: i32, foktohitnet: P0) -> i32
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RealDriveType(idrive: i32, foktohitnet: super::super::Foundation::BOOL) -> i32;
     }
@@ -3778,7 +3471,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RegisterAppConstrainedChangeNotification(routine: PAPPCONSTRAIN_CHANGE_ROUTINE, context: ::core::option::Option<*const ::core::ffi::c_void>, registration: *mut *mut _APPCONSTRAIN_REGISTRATION) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterAppConstrainedChangeNotification(routine: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void, registration: *mut *mut _APPCONSTRAIN_REGISTRATION) -> u32;
     }
@@ -3788,7 +3480,6 @@ pub unsafe fn RegisterAppConstrainedChangeNotification(routine: PAPPCONSTRAIN_CH
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RegisterAppStateChangeNotification(routine: PAPPSTATE_CHANGE_ROUTINE, context: ::core::option::Option<*const ::core::ffi::c_void>, registration: *mut *mut _APPSTATE_REGISTRATION) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterAppStateChangeNotification(routine: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void, registration: *mut *mut _APPSTATE_REGISTRATION) -> u32;
     }
@@ -3801,7 +3492,6 @@ pub unsafe fn RegisterScaleChangeEvent<'a, P0>(hevent: P0) -> ::windows::core::R
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterScaleChangeEvent(hevent: super::super::Foundation::HANDLE, pdwcookie: *mut usize) -> ::windows::core::HRESULT;
     }
@@ -3815,7 +3505,6 @@ pub unsafe fn RegisterScaleChangeNotifications<'a, P0>(displaydevice: DISPLAY_DE
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterScaleChangeNotifications(displaydevice: DISPLAY_DEVICE_TYPE, hwndnotify: super::super::Foundation::HWND, umsgnotify: u32, pdwcookie: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -3829,7 +3518,6 @@ pub unsafe fn RemoveWindowSubclass<'a, P0>(hwnd: P0, pfnsubclass: SUBCLASSPROC, 
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RemoveWindowSubclass(hwnd: super::super::Foundation::HWND, pfnsubclass: *mut ::core::ffi::c_void, uidsubclass: usize) -> super::super::Foundation::BOOL;
     }
@@ -3843,7 +3531,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RestartDialog(hwnd: super::super::Foundation::HWND, pszprompt: ::windows::core::PCWSTR, dwreturn: u32) -> i32;
     }
@@ -3857,7 +3544,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RestartDialogEx(hwnd: super::super::Foundation::HWND, pszprompt: ::windows::core::PCWSTR, dwreturn: u32, dwreasoncode: u32) -> i32;
     }
@@ -3866,7 +3552,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn RevokeScaleChangeNotifications(displaydevice: DISPLAY_DEVICE_TYPE, dwcookie: u32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RevokeScaleChangeNotifications(displaydevice: DISPLAY_DEVICE_TYPE, dwcookie: u32) -> ::windows::core::HRESULT;
     }
@@ -3880,7 +3565,6 @@ where
     P0: ::std::convert::Into<HPSXA>,
     P1: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHAddFromPropSheetExtArray(hpsxa: HPSXA, lpfnaddpage: *mut ::core::ffi::c_void, lparam: super::super::Foundation::LPARAM) -> u32;
     }
@@ -3889,7 +3573,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn SHAddToRecentDocs(uflags: u32, pv: ::core::option::Option<*const ::core::ffi::c_void>) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHAddToRecentDocs(uflags: u32, pv: *const ::core::ffi::c_void);
     }
@@ -3898,7 +3581,6 @@ pub unsafe fn SHAddToRecentDocs(uflags: u32, pv: ::core::option::Option<*const :
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn SHAlloc(cb: usize) -> *mut ::core::ffi::c_void {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHAlloc(cb: usize) -> *mut ::core::ffi::c_void;
     }
@@ -3908,7 +3590,6 @@ pub unsafe fn SHAlloc(cb: usize) -> *mut ::core::ffi::c_void {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SHAllocShared(pvdata: ::core::option::Option<*const ::core::ffi::c_void>, dwsize: u32, dwprocessid: u32) -> super::super::Foundation::HANDLE {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHAllocShared(pvdata: *const ::core::ffi::c_void, dwsize: u32, dwprocessid: u32) -> super::super::Foundation::HANDLE;
     }
@@ -3920,7 +3601,6 @@ pub unsafe fn SHAnsiToAnsi<'a, P0>(pszsrc: P0, pszdst: &mut [u8]) -> i32
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHAnsiToAnsi(pszsrc: ::windows::core::PCSTR, pszdst: ::windows::core::PSTR, cchbuf: i32) -> i32;
     }
@@ -3932,7 +3612,6 @@ pub unsafe fn SHAnsiToUnicode<'a, P0>(pszsrc: P0, pwszdst: &mut [u16]) -> i32
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHAnsiToUnicode(pszsrc: ::windows::core::PCSTR, pwszdst: ::windows::core::PWSTR, cwchbuf: i32) -> i32;
     }
@@ -3942,7 +3621,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SHAppBarMessage(dwmessage: u32, pdata: *mut APPBARDATA) -> usize {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHAppBarMessage(dwmessage: u32, pdata: *mut APPBARDATA) -> usize;
     }
@@ -3954,7 +3632,6 @@ pub unsafe fn SHAssocEnumHandlers<'a, P0>(pszextra: P0, affilter: ASSOC_FILTER) 
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHAssocEnumHandlers(pszextra: ::windows::core::PCWSTR, affilter: ASSOC_FILTER, ppenumhandler: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -3968,7 +3645,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHAssocEnumHandlersForProtocolByApplication(protocol: ::windows::core::PCWSTR, riid: *const ::windows::core::GUID, enumhandlers: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -3982,7 +3658,6 @@ pub unsafe fn SHAutoComplete<'a, P0>(hwndedit: P0, dwflags: SHELL_AUTOCOMPLETE_F
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHAutoComplete(hwndedit: super::super::Foundation::HWND, dwflags: SHELL_AUTOCOMPLETE_FLAGS) -> ::windows::core::HRESULT;
     }
@@ -3996,7 +3671,6 @@ where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IShellFolder>>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHBindToFolderIDListParent(psfroot: *mut ::core::ffi::c_void, pidl: *const Common::ITEMIDLIST, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void, ppidllast: *mut *mut Common::ITEMIDLIST) -> ::windows::core::HRESULT;
     }
@@ -4012,7 +3686,6 @@ where
     P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IBindCtx>>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHBindToFolderIDListParentEx(psfroot: *mut ::core::ffi::c_void, pidl: *const Common::ITEMIDLIST, ppbc: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void, ppidllast: *mut *mut Common::ITEMIDLIST) -> ::windows::core::HRESULT;
     }
@@ -4028,7 +3701,6 @@ where
     P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IBindCtx>>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHBindToObject(psf: *mut ::core::ffi::c_void, pidl: *const Common::ITEMIDLIST, pbc: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4042,7 +3714,6 @@ pub unsafe fn SHBindToParent<T>(pidl: *const Common::ITEMIDLIST, ppidllast: ::co
 where
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHBindToParent(pidl: *const Common::ITEMIDLIST, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void, ppidllast: *mut *mut Common::ITEMIDLIST) -> ::windows::core::HRESULT;
     }
@@ -4053,7 +3724,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
 #[inline]
 pub unsafe fn SHBrowseForFolderA(lpbi: *const BROWSEINFOA) -> *mut Common::ITEMIDLIST {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHBrowseForFolderA(lpbi: *const BROWSEINFOA) -> *mut Common::ITEMIDLIST;
     }
@@ -4063,7 +3733,6 @@ pub unsafe fn SHBrowseForFolderA(lpbi: *const BROWSEINFOA) -> *mut Common::ITEMI
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
 #[inline]
 pub unsafe fn SHBrowseForFolderW(lpbi: *const BROWSEINFOW) -> *mut Common::ITEMIDLIST {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHBrowseForFolderW(lpbi: *const BROWSEINFOW) -> *mut Common::ITEMIDLIST;
     }
@@ -4075,7 +3744,6 @@ pub unsafe fn SHCLSIDFromString<'a, P0>(psz: P0) -> ::windows::core::Result<::wi
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCLSIDFromString(psz: ::windows::core::PCWSTR, pclsid: *mut ::windows::core::GUID) -> ::windows::core::HRESULT;
     }
@@ -4089,7 +3757,6 @@ pub unsafe fn SHChangeNotification_Lock<'a, P0>(hchange: P0, dwprocid: u32, pppi
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHChangeNotification_Lock(hchange: super::super::Foundation::HANDLE, dwprocid: u32, pppidl: *mut *mut *mut Common::ITEMIDLIST, plevent: *mut i32) -> ShFindChangeNotificationHandle;
     }
@@ -4102,7 +3769,6 @@ pub unsafe fn SHChangeNotification_Unlock<'a, P0>(hlock: P0) -> super::super::Fo
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHChangeNotification_Unlock(hlock: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -4111,7 +3777,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn SHChangeNotify(weventid: SHCNE_ID, uflags: SHCNF_FLAGS, dwitem1: ::core::option::Option<*const ::core::ffi::c_void>, dwitem2: ::core::option::Option<*const ::core::ffi::c_void>) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHChangeNotify(weventid: SHCNE_ID, uflags: SHCNF_FLAGS, dwitem1: *const ::core::ffi::c_void, dwitem2: *const ::core::ffi::c_void);
     }
@@ -4121,7 +3786,6 @@ pub unsafe fn SHChangeNotify(weventid: SHCNE_ID, uflags: SHCNF_FLAGS, dwitem1: :
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SHChangeNotifyDeregister(ulid: u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHChangeNotifyDeregister(ulid: u32) -> super::super::Foundation::BOOL;
     }
@@ -4134,7 +3798,6 @@ pub unsafe fn SHChangeNotifyRegister<'a, P0>(hwnd: P0, fsources: SHCNRF_SOURCE, 
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHChangeNotifyRegister(hwnd: super::super::Foundation::HWND, fsources: SHCNRF_SOURCE, fevents: i32, wmsg: u32, centries: i32, pshcne: *const SHChangeNotifyEntry) -> u32;
     }
@@ -4143,7 +3806,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn SHChangeNotifyRegisterThread(status: SCNRT_STATUS) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHChangeNotifyRegisterThread(status: SCNRT_STATUS);
     }
@@ -4157,7 +3819,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCloneSpecialIDList(hwnd: super::super::Foundation::HWND, csidl: i32, fcreate: super::super::Foundation::BOOL) -> *mut Common::ITEMIDLIST;
     }
@@ -4171,7 +3832,6 @@ where
     P1: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCoCreateInstance(pszclsid: ::windows::core::PCWSTR, pclsid: *const ::windows::core::GUID, punkouter: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4187,7 +3847,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<super::super::System::Registry::HKEY>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCopyKeyA(hkeysrc: super::super::System::Registry::HKEY, pszsrcsubkey: ::windows::core::PCSTR, hkeydest: super::super::System::Registry::HKEY, freserved: u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -4202,7 +3861,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<super::super::System::Registry::HKEY>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCopyKeyW(hkeysrc: super::super::System::Registry::HKEY, pszsrcsubkey: ::windows::core::PCWSTR, hkeydest: super::super::System::Registry::HKEY, freserved: u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -4214,7 +3872,6 @@ pub unsafe fn SHCreateAssociationRegistration<T>() -> ::windows::core::Result<T>
 where
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateAssociationRegistration(riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4229,7 +3886,6 @@ where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IDataObject>>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateDataObject(pidlfolder: *const Common::ITEMIDLIST, cidl: u32, apidl: *const *const Common::ITEMIDLIST, pdtinner: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4243,7 +3899,6 @@ pub unsafe fn SHCreateDefaultContextMenu<T>(pdcm: *const DEFCONTEXTMENU) -> ::wi
 where
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateDefaultContextMenu(pdcm: *const DEFCONTEXTMENU, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4256,7 +3911,6 @@ pub unsafe fn SHCreateDefaultExtractIcon<T>() -> ::windows::core::Result<T>
 where
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateDefaultExtractIcon(riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4269,7 +3923,6 @@ pub unsafe fn SHCreateDefaultPropertiesOp<'a, P0>(psi: P0) -> ::windows::core::R
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IShellItem>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateDefaultPropertiesOp(psi: *mut ::core::ffi::c_void, ppfileop: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4284,7 +3937,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateDirectory(hwnd: super::super::Foundation::HWND, pszpath: ::windows::core::PCWSTR) -> i32;
     }
@@ -4298,7 +3950,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateDirectoryExA(hwnd: super::super::Foundation::HWND, pszpath: ::windows::core::PCSTR, psa: *const super::super::Security::SECURITY_ATTRIBUTES) -> i32;
     }
@@ -4312,7 +3963,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateDirectoryExW(hwnd: super::super::Foundation::HWND, pszpath: ::windows::core::PCWSTR, psa: *const super::super::Security::SECURITY_ATTRIBUTES) -> i32;
     }
@@ -4325,7 +3975,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateFileExtractIconW(pszfile: ::windows::core::PCWSTR, dwfileattributes: u32, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4339,7 +3988,6 @@ pub unsafe fn SHCreateItemFromIDList<T>(pidl: *const Common::ITEMIDLIST) -> ::wi
 where
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateItemFromIDList(pidl: *const Common::ITEMIDLIST, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4355,7 +4003,6 @@ where
     P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IBindCtx>>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateItemFromParsingName(pszpath: ::windows::core::PCWSTR, pbc: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4372,7 +4019,6 @@ where
     P2: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IBindCtx>>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateItemFromRelativeName(psiparent: *mut ::core::ffi::c_void, pszname: ::windows::core::PCWSTR, pbc: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4386,7 +4032,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateItemInKnownFolder(kfid: *const ::windows::core::GUID, dwkfflags: u32, pszitem: ::windows::core::PCWSTR, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4401,7 +4046,6 @@ where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IShellFolder>>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateItemWithParent(pidlparent: *const Common::ITEMIDLIST, psfparent: *mut ::core::ffi::c_void, pidl: *const Common::ITEMIDLIST, riid: *const ::windows::core::GUID, ppvitem: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4412,7 +4056,6 @@ where
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn SHCreateMemStream(pinit: ::core::option::Option<&[u8]>) -> ::core::option::Option<super::super::System::Com::IStream> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateMemStream(pinit: *const u8, cbinit: u32) -> ::core::option::Option<super::super::System::Com::IStream>;
     }
@@ -4422,7 +4065,6 @@ pub unsafe fn SHCreateMemStream(pinit: ::core::option::Option<&[u8]>) -> ::core:
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_System_Threading"))]
 #[inline]
 pub unsafe fn SHCreateProcessAsUserW(pscpi: *mut SHCREATEPROCESSINFOW) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateProcessAsUserW(pscpi: *mut SHCREATEPROCESSINFOW) -> super::super::Foundation::BOOL;
     }
@@ -4436,7 +4078,6 @@ where
     P0: ::std::convert::Into<super::super::System::Registry::HKEY>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreatePropSheetExtArray(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows::core::PCWSTR, max_iface: u32) -> HPSXA;
     }
@@ -4446,7 +4087,6 @@ where
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn SHCreateQueryCancelAutoPlayMoniker() -> ::windows::core::Result<super::super::System::Com::IMoniker> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateQueryCancelAutoPlayMoniker(ppmoniker: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4457,7 +4097,6 @@ pub unsafe fn SHCreateQueryCancelAutoPlayMoniker() -> ::windows::core::Result<su
 #[cfg(feature = "Win32_System_Ole")]
 #[inline]
 pub unsafe fn SHCreateShellFolderView(pcsfv: *const SFV_CREATE) -> ::windows::core::Result<IShellView> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateShellFolderView(pcsfv: *const SFV_CREATE, ppsv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4468,7 +4107,6 @@ pub unsafe fn SHCreateShellFolderView(pcsfv: *const SFV_CREATE) -> ::windows::co
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Ole", feature = "Win32_UI_Shell_Common"))]
 #[inline]
 pub unsafe fn SHCreateShellFolderViewEx(pcsfv: *const CSFV) -> ::windows::core::Result<IShellView> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateShellFolderViewEx(pcsfv: *const CSFV, ppsv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4482,7 +4120,6 @@ pub unsafe fn SHCreateShellItem<'a, P0>(pidlparent: ::core::option::Option<*cons
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IShellFolder>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateShellItem(pidlparent: *const Common::ITEMIDLIST, psfparent: *mut ::core::ffi::c_void, pidl: *const Common::ITEMIDLIST, ppsi: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4496,7 +4133,6 @@ pub unsafe fn SHCreateShellItemArray<'a, P0>(pidlparent: ::core::option::Option<
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IShellFolder>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateShellItemArray(pidlparent: *const Common::ITEMIDLIST, psf: *mut ::core::ffi::c_void, cidl: u32, ppidl: *const *const Common::ITEMIDLIST, ppsiitemarray: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4511,7 +4147,6 @@ where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IDataObject>>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateShellItemArrayFromDataObject(pdo: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4522,7 +4157,6 @@ where
 #[cfg(feature = "Win32_UI_Shell_Common")]
 #[inline]
 pub unsafe fn SHCreateShellItemArrayFromIDLists(rgpidl: &[*const Common::ITEMIDLIST]) -> ::windows::core::Result<IShellItemArray> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateShellItemArrayFromIDLists(cidl: u32, rgpidl: *const *const Common::ITEMIDLIST, ppsiitemarray: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4536,7 +4170,6 @@ where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IShellItem>>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateShellItemArrayFromShellItem(psi: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4550,7 +4183,6 @@ pub unsafe fn SHCreateShellPalette<'a, P0>(hdc: P0) -> super::super::Graphics::G
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateShellPalette(hdc: super::super::Graphics::Gdi::HDC) -> super::super::Graphics::Gdi::HPALETTE;
     }
@@ -4560,7 +4192,6 @@ where
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn SHCreateStdEnumFmtEtc(afmt: &[super::super::System::Com::FORMATETC]) -> ::windows::core::Result<super::super::System::Com::IEnumFORMATETC> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateStdEnumFmtEtc(cfmt: u32, afmt: *const super::super::System::Com::FORMATETC, ppenumformatetc: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4574,7 +4205,6 @@ pub unsafe fn SHCreateStreamOnFileA<'a, P0>(pszfile: P0, grfmode: u32) -> ::wind
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateStreamOnFileA(pszfile: ::windows::core::PCSTR, grfmode: u32, ppstm: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4590,7 +4220,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
     P2: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IStream>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateStreamOnFileEx(pszfile: ::windows::core::PCWSTR, grfmode: u32, dwattributes: u32, fcreate: super::super::Foundation::BOOL, pstmtemplate: *mut ::core::ffi::c_void, ppstm: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4604,7 +4233,6 @@ pub unsafe fn SHCreateStreamOnFileW<'a, P0>(pszfile: P0, grfmode: u32) -> ::wind
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateStreamOnFileW(pszfile: ::windows::core::PCWSTR, grfmode: u32, ppstm: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4615,7 +4243,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Threading"))]
 #[inline]
 pub unsafe fn SHCreateThread(pfnthreadproc: super::super::System::Threading::LPTHREAD_START_ROUTINE, pdata: ::core::option::Option<*const ::core::ffi::c_void>, flags: u32, pfncallback: super::super::System::Threading::LPTHREAD_START_ROUTINE) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateThread(pfnthreadproc: *mut ::core::ffi::c_void, pdata: *const ::core::ffi::c_void, flags: u32, pfncallback: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -4624,7 +4251,6 @@ pub unsafe fn SHCreateThread(pfnthreadproc: super::super::System::Threading::LPT
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn SHCreateThreadRef(pcref: *mut i32, ppunk: *mut ::core::option::Option<::windows::core::IUnknown>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateThreadRef(pcref: *mut i32, ppunk: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4634,7 +4260,6 @@ pub unsafe fn SHCreateThreadRef(pcref: *mut i32, ppunk: *mut ::core::option::Opt
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Threading"))]
 #[inline]
 pub unsafe fn SHCreateThreadWithHandle(pfnthreadproc: super::super::System::Threading::LPTHREAD_START_ROUTINE, pdata: ::core::option::Option<*const ::core::ffi::c_void>, flags: u32, pfncallback: super::super::System::Threading::LPTHREAD_START_ROUTINE, phandle: ::core::option::Option<*mut super::super::Foundation::HANDLE>) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHCreateThreadWithHandle(pfnthreadproc: *mut ::core::ffi::c_void, pdata: *const ::core::ffi::c_void, flags: u32, pfncallback: *mut ::core::ffi::c_void, phandle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -4647,7 +4272,6 @@ pub unsafe fn SHDefExtractIconA<'a, P0>(psziconfile: P0, iindex: i32, uflags: u3
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHDefExtractIconA(psziconfile: ::windows::core::PCSTR, iindex: i32, uflags: u32, phiconlarge: *mut super::WindowsAndMessaging::HICON, phiconsmall: *mut super::WindowsAndMessaging::HICON, niconsize: u32) -> ::windows::core::HRESULT;
     }
@@ -4660,7 +4284,6 @@ pub unsafe fn SHDefExtractIconW<'a, P0>(psziconfile: P0, iindex: i32, uflags: u3
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHDefExtractIconW(psziconfile: ::windows::core::PCWSTR, iindex: i32, uflags: u32, phiconlarge: *mut super::WindowsAndMessaging::HICON, phiconsmall: *mut super::WindowsAndMessaging::HICON, niconsize: u32) -> ::windows::core::HRESULT;
     }
@@ -4674,7 +4297,6 @@ where
     P0: ::std::convert::Into<super::super::System::Registry::HKEY>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHDeleteEmptyKeyA(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows::core::PCSTR) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -4688,7 +4310,6 @@ where
     P0: ::std::convert::Into<super::super::System::Registry::HKEY>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHDeleteEmptyKeyW(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows::core::PCWSTR) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -4702,7 +4323,6 @@ where
     P0: ::std::convert::Into<super::super::System::Registry::HKEY>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHDeleteKeyA(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows::core::PCSTR) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -4716,7 +4336,6 @@ where
     P0: ::std::convert::Into<super::super::System::Registry::HKEY>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHDeleteKeyW(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows::core::PCWSTR) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -4731,7 +4350,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHDeleteValueA(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows::core::PCSTR, pszvalue: ::windows::core::PCSTR) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -4746,7 +4364,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHDeleteValueW(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows::core::PCWSTR, pszvalue: ::windows::core::PCWSTR) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -4758,7 +4375,6 @@ pub unsafe fn SHDestroyPropSheetExtArray<'a, P0>(hpsxa: P0)
 where
     P0: ::std::convert::Into<HPSXA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHDestroyPropSheetExtArray(hpsxa: HPSXA);
     }
@@ -4773,7 +4389,6 @@ where
     P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IDataObject>>,
     P2: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Ole::IDropSource>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHDoDragDrop(hwnd: super::super::Foundation::HWND, pdata: *mut ::core::ffi::c_void, pdsrc: *mut ::core::ffi::c_void, dweffect: super::super::System::Ole::DROPEFFECT, pdweffect: *mut super::super::System::Ole::DROPEFFECT) -> ::windows::core::HRESULT;
     }
@@ -4788,7 +4403,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHEmptyRecycleBinA(hwnd: super::super::Foundation::HWND, pszrootpath: ::windows::core::PCSTR, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -4802,7 +4416,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHEmptyRecycleBinW(hwnd: super::super::Foundation::HWND, pszrootpath: ::windows::core::PCWSTR, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -4815,7 +4428,6 @@ pub unsafe fn SHEnumKeyExA<'a, P0>(hkey: P0, dwindex: u32, pszname: ::windows::c
 where
     P0: ::std::convert::Into<super::super::System::Registry::HKEY>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHEnumKeyExA(hkey: super::super::System::Registry::HKEY, dwindex: u32, pszname: ::windows::core::PSTR, pcchname: *mut u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -4828,7 +4440,6 @@ pub unsafe fn SHEnumKeyExW<'a, P0>(hkey: P0, dwindex: u32, pszname: ::windows::c
 where
     P0: ::std::convert::Into<super::super::System::Registry::HKEY>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHEnumKeyExW(hkey: super::super::System::Registry::HKEY, dwindex: u32, pszname: ::windows::core::PWSTR, pcchname: *mut u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -4841,7 +4452,6 @@ pub unsafe fn SHEnumValueA<'a, P0>(hkey: P0, dwindex: u32, pszvaluename: ::windo
 where
     P0: ::std::convert::Into<super::super::System::Registry::HKEY>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHEnumValueA(hkey: super::super::System::Registry::HKEY, dwindex: u32, pszvaluename: ::windows::core::PSTR, pcchvaluename: *mut u32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -4854,7 +4464,6 @@ pub unsafe fn SHEnumValueW<'a, P0>(hkey: P0, dwindex: u32, pszvaluename: ::windo
 where
     P0: ::std::convert::Into<super::super::System::Registry::HKEY>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHEnumValueW(hkey: super::super::System::Registry::HKEY, dwindex: u32, pszvaluename: ::windows::core::PWSTR, pcchvaluename: *mut u32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -4867,7 +4476,6 @@ pub unsafe fn SHEnumerateUnreadMailAccountsW<'a, P0>(hkeyuser: P0, dwindex: u32,
 where
     P0: ::std::convert::Into<super::super::System::Registry::HKEY>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHEnumerateUnreadMailAccountsW(hkeyuser: super::super::System::Registry::HKEY, dwindex: u32, pszmailaddress: ::windows::core::PWSTR, cchmailaddress: i32) -> ::windows::core::HRESULT;
     }
@@ -4879,7 +4487,6 @@ pub unsafe fn SHEvaluateSystemCommandTemplate<'a, P0>(pszcmdtemplate: P0, ppszap
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHEvaluateSystemCommandTemplate(pszcmdtemplate: ::windows::core::PCWSTR, ppszapplication: *mut ::windows::core::PWSTR, ppszcommandline: *mut ::windows::core::PWSTR, ppszparameters: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -4889,7 +4496,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SHFileOperationA(lpfileop: *mut SHFILEOPSTRUCTA) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHFileOperationA(lpfileop: *mut SHFILEOPSTRUCTA) -> i32;
     }
@@ -4899,7 +4505,6 @@ pub unsafe fn SHFileOperationA(lpfileop: *mut SHFILEOPSTRUCTA) -> i32 {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SHFileOperationW(lpfileop: *mut SHFILEOPSTRUCTW) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHFileOperationW(lpfileop: *mut SHFILEOPSTRUCTW) -> i32;
     }
@@ -4909,7 +4514,6 @@ pub unsafe fn SHFileOperationW(lpfileop: *mut SHFILEOPSTRUCTW) -> i32 {
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
 #[inline]
 pub unsafe fn SHFindFiles(pidlfolder: ::core::option::Option<*const Common::ITEMIDLIST>, pidlsavefile: ::core::option::Option<*const Common::ITEMIDLIST>) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHFindFiles(pidlfolder: *const Common::ITEMIDLIST, pidlsavefile: *const Common::ITEMIDLIST) -> super::super::Foundation::BOOL;
     }
@@ -4923,7 +4527,6 @@ where
     P0: ::std::convert::Into<super::WindowsAndMessaging::HMENU>,
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHFind_InitMenuPopup(hmenu: super::WindowsAndMessaging::HMENU, hwndowner: super::super::Foundation::HWND, idcmdfirst: u32, idcmdlast: u32) -> ::core::option::Option<IContextMenu>;
     }
@@ -4932,7 +4535,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn SHFlushSFCache() {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHFlushSFCache();
     }
@@ -4942,7 +4544,6 @@ pub unsafe fn SHFlushSFCache() {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SHFormatDateTimeA(pft: *const super::super::Foundation::FILETIME, pdwflags: ::core::option::Option<*mut u32>, pszbuf: &mut [u8]) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHFormatDateTimeA(pft: *const super::super::Foundation::FILETIME, pdwflags: *mut u32, pszbuf: ::windows::core::PSTR, cchbuf: u32) -> i32;
     }
@@ -4952,7 +4553,6 @@ pub unsafe fn SHFormatDateTimeA(pft: *const super::super::Foundation::FILETIME, 
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SHFormatDateTimeW(pft: *const super::super::Foundation::FILETIME, pdwflags: ::core::option::Option<*mut u32>, pszbuf: &mut [u16]) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHFormatDateTimeW(pft: *const super::super::Foundation::FILETIME, pdwflags: *mut u32, pszbuf: ::windows::core::PWSTR, cchbuf: u32) -> i32;
     }
@@ -4965,7 +4565,6 @@ pub unsafe fn SHFormatDrive<'a, P0>(hwnd: P0, drive: u32, fmtid: SHFMT_ID, optio
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHFormatDrive(hwnd: super::super::Foundation::HWND, drive: u32, fmtid: SHFMT_ID, options: SHFMT_OPT) -> u32;
     }
@@ -4974,7 +4573,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn SHFree(pv: ::core::option::Option<*const ::core::ffi::c_void>) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHFree(pv: *const ::core::ffi::c_void);
     }
@@ -4987,7 +4585,6 @@ pub unsafe fn SHFreeNameMappings<'a, P0>(hnamemappings: P0)
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHFreeNameMappings(hnamemappings: super::super::Foundation::HANDLE);
     }
@@ -5000,7 +4597,6 @@ pub unsafe fn SHFreeShared<'a, P0>(hdata: P0, dwprocessid: u32) -> super::super:
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHFreeShared(hdata: super::super::Foundation::HANDLE, dwprocessid: u32) -> super::super::Foundation::BOOL;
     }
@@ -5013,7 +4609,6 @@ pub unsafe fn SHGetAttributesFromDataObject<'a, P0>(pdo: P0, dwattributemask: u3
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IDataObject>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetAttributesFromDataObject(pdo: *mut ::core::ffi::c_void, dwattributemask: u32, pdwattributes: *mut u32, pcitems: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -5026,7 +4621,6 @@ pub unsafe fn SHGetDataFromIDListA<'a, P0>(psf: P0, pidl: *const Common::ITEMIDL
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IShellFolder>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetDataFromIDListA(psf: *mut ::core::ffi::c_void, pidl: *const Common::ITEMIDLIST, nformat: SHGDFIL_FORMAT, pv: *mut ::core::ffi::c_void, cb: i32) -> ::windows::core::HRESULT;
     }
@@ -5039,7 +4633,6 @@ pub unsafe fn SHGetDataFromIDListW<'a, P0>(psf: P0, pidl: *const Common::ITEMIDL
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IShellFolder>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetDataFromIDListW(psf: *mut ::core::ffi::c_void, pidl: *const Common::ITEMIDLIST, nformat: SHGDFIL_FORMAT, pv: *mut ::core::ffi::c_void, cb: i32) -> ::windows::core::HRESULT;
     }
@@ -5048,7 +4641,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn SHGetDesktopFolder() -> ::windows::core::Result<IShellFolder> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetDesktopFolder(ppshf: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -5062,7 +4654,6 @@ pub unsafe fn SHGetDiskFreeSpaceExA<'a, P0>(pszdirectoryname: P0, pulfreebytesav
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetDiskFreeSpaceExA(pszdirectoryname: ::windows::core::PCSTR, pulfreebytesavailabletocaller: *mut u64, pultotalnumberofbytes: *mut u64, pultotalnumberoffreebytes: *mut u64) -> super::super::Foundation::BOOL;
     }
@@ -5075,7 +4666,6 @@ pub unsafe fn SHGetDiskFreeSpaceExW<'a, P0>(pszdirectoryname: P0, pulfreebytesav
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetDiskFreeSpaceExW(pszdirectoryname: ::windows::core::PCWSTR, pulfreebytesavailabletocaller: *mut u64, pultotalnumberofbytes: *mut u64, pultotalnumberoffreebytes: *mut u64) -> super::super::Foundation::BOOL;
     }
@@ -5087,7 +4677,6 @@ pub unsafe fn SHGetDriveMedia<'a, P0>(pszdrive: P0) -> ::windows::core::Result<u
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetDriveMedia(pszdrive: ::windows::core::PCWSTR, pdwmediacontent: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -5101,7 +4690,6 @@ pub unsafe fn SHGetFileInfoA<'a, P0>(pszpath: P0, dwfileattributes: super::super
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetFileInfoA(pszpath: ::windows::core::PCSTR, dwfileattributes: super::super::Storage::FileSystem::FILE_FLAGS_AND_ATTRIBUTES, psfi: *mut SHFILEINFOA, cbfileinfo: u32, uflags: SHGFI_FLAGS) -> usize;
     }
@@ -5114,7 +4702,6 @@ pub unsafe fn SHGetFileInfoW<'a, P0>(pszpath: P0, dwfileattributes: super::super
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetFileInfoW(pszpath: ::windows::core::PCWSTR, dwfileattributes: super::super::Storage::FileSystem::FILE_FLAGS_AND_ATTRIBUTES, psfi: *mut SHFILEINFOW, cbfileinfo: u32, uflags: SHGFI_FLAGS) -> usize;
     }
@@ -5128,7 +4715,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetFolderLocation(hwnd: super::super::Foundation::HWND, csidl: i32, htoken: super::super::Foundation::HANDLE, dwflags: u32, ppidl: *mut *mut Common::ITEMIDLIST) -> ::windows::core::HRESULT;
     }
@@ -5143,7 +4729,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetFolderPathA(hwnd: super::super::Foundation::HWND, csidl: i32, htoken: super::super::Foundation::HANDLE, dwflags: u32, pszpath: ::windows::core::PSTR) -> ::windows::core::HRESULT;
     }
@@ -5158,7 +4743,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetFolderPathAndSubDirA(hwnd: super::super::Foundation::HWND, csidl: i32, htoken: super::super::Foundation::HANDLE, dwflags: u32, pszsubdir: ::windows::core::PCSTR, pszpath: ::windows::core::PSTR) -> ::windows::core::HRESULT;
     }
@@ -5173,7 +4757,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetFolderPathAndSubDirW(hwnd: super::super::Foundation::HWND, csidl: i32, htoken: super::super::Foundation::HANDLE, dwflags: u32, pszsubdir: ::windows::core::PCWSTR, pszpath: ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -5187,7 +4770,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetFolderPathW(hwnd: super::super::Foundation::HWND, csidl: i32, htoken: super::super::Foundation::HANDLE, dwflags: u32, pszpath: ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -5200,7 +4782,6 @@ pub unsafe fn SHGetIDListFromObject<'a, P0>(punk: P0) -> ::windows::core::Result
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetIDListFromObject(punk: *mut ::core::ffi::c_void, ppidl: *mut *mut Common::ITEMIDLIST) -> ::windows::core::HRESULT;
     }
@@ -5213,7 +4794,6 @@ pub unsafe fn SHGetIconOverlayIndexA<'a, P0>(psziconpath: P0, iiconindex: i32) -
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetIconOverlayIndexA(psziconpath: ::windows::core::PCSTR, iiconindex: i32) -> i32;
     }
@@ -5225,7 +4805,6 @@ pub unsafe fn SHGetIconOverlayIndexW<'a, P0>(psziconpath: P0, iiconindex: i32) -
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetIconOverlayIndexW(psziconpath: ::windows::core::PCWSTR, iiconindex: i32) -> i32;
     }
@@ -5237,7 +4816,6 @@ pub unsafe fn SHGetImageList<T>(iimagelist: i32) -> ::windows::core::Result<T>
 where
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetImageList(iimagelist: i32, riid: *const ::windows::core::GUID, ppvobj: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -5247,7 +4825,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn SHGetInstanceExplorer() -> ::windows::core::Result<::windows::core::IUnknown> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetInstanceExplorer(ppunk: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -5257,7 +4834,6 @@ pub unsafe fn SHGetInstanceExplorer() -> ::windows::core::Result<::windows::core
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn SHGetInverseCMAP(pbmap: &mut [u8]) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetInverseCMAP(pbmap: *mut u8, cbmap: u32) -> ::windows::core::HRESULT;
     }
@@ -5271,7 +4847,6 @@ where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IDataObject>>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetItemFromDataObject(pdtobj: *mut ::core::ffi::c_void, dwflags: DATAOBJ_GET_ITEM_FLAGS, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -5285,7 +4860,6 @@ where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetItemFromObject(punk: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -5299,7 +4873,6 @@ pub unsafe fn SHGetKnownFolderIDList<'a, P0>(rfid: *const ::windows::core::GUID,
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetKnownFolderIDList(rfid: *const ::windows::core::GUID, dwflags: u32, htoken: super::super::Foundation::HANDLE, ppidl: *mut *mut Common::ITEMIDLIST) -> ::windows::core::HRESULT;
     }
@@ -5314,7 +4887,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetKnownFolderItem(rfid: *const ::windows::core::GUID, flags: KNOWN_FOLDER_FLAG, htoken: super::super::Foundation::HANDLE, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -5328,7 +4900,6 @@ pub unsafe fn SHGetKnownFolderPath<'a, P0>(rfid: *const ::windows::core::GUID, d
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetKnownFolderPath(rfid: *const ::windows::core::GUID, dwflags: KNOWN_FOLDER_FLAG, htoken: super::super::Foundation::HANDLE, ppszpath: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -5341,7 +4912,6 @@ pub unsafe fn SHGetLocalizedName<'a, P0>(pszpath: P0, pszresmodule: &mut [u16], 
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetLocalizedName(pszpath: ::windows::core::PCWSTR, pszresmodule: ::windows::core::PWSTR, cch: u32, pidsres: *mut i32) -> ::windows::core::HRESULT;
     }
@@ -5351,7 +4921,6 @@ where
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn SHGetMalloc() -> ::windows::core::Result<super::super::System::Com::IMalloc> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetMalloc(ppmalloc: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -5362,7 +4931,6 @@ pub unsafe fn SHGetMalloc() -> ::windows::core::Result<super::super::System::Com
 #[cfg(feature = "Win32_UI_Shell_Common")]
 #[inline]
 pub unsafe fn SHGetNameFromIDList(pidl: *const Common::ITEMIDLIST, sigdnname: SIGDN) -> ::windows::core::Result<::windows::core::PWSTR> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetNameFromIDList(pidl: *const Common::ITEMIDLIST, sigdnname: SIGDN, ppszname: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -5377,7 +4945,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetNewLinkInfoA(pszlinkto: ::windows::core::PCSTR, pszdir: ::windows::core::PCSTR, pszname: ::windows::core::PSTR, pfmustcopy: *mut super::super::Foundation::BOOL, uflags: u32) -> super::super::Foundation::BOOL;
     }
@@ -5391,7 +4958,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetNewLinkInfoW(pszlinkto: ::windows::core::PCWSTR, pszdir: ::windows::core::PCWSTR, pszname: ::windows::core::PWSTR, pfmustcopy: *mut super::super::Foundation::BOOL, uflags: u32) -> super::super::Foundation::BOOL;
     }
@@ -5401,7 +4967,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
 #[inline]
 pub unsafe fn SHGetPathFromIDListA(pidl: *const Common::ITEMIDLIST, pszpath: &mut [u8; 260]) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetPathFromIDListA(pidl: *const Common::ITEMIDLIST, pszpath: ::windows::core::PSTR) -> super::super::Foundation::BOOL;
     }
@@ -5411,7 +4976,6 @@ pub unsafe fn SHGetPathFromIDListA(pidl: *const Common::ITEMIDLIST, pszpath: &mu
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
 #[inline]
 pub unsafe fn SHGetPathFromIDListEx(pidl: *const Common::ITEMIDLIST, pszpath: &mut [u16], uopts: GPFIDL_FLAGS) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetPathFromIDListEx(pidl: *const Common::ITEMIDLIST, pszpath: ::windows::core::PWSTR, cchpath: u32, uopts: GPFIDL_FLAGS) -> super::super::Foundation::BOOL;
     }
@@ -5421,7 +4985,6 @@ pub unsafe fn SHGetPathFromIDListEx(pidl: *const Common::ITEMIDLIST, pszpath: &m
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
 #[inline]
 pub unsafe fn SHGetPathFromIDListW(pidl: *const Common::ITEMIDLIST, pszpath: &mut [u16; 260]) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetPathFromIDListW(pidl: *const Common::ITEMIDLIST, pszpath: ::windows::core::PWSTR) -> super::super::Foundation::BOOL;
     }
@@ -5434,7 +4997,6 @@ pub unsafe fn SHGetRealIDL<'a, P0>(psf: P0, pidlsimple: *const Common::ITEMIDLIS
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IShellFolder>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetRealIDL(psf: *mut ::core::ffi::c_void, pidlsimple: *const Common::ITEMIDLIST, ppidlreal: *mut *mut Common::ITEMIDLIST) -> ::windows::core::HRESULT;
     }
@@ -5447,7 +5009,6 @@ pub unsafe fn SHGetSetFolderCustomSettings<'a, P0>(pfcs: *mut SHFOLDERCUSTOMSETT
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetSetFolderCustomSettings(pfcs: *mut SHFOLDERCUSTOMSETTINGS, pszpath: ::windows::core::PCWSTR, dwreadwrite: u32) -> ::windows::core::HRESULT;
     }
@@ -5460,7 +5021,6 @@ pub unsafe fn SHGetSetSettings<'a, P0>(lpss: ::core::option::Option<*mut SHELLST
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetSetSettings(lpss: *mut SHELLSTATEA, dwmask: SSF_MASK, bset: super::super::Foundation::BOOL);
     }
@@ -5469,7 +5029,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn SHGetSettings(psfs: *mut SHELLFLAGSTATE, dwmask: u32) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetSettings(psfs: *mut SHELLFLAGSTATE, dwmask: u32);
     }
@@ -5482,7 +5041,6 @@ pub unsafe fn SHGetSpecialFolderLocation<'a, P0>(hwnd: P0, csidl: i32) -> ::wind
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetSpecialFolderLocation(hwnd: super::super::Foundation::HWND, csidl: i32, ppidl: *mut *mut Common::ITEMIDLIST) -> ::windows::core::HRESULT;
     }
@@ -5497,7 +5055,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetSpecialFolderPathA(hwnd: super::super::Foundation::HWND, pszpath: ::windows::core::PSTR, csidl: i32, fcreate: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -5511,7 +5068,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetSpecialFolderPathW(hwnd: super::super::Foundation::HWND, pszpath: ::windows::core::PWSTR, csidl: i32, fcreate: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -5521,7 +5077,6 @@ where
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
 pub unsafe fn SHGetStockIconInfo(siid: SHSTOCKICONID, uflags: u32, psii: *mut SHSTOCKICONINFO) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetStockIconInfo(siid: SHSTOCKICONID, uflags: u32, psii: *mut SHSTOCKICONINFO) -> ::windows::core::HRESULT;
     }
@@ -5534,7 +5089,6 @@ pub unsafe fn SHGetTemporaryPropertyForItem<'a, P0>(psi: P0, propkey: *const Pro
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IShellItem>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetTemporaryPropertyForItem(psi: *mut ::core::ffi::c_void, propkey: *const PropertiesSystem::PROPERTYKEY, ppropvar: *mut super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows::core::HRESULT;
     }
@@ -5544,7 +5098,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn SHGetThreadRef() -> ::windows::core::Result<::windows::core::IUnknown> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetThreadRef(ppunk: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -5559,7 +5112,6 @@ where
     P0: ::std::convert::Into<super::super::System::Registry::HKEY>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetUnreadMailCountW(hkeyuser: super::super::System::Registry::HKEY, pszmailaddress: ::windows::core::PCWSTR, pdwcount: *mut u32, pfiletime: *mut super::super::Foundation::FILETIME, pszshellexecutecommand: ::windows::core::PWSTR, cchshellexecutecommand: i32) -> ::windows::core::HRESULT;
     }
@@ -5574,7 +5126,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetValueA(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows::core::PCSTR, pszvalue: ::windows::core::PCSTR, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -5589,7 +5140,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetValueW(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows::core::PCWSTR, pszvalue: ::windows::core::PCWSTR, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -5603,7 +5153,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGetViewStatePropertyBag(pidl: *const Common::ITEMIDLIST, pszbagname: ::windows::core::PCWSTR, dwflags: u32, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -5613,7 +5162,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn SHGlobalCounterDecrement(id: SHGLOBALCOUNTER) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGlobalCounterDecrement(id: SHGLOBALCOUNTER) -> i32;
     }
@@ -5622,7 +5170,6 @@ pub unsafe fn SHGlobalCounterDecrement(id: SHGLOBALCOUNTER) -> i32 {
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn SHGlobalCounterGetValue(id: SHGLOBALCOUNTER) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGlobalCounterGetValue(id: SHGLOBALCOUNTER) -> i32;
     }
@@ -5631,7 +5178,6 @@ pub unsafe fn SHGlobalCounterGetValue(id: SHGLOBALCOUNTER) -> i32 {
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn SHGlobalCounterIncrement(id: SHGLOBALCOUNTER) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHGlobalCounterIncrement(id: SHGLOBALCOUNTER) -> i32;
     }
@@ -5641,7 +5187,6 @@ pub unsafe fn SHGlobalCounterIncrement(id: SHGLOBALCOUNTER) -> i32 {
 #[cfg(feature = "Win32_UI_Shell_Common")]
 #[inline]
 pub unsafe fn SHHandleUpdateImage(pidlextra: *const Common::ITEMIDLIST) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHHandleUpdateImage(pidlextra: *const Common::ITEMIDLIST) -> i32;
     }
@@ -5654,7 +5199,6 @@ pub unsafe fn SHILCreateFromPath<'a, P0>(pszpath: P0, ppidl: *mut *mut Common::I
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHILCreateFromPath(pszpath: ::windows::core::PCWSTR, ppidl: *mut *mut Common::ITEMIDLIST, rgfinout: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -5670,7 +5214,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHInvokePrinterCommandA(hwnd: super::super::Foundation::HWND, uaction: u32, lpbuf1: ::windows::core::PCSTR, lpbuf2: ::windows::core::PCSTR, fmodal: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -5686,7 +5229,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHInvokePrinterCommandW(hwnd: super::super::Foundation::HWND, uaction: u32, lpbuf1: ::windows::core::PCWSTR, lpbuf2: ::windows::core::PCWSTR, fmodal: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -5698,7 +5240,6 @@ pub unsafe fn SHIsFileAvailableOffline<'a, P0>(pwszpath: P0) -> ::windows::core:
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHIsFileAvailableOffline(pwszpath: ::windows::core::PCWSTR, pdwstatus: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -5709,7 +5250,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SHIsLowMemoryMachine(dwtype: u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHIsLowMemoryMachine(dwtype: u32) -> super::super::Foundation::BOOL;
     }
@@ -5723,7 +5263,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::InParam<'a, IShellFolder>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHLimitInputEdit(hwndedit: super::super::Foundation::HWND, psf: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -5732,7 +5271,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn SHLoadInProc(rclsid: *const ::windows::core::GUID) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHLoadInProc(rclsid: *const ::windows::core::GUID) -> ::windows::core::HRESULT;
     }
@@ -5744,7 +5282,6 @@ pub unsafe fn SHLoadIndirectString<'a, P0>(pszsource: P0, pszoutbuf: &mut [u16],
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHLoadIndirectString(pszsource: ::windows::core::PCWSTR, pszoutbuf: ::windows::core::PWSTR, cchoutbuf: u32, ppvreserved: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -5753,7 +5290,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn SHLoadNonloadedIconOverlayIdentifiers() -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHLoadNonloadedIconOverlayIdentifiers() -> ::windows::core::HRESULT;
     }
@@ -5766,7 +5302,6 @@ pub unsafe fn SHLockShared<'a, P0>(hdata: P0, dwprocessid: u32) -> *mut ::core::
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHLockShared(hdata: super::super::Foundation::HANDLE, dwprocessid: u32) -> *mut ::core::ffi::c_void;
     }
@@ -5779,7 +5314,6 @@ pub unsafe fn SHMapPIDLToSystemImageListIndex<'a, P0>(pshf: P0, pidl: *const Com
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IShellFolder>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHMapPIDLToSystemImageListIndex(pshf: *mut ::core::ffi::c_void, pidl: *const Common::ITEMIDLIST, piindexsel: *mut i32) -> i32;
     }
@@ -5795,7 +5329,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHMessageBoxCheckA(hwnd: super::super::Foundation::HWND, psztext: ::windows::core::PCSTR, pszcaption: ::windows::core::PCSTR, utype: u32, idefault: i32, pszregval: ::windows::core::PCSTR) -> i32;
     }
@@ -5811,7 +5344,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHMessageBoxCheckW(hwnd: super::super::Foundation::HWND, psztext: ::windows::core::PCWSTR, pszcaption: ::windows::core::PCWSTR, utype: u32, idefault: i32, pszregval: ::windows::core::PCWSTR) -> i32;
     }
@@ -5824,7 +5356,6 @@ pub unsafe fn SHMultiFileProperties<'a, P0>(pdtobj: P0, dwflags: u32) -> ::windo
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IDataObject>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHMultiFileProperties(pdtobj: *mut ::core::ffi::c_void, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -5839,7 +5370,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHObjectProperties(hwnd: super::super::Foundation::HWND, shopobjecttype: SHOP_TYPE, pszobjectname: ::windows::core::PCWSTR, pszpropertypage: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -5849,7 +5379,6 @@ where
 #[cfg(feature = "Win32_UI_Shell_Common")]
 #[inline]
 pub unsafe fn SHOpenFolderAndSelectItems(pidlfolder: *const Common::ITEMIDLIST, apidl: ::core::option::Option<&[*const Common::ITEMIDLIST]>, dwflags: u32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHOpenFolderAndSelectItems(pidlfolder: *const Common::ITEMIDLIST, cidl: u32, apidl: *const *const Common::ITEMIDLIST, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -5865,7 +5394,6 @@ where
     P2: ::std::convert::Into<::windows::core::InParam<'a, IShellBrowser>>,
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHOpenPropSheetW(pszcaption: ::windows::core::PCWSTR, ahkeys: *const super::super::System::Registry::HKEY, ckeys: u32, pclsiddefault: *const ::windows::core::GUID, pdtobj: *mut ::core::ffi::c_void, psb: *mut ::core::ffi::c_void, pstartpage: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -5880,7 +5408,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHOpenRegStream2A(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows::core::PCSTR, pszvalue: ::windows::core::PCSTR, grfmode: u32) -> ::core::option::Option<super::super::System::Com::IStream>;
     }
@@ -5895,7 +5422,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHOpenRegStream2W(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows::core::PCWSTR, pszvalue: ::windows::core::PCWSTR, grfmode: u32) -> ::core::option::Option<super::super::System::Com::IStream>;
     }
@@ -5910,7 +5436,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHOpenRegStreamA(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows::core::PCSTR, pszvalue: ::windows::core::PCSTR, grfmode: u32) -> ::core::option::Option<super::super::System::Com::IStream>;
     }
@@ -5925,7 +5450,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHOpenRegStreamW(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows::core::PCWSTR, pszvalue: ::windows::core::PCWSTR, grfmode: u32) -> ::core::option::Option<super::super::System::Com::IStream>;
     }
@@ -5938,7 +5462,6 @@ pub unsafe fn SHOpenWithDialog<'a, P0>(hwndparent: P0, poainfo: *const OPENASINF
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHOpenWithDialog(hwndparent: super::super::Foundation::HWND, poainfo: *const OPENASINFO) -> ::windows::core::HRESULT;
     }
@@ -5952,7 +5475,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IBindCtx>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHParseDisplayName(pszname: ::windows::core::PCWSTR, pbc: *mut ::core::ffi::c_void, ppidl: *mut *mut Common::ITEMIDLIST, sfgaoin: u32, psfgaoout: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -5967,7 +5489,6 @@ where
     P1: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHPathPrepareForWriteA(hwnd: super::super::Foundation::HWND, punkenablemodless: *mut ::core::ffi::c_void, pszpath: ::windows::core::PCSTR, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -5982,7 +5503,6 @@ where
     P1: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHPathPrepareForWriteW(hwnd: super::super::Foundation::HWND, punkenablemodless: *mut ::core::ffi::c_void, pszpath: ::windows::core::PCWSTR, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -5995,7 +5515,6 @@ pub unsafe fn SHQueryInfoKeyA<'a, P0>(hkey: P0, pcsubkeys: ::core::option::Optio
 where
     P0: ::std::convert::Into<super::super::System::Registry::HKEY>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHQueryInfoKeyA(hkey: super::super::System::Registry::HKEY, pcsubkeys: *mut u32, pcchmaxsubkeylen: *mut u32, pcvalues: *mut u32, pcchmaxvaluenamelen: *mut u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6008,7 +5527,6 @@ pub unsafe fn SHQueryInfoKeyW<'a, P0>(hkey: P0, pcsubkeys: ::core::option::Optio
 where
     P0: ::std::convert::Into<super::super::System::Registry::HKEY>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHQueryInfoKeyW(hkey: super::super::System::Registry::HKEY, pcsubkeys: *mut u32, pcchmaxsubkeylen: *mut u32, pcvalues: *mut u32, pcchmaxvaluenamelen: *mut u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6020,7 +5538,6 @@ pub unsafe fn SHQueryRecycleBinA<'a, P0>(pszrootpath: P0, pshqueryrbinfo: *mut S
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHQueryRecycleBinA(pszrootpath: ::windows::core::PCSTR, pshqueryrbinfo: *mut SHQUERYRBINFO) -> ::windows::core::HRESULT;
     }
@@ -6032,7 +5549,6 @@ pub unsafe fn SHQueryRecycleBinW<'a, P0>(pszrootpath: P0, pshqueryrbinfo: *mut S
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHQueryRecycleBinW(pszrootpath: ::windows::core::PCWSTR, pshqueryrbinfo: *mut SHQUERYRBINFO) -> ::windows::core::HRESULT;
     }
@@ -6041,7 +5557,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn SHQueryUserNotificationState() -> ::windows::core::Result<QUERY_USER_NOTIFICATION_STATE> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHQueryUserNotificationState(pquns: *mut QUERY_USER_NOTIFICATION_STATE) -> ::windows::core::HRESULT;
     }
@@ -6056,7 +5571,6 @@ where
     P0: ::std::convert::Into<super::super::System::Registry::HKEY>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHQueryValueExA(hkey: super::super::System::Registry::HKEY, pszvalue: ::windows::core::PCSTR, pdwreserved: *mut u32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6070,7 +5584,6 @@ where
     P0: ::std::convert::Into<super::super::System::Registry::HKEY>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHQueryValueExW(hkey: super::super::System::Registry::HKEY, pszvalue: ::windows::core::PCWSTR, pdwreserved: *mut u32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6080,7 +5593,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SHRegCloseUSKey(huskey: isize) -> super::super::Foundation::WIN32_ERROR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegCloseUSKey(huskey: isize) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6093,7 +5605,6 @@ pub unsafe fn SHRegCreateUSKeyA<'a, P0>(pszpath: P0, samdesired: u32, hrelativeu
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegCreateUSKeyA(pszpath: ::windows::core::PCSTR, samdesired: u32, hrelativeuskey: isize, phnewuskey: *mut isize, dwflags: u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6106,7 +5617,6 @@ pub unsafe fn SHRegCreateUSKeyW<'a, P0>(pwzpath: P0, samdesired: u32, hrelativeu
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegCreateUSKeyW(pwzpath: ::windows::core::PCWSTR, samdesired: u32, hrelativeuskey: isize, phnewuskey: *mut isize, dwflags: u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6119,7 +5629,6 @@ pub unsafe fn SHRegDeleteEmptyUSKeyA<'a, P0>(huskey: isize, pszsubkey: P0, delre
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegDeleteEmptyUSKeyA(huskey: isize, pszsubkey: ::windows::core::PCSTR, delregflags: SHREGDEL_FLAGS) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6132,7 +5641,6 @@ pub unsafe fn SHRegDeleteEmptyUSKeyW<'a, P0>(huskey: isize, pwzsubkey: P0, delre
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegDeleteEmptyUSKeyW(huskey: isize, pwzsubkey: ::windows::core::PCWSTR, delregflags: SHREGDEL_FLAGS) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6145,7 +5653,6 @@ pub unsafe fn SHRegDeleteUSValueA<'a, P0>(huskey: isize, pszvalue: P0, delregfla
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegDeleteUSValueA(huskey: isize, pszvalue: ::windows::core::PCSTR, delregflags: SHREGDEL_FLAGS) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6158,7 +5665,6 @@ pub unsafe fn SHRegDeleteUSValueW<'a, P0>(huskey: isize, pwzvalue: P0, delregfla
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegDeleteUSValueW(huskey: isize, pwzvalue: ::windows::core::PCWSTR, delregflags: SHREGDEL_FLAGS) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6171,7 +5677,6 @@ pub unsafe fn SHRegDuplicateHKey<'a, P0>(hkey: P0) -> super::super::System::Regi
 where
     P0: ::std::convert::Into<super::super::System::Registry::HKEY>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegDuplicateHKey(hkey: super::super::System::Registry::HKEY) -> super::super::System::Registry::HKEY;
     }
@@ -6181,7 +5686,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SHRegEnumUSKeyA(huskey: isize, dwindex: u32, pszname: ::windows::core::PSTR, pcchname: *mut u32, enumregflags: SHREGENUM_FLAGS) -> super::super::Foundation::WIN32_ERROR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegEnumUSKeyA(huskey: isize, dwindex: u32, pszname: ::windows::core::PSTR, pcchname: *mut u32, enumregflags: SHREGENUM_FLAGS) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6191,7 +5695,6 @@ pub unsafe fn SHRegEnumUSKeyA(huskey: isize, dwindex: u32, pszname: ::windows::c
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SHRegEnumUSKeyW(huskey: isize, dwindex: u32, pwzname: ::windows::core::PWSTR, pcchname: *mut u32, enumregflags: SHREGENUM_FLAGS) -> super::super::Foundation::WIN32_ERROR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegEnumUSKeyW(huskey: isize, dwindex: u32, pwzname: ::windows::core::PWSTR, pcchname: *mut u32, enumregflags: SHREGENUM_FLAGS) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6201,7 +5704,6 @@ pub unsafe fn SHRegEnumUSKeyW(huskey: isize, dwindex: u32, pwzname: ::windows::c
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SHRegEnumUSValueA(huskey: isize, dwindex: u32, pszvaluename: ::windows::core::PSTR, pcchvaluename: *mut u32, pdwtype: ::core::option::Option<*mut u32>, pvdata: ::core::option::Option<*mut ::core::ffi::c_void>, pcbdata: ::core::option::Option<*mut u32>, enumregflags: SHREGENUM_FLAGS) -> super::super::Foundation::WIN32_ERROR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegEnumUSValueA(huskey: isize, dwindex: u32, pszvaluename: ::windows::core::PSTR, pcchvaluename: *mut u32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32, enumregflags: SHREGENUM_FLAGS) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6211,7 +5713,6 @@ pub unsafe fn SHRegEnumUSValueA(huskey: isize, dwindex: u32, pszvaluename: ::win
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SHRegEnumUSValueW(huskey: isize, dwindex: u32, pszvaluename: ::windows::core::PWSTR, pcchvaluename: *mut u32, pdwtype: ::core::option::Option<*mut u32>, pvdata: ::core::option::Option<*mut ::core::ffi::c_void>, pcbdata: ::core::option::Option<*mut u32>, enumregflags: SHREGENUM_FLAGS) -> super::super::Foundation::WIN32_ERROR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegEnumUSValueW(huskey: isize, dwindex: u32, pszvaluename: ::windows::core::PWSTR, pcchvaluename: *mut u32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32, enumregflags: SHREGENUM_FLAGS) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6227,7 +5728,6 @@ where
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
     P3: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegGetBoolUSValueA(pszsubkey: ::windows::core::PCSTR, pszvalue: ::windows::core::PCSTR, fignorehkcu: super::super::Foundation::BOOL, fdefault: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -6243,7 +5743,6 @@ where
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
     P3: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegGetBoolUSValueW(pszsubkey: ::windows::core::PCWSTR, pszvalue: ::windows::core::PCWSTR, fignorehkcu: super::super::Foundation::BOOL, fdefault: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -6257,7 +5756,6 @@ where
     P0: ::std::convert::Into<super::super::System::Registry::HKEY>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegGetIntW(hk: super::super::System::Registry::HKEY, pwzkey: ::windows::core::PCWSTR, idefault: i32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6272,7 +5770,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegGetPathA(hkey: super::super::System::Registry::HKEY, pcszsubkey: ::windows::core::PCSTR, pcszvalue: ::windows::core::PCSTR, pszpath: ::windows::core::PSTR, dwflags: u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6287,7 +5784,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegGetPathW(hkey: super::super::System::Registry::HKEY, pcszsubkey: ::windows::core::PCWSTR, pcszvalue: ::windows::core::PCWSTR, pszpath: ::windows::core::PWSTR, dwflags: u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6302,7 +5798,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegGetUSValueA(pszsubkey: ::windows::core::PCSTR, pszvalue: ::windows::core::PCSTR, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32, fignorehkcu: super::super::Foundation::BOOL, pvdefaultdata: *const ::core::ffi::c_void, dwdefaultdatasize: u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6317,7 +5812,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegGetUSValueW(pszsubkey: ::windows::core::PCWSTR, pszvalue: ::windows::core::PCWSTR, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32, fignorehkcu: super::super::Foundation::BOOL, pvdefaultdata: *const ::core::ffi::c_void, dwdefaultdatasize: u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6332,7 +5826,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegGetValueA(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows::core::PCSTR, pszvalue: ::windows::core::PCSTR, srrfflags: i32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6346,7 +5839,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegGetValueFromHKCUHKLM(pwszkey: ::windows::core::PCWSTR, pwszvalue: ::windows::core::PCWSTR, srrfflags: i32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6361,7 +5853,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegGetValueW(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows::core::PCWSTR, pszvalue: ::windows::core::PCWSTR, srrfflags: i32, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6375,7 +5866,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegOpenUSKeyA(pszpath: ::windows::core::PCSTR, samdesired: u32, hrelativeuskey: isize, phnewuskey: *mut isize, fignorehkcu: super::super::Foundation::BOOL) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6389,7 +5879,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegOpenUSKeyW(pwzpath: ::windows::core::PCWSTR, samdesired: u32, hrelativeuskey: isize, phnewuskey: *mut isize, fignorehkcu: super::super::Foundation::BOOL) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6399,7 +5888,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SHRegQueryInfoUSKeyA(huskey: isize, pcsubkeys: ::core::option::Option<*mut u32>, pcchmaxsubkeylen: ::core::option::Option<*mut u32>, pcvalues: ::core::option::Option<*mut u32>, pcchmaxvaluenamelen: ::core::option::Option<*mut u32>, enumregflags: SHREGENUM_FLAGS) -> super::super::Foundation::WIN32_ERROR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegQueryInfoUSKeyA(huskey: isize, pcsubkeys: *mut u32, pcchmaxsubkeylen: *mut u32, pcvalues: *mut u32, pcchmaxvaluenamelen: *mut u32, enumregflags: SHREGENUM_FLAGS) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6409,7 +5897,6 @@ pub unsafe fn SHRegQueryInfoUSKeyA(huskey: isize, pcsubkeys: ::core::option::Opt
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SHRegQueryInfoUSKeyW(huskey: isize, pcsubkeys: ::core::option::Option<*mut u32>, pcchmaxsubkeylen: ::core::option::Option<*mut u32>, pcvalues: ::core::option::Option<*mut u32>, pcchmaxvaluenamelen: ::core::option::Option<*mut u32>, enumregflags: SHREGENUM_FLAGS) -> super::super::Foundation::WIN32_ERROR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegQueryInfoUSKeyW(huskey: isize, pcsubkeys: *mut u32, pcchmaxsubkeylen: *mut u32, pcvalues: *mut u32, pcchmaxvaluenamelen: *mut u32, enumregflags: SHREGENUM_FLAGS) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6423,7 +5910,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegQueryUSValueA(huskey: isize, pszvalue: ::windows::core::PCSTR, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32, fignorehkcu: super::super::Foundation::BOOL, pvdefaultdata: *const ::core::ffi::c_void, dwdefaultdatasize: u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6437,7 +5923,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegQueryUSValueW(huskey: isize, pszvalue: ::windows::core::PCWSTR, pdwtype: *mut u32, pvdata: *mut ::core::ffi::c_void, pcbdata: *mut u32, fignorehkcu: super::super::Foundation::BOOL, pvdefaultdata: *const ::core::ffi::c_void, dwdefaultdatasize: u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6453,7 +5938,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegSetPathA(hkey: super::super::System::Registry::HKEY, pcszsubkey: ::windows::core::PCSTR, pcszvalue: ::windows::core::PCSTR, pcszpath: ::windows::core::PCSTR, dwflags: u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6469,7 +5953,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegSetPathW(hkey: super::super::System::Registry::HKEY, pcszsubkey: ::windows::core::PCWSTR, pcszvalue: ::windows::core::PCWSTR, pcszpath: ::windows::core::PCWSTR, dwflags: u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6483,7 +5966,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegSetUSValueA(pszsubkey: ::windows::core::PCSTR, pszvalue: ::windows::core::PCSTR, dwtype: u32, pvdata: *const ::core::ffi::c_void, cbdata: u32, dwflags: u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6497,7 +5979,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegSetUSValueW(pwzsubkey: ::windows::core::PCWSTR, pwzvalue: ::windows::core::PCWSTR, dwtype: u32, pvdata: *const ::core::ffi::c_void, cbdata: u32, dwflags: u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6510,7 +5991,6 @@ pub unsafe fn SHRegWriteUSValueA<'a, P0>(huskey: isize, pszvalue: P0, dwtype: u3
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegWriteUSValueA(huskey: isize, pszvalue: ::windows::core::PCSTR, dwtype: u32, pvdata: *const ::core::ffi::c_void, cbdata: u32, dwflags: u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6523,7 +6003,6 @@ pub unsafe fn SHRegWriteUSValueW<'a, P0>(huskey: isize, pwzvalue: P0, dwtype: u3
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRegWriteUSValueW(huskey: isize, pwzvalue: ::windows::core::PCWSTR, dwtype: u32, pvdata: *const ::core::ffi::c_void, cbdata: u32, dwflags: u32) -> super::super::Foundation::WIN32_ERROR;
     }
@@ -6532,7 +6011,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn SHReleaseThreadRef() -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHReleaseThreadRef() -> ::windows::core::HRESULT;
     }
@@ -6544,7 +6022,6 @@ pub unsafe fn SHRemoveLocalizedName<'a, P0>(pszpath: P0) -> ::windows::core::Res
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRemoveLocalizedName(pszpath: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -6558,7 +6035,6 @@ where
     P0: ::std::convert::Into<HPSXA>,
     P1: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHReplaceFromPropSheetExtArray(hpsxa: HPSXA, upageid: u32, lpfnreplacewith: *mut ::core::ffi::c_void, lparam: super::super::Foundation::LPARAM) -> u32;
     }
@@ -6570,7 +6046,6 @@ pub unsafe fn SHResolveLibrary<'a, P0>(psilibrary: P0) -> ::windows::core::Resul
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IShellItem>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHResolveLibrary(psilibrary: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -6579,7 +6054,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn SHRestricted(rest: RESTRICTIONS) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHRestricted(rest: RESTRICTIONS) -> u32;
     }
@@ -6593,7 +6067,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P1: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHSendMessageBroadcastA(umsg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
     }
@@ -6607,7 +6080,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P1: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHSendMessageBroadcastW(umsg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
     }
@@ -6622,7 +6094,6 @@ where
     P1: ::std::convert::Into<::windows::core::InParam<'a, IShellItem>>,
     P2: ::std::convert::Into<::windows::core::InParam<'a, IFileOperationProgressSink>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHSetDefaultProperties(hwnd: super::super::Foundation::HWND, psi: *mut ::core::ffi::c_void, dwfileopflags: u32, pfops: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -6636,7 +6107,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHSetFolderPathA(csidl: i32, htoken: super::super::Foundation::HANDLE, dwflags: u32, pszpath: ::windows::core::PCSTR) -> ::windows::core::HRESULT;
     }
@@ -6650,7 +6120,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHSetFolderPathW(csidl: i32, htoken: super::super::Foundation::HANDLE, dwflags: u32, pszpath: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -6662,7 +6131,6 @@ pub unsafe fn SHSetInstanceExplorer<'a, P0>(punk: P0)
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHSetInstanceExplorer(punk: *mut ::core::ffi::c_void);
     }
@@ -6676,7 +6144,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHSetKnownFolderPath(rfid: *const ::windows::core::GUID, dwflags: u32, htoken: super::super::Foundation::HANDLE, pszpath: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -6689,7 +6156,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHSetLocalizedName(pszpath: ::windows::core::PCWSTR, pszresmodule: ::windows::core::PCWSTR, idsres: i32) -> ::windows::core::HRESULT;
     }
@@ -6702,7 +6168,6 @@ pub unsafe fn SHSetTemporaryPropertyForItem<'a, P0>(psi: P0, propkey: *const Pro
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IShellItem>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHSetTemporaryPropertyForItem(psi: *mut ::core::ffi::c_void, propkey: *const PropertiesSystem::PROPERTYKEY, propvar: *const super::super::System::Com::StructuredStorage::PROPVARIANT) -> ::windows::core::HRESULT;
     }
@@ -6714,7 +6179,6 @@ pub unsafe fn SHSetThreadRef<'a, P0>(punk: P0) -> ::windows::core::Result<()>
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHSetThreadRef(punk: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -6727,7 +6191,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHSetUnreadMailCountW(pszmailaddress: ::windows::core::PCWSTR, dwcount: u32, pszshellexecutecommand: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -6742,7 +6205,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHSetValueA(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows::core::PCSTR, pszvalue: ::windows::core::PCSTR, dwtype: u32, pvdata: *const ::core::ffi::c_void, cbdata: u32) -> i32;
     }
@@ -6757,7 +6219,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHSetValueW(hkey: super::super::System::Registry::HKEY, pszsubkey: ::windows::core::PCWSTR, pszvalue: ::windows::core::PCWSTR, dwtype: u32, pvdata: *const ::core::ffi::c_void, cbdata: u32) -> i32;
     }
@@ -6771,7 +6232,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHShellFolderView_Message(hwndmain: super::super::Foundation::HWND, umsg: u32, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
     }
@@ -6787,7 +6247,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHShowManageLibraryUI(psilibrary: *mut ::core::ffi::c_void, hwndowner: super::super::Foundation::HWND, psztitle: ::windows::core::PCWSTR, pszinstruction: ::windows::core::PCWSTR, lmdoptions: LIBRARYMANAGEDIALOGOPTIONS) -> ::windows::core::HRESULT;
     }
@@ -6800,7 +6259,6 @@ pub unsafe fn SHSimpleIDListFromPath<'a, P0>(pszpath: P0) -> *mut Common::ITEMID
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHSimpleIDListFromPath(pszpath: ::windows::core::PCWSTR) -> *mut Common::ITEMIDLIST;
     }
@@ -6813,7 +6271,6 @@ pub unsafe fn SHSkipJunction<'a, P0>(pbc: P0, pclsid: *const ::windows::core::GU
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IBindCtx>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHSkipJunction(pbc: *mut ::core::ffi::c_void, pclsid: *const ::windows::core::GUID) -> super::super::Foundation::BOOL;
     }
@@ -6827,7 +6284,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHStartNetConnectionDialogW(hwnd: super::super::Foundation::HWND, pszremotename: ::windows::core::PCWSTR, dwtype: u32) -> ::windows::core::HRESULT;
     }
@@ -6839,7 +6295,6 @@ pub unsafe fn SHStrDupA<'a, P0>(psz: P0) -> ::windows::core::Result<::windows::c
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHStrDupA(psz: ::windows::core::PCSTR, ppwsz: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -6852,7 +6307,6 @@ pub unsafe fn SHStrDupW<'a, P0>(psz: P0) -> ::windows::core::Result<::windows::c
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHStrDupW(psz: ::windows::core::PCWSTR, ppwsz: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -6863,7 +6317,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SHStripMneumonicA(pszmenu: ::windows::core::PSTR) -> super::super::Foundation::CHAR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHStripMneumonicA(pszmenu: ::windows::core::PSTR) -> super::super::Foundation::CHAR;
     }
@@ -6872,7 +6325,6 @@ pub unsafe fn SHStripMneumonicA(pszmenu: ::windows::core::PSTR) -> super::super:
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn SHStripMneumonicW(pszmenu: ::windows::core::PWSTR) -> u16 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHStripMneumonicW(pszmenu: ::windows::core::PWSTR) -> u16;
     }
@@ -6885,7 +6337,6 @@ pub unsafe fn SHTestTokenMembership<'a, P0>(htoken: P0, ulrid: u32) -> super::su
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHTestTokenMembership(htoken: super::super::Foundation::HANDLE, ulrid: u32) -> super::super::Foundation::BOOL;
     }
@@ -6897,7 +6348,6 @@ pub unsafe fn SHUnicodeToAnsi<'a, P0>(pwszsrc: P0, pszdst: &mut [u8]) -> i32
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHUnicodeToAnsi(pwszsrc: ::windows::core::PCWSTR, pszdst: ::windows::core::PSTR, cchbuf: i32) -> i32;
     }
@@ -6909,7 +6359,6 @@ pub unsafe fn SHUnicodeToUnicode<'a, P0>(pwzsrc: P0, pwzdst: &mut [u16]) -> i32
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHUnicodeToUnicode(pwzsrc: ::windows::core::PCWSTR, pwzdst: ::windows::core::PWSTR, cwchbuf: i32) -> i32;
     }
@@ -6919,7 +6368,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SHUnlockShared(pvdata: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHUnlockShared(pvdata: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -6931,7 +6379,6 @@ pub unsafe fn SHUpdateImageA<'a, P0>(pszhashitem: P0, iindex: i32, uflags: u32, 
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHUpdateImageA(pszhashitem: ::windows::core::PCSTR, iindex: i32, uflags: u32, iimageindex: i32);
     }
@@ -6943,7 +6390,6 @@ pub unsafe fn SHUpdateImageW<'a, P0>(pszhashitem: P0, iindex: i32, uflags: u32, 
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHUpdateImageW(pszhashitem: ::windows::core::PCWSTR, iindex: i32, uflags: u32, iimageindex: i32);
     }
@@ -6956,7 +6402,6 @@ pub unsafe fn SHValidateUNC<'a, P0>(hwndowner: P0, pszfile: ::windows::core::PWS
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SHValidateUNC(hwndowner: super::super::Foundation::HWND, pszfile: ::windows::core::PWSTR, fconnect: VALIDATEUNC_OPTION) -> super::super::Foundation::BOOL;
     }
@@ -6968,7 +6413,6 @@ pub unsafe fn SetCurrentProcessExplicitAppUserModelID<'a, P0>(appid: P0) -> ::wi
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetCurrentProcessExplicitAppUserModelID(appid: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -6981,7 +6425,6 @@ pub unsafe fn SetMenuContextHelpId<'a, P0>(param0: P0, param1: u32) -> super::su
 where
     P0: ::std::convert::Into<super::WindowsAndMessaging::HMENU>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetMenuContextHelpId(param0: super::WindowsAndMessaging::HMENU, param1: u32) -> super::super::Foundation::BOOL;
     }
@@ -6994,7 +6437,6 @@ pub unsafe fn SetWindowContextHelpId<'a, P0>(param0: P0, param1: u32) -> super::
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetWindowContextHelpId(param0: super::super::Foundation::HWND, param1: u32) -> super::super::Foundation::BOOL;
     }
@@ -7007,7 +6449,6 @@ pub unsafe fn SetWindowSubclass<'a, P0>(hwnd: P0, pfnsubclass: SUBCLASSPROC, uid
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetWindowSubclass(hwnd: super::super::Foundation::HWND, pfnsubclass: *mut ::core::ffi::c_void, uidsubclass: usize, dwrefdata: usize) -> super::super::Foundation::BOOL;
     }
@@ -7023,7 +6464,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<super::WindowsAndMessaging::HICON>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShellAboutA(hwnd: super::super::Foundation::HWND, szapp: ::windows::core::PCSTR, szotherstuff: ::windows::core::PCSTR, hicon: super::WindowsAndMessaging::HICON) -> i32;
     }
@@ -7039,7 +6479,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<super::WindowsAndMessaging::HICON>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShellAboutW(hwnd: super::super::Foundation::HWND, szapp: ::windows::core::PCWSTR, szotherstuff: ::windows::core::PCWSTR, hicon: super::WindowsAndMessaging::HICON) -> i32;
     }
@@ -7056,7 +6495,6 @@ where
     P3: ::std::convert::Into<::windows::core::PCSTR>,
     P4: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShellExecuteA(hwnd: super::super::Foundation::HWND, lpoperation: ::windows::core::PCSTR, lpfile: ::windows::core::PCSTR, lpparameters: ::windows::core::PCSTR, lpdirectory: ::windows::core::PCSTR, nshowcmd: super::WindowsAndMessaging::SHOW_WINDOW_CMD) -> super::super::Foundation::HINSTANCE;
     }
@@ -7066,7 +6504,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
 #[inline]
 pub unsafe fn ShellExecuteExA(pexecinfo: *mut SHELLEXECUTEINFOA) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShellExecuteExA(pexecinfo: *mut SHELLEXECUTEINFOA) -> super::super::Foundation::BOOL;
     }
@@ -7076,7 +6513,6 @@ pub unsafe fn ShellExecuteExA(pexecinfo: *mut SHELLEXECUTEINFOA) -> super::super
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
 #[inline]
 pub unsafe fn ShellExecuteExW(pexecinfo: *mut SHELLEXECUTEINFOW) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShellExecuteExW(pexecinfo: *mut SHELLEXECUTEINFOW) -> super::super::Foundation::BOOL;
     }
@@ -7093,7 +6529,6 @@ where
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
     P4: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShellExecuteW(hwnd: super::super::Foundation::HWND, lpoperation: ::windows::core::PCWSTR, lpfile: ::windows::core::PCWSTR, lpparameters: ::windows::core::PCWSTR, lpdirectory: ::windows::core::PCWSTR, nshowcmd: super::WindowsAndMessaging::SHOW_WINDOW_CMD) -> super::super::Foundation::HINSTANCE;
     }
@@ -7105,7 +6540,6 @@ pub unsafe fn Shell_GetCachedImageIndex<'a, P0>(pwsziconpath: P0, iiconindex: i3
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn Shell_GetCachedImageIndex(pwsziconpath: ::windows::core::PCWSTR, iiconindex: i32, uiconflags: u32) -> i32;
     }
@@ -7117,7 +6551,6 @@ pub unsafe fn Shell_GetCachedImageIndexA<'a, P0>(psziconpath: P0, iiconindex: i3
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn Shell_GetCachedImageIndexA(psziconpath: ::windows::core::PCSTR, iiconindex: i32, uiconflags: u32) -> i32;
     }
@@ -7129,7 +6562,6 @@ pub unsafe fn Shell_GetCachedImageIndexW<'a, P0>(psziconpath: P0, iiconindex: i3
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn Shell_GetCachedImageIndexW(psziconpath: ::windows::core::PCWSTR, iiconindex: i32, uiconflags: u32) -> i32;
     }
@@ -7139,7 +6571,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Controls"))]
 #[inline]
 pub unsafe fn Shell_GetImageLists(phiml: ::core::option::Option<*mut super::Controls::HIMAGELIST>, phimlsmall: ::core::option::Option<*mut super::Controls::HIMAGELIST>) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn Shell_GetImageLists(phiml: *mut super::Controls::HIMAGELIST, phimlsmall: *mut super::Controls::HIMAGELIST) -> super::super::Foundation::BOOL;
     }
@@ -7153,7 +6584,6 @@ where
     P0: ::std::convert::Into<super::WindowsAndMessaging::HMENU>,
     P1: ::std::convert::Into<super::WindowsAndMessaging::HMENU>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn Shell_MergeMenus(hmdst: super::WindowsAndMessaging::HMENU, hmsrc: super::WindowsAndMessaging::HMENU, uinsert: u32, uidadjust: u32, uidadjustmax: u32, uflags: MM_FLAGS) -> u32;
     }
@@ -7163,7 +6593,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
 #[inline]
 pub unsafe fn Shell_NotifyIconA(dwmessage: NOTIFY_ICON_MESSAGE, lpdata: *const NOTIFYICONDATAA) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn Shell_NotifyIconA(dwmessage: NOTIFY_ICON_MESSAGE, lpdata: *const NOTIFYICONDATAA) -> super::super::Foundation::BOOL;
     }
@@ -7173,7 +6602,6 @@ pub unsafe fn Shell_NotifyIconA(dwmessage: NOTIFY_ICON_MESSAGE, lpdata: *const N
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn Shell_NotifyIconGetRect(identifier: *const NOTIFYICONIDENTIFIER) -> ::windows::core::Result<super::super::Foundation::RECT> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn Shell_NotifyIconGetRect(identifier: *const NOTIFYICONIDENTIFIER, iconlocation: *mut super::super::Foundation::RECT) -> ::windows::core::HRESULT;
     }
@@ -7184,7 +6612,6 @@ pub unsafe fn Shell_NotifyIconGetRect(identifier: *const NOTIFYICONIDENTIFIER) -
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
 #[inline]
 pub unsafe fn Shell_NotifyIconW(dwmessage: NOTIFY_ICON_MESSAGE, lpdata: *const NOTIFYICONDATAW) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn Shell_NotifyIconW(dwmessage: NOTIFY_ICON_MESSAGE, lpdata: *const NOTIFYICONDATAW) -> super::super::Foundation::BOOL;
     }
@@ -7194,7 +6621,6 @@ pub unsafe fn Shell_NotifyIconW(dwmessage: NOTIFY_ICON_MESSAGE, lpdata: *const N
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell_Common"))]
 #[inline]
 pub unsafe fn SignalFileOpen(pidl: *const Common::ITEMIDLIST) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SignalFileOpen(pidl: *const Common::ITEMIDLIST) -> super::super::Foundation::BOOL;
     }
@@ -7208,7 +6634,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SoftwareUpdateMessageBox(hwnd: super::super::Foundation::HWND, pszdistunit: ::windows::core::PCWSTR, dwflags: u32, psdi: *mut super::super::System::Com::Urlmon::SOFTDISTINFO) -> u32;
     }
@@ -7223,7 +6648,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StgMakeUniqueName(pstgparent: *mut ::core::ffi::c_void, pszfilespec: ::windows::core::PCWSTR, grfmode: u32, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -7237,7 +6661,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrCSpnA(pszstr: ::windows::core::PCSTR, pszset: ::windows::core::PCSTR) -> i32;
     }
@@ -7250,7 +6673,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrCSpnIA(pszstr: ::windows::core::PCSTR, pszset: ::windows::core::PCSTR) -> i32;
     }
@@ -7263,7 +6685,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrCSpnIW(pszstr: ::windows::core::PCWSTR, pszset: ::windows::core::PCWSTR) -> i32;
     }
@@ -7276,7 +6697,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrCSpnW(pszstr: ::windows::core::PCWSTR, pszset: ::windows::core::PCWSTR) -> i32;
     }
@@ -7288,7 +6708,6 @@ pub unsafe fn StrCatBuffA<'a, P0>(pszdest: &mut [u8], pszsrc: P0) -> ::windows::
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrCatBuffA(pszdest: ::windows::core::PSTR, pszsrc: ::windows::core::PCSTR, cchdestbuffsize: i32) -> ::windows::core::PSTR;
     }
@@ -7300,7 +6719,6 @@ pub unsafe fn StrCatBuffW<'a, P0>(pszdest: &mut [u16], pszsrc: P0) -> ::windows:
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrCatBuffW(pszdest: ::windows::core::PWSTR, pszsrc: ::windows::core::PCWSTR, cchdestbuffsize: i32) -> ::windows::core::PWSTR;
     }
@@ -7312,7 +6730,6 @@ pub unsafe fn StrCatChainW<'a, P0>(pszdst: &mut [u16], ichat: u32, pszsrc: P0) -
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrCatChainW(pszdst: ::windows::core::PWSTR, cchdst: u32, ichat: u32, pszsrc: ::windows::core::PCWSTR) -> u32;
     }
@@ -7324,7 +6741,6 @@ pub unsafe fn StrCatW<'a, P0>(psz1: ::windows::core::PWSTR, psz2: P0) -> ::windo
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrCatW(psz1: ::windows::core::PWSTR, psz2: ::windows::core::PCWSTR) -> ::windows::core::PWSTR;
     }
@@ -7336,7 +6752,6 @@ pub unsafe fn StrChrA<'a, P0>(pszstart: P0, wmatch: u16) -> ::windows::core::PST
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrChrA(pszstart: ::windows::core::PCSTR, wmatch: u16) -> ::windows::core::PSTR;
     }
@@ -7348,7 +6763,6 @@ pub unsafe fn StrChrIA<'a, P0>(pszstart: P0, wmatch: u16) -> ::windows::core::PS
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrChrIA(pszstart: ::windows::core::PCSTR, wmatch: u16) -> ::windows::core::PSTR;
     }
@@ -7360,7 +6774,6 @@ pub unsafe fn StrChrIW<'a, P0>(pszstart: P0, wmatch: u16) -> ::windows::core::PW
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrChrIW(pszstart: ::windows::core::PCWSTR, wmatch: u16) -> ::windows::core::PWSTR;
     }
@@ -7372,7 +6785,6 @@ pub unsafe fn StrChrNIW<'a, P0>(pszstart: P0, wmatch: u16, cchmax: u32) -> ::win
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrChrNIW(pszstart: ::windows::core::PCWSTR, wmatch: u16, cchmax: u32) -> ::windows::core::PWSTR;
     }
@@ -7384,7 +6796,6 @@ pub unsafe fn StrChrNW<'a, P0>(pszstart: P0, wmatch: u16, cchmax: u32) -> ::wind
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrChrNW(pszstart: ::windows::core::PCWSTR, wmatch: u16, cchmax: u32) -> ::windows::core::PWSTR;
     }
@@ -7396,7 +6807,6 @@ pub unsafe fn StrChrW<'a, P0>(pszstart: P0, wmatch: u16) -> ::windows::core::PWS
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrChrW(pszstart: ::windows::core::PCWSTR, wmatch: u16) -> ::windows::core::PWSTR;
     }
@@ -7409,7 +6819,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrCmpCA(pszstr1: ::windows::core::PCSTR, pszstr2: ::windows::core::PCSTR) -> i32;
     }
@@ -7422,7 +6831,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrCmpCW(pszstr1: ::windows::core::PCWSTR, pszstr2: ::windows::core::PCWSTR) -> i32;
     }
@@ -7435,7 +6843,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrCmpICA(pszstr1: ::windows::core::PCSTR, pszstr2: ::windows::core::PCSTR) -> i32;
     }
@@ -7448,7 +6855,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrCmpICW(pszstr1: ::windows::core::PCWSTR, pszstr2: ::windows::core::PCWSTR) -> i32;
     }
@@ -7461,7 +6867,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrCmpIW(psz1: ::windows::core::PCWSTR, psz2: ::windows::core::PCWSTR) -> i32;
     }
@@ -7474,7 +6879,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrCmpLogicalW(psz1: ::windows::core::PCWSTR, psz2: ::windows::core::PCWSTR) -> i32;
     }
@@ -7487,7 +6891,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrCmpNA(psz1: ::windows::core::PCSTR, psz2: ::windows::core::PCSTR, nchar: i32) -> i32;
     }
@@ -7500,7 +6903,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrCmpNCA(pszstr1: ::windows::core::PCSTR, pszstr2: ::windows::core::PCSTR, nchar: i32) -> i32;
     }
@@ -7513,7 +6915,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrCmpNCW(pszstr1: ::windows::core::PCWSTR, pszstr2: ::windows::core::PCWSTR, nchar: i32) -> i32;
     }
@@ -7526,7 +6927,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrCmpNIA(psz1: ::windows::core::PCSTR, psz2: ::windows::core::PCSTR, nchar: i32) -> i32;
     }
@@ -7539,7 +6939,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrCmpNICA(pszstr1: ::windows::core::PCSTR, pszstr2: ::windows::core::PCSTR, nchar: i32) -> i32;
     }
@@ -7552,7 +6951,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrCmpNICW(pszstr1: ::windows::core::PCWSTR, pszstr2: ::windows::core::PCWSTR, nchar: i32) -> i32;
     }
@@ -7565,7 +6963,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrCmpNIW(psz1: ::windows::core::PCWSTR, psz2: ::windows::core::PCWSTR, nchar: i32) -> i32;
     }
@@ -7578,7 +6975,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrCmpNW(psz1: ::windows::core::PCWSTR, psz2: ::windows::core::PCWSTR, nchar: i32) -> i32;
     }
@@ -7591,7 +6987,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrCmpW(psz1: ::windows::core::PCWSTR, psz2: ::windows::core::PCWSTR) -> i32;
     }
@@ -7603,7 +6998,6 @@ pub unsafe fn StrCpyNW<'a, P0>(pszdst: &mut [u16], pszsrc: P0) -> ::windows::cor
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrCpyNW(pszdst: ::windows::core::PWSTR, pszsrc: ::windows::core::PCWSTR, cchmax: i32) -> ::windows::core::PWSTR;
     }
@@ -7615,7 +7009,6 @@ pub unsafe fn StrCpyW<'a, P0>(psz1: ::windows::core::PWSTR, psz2: P0) -> ::windo
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrCpyW(psz1: ::windows::core::PWSTR, psz2: ::windows::core::PCWSTR) -> ::windows::core::PWSTR;
     }
@@ -7627,7 +7020,6 @@ pub unsafe fn StrDupA<'a, P0>(pszsrch: P0) -> ::windows::core::PSTR
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrDupA(pszsrch: ::windows::core::PCSTR) -> ::windows::core::PSTR;
     }
@@ -7639,7 +7031,6 @@ pub unsafe fn StrDupW<'a, P0>(pszsrch: P0) -> ::windows::core::PWSTR
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrDupW(pszsrch: ::windows::core::PCWSTR) -> ::windows::core::PWSTR;
     }
@@ -7648,7 +7039,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn StrFormatByteSize64A(qdw: i64, pszbuf: &mut [u8]) -> ::windows::core::PSTR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrFormatByteSize64A(qdw: i64, pszbuf: ::windows::core::PSTR, cchbuf: u32) -> ::windows::core::PSTR;
     }
@@ -7657,7 +7047,6 @@ pub unsafe fn StrFormatByteSize64A(qdw: i64, pszbuf: &mut [u8]) -> ::windows::co
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn StrFormatByteSizeA(dw: u32, pszbuf: &mut [u8]) -> ::windows::core::PSTR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrFormatByteSizeA(dw: u32, pszbuf: ::windows::core::PSTR, cchbuf: u32) -> ::windows::core::PSTR;
     }
@@ -7666,7 +7055,6 @@ pub unsafe fn StrFormatByteSizeA(dw: u32, pszbuf: &mut [u8]) -> ::windows::core:
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn StrFormatByteSizeEx(ull: u64, flags: SFBS_FLAGS, pszbuf: &mut [u16]) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrFormatByteSizeEx(ull: u64, flags: SFBS_FLAGS, pszbuf: ::windows::core::PWSTR, cchbuf: u32) -> ::windows::core::HRESULT;
     }
@@ -7675,7 +7063,6 @@ pub unsafe fn StrFormatByteSizeEx(ull: u64, flags: SFBS_FLAGS, pszbuf: &mut [u16
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn StrFormatByteSizeW(qdw: i64, pszbuf: &mut [u16]) -> ::windows::core::PWSTR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrFormatByteSizeW(qdw: i64, pszbuf: ::windows::core::PWSTR, cchbuf: u32) -> ::windows::core::PWSTR;
     }
@@ -7684,7 +7071,6 @@ pub unsafe fn StrFormatByteSizeW(qdw: i64, pszbuf: &mut [u16]) -> ::windows::cor
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn StrFormatKBSizeA(qdw: i64, pszbuf: &mut [u8]) -> ::windows::core::PSTR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrFormatKBSizeA(qdw: i64, pszbuf: ::windows::core::PSTR, cchbuf: u32) -> ::windows::core::PSTR;
     }
@@ -7693,7 +7079,6 @@ pub unsafe fn StrFormatKBSizeA(qdw: i64, pszbuf: &mut [u8]) -> ::windows::core::
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn StrFormatKBSizeW(qdw: i64, pszbuf: &mut [u16]) -> ::windows::core::PWSTR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrFormatKBSizeW(qdw: i64, pszbuf: ::windows::core::PWSTR, cchbuf: u32) -> ::windows::core::PWSTR;
     }
@@ -7702,7 +7087,6 @@ pub unsafe fn StrFormatKBSizeW(qdw: i64, pszbuf: &mut [u16]) -> ::windows::core:
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn StrFromTimeIntervalA(pszout: &mut [u8], dwtimems: u32, digits: i32) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrFromTimeIntervalA(pszout: ::windows::core::PSTR, cchmax: u32, dwtimems: u32, digits: i32) -> i32;
     }
@@ -7711,7 +7095,6 @@ pub unsafe fn StrFromTimeIntervalA(pszout: &mut [u8], dwtimems: u32, digits: i32
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn StrFromTimeIntervalW(pszout: &mut [u16], dwtimems: u32, digits: i32) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrFromTimeIntervalW(pszout: ::windows::core::PWSTR, cchmax: u32, dwtimems: u32, digits: i32) -> i32;
     }
@@ -7726,7 +7109,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrIsIntlEqualA(fcasesens: super::super::Foundation::BOOL, pszstring1: ::windows::core::PCSTR, pszstring2: ::windows::core::PCSTR, nchar: i32) -> super::super::Foundation::BOOL;
     }
@@ -7741,7 +7123,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrIsIntlEqualW(fcasesens: super::super::Foundation::BOOL, pszstring1: ::windows::core::PCWSTR, pszstring2: ::windows::core::PCWSTR, nchar: i32) -> super::super::Foundation::BOOL;
     }
@@ -7753,7 +7134,6 @@ pub unsafe fn StrNCatA<'a, P0>(psz1: &mut [u8], psz2: P0) -> ::windows::core::PS
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrNCatA(psz1: ::windows::core::PSTR, psz2: ::windows::core::PCSTR, cchmax: i32) -> ::windows::core::PSTR;
     }
@@ -7765,7 +7145,6 @@ pub unsafe fn StrNCatW<'a, P0>(psz1: &mut [u16], psz2: P0) -> ::windows::core::P
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrNCatW(psz1: ::windows::core::PWSTR, psz2: ::windows::core::PCWSTR, cchmax: i32) -> ::windows::core::PWSTR;
     }
@@ -7778,7 +7157,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrPBrkA(psz: ::windows::core::PCSTR, pszset: ::windows::core::PCSTR) -> ::windows::core::PSTR;
     }
@@ -7791,7 +7169,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrPBrkW(psz: ::windows::core::PCWSTR, pszset: ::windows::core::PCWSTR) -> ::windows::core::PWSTR;
     }
@@ -7804,7 +7181,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrRChrA(pszstart: ::windows::core::PCSTR, pszend: ::windows::core::PCSTR, wmatch: u16) -> ::windows::core::PSTR;
     }
@@ -7817,7 +7193,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrRChrIA(pszstart: ::windows::core::PCSTR, pszend: ::windows::core::PCSTR, wmatch: u16) -> ::windows::core::PSTR;
     }
@@ -7830,7 +7205,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrRChrIW(pszstart: ::windows::core::PCWSTR, pszend: ::windows::core::PCWSTR, wmatch: u16) -> ::windows::core::PWSTR;
     }
@@ -7843,7 +7217,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrRChrW(pszstart: ::windows::core::PCWSTR, pszend: ::windows::core::PCWSTR, wmatch: u16) -> ::windows::core::PWSTR;
     }
@@ -7857,7 +7230,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrRStrIA(pszsource: ::windows::core::PCSTR, pszlast: ::windows::core::PCSTR, pszsrch: ::windows::core::PCSTR) -> ::windows::core::PSTR;
     }
@@ -7871,7 +7243,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrRStrIW(pszsource: ::windows::core::PCWSTR, pszlast: ::windows::core::PCWSTR, pszsrch: ::windows::core::PCWSTR) -> ::windows::core::PWSTR;
     }
@@ -7881,7 +7252,6 @@ where
 #[cfg(feature = "Win32_UI_Shell_Common")]
 #[inline]
 pub unsafe fn StrRetToBSTR(pstr: *mut Common::STRRET, pidl: ::core::option::Option<*const Common::ITEMIDLIST>, pbstr: *mut ::windows::core::BSTR) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrRetToBSTR(pstr: *mut Common::STRRET, pidl: *const Common::ITEMIDLIST, pbstr: *mut ::core::mem::ManuallyDrop<::windows::core::BSTR>) -> ::windows::core::HRESULT;
     }
@@ -7891,7 +7261,6 @@ pub unsafe fn StrRetToBSTR(pstr: *mut Common::STRRET, pidl: ::core::option::Opti
 #[cfg(feature = "Win32_UI_Shell_Common")]
 #[inline]
 pub unsafe fn StrRetToBufA(pstr: *mut Common::STRRET, pidl: ::core::option::Option<*const Common::ITEMIDLIST>, pszbuf: &mut [u8]) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrRetToBufA(pstr: *mut Common::STRRET, pidl: *const Common::ITEMIDLIST, pszbuf: ::windows::core::PSTR, cchbuf: u32) -> ::windows::core::HRESULT;
     }
@@ -7901,7 +7270,6 @@ pub unsafe fn StrRetToBufA(pstr: *mut Common::STRRET, pidl: ::core::option::Opti
 #[cfg(feature = "Win32_UI_Shell_Common")]
 #[inline]
 pub unsafe fn StrRetToBufW(pstr: *mut Common::STRRET, pidl: ::core::option::Option<*const Common::ITEMIDLIST>, pszbuf: &mut [u16]) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrRetToBufW(pstr: *mut Common::STRRET, pidl: *const Common::ITEMIDLIST, pszbuf: ::windows::core::PWSTR, cchbuf: u32) -> ::windows::core::HRESULT;
     }
@@ -7911,7 +7279,6 @@ pub unsafe fn StrRetToBufW(pstr: *mut Common::STRRET, pidl: ::core::option::Opti
 #[cfg(feature = "Win32_UI_Shell_Common")]
 #[inline]
 pub unsafe fn StrRetToStrA(pstr: *mut Common::STRRET, pidl: ::core::option::Option<*const Common::ITEMIDLIST>, ppsz: *mut ::windows::core::PSTR) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrRetToStrA(pstr: *mut Common::STRRET, pidl: *const Common::ITEMIDLIST, ppsz: *mut ::windows::core::PSTR) -> ::windows::core::HRESULT;
     }
@@ -7921,7 +7288,6 @@ pub unsafe fn StrRetToStrA(pstr: *mut Common::STRRET, pidl: ::core::option::Opti
 #[cfg(feature = "Win32_UI_Shell_Common")]
 #[inline]
 pub unsafe fn StrRetToStrW(pstr: *mut Common::STRRET, pidl: ::core::option::Option<*const Common::ITEMIDLIST>, ppsz: *mut ::windows::core::PWSTR) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrRetToStrW(pstr: *mut Common::STRRET, pidl: *const Common::ITEMIDLIST, ppsz: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -7934,7 +7300,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrSpnA(psz: ::windows::core::PCSTR, pszset: ::windows::core::PCSTR) -> i32;
     }
@@ -7947,7 +7312,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrSpnW(psz: ::windows::core::PCWSTR, pszset: ::windows::core::PCWSTR) -> i32;
     }
@@ -7960,7 +7324,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrStrA(pszfirst: ::windows::core::PCSTR, pszsrch: ::windows::core::PCSTR) -> ::windows::core::PSTR;
     }
@@ -7973,7 +7336,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrStrIA(pszfirst: ::windows::core::PCSTR, pszsrch: ::windows::core::PCSTR) -> ::windows::core::PSTR;
     }
@@ -7986,7 +7348,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrStrIW(pszfirst: ::windows::core::PCWSTR, pszsrch: ::windows::core::PCWSTR) -> ::windows::core::PWSTR;
     }
@@ -7999,7 +7360,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrStrNIW(pszfirst: ::windows::core::PCWSTR, pszsrch: ::windows::core::PCWSTR, cchmax: u32) -> ::windows::core::PWSTR;
     }
@@ -8012,7 +7372,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrStrNW(pszfirst: ::windows::core::PCWSTR, pszsrch: ::windows::core::PCWSTR, cchmax: u32) -> ::windows::core::PWSTR;
     }
@@ -8025,7 +7384,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrStrW(pszfirst: ::windows::core::PCWSTR, pszsrch: ::windows::core::PCWSTR) -> ::windows::core::PWSTR;
     }
@@ -8038,7 +7396,6 @@ pub unsafe fn StrToInt64ExA<'a, P0>(pszstring: P0, dwflags: i32, pllret: *mut i6
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrToInt64ExA(pszstring: ::windows::core::PCSTR, dwflags: i32, pllret: *mut i64) -> super::super::Foundation::BOOL;
     }
@@ -8051,7 +7408,6 @@ pub unsafe fn StrToInt64ExW<'a, P0>(pszstring: P0, dwflags: i32, pllret: *mut i6
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrToInt64ExW(pszstring: ::windows::core::PCWSTR, dwflags: i32, pllret: *mut i64) -> super::super::Foundation::BOOL;
     }
@@ -8063,7 +7419,6 @@ pub unsafe fn StrToIntA<'a, P0>(pszsrc: P0) -> i32
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrToIntA(pszsrc: ::windows::core::PCSTR) -> i32;
     }
@@ -8076,7 +7431,6 @@ pub unsafe fn StrToIntExA<'a, P0>(pszstring: P0, dwflags: i32, piret: *mut i32) 
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrToIntExA(pszstring: ::windows::core::PCSTR, dwflags: i32, piret: *mut i32) -> super::super::Foundation::BOOL;
     }
@@ -8089,7 +7443,6 @@ pub unsafe fn StrToIntExW<'a, P0>(pszstring: P0, dwflags: i32, piret: *mut i32) 
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrToIntExW(pszstring: ::windows::core::PCWSTR, dwflags: i32, piret: *mut i32) -> super::super::Foundation::BOOL;
     }
@@ -8101,7 +7454,6 @@ pub unsafe fn StrToIntW<'a, P0>(pszsrc: P0) -> i32
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrToIntW(pszsrc: ::windows::core::PCWSTR) -> i32;
     }
@@ -8114,7 +7466,6 @@ pub unsafe fn StrTrimA<'a, P0>(psz: ::windows::core::PSTR, psztrimchars: P0) -> 
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrTrimA(psz: ::windows::core::PSTR, psztrimchars: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -8127,7 +7478,6 @@ pub unsafe fn StrTrimW<'a, P0>(psz: ::windows::core::PWSTR, psztrimchars: P0) ->
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StrTrimW(psz: ::windows::core::PWSTR, psztrimchars: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -8141,7 +7491,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UnloadUserProfile(htoken: super::super::Foundation::HANDLE, hprofile: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -8150,7 +7499,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn UnregisterAppConstrainedChangeNotification(registration: *mut _APPCONSTRAIN_REGISTRATION) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UnregisterAppConstrainedChangeNotification(registration: *mut _APPCONSTRAIN_REGISTRATION);
     }
@@ -8159,7 +7507,6 @@ pub unsafe fn UnregisterAppConstrainedChangeNotification(registration: *mut _APP
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn UnregisterAppStateChangeNotification(registration: *mut _APPSTATE_REGISTRATION) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UnregisterAppStateChangeNotification(registration: *mut _APPSTATE_REGISTRATION);
     }
@@ -8168,7 +7515,6 @@ pub unsafe fn UnregisterAppStateChangeNotification(registration: *mut _APPSTATE_
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn UnregisterScaleChangeEvent(dwcookie: usize) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UnregisterScaleChangeEvent(dwcookie: usize) -> ::windows::core::HRESULT;
     }
@@ -8180,7 +7526,6 @@ pub unsafe fn UrlApplySchemeA<'a, P0>(pszin: P0, pszout: ::windows::core::PSTR, 
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlApplySchemeA(pszin: ::windows::core::PCSTR, pszout: ::windows::core::PSTR, pcchout: *mut u32, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -8192,7 +7537,6 @@ pub unsafe fn UrlApplySchemeW<'a, P0>(pszin: P0, pszout: ::windows::core::PWSTR,
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlApplySchemeW(pszin: ::windows::core::PCWSTR, pszout: ::windows::core::PWSTR, pcchout: *mut u32, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -8204,7 +7548,6 @@ pub unsafe fn UrlCanonicalizeA<'a, P0>(pszurl: P0, pszcanonicalized: ::windows::
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlCanonicalizeA(pszurl: ::windows::core::PCSTR, pszcanonicalized: ::windows::core::PSTR, pcchcanonicalized: *mut u32, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -8216,7 +7559,6 @@ pub unsafe fn UrlCanonicalizeW<'a, P0>(pszurl: P0, pszcanonicalized: ::windows::
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlCanonicalizeW(pszurl: ::windows::core::PCWSTR, pszcanonicalized: ::windows::core::PWSTR, pcchcanonicalized: *mut u32, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -8229,7 +7571,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlCombineA(pszbase: ::windows::core::PCSTR, pszrelative: ::windows::core::PCSTR, pszcombined: ::windows::core::PSTR, pcchcombined: *mut u32, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -8242,7 +7583,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlCombineW(pszbase: ::windows::core::PCWSTR, pszrelative: ::windows::core::PCWSTR, pszcombined: ::windows::core::PWSTR, pcchcombined: *mut u32, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -8257,7 +7597,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlCompareA(psz1: ::windows::core::PCSTR, psz2: ::windows::core::PCSTR, fignoreslash: super::super::Foundation::BOOL) -> i32;
     }
@@ -8272,7 +7611,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlCompareW(psz1: ::windows::core::PCWSTR, psz2: ::windows::core::PCWSTR, fignoreslash: super::super::Foundation::BOOL) -> i32;
     }
@@ -8284,7 +7622,6 @@ pub unsafe fn UrlCreateFromPathA<'a, P0>(pszpath: P0, pszurl: ::windows::core::P
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlCreateFromPathA(pszpath: ::windows::core::PCSTR, pszurl: ::windows::core::PSTR, pcchurl: *mut u32, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -8296,7 +7633,6 @@ pub unsafe fn UrlCreateFromPathW<'a, P0>(pszpath: P0, pszurl: ::windows::core::P
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlCreateFromPathW(pszpath: ::windows::core::PCWSTR, pszurl: ::windows::core::PWSTR, pcchurl: *mut u32, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -8308,7 +7644,6 @@ pub unsafe fn UrlEscapeA<'a, P0>(pszurl: P0, pszescaped: ::windows::core::PSTR, 
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlEscapeA(pszurl: ::windows::core::PCSTR, pszescaped: ::windows::core::PSTR, pcchescaped: *mut u32, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -8320,7 +7655,6 @@ pub unsafe fn UrlEscapeW<'a, P0>(pszurl: P0, pszescaped: ::windows::core::PWSTR,
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlEscapeW(pszurl: ::windows::core::PCWSTR, pszescaped: ::windows::core::PWSTR, pcchescaped: *mut u32, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -8332,7 +7666,6 @@ pub unsafe fn UrlFixupW<'a, P0>(pcszurl: P0, psztranslatedurl: &mut [u16]) -> ::
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlFixupW(pcszurl: ::windows::core::PCWSTR, psztranslatedurl: ::windows::core::PWSTR, cchmax: u32) -> ::windows::core::HRESULT;
     }
@@ -8344,7 +7677,6 @@ pub unsafe fn UrlGetLocationA<'a, P0>(pszurl: P0) -> ::windows::core::PSTR
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlGetLocationA(pszurl: ::windows::core::PCSTR) -> ::windows::core::PSTR;
     }
@@ -8356,7 +7688,6 @@ pub unsafe fn UrlGetLocationW<'a, P0>(pszurl: P0) -> ::windows::core::PWSTR
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlGetLocationW(pszurl: ::windows::core::PCWSTR) -> ::windows::core::PWSTR;
     }
@@ -8368,7 +7699,6 @@ pub unsafe fn UrlGetPartA<'a, P0>(pszin: P0, pszout: ::windows::core::PSTR, pcch
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlGetPartA(pszin: ::windows::core::PCSTR, pszout: ::windows::core::PSTR, pcchout: *mut u32, dwpart: u32, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -8380,7 +7710,6 @@ pub unsafe fn UrlGetPartW<'a, P0>(pszin: P0, pszout: ::windows::core::PWSTR, pcc
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlGetPartW(pszin: ::windows::core::PCWSTR, pszout: ::windows::core::PWSTR, pcchout: *mut u32, dwpart: u32, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -8392,7 +7721,6 @@ pub unsafe fn UrlHashA<'a, P0>(pszurl: P0, pbhash: &mut [u8]) -> ::windows::core
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlHashA(pszurl: ::windows::core::PCSTR, pbhash: *mut u8, cbhash: u32) -> ::windows::core::HRESULT;
     }
@@ -8404,7 +7732,6 @@ pub unsafe fn UrlHashW<'a, P0>(pszurl: P0, pbhash: &mut [u8]) -> ::windows::core
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlHashW(pszurl: ::windows::core::PCWSTR, pbhash: *mut u8, cbhash: u32) -> ::windows::core::HRESULT;
     }
@@ -8417,7 +7744,6 @@ pub unsafe fn UrlIsA<'a, P0>(pszurl: P0, urlis: URLIS) -> super::super::Foundati
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlIsA(pszurl: ::windows::core::PCSTR, urlis: URLIS) -> super::super::Foundation::BOOL;
     }
@@ -8430,7 +7756,6 @@ pub unsafe fn UrlIsNoHistoryA<'a, P0>(pszurl: P0) -> super::super::Foundation::B
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlIsNoHistoryA(pszurl: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -8443,7 +7768,6 @@ pub unsafe fn UrlIsNoHistoryW<'a, P0>(pszurl: P0) -> super::super::Foundation::B
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlIsNoHistoryW(pszurl: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -8456,7 +7780,6 @@ pub unsafe fn UrlIsOpaqueA<'a, P0>(pszurl: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlIsOpaqueA(pszurl: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -8469,7 +7792,6 @@ pub unsafe fn UrlIsOpaqueW<'a, P0>(pszurl: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlIsOpaqueW(pszurl: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -8482,7 +7804,6 @@ pub unsafe fn UrlIsW<'a, P0>(pszurl: P0, urlis: URLIS) -> super::super::Foundati
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlIsW(pszurl: ::windows::core::PCWSTR, urlis: URLIS) -> super::super::Foundation::BOOL;
     }
@@ -8491,7 +7812,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn UrlUnescapeA(pszurl: ::windows::core::PSTR, pszunescaped: ::windows::core::PSTR, pcchunescaped: ::core::option::Option<*mut u32>, dwflags: u32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlUnescapeA(pszurl: ::windows::core::PSTR, pszunescaped: ::windows::core::PSTR, pcchunescaped: *mut u32, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -8500,7 +7820,6 @@ pub unsafe fn UrlUnescapeA(pszurl: ::windows::core::PSTR, pszunescaped: ::window
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn UrlUnescapeW(pszurl: ::windows::core::PWSTR, pszunescaped: ::windows::core::PWSTR, pcchunescaped: ::core::option::Option<*mut u32>, dwflags: u32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UrlUnescapeW(pszurl: ::windows::core::PWSTR, pszunescaped: ::windows::core::PWSTR, pcchunescaped: *mut u32, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -8509,7 +7828,6 @@ pub unsafe fn UrlUnescapeW(pszurl: ::windows::core::PWSTR, pszunescaped: ::windo
 #[doc = "*Required features: `\"Win32_UI_Shell\"`*"]
 #[inline]
 pub unsafe fn WhichPlatform() -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WhichPlatform() -> u32;
     }
@@ -8522,7 +7840,6 @@ pub unsafe fn Win32DeleteFile<'a, P0>(pszpath: P0) -> super::super::Foundation::
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn Win32DeleteFile(pszpath: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -8536,7 +7853,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WinHelpA(hwndmain: super::super::Foundation::HWND, lpszhelp: ::windows::core::PCSTR, ucommand: u32, dwdata: usize) -> super::super::Foundation::BOOL;
     }
@@ -8550,7 +7866,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WinHelpW(hwndmain: super::super::Foundation::HWND, lpszhelp: ::windows::core::PCWSTR, ucommand: u32, dwdata: usize) -> super::super::Foundation::BOOL;
     }
@@ -8560,7 +7875,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WriteCabinetState(pcs: *const CABINETSTATE) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WriteCabinetState(pcs: *const CABINETSTATE) -> super::super::Foundation::BOOL;
     }
@@ -8572,7 +7886,6 @@ pub unsafe fn wvnsprintfA<'a, P0>(pszdest: &mut [u8], pszfmt: P0, arglist: *cons
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn wvnsprintfA(pszdest: ::windows::core::PSTR, cchdest: i32, pszfmt: ::windows::core::PCSTR, arglist: *const i8) -> i32;
     }
@@ -8584,7 +7897,6 @@ pub unsafe fn wvnsprintfW<'a, P0>(pszdest: &mut [u16], pszfmt: P0, arglist: *con
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn wvnsprintfW(pszdest: ::windows::core::PWSTR, cchdest: i32, pszfmt: ::windows::core::PCWSTR, arglist: *const i8) -> i32;
     }

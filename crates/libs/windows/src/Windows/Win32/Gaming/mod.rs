@@ -2,7 +2,6 @@
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn CheckGamingPrivilegeSilently(privilegeid: u32, scope: &::windows::core::HSTRING, policy: &::windows::core::HSTRING) -> ::windows::core::Result<super::Foundation::BOOL> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CheckGamingPrivilegeSilently(privilegeid: u32, scope: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, policy: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, hasprivilege: *mut super::Foundation::BOOL) -> ::windows::core::HRESULT;
     }
@@ -16,7 +15,6 @@ pub unsafe fn CheckGamingPrivilegeSilentlyForUser<'a, P0>(user: P0, privilegeid:
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IInspectable>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CheckGamingPrivilegeSilentlyForUser(user: *mut ::core::ffi::c_void, privilegeid: u32, scope: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, policy: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, hasprivilege: *mut super::Foundation::BOOL) -> ::windows::core::HRESULT;
     }
@@ -26,7 +24,6 @@ where
 #[doc = "*Required features: `\"Win32_Gaming\"`*"]
 #[inline]
 pub unsafe fn CheckGamingPrivilegeWithUI(privilegeid: u32, scope: &::windows::core::HSTRING, policy: &::windows::core::HSTRING, friendlymessage: &::windows::core::HSTRING, completionroutine: GameUICompletionRoutine, context: ::core::option::Option<*const ::core::ffi::c_void>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CheckGamingPrivilegeWithUI(privilegeid: u32, scope: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, policy: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, friendlymessage: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, completionroutine: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -38,7 +35,6 @@ pub unsafe fn CheckGamingPrivilegeWithUIForUser<'a, P0>(user: P0, privilegeid: u
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IInspectable>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CheckGamingPrivilegeWithUIForUser(user: *mut ::core::ffi::c_void, privilegeid: u32, scope: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, policy: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, friendlymessage: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, completionroutine: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -47,7 +43,6 @@ where
 #[doc = "*Required features: `\"Win32_Gaming\"`*"]
 #[inline]
 pub unsafe fn GetExpandedResourceExclusiveCpuCount() -> ::windows::core::Result<u32> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetExpandedResourceExclusiveCpuCount(exclusivecpucount: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -57,7 +52,6 @@ pub unsafe fn GetExpandedResourceExclusiveCpuCount() -> ::windows::core::Result<
 #[doc = "*Required features: `\"Win32_Gaming\"`*"]
 #[inline]
 pub unsafe fn GetGamingDeviceModelInformation() -> ::windows::core::Result<GAMING_DEVICE_MODEL_INFORMATION> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetGamingDeviceModelInformation(information: *mut GAMING_DEVICE_MODEL_INFORMATION) -> ::windows::core::HRESULT;
     }
@@ -68,7 +62,6 @@ pub unsafe fn GetGamingDeviceModelInformation() -> ::windows::core::Result<GAMIN
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn HasExpandedResources() -> ::windows::core::Result<super::Foundation::BOOL> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HasExpandedResources(hasexpandedresources: *mut super::Foundation::BOOL) -> ::windows::core::HRESULT;
     }
@@ -82,7 +75,6 @@ pub unsafe fn ProcessPendingGameUI<'a, P0>(waitforcompletion: P0) -> ::windows::
 where
     P0: ::std::convert::Into<super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ProcessPendingGameUI(waitforcompletion: super::Foundation::BOOL) -> ::windows::core::HRESULT;
     }
@@ -91,7 +83,6 @@ where
 #[doc = "*Required features: `\"Win32_Gaming\"`*"]
 #[inline]
 pub unsafe fn ReleaseExclusiveCpuSets() -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReleaseExclusiveCpuSets() -> ::windows::core::HRESULT;
     }
@@ -100,7 +91,6 @@ pub unsafe fn ReleaseExclusiveCpuSets() -> ::windows::core::Result<()> {
 #[doc = "*Required features: `\"Win32_Gaming\"`*"]
 #[inline]
 pub unsafe fn ShowChangeFriendRelationshipUI(targetuserxuid: &::windows::core::HSTRING, completionroutine: GameUICompletionRoutine, context: ::core::option::Option<*const ::core::ffi::c_void>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowChangeFriendRelationshipUI(targetuserxuid: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, completionroutine: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -112,7 +102,6 @@ pub unsafe fn ShowChangeFriendRelationshipUIForUser<'a, P0>(user: P0, targetuser
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IInspectable>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowChangeFriendRelationshipUIForUser(user: *mut ::core::ffi::c_void, targetuserxuid: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, completionroutine: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -121,7 +110,6 @@ where
 #[doc = "*Required features: `\"Win32_Gaming\"`*"]
 #[inline]
 pub unsafe fn ShowCustomizeUserProfileUI(completionroutine: GameUICompletionRoutine, context: ::core::option::Option<*const ::core::ffi::c_void>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowCustomizeUserProfileUI(completionroutine: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -133,7 +121,6 @@ pub unsafe fn ShowCustomizeUserProfileUIForUser<'a, P0>(user: P0, completionrout
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IInspectable>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowCustomizeUserProfileUIForUser(user: *mut ::core::ffi::c_void, completionroutine: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -142,7 +129,6 @@ where
 #[doc = "*Required features: `\"Win32_Gaming\"`*"]
 #[inline]
 pub unsafe fn ShowFindFriendsUI(completionroutine: GameUICompletionRoutine, context: ::core::option::Option<*const ::core::ffi::c_void>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowFindFriendsUI(completionroutine: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -154,7 +140,6 @@ pub unsafe fn ShowFindFriendsUIForUser<'a, P0>(user: P0, completionroutine: Game
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IInspectable>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowFindFriendsUIForUser(user: *mut ::core::ffi::c_void, completionroutine: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -163,7 +148,6 @@ where
 #[doc = "*Required features: `\"Win32_Gaming\"`*"]
 #[inline]
 pub unsafe fn ShowGameInfoUI(titleid: u32, completionroutine: GameUICompletionRoutine, context: ::core::option::Option<*const ::core::ffi::c_void>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowGameInfoUI(titleid: u32, completionroutine: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -175,7 +159,6 @@ pub unsafe fn ShowGameInfoUIForUser<'a, P0>(user: P0, titleid: u32, completionro
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IInspectable>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowGameInfoUIForUser(user: *mut ::core::ffi::c_void, titleid: u32, completionroutine: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -184,7 +167,6 @@ where
 #[doc = "*Required features: `\"Win32_Gaming\"`*"]
 #[inline]
 pub unsafe fn ShowGameInviteUI(serviceconfigurationid: &::windows::core::HSTRING, sessiontemplatename: &::windows::core::HSTRING, sessionid: &::windows::core::HSTRING, invitationdisplaytext: &::windows::core::HSTRING, completionroutine: GameUICompletionRoutine, context: ::core::option::Option<*const ::core::ffi::c_void>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowGameInviteUI(serviceconfigurationid: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, sessiontemplatename: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, sessionid: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, invitationdisplaytext: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, completionroutine: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -196,7 +178,6 @@ pub unsafe fn ShowGameInviteUIForUser<'a, P0>(user: P0, serviceconfigurationid: 
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IInspectable>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowGameInviteUIForUser(user: *mut ::core::ffi::c_void, serviceconfigurationid: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, sessiontemplatename: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, sessionid: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, invitationdisplaytext: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, completionroutine: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -205,7 +186,6 @@ where
 #[doc = "*Required features: `\"Win32_Gaming\"`*"]
 #[inline]
 pub unsafe fn ShowGameInviteUIWithContext(serviceconfigurationid: &::windows::core::HSTRING, sessiontemplatename: &::windows::core::HSTRING, sessionid: &::windows::core::HSTRING, invitationdisplaytext: &::windows::core::HSTRING, customactivationcontext: &::windows::core::HSTRING, completionroutine: GameUICompletionRoutine, context: ::core::option::Option<*const ::core::ffi::c_void>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowGameInviteUIWithContext(serviceconfigurationid: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, sessiontemplatename: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, sessionid: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, invitationdisplaytext: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, customactivationcontext: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, completionroutine: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -217,7 +197,6 @@ pub unsafe fn ShowGameInviteUIWithContextForUser<'a, P0>(user: P0, serviceconfig
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IInspectable>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowGameInviteUIWithContextForUser(user: *mut ::core::ffi::c_void, serviceconfigurationid: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, sessiontemplatename: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, sessionid: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, invitationdisplaytext: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, customactivationcontext: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, completionroutine: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -226,7 +205,6 @@ where
 #[doc = "*Required features: `\"Win32_Gaming\"`*"]
 #[inline]
 pub unsafe fn ShowPlayerPickerUI(promptdisplaytext: &::windows::core::HSTRING, xuids: &[::windows::core::HSTRING], preselectedxuids: ::core::option::Option<&[::windows::core::HSTRING]>, minselectioncount: usize, maxselectioncount: usize, completionroutine: PlayerPickerUICompletionRoutine, context: ::core::option::Option<*const ::core::ffi::c_void>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowPlayerPickerUI(promptdisplaytext: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, xuids: *const ::core::mem::ManuallyDrop<::windows::core::HSTRING>, xuidscount: usize, preselectedxuids: *const ::core::mem::ManuallyDrop<::windows::core::HSTRING>, preselectedxuidscount: usize, minselectioncount: usize, maxselectioncount: usize, completionroutine: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -238,7 +216,6 @@ pub unsafe fn ShowPlayerPickerUIForUser<'a, P0>(user: P0, promptdisplaytext: &::
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IInspectable>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowPlayerPickerUIForUser(user: *mut ::core::ffi::c_void, promptdisplaytext: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, xuids: *const ::core::mem::ManuallyDrop<::windows::core::HSTRING>, xuidscount: usize, preselectedxuids: *const ::core::mem::ManuallyDrop<::windows::core::HSTRING>, preselectedxuidscount: usize, minselectioncount: usize, maxselectioncount: usize, completionroutine: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -247,7 +224,6 @@ where
 #[doc = "*Required features: `\"Win32_Gaming\"`*"]
 #[inline]
 pub unsafe fn ShowProfileCardUI(targetuserxuid: &::windows::core::HSTRING, completionroutine: GameUICompletionRoutine, context: ::core::option::Option<*const ::core::ffi::c_void>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowProfileCardUI(targetuserxuid: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, completionroutine: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -259,7 +235,6 @@ pub unsafe fn ShowProfileCardUIForUser<'a, P0>(user: P0, targetuserxuid: &::wind
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IInspectable>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowProfileCardUIForUser(user: *mut ::core::ffi::c_void, targetuserxuid: ::core::mem::ManuallyDrop<::windows::core::HSTRING>, completionroutine: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -268,7 +243,6 @@ where
 #[doc = "*Required features: `\"Win32_Gaming\"`*"]
 #[inline]
 pub unsafe fn ShowTitleAchievementsUI(titleid: u32, completionroutine: GameUICompletionRoutine, context: ::core::option::Option<*const ::core::ffi::c_void>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowTitleAchievementsUI(titleid: u32, completionroutine: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -280,7 +254,6 @@ pub unsafe fn ShowTitleAchievementsUIForUser<'a, P0>(user: P0, titleid: u32, com
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IInspectable>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowTitleAchievementsUIForUser(user: *mut ::core::ffi::c_void, titleid: u32, completionroutine: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -289,7 +262,6 @@ where
 #[doc = "*Required features: `\"Win32_Gaming\"`*"]
 #[inline]
 pub unsafe fn ShowUserSettingsUI(completionroutine: GameUICompletionRoutine, context: ::core::option::Option<*const ::core::ffi::c_void>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowUserSettingsUI(completionroutine: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -301,7 +273,6 @@ pub unsafe fn ShowUserSettingsUIForUser<'a, P0>(user: P0, completionroutine: Gam
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IInspectable>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowUserSettingsUIForUser(user: *mut ::core::ffi::c_void, completionroutine: *mut ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -311,7 +282,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn TryCancelPendingGameUI() -> super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TryCancelPendingGameUI() -> super::Foundation::BOOL;
     }

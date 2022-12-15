@@ -10,7 +10,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BeginBufferedAnimation(hwnd: super::super::Foundation::HWND, hdctarget: super::super::Graphics::Gdi::HDC, prctarget: *const super::super::Foundation::RECT, dwformat: BP_BUFFERFORMAT, ppaintparams: *const BP_PAINTPARAMS, panimationparams: *const BP_ANIMATIONPARAMS, phdcfrom: *mut super::super::Graphics::Gdi::HDC, phdcto: *mut super::super::Graphics::Gdi::HDC) -> isize;
     }
@@ -23,7 +22,6 @@ pub unsafe fn BeginBufferedPaint<'a, P0>(hdctarget: P0, prctarget: *const super:
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BeginBufferedPaint(hdctarget: super::super::Graphics::Gdi::HDC, prctarget: *const super::super::Foundation::RECT, dwformat: BP_BUFFERFORMAT, ppaintparams: *const BP_PAINTPARAMS, phdc: *mut super::super::Graphics::Gdi::HDC) -> isize;
     }
@@ -36,7 +34,6 @@ pub unsafe fn BeginPanningFeedback<'a, P0>(hwnd: P0) -> super::super::Foundation
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BeginPanningFeedback(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -46,7 +43,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn BufferedPaintClear(hbufferedpaint: isize, prc: ::core::option::Option<*const super::super::Foundation::RECT>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BufferedPaintClear(hbufferedpaint: isize, prc: *const super::super::Foundation::RECT) -> ::windows::core::HRESULT;
     }
@@ -55,7 +51,6 @@ pub unsafe fn BufferedPaintClear(hbufferedpaint: isize, prc: ::core::option::Opt
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 #[inline]
 pub unsafe fn BufferedPaintInit() -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BufferedPaintInit() -> ::windows::core::HRESULT;
     }
@@ -69,7 +64,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BufferedPaintRenderAnimation(hwnd: super::super::Foundation::HWND, hdctarget: super::super::Graphics::Gdi::HDC) -> super::super::Foundation::BOOL;
     }
@@ -79,7 +73,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn BufferedPaintSetAlpha(hbufferedpaint: isize, prc: ::core::option::Option<*const super::super::Foundation::RECT>, alpha: u8) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BufferedPaintSetAlpha(hbufferedpaint: isize, prc: *const super::super::Foundation::RECT, alpha: u8) -> ::windows::core::HRESULT;
     }
@@ -92,7 +85,6 @@ pub unsafe fn BufferedPaintStopAllAnimations<'a, P0>(hwnd: P0) -> ::windows::cor
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BufferedPaintStopAllAnimations(hwnd: super::super::Foundation::HWND) -> ::windows::core::HRESULT;
     }
@@ -101,7 +93,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 #[inline]
 pub unsafe fn BufferedPaintUnInit() -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BufferedPaintUnInit() -> ::windows::core::HRESULT;
     }
@@ -114,7 +105,6 @@ pub unsafe fn CheckDlgButton<'a, P0>(hdlg: P0, nidbutton: i32, ucheck: DLG_BUTTO
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CheckDlgButton(hdlg: super::super::Foundation::HWND, nidbutton: i32, ucheck: DLG_BUTTON_CHECK_STATE) -> super::super::Foundation::BOOL;
     }
@@ -127,7 +117,6 @@ pub unsafe fn CheckRadioButton<'a, P0>(hdlg: P0, nidfirstbutton: i32, nidlastbut
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CheckRadioButton(hdlg: super::super::Foundation::HWND, nidfirstbutton: i32, nidlastbutton: i32, nidcheckbutton: i32) -> super::super::Foundation::BOOL;
     }
@@ -136,7 +125,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 #[inline]
 pub unsafe fn CloseThemeData(htheme: isize) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CloseThemeData(htheme: isize) -> ::windows::core::HRESULT;
     }
@@ -149,7 +137,6 @@ pub unsafe fn CreateMappedBitmap<'a, P0>(hinstance: P0, idbitmap: isize, wflags:
 where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateMappedBitmap(hinstance: super::super::Foundation::HINSTANCE, idbitmap: isize, wflags: u32, lpcolormap: *const COLORMAP, inummaps: i32) -> super::super::Graphics::Gdi::HBITMAP;
     }
@@ -160,7 +147,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
 #[inline]
 pub unsafe fn CreatePropertySheetPageA(constpropsheetpagepointer: *mut PROPSHEETPAGEA) -> HPROPSHEETPAGE {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreatePropertySheetPageA(constpropsheetpagepointer: *mut PROPSHEETPAGEA) -> HPROPSHEETPAGE;
     }
@@ -170,7 +156,6 @@ pub unsafe fn CreatePropertySheetPageA(constpropsheetpagepointer: *mut PROPSHEET
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
 #[inline]
 pub unsafe fn CreatePropertySheetPageW(constpropsheetpagepointer: *mut PROPSHEETPAGEW) -> HPROPSHEETPAGE {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreatePropertySheetPageW(constpropsheetpagepointer: *mut PROPSHEETPAGEW) -> HPROPSHEETPAGE;
     }
@@ -184,7 +169,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateStatusWindowA(style: i32, lpsztext: ::windows::core::PCSTR, hwndparent: super::super::Foundation::HWND, wid: u32) -> super::super::Foundation::HWND;
     }
@@ -198,7 +182,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateStatusWindowW(style: i32, lpsztext: ::windows::core::PCWSTR, hwndparent: super::super::Foundation::HWND, wid: u32) -> super::super::Foundation::HWND;
     }
@@ -208,7 +191,6 @@ where
 #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
 #[inline]
 pub unsafe fn CreateSyntheticPointerDevice(pointertype: super::WindowsAndMessaging::POINTER_INPUT_TYPE, maxcount: u32, mode: POINTER_FEEDBACK_MODE) -> ::windows::core::Result<HSYNTHETICPOINTERDEVICE> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateSyntheticPointerDevice(pointertype: super::WindowsAndMessaging::POINTER_INPUT_TYPE, maxcount: u32, mode: POINTER_FEEDBACK_MODE) -> HSYNTHETICPOINTERDEVICE;
     }
@@ -223,7 +205,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateToolbarEx(hwnd: super::super::Foundation::HWND, ws: u32, wid: u32, nbitmaps: i32, hbminst: super::super::Foundation::HINSTANCE, wbmid: usize, lpbuttons: *mut TBBUTTON, inumbuttons: i32, dxbutton: i32, dybutton: i32, dxbitmap: i32, dybitmap: i32, ustructsize: u32) -> super::super::Foundation::HWND;
     }
@@ -238,7 +219,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P2: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateUpDownControl(dwstyle: u32, x: i32, y: i32, cx: i32, cy: i32, hparent: super::super::Foundation::HWND, nid: i32, hinst: super::super::Foundation::HINSTANCE, hbuddy: super::super::Foundation::HWND, nupper: i32, nlower: i32, npos: i32) -> super::super::Foundation::HWND;
     }
@@ -251,7 +231,6 @@ where
     P0: ::std::convert::Into<HDPA>,
     P1: ::std::convert::Into<HDPA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DPA_Clone(hdpa: HDPA, hdpanew: HDPA) -> HDPA;
     }
@@ -260,7 +239,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 #[inline]
 pub unsafe fn DPA_Create(citemgrow: i32) -> HDPA {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DPA_Create(citemgrow: i32) -> HDPA;
     }
@@ -273,7 +251,6 @@ pub unsafe fn DPA_CreateEx<'a, P0>(cpgrow: i32, hheap: P0) -> HDPA
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DPA_CreateEx(cpgrow: i32, hheap: super::super::Foundation::HANDLE) -> HDPA;
     }
@@ -286,7 +263,6 @@ pub unsafe fn DPA_DeleteAllPtrs<'a, P0>(hdpa: P0) -> super::super::Foundation::B
 where
     P0: ::std::convert::Into<HDPA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DPA_DeleteAllPtrs(hdpa: HDPA) -> super::super::Foundation::BOOL;
     }
@@ -298,7 +274,6 @@ pub unsafe fn DPA_DeletePtr<'a, P0>(hdpa: P0, i: i32) -> *mut ::core::ffi::c_voi
 where
     P0: ::std::convert::Into<HDPA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DPA_DeletePtr(hdpa: HDPA, i: i32) -> *mut ::core::ffi::c_void;
     }
@@ -311,7 +286,6 @@ pub unsafe fn DPA_Destroy<'a, P0>(hdpa: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<HDPA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DPA_Destroy(hdpa: HDPA) -> super::super::Foundation::BOOL;
     }
@@ -323,7 +297,6 @@ pub unsafe fn DPA_DestroyCallback<'a, P0>(hdpa: P0, pfncb: PFNDAENUMCALLBACK, pd
 where
     P0: ::std::convert::Into<HDPA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DPA_DestroyCallback(hdpa: HDPA, pfncb: *mut ::core::ffi::c_void, pdata: *const ::core::ffi::c_void);
     }
@@ -335,7 +308,6 @@ pub unsafe fn DPA_EnumCallback<'a, P0>(hdpa: P0, pfncb: PFNDAENUMCALLBACK, pdata
 where
     P0: ::std::convert::Into<HDPA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DPA_EnumCallback(hdpa: HDPA, pfncb: *mut ::core::ffi::c_void, pdata: *const ::core::ffi::c_void);
     }
@@ -347,7 +319,6 @@ pub unsafe fn DPA_GetPtr<'a, P0>(hdpa: P0, i: isize) -> *mut ::core::ffi::c_void
 where
     P0: ::std::convert::Into<HDPA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DPA_GetPtr(hdpa: HDPA, i: isize) -> *mut ::core::ffi::c_void;
     }
@@ -359,7 +330,6 @@ pub unsafe fn DPA_GetPtrIndex<'a, P0>(hdpa: P0, p: ::core::option::Option<*const
 where
     P0: ::std::convert::Into<HDPA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DPA_GetPtrIndex(hdpa: HDPA, p: *const ::core::ffi::c_void) -> i32;
     }
@@ -371,7 +341,6 @@ pub unsafe fn DPA_GetSize<'a, P0>(hdpa: P0) -> u64
 where
     P0: ::std::convert::Into<HDPA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DPA_GetSize(hdpa: HDPA) -> u64;
     }
@@ -384,7 +353,6 @@ pub unsafe fn DPA_Grow<'a, P0>(pdpa: P0, cp: i32) -> super::super::Foundation::B
 where
     P0: ::std::convert::Into<HDPA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DPA_Grow(pdpa: HDPA, cp: i32) -> super::super::Foundation::BOOL;
     }
@@ -396,7 +364,6 @@ pub unsafe fn DPA_InsertPtr<'a, P0>(hdpa: P0, i: i32, p: ::core::option::Option<
 where
     P0: ::std::convert::Into<HDPA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DPA_InsertPtr(hdpa: HDPA, i: i32, p: *const ::core::ffi::c_void) -> i32;
     }
@@ -409,7 +376,6 @@ pub unsafe fn DPA_LoadStream<'a, P0>(phdpa: *mut HDPA, pfn: PFNDPASTREAM, pstrea
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IStream>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DPA_LoadStream(phdpa: *mut HDPA, pfn: *mut ::core::ffi::c_void, pstream: *mut ::core::ffi::c_void, pvinstdata: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -424,7 +390,6 @@ where
     P1: ::std::convert::Into<HDPA>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DPA_Merge(hdpadest: HDPA, hdpasrc: HDPA, dwflags: u32, pfncompare: *mut ::core::ffi::c_void, pfnmerge: *mut ::core::ffi::c_void, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
     }
@@ -438,7 +403,6 @@ where
     P0: ::std::convert::Into<HDPA>,
     P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IStream>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DPA_SaveStream(hdpa: HDPA, pfn: *mut ::core::ffi::c_void, pstream: *mut ::core::ffi::c_void, pvinstdata: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -452,7 +416,6 @@ where
     P0: ::std::convert::Into<HDPA>,
     P1: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DPA_Search(hdpa: HDPA, pfind: *const ::core::ffi::c_void, istart: i32, pfncompare: *mut ::core::ffi::c_void, lparam: super::super::Foundation::LPARAM, options: u32) -> i32;
     }
@@ -465,7 +428,6 @@ pub unsafe fn DPA_SetPtr<'a, P0>(hdpa: P0, i: i32, p: ::core::option::Option<*co
 where
     P0: ::std::convert::Into<HDPA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DPA_SetPtr(hdpa: HDPA, i: i32, p: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -479,7 +441,6 @@ where
     P0: ::std::convert::Into<HDPA>,
     P1: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DPA_Sort(hdpa: HDPA, pfncompare: *mut ::core::ffi::c_void, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
     }
@@ -491,7 +452,6 @@ pub unsafe fn DSA_Clone<'a, P0>(hdsa: P0) -> HDSA
 where
     P0: ::std::convert::Into<HDSA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DSA_Clone(hdsa: HDSA) -> HDSA;
     }
@@ -500,7 +460,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 #[inline]
 pub unsafe fn DSA_Create(cbitem: i32, citemgrow: i32) -> HDSA {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DSA_Create(cbitem: i32, citemgrow: i32) -> HDSA;
     }
@@ -513,7 +472,6 @@ pub unsafe fn DSA_DeleteAllItems<'a, P0>(hdsa: P0) -> super::super::Foundation::
 where
     P0: ::std::convert::Into<HDSA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DSA_DeleteAllItems(hdsa: HDSA) -> super::super::Foundation::BOOL;
     }
@@ -526,7 +484,6 @@ pub unsafe fn DSA_DeleteItem<'a, P0>(hdsa: P0, i: i32) -> super::super::Foundati
 where
     P0: ::std::convert::Into<HDSA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DSA_DeleteItem(hdsa: HDSA, i: i32) -> super::super::Foundation::BOOL;
     }
@@ -539,7 +496,6 @@ pub unsafe fn DSA_Destroy<'a, P0>(hdsa: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<HDSA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DSA_Destroy(hdsa: HDSA) -> super::super::Foundation::BOOL;
     }
@@ -551,7 +507,6 @@ pub unsafe fn DSA_DestroyCallback<'a, P0>(hdsa: P0, pfncb: PFNDAENUMCALLBACK, pd
 where
     P0: ::std::convert::Into<HDSA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DSA_DestroyCallback(hdsa: HDSA, pfncb: *mut ::core::ffi::c_void, pdata: *const ::core::ffi::c_void);
     }
@@ -563,7 +518,6 @@ pub unsafe fn DSA_EnumCallback<'a, P0>(hdsa: P0, pfncb: PFNDAENUMCALLBACK, pdata
 where
     P0: ::std::convert::Into<HDSA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DSA_EnumCallback(hdsa: HDSA, pfncb: *mut ::core::ffi::c_void, pdata: *const ::core::ffi::c_void);
     }
@@ -576,7 +530,6 @@ pub unsafe fn DSA_GetItem<'a, P0>(hdsa: P0, i: i32, pitem: *mut ::core::ffi::c_v
 where
     P0: ::std::convert::Into<HDSA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DSA_GetItem(hdsa: HDSA, i: i32, pitem: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -588,7 +541,6 @@ pub unsafe fn DSA_GetItemPtr<'a, P0>(hdsa: P0, i: i32) -> *mut ::core::ffi::c_vo
 where
     P0: ::std::convert::Into<HDSA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DSA_GetItemPtr(hdsa: HDSA, i: i32) -> *mut ::core::ffi::c_void;
     }
@@ -600,7 +552,6 @@ pub unsafe fn DSA_GetSize<'a, P0>(hdsa: P0) -> u64
 where
     P0: ::std::convert::Into<HDSA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DSA_GetSize(hdsa: HDSA) -> u64;
     }
@@ -612,7 +563,6 @@ pub unsafe fn DSA_InsertItem<'a, P0>(hdsa: P0, i: i32, pitem: *const ::core::ffi
 where
     P0: ::std::convert::Into<HDSA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DSA_InsertItem(hdsa: HDSA, i: i32, pitem: *const ::core::ffi::c_void) -> i32;
     }
@@ -625,7 +575,6 @@ pub unsafe fn DSA_SetItem<'a, P0>(hdsa: P0, i: i32, pitem: *const ::core::ffi::c
 where
     P0: ::std::convert::Into<HDSA>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DSA_SetItem(hdsa: HDSA, i: i32, pitem: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -639,7 +588,6 @@ where
     P0: ::std::convert::Into<HDSA>,
     P1: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DSA_Sort(pdsa: HDSA, pfncompare: *mut ::core::ffi::c_void, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
     }
@@ -652,7 +600,6 @@ pub unsafe fn DestroyPropertySheetPage<'a, P0>(param0: P0) -> super::super::Foun
 where
     P0: ::std::convert::Into<HPROPSHEETPAGE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DestroyPropertySheetPage(param0: HPROPSHEETPAGE) -> super::super::Foundation::BOOL;
     }
@@ -664,7 +611,6 @@ pub unsafe fn DestroySyntheticPointerDevice<'a, P0>(device: P0)
 where
     P0: ::std::convert::Into<HSYNTHETICPOINTERDEVICE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DestroySyntheticPointerDevice(device: HSYNTHETICPOINTERDEVICE);
     }
@@ -677,7 +623,6 @@ pub unsafe fn DlgDirListA<'a, P0>(hdlg: P0, lppathspec: ::windows::core::PSTR, n
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DlgDirListA(hdlg: super::super::Foundation::HWND, lppathspec: ::windows::core::PSTR, nidlistbox: i32, nidstaticpath: i32, ufiletype: DLG_DIR_LIST_FILE_TYPE) -> i32;
     }
@@ -690,7 +635,6 @@ pub unsafe fn DlgDirListComboBoxA<'a, P0>(hdlg: P0, lppathspec: ::windows::core:
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DlgDirListComboBoxA(hdlg: super::super::Foundation::HWND, lppathspec: ::windows::core::PSTR, nidcombobox: i32, nidstaticpath: i32, ufiletype: DLG_DIR_LIST_FILE_TYPE) -> i32;
     }
@@ -703,7 +647,6 @@ pub unsafe fn DlgDirListComboBoxW<'a, P0>(hdlg: P0, lppathspec: ::windows::core:
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DlgDirListComboBoxW(hdlg: super::super::Foundation::HWND, lppathspec: ::windows::core::PWSTR, nidcombobox: i32, nidstaticpath: i32, ufiletype: DLG_DIR_LIST_FILE_TYPE) -> i32;
     }
@@ -716,7 +659,6 @@ pub unsafe fn DlgDirListW<'a, P0>(hdlg: P0, lppathspec: ::windows::core::PWSTR, 
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DlgDirListW(hdlg: super::super::Foundation::HWND, lppathspec: ::windows::core::PWSTR, nidlistbox: i32, nidstaticpath: i32, ufiletype: DLG_DIR_LIST_FILE_TYPE) -> i32;
     }
@@ -729,7 +671,6 @@ pub unsafe fn DlgDirSelectComboBoxExA<'a, P0>(hwnddlg: P0, lpstring: &mut [u8], 
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DlgDirSelectComboBoxExA(hwnddlg: super::super::Foundation::HWND, lpstring: ::windows::core::PSTR, cchout: i32, idcombobox: i32) -> super::super::Foundation::BOOL;
     }
@@ -742,7 +683,6 @@ pub unsafe fn DlgDirSelectComboBoxExW<'a, P0>(hwnddlg: P0, lpstring: &mut [u16],
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DlgDirSelectComboBoxExW(hwnddlg: super::super::Foundation::HWND, lpstring: ::windows::core::PWSTR, cchout: i32, idcombobox: i32) -> super::super::Foundation::BOOL;
     }
@@ -755,7 +695,6 @@ pub unsafe fn DlgDirSelectExA<'a, P0>(hwnddlg: P0, lpstring: &mut [u8], idlistbo
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DlgDirSelectExA(hwnddlg: super::super::Foundation::HWND, lpstring: ::windows::core::PSTR, chcount: i32, idlistbox: i32) -> super::super::Foundation::BOOL;
     }
@@ -768,7 +707,6 @@ pub unsafe fn DlgDirSelectExW<'a, P0>(hwnddlg: P0, lpstring: &mut [u16], idlistb
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DlgDirSelectExW(hwnddlg: super::super::Foundation::HWND, lpstring: ::windows::core::PWSTR, chcount: i32, idlistbox: i32) -> super::super::Foundation::BOOL;
     }
@@ -782,7 +720,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DrawInsert(handparent: super::super::Foundation::HWND, hlb: super::super::Foundation::HWND, nitem: i32);
     }
@@ -797,7 +734,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::COLORREF>,
     P2: ::std::convert::Into<super::super::Foundation::COLORREF>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DrawShadowText(hdc: super::super::Graphics::Gdi::HDC, psztext: ::windows::core::PCWSTR, cch: u32, prc: *const super::super::Foundation::RECT, dwflags: u32, crtext: super::super::Foundation::COLORREF, crshadow: super::super::Foundation::COLORREF, ixoffset: i32, iyoffset: i32) -> i32;
     }
@@ -811,7 +747,6 @@ where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DrawStatusTextA(hdc: super::super::Graphics::Gdi::HDC, lprc: *mut super::super::Foundation::RECT, psztext: ::windows::core::PCSTR, uflags: u32);
     }
@@ -825,7 +760,6 @@ where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DrawStatusTextW(hdc: super::super::Graphics::Gdi::HDC, lprc: *mut super::super::Foundation::RECT, psztext: ::windows::core::PCWSTR, uflags: u32);
     }
@@ -838,7 +772,6 @@ pub unsafe fn DrawThemeBackground<'a, P0>(htheme: isize, hdc: P0, ipartid: i32, 
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DrawThemeBackground(htheme: isize, hdc: super::super::Graphics::Gdi::HDC, ipartid: i32, istateid: i32, prect: *const super::super::Foundation::RECT, pcliprect: *const super::super::Foundation::RECT) -> ::windows::core::HRESULT;
     }
@@ -851,7 +784,6 @@ pub unsafe fn DrawThemeBackgroundEx<'a, P0>(htheme: isize, hdc: P0, ipartid: i32
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DrawThemeBackgroundEx(htheme: isize, hdc: super::super::Graphics::Gdi::HDC, ipartid: i32, istateid: i32, prect: *const super::super::Foundation::RECT, poptions: *const DTBGOPTS) -> ::windows::core::HRESULT;
     }
@@ -864,7 +796,6 @@ pub unsafe fn DrawThemeEdge<'a, P0>(htheme: isize, hdc: P0, ipartid: i32, istate
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DrawThemeEdge(htheme: isize, hdc: super::super::Graphics::Gdi::HDC, ipartid: i32, istateid: i32, pdestrect: *const super::super::Foundation::RECT, uedge: super::super::Graphics::Gdi::DRAWEDGE_FLAGS, uflags: super::super::Graphics::Gdi::DRAW_EDGE_FLAGS, pcontentrect: *mut super::super::Foundation::RECT) -> ::windows::core::HRESULT;
     }
@@ -879,7 +810,6 @@ where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
     P1: ::std::convert::Into<HIMAGELIST>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DrawThemeIcon(htheme: isize, hdc: super::super::Graphics::Gdi::HDC, ipartid: i32, istateid: i32, prect: *const super::super::Foundation::RECT, himl: HIMAGELIST, iimageindex: i32) -> ::windows::core::HRESULT;
     }
@@ -893,7 +823,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DrawThemeParentBackground(hwnd: super::super::Foundation::HWND, hdc: super::super::Graphics::Gdi::HDC, prc: *const super::super::Foundation::RECT) -> ::windows::core::HRESULT;
     }
@@ -907,7 +836,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DrawThemeParentBackgroundEx(hwnd: super::super::Foundation::HWND, hdc: super::super::Graphics::Gdi::HDC, dwflags: DRAW_THEME_PARENT_BACKGROUND_FLAGS, prc: *const super::super::Foundation::RECT) -> ::windows::core::HRESULT;
     }
@@ -920,7 +848,6 @@ pub unsafe fn DrawThemeText<'a, P0>(htheme: isize, hdc: P0, ipartid: i32, istate
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DrawThemeText(htheme: isize, hdc: super::super::Graphics::Gdi::HDC, ipartid: i32, istateid: i32, psztext: ::windows::core::PCWSTR, cchtext: i32, dwtextflags: super::super::Graphics::Gdi::DRAW_TEXT_FORMAT, dwtextflags2: u32, prect: *const super::super::Foundation::RECT) -> ::windows::core::HRESULT;
     }
@@ -933,7 +860,6 @@ pub unsafe fn DrawThemeTextEx<'a, P0>(htheme: isize, hdc: P0, ipartid: i32, ista
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DrawThemeTextEx(htheme: isize, hdc: super::super::Graphics::Gdi::HDC, ipartid: i32, istateid: i32, psztext: ::windows::core::PCWSTR, cchtext: i32, dwtextflags: super::super::Graphics::Gdi::DRAW_TEXT_FORMAT, prect: *mut super::super::Foundation::RECT, poptions: *const DTTOPTS) -> ::windows::core::HRESULT;
     }
@@ -946,7 +872,6 @@ pub unsafe fn EnableScrollBar<'a, P0>(hwnd: P0, wsbflags: super::WindowsAndMessa
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnableScrollBar(hwnd: super::super::Foundation::HWND, wsbflags: super::WindowsAndMessaging::SCROLLBAR_CONSTANTS, warrows: ENABLE_SCROLL_BAR_ARROWS) -> super::super::Foundation::BOOL;
     }
@@ -959,7 +884,6 @@ pub unsafe fn EnableThemeDialogTexture<'a, P0>(hwnd: P0, dwflags: u32) -> ::wind
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnableThemeDialogTexture(hwnd: super::super::Foundation::HWND, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -972,7 +896,6 @@ pub unsafe fn EnableTheming<'a, P0>(fenable: P0) -> ::windows::core::Result<()>
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnableTheming(fenable: super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
     }
@@ -985,7 +908,6 @@ pub unsafe fn EndBufferedAnimation<'a, P0>(hbpanimation: isize, fupdatetarget: P
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EndBufferedAnimation(hbpanimation: isize, fupdatetarget: super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
     }
@@ -998,7 +920,6 @@ pub unsafe fn EndBufferedPaint<'a, P0>(hbufferedpaint: isize, fupdatetarget: P0)
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EndBufferedPaint(hbufferedpaint: isize, fupdatetarget: super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
     }
@@ -1012,7 +933,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EndPanningFeedback(hwnd: super::super::Foundation::HWND, fanimateback: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -1022,7 +942,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn EvaluateProximityToPolygon(controlpolygon: &[super::super::Foundation::POINT], phittestinginput: *const TOUCH_HIT_TESTING_INPUT, pproximityeval: *mut TOUCH_HIT_TESTING_PROXIMITY_EVALUATION) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvaluateProximityToPolygon(numvertices: u32, controlpolygon: *const super::super::Foundation::POINT, phittestinginput: *const TOUCH_HIT_TESTING_INPUT, pproximityeval: *mut TOUCH_HIT_TESTING_PROXIMITY_EVALUATION) -> super::super::Foundation::BOOL;
     }
@@ -1032,7 +951,6 @@ pub unsafe fn EvaluateProximityToPolygon(controlpolygon: &[super::super::Foundat
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn EvaluateProximityToRect(controlboundingbox: *const super::super::Foundation::RECT, phittestinginput: *const TOUCH_HIT_TESTING_INPUT, pproximityeval: *mut TOUCH_HIT_TESTING_PROXIMITY_EVALUATION) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EvaluateProximityToRect(controlboundingbox: *const super::super::Foundation::RECT, phittestinginput: *const TOUCH_HIT_TESTING_INPUT, pproximityeval: *mut TOUCH_HIT_TESTING_PROXIMITY_EVALUATION) -> super::super::Foundation::BOOL;
     }
@@ -1045,7 +963,6 @@ pub unsafe fn FlatSB_EnableScrollBar<'a, P0>(param0: P0, param1: i32, param2: u3
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FlatSB_EnableScrollBar(param0: super::super::Foundation::HWND, param1: i32, param2: u32) -> super::super::Foundation::BOOL;
     }
@@ -1058,7 +975,6 @@ pub unsafe fn FlatSB_GetScrollInfo<'a, P0>(param0: P0, code: super::WindowsAndMe
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FlatSB_GetScrollInfo(param0: super::super::Foundation::HWND, code: super::WindowsAndMessaging::SCROLLBAR_CONSTANTS, param2: *mut super::WindowsAndMessaging::SCROLLINFO) -> super::super::Foundation::BOOL;
     }
@@ -1071,7 +987,6 @@ pub unsafe fn FlatSB_GetScrollPos<'a, P0>(param0: P0, code: super::WindowsAndMes
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FlatSB_GetScrollPos(param0: super::super::Foundation::HWND, code: super::WindowsAndMessaging::SCROLLBAR_CONSTANTS) -> i32;
     }
@@ -1084,7 +999,6 @@ pub unsafe fn FlatSB_GetScrollProp<'a, P0>(param0: P0, propindex: WSB_PROP, para
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FlatSB_GetScrollProp(param0: super::super::Foundation::HWND, propindex: WSB_PROP, param2: *mut i32) -> super::super::Foundation::BOOL;
     }
@@ -1097,7 +1011,6 @@ pub unsafe fn FlatSB_GetScrollRange<'a, P0>(param0: P0, code: super::WindowsAndM
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FlatSB_GetScrollRange(param0: super::super::Foundation::HWND, code: super::WindowsAndMessaging::SCROLLBAR_CONSTANTS, param2: *mut i32, param3: *mut i32) -> super::super::Foundation::BOOL;
     }
@@ -1111,7 +1024,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FlatSB_SetScrollInfo(param0: super::super::Foundation::HWND, code: super::WindowsAndMessaging::SCROLLBAR_CONSTANTS, psi: *mut super::WindowsAndMessaging::SCROLLINFO, fredraw: super::super::Foundation::BOOL) -> i32;
     }
@@ -1125,7 +1037,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FlatSB_SetScrollPos(param0: super::super::Foundation::HWND, code: super::WindowsAndMessaging::SCROLLBAR_CONSTANTS, pos: i32, fredraw: super::super::Foundation::BOOL) -> i32;
     }
@@ -1139,7 +1050,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FlatSB_SetScrollProp(param0: super::super::Foundation::HWND, index: WSB_PROP, newvalue: isize, param3: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -1153,7 +1063,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FlatSB_SetScrollRange(param0: super::super::Foundation::HWND, code: super::WindowsAndMessaging::SCROLLBAR_CONSTANTS, min: i32, max: i32, fredraw: super::super::Foundation::BOOL) -> i32;
     }
@@ -1167,7 +1076,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FlatSB_ShowScrollBar(param0: super::super::Foundation::HWND, code: super::WindowsAndMessaging::SCROLLBAR_CONSTANTS, param2: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -1177,7 +1085,6 @@ where
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
 pub unsafe fn GetBufferedPaintBits(hbufferedpaint: isize, ppbbuffer: *mut *mut super::super::Graphics::Gdi::RGBQUAD, pcxrow: *mut i32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetBufferedPaintBits(hbufferedpaint: isize, ppbbuffer: *mut *mut super::super::Graphics::Gdi::RGBQUAD, pcxrow: *mut i32) -> ::windows::core::HRESULT;
     }
@@ -1187,7 +1094,6 @@ pub unsafe fn GetBufferedPaintBits(hbufferedpaint: isize, ppbbuffer: *mut *mut s
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
 pub unsafe fn GetBufferedPaintDC(hbufferedpaint: isize) -> super::super::Graphics::Gdi::HDC {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetBufferedPaintDC(hbufferedpaint: isize) -> super::super::Graphics::Gdi::HDC;
     }
@@ -1197,7 +1103,6 @@ pub unsafe fn GetBufferedPaintDC(hbufferedpaint: isize) -> super::super::Graphic
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
 pub unsafe fn GetBufferedPaintTargetDC(hbufferedpaint: isize) -> super::super::Graphics::Gdi::HDC {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetBufferedPaintTargetDC(hbufferedpaint: isize) -> super::super::Graphics::Gdi::HDC;
     }
@@ -1207,7 +1112,6 @@ pub unsafe fn GetBufferedPaintTargetDC(hbufferedpaint: isize) -> super::super::G
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetBufferedPaintTargetRect(hbufferedpaint: isize) -> ::windows::core::Result<super::super::Foundation::RECT> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetBufferedPaintTargetRect(hbufferedpaint: isize, prc: *mut super::super::Foundation::RECT) -> ::windows::core::HRESULT;
     }
@@ -1221,7 +1125,6 @@ pub unsafe fn GetComboBoxInfo<'a, P0>(hwndcombo: P0, pcbi: *mut COMBOBOXINFO) ->
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetComboBoxInfo(hwndcombo: super::super::Foundation::HWND, pcbi: *mut COMBOBOXINFO) -> super::super::Foundation::BOOL;
     }
@@ -1230,7 +1133,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 #[inline]
 pub unsafe fn GetCurrentThemeName(pszthemefilename: &mut [u16], pszcolorbuff: ::core::option::Option<&mut [u16]>, pszsizebuff: ::core::option::Option<&mut [u16]>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCurrentThemeName(pszthemefilename: ::windows::core::PWSTR, cchmaxnamechars: i32, pszcolorbuff: ::windows::core::PWSTR, cchmaxcolorchars: i32, pszsizebuff: ::windows::core::PWSTR, cchmaxsizechars: i32) -> ::windows::core::HRESULT;
     }
@@ -1243,7 +1145,6 @@ pub unsafe fn GetEffectiveClientRect<'a, P0>(hwnd: P0, lprc: *mut super::super::
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetEffectiveClientRect(hwnd: super::super::Foundation::HWND, lprc: *mut super::super::Foundation::RECT, lpinfo: *const i32);
     }
@@ -1256,7 +1157,6 @@ pub unsafe fn GetListBoxInfo<'a, P0>(hwnd: P0) -> u32
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetListBoxInfo(hwnd: super::super::Foundation::HWND) -> u32;
     }
@@ -1265,7 +1165,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 #[inline]
 pub unsafe fn GetMUILanguage() -> u16 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetMUILanguage() -> u16;
     }
@@ -1274,7 +1173,6 @@ pub unsafe fn GetMUILanguage() -> u16 {
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 #[inline]
 pub unsafe fn GetThemeAnimationProperty(htheme: isize, istoryboardid: i32, itargetid: i32, eproperty: TA_PROPERTY, pvproperty: ::core::option::Option<*mut ::core::ffi::c_void>, cbsize: u32, pcbsizeout: *mut u32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeAnimationProperty(htheme: isize, istoryboardid: i32, itargetid: i32, eproperty: TA_PROPERTY, pvproperty: *mut ::core::ffi::c_void, cbsize: u32, pcbsizeout: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -1283,7 +1181,6 @@ pub unsafe fn GetThemeAnimationProperty(htheme: isize, istoryboardid: i32, itarg
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 #[inline]
 pub unsafe fn GetThemeAnimationTransform(htheme: isize, istoryboardid: i32, itargetid: i32, dwtransformindex: u32, ptransform: ::core::option::Option<*mut TA_TRANSFORM>, cbsize: u32, pcbsizeout: *mut u32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeAnimationTransform(htheme: isize, istoryboardid: i32, itargetid: i32, dwtransformindex: u32, ptransform: *mut TA_TRANSFORM, cbsize: u32, pcbsizeout: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -1292,7 +1189,6 @@ pub unsafe fn GetThemeAnimationTransform(htheme: isize, istoryboardid: i32, itar
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 #[inline]
 pub unsafe fn GetThemeAppProperties() -> SET_THEME_APP_PROPERTIES_FLAGS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeAppProperties() -> SET_THEME_APP_PROPERTIES_FLAGS;
     }
@@ -1305,7 +1201,6 @@ pub unsafe fn GetThemeBackgroundContentRect<'a, P0>(htheme: isize, hdc: P0, ipar
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeBackgroundContentRect(htheme: isize, hdc: super::super::Graphics::Gdi::HDC, ipartid: i32, istateid: i32, pboundingrect: *const super::super::Foundation::RECT, pcontentrect: *mut super::super::Foundation::RECT) -> ::windows::core::HRESULT;
     }
@@ -1319,7 +1214,6 @@ pub unsafe fn GetThemeBackgroundExtent<'a, P0>(htheme: isize, hdc: P0, ipartid: 
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeBackgroundExtent(htheme: isize, hdc: super::super::Graphics::Gdi::HDC, ipartid: i32, istateid: i32, pcontentrect: *const super::super::Foundation::RECT, pextentrect: *mut super::super::Foundation::RECT) -> ::windows::core::HRESULT;
     }
@@ -1333,7 +1227,6 @@ pub unsafe fn GetThemeBackgroundRegion<'a, P0>(htheme: isize, hdc: P0, ipartid: 
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeBackgroundRegion(htheme: isize, hdc: super::super::Graphics::Gdi::HDC, ipartid: i32, istateid: i32, prect: *const super::super::Foundation::RECT, pregion: *mut super::super::Graphics::Gdi::HRGN) -> ::windows::core::HRESULT;
     }
@@ -1344,7 +1237,6 @@ where
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
 pub unsafe fn GetThemeBitmap(htheme: isize, ipartid: i32, istateid: i32, ipropid: THEME_PROPERTY_SYMBOL_ID, dwflags: GET_THEME_BITMAP_FLAGS) -> ::windows::core::Result<super::super::Graphics::Gdi::HBITMAP> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeBitmap(htheme: isize, ipartid: i32, istateid: i32, ipropid: THEME_PROPERTY_SYMBOL_ID, dwflags: GET_THEME_BITMAP_FLAGS, phbitmap: *mut super::super::Graphics::Gdi::HBITMAP) -> ::windows::core::HRESULT;
     }
@@ -1355,7 +1247,6 @@ pub unsafe fn GetThemeBitmap(htheme: isize, ipartid: i32, istateid: i32, ipropid
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetThemeBool(htheme: isize, ipartid: i32, istateid: i32, ipropid: THEME_PROPERTY_SYMBOL_ID) -> ::windows::core::Result<super::super::Foundation::BOOL> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeBool(htheme: isize, ipartid: i32, istateid: i32, ipropid: THEME_PROPERTY_SYMBOL_ID, pfval: *mut super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
     }
@@ -1366,7 +1257,6 @@ pub unsafe fn GetThemeBool(htheme: isize, ipartid: i32, istateid: i32, ipropid: 
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetThemeColor(htheme: isize, ipartid: i32, istateid: i32, ipropid: THEME_PROPERTY_SYMBOL_ID) -> ::windows::core::Result<super::super::Foundation::COLORREF> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeColor(htheme: isize, ipartid: i32, istateid: i32, ipropid: THEME_PROPERTY_SYMBOL_ID, pcolor: *mut super::super::Foundation::COLORREF) -> ::windows::core::HRESULT;
     }
@@ -1380,7 +1270,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeDocumentationProperty(pszthemename: ::windows::core::PCWSTR, pszpropertyname: ::windows::core::PCWSTR, pszvaluebuff: ::windows::core::PWSTR, cchmaxvalchars: i32) -> ::windows::core::HRESULT;
     }
@@ -1389,7 +1278,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 #[inline]
 pub unsafe fn GetThemeEnumValue(htheme: isize, ipartid: i32, istateid: i32, ipropid: THEME_PROPERTY_SYMBOL_ID) -> ::windows::core::Result<i32> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeEnumValue(htheme: isize, ipartid: i32, istateid: i32, ipropid: THEME_PROPERTY_SYMBOL_ID, pival: *mut i32) -> ::windows::core::HRESULT;
     }
@@ -1399,7 +1287,6 @@ pub unsafe fn GetThemeEnumValue(htheme: isize, ipartid: i32, istateid: i32, ipro
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 #[inline]
 pub unsafe fn GetThemeFilename(htheme: isize, ipartid: i32, istateid: i32, ipropid: THEME_PROPERTY_SYMBOL_ID, pszthemefilename: &mut [u16]) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeFilename(htheme: isize, ipartid: i32, istateid: i32, ipropid: THEME_PROPERTY_SYMBOL_ID, pszthemefilename: ::windows::core::PWSTR, cchmaxbuffchars: i32) -> ::windows::core::HRESULT;
     }
@@ -1412,7 +1299,6 @@ pub unsafe fn GetThemeFont<'a, P0>(htheme: isize, hdc: P0, ipartid: i32, istatei
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeFont(htheme: isize, hdc: super::super::Graphics::Gdi::HDC, ipartid: i32, istateid: i32, ipropid: i32, pfont: *mut super::super::Graphics::Gdi::LOGFONTW) -> ::windows::core::HRESULT;
     }
@@ -1422,7 +1308,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 #[inline]
 pub unsafe fn GetThemeInt(htheme: isize, ipartid: i32, istateid: i32, ipropid: THEME_PROPERTY_SYMBOL_ID) -> ::windows::core::Result<i32> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeInt(htheme: isize, ipartid: i32, istateid: i32, ipropid: THEME_PROPERTY_SYMBOL_ID, pival: *mut i32) -> ::windows::core::HRESULT;
     }
@@ -1432,7 +1317,6 @@ pub unsafe fn GetThemeInt(htheme: isize, ipartid: i32, istateid: i32, ipropid: T
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 #[inline]
 pub unsafe fn GetThemeIntList(htheme: isize, ipartid: i32, istateid: i32, ipropid: THEME_PROPERTY_SYMBOL_ID) -> ::windows::core::Result<INTLIST> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeIntList(htheme: isize, ipartid: i32, istateid: i32, ipropid: THEME_PROPERTY_SYMBOL_ID, pintlist: *mut INTLIST) -> ::windows::core::HRESULT;
     }
@@ -1446,7 +1330,6 @@ pub unsafe fn GetThemeMargins<'a, P0>(htheme: isize, hdc: P0, ipartid: i32, ista
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeMargins(htheme: isize, hdc: super::super::Graphics::Gdi::HDC, ipartid: i32, istateid: i32, ipropid: THEME_PROPERTY_SYMBOL_ID, prc: *const super::super::Foundation::RECT, pmargins: *mut MARGINS) -> ::windows::core::HRESULT;
     }
@@ -1460,7 +1343,6 @@ pub unsafe fn GetThemeMetric<'a, P0>(htheme: isize, hdc: P0, ipartid: i32, istat
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeMetric(htheme: isize, hdc: super::super::Graphics::Gdi::HDC, ipartid: i32, istateid: i32, ipropid: THEME_PROPERTY_SYMBOL_ID, pival: *mut i32) -> ::windows::core::HRESULT;
     }
@@ -1474,7 +1356,6 @@ pub unsafe fn GetThemePartSize<'a, P0>(htheme: isize, hdc: P0, ipartid: i32, ist
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemePartSize(htheme: isize, hdc: super::super::Graphics::Gdi::HDC, ipartid: i32, istateid: i32, prc: *const super::super::Foundation::RECT, esize: THEMESIZE, psz: *mut super::super::Foundation::SIZE) -> ::windows::core::HRESULT;
     }
@@ -1485,7 +1366,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetThemePosition(htheme: isize, ipartid: i32, istateid: i32, ipropid: THEME_PROPERTY_SYMBOL_ID) -> ::windows::core::Result<super::super::Foundation::POINT> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemePosition(htheme: isize, ipartid: i32, istateid: i32, ipropid: THEME_PROPERTY_SYMBOL_ID, ppoint: *mut super::super::Foundation::POINT) -> ::windows::core::HRESULT;
     }
@@ -1495,7 +1375,6 @@ pub unsafe fn GetThemePosition(htheme: isize, ipartid: i32, istateid: i32, iprop
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 #[inline]
 pub unsafe fn GetThemePropertyOrigin(htheme: isize, ipartid: i32, istateid: i32, ipropid: i32) -> ::windows::core::Result<PROPERTYORIGIN> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemePropertyOrigin(htheme: isize, ipartid: i32, istateid: i32, ipropid: i32, porigin: *mut PROPERTYORIGIN) -> ::windows::core::HRESULT;
     }
@@ -1506,7 +1385,6 @@ pub unsafe fn GetThemePropertyOrigin(htheme: isize, ipartid: i32, istateid: i32,
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetThemeRect(htheme: isize, ipartid: i32, istateid: i32, ipropid: i32) -> ::windows::core::Result<super::super::Foundation::RECT> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeRect(htheme: isize, ipartid: i32, istateid: i32, ipropid: i32, prect: *mut super::super::Foundation::RECT) -> ::windows::core::HRESULT;
     }
@@ -1520,7 +1398,6 @@ pub unsafe fn GetThemeStream<'a, P0>(htheme: isize, ipartid: i32, istateid: i32,
 where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeStream(htheme: isize, ipartid: i32, istateid: i32, ipropid: i32, ppvstream: *mut *mut ::core::ffi::c_void, pcbstream: *mut u32, hinst: super::super::Foundation::HINSTANCE) -> ::windows::core::HRESULT;
     }
@@ -1529,7 +1406,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 #[inline]
 pub unsafe fn GetThemeString(htheme: isize, ipartid: i32, istateid: i32, ipropid: i32, pszbuff: &mut [u16]) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeString(htheme: isize, ipartid: i32, istateid: i32, ipropid: i32, pszbuff: ::windows::core::PWSTR, cchmaxbuffchars: i32) -> ::windows::core::HRESULT;
     }
@@ -1539,7 +1415,6 @@ pub unsafe fn GetThemeString(htheme: isize, ipartid: i32, istateid: i32, ipropid
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetThemeSysBool(htheme: isize, iboolid: THEME_PROPERTY_SYMBOL_ID) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeSysBool(htheme: isize, iboolid: THEME_PROPERTY_SYMBOL_ID) -> super::super::Foundation::BOOL;
     }
@@ -1549,7 +1424,6 @@ pub unsafe fn GetThemeSysBool(htheme: isize, iboolid: THEME_PROPERTY_SYMBOL_ID) 
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetThemeSysColor(htheme: isize, icolorid: i32) -> super::super::Foundation::COLORREF {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeSysColor(htheme: isize, icolorid: i32) -> super::super::Foundation::COLORREF;
     }
@@ -1559,7 +1433,6 @@ pub unsafe fn GetThemeSysColor(htheme: isize, icolorid: i32) -> super::super::Fo
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
 pub unsafe fn GetThemeSysColorBrush(htheme: isize, icolorid: THEME_PROPERTY_SYMBOL_ID) -> super::super::Graphics::Gdi::HBRUSH {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeSysColorBrush(htheme: isize, icolorid: THEME_PROPERTY_SYMBOL_ID) -> super::super::Graphics::Gdi::HBRUSH;
     }
@@ -1569,7 +1442,6 @@ pub unsafe fn GetThemeSysColorBrush(htheme: isize, icolorid: THEME_PROPERTY_SYMB
 #[cfg(feature = "Win32_Graphics_Gdi")]
 #[inline]
 pub unsafe fn GetThemeSysFont(htheme: isize, ifontid: THEME_PROPERTY_SYMBOL_ID) -> ::windows::core::Result<super::super::Graphics::Gdi::LOGFONTW> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeSysFont(htheme: isize, ifontid: THEME_PROPERTY_SYMBOL_ID, plf: *mut super::super::Graphics::Gdi::LOGFONTW) -> ::windows::core::HRESULT;
     }
@@ -1579,7 +1451,6 @@ pub unsafe fn GetThemeSysFont(htheme: isize, ifontid: THEME_PROPERTY_SYMBOL_ID) 
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 #[inline]
 pub unsafe fn GetThemeSysInt(htheme: isize, iintid: THEME_PROPERTY_SYMBOL_ID) -> ::windows::core::Result<i32> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeSysInt(htheme: isize, iintid: THEME_PROPERTY_SYMBOL_ID, pivalue: *mut i32) -> ::windows::core::HRESULT;
     }
@@ -1589,7 +1460,6 @@ pub unsafe fn GetThemeSysInt(htheme: isize, iintid: THEME_PROPERTY_SYMBOL_ID) ->
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 #[inline]
 pub unsafe fn GetThemeSysSize(htheme: isize, isizeid: i32) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeSysSize(htheme: isize, isizeid: i32) -> i32;
     }
@@ -1598,7 +1468,6 @@ pub unsafe fn GetThemeSysSize(htheme: isize, isizeid: i32) -> i32 {
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 #[inline]
 pub unsafe fn GetThemeSysString(htheme: isize, istringid: THEME_PROPERTY_SYMBOL_ID, pszstringbuff: &mut [u16]) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeSysString(htheme: isize, istringid: THEME_PROPERTY_SYMBOL_ID, pszstringbuff: ::windows::core::PWSTR, cchmaxstringchars: i32) -> ::windows::core::HRESULT;
     }
@@ -1611,7 +1480,6 @@ pub unsafe fn GetThemeTextExtent<'a, P0>(htheme: isize, hdc: P0, ipartid: i32, i
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeTextExtent(htheme: isize, hdc: super::super::Graphics::Gdi::HDC, ipartid: i32, istateid: i32, psztext: ::windows::core::PCWSTR, cchcharcount: i32, dwtextflags: super::super::Graphics::Gdi::DRAW_TEXT_FORMAT, pboundingrect: *const super::super::Foundation::RECT, pextentrect: *mut super::super::Foundation::RECT) -> ::windows::core::HRESULT;
     }
@@ -1625,7 +1493,6 @@ pub unsafe fn GetThemeTextMetrics<'a, P0>(htheme: isize, hdc: P0, ipartid: i32, 
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeTextMetrics(htheme: isize, hdc: super::super::Graphics::Gdi::HDC, ipartid: i32, istateid: i32, ptm: *mut super::super::Graphics::Gdi::TEXTMETRICW) -> ::windows::core::HRESULT;
     }
@@ -1635,7 +1502,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 #[inline]
 pub unsafe fn GetThemeTimingFunction(htheme: isize, itimingfunctionid: i32, ptimingfunction: ::core::option::Option<*mut TA_TIMINGFUNCTION>, cbsize: u32, pcbsizeout: *mut u32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeTimingFunction(htheme: isize, itimingfunctionid: i32, ptimingfunction: *mut TA_TIMINGFUNCTION, cbsize: u32, pcbsizeout: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -1644,7 +1510,6 @@ pub unsafe fn GetThemeTimingFunction(htheme: isize, itimingfunctionid: i32, ptim
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 #[inline]
 pub unsafe fn GetThemeTransitionDuration(htheme: isize, ipartid: i32, istateidfrom: i32, istateidto: i32, ipropid: i32) -> ::windows::core::Result<u32> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetThemeTransitionDuration(htheme: isize, ipartid: i32, istateidfrom: i32, istateidto: i32, ipropid: i32, pdwduration: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -1658,7 +1523,6 @@ pub unsafe fn GetWindowFeedbackSetting<'a, P0>(hwnd: P0, feedback: FEEDBACK_TYPE
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetWindowFeedbackSetting(hwnd: super::super::Foundation::HWND, feedback: FEEDBACK_TYPE, dwflags: u32, psize: *mut u32, config: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -1671,7 +1535,6 @@ pub unsafe fn GetWindowTheme<'a, P0>(hwnd: P0) -> isize
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetWindowTheme(hwnd: super::super::Foundation::HWND) -> isize;
     }
@@ -1683,7 +1546,6 @@ pub unsafe fn HIMAGELIST_QueryInterface<'a, P0>(himl: P0, riid: *const ::windows
 where
     P0: ::std::convert::Into<HIMAGELIST>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HIMAGELIST_QueryInterface(himl: HIMAGELIST, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1697,7 +1559,6 @@ where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
     P1: ::std::convert::Into<super::super::Graphics::Gdi::HRGN>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HitTestThemeBackground(htheme: isize, hdc: super::super::Graphics::Gdi::HDC, ipartid: i32, istateid: i32, dwoptions: HIT_TEST_BACKGROUND_OPTIONS, prect: *const super::super::Foundation::RECT, hrgn: super::super::Graphics::Gdi::HRGN, pttest: super::super::Foundation::POINT, pwhittestcode: *mut u16) -> ::windows::core::HRESULT;
     }
@@ -1713,7 +1574,6 @@ where
     P1: ::std::convert::Into<super::super::Graphics::Gdi::HBITMAP>,
     P2: ::std::convert::Into<super::super::Graphics::Gdi::HBITMAP>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_Add(himl: HIMAGELIST, hbmimage: super::super::Graphics::Gdi::HBITMAP, hbmmask: super::super::Graphics::Gdi::HBITMAP) -> i32;
     }
@@ -1728,7 +1588,6 @@ where
     P1: ::std::convert::Into<super::super::Graphics::Gdi::HBITMAP>,
     P2: ::std::convert::Into<super::super::Foundation::COLORREF>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_AddMasked(himl: HIMAGELIST, hbmimage: super::super::Graphics::Gdi::HBITMAP, crmask: super::super::Foundation::COLORREF) -> i32;
     }
@@ -1741,7 +1600,6 @@ pub unsafe fn ImageList_BeginDrag<'a, P0>(himltrack: P0, itrack: i32, dxhotspot:
 where
     P0: ::std::convert::Into<HIMAGELIST>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_BeginDrag(himltrack: HIMAGELIST, itrack: i32, dxhotspot: i32, dyhotspot: i32) -> super::super::Foundation::BOOL;
     }
@@ -1754,7 +1612,6 @@ where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_CoCreateInstance(rclsid: *const ::windows::core::GUID, punkouter: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -1769,7 +1626,6 @@ where
     P0: ::std::convert::Into<HIMAGELIST>,
     P1: ::std::convert::Into<HIMAGELIST>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_Copy(himldst: HIMAGELIST, idst: i32, himlsrc: HIMAGELIST, isrc: i32, uflags: IMAGE_LIST_COPY_FLAGS) -> super::super::Foundation::BOOL;
     }
@@ -1778,7 +1634,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 #[inline]
 pub unsafe fn ImageList_Create(cx: i32, cy: i32, flags: IMAGELIST_CREATION_FLAGS, cinitial: i32, cgrow: i32) -> HIMAGELIST {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_Create(cx: i32, cy: i32, flags: IMAGELIST_CREATION_FLAGS, cinitial: i32, cgrow: i32) -> HIMAGELIST;
     }
@@ -1791,7 +1646,6 @@ pub unsafe fn ImageList_Destroy<'a, P0>(himl: P0) -> super::super::Foundation::B
 where
     P0: ::std::convert::Into<HIMAGELIST>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_Destroy(himl: HIMAGELIST) -> super::super::Foundation::BOOL;
     }
@@ -1804,7 +1658,6 @@ pub unsafe fn ImageList_DragEnter<'a, P0>(hwndlock: P0, x: i32, y: i32) -> super
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_DragEnter(hwndlock: super::super::Foundation::HWND, x: i32, y: i32) -> super::super::Foundation::BOOL;
     }
@@ -1817,7 +1670,6 @@ pub unsafe fn ImageList_DragLeave<'a, P0>(hwndlock: P0) -> super::super::Foundat
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_DragLeave(hwndlock: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -1827,7 +1679,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ImageList_DragMove(x: i32, y: i32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_DragMove(x: i32, y: i32) -> super::super::Foundation::BOOL;
     }
@@ -1840,7 +1691,6 @@ pub unsafe fn ImageList_DragShowNolock<'a, P0>(fshow: P0) -> super::super::Found
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_DragShowNolock(fshow: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -1854,7 +1704,6 @@ where
     P0: ::std::convert::Into<HIMAGELIST>,
     P1: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_Draw(himl: HIMAGELIST, i: i32, hdcdst: super::super::Graphics::Gdi::HDC, x: i32, y: i32, fstyle: IMAGE_LIST_DRAW_STYLE) -> super::super::Foundation::BOOL;
     }
@@ -1870,7 +1719,6 @@ where
     P2: ::std::convert::Into<super::super::Foundation::COLORREF>,
     P3: ::std::convert::Into<super::super::Foundation::COLORREF>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_DrawEx(himl: HIMAGELIST, i: i32, hdcdst: super::super::Graphics::Gdi::HDC, x: i32, y: i32, dx: i32, dy: i32, rgbbk: super::super::Foundation::COLORREF, rgbfg: super::super::Foundation::COLORREF, fstyle: IMAGE_LIST_DRAW_STYLE) -> super::super::Foundation::BOOL;
     }
@@ -1880,7 +1728,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
 pub unsafe fn ImageList_DrawIndirect(pimldp: *const IMAGELISTDRAWPARAMS) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_DrawIndirect(pimldp: *const IMAGELISTDRAWPARAMS) -> super::super::Foundation::BOOL;
     }
@@ -1892,7 +1739,6 @@ pub unsafe fn ImageList_Duplicate<'a, P0>(himl: P0) -> HIMAGELIST
 where
     P0: ::std::convert::Into<HIMAGELIST>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_Duplicate(himl: HIMAGELIST) -> HIMAGELIST;
     }
@@ -1901,7 +1747,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 #[inline]
 pub unsafe fn ImageList_EndDrag() {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_EndDrag();
     }
@@ -1914,7 +1759,6 @@ pub unsafe fn ImageList_GetBkColor<'a, P0>(himl: P0) -> super::super::Foundation
 where
     P0: ::std::convert::Into<HIMAGELIST>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_GetBkColor(himl: HIMAGELIST) -> super::super::Foundation::COLORREF;
     }
@@ -1924,7 +1768,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ImageList_GetDragImage(ppt: ::core::option::Option<*mut super::super::Foundation::POINT>, ppthotspot: ::core::option::Option<*mut super::super::Foundation::POINT>) -> HIMAGELIST {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_GetDragImage(ppt: *mut super::super::Foundation::POINT, ppthotspot: *mut super::super::Foundation::POINT) -> HIMAGELIST;
     }
@@ -1937,7 +1780,6 @@ pub unsafe fn ImageList_GetIcon<'a, P0>(himl: P0, i: i32, flags: u32) -> super::
 where
     P0: ::std::convert::Into<HIMAGELIST>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_GetIcon(himl: HIMAGELIST, i: i32, flags: u32) -> super::WindowsAndMessaging::HICON;
     }
@@ -1950,7 +1792,6 @@ pub unsafe fn ImageList_GetIconSize<'a, P0>(himl: P0, cx: ::core::option::Option
 where
     P0: ::std::convert::Into<HIMAGELIST>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_GetIconSize(himl: HIMAGELIST, cx: *mut i32, cy: *mut i32) -> super::super::Foundation::BOOL;
     }
@@ -1962,7 +1803,6 @@ pub unsafe fn ImageList_GetImageCount<'a, P0>(himl: P0) -> i32
 where
     P0: ::std::convert::Into<HIMAGELIST>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_GetImageCount(himl: HIMAGELIST) -> i32;
     }
@@ -1975,7 +1815,6 @@ pub unsafe fn ImageList_GetImageInfo<'a, P0>(himl: P0, i: i32, pimageinfo: *mut 
 where
     P0: ::std::convert::Into<HIMAGELIST>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_GetImageInfo(himl: HIMAGELIST, i: i32, pimageinfo: *mut IMAGEINFO) -> super::super::Foundation::BOOL;
     }
@@ -1990,7 +1829,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<super::super::Foundation::COLORREF>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_LoadImageA(hi: super::super::Foundation::HINSTANCE, lpbmp: ::windows::core::PCSTR, cx: i32, cgrow: i32, crmask: super::super::Foundation::COLORREF, utype: u32, uflags: super::WindowsAndMessaging::IMAGE_FLAGS) -> HIMAGELIST;
     }
@@ -2005,7 +1843,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<super::super::Foundation::COLORREF>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_LoadImageW(hi: super::super::Foundation::HINSTANCE, lpbmp: ::windows::core::PCWSTR, cx: i32, cgrow: i32, crmask: super::super::Foundation::COLORREF, utype: u32, uflags: super::WindowsAndMessaging::IMAGE_FLAGS) -> HIMAGELIST;
     }
@@ -2018,7 +1855,6 @@ where
     P0: ::std::convert::Into<HIMAGELIST>,
     P1: ::std::convert::Into<HIMAGELIST>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_Merge(himl1: HIMAGELIST, i1: i32, himl2: HIMAGELIST, i2: i32, dx: i32, dy: i32) -> HIMAGELIST;
     }
@@ -2031,7 +1867,6 @@ pub unsafe fn ImageList_Read<'a, P0>(pstm: P0) -> HIMAGELIST
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IStream>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_Read(pstm: *mut ::core::ffi::c_void) -> HIMAGELIST;
     }
@@ -2044,7 +1879,6 @@ pub unsafe fn ImageList_ReadEx<'a, P0>(dwflags: u32, pstm: P0, riid: *const ::wi
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IStream>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_ReadEx(dwflags: u32, pstm: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -2057,7 +1891,6 @@ pub unsafe fn ImageList_Remove<'a, P0>(himl: P0, i: i32) -> super::super::Founda
 where
     P0: ::std::convert::Into<HIMAGELIST>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_Remove(himl: HIMAGELIST, i: i32) -> super::super::Foundation::BOOL;
     }
@@ -2072,7 +1905,6 @@ where
     P1: ::std::convert::Into<super::super::Graphics::Gdi::HBITMAP>,
     P2: ::std::convert::Into<super::super::Graphics::Gdi::HBITMAP>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_Replace(himl: HIMAGELIST, i: i32, hbmimage: super::super::Graphics::Gdi::HBITMAP, hbmmask: super::super::Graphics::Gdi::HBITMAP) -> super::super::Foundation::BOOL;
     }
@@ -2086,7 +1918,6 @@ where
     P0: ::std::convert::Into<HIMAGELIST>,
     P1: ::std::convert::Into<super::WindowsAndMessaging::HICON>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_ReplaceIcon(himl: HIMAGELIST, i: i32, hicon: super::WindowsAndMessaging::HICON) -> i32;
     }
@@ -2100,7 +1931,6 @@ where
     P0: ::std::convert::Into<HIMAGELIST>,
     P1: ::std::convert::Into<super::super::Foundation::COLORREF>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_SetBkColor(himl: HIMAGELIST, clrbk: super::super::Foundation::COLORREF) -> super::super::Foundation::COLORREF;
     }
@@ -2113,7 +1943,6 @@ pub unsafe fn ImageList_SetDragCursorImage<'a, P0>(himldrag: P0, idrag: i32, dxh
 where
     P0: ::std::convert::Into<HIMAGELIST>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_SetDragCursorImage(himldrag: HIMAGELIST, idrag: i32, dxhotspot: i32, dyhotspot: i32) -> super::super::Foundation::BOOL;
     }
@@ -2126,7 +1955,6 @@ pub unsafe fn ImageList_SetIconSize<'a, P0>(himl: P0, cx: i32, cy: i32) -> super
 where
     P0: ::std::convert::Into<HIMAGELIST>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_SetIconSize(himl: HIMAGELIST, cx: i32, cy: i32) -> super::super::Foundation::BOOL;
     }
@@ -2139,7 +1967,6 @@ pub unsafe fn ImageList_SetImageCount<'a, P0>(himl: P0, unewcount: u32) -> super
 where
     P0: ::std::convert::Into<HIMAGELIST>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_SetImageCount(himl: HIMAGELIST, unewcount: u32) -> super::super::Foundation::BOOL;
     }
@@ -2152,7 +1979,6 @@ pub unsafe fn ImageList_SetOverlayImage<'a, P0>(himl: P0, iimage: i32, ioverlay:
 where
     P0: ::std::convert::Into<HIMAGELIST>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_SetOverlayImage(himl: HIMAGELIST, iimage: i32, ioverlay: i32) -> super::super::Foundation::BOOL;
     }
@@ -2166,7 +1992,6 @@ where
     P0: ::std::convert::Into<HIMAGELIST>,
     P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IStream>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_Write(himl: HIMAGELIST, pstm: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -2180,7 +2005,6 @@ where
     P0: ::std::convert::Into<HIMAGELIST>,
     P1: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IStream>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImageList_WriteEx(himl: HIMAGELIST, dwflags: IMAGE_LIST_WRITE_STREAM_FLAGS, pstm: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -2189,7 +2013,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 #[inline]
 pub unsafe fn InitCommonControls() {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InitCommonControls();
     }
@@ -2199,7 +2022,6 @@ pub unsafe fn InitCommonControls() {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn InitCommonControlsEx(picce: *const INITCOMMONCONTROLSEX) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InitCommonControlsEx(picce: *const INITCOMMONCONTROLSEX) -> super::super::Foundation::BOOL;
     }
@@ -2208,7 +2030,6 @@ pub unsafe fn InitCommonControlsEx(picce: *const INITCOMMONCONTROLSEX) -> super:
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 #[inline]
 pub unsafe fn InitMUILanguage(uilang: u16) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InitMUILanguage(uilang: u16);
     }
@@ -2221,7 +2042,6 @@ pub unsafe fn InitializeFlatSB<'a, P0>(param0: P0) -> super::super::Foundation::
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InitializeFlatSB(param0: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -2231,7 +2051,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn IsAppThemed() -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsAppThemed() -> super::super::Foundation::BOOL;
     }
@@ -2241,7 +2060,6 @@ pub unsafe fn IsAppThemed() -> super::super::Foundation::BOOL {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn IsCharLowerW(ch: u16) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsCharLowerW(ch: u16) -> super::super::Foundation::BOOL;
     }
@@ -2251,7 +2069,6 @@ pub unsafe fn IsCharLowerW(ch: u16) -> super::super::Foundation::BOOL {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn IsCompositionActive() -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsCompositionActive() -> super::super::Foundation::BOOL;
     }
@@ -2264,7 +2081,6 @@ pub unsafe fn IsDlgButtonChecked<'a, P0>(hdlg: P0, nidbutton: i32) -> u32
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsDlgButtonChecked(hdlg: super::super::Foundation::HWND, nidbutton: i32) -> u32;
     }
@@ -2274,7 +2090,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn IsThemeActive() -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsThemeActive() -> super::super::Foundation::BOOL;
     }
@@ -2284,7 +2099,6 @@ pub unsafe fn IsThemeActive() -> super::super::Foundation::BOOL {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn IsThemeBackgroundPartiallyTransparent(htheme: isize, ipartid: i32, istateid: i32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsThemeBackgroundPartiallyTransparent(htheme: isize, ipartid: i32, istateid: i32) -> super::super::Foundation::BOOL;
     }
@@ -2297,7 +2111,6 @@ pub unsafe fn IsThemeDialogTextureEnabled<'a, P0>(hwnd: P0) -> super::super::Fou
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsThemeDialogTextureEnabled(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -2307,7 +2120,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn IsThemePartDefined(htheme: isize, ipartid: i32, istateid: i32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsThemePartDefined(htheme: isize, ipartid: i32, istateid: i32) -> super::super::Foundation::BOOL;
     }
@@ -2321,7 +2133,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LBItemFromPt(hlb: super::super::Foundation::HWND, pt: super::super::Foundation::POINT, bautoscroll: super::super::Foundation::BOOL) -> i32;
     }
@@ -2335,7 +2146,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadIconMetric(hinst: super::super::Foundation::HINSTANCE, pszname: ::windows::core::PCWSTR, lims: _LI_METRIC, phico: *mut super::WindowsAndMessaging::HICON) -> ::windows::core::HRESULT;
     }
@@ -2350,7 +2160,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadIconWithScaleDown(hinst: super::super::Foundation::HINSTANCE, pszname: ::windows::core::PCWSTR, cx: i32, cy: i32, phico: *mut super::WindowsAndMessaging::HICON) -> ::windows::core::HRESULT;
     }
@@ -2364,7 +2173,6 @@ pub unsafe fn MakeDragList<'a, P0>(hlb: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MakeDragList(hlb: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -2381,7 +2189,6 @@ where
     P3: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P4: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MenuHelp(umsg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, hmainmenu: super::WindowsAndMessaging::HMENU, hinst: super::super::Foundation::HINSTANCE, hwndstatus: super::super::Foundation::HWND, lpwids: *const u32);
     }
@@ -2395,7 +2202,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenThemeData(hwnd: super::super::Foundation::HWND, pszclasslist: ::windows::core::PCWSTR) -> isize;
     }
@@ -2409,7 +2215,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenThemeDataEx(hwnd: super::super::Foundation::HWND, pszclasslist: ::windows::core::PCWSTR, dwflags: OPEN_THEME_DATA_FLAGS) -> isize;
     }
@@ -2419,7 +2224,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn PackTouchHitTestingProximityEvaluation(phittestinginput: *const TOUCH_HIT_TESTING_INPUT, pproximityeval: *const TOUCH_HIT_TESTING_PROXIMITY_EVALUATION) -> super::super::Foundation::LRESULT {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PackTouchHitTestingProximityEvaluation(phittestinginput: *const TOUCH_HIT_TESTING_INPUT, pproximityeval: *const TOUCH_HIT_TESTING_PROXIMITY_EVALUATION) -> super::super::Foundation::LRESULT;
     }
@@ -2429,7 +2233,6 @@ pub unsafe fn PackTouchHitTestingProximityEvaluation(phittestinginput: *const TO
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
 #[inline]
 pub unsafe fn PropertySheetA(param0: *mut PROPSHEETHEADERA_V2) -> isize {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PropertySheetA(param0: *mut PROPSHEETHEADERA_V2) -> isize;
     }
@@ -2439,7 +2242,6 @@ pub unsafe fn PropertySheetA(param0: *mut PROPSHEETHEADERA_V2) -> isize {
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_UI_WindowsAndMessaging"))]
 #[inline]
 pub unsafe fn PropertySheetW(param0: *mut PROPSHEETHEADERW_V2) -> isize {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PropertySheetW(param0: *mut PROPSHEETHEADERW_V2) -> isize;
     }
@@ -2453,7 +2255,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterPointerDeviceNotifications(window: super::super::Foundation::HWND, notifyrange: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -2466,7 +2267,6 @@ pub unsafe fn RegisterTouchHitTestingWindow<'a, P0>(hwnd: P0, value: u32) -> sup
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterTouchHitTestingWindow(hwnd: super::super::Foundation::HWND, value: u32) -> super::super::Foundation::BOOL;
     }
@@ -2480,7 +2280,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetScrollInfo(hwnd: super::super::Foundation::HWND, nbar: super::WindowsAndMessaging::SCROLLBAR_CONSTANTS, lpsi: *const super::WindowsAndMessaging::SCROLLINFO, redraw: super::super::Foundation::BOOL) -> i32;
     }
@@ -2494,7 +2293,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetScrollPos(hwnd: super::super::Foundation::HWND, nbar: super::WindowsAndMessaging::SCROLLBAR_CONSTANTS, npos: i32, bredraw: super::super::Foundation::BOOL) -> i32;
     }
@@ -2508,7 +2306,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetScrollRange(hwnd: super::super::Foundation::HWND, nbar: super::WindowsAndMessaging::SCROLLBAR_CONSTANTS, nminpos: i32, nmaxpos: i32, bredraw: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -2517,7 +2314,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_Controls\"`*"]
 #[inline]
 pub unsafe fn SetThemeAppProperties(dwflags: SET_THEME_APP_PROPERTIES_FLAGS) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetThemeAppProperties(dwflags: SET_THEME_APP_PROPERTIES_FLAGS);
     }
@@ -2530,7 +2326,6 @@ pub unsafe fn SetWindowFeedbackSetting<'a, P0>(hwnd: P0, feedback: FEEDBACK_TYPE
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetWindowFeedbackSetting(hwnd: super::super::Foundation::HWND, feedback: FEEDBACK_TYPE, dwflags: u32, size: u32, configuration: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -2545,7 +2340,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetWindowTheme(hwnd: super::super::Foundation::HWND, pszsubappname: ::windows::core::PCWSTR, pszsubidlist: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -2558,7 +2352,6 @@ pub unsafe fn SetWindowThemeAttribute<'a, P0>(hwnd: P0, eattribute: WINDOWTHEMEA
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetWindowThemeAttribute(hwnd: super::super::Foundation::HWND, eattribute: WINDOWTHEMEATTRIBUTETYPE, pvattribute: *const ::core::ffi::c_void, cbattribute: u32) -> ::windows::core::HRESULT;
     }
@@ -2571,7 +2364,6 @@ pub unsafe fn ShowHideMenuCtl<'a, P0>(hwnd: P0, uflags: usize, lpinfo: *const i3
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowHideMenuCtl(hwnd: super::super::Foundation::HWND, uflags: usize, lpinfo: *const i32) -> super::super::Foundation::BOOL;
     }
@@ -2585,7 +2377,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowScrollBar(hwnd: super::super::Foundation::HWND, wbar: super::WindowsAndMessaging::SCROLLBAR_CONSTANTS, bshow: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -2598,7 +2389,6 @@ pub unsafe fn Str_SetPtrW<'a, P0>(ppsz: *mut ::windows::core::PWSTR, psz: P0) ->
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn Str_SetPtrW(ppsz: *mut ::windows::core::PWSTR, psz: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -2616,7 +2406,6 @@ where
     P4: ::std::convert::Into<::windows::core::PCWSTR>,
     P5: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TaskDialog(hwndowner: super::super::Foundation::HWND, hinstance: super::super::Foundation::HINSTANCE, pszwindowtitle: ::windows::core::PCWSTR, pszmaininstruction: ::windows::core::PCWSTR, pszcontent: ::windows::core::PCWSTR, dwcommonbuttons: TASKDIALOG_COMMON_BUTTON_FLAGS, pszicon: ::windows::core::PCWSTR, pnbutton: *mut i32) -> ::windows::core::HRESULT;
     }
@@ -2627,7 +2416,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
 #[inline]
 pub unsafe fn TaskDialogIndirect(ptaskconfig: *const TASKDIALOGCONFIG, pnbutton: ::core::option::Option<*mut i32>, pnradiobutton: ::core::option::Option<*mut i32>, pfverificationflagchecked: ::core::option::Option<*mut super::super::Foundation::BOOL>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TaskDialogIndirect(ptaskconfig: *const TASKDIALOGCONFIG, pnbutton: *mut i32, pnradiobutton: *mut i32, pfverificationflagchecked: *mut super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
     }
@@ -2640,7 +2428,6 @@ pub unsafe fn UninitializeFlatSB<'a, P0>(param0: P0) -> ::windows::core::Result<
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UninitializeFlatSB(param0: super::super::Foundation::HWND) -> ::windows::core::HRESULT;
     }
@@ -2654,7 +2441,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UpdatePanningFeedback(hwnd: super::super::Foundation::HWND, ltotaloverpanoffsetx: i32, ltotaloverpanoffsety: i32, fininertia: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }

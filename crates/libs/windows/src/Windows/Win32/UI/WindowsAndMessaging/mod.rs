@@ -4,7 +4,6 @@ pub unsafe fn wsprintfA<'a, P0>(param0: ::windows::core::PSTR, param1: P0) -> i3
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn wsprintfA(param0: ::windows::core::PSTR, param1: ::windows::core::PCSTR) -> i32;
     }
@@ -16,7 +15,6 @@ pub unsafe fn wsprintfW<'a, P0>(param0: ::windows::core::PWSTR, param1: P0) -> i
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn wsprintfW(param0: ::windows::core::PWSTR, param1: ::windows::core::PCWSTR) -> i32;
     }
@@ -29,7 +27,6 @@ pub unsafe fn AdjustWindowRect<'a, P0>(lprect: *mut super::super::Foundation::RE
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AdjustWindowRect(lprect: *mut super::super::Foundation::RECT, dwstyle: WINDOW_STYLE, bmenu: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -42,7 +39,6 @@ pub unsafe fn AdjustWindowRectEx<'a, P0>(lprect: *mut super::super::Foundation::
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AdjustWindowRectEx(lprect: *mut super::super::Foundation::RECT, dwstyle: WINDOW_STYLE, bmenu: super::super::Foundation::BOOL, dwexstyle: WINDOW_EX_STYLE) -> super::super::Foundation::BOOL;
     }
@@ -52,7 +48,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn AllowSetForegroundWindow(dwprocessid: u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AllowSetForegroundWindow(dwprocessid: u32) -> super::super::Foundation::BOOL;
     }
@@ -65,7 +60,6 @@ pub unsafe fn AnimateWindow<'a, P0>(hwnd: P0, dwtime: u32, dwflags: ANIMATE_WIND
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AnimateWindow(hwnd: super::super::Foundation::HWND, dwtime: u32, dwflags: ANIMATE_WINDOW_FLAGS) -> super::super::Foundation::BOOL;
     }
@@ -75,7 +69,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn AnyPopup() -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AnyPopup() -> super::super::Foundation::BOOL;
     }
@@ -89,7 +82,6 @@ where
     P0: ::std::convert::Into<HMENU>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AppendMenuA(hmenu: HMENU, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -103,7 +95,6 @@ where
     P0: ::std::convert::Into<HMENU>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AppendMenuW(hmenu: HMENU, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -116,7 +107,6 @@ pub unsafe fn ArrangeIconicWindows<'a, P0>(hwnd: P0) -> u32
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ArrangeIconicWindows(hwnd: super::super::Foundation::HWND) -> u32;
     }
@@ -125,7 +115,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn BeginDeferWindowPos(nnumwindows: i32) -> isize {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BeginDeferWindowPos(nnumwindows: i32) -> isize;
     }
@@ -138,7 +127,6 @@ pub unsafe fn BringWindowToTop<'a, P0>(hwnd: P0) -> super::super::Foundation::BO
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BringWindowToTop(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -148,7 +136,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn CalculatePopupWindowPosition(anchorpoint: *const super::super::Foundation::POINT, windowsize: *const super::super::Foundation::SIZE, flags: u32, excluderect: ::core::option::Option<*const super::super::Foundation::RECT>, popupwindowposition: *mut super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CalculatePopupWindowPosition(anchorpoint: *const super::super::Foundation::POINT, windowsize: *const super::super::Foundation::SIZE, flags: u32, excluderect: *const super::super::Foundation::RECT, popupwindowposition: *mut super::super::Foundation::RECT) -> super::super::Foundation::BOOL;
     }
@@ -158,7 +145,6 @@ pub unsafe fn CalculatePopupWindowPosition(anchorpoint: *const super::super::Fou
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn CallMsgFilterA(lpmsg: *const MSG, ncode: i32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CallMsgFilterA(lpmsg: *const MSG, ncode: i32) -> super::super::Foundation::BOOL;
     }
@@ -168,7 +154,6 @@ pub unsafe fn CallMsgFilterA(lpmsg: *const MSG, ncode: i32) -> super::super::Fou
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn CallMsgFilterW(lpmsg: *const MSG, ncode: i32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CallMsgFilterW(lpmsg: *const MSG, ncode: i32) -> super::super::Foundation::BOOL;
     }
@@ -183,7 +168,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CallNextHookEx(hhk: HHOOK, ncode: i32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
     }
@@ -198,7 +182,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CallWindowProcA(lpprevwndfunc: *mut ::core::ffi::c_void, hwnd: super::super::Foundation::HWND, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
     }
@@ -213,7 +196,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CallWindowProcW(lpprevwndfunc: *mut ::core::ffi::c_void, hwnd: super::super::Foundation::HWND, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
     }
@@ -223,7 +205,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn CancelShutdown() -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CancelShutdown() -> super::super::Foundation::BOOL;
     }
@@ -236,7 +217,6 @@ pub unsafe fn CascadeWindows<'a, P0>(hwndparent: P0, whow: CASCADE_WINDOWS_HOW, 
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CascadeWindows(hwndparent: super::super::Foundation::HWND, whow: CASCADE_WINDOWS_HOW, lprect: *const super::super::Foundation::RECT, ckids: u32, lpkids: *const super::super::Foundation::HWND) -> u16;
     }
@@ -250,7 +230,6 @@ where
     P0: ::std::convert::Into<HMENU>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ChangeMenuA(hmenu: HMENU, cmd: u32, lpsznewitem: ::windows::core::PCSTR, cmdinsert: u32, flags: u32) -> super::super::Foundation::BOOL;
     }
@@ -264,7 +243,6 @@ where
     P0: ::std::convert::Into<HMENU>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ChangeMenuW(hmenu: HMENU, cmd: u32, lpsznewitem: ::windows::core::PCWSTR, cmdinsert: u32, flags: u32) -> super::super::Foundation::BOOL;
     }
@@ -274,7 +252,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ChangeWindowMessageFilter(message: u32, dwflag: CHANGE_WINDOW_MESSAGE_FILTER_FLAGS) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ChangeWindowMessageFilter(message: u32, dwflag: CHANGE_WINDOW_MESSAGE_FILTER_FLAGS) -> super::super::Foundation::BOOL;
     }
@@ -287,7 +264,6 @@ pub unsafe fn ChangeWindowMessageFilterEx<'a, P0>(hwnd: P0, message: u32, action
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ChangeWindowMessageFilterEx(hwnd: super::super::Foundation::HWND, message: u32, action: WINDOW_MESSAGE_FILTER_ACTION, pchangefilterstruct: *mut CHANGEFILTERSTRUCT) -> super::super::Foundation::BOOL;
     }
@@ -296,7 +272,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn CharLowerA(lpsz: ::windows::core::PSTR) -> ::windows::core::PSTR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CharLowerA(lpsz: ::windows::core::PSTR) -> ::windows::core::PSTR;
     }
@@ -305,7 +280,6 @@ pub unsafe fn CharLowerA(lpsz: ::windows::core::PSTR) -> ::windows::core::PSTR {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn CharLowerBuffA(lpsz: &mut [u8]) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CharLowerBuffA(lpsz: ::windows::core::PSTR, cchlength: u32) -> u32;
     }
@@ -314,7 +288,6 @@ pub unsafe fn CharLowerBuffA(lpsz: &mut [u8]) -> u32 {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn CharLowerBuffW(lpsz: &mut [u16]) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CharLowerBuffW(lpsz: ::windows::core::PWSTR, cchlength: u32) -> u32;
     }
@@ -323,7 +296,6 @@ pub unsafe fn CharLowerBuffW(lpsz: &mut [u16]) -> u32 {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn CharLowerW(lpsz: ::windows::core::PWSTR) -> ::windows::core::PWSTR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CharLowerW(lpsz: ::windows::core::PWSTR) -> ::windows::core::PWSTR;
     }
@@ -335,7 +307,6 @@ pub unsafe fn CharNextA<'a, P0>(lpsz: P0) -> ::windows::core::PSTR
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CharNextA(lpsz: ::windows::core::PCSTR) -> ::windows::core::PSTR;
     }
@@ -347,7 +318,6 @@ pub unsafe fn CharNextExA<'a, P0>(codepage: u16, lpcurrentchar: P0, dwflags: u32
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CharNextExA(codepage: u16, lpcurrentchar: ::windows::core::PCSTR, dwflags: u32) -> ::windows::core::PSTR;
     }
@@ -359,7 +329,6 @@ pub unsafe fn CharNextW<'a, P0>(lpsz: P0) -> ::windows::core::PWSTR
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CharNextW(lpsz: ::windows::core::PCWSTR) -> ::windows::core::PWSTR;
     }
@@ -372,7 +341,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CharPrevA(lpszstart: ::windows::core::PCSTR, lpszcurrent: ::windows::core::PCSTR) -> ::windows::core::PSTR;
     }
@@ -385,7 +353,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CharPrevExA(codepage: u16, lpstart: ::windows::core::PCSTR, lpcurrentchar: ::windows::core::PCSTR, dwflags: u32) -> ::windows::core::PSTR;
     }
@@ -398,7 +365,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CharPrevW(lpszstart: ::windows::core::PCWSTR, lpszcurrent: ::windows::core::PCWSTR) -> ::windows::core::PWSTR;
     }
@@ -411,7 +377,6 @@ pub unsafe fn CharToOemA<'a, P0>(psrc: P0, pdst: ::windows::core::PSTR) -> super
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CharToOemA(psrc: ::windows::core::PCSTR, pdst: ::windows::core::PSTR) -> super::super::Foundation::BOOL;
     }
@@ -424,7 +389,6 @@ pub unsafe fn CharToOemBuffA<'a, P0>(lpszsrc: P0, lpszdst: &mut [u8]) -> super::
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CharToOemBuffA(lpszsrc: ::windows::core::PCSTR, lpszdst: ::windows::core::PSTR, cchdstlength: u32) -> super::super::Foundation::BOOL;
     }
@@ -437,7 +401,6 @@ pub unsafe fn CharToOemBuffW<'a, P0>(lpszsrc: P0, lpszdst: &mut [u8]) -> super::
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CharToOemBuffW(lpszsrc: ::windows::core::PCWSTR, lpszdst: ::windows::core::PSTR, cchdstlength: u32) -> super::super::Foundation::BOOL;
     }
@@ -450,7 +413,6 @@ pub unsafe fn CharToOemW<'a, P0>(psrc: P0, pdst: ::windows::core::PSTR) -> super
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CharToOemW(psrc: ::windows::core::PCWSTR, pdst: ::windows::core::PSTR) -> super::super::Foundation::BOOL;
     }
@@ -459,7 +421,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn CharUpperA(lpsz: ::windows::core::PSTR) -> ::windows::core::PSTR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CharUpperA(lpsz: ::windows::core::PSTR) -> ::windows::core::PSTR;
     }
@@ -468,7 +429,6 @@ pub unsafe fn CharUpperA(lpsz: ::windows::core::PSTR) -> ::windows::core::PSTR {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn CharUpperBuffA(lpsz: &mut [u8]) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CharUpperBuffA(lpsz: ::windows::core::PSTR, cchlength: u32) -> u32;
     }
@@ -477,7 +437,6 @@ pub unsafe fn CharUpperBuffA(lpsz: &mut [u8]) -> u32 {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn CharUpperBuffW(lpsz: &mut [u16]) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CharUpperBuffW(lpsz: ::windows::core::PWSTR, cchlength: u32) -> u32;
     }
@@ -486,7 +445,6 @@ pub unsafe fn CharUpperBuffW(lpsz: &mut [u16]) -> u32 {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn CharUpperW(lpsz: ::windows::core::PWSTR) -> ::windows::core::PWSTR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CharUpperW(lpsz: ::windows::core::PWSTR) -> ::windows::core::PWSTR;
     }
@@ -498,7 +456,6 @@ pub unsafe fn CheckMenuItem<'a, P0>(hmenu: P0, uidcheckitem: u32, ucheck: u32) -
 where
     P0: ::std::convert::Into<HMENU>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CheckMenuItem(hmenu: HMENU, uidcheckitem: u32, ucheck: u32) -> u32;
     }
@@ -511,7 +468,6 @@ pub unsafe fn CheckMenuRadioItem<'a, P0>(hmenu: P0, first: u32, last: u32, check
 where
     P0: ::std::convert::Into<HMENU>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CheckMenuRadioItem(hmenu: HMENU, first: u32, last: u32, check: u32, flags: u32) -> super::super::Foundation::BOOL;
     }
@@ -524,7 +480,6 @@ pub unsafe fn ChildWindowFromPoint<'a, P0>(hwndparent: P0, point: super::super::
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ChildWindowFromPoint(hwndparent: super::super::Foundation::HWND, point: super::super::Foundation::POINT) -> super::super::Foundation::HWND;
     }
@@ -537,7 +492,6 @@ pub unsafe fn ChildWindowFromPointEx<'a, P0>(hwnd: P0, pt: super::super::Foundat
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ChildWindowFromPointEx(hwnd: super::super::Foundation::HWND, pt: super::super::Foundation::POINT, flags: CWP_FLAGS) -> super::super::Foundation::HWND;
     }
@@ -547,7 +501,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ClipCursor(lprect: ::core::option::Option<*const super::super::Foundation::RECT>) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ClipCursor(lprect: *const super::super::Foundation::RECT) -> super::super::Foundation::BOOL;
     }
@@ -560,7 +513,6 @@ pub unsafe fn CloseWindow<'a, P0>(hwnd: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CloseWindow(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -572,7 +524,6 @@ pub unsafe fn CopyAcceleratorTableA<'a, P0>(haccelsrc: P0, lpacceldst: ::core::o
 where
     P0: ::std::convert::Into<HACCEL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CopyAcceleratorTableA(haccelsrc: HACCEL, lpacceldst: *mut ACCEL, caccelentries: i32) -> i32;
     }
@@ -584,7 +535,6 @@ pub unsafe fn CopyAcceleratorTableW<'a, P0>(haccelsrc: P0, lpacceldst: ::core::o
 where
     P0: ::std::convert::Into<HACCEL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CopyAcceleratorTableW(haccelsrc: HACCEL, lpacceldst: *mut ACCEL, caccelentries: i32) -> i32;
     }
@@ -596,7 +546,6 @@ pub unsafe fn CopyIcon<'a, P0>(hicon: P0) -> ::windows::core::Result<HICON>
 where
     P0: ::std::convert::Into<HICON>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CopyIcon(hicon: HICON) -> HICON;
     }
@@ -610,7 +559,6 @@ pub unsafe fn CopyImage<'a, P0>(h: P0, r#type: GDI_IMAGE_TYPE, cx: i32, cy: i32,
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CopyImage(h: super::super::Foundation::HANDLE, r#type: GDI_IMAGE_TYPE, cx: i32, cy: i32, flags: IMAGE_FLAGS) -> super::super::Foundation::HANDLE;
     }
@@ -620,7 +568,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn CreateAcceleratorTableA(paccel: &[ACCEL]) -> ::windows::core::Result<HACCEL> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateAcceleratorTableA(paccel: *const ACCEL, caccel: i32) -> HACCEL;
     }
@@ -630,7 +577,6 @@ pub unsafe fn CreateAcceleratorTableA(paccel: &[ACCEL]) -> ::windows::core::Resu
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn CreateAcceleratorTableW(paccel: &[ACCEL]) -> ::windows::core::Result<HACCEL> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateAcceleratorTableW(paccel: *const ACCEL, caccel: i32) -> HACCEL;
     }
@@ -645,7 +591,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Graphics::Gdi::HBITMAP>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateCaret(hwnd: super::super::Foundation::HWND, hbitmap: super::super::Graphics::Gdi::HBITMAP, nwidth: i32, nheight: i32) -> super::super::Foundation::BOOL;
     }
@@ -658,7 +603,6 @@ pub unsafe fn CreateCursor<'a, P0>(hinst: P0, xhotspot: i32, yhotspot: i32, nwid
 where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateCursor(hinst: super::super::Foundation::HINSTANCE, xhotspot: i32, yhotspot: i32, nwidth: i32, nheight: i32, pvandplane: *const ::core::ffi::c_void, pvxorplane: *const ::core::ffi::c_void) -> HCURSOR;
     }
@@ -674,7 +618,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateDialogIndirectParamA(hinstance: super::super::Foundation::HINSTANCE, lptemplate: *const DLGTEMPLATE, hwndparent: super::super::Foundation::HWND, lpdialogfunc: *mut ::core::ffi::c_void, dwinitparam: super::super::Foundation::LPARAM) -> super::super::Foundation::HWND;
     }
@@ -689,7 +632,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateDialogIndirectParamW(hinstance: super::super::Foundation::HINSTANCE, lptemplate: *const DLGTEMPLATE, hwndparent: super::super::Foundation::HWND, lpdialogfunc: *mut ::core::ffi::c_void, dwinitparam: super::super::Foundation::LPARAM) -> super::super::Foundation::HWND;
     }
@@ -705,7 +647,6 @@ where
     P2: ::std::convert::Into<super::super::Foundation::HWND>,
     P3: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateDialogParamA(hinstance: super::super::Foundation::HINSTANCE, lptemplatename: ::windows::core::PCSTR, hwndparent: super::super::Foundation::HWND, lpdialogfunc: *mut ::core::ffi::c_void, dwinitparam: super::super::Foundation::LPARAM) -> super::super::Foundation::HWND;
     }
@@ -721,7 +662,6 @@ where
     P2: ::std::convert::Into<super::super::Foundation::HWND>,
     P3: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateDialogParamW(hinstance: super::super::Foundation::HINSTANCE, lptemplatename: ::windows::core::PCWSTR, hwndparent: super::super::Foundation::HWND, lpdialogfunc: *mut ::core::ffi::c_void, dwinitparam: super::super::Foundation::LPARAM) -> super::super::Foundation::HWND;
     }
@@ -734,7 +674,6 @@ pub unsafe fn CreateIcon<'a, P0>(hinstance: P0, nwidth: i32, nheight: i32, cplan
 where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateIcon(hinstance: super::super::Foundation::HINSTANCE, nwidth: i32, nheight: i32, cplanes: u8, cbitspixel: u8, lpbandbits: *const u8, lpbxorbits: *const u8) -> HICON;
     }
@@ -748,7 +687,6 @@ pub unsafe fn CreateIconFromResource<'a, P0>(presbits: &[u8], ficon: P0, dwver: 
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateIconFromResource(presbits: *const u8, dwressize: u32, ficon: super::super::Foundation::BOOL, dwver: u32) -> HICON;
     }
@@ -762,7 +700,6 @@ pub unsafe fn CreateIconFromResourceEx<'a, P0>(presbits: &[u8], ficon: P0, dwver
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateIconFromResourceEx(presbits: *const u8, dwressize: u32, ficon: super::super::Foundation::BOOL, dwver: u32, cxdesired: i32, cydesired: i32, flags: IMAGE_FLAGS) -> HICON;
     }
@@ -773,7 +710,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
 pub unsafe fn CreateIconIndirect(piconinfo: *const ICONINFO) -> ::windows::core::Result<HICON> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateIconIndirect(piconinfo: *const ICONINFO) -> HICON;
     }
@@ -791,7 +727,6 @@ where
     P3: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P4: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateMDIWindowA(lpclassname: ::windows::core::PCSTR, lpwindowname: ::windows::core::PCSTR, dwstyle: WINDOW_STYLE, x: i32, y: i32, nwidth: i32, nheight: i32, hwndparent: super::super::Foundation::HWND, hinstance: super::super::Foundation::HINSTANCE, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::HWND;
     }
@@ -808,7 +743,6 @@ where
     P3: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P4: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateMDIWindowW(lpclassname: ::windows::core::PCWSTR, lpwindowname: ::windows::core::PCWSTR, dwstyle: WINDOW_STYLE, x: i32, y: i32, nwidth: i32, nheight: i32, hwndparent: super::super::Foundation::HWND, hinstance: super::super::Foundation::HINSTANCE, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::HWND;
     }
@@ -817,7 +751,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn CreateMenu() -> ::windows::core::Result<HMENU> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateMenu() -> HMENU;
     }
@@ -827,7 +760,6 @@ pub unsafe fn CreateMenu() -> ::windows::core::Result<HMENU> {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn CreatePopupMenu() -> ::windows::core::Result<HMENU> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreatePopupMenu() -> HMENU;
     }
@@ -841,7 +773,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateResourceIndexer(projectroot: ::windows::core::PCWSTR, extensiondllpath: ::windows::core::PCWSTR, ppresourceindexer: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -858,7 +789,6 @@ where
     P3: ::std::convert::Into<HMENU>,
     P4: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateWindowExA(dwexstyle: WINDOW_EX_STYLE, lpclassname: ::windows::core::PCSTR, lpwindowname: ::windows::core::PCSTR, dwstyle: WINDOW_STYLE, x: i32, y: i32, nwidth: i32, nheight: i32, hwndparent: super::super::Foundation::HWND, hmenu: HMENU, hinstance: super::super::Foundation::HINSTANCE, lpparam: *const ::core::ffi::c_void) -> super::super::Foundation::HWND;
     }
@@ -875,7 +805,6 @@ where
     P3: ::std::convert::Into<HMENU>,
     P4: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateWindowExW(dwexstyle: WINDOW_EX_STYLE, lpclassname: ::windows::core::PCWSTR, lpwindowname: ::windows::core::PCWSTR, dwstyle: WINDOW_STYLE, x: i32, y: i32, nwidth: i32, nheight: i32, hwndparent: super::super::Foundation::HWND, hmenu: HMENU, hinstance: super::super::Foundation::HINSTANCE, lpparam: *const ::core::ffi::c_void) -> super::super::Foundation::HWND;
     }
@@ -890,7 +819,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DefDlgProcA(hdlg: super::super::Foundation::HWND, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
     }
@@ -905,7 +833,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DefDlgProcW(hdlg: super::super::Foundation::HWND, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
     }
@@ -921,7 +848,6 @@ where
     P2: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P3: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DefFrameProcA(hwnd: super::super::Foundation::HWND, hwndmdiclient: super::super::Foundation::HWND, umsg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
     }
@@ -937,7 +863,6 @@ where
     P2: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P3: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DefFrameProcW(hwnd: super::super::Foundation::HWND, hwndmdiclient: super::super::Foundation::HWND, umsg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
     }
@@ -952,7 +877,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DefMDIChildProcA(hwnd: super::super::Foundation::HWND, umsg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
     }
@@ -967,7 +891,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DefMDIChildProcW(hwnd: super::super::Foundation::HWND, umsg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
     }
@@ -982,7 +905,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DefWindowProcA(hwnd: super::super::Foundation::HWND, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
     }
@@ -997,7 +919,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DefWindowProcW(hwnd: super::super::Foundation::HWND, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
     }
@@ -1011,7 +932,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeferWindowPos(hwinposinfo: isize, hwnd: super::super::Foundation::HWND, hwndinsertafter: super::super::Foundation::HWND, x: i32, y: i32, cx: i32, cy: i32, uflags: SET_WINDOW_POS_FLAGS) -> isize;
     }
@@ -1024,7 +944,6 @@ pub unsafe fn DeleteMenu<'a, P0>(hmenu: P0, uposition: u32, uflags: MENU_ITEM_FL
 where
     P0: ::std::convert::Into<HMENU>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeleteMenu(hmenu: HMENU, uposition: u32, uflags: MENU_ITEM_FLAGS) -> super::super::Foundation::BOOL;
     }
@@ -1037,7 +956,6 @@ pub unsafe fn DeregisterShellHookWindow<'a, P0>(hwnd: P0) -> super::super::Found
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeregisterShellHookWindow(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -1050,7 +968,6 @@ pub unsafe fn DestroyAcceleratorTable<'a, P0>(haccel: P0) -> super::super::Found
 where
     P0: ::std::convert::Into<HACCEL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DestroyAcceleratorTable(haccel: HACCEL) -> super::super::Foundation::BOOL;
     }
@@ -1060,7 +977,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DestroyCaret() -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DestroyCaret() -> super::super::Foundation::BOOL;
     }
@@ -1073,7 +989,6 @@ pub unsafe fn DestroyCursor<'a, P0>(hcursor: P0) -> super::super::Foundation::BO
 where
     P0: ::std::convert::Into<HCURSOR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DestroyCursor(hcursor: HCURSOR) -> super::super::Foundation::BOOL;
     }
@@ -1086,7 +1001,6 @@ pub unsafe fn DestroyIcon<'a, P0>(hicon: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<HICON>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DestroyIcon(hicon: HICON) -> super::super::Foundation::BOOL;
     }
@@ -1098,7 +1012,6 @@ pub unsafe fn DestroyIndexedResults<'a, P0>(resourceuri: P0, qualifiers: ::core:
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DestroyIndexedResults(resourceuri: ::windows::core::PCWSTR, qualifiercount: u32, qualifiers: *const IndexedResourceQualifier);
     }
@@ -1111,7 +1024,6 @@ pub unsafe fn DestroyMenu<'a, P0>(hmenu: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<HMENU>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DestroyMenu(hmenu: HMENU) -> super::super::Foundation::BOOL;
     }
@@ -1120,7 +1032,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn DestroyResourceIndexer(resourceindexer: ::core::option::Option<*const ::core::ffi::c_void>) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DestroyResourceIndexer(resourceindexer: *const ::core::ffi::c_void);
     }
@@ -1133,7 +1044,6 @@ pub unsafe fn DestroyWindow<'a, P0>(hwnd: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DestroyWindow(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -1148,7 +1058,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DialogBoxIndirectParamA(hinstance: super::super::Foundation::HINSTANCE, hdialogtemplate: *const DLGTEMPLATE, hwndparent: super::super::Foundation::HWND, lpdialogfunc: *mut ::core::ffi::c_void, dwinitparam: super::super::Foundation::LPARAM) -> isize;
     }
@@ -1163,7 +1072,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DialogBoxIndirectParamW(hinstance: super::super::Foundation::HINSTANCE, hdialogtemplate: *const DLGTEMPLATE, hwndparent: super::super::Foundation::HWND, lpdialogfunc: *mut ::core::ffi::c_void, dwinitparam: super::super::Foundation::LPARAM) -> isize;
     }
@@ -1179,7 +1087,6 @@ where
     P2: ::std::convert::Into<super::super::Foundation::HWND>,
     P3: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DialogBoxParamA(hinstance: super::super::Foundation::HINSTANCE, lptemplatename: ::windows::core::PCSTR, hwndparent: super::super::Foundation::HWND, lpdialogfunc: *mut ::core::ffi::c_void, dwinitparam: super::super::Foundation::LPARAM) -> isize;
     }
@@ -1195,7 +1102,6 @@ where
     P2: ::std::convert::Into<super::super::Foundation::HWND>,
     P3: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DialogBoxParamW(hinstance: super::super::Foundation::HINSTANCE, lptemplatename: ::windows::core::PCWSTR, hwndparent: super::super::Foundation::HWND, lpdialogfunc: *mut ::core::ffi::c_void, dwinitparam: super::super::Foundation::LPARAM) -> isize;
     }
@@ -1204,7 +1110,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn DisableProcessWindowsGhosting() {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DisableProcessWindowsGhosting();
     }
@@ -1214,7 +1119,6 @@ pub unsafe fn DisableProcessWindowsGhosting() {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DispatchMessageA(lpmsg: *const MSG) -> super::super::Foundation::LRESULT {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DispatchMessageA(lpmsg: *const MSG) -> super::super::Foundation::LRESULT;
     }
@@ -1224,7 +1128,6 @@ pub unsafe fn DispatchMessageA(lpmsg: *const MSG) -> super::super::Foundation::L
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DispatchMessageW(lpmsg: *const MSG) -> super::super::Foundation::LRESULT {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DispatchMessageW(lpmsg: *const MSG) -> super::super::Foundation::LRESULT;
     }
@@ -1239,7 +1142,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
     P2: ::std::convert::Into<HCURSOR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DragObject(hwndparent: super::super::Foundation::HWND, hwndfrom: super::super::Foundation::HWND, fmt: u32, data: usize, hcur: HCURSOR) -> u32;
     }
@@ -1253,7 +1155,6 @@ where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
     P1: ::std::convert::Into<HICON>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DrawIcon(hdc: super::super::Graphics::Gdi::HDC, x: i32, y: i32, hicon: HICON) -> super::super::Foundation::BOOL;
     }
@@ -1268,7 +1169,6 @@ where
     P1: ::std::convert::Into<HICON>,
     P2: ::std::convert::Into<super::super::Graphics::Gdi::HBRUSH>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DrawIconEx(hdc: super::super::Graphics::Gdi::HDC, xleft: i32, ytop: i32, hicon: HICON, cxwidth: i32, cywidth: i32, istepifanicur: u32, hbrflickerfreedraw: super::super::Graphics::Gdi::HBRUSH, diflags: DI_FLAGS) -> super::super::Foundation::BOOL;
     }
@@ -1281,7 +1181,6 @@ pub unsafe fn DrawMenuBar<'a, P0>(hwnd: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DrawMenuBar(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -1294,7 +1193,6 @@ pub unsafe fn EnableMenuItem<'a, P0>(hmenu: P0, uidenableitem: u32, uenable: MEN
 where
     P0: ::std::convert::Into<HMENU>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnableMenuItem(hmenu: HMENU, uidenableitem: u32, uenable: MENU_ITEM_FLAGS) -> super::super::Foundation::BOOL;
     }
@@ -1304,7 +1202,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn EndDeferWindowPos(hwinposinfo: isize) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EndDeferWindowPos(hwinposinfo: isize) -> super::super::Foundation::BOOL;
     }
@@ -1317,7 +1214,6 @@ pub unsafe fn EndDialog<'a, P0>(hdlg: P0, nresult: isize) -> super::super::Found
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EndDialog(hdlg: super::super::Foundation::HWND, nresult: isize) -> super::super::Foundation::BOOL;
     }
@@ -1327,7 +1223,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn EndMenu() -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EndMenu() -> super::super::Foundation::BOOL;
     }
@@ -1341,7 +1236,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumChildWindows(hwndparent: super::super::Foundation::HWND, lpenumfunc: *mut ::core::ffi::c_void, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
     }
@@ -1354,7 +1248,6 @@ pub unsafe fn EnumPropsA<'a, P0>(hwnd: P0, lpenumfunc: PROPENUMPROCA) -> i32
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumPropsA(hwnd: super::super::Foundation::HWND, lpenumfunc: *mut ::core::ffi::c_void) -> i32;
     }
@@ -1368,7 +1261,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumPropsExA(hwnd: super::super::Foundation::HWND, lpenumfunc: *mut ::core::ffi::c_void, lparam: super::super::Foundation::LPARAM) -> i32;
     }
@@ -1382,7 +1274,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumPropsExW(hwnd: super::super::Foundation::HWND, lpenumfunc: *mut ::core::ffi::c_void, lparam: super::super::Foundation::LPARAM) -> i32;
     }
@@ -1395,7 +1286,6 @@ pub unsafe fn EnumPropsW<'a, P0>(hwnd: P0, lpenumfunc: PROPENUMPROCW) -> i32
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumPropsW(hwnd: super::super::Foundation::HWND, lpenumfunc: *mut ::core::ffi::c_void) -> i32;
     }
@@ -1408,7 +1298,6 @@ pub unsafe fn EnumThreadWindows<'a, P0>(dwthreadid: u32, lpfn: WNDENUMPROC, lpar
 where
     P0: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumThreadWindows(dwthreadid: u32, lpfn: *mut ::core::ffi::c_void, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
     }
@@ -1421,7 +1310,6 @@ pub unsafe fn EnumWindows<'a, P0>(lpenumfunc: WNDENUMPROC, lparam: P0) -> super:
 where
     P0: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EnumWindows(lpenumfunc: *mut ::core::ffi::c_void, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
     }
@@ -1435,7 +1323,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindWindowA(lpclassname: ::windows::core::PCSTR, lpwindowname: ::windows::core::PCSTR) -> super::super::Foundation::HWND;
     }
@@ -1451,7 +1338,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindWindowExA(hwndparent: super::super::Foundation::HWND, hwndchildafter: super::super::Foundation::HWND, lpszclass: ::windows::core::PCSTR, lpszwindow: ::windows::core::PCSTR) -> super::super::Foundation::HWND;
     }
@@ -1467,7 +1353,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindWindowExW(hwndparent: super::super::Foundation::HWND, hwndchildafter: super::super::Foundation::HWND, lpszclass: ::windows::core::PCWSTR, lpszwindow: ::windows::core::PCWSTR) -> super::super::Foundation::HWND;
     }
@@ -1481,7 +1366,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindWindowW(lpclassname: ::windows::core::PCWSTR, lpwindowname: ::windows::core::PCWSTR) -> super::super::Foundation::HWND;
     }
@@ -1495,7 +1379,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FlashWindow(hwnd: super::super::Foundation::HWND, binvert: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -1505,7 +1388,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn FlashWindowEx(pfwi: *const FLASHWINFO) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FlashWindowEx(pfwi: *const FLASHWINFO) -> super::super::Foundation::BOOL;
     }
@@ -1518,7 +1400,6 @@ pub unsafe fn GetAltTabInfoA<'a, P0>(hwnd: P0, iitem: i32, pati: *mut ALTTABINFO
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetAltTabInfoA(hwnd: super::super::Foundation::HWND, iitem: i32, pati: *mut ALTTABINFO, pszitemtext: ::windows::core::PSTR, cchitemtext: u32) -> super::super::Foundation::BOOL;
     }
@@ -1531,7 +1412,6 @@ pub unsafe fn GetAltTabInfoW<'a, P0>(hwnd: P0, iitem: i32, pati: *mut ALTTABINFO
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetAltTabInfoW(hwnd: super::super::Foundation::HWND, iitem: i32, pati: *mut ALTTABINFO, pszitemtext: ::windows::core::PWSTR, cchitemtext: u32) -> super::super::Foundation::BOOL;
     }
@@ -1544,7 +1424,6 @@ pub unsafe fn GetAncestor<'a, P0>(hwnd: P0, gaflags: GET_ANCESTOR_FLAGS) -> supe
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetAncestor(hwnd: super::super::Foundation::HWND, gaflags: GET_ANCESTOR_FLAGS) -> super::super::Foundation::HWND;
     }
@@ -1553,7 +1432,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn GetCaretBlinkTime() -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCaretBlinkTime() -> u32;
     }
@@ -1563,7 +1441,6 @@ pub unsafe fn GetCaretBlinkTime() -> u32 {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetCaretPos(lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCaretPos(lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL;
     }
@@ -1577,7 +1454,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetClassInfoA(hinstance: super::super::Foundation::HINSTANCE, lpclassname: ::windows::core::PCSTR, lpwndclass: *mut WNDCLASSA) -> super::super::Foundation::BOOL;
     }
@@ -1591,7 +1467,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetClassInfoExA(hinstance: super::super::Foundation::HINSTANCE, lpszclass: ::windows::core::PCSTR, lpwcx: *mut WNDCLASSEXA) -> super::super::Foundation::BOOL;
     }
@@ -1605,7 +1480,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetClassInfoExW(hinstance: super::super::Foundation::HINSTANCE, lpszclass: ::windows::core::PCWSTR, lpwcx: *mut WNDCLASSEXW) -> super::super::Foundation::BOOL;
     }
@@ -1619,7 +1493,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetClassInfoW(hinstance: super::super::Foundation::HINSTANCE, lpclassname: ::windows::core::PCWSTR, lpwndclass: *mut WNDCLASSW) -> super::super::Foundation::BOOL;
     }
@@ -1632,7 +1505,6 @@ pub unsafe fn GetClassLongA<'a, P0>(hwnd: P0, nindex: GET_CLASS_LONG_INDEX) -> u
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetClassLongA(hwnd: super::super::Foundation::HWND, nindex: GET_CLASS_LONG_INDEX) -> u32;
     }
@@ -1646,7 +1518,6 @@ pub unsafe fn GetClassLongPtrA<'a, P0>(hwnd: P0, nindex: GET_CLASS_LONG_INDEX) -
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetClassLongPtrA(hwnd: super::super::Foundation::HWND, nindex: GET_CLASS_LONG_INDEX) -> usize;
     }
@@ -1660,7 +1531,6 @@ pub unsafe fn GetClassLongPtrW<'a, P0>(hwnd: P0, nindex: GET_CLASS_LONG_INDEX) -
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetClassLongPtrW(hwnd: super::super::Foundation::HWND, nindex: GET_CLASS_LONG_INDEX) -> usize;
     }
@@ -1673,7 +1543,6 @@ pub unsafe fn GetClassLongW<'a, P0>(hwnd: P0, nindex: GET_CLASS_LONG_INDEX) -> u
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetClassLongW(hwnd: super::super::Foundation::HWND, nindex: GET_CLASS_LONG_INDEX) -> u32;
     }
@@ -1686,7 +1555,6 @@ pub unsafe fn GetClassNameA<'a, P0>(hwnd: P0, lpclassname: &mut [u8]) -> i32
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetClassNameA(hwnd: super::super::Foundation::HWND, lpclassname: ::windows::core::PSTR, nmaxcount: i32) -> i32;
     }
@@ -1699,7 +1567,6 @@ pub unsafe fn GetClassNameW<'a, P0>(hwnd: P0, lpclassname: &mut [u16]) -> i32
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetClassNameW(hwnd: super::super::Foundation::HWND, lpclassname: ::windows::core::PWSTR, nmaxcount: i32) -> i32;
     }
@@ -1712,7 +1579,6 @@ pub unsafe fn GetClassWord<'a, P0>(hwnd: P0, nindex: i32) -> u16
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetClassWord(hwnd: super::super::Foundation::HWND, nindex: i32) -> u16;
     }
@@ -1725,7 +1591,6 @@ pub unsafe fn GetClientRect<'a, P0>(hwnd: P0, lprect: *mut super::super::Foundat
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetClientRect(hwnd: super::super::Foundation::HWND, lprect: *mut super::super::Foundation::RECT) -> super::super::Foundation::BOOL;
     }
@@ -1735,7 +1600,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetClipCursor(lprect: *mut super::super::Foundation::RECT) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetClipCursor(lprect: *mut super::super::Foundation::RECT) -> super::super::Foundation::BOOL;
     }
@@ -1744,7 +1608,6 @@ pub unsafe fn GetClipCursor(lprect: *mut super::super::Foundation::RECT) -> supe
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn GetCursor() -> HCURSOR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCursor() -> HCURSOR;
     }
@@ -1754,7 +1617,6 @@ pub unsafe fn GetCursor() -> HCURSOR {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetCursorInfo(pci: *mut CURSORINFO) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCursorInfo(pci: *mut CURSORINFO) -> super::super::Foundation::BOOL;
     }
@@ -1764,7 +1626,6 @@ pub unsafe fn GetCursorInfo(pci: *mut CURSORINFO) -> super::super::Foundation::B
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetCursorPos(lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCursorPos(lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL;
     }
@@ -1774,7 +1635,6 @@ pub unsafe fn GetCursorPos(lppoint: *mut super::super::Foundation::POINT) -> sup
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetDesktopWindow() -> super::super::Foundation::HWND {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDesktopWindow() -> super::super::Foundation::HWND;
     }
@@ -1783,7 +1643,6 @@ pub unsafe fn GetDesktopWindow() -> super::super::Foundation::HWND {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn GetDialogBaseUnits() -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDialogBaseUnits() -> i32;
     }
@@ -1796,7 +1655,6 @@ pub unsafe fn GetDlgCtrlID<'a, P0>(hwnd: P0) -> i32
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDlgCtrlID(hwnd: super::super::Foundation::HWND) -> i32;
     }
@@ -1809,7 +1667,6 @@ pub unsafe fn GetDlgItem<'a, P0>(hdlg: P0, niddlgitem: i32) -> super::super::Fou
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDlgItem(hdlg: super::super::Foundation::HWND, niddlgitem: i32) -> super::super::Foundation::HWND;
     }
@@ -1823,7 +1680,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDlgItemInt(hdlg: super::super::Foundation::HWND, niddlgitem: i32, lptranslated: *mut super::super::Foundation::BOOL, bsigned: super::super::Foundation::BOOL) -> u32;
     }
@@ -1836,7 +1692,6 @@ pub unsafe fn GetDlgItemTextA<'a, P0>(hdlg: P0, niddlgitem: i32, lpstring: &mut 
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDlgItemTextA(hdlg: super::super::Foundation::HWND, niddlgitem: i32, lpstring: ::windows::core::PSTR, cchmax: i32) -> u32;
     }
@@ -1849,7 +1704,6 @@ pub unsafe fn GetDlgItemTextW<'a, P0>(hdlg: P0, niddlgitem: i32, lpstring: &mut 
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDlgItemTextW(hdlg: super::super::Foundation::HWND, niddlgitem: i32, lpstring: ::windows::core::PWSTR, cchmax: i32) -> u32;
     }
@@ -1859,7 +1713,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetForegroundWindow() -> super::super::Foundation::HWND {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetForegroundWindow() -> super::super::Foundation::HWND;
     }
@@ -1869,7 +1722,6 @@ pub unsafe fn GetForegroundWindow() -> super::super::Foundation::HWND {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetGUIThreadInfo(idthread: u32, pgui: *mut GUITHREADINFO) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetGUIThreadInfo(idthread: u32, pgui: *mut GUITHREADINFO) -> super::super::Foundation::BOOL;
     }
@@ -1882,7 +1734,6 @@ pub unsafe fn GetIconInfo<'a, P0>(hicon: P0, piconinfo: *mut ICONINFO) -> super:
 where
     P0: ::std::convert::Into<HICON>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetIconInfo(hicon: HICON, piconinfo: *mut ICONINFO) -> super::super::Foundation::BOOL;
     }
@@ -1895,7 +1746,6 @@ pub unsafe fn GetIconInfoExA<'a, P0>(hicon: P0, piconinfo: *mut ICONINFOEXA) -> 
 where
     P0: ::std::convert::Into<HICON>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetIconInfoExA(hicon: HICON, piconinfo: *mut ICONINFOEXA) -> super::super::Foundation::BOOL;
     }
@@ -1908,7 +1758,6 @@ pub unsafe fn GetIconInfoExW<'a, P0>(hicon: P0, piconinfo: *mut ICONINFOEXW) -> 
 where
     P0: ::std::convert::Into<HICON>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetIconInfoExW(hicon: HICON, piconinfo: *mut ICONINFOEXW) -> super::super::Foundation::BOOL;
     }
@@ -1918,7 +1767,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetInputState() -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetInputState() -> super::super::Foundation::BOOL;
     }
@@ -1931,7 +1779,6 @@ pub unsafe fn GetLastActivePopup<'a, P0>(hwnd: P0) -> super::super::Foundation::
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetLastActivePopup(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::HWND;
     }
@@ -1944,7 +1791,6 @@ pub unsafe fn GetLayeredWindowAttributes<'a, P0>(hwnd: P0, pcrkey: ::core::optio
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetLayeredWindowAttributes(hwnd: super::super::Foundation::HWND, pcrkey: *mut super::super::Foundation::COLORREF, pbalpha: *mut u8, pdwflags: *mut LAYERED_WINDOW_ATTRIBUTES_FLAGS) -> super::super::Foundation::BOOL;
     }
@@ -1957,7 +1803,6 @@ pub unsafe fn GetMenu<'a, P0>(hwnd: P0) -> HMENU
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetMenu(hwnd: super::super::Foundation::HWND) -> HMENU;
     }
@@ -1970,7 +1815,6 @@ pub unsafe fn GetMenuBarInfo<'a, P0>(hwnd: P0, idobject: OBJECT_IDENTIFIER, idit
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetMenuBarInfo(hwnd: super::super::Foundation::HWND, idobject: OBJECT_IDENTIFIER, iditem: i32, pmbi: *mut MENUBARINFO) -> super::super::Foundation::BOOL;
     }
@@ -1979,7 +1823,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn GetMenuCheckMarkDimensions() -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetMenuCheckMarkDimensions() -> i32;
     }
@@ -1991,7 +1834,6 @@ pub unsafe fn GetMenuDefaultItem<'a, P0>(hmenu: P0, fbypos: u32, gmdiflags: GET_
 where
     P0: ::std::convert::Into<HMENU>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetMenuDefaultItem(hmenu: HMENU, fbypos: u32, gmdiflags: GET_MENU_DEFAULT_ITEM_FLAGS) -> u32;
     }
@@ -2004,7 +1846,6 @@ pub unsafe fn GetMenuInfo<'a, P0>(param0: P0, param1: *mut MENUINFO) -> super::s
 where
     P0: ::std::convert::Into<HMENU>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetMenuInfo(param0: HMENU, param1: *mut MENUINFO) -> super::super::Foundation::BOOL;
     }
@@ -2016,7 +1857,6 @@ pub unsafe fn GetMenuItemCount<'a, P0>(hmenu: P0) -> i32
 where
     P0: ::std::convert::Into<HMENU>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetMenuItemCount(hmenu: HMENU) -> i32;
     }
@@ -2028,7 +1868,6 @@ pub unsafe fn GetMenuItemID<'a, P0>(hmenu: P0, npos: i32) -> u32
 where
     P0: ::std::convert::Into<HMENU>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetMenuItemID(hmenu: HMENU, npos: i32) -> u32;
     }
@@ -2042,7 +1881,6 @@ where
     P0: ::std::convert::Into<HMENU>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetMenuItemInfoA(hmenu: HMENU, item: u32, fbyposition: super::super::Foundation::BOOL, lpmii: *mut MENUITEMINFOA) -> super::super::Foundation::BOOL;
     }
@@ -2056,7 +1894,6 @@ where
     P0: ::std::convert::Into<HMENU>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetMenuItemInfoW(hmenu: HMENU, item: u32, fbyposition: super::super::Foundation::BOOL, lpmii: *mut MENUITEMINFOW) -> super::super::Foundation::BOOL;
     }
@@ -2070,7 +1907,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<HMENU>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetMenuItemRect(hwnd: super::super::Foundation::HWND, hmenu: HMENU, uitem: u32, lprcitem: *mut super::super::Foundation::RECT) -> super::super::Foundation::BOOL;
     }
@@ -2082,7 +1918,6 @@ pub unsafe fn GetMenuState<'a, P0>(hmenu: P0, uid: u32, uflags: MENU_ITEM_FLAGS)
 where
     P0: ::std::convert::Into<HMENU>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetMenuState(hmenu: HMENU, uid: u32, uflags: MENU_ITEM_FLAGS) -> u32;
     }
@@ -2094,7 +1929,6 @@ pub unsafe fn GetMenuStringA<'a, P0>(hmenu: P0, uiditem: u32, lpstring: ::core::
 where
     P0: ::std::convert::Into<HMENU>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetMenuStringA(hmenu: HMENU, uiditem: u32, lpstring: ::windows::core::PSTR, cchmax: i32, flags: MENU_ITEM_FLAGS) -> i32;
     }
@@ -2106,7 +1940,6 @@ pub unsafe fn GetMenuStringW<'a, P0>(hmenu: P0, uiditem: u32, lpstring: ::core::
 where
     P0: ::std::convert::Into<HMENU>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetMenuStringW(hmenu: HMENU, uiditem: u32, lpstring: ::windows::core::PWSTR, cchmax: i32, flags: MENU_ITEM_FLAGS) -> i32;
     }
@@ -2119,7 +1952,6 @@ pub unsafe fn GetMessageA<'a, P0>(lpmsg: *mut MSG, hwnd: P0, wmsgfiltermin: u32,
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetMessageA(lpmsg: *mut MSG, hwnd: super::super::Foundation::HWND, wmsgfiltermin: u32, wmsgfiltermax: u32) -> super::super::Foundation::BOOL;
     }
@@ -2129,7 +1961,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetMessageExtraInfo() -> super::super::Foundation::LPARAM {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetMessageExtraInfo() -> super::super::Foundation::LPARAM;
     }
@@ -2138,7 +1969,6 @@ pub unsafe fn GetMessageExtraInfo() -> super::super::Foundation::LPARAM {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn GetMessagePos() -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetMessagePos() -> u32;
     }
@@ -2147,7 +1977,6 @@ pub unsafe fn GetMessagePos() -> u32 {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn GetMessageTime() -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetMessageTime() -> i32;
     }
@@ -2160,7 +1989,6 @@ pub unsafe fn GetMessageW<'a, P0>(lpmsg: *mut MSG, hwnd: P0, wmsgfiltermin: u32,
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetMessageW(lpmsg: *mut MSG, hwnd: super::super::Foundation::HWND, wmsgfiltermin: u32, wmsgfiltermax: u32) -> super::super::Foundation::BOOL;
     }
@@ -2175,7 +2003,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetNextDlgGroupItem(hdlg: super::super::Foundation::HWND, hctl: super::super::Foundation::HWND, bprevious: super::super::Foundation::BOOL) -> super::super::Foundation::HWND;
     }
@@ -2190,7 +2017,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetNextDlgTabItem(hdlg: super::super::Foundation::HWND, hctl: super::super::Foundation::HWND, bprevious: super::super::Foundation::BOOL) -> super::super::Foundation::HWND;
     }
@@ -2203,7 +2029,6 @@ pub unsafe fn GetParent<'a, P0>(hwnd: P0) -> super::super::Foundation::HWND
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetParent(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::HWND;
     }
@@ -2213,7 +2038,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetPhysicalCursorPos(lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPhysicalCursorPos(lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL;
     }
@@ -2223,7 +2047,6 @@ pub unsafe fn GetPhysicalCursorPos(lppoint: *mut super::super::Foundation::POINT
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetProcessDefaultLayout(pdwdefaultlayout: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetProcessDefaultLayout(pdwdefaultlayout: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -2237,7 +2060,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPropA(hwnd: super::super::Foundation::HWND, lpstring: ::windows::core::PCSTR) -> super::super::Foundation::HANDLE;
     }
@@ -2251,7 +2073,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetPropW(hwnd: super::super::Foundation::HWND, lpstring: ::windows::core::PCWSTR) -> super::super::Foundation::HANDLE;
     }
@@ -2260,7 +2081,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn GetQueueStatus(flags: QUEUE_STATUS_FLAGS) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetQueueStatus(flags: QUEUE_STATUS_FLAGS) -> u32;
     }
@@ -2273,7 +2093,6 @@ pub unsafe fn GetScrollBarInfo<'a, P0>(hwnd: P0, idobject: OBJECT_IDENTIFIER, ps
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetScrollBarInfo(hwnd: super::super::Foundation::HWND, idobject: OBJECT_IDENTIFIER, psbi: *mut SCROLLBARINFO) -> super::super::Foundation::BOOL;
     }
@@ -2286,7 +2105,6 @@ pub unsafe fn GetScrollInfo<'a, P0>(hwnd: P0, nbar: SCROLLBAR_CONSTANTS, lpsi: *
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetScrollInfo(hwnd: super::super::Foundation::HWND, nbar: SCROLLBAR_CONSTANTS, lpsi: *mut SCROLLINFO) -> super::super::Foundation::BOOL;
     }
@@ -2299,7 +2117,6 @@ pub unsafe fn GetScrollPos<'a, P0>(hwnd: P0, nbar: SCROLLBAR_CONSTANTS) -> i32
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetScrollPos(hwnd: super::super::Foundation::HWND, nbar: SCROLLBAR_CONSTANTS) -> i32;
     }
@@ -2312,7 +2129,6 @@ pub unsafe fn GetScrollRange<'a, P0>(hwnd: P0, nbar: SCROLLBAR_CONSTANTS, lpminp
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetScrollRange(hwnd: super::super::Foundation::HWND, nbar: SCROLLBAR_CONSTANTS, lpminpos: *mut i32, lpmaxpos: *mut i32) -> super::super::Foundation::BOOL;
     }
@@ -2322,7 +2138,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetShellWindow() -> super::super::Foundation::HWND {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetShellWindow() -> super::super::Foundation::HWND;
     }
@@ -2334,7 +2149,6 @@ pub unsafe fn GetSubMenu<'a, P0>(hmenu: P0, npos: i32) -> HMENU
 where
     P0: ::std::convert::Into<HMENU>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetSubMenu(hmenu: HMENU, npos: i32) -> HMENU;
     }
@@ -2348,7 +2162,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetSystemMenu(hwnd: super::super::Foundation::HWND, brevert: super::super::Foundation::BOOL) -> HMENU;
     }
@@ -2357,7 +2170,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn GetSystemMetrics(nindex: SYSTEM_METRICS_INDEX) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetSystemMetrics(nindex: SYSTEM_METRICS_INDEX) -> i32;
     }
@@ -2370,7 +2182,6 @@ pub unsafe fn GetTitleBarInfo<'a, P0>(hwnd: P0, pti: *mut TITLEBARINFO) -> super
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetTitleBarInfo(hwnd: super::super::Foundation::HWND, pti: *mut TITLEBARINFO) -> super::super::Foundation::BOOL;
     }
@@ -2383,7 +2194,6 @@ pub unsafe fn GetTopWindow<'a, P0>(hwnd: P0) -> super::super::Foundation::HWND
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetTopWindow(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::HWND;
     }
@@ -2396,7 +2206,6 @@ pub unsafe fn GetWindow<'a, P0>(hwnd: P0, ucmd: GET_WINDOW_CMD) -> super::super:
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetWindow(hwnd: super::super::Foundation::HWND, ucmd: GET_WINDOW_CMD) -> super::super::Foundation::HWND;
     }
@@ -2409,7 +2218,6 @@ pub unsafe fn GetWindowDisplayAffinity<'a, P0>(hwnd: P0, pdwaffinity: *mut u32) 
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetWindowDisplayAffinity(hwnd: super::super::Foundation::HWND, pdwaffinity: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -2422,7 +2230,6 @@ pub unsafe fn GetWindowInfo<'a, P0>(hwnd: P0, pwi: *mut WINDOWINFO) -> super::su
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetWindowInfo(hwnd: super::super::Foundation::HWND, pwi: *mut WINDOWINFO) -> super::super::Foundation::BOOL;
     }
@@ -2435,7 +2242,6 @@ pub unsafe fn GetWindowLongA<'a, P0>(hwnd: P0, nindex: WINDOW_LONG_PTR_INDEX) ->
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetWindowLongA(hwnd: super::super::Foundation::HWND, nindex: WINDOW_LONG_PTR_INDEX) -> i32;
     }
@@ -2449,7 +2255,6 @@ pub unsafe fn GetWindowLongPtrA<'a, P0>(hwnd: P0, nindex: WINDOW_LONG_PTR_INDEX)
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetWindowLongPtrA(hwnd: super::super::Foundation::HWND, nindex: WINDOW_LONG_PTR_INDEX) -> isize;
     }
@@ -2463,7 +2268,6 @@ pub unsafe fn GetWindowLongPtrW<'a, P0>(hwnd: P0, nindex: WINDOW_LONG_PTR_INDEX)
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetWindowLongPtrW(hwnd: super::super::Foundation::HWND, nindex: WINDOW_LONG_PTR_INDEX) -> isize;
     }
@@ -2476,7 +2280,6 @@ pub unsafe fn GetWindowLongW<'a, P0>(hwnd: P0, nindex: WINDOW_LONG_PTR_INDEX) ->
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetWindowLongW(hwnd: super::super::Foundation::HWND, nindex: WINDOW_LONG_PTR_INDEX) -> i32;
     }
@@ -2489,7 +2292,6 @@ pub unsafe fn GetWindowModuleFileNameA<'a, P0>(hwnd: P0, pszfilename: &mut [u8])
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetWindowModuleFileNameA(hwnd: super::super::Foundation::HWND, pszfilename: ::windows::core::PSTR, cchfilenamemax: u32) -> u32;
     }
@@ -2502,7 +2304,6 @@ pub unsafe fn GetWindowModuleFileNameW<'a, P0>(hwnd: P0, pszfilename: &mut [u16]
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetWindowModuleFileNameW(hwnd: super::super::Foundation::HWND, pszfilename: ::windows::core::PWSTR, cchfilenamemax: u32) -> u32;
     }
@@ -2515,7 +2316,6 @@ pub unsafe fn GetWindowPlacement<'a, P0>(hwnd: P0, lpwndpl: *mut WINDOWPLACEMENT
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetWindowPlacement(hwnd: super::super::Foundation::HWND, lpwndpl: *mut WINDOWPLACEMENT) -> super::super::Foundation::BOOL;
     }
@@ -2528,7 +2328,6 @@ pub unsafe fn GetWindowRect<'a, P0>(hwnd: P0, lprect: *mut super::super::Foundat
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetWindowRect(hwnd: super::super::Foundation::HWND, lprect: *mut super::super::Foundation::RECT) -> super::super::Foundation::BOOL;
     }
@@ -2541,7 +2340,6 @@ pub unsafe fn GetWindowTextA<'a, P0>(hwnd: P0, lpstring: &mut [u8]) -> i32
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetWindowTextA(hwnd: super::super::Foundation::HWND, lpstring: ::windows::core::PSTR, nmaxcount: i32) -> i32;
     }
@@ -2554,7 +2352,6 @@ pub unsafe fn GetWindowTextLengthA<'a, P0>(hwnd: P0) -> i32
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetWindowTextLengthA(hwnd: super::super::Foundation::HWND) -> i32;
     }
@@ -2567,7 +2364,6 @@ pub unsafe fn GetWindowTextLengthW<'a, P0>(hwnd: P0) -> i32
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetWindowTextLengthW(hwnd: super::super::Foundation::HWND) -> i32;
     }
@@ -2580,7 +2376,6 @@ pub unsafe fn GetWindowTextW<'a, P0>(hwnd: P0, lpstring: &mut [u16]) -> i32
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetWindowTextW(hwnd: super::super::Foundation::HWND, lpstring: ::windows::core::PWSTR, nmaxcount: i32) -> i32;
     }
@@ -2593,7 +2388,6 @@ pub unsafe fn GetWindowThreadProcessId<'a, P0>(hwnd: P0, lpdwprocessid: ::core::
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetWindowThreadProcessId(hwnd: super::super::Foundation::HWND, lpdwprocessid: *mut u32) -> u32;
     }
@@ -2606,7 +2400,6 @@ pub unsafe fn GetWindowWord<'a, P0>(hwnd: P0, nindex: i32) -> u16
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetWindowWord(hwnd: super::super::Foundation::HWND, nindex: i32) -> u16;
     }
@@ -2619,7 +2412,6 @@ pub unsafe fn HideCaret<'a, P0>(hwnd: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HideCaret(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -2633,7 +2425,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<HMENU>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HiliteMenuItem(hwnd: super::super::Foundation::HWND, hmenu: HMENU, uidhiliteitem: u32, uhilite: u32) -> super::super::Foundation::BOOL;
     }
@@ -2643,7 +2434,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn InSendMessage() -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InSendMessage() -> super::super::Foundation::BOOL;
     }
@@ -2652,7 +2442,6 @@ pub unsafe fn InSendMessage() -> super::super::Foundation::BOOL {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn InSendMessageEx(lpreserved: ::core::option::Option<*mut ::core::ffi::c_void>) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InSendMessageEx(lpreserved: *mut ::core::ffi::c_void) -> u32;
     }
@@ -2664,7 +2453,6 @@ pub unsafe fn IndexFilePath<'a, P0>(resourceindexer: *const ::core::ffi::c_void,
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IndexFilePath(resourceindexer: *const ::core::ffi::c_void, filepath: ::windows::core::PCWSTR, ppresourceuri: *mut ::windows::core::PWSTR, pqualifiercount: *mut u32, ppqualifiers: *mut *mut IndexedResourceQualifier) -> ::windows::core::HRESULT;
     }
@@ -2678,7 +2466,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InheritWindowMonitor(hwnd: super::super::Foundation::HWND, hwndinherit: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -2692,7 +2479,6 @@ where
     P0: ::std::convert::Into<HMENU>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InsertMenuA(hmenu: HMENU, uposition: u32, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -2706,7 +2492,6 @@ where
     P0: ::std::convert::Into<HMENU>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InsertMenuItemA(hmenu: HMENU, item: u32, fbyposition: super::super::Foundation::BOOL, lpmi: *const MENUITEMINFOA) -> super::super::Foundation::BOOL;
     }
@@ -2720,7 +2505,6 @@ where
     P0: ::std::convert::Into<HMENU>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InsertMenuItemW(hmenu: HMENU, item: u32, fbyposition: super::super::Foundation::BOOL, lpmi: *const MENUITEMINFOW) -> super::super::Foundation::BOOL;
     }
@@ -2734,7 +2518,6 @@ where
     P0: ::std::convert::Into<HMENU>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InsertMenuW(hmenu: HMENU, uposition: u32, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -2747,7 +2530,6 @@ pub unsafe fn InternalGetWindowText<'a, P0>(hwnd: P0, pstring: &mut [u16]) -> i3
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InternalGetWindowText(hwnd: super::super::Foundation::HWND, pstring: ::windows::core::PWSTR, cchmaxcount: i32) -> i32;
     }
@@ -2760,7 +2542,6 @@ pub unsafe fn IsCharAlphaA<'a, P0>(ch: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<super::super::Foundation::CHAR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsCharAlphaA(ch: super::super::Foundation::CHAR) -> super::super::Foundation::BOOL;
     }
@@ -2773,7 +2554,6 @@ pub unsafe fn IsCharAlphaNumericA<'a, P0>(ch: P0) -> super::super::Foundation::B
 where
     P0: ::std::convert::Into<super::super::Foundation::CHAR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsCharAlphaNumericA(ch: super::super::Foundation::CHAR) -> super::super::Foundation::BOOL;
     }
@@ -2783,7 +2563,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn IsCharAlphaNumericW(ch: u16) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsCharAlphaNumericW(ch: u16) -> super::super::Foundation::BOOL;
     }
@@ -2793,7 +2572,6 @@ pub unsafe fn IsCharAlphaNumericW(ch: u16) -> super::super::Foundation::BOOL {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn IsCharAlphaW(ch: u16) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsCharAlphaW(ch: u16) -> super::super::Foundation::BOOL;
     }
@@ -2806,7 +2584,6 @@ pub unsafe fn IsCharLowerA<'a, P0>(ch: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<super::super::Foundation::CHAR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsCharLowerA(ch: super::super::Foundation::CHAR) -> super::super::Foundation::BOOL;
     }
@@ -2819,7 +2596,6 @@ pub unsafe fn IsCharUpperA<'a, P0>(ch: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<super::super::Foundation::CHAR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsCharUpperA(ch: super::super::Foundation::CHAR) -> super::super::Foundation::BOOL;
     }
@@ -2829,7 +2605,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn IsCharUpperW(ch: u16) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsCharUpperW(ch: u16) -> super::super::Foundation::BOOL;
     }
@@ -2843,7 +2618,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsChild(hwndparent: super::super::Foundation::HWND, hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -2856,7 +2630,6 @@ pub unsafe fn IsDialogMessageA<'a, P0>(hdlg: P0, lpmsg: *const MSG) -> super::su
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsDialogMessageA(hdlg: super::super::Foundation::HWND, lpmsg: *const MSG) -> super::super::Foundation::BOOL;
     }
@@ -2869,7 +2642,6 @@ pub unsafe fn IsDialogMessageW<'a, P0>(hdlg: P0, lpmsg: *const MSG) -> super::su
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsDialogMessageW(hdlg: super::super::Foundation::HWND, lpmsg: *const MSG) -> super::super::Foundation::BOOL;
     }
@@ -2882,7 +2654,6 @@ pub unsafe fn IsGUIThread<'a, P0>(bconvert: P0) -> super::super::Foundation::BOO
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsGUIThread(bconvert: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -2895,7 +2666,6 @@ pub unsafe fn IsHungAppWindow<'a, P0>(hwnd: P0) -> super::super::Foundation::BOO
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsHungAppWindow(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -2908,7 +2678,6 @@ pub unsafe fn IsIconic<'a, P0>(hwnd: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsIconic(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -2921,7 +2690,6 @@ pub unsafe fn IsMenu<'a, P0>(hmenu: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<HMENU>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsMenu(hmenu: HMENU) -> super::super::Foundation::BOOL;
     }
@@ -2931,7 +2699,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn IsProcessDPIAware() -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsProcessDPIAware() -> super::super::Foundation::BOOL;
     }
@@ -2944,7 +2711,6 @@ pub unsafe fn IsWindow<'a, P0>(hwnd: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsWindow(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -2957,7 +2723,6 @@ pub unsafe fn IsWindowUnicode<'a, P0>(hwnd: P0) -> super::super::Foundation::BOO
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsWindowUnicode(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -2970,7 +2735,6 @@ pub unsafe fn IsWindowVisible<'a, P0>(hwnd: P0) -> super::super::Foundation::BOO
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsWindowVisible(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -2980,7 +2744,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn IsWow64Message() -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsWow64Message() -> super::super::Foundation::BOOL;
     }
@@ -2993,7 +2756,6 @@ pub unsafe fn IsZoomed<'a, P0>(hwnd: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsZoomed(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -3006,7 +2768,6 @@ pub unsafe fn KillTimer<'a, P0>(hwnd: P0, uidevent: usize) -> super::super::Foun
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn KillTimer(hwnd: super::super::Foundation::HWND, uidevent: usize) -> super::super::Foundation::BOOL;
     }
@@ -3020,7 +2781,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadAcceleratorsA(hinstance: super::super::Foundation::HINSTANCE, lptablename: ::windows::core::PCSTR) -> HACCEL;
     }
@@ -3035,7 +2795,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadAcceleratorsW(hinstance: super::super::Foundation::HINSTANCE, lptablename: ::windows::core::PCWSTR) -> HACCEL;
     }
@@ -3050,7 +2809,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadCursorA(hinstance: super::super::Foundation::HINSTANCE, lpcursorname: ::windows::core::PCSTR) -> HCURSOR;
     }
@@ -3063,7 +2821,6 @@ pub unsafe fn LoadCursorFromFileA<'a, P0>(lpfilename: P0) -> ::windows::core::Re
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadCursorFromFileA(lpfilename: ::windows::core::PCSTR) -> HCURSOR;
     }
@@ -3076,7 +2833,6 @@ pub unsafe fn LoadCursorFromFileW<'a, P0>(lpfilename: P0) -> ::windows::core::Re
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadCursorFromFileW(lpfilename: ::windows::core::PCWSTR) -> HCURSOR;
     }
@@ -3091,7 +2847,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadCursorW(hinstance: super::super::Foundation::HINSTANCE, lpcursorname: ::windows::core::PCWSTR) -> HCURSOR;
     }
@@ -3106,7 +2861,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadIconA(hinstance: super::super::Foundation::HINSTANCE, lpiconname: ::windows::core::PCSTR) -> HICON;
     }
@@ -3121,7 +2875,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadIconW(hinstance: super::super::Foundation::HINSTANCE, lpiconname: ::windows::core::PCWSTR) -> HICON;
     }
@@ -3136,7 +2889,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadImageA(hinst: super::super::Foundation::HINSTANCE, name: ::windows::core::PCSTR, r#type: GDI_IMAGE_TYPE, cx: i32, cy: i32, fuload: IMAGE_FLAGS) -> super::super::Foundation::HANDLE;
     }
@@ -3151,7 +2903,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadImageW(hinst: super::super::Foundation::HINSTANCE, name: ::windows::core::PCWSTR, r#type: GDI_IMAGE_TYPE, cx: i32, cy: i32, fuload: IMAGE_FLAGS) -> super::super::Foundation::HANDLE;
     }
@@ -3166,7 +2917,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadMenuA(hinstance: super::super::Foundation::HINSTANCE, lpmenuname: ::windows::core::PCSTR) -> HMENU;
     }
@@ -3176,7 +2926,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn LoadMenuIndirectA(lpmenutemplate: *const ::core::ffi::c_void) -> ::windows::core::Result<HMENU> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadMenuIndirectA(lpmenutemplate: *const ::core::ffi::c_void) -> HMENU;
     }
@@ -3186,7 +2935,6 @@ pub unsafe fn LoadMenuIndirectA(lpmenutemplate: *const ::core::ffi::c_void) -> :
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn LoadMenuIndirectW(lpmenutemplate: *const ::core::ffi::c_void) -> ::windows::core::Result<HMENU> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadMenuIndirectW(lpmenutemplate: *const ::core::ffi::c_void) -> HMENU;
     }
@@ -3201,7 +2949,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadMenuW(hinstance: super::super::Foundation::HINSTANCE, lpmenuname: ::windows::core::PCWSTR) -> HMENU;
     }
@@ -3215,7 +2962,6 @@ pub unsafe fn LoadStringA<'a, P0>(hinstance: P0, uid: u32, lpbuffer: ::windows::
 where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadStringA(hinstance: super::super::Foundation::HINSTANCE, uid: u32, lpbuffer: ::windows::core::PSTR, cchbuffermax: i32) -> i32;
     }
@@ -3228,7 +2974,6 @@ pub unsafe fn LoadStringW<'a, P0>(hinstance: P0, uid: u32, lpbuffer: ::windows::
 where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LoadStringW(hinstance: super::super::Foundation::HINSTANCE, uid: u32, lpbuffer: ::windows::core::PWSTR, cchbuffermax: i32) -> i32;
     }
@@ -3238,7 +2983,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn LockSetForegroundWindow(ulockcode: FOREGROUND_WINDOW_LOCK_CODE) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LockSetForegroundWindow(ulockcode: FOREGROUND_WINDOW_LOCK_CODE) -> super::super::Foundation::BOOL;
     }
@@ -3251,7 +2995,6 @@ pub unsafe fn LogicalToPhysicalPoint<'a, P0>(hwnd: P0, lppoint: *mut super::supe
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LogicalToPhysicalPoint(hwnd: super::super::Foundation::HWND, lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL;
     }
@@ -3264,7 +3007,6 @@ pub unsafe fn LookupIconIdFromDirectory<'a, P0>(presbits: *const u8, ficon: P0) 
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LookupIconIdFromDirectory(presbits: *const u8, ficon: super::super::Foundation::BOOL) -> i32;
     }
@@ -3277,7 +3019,6 @@ pub unsafe fn LookupIconIdFromDirectoryEx<'a, P0>(presbits: *const u8, ficon: P0
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LookupIconIdFromDirectoryEx(presbits: *const u8, ficon: super::super::Foundation::BOOL, cxdesired: i32, cydesired: i32, flags: IMAGE_FLAGS) -> i32;
     }
@@ -3290,7 +3031,6 @@ pub unsafe fn MapDialogRect<'a, P0>(hdlg: P0, lprect: *mut super::super::Foundat
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MapDialogRect(hdlg: super::super::Foundation::HWND, lprect: *mut super::super::Foundation::RECT) -> super::super::Foundation::BOOL;
     }
@@ -3304,7 +3044,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<HMENU>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MenuItemFromPoint(hwnd: super::super::Foundation::HWND, hmenu: HMENU, ptscreen: super::super::Foundation::POINT) -> i32;
     }
@@ -3319,7 +3058,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MessageBoxA(hwnd: super::super::Foundation::HWND, lptext: ::windows::core::PCSTR, lpcaption: ::windows::core::PCSTR, utype: MESSAGEBOX_STYLE) -> MESSAGEBOX_RESULT;
     }
@@ -3334,7 +3072,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MessageBoxExA(hwnd: super::super::Foundation::HWND, lptext: ::windows::core::PCSTR, lpcaption: ::windows::core::PCSTR, utype: MESSAGEBOX_STYLE, wlanguageid: u16) -> MESSAGEBOX_RESULT;
     }
@@ -3349,7 +3086,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MessageBoxExW(hwnd: super::super::Foundation::HWND, lptext: ::windows::core::PCWSTR, lpcaption: ::windows::core::PCWSTR, utype: MESSAGEBOX_STYLE, wlanguageid: u16) -> MESSAGEBOX_RESULT;
     }
@@ -3359,7 +3095,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell"))]
 #[inline]
 pub unsafe fn MessageBoxIndirectA(lpmbp: *const MSGBOXPARAMSA) -> MESSAGEBOX_RESULT {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MessageBoxIndirectA(lpmbp: *const MSGBOXPARAMSA) -> MESSAGEBOX_RESULT;
     }
@@ -3369,7 +3104,6 @@ pub unsafe fn MessageBoxIndirectA(lpmbp: *const MSGBOXPARAMSA) -> MESSAGEBOX_RES
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell"))]
 #[inline]
 pub unsafe fn MessageBoxIndirectW(lpmbp: *const MSGBOXPARAMSW) -> MESSAGEBOX_RESULT {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MessageBoxIndirectW(lpmbp: *const MSGBOXPARAMSW) -> MESSAGEBOX_RESULT;
     }
@@ -3384,7 +3118,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MessageBoxW(hwnd: super::super::Foundation::HWND, lptext: ::windows::core::PCWSTR, lpcaption: ::windows::core::PCWSTR, utype: MESSAGEBOX_STYLE) -> MESSAGEBOX_RESULT;
     }
@@ -3398,7 +3131,6 @@ where
     P0: ::std::convert::Into<HMENU>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ModifyMenuA(hmnu: HMENU, uposition: u32, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -3412,7 +3144,6 @@ where
     P0: ::std::convert::Into<HMENU>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ModifyMenuW(hmnu: HMENU, uposition: u32, uflags: MENU_ITEM_FLAGS, uidnewitem: usize, lpnewitem: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -3426,7 +3157,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MoveWindow(hwnd: super::super::Foundation::HWND, x: i32, y: i32, nwidth: i32, nheight: i32, brepaint: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -3439,7 +3169,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MrmCreateConfig(platformversion: MrmPlatformVersion, defaultqualifiers: ::windows::core::PCWSTR, outputxmlfile: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -3451,7 +3180,6 @@ pub unsafe fn MrmCreateConfigInMemory<'a, P0>(platformversion: MrmPlatformVersio
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MrmCreateConfigInMemory(platformversion: MrmPlatformVersion, defaultqualifiers: ::windows::core::PCWSTR, outputxmldata: *mut *mut u8, outputxmlsize: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -3463,7 +3191,6 @@ pub unsafe fn MrmCreateResourceFile<'a, P0>(indexer: MrmResourceIndexerHandle, p
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MrmCreateResourceFile(indexer: MrmResourceIndexerHandle, packagingmode: MrmPackagingMode, packagingoptions: MrmPackagingOptions, outputdirectory: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -3472,7 +3199,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn MrmCreateResourceFileInMemory(indexer: MrmResourceIndexerHandle, packagingmode: MrmPackagingMode, packagingoptions: MrmPackagingOptions, outputpridata: *mut *mut u8, outputprisize: *mut u32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MrmCreateResourceFileInMemory(indexer: MrmResourceIndexerHandle, packagingmode: MrmPackagingMode, packagingoptions: MrmPackagingOptions, outputpridata: *mut *mut u8, outputprisize: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -3484,7 +3210,6 @@ pub unsafe fn MrmCreateResourceFileWithChecksum<'a, P0>(indexer: MrmResourceInde
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MrmCreateResourceFileWithChecksum(indexer: MrmResourceIndexerHandle, packagingmode: MrmPackagingMode, packagingoptions: MrmPackagingOptions, checksum: u32, outputdirectory: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -3498,7 +3223,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MrmCreateResourceIndexer(packagefamilyname: ::windows::core::PCWSTR, projectroot: ::windows::core::PCWSTR, platformversion: MrmPlatformVersion, defaultqualifiers: ::windows::core::PCWSTR, indexer: *mut MrmResourceIndexerHandle) -> ::windows::core::HRESULT;
     }
@@ -3511,7 +3235,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MrmCreateResourceIndexerFromPreviousPriData(projectroot: ::windows::core::PCWSTR, platformversion: MrmPlatformVersion, defaultqualifiers: ::windows::core::PCWSTR, pridata: *const u8, prisize: u32, indexer: *mut MrmResourceIndexerHandle) -> ::windows::core::HRESULT;
     }
@@ -3525,7 +3248,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MrmCreateResourceIndexerFromPreviousPriFile(projectroot: ::windows::core::PCWSTR, platformversion: MrmPlatformVersion, defaultqualifiers: ::windows::core::PCWSTR, prifile: ::windows::core::PCWSTR, indexer: *mut MrmResourceIndexerHandle) -> ::windows::core::HRESULT;
     }
@@ -3538,7 +3260,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MrmCreateResourceIndexerFromPreviousSchemaData(projectroot: ::windows::core::PCWSTR, platformversion: MrmPlatformVersion, defaultqualifiers: ::windows::core::PCWSTR, schemaxmldata: *const u8, schemaxmlsize: u32, indexer: *mut MrmResourceIndexerHandle) -> ::windows::core::HRESULT;
     }
@@ -3552,7 +3273,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MrmCreateResourceIndexerFromPreviousSchemaFile(projectroot: ::windows::core::PCWSTR, platformversion: MrmPlatformVersion, defaultqualifiers: ::windows::core::PCWSTR, schemafile: ::windows::core::PCWSTR, indexer: *mut MrmResourceIndexerHandle) -> ::windows::core::HRESULT;
     }
@@ -3566,7 +3286,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MrmCreateResourceIndexerWithFlags(packagefamilyname: ::windows::core::PCWSTR, projectroot: ::windows::core::PCWSTR, platformversion: MrmPlatformVersion, defaultqualifiers: ::windows::core::PCWSTR, flags: MrmIndexerFlags, indexer: *mut MrmResourceIndexerHandle) -> ::windows::core::HRESULT;
     }
@@ -3575,7 +3294,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn MrmDestroyIndexerAndMessages(indexer: MrmResourceIndexerHandle) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MrmDestroyIndexerAndMessages(indexer: MrmResourceIndexerHandle) -> ::windows::core::HRESULT;
     }
@@ -3584,7 +3302,6 @@ pub unsafe fn MrmDestroyIndexerAndMessages(indexer: MrmResourceIndexerHandle) ->
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn MrmDumpPriDataInMemory(inputpridata: &[u8], schemapridata: ::core::option::Option<&[u8]>, dumptype: MrmDumpType, outputxmldata: *mut *mut u8, outputxmlsize: *mut u32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MrmDumpPriDataInMemory(inputpridata: *const u8, inputprisize: u32, schemapridata: *const u8, schemaprisize: u32, dumptype: MrmDumpType, outputxmldata: *mut *mut u8, outputxmlsize: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -3598,7 +3315,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MrmDumpPriFile(indexfilename: ::windows::core::PCWSTR, schemaprifile: ::windows::core::PCWSTR, dumptype: MrmDumpType, outputxmlfile: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -3611,7 +3327,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MrmDumpPriFileInMemory(indexfilename: ::windows::core::PCWSTR, schemaprifile: ::windows::core::PCWSTR, dumptype: MrmDumpType, outputxmldata: *mut *mut u8, outputxmlsize: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -3620,7 +3335,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn MrmFreeMemory(data: *const u8) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MrmFreeMemory(data: *const u8) -> ::windows::core::HRESULT;
     }
@@ -3632,7 +3346,6 @@ pub unsafe fn MrmGetPriFileContentChecksum<'a, P0>(prifile: P0) -> ::windows::co
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MrmGetPriFileContentChecksum(prifile: ::windows::core::PCWSTR, checksum: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -3646,7 +3359,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MrmIndexEmbeddedData(indexer: MrmResourceIndexerHandle, resourceuri: ::windows::core::PCWSTR, embeddeddata: *const u8, embeddeddatasize: u32, qualifiers: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -3660,7 +3372,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MrmIndexFile(indexer: MrmResourceIndexerHandle, resourceuri: ::windows::core::PCWSTR, filepath: ::windows::core::PCWSTR, qualifiers: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -3672,7 +3383,6 @@ pub unsafe fn MrmIndexFileAutoQualifiers<'a, P0>(indexer: MrmResourceIndexerHand
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MrmIndexFileAutoQualifiers(indexer: MrmResourceIndexerHandle, filepath: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -3684,7 +3394,6 @@ pub unsafe fn MrmIndexResourceContainerAutoQualifiers<'a, P0>(indexer: MrmResour
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MrmIndexResourceContainerAutoQualifiers(indexer: MrmResourceIndexerHandle, containerpath: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -3698,7 +3407,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MrmIndexString(indexer: MrmResourceIndexerHandle, resourceuri: ::windows::core::PCWSTR, resourcestring: ::windows::core::PCWSTR, qualifiers: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -3707,7 +3415,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn MrmPeekResourceIndexerMessages(handle: MrmResourceIndexerHandle, messages: *mut *mut MrmResourceIndexerMessage, nummsgs: *mut u32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MrmPeekResourceIndexerMessages(handle: MrmResourceIndexerHandle, messages: *mut *mut MrmResourceIndexerMessage, nummsgs: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -3720,7 +3427,6 @@ pub unsafe fn MsgWaitForMultipleObjects<'a, P0>(phandles: ::core::option::Option
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsgWaitForMultipleObjects(ncount: u32, phandles: *const super::super::Foundation::HANDLE, fwaitall: super::super::Foundation::BOOL, dwmilliseconds: u32, dwwakemask: QUEUE_STATUS_FLAGS) -> u32;
     }
@@ -3730,7 +3436,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn MsgWaitForMultipleObjectsEx(phandles: ::core::option::Option<&[super::super::Foundation::HANDLE]>, dwmilliseconds: u32, dwwakemask: QUEUE_STATUS_FLAGS, dwflags: MSG_WAIT_FOR_MULTIPLE_OBJECTS_EX_FLAGS) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MsgWaitForMultipleObjectsEx(ncount: u32, phandles: *const super::super::Foundation::HANDLE, dwmilliseconds: u32, dwwakemask: QUEUE_STATUS_FLAGS, dwflags: MSG_WAIT_FOR_MULTIPLE_OBJECTS_EX_FLAGS) -> u32;
     }
@@ -3743,7 +3448,6 @@ pub unsafe fn OemToCharA<'a, P0>(psrc: P0, pdst: ::windows::core::PSTR) -> super
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OemToCharA(psrc: ::windows::core::PCSTR, pdst: ::windows::core::PSTR) -> super::super::Foundation::BOOL;
     }
@@ -3756,7 +3460,6 @@ pub unsafe fn OemToCharBuffA<'a, P0>(lpszsrc: P0, lpszdst: &mut [u8]) -> super::
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OemToCharBuffA(lpszsrc: ::windows::core::PCSTR, lpszdst: ::windows::core::PSTR, cchdstlength: u32) -> super::super::Foundation::BOOL;
     }
@@ -3769,7 +3472,6 @@ pub unsafe fn OemToCharBuffW<'a, P0>(lpszsrc: P0, lpszdst: &mut [u16]) -> super:
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OemToCharBuffW(lpszsrc: ::windows::core::PCSTR, lpszdst: ::windows::core::PWSTR, cchdstlength: u32) -> super::super::Foundation::BOOL;
     }
@@ -3782,7 +3484,6 @@ pub unsafe fn OemToCharW<'a, P0>(psrc: P0, pdst: ::windows::core::PWSTR) -> supe
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OemToCharW(psrc: ::windows::core::PCSTR, pdst: ::windows::core::PWSTR) -> super::super::Foundation::BOOL;
     }
@@ -3795,7 +3496,6 @@ pub unsafe fn OpenIcon<'a, P0>(hwnd: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenIcon(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -3808,7 +3508,6 @@ pub unsafe fn PeekMessageA<'a, P0>(lpmsg: *mut MSG, hwnd: P0, wmsgfiltermin: u32
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PeekMessageA(lpmsg: *mut MSG, hwnd: super::super::Foundation::HWND, wmsgfiltermin: u32, wmsgfiltermax: u32, wremovemsg: PEEK_MESSAGE_REMOVE_TYPE) -> super::super::Foundation::BOOL;
     }
@@ -3821,7 +3520,6 @@ pub unsafe fn PeekMessageW<'a, P0>(lpmsg: *mut MSG, hwnd: P0, wmsgfiltermin: u32
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PeekMessageW(lpmsg: *mut MSG, hwnd: super::super::Foundation::HWND, wmsgfiltermin: u32, wmsgfiltermax: u32, wremovemsg: PEEK_MESSAGE_REMOVE_TYPE) -> super::super::Foundation::BOOL;
     }
@@ -3834,7 +3532,6 @@ pub unsafe fn PhysicalToLogicalPoint<'a, P0>(hwnd: P0, lppoint: *mut super::supe
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PhysicalToLogicalPoint(hwnd: super::super::Foundation::HWND, lppoint: *mut super::super::Foundation::POINT) -> super::super::Foundation::BOOL;
     }
@@ -3849,7 +3546,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PostMessageA(hwnd: super::super::Foundation::HWND, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
     }
@@ -3864,7 +3560,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PostMessageW(hwnd: super::super::Foundation::HWND, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
     }
@@ -3873,7 +3568,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn PostQuitMessage(nexitcode: i32) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PostQuitMessage(nexitcode: i32);
     }
@@ -3887,7 +3581,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P1: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PostThreadMessageA(idthread: u32, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
     }
@@ -3901,7 +3594,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P1: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PostThreadMessageW(idthread: u32, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
     }
@@ -3910,7 +3602,6 @@ where
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn PrivateExtractIconsA(szfilename: &[u8; 260], niconindex: i32, cxicon: i32, cyicon: i32, phicon: ::core::option::Option<*mut HICON>, piconid: ::core::option::Option<*mut u32>, nicons: u32, flags: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PrivateExtractIconsA(szfilename: ::windows::core::PCSTR, niconindex: i32, cxicon: i32, cyicon: i32, phicon: *mut HICON, piconid: *mut u32, nicons: u32, flags: u32) -> u32;
     }
@@ -3919,7 +3610,6 @@ pub unsafe fn PrivateExtractIconsA(szfilename: &[u8; 260], niconindex: i32, cxic
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn PrivateExtractIconsW(szfilename: &[u16; 260], niconindex: i32, cxicon: i32, cyicon: i32, phicon: ::core::option::Option<*mut HICON>, piconid: ::core::option::Option<*mut u32>, nicons: u32, flags: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PrivateExtractIconsW(szfilename: ::windows::core::PCWSTR, niconindex: i32, cxicon: i32, cyicon: i32, phicon: *mut HICON, piconid: *mut u32, nicons: u32, flags: u32) -> u32;
     }
@@ -3932,7 +3622,6 @@ pub unsafe fn RealChildWindowFromPoint<'a, P0>(hwndparent: P0, ptparentclientcoo
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RealChildWindowFromPoint(hwndparent: super::super::Foundation::HWND, ptparentclientcoords: super::super::Foundation::POINT) -> super::super::Foundation::HWND;
     }
@@ -3945,7 +3634,6 @@ pub unsafe fn RealGetWindowClassA<'a, P0>(hwnd: P0, ptszclassname: &mut [u8]) ->
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RealGetWindowClassA(hwnd: super::super::Foundation::HWND, ptszclassname: ::windows::core::PSTR, cchclassnamemax: u32) -> u32;
     }
@@ -3958,7 +3646,6 @@ pub unsafe fn RealGetWindowClassW<'a, P0>(hwnd: P0, ptszclassname: &mut [u16]) -
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RealGetWindowClassW(hwnd: super::super::Foundation::HWND, ptszclassname: ::windows::core::PWSTR, cchclassnamemax: u32) -> u32;
     }
@@ -3968,7 +3655,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
 pub unsafe fn RegisterClassA(lpwndclass: *const WNDCLASSA) -> u16 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterClassA(lpwndclass: *const WNDCLASSA) -> u16;
     }
@@ -3978,7 +3664,6 @@ pub unsafe fn RegisterClassA(lpwndclass: *const WNDCLASSA) -> u16 {
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
 pub unsafe fn RegisterClassExA(param0: *const WNDCLASSEXA) -> u16 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterClassExA(param0: *const WNDCLASSEXA) -> u16;
     }
@@ -3988,7 +3673,6 @@ pub unsafe fn RegisterClassExA(param0: *const WNDCLASSEXA) -> u16 {
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
 pub unsafe fn RegisterClassExW(param0: *const WNDCLASSEXW) -> u16 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterClassExW(param0: *const WNDCLASSEXW) -> u16;
     }
@@ -3998,7 +3682,6 @@ pub unsafe fn RegisterClassExW(param0: *const WNDCLASSEXW) -> u16 {
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
 pub unsafe fn RegisterClassW(lpwndclass: *const WNDCLASSW) -> u16 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterClassW(lpwndclass: *const WNDCLASSW) -> u16;
     }
@@ -4011,7 +3694,6 @@ pub unsafe fn RegisterDeviceNotificationA<'a, P0>(hrecipient: P0, notificationfi
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterDeviceNotificationA(hrecipient: super::super::Foundation::HANDLE, notificationfilter: *const ::core::ffi::c_void, flags: super::super::System::Power::POWER_SETTING_REGISTER_NOTIFICATION_FLAGS) -> *mut ::core::ffi::c_void;
     }
@@ -4024,7 +3706,6 @@ pub unsafe fn RegisterDeviceNotificationW<'a, P0>(hrecipient: P0, notificationfi
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterDeviceNotificationW(hrecipient: super::super::Foundation::HANDLE, notificationfilter: *const ::core::ffi::c_void, flags: super::super::System::Power::POWER_SETTING_REGISTER_NOTIFICATION_FLAGS) -> *mut ::core::ffi::c_void;
     }
@@ -4037,7 +3718,6 @@ pub unsafe fn RegisterShellHookWindow<'a, P0>(hwnd: P0) -> super::super::Foundat
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterShellHookWindow(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -4049,7 +3729,6 @@ pub unsafe fn RegisterWindowMessageA<'a, P0>(lpstring: P0) -> u32
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterWindowMessageA(lpstring: ::windows::core::PCSTR) -> u32;
     }
@@ -4061,7 +3740,6 @@ pub unsafe fn RegisterWindowMessageW<'a, P0>(lpstring: P0) -> u32
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterWindowMessageW(lpstring: ::windows::core::PCWSTR) -> u32;
     }
@@ -4074,7 +3752,6 @@ pub unsafe fn RemoveMenu<'a, P0>(hmenu: P0, uposition: u32, uflags: MENU_ITEM_FL
 where
     P0: ::std::convert::Into<HMENU>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RemoveMenu(hmenu: HMENU, uposition: u32, uflags: MENU_ITEM_FLAGS) -> super::super::Foundation::BOOL;
     }
@@ -4088,7 +3765,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RemovePropA(hwnd: super::super::Foundation::HWND, lpstring: ::windows::core::PCSTR) -> super::super::Foundation::HANDLE;
     }
@@ -4103,7 +3779,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RemovePropW(hwnd: super::super::Foundation::HWND, lpstring: ::windows::core::PCWSTR) -> super::super::Foundation::HANDLE;
     }
@@ -4117,7 +3792,6 @@ pub unsafe fn ReplyMessage<'a, P0>(lresult: P0) -> super::super::Foundation::BOO
 where
     P0: ::std::convert::Into<super::super::Foundation::LRESULT>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReplyMessage(lresult: super::super::Foundation::LRESULT) -> super::super::Foundation::BOOL;
     }
@@ -4131,7 +3805,6 @@ where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
     P1: ::std::convert::Into<super::super::Graphics::Gdi::HRGN>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ScrollDC(hdc: super::super::Graphics::Gdi::HDC, dx: i32, dy: i32, lprcscroll: *const super::super::Foundation::RECT, lprcclip: *const super::super::Foundation::RECT, hrgnupdate: super::super::Graphics::Gdi::HRGN, lprcupdate: *mut super::super::Foundation::RECT) -> super::super::Foundation::BOOL;
     }
@@ -4144,7 +3817,6 @@ pub unsafe fn ScrollWindow<'a, P0>(hwnd: P0, xamount: i32, yamount: i32, lprect:
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ScrollWindow(hwnd: super::super::Foundation::HWND, xamount: i32, yamount: i32, lprect: *const super::super::Foundation::RECT, lpcliprect: *const super::super::Foundation::RECT) -> super::super::Foundation::BOOL;
     }
@@ -4158,7 +3830,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Graphics::Gdi::HRGN>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ScrollWindowEx(hwnd: super::super::Foundation::HWND, dx: i32, dy: i32, prcscroll: *const super::super::Foundation::RECT, prcclip: *const super::super::Foundation::RECT, hrgnupdate: super::super::Graphics::Gdi::HRGN, prcupdate: *mut super::super::Foundation::RECT, flags: SHOW_WINDOW_CMD) -> i32;
     }
@@ -4173,7 +3844,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SendDlgItemMessageA(hdlg: super::super::Foundation::HWND, niddlgitem: i32, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
     }
@@ -4188,7 +3858,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SendDlgItemMessageW(hdlg: super::super::Foundation::HWND, niddlgitem: i32, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
     }
@@ -4201,7 +3870,6 @@ pub unsafe fn SendMessageA<'a, P0>(hwnd: P0, msg: u32, wparam: super::super::Fou
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SendMessageA(hwnd: super::super::Foundation::HWND, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
     }
@@ -4216,7 +3884,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SendMessageCallbackA(hwnd: super::super::Foundation::HWND, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, lpresultcallback: *mut ::core::ffi::c_void, dwdata: usize) -> super::super::Foundation::BOOL;
     }
@@ -4231,7 +3898,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SendMessageCallbackW(hwnd: super::super::Foundation::HWND, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, lpresultcallback: *mut ::core::ffi::c_void, dwdata: usize) -> super::super::Foundation::BOOL;
     }
@@ -4246,7 +3912,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SendMessageTimeoutA(hwnd: super::super::Foundation::HWND, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, fuflags: SEND_MESSAGE_TIMEOUT_FLAGS, utimeout: u32, lpdwresult: *mut usize) -> super::super::Foundation::LRESULT;
     }
@@ -4261,7 +3926,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SendMessageTimeoutW(hwnd: super::super::Foundation::HWND, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, fuflags: SEND_MESSAGE_TIMEOUT_FLAGS, utimeout: u32, lpdwresult: *mut usize) -> super::super::Foundation::LRESULT;
     }
@@ -4274,7 +3938,6 @@ pub unsafe fn SendMessageW<'a, P0>(hwnd: P0, msg: u32, wparam: super::super::Fou
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SendMessageW(hwnd: super::super::Foundation::HWND, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LRESULT;
     }
@@ -4289,7 +3952,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SendNotifyMessageA(hwnd: super::super::Foundation::HWND, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
     }
@@ -4304,7 +3966,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::WPARAM>,
     P2: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SendNotifyMessageW(hwnd: super::super::Foundation::HWND, msg: u32, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
     }
@@ -4314,7 +3975,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SetCaretBlinkTime(umseconds: u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetCaretBlinkTime(umseconds: u32) -> super::super::Foundation::BOOL;
     }
@@ -4324,7 +3984,6 @@ pub unsafe fn SetCaretBlinkTime(umseconds: u32) -> super::super::Foundation::BOO
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SetCaretPos(x: i32, y: i32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetCaretPos(x: i32, y: i32) -> super::super::Foundation::BOOL;
     }
@@ -4337,7 +3996,6 @@ pub unsafe fn SetClassLongA<'a, P0>(hwnd: P0, nindex: GET_CLASS_LONG_INDEX, dwne
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetClassLongA(hwnd: super::super::Foundation::HWND, nindex: GET_CLASS_LONG_INDEX, dwnewlong: i32) -> u32;
     }
@@ -4351,7 +4009,6 @@ pub unsafe fn SetClassLongPtrA<'a, P0>(hwnd: P0, nindex: GET_CLASS_LONG_INDEX, d
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetClassLongPtrA(hwnd: super::super::Foundation::HWND, nindex: GET_CLASS_LONG_INDEX, dwnewlong: isize) -> usize;
     }
@@ -4365,7 +4022,6 @@ pub unsafe fn SetClassLongPtrW<'a, P0>(hwnd: P0, nindex: GET_CLASS_LONG_INDEX, d
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetClassLongPtrW(hwnd: super::super::Foundation::HWND, nindex: GET_CLASS_LONG_INDEX, dwnewlong: isize) -> usize;
     }
@@ -4378,7 +4034,6 @@ pub unsafe fn SetClassLongW<'a, P0>(hwnd: P0, nindex: GET_CLASS_LONG_INDEX, dwne
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetClassLongW(hwnd: super::super::Foundation::HWND, nindex: GET_CLASS_LONG_INDEX, dwnewlong: i32) -> u32;
     }
@@ -4391,7 +4046,6 @@ pub unsafe fn SetClassWord<'a, P0>(hwnd: P0, nindex: i32, wnewword: u16) -> u16
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetClassWord(hwnd: super::super::Foundation::HWND, nindex: i32, wnewword: u16) -> u16;
     }
@@ -4404,7 +4058,6 @@ pub unsafe fn SetCoalescableTimer<'a, P0>(hwnd: P0, nidevent: usize, uelapse: u3
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetCoalescableTimer(hwnd: super::super::Foundation::HWND, nidevent: usize, uelapse: u32, lptimerfunc: *mut ::core::ffi::c_void, utolerancedelay: u32) -> usize;
     }
@@ -4416,7 +4069,6 @@ pub unsafe fn SetCursor<'a, P0>(hcursor: P0) -> HCURSOR
 where
     P0: ::std::convert::Into<HCURSOR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetCursor(hcursor: HCURSOR) -> HCURSOR;
     }
@@ -4426,7 +4078,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SetCursorPos(x: i32, y: i32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetCursorPos(x: i32, y: i32) -> super::super::Foundation::BOOL;
     }
@@ -4435,7 +4086,6 @@ pub unsafe fn SetCursorPos(x: i32, y: i32) -> super::super::Foundation::BOOL {
 #[doc = "*Required features: `\"Win32_UI_WindowsAndMessaging\"`*"]
 #[inline]
 pub unsafe fn SetDebugErrorLevel(dwlevel: u32) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetDebugErrorLevel(dwlevel: u32);
     }
@@ -4449,7 +4099,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetDlgItemInt(hdlg: super::super::Foundation::HWND, niddlgitem: i32, uvalue: u32, bsigned: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -4463,7 +4112,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetDlgItemTextA(hdlg: super::super::Foundation::HWND, niddlgitem: i32, lpstring: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -4477,7 +4125,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetDlgItemTextW(hdlg: super::super::Foundation::HWND, niddlgitem: i32, lpstring: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -4490,7 +4137,6 @@ pub unsafe fn SetForegroundWindow<'a, P0>(hwnd: P0) -> super::super::Foundation:
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetForegroundWindow(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -4504,7 +4150,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::COLORREF>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetLayeredWindowAttributes(hwnd: super::super::Foundation::HWND, crkey: super::super::Foundation::COLORREF, balpha: u8, dwflags: LAYERED_WINDOW_ATTRIBUTES_FLAGS) -> super::super::Foundation::BOOL;
     }
@@ -4518,7 +4163,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<HMENU>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetMenu(hwnd: super::super::Foundation::HWND, hmenu: HMENU) -> super::super::Foundation::BOOL;
     }
@@ -4531,7 +4175,6 @@ pub unsafe fn SetMenuDefaultItem<'a, P0>(hmenu: P0, uitem: u32, fbypos: u32) -> 
 where
     P0: ::std::convert::Into<HMENU>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetMenuDefaultItem(hmenu: HMENU, uitem: u32, fbypos: u32) -> super::super::Foundation::BOOL;
     }
@@ -4544,7 +4187,6 @@ pub unsafe fn SetMenuInfo<'a, P0>(param0: P0, param1: *const MENUINFO) -> super:
 where
     P0: ::std::convert::Into<HMENU>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetMenuInfo(param0: HMENU, param1: *const MENUINFO) -> super::super::Foundation::BOOL;
     }
@@ -4559,7 +4201,6 @@ where
     P1: ::std::convert::Into<super::super::Graphics::Gdi::HBITMAP>,
     P2: ::std::convert::Into<super::super::Graphics::Gdi::HBITMAP>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetMenuItemBitmaps(hmenu: HMENU, uposition: u32, uflags: MENU_ITEM_FLAGS, hbitmapunchecked: super::super::Graphics::Gdi::HBITMAP, hbitmapchecked: super::super::Graphics::Gdi::HBITMAP) -> super::super::Foundation::BOOL;
     }
@@ -4573,7 +4214,6 @@ where
     P0: ::std::convert::Into<HMENU>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetMenuItemInfoA(hmenu: HMENU, item: u32, fbypositon: super::super::Foundation::BOOL, lpmii: *const MENUITEMINFOA) -> super::super::Foundation::BOOL;
     }
@@ -4587,7 +4227,6 @@ where
     P0: ::std::convert::Into<HMENU>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetMenuItemInfoW(hmenu: HMENU, item: u32, fbypositon: super::super::Foundation::BOOL, lpmii: *const MENUITEMINFOW) -> super::super::Foundation::BOOL;
     }
@@ -4600,7 +4239,6 @@ pub unsafe fn SetMessageExtraInfo<'a, P0>(lparam: P0) -> super::super::Foundatio
 where
     P0: ::std::convert::Into<super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetMessageExtraInfo(lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::LPARAM;
     }
@@ -4610,7 +4248,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SetMessageQueue(cmessagesmax: i32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetMessageQueue(cmessagesmax: i32) -> super::super::Foundation::BOOL;
     }
@@ -4624,7 +4261,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetParent(hwndchild: super::super::Foundation::HWND, hwndnewparent: super::super::Foundation::HWND) -> super::super::Foundation::HWND;
     }
@@ -4634,7 +4270,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SetPhysicalCursorPos(x: i32, y: i32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetPhysicalCursorPos(x: i32, y: i32) -> super::super::Foundation::BOOL;
     }
@@ -4644,7 +4279,6 @@ pub unsafe fn SetPhysicalCursorPos(x: i32, y: i32) -> super::super::Foundation::
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SetProcessDPIAware() -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetProcessDPIAware() -> super::super::Foundation::BOOL;
     }
@@ -4654,7 +4288,6 @@ pub unsafe fn SetProcessDPIAware() -> super::super::Foundation::BOOL {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SetProcessDefaultLayout(dwdefaultlayout: u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetProcessDefaultLayout(dwdefaultlayout: u32) -> super::super::Foundation::BOOL;
     }
@@ -4669,7 +4302,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetPropA(hwnd: super::super::Foundation::HWND, lpstring: ::windows::core::PCSTR, hdata: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -4684,7 +4316,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetPropW(hwnd: super::super::Foundation::HWND, lpstring: ::windows::core::PCWSTR, hdata: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -4697,7 +4328,6 @@ pub unsafe fn SetSystemCursor<'a, P0>(hcur: P0, id: SYSTEM_CURSOR_ID) -> super::
 where
     P0: ::std::convert::Into<HCURSOR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetSystemCursor(hcur: HCURSOR, id: SYSTEM_CURSOR_ID) -> super::super::Foundation::BOOL;
     }
@@ -4710,7 +4340,6 @@ pub unsafe fn SetTimer<'a, P0>(hwnd: P0, nidevent: usize, uelapse: u32, lptimerf
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetTimer(hwnd: super::super::Foundation::HWND, nidevent: usize, uelapse: u32, lptimerfunc: *mut ::core::ffi::c_void) -> usize;
     }
@@ -4723,7 +4352,6 @@ pub unsafe fn SetWindowDisplayAffinity<'a, P0>(hwnd: P0, dwaffinity: WINDOW_DISP
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetWindowDisplayAffinity(hwnd: super::super::Foundation::HWND, dwaffinity: WINDOW_DISPLAY_AFFINITY) -> super::super::Foundation::BOOL;
     }
@@ -4736,7 +4364,6 @@ pub unsafe fn SetWindowLongA<'a, P0>(hwnd: P0, nindex: WINDOW_LONG_PTR_INDEX, dw
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetWindowLongA(hwnd: super::super::Foundation::HWND, nindex: WINDOW_LONG_PTR_INDEX, dwnewlong: i32) -> i32;
     }
@@ -4750,7 +4377,6 @@ pub unsafe fn SetWindowLongPtrA<'a, P0>(hwnd: P0, nindex: WINDOW_LONG_PTR_INDEX,
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetWindowLongPtrA(hwnd: super::super::Foundation::HWND, nindex: WINDOW_LONG_PTR_INDEX, dwnewlong: isize) -> isize;
     }
@@ -4764,7 +4390,6 @@ pub unsafe fn SetWindowLongPtrW<'a, P0>(hwnd: P0, nindex: WINDOW_LONG_PTR_INDEX,
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetWindowLongPtrW(hwnd: super::super::Foundation::HWND, nindex: WINDOW_LONG_PTR_INDEX, dwnewlong: isize) -> isize;
     }
@@ -4777,7 +4402,6 @@ pub unsafe fn SetWindowLongW<'a, P0>(hwnd: P0, nindex: WINDOW_LONG_PTR_INDEX, dw
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetWindowLongW(hwnd: super::super::Foundation::HWND, nindex: WINDOW_LONG_PTR_INDEX, dwnewlong: i32) -> i32;
     }
@@ -4790,7 +4414,6 @@ pub unsafe fn SetWindowPlacement<'a, P0>(hwnd: P0, lpwndpl: *const WINDOWPLACEME
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetWindowPlacement(hwnd: super::super::Foundation::HWND, lpwndpl: *const WINDOWPLACEMENT) -> super::super::Foundation::BOOL;
     }
@@ -4804,7 +4427,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetWindowPos(hwnd: super::super::Foundation::HWND, hwndinsertafter: super::super::Foundation::HWND, x: i32, y: i32, cx: i32, cy: i32, uflags: SET_WINDOW_POS_FLAGS) -> super::super::Foundation::BOOL;
     }
@@ -4818,7 +4440,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetWindowTextA(hwnd: super::super::Foundation::HWND, lpstring: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -4832,7 +4453,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetWindowTextW(hwnd: super::super::Foundation::HWND, lpstring: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -4845,7 +4465,6 @@ pub unsafe fn SetWindowWord<'a, P0>(hwnd: P0, nindex: i32, wnewword: u16) -> u16
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetWindowWord(hwnd: super::super::Foundation::HWND, nindex: i32, wnewword: u16) -> u16;
     }
@@ -4855,7 +4474,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SetWindowsHookA(nfiltertype: i32, pfnfilterproc: HOOKPROC) -> HHOOK {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetWindowsHookA(nfiltertype: i32, pfnfilterproc: *mut ::core::ffi::c_void) -> HHOOK;
     }
@@ -4868,7 +4486,6 @@ pub unsafe fn SetWindowsHookExA<'a, P0>(idhook: WINDOWS_HOOK_ID, lpfn: HOOKPROC,
 where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetWindowsHookExA(idhook: WINDOWS_HOOK_ID, lpfn: *mut ::core::ffi::c_void, hmod: super::super::Foundation::HINSTANCE, dwthreadid: u32) -> HHOOK;
     }
@@ -4882,7 +4499,6 @@ pub unsafe fn SetWindowsHookExW<'a, P0>(idhook: WINDOWS_HOOK_ID, lpfn: HOOKPROC,
 where
     P0: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetWindowsHookExW(idhook: WINDOWS_HOOK_ID, lpfn: *mut ::core::ffi::c_void, hmod: super::super::Foundation::HINSTANCE, dwthreadid: u32) -> HHOOK;
     }
@@ -4893,7 +4509,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SetWindowsHookW(nfiltertype: i32, pfnfilterproc: HOOKPROC) -> HHOOK {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetWindowsHookW(nfiltertype: i32, pfnfilterproc: *mut ::core::ffi::c_void) -> HHOOK;
     }
@@ -4906,7 +4521,6 @@ pub unsafe fn ShowCaret<'a, P0>(hwnd: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowCaret(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -4919,7 +4533,6 @@ pub unsafe fn ShowCursor<'a, P0>(bshow: P0) -> i32
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowCursor(bshow: super::super::Foundation::BOOL) -> i32;
     }
@@ -4933,7 +4546,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowOwnedPopups(hwnd: super::super::Foundation::HWND, fshow: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -4946,7 +4558,6 @@ pub unsafe fn ShowWindow<'a, P0>(hwnd: P0, ncmdshow: SHOW_WINDOW_CMD) -> super::
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowWindow(hwnd: super::super::Foundation::HWND, ncmdshow: SHOW_WINDOW_CMD) -> super::super::Foundation::BOOL;
     }
@@ -4959,7 +4570,6 @@ pub unsafe fn ShowWindowAsync<'a, P0>(hwnd: P0, ncmdshow: SHOW_WINDOW_CMD) -> su
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ShowWindowAsync(hwnd: super::super::Foundation::HWND, ncmdshow: SHOW_WINDOW_CMD) -> super::super::Foundation::BOOL;
     }
@@ -4969,7 +4579,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SoundSentry() -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SoundSentry() -> super::super::Foundation::BOOL;
     }
@@ -4983,7 +4592,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SwitchToThisWindow(hwnd: super::super::Foundation::HWND, funknown: super::super::Foundation::BOOL);
     }
@@ -4993,7 +4601,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SystemParametersInfoA(uiaction: SYSTEM_PARAMETERS_INFO_ACTION, uiparam: u32, pvparam: ::core::option::Option<*mut ::core::ffi::c_void>, fwinini: SYSTEM_PARAMETERS_INFO_UPDATE_FLAGS) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SystemParametersInfoA(uiaction: SYSTEM_PARAMETERS_INFO_ACTION, uiparam: u32, pvparam: *mut ::core::ffi::c_void, fwinini: SYSTEM_PARAMETERS_INFO_UPDATE_FLAGS) -> super::super::Foundation::BOOL;
     }
@@ -5003,7 +4610,6 @@ pub unsafe fn SystemParametersInfoA(uiaction: SYSTEM_PARAMETERS_INFO_ACTION, uip
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SystemParametersInfoW(uiaction: SYSTEM_PARAMETERS_INFO_ACTION, uiparam: u32, pvparam: ::core::option::Option<*mut ::core::ffi::c_void>, fwinini: SYSTEM_PARAMETERS_INFO_UPDATE_FLAGS) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SystemParametersInfoW(uiaction: SYSTEM_PARAMETERS_INFO_ACTION, uiparam: u32, pvparam: *mut ::core::ffi::c_void, fwinini: SYSTEM_PARAMETERS_INFO_UPDATE_FLAGS) -> super::super::Foundation::BOOL;
     }
@@ -5016,7 +4622,6 @@ pub unsafe fn TileWindows<'a, P0>(hwndparent: P0, whow: TILE_WINDOWS_HOW, lprect
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TileWindows(hwndparent: super::super::Foundation::HWND, whow: TILE_WINDOWS_HOW, lprect: *const super::super::Foundation::RECT, ckids: u32, lpkids: *const super::super::Foundation::HWND) -> u16;
     }
@@ -5030,7 +4635,6 @@ where
     P0: ::std::convert::Into<HMENU>,
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TrackPopupMenu(hmenu: HMENU, uflags: TRACK_POPUP_MENU_FLAGS, x: i32, y: i32, nreserved: i32, hwnd: super::super::Foundation::HWND, prcrect: *const super::super::Foundation::RECT) -> super::super::Foundation::BOOL;
     }
@@ -5044,7 +4648,6 @@ where
     P0: ::std::convert::Into<HMENU>,
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TrackPopupMenuEx(hmenu: HMENU, uflags: u32, x: i32, y: i32, hwnd: super::super::Foundation::HWND, lptpm: *const TPMPARAMS) -> super::super::Foundation::BOOL;
     }
@@ -5058,7 +4661,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<HACCEL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TranslateAcceleratorA(hwnd: super::super::Foundation::HWND, hacctable: HACCEL, lpmsg: *const MSG) -> i32;
     }
@@ -5072,7 +4674,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<HACCEL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TranslateAcceleratorW(hwnd: super::super::Foundation::HWND, hacctable: HACCEL, lpmsg: *const MSG) -> i32;
     }
@@ -5085,7 +4686,6 @@ pub unsafe fn TranslateMDISysAccel<'a, P0>(hwndclient: P0, lpmsg: *const MSG) ->
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TranslateMDISysAccel(hwndclient: super::super::Foundation::HWND, lpmsg: *const MSG) -> super::super::Foundation::BOOL;
     }
@@ -5095,7 +4695,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn TranslateMessage(lpmsg: *const MSG) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TranslateMessage(lpmsg: *const MSG) -> super::super::Foundation::BOOL;
     }
@@ -5105,7 +4704,6 @@ pub unsafe fn TranslateMessage(lpmsg: *const MSG) -> super::super::Foundation::B
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn UnhookWindowsHook(ncode: i32, pfnfilterproc: HOOKPROC) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UnhookWindowsHook(ncode: i32, pfnfilterproc: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -5118,7 +4716,6 @@ pub unsafe fn UnhookWindowsHookEx<'a, P0>(hhk: P0) -> super::super::Foundation::
 where
     P0: ::std::convert::Into<HHOOK>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UnhookWindowsHookEx(hhk: HHOOK) -> super::super::Foundation::BOOL;
     }
@@ -5132,7 +4729,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UnregisterClassA(lpclassname: ::windows::core::PCSTR, hinstance: super::super::Foundation::HINSTANCE) -> super::super::Foundation::BOOL;
     }
@@ -5146,7 +4742,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HINSTANCE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UnregisterClassW(lpclassname: ::windows::core::PCWSTR, hinstance: super::super::Foundation::HINSTANCE) -> super::super::Foundation::BOOL;
     }
@@ -5162,7 +4757,6 @@ where
     P2: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
     P3: ::std::convert::Into<super::super::Foundation::COLORREF>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UpdateLayeredWindow(hwnd: super::super::Foundation::HWND, hdcdst: super::super::Graphics::Gdi::HDC, pptdst: *const super::super::Foundation::POINT, psize: *const super::super::Foundation::SIZE, hdcsrc: super::super::Graphics::Gdi::HDC, pptsrc: *const super::super::Foundation::POINT, crkey: super::super::Foundation::COLORREF, pblend: *const super::super::Graphics::Gdi::BLENDFUNCTION, dwflags: UPDATE_LAYERED_WINDOW_FLAGS) -> super::super::Foundation::BOOL;
     }
@@ -5175,7 +4769,6 @@ pub unsafe fn UpdateLayeredWindowIndirect<'a, P0>(hwnd: P0, pulwinfo: *const UPD
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UpdateLayeredWindowIndirect(hwnd: super::super::Foundation::HWND, pulwinfo: *const UPDATELAYEREDWINDOWINFO) -> super::super::Foundation::BOOL;
     }
@@ -5185,7 +4778,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WaitMessage() -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WaitMessage() -> super::super::Foundation::BOOL;
     }
@@ -5195,7 +4787,6 @@ pub unsafe fn WaitMessage() -> super::super::Foundation::BOOL {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WindowFromPhysicalPoint(point: super::super::Foundation::POINT) -> super::super::Foundation::HWND {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WindowFromPhysicalPoint(point: super::super::Foundation::POINT) -> super::super::Foundation::HWND;
     }
@@ -5205,7 +4796,6 @@ pub unsafe fn WindowFromPhysicalPoint(point: super::super::Foundation::POINT) ->
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn WindowFromPoint(point: super::super::Foundation::POINT) -> super::super::Foundation::HWND {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WindowFromPoint(point: super::super::Foundation::POINT) -> super::super::Foundation::HWND;
     }
@@ -5217,7 +4807,6 @@ pub unsafe fn wvsprintfA<'a, P0>(param0: ::windows::core::PSTR, param1: P0, argl
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn wvsprintfA(param0: ::windows::core::PSTR, param1: ::windows::core::PCSTR, arglist: *const i8) -> i32;
     }
@@ -5229,7 +4818,6 @@ pub unsafe fn wvsprintfW<'a, P0>(param0: ::windows::core::PWSTR, param1: P0, arg
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn wvsprintfW(param0: ::windows::core::PWSTR, param1: ::windows::core::PCWSTR, arglist: *const i8) -> i32;
     }

@@ -5,7 +5,6 @@ where
     P0: ::std::convert::Into<alljoyn_message>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn alljoyn_message_parseargs(msg: alljoyn_message, signature: ::windows::core::PCSTR) -> QStatus;
     }
@@ -18,7 +17,6 @@ where
     P0: ::std::convert::Into<alljoyn_msgarg>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn alljoyn_msgarg_array_get(args: alljoyn_msgarg, numargs: usize, signature: ::windows::core::PCSTR) -> QStatus;
     }
@@ -31,7 +29,6 @@ where
     P0: ::std::convert::Into<alljoyn_msgarg>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn alljoyn_msgarg_array_set(args: alljoyn_msgarg, numargs: *mut usize, signature: ::windows::core::PCSTR) -> QStatus;
     }
@@ -44,7 +41,6 @@ where
     P0: ::std::convert::Into<alljoyn_msgarg>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn alljoyn_msgarg_array_set_offset(args: alljoyn_msgarg, argoffset: usize, numargs: *mut usize, signature: ::windows::core::PCSTR) -> QStatus;
     }
@@ -56,7 +52,6 @@ pub unsafe fn alljoyn_msgarg_create_and_set<'a, P0>(signature: P0) -> alljoyn_ms
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn alljoyn_msgarg_create_and_set(signature: ::windows::core::PCSTR) -> alljoyn_msgarg;
     }
@@ -69,7 +64,6 @@ where
     P0: ::std::convert::Into<alljoyn_msgarg>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn alljoyn_msgarg_get(arg: alljoyn_msgarg, signature: ::windows::core::PCSTR) -> QStatus;
     }
@@ -82,7 +76,6 @@ where
     P0: ::std::convert::Into<alljoyn_msgarg>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn alljoyn_msgarg_getdictelement(arg: alljoyn_msgarg, elemsig: ::windows::core::PCSTR) -> QStatus;
     }
@@ -95,7 +88,6 @@ where
     P0: ::std::convert::Into<alljoyn_msgarg>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn alljoyn_msgarg_set(arg: alljoyn_msgarg, signature: ::windows::core::PCSTR) -> QStatus;
     }
@@ -108,7 +100,6 @@ where
     P0: ::std::convert::Into<alljoyn_msgarg>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn alljoyn_msgarg_set_and_stabilize(arg: alljoyn_msgarg, signature: ::windows::core::PCSTR) -> QStatus;
     }
@@ -122,7 +113,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AllJoynAcceptBusConnection(serverbushandle: super::super::Foundation::HANDLE, abortevent: super::super::Foundation::HANDLE) -> u32;
     }
@@ -135,7 +125,6 @@ pub unsafe fn AllJoynCloseBusHandle<'a, P0>(bushandle: P0) -> super::super::Foun
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AllJoynCloseBusHandle(bushandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -148,7 +137,6 @@ pub unsafe fn AllJoynConnectToBus<'a, P0>(connectionspec: P0) -> ::windows::core
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AllJoynConnectToBus(connectionspec: ::windows::core::PCWSTR) -> super::super::Foundation::HANDLE;
     }
@@ -159,7 +147,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 #[inline]
 pub unsafe fn AllJoynCreateBus(outbuffersize: u32, inbuffersize: u32, lpsecurityattributes: ::core::option::Option<*const super::super::Security::SECURITY_ATTRIBUTES>) -> super::super::Foundation::HANDLE {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AllJoynCreateBus(outbuffersize: u32, inbuffersize: u32, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::HANDLE;
     }
@@ -173,7 +160,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AllJoynEnumEvents(connectedbushandle: super::super::Foundation::HANDLE, eventtoreset: super::super::Foundation::HANDLE, eventtypes: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -187,7 +173,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AllJoynEventSelect(connectedbushandle: super::super::Foundation::HANDLE, eventhandle: super::super::Foundation::HANDLE, eventtypes: u32) -> super::super::Foundation::BOOL;
     }
@@ -200,7 +185,6 @@ pub unsafe fn AllJoynReceiveFromBus<'a, P0>(connectedbushandle: P0, buffer: ::co
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AllJoynReceiveFromBus(connectedbushandle: super::super::Foundation::HANDLE, buffer: *mut ::core::ffi::c_void, bytestoread: u32, bytestransferred: *mut u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -213,7 +197,6 @@ pub unsafe fn AllJoynSendToBus<'a, P0>(connectedbushandle: P0, buffer: ::core::o
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AllJoynSendToBus(connectedbushandle: super::super::Foundation::HANDLE, buffer: *const ::core::ffi::c_void, bytestowrite: u32, bytestransferred: *mut u32, reserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -222,7 +205,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn QCC_StatusText(status: QStatus) -> ::windows::core::PSTR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn QCC_StatusText(status: QStatus) -> ::windows::core::PSTR;
     }
@@ -234,7 +216,6 @@ pub unsafe fn alljoyn_aboutdata_create<'a, P0>(defaultlanguage: P0) -> alljoyn_a
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_create(defaultlanguage: ::windows::core::PCSTR) -> alljoyn_aboutdata;
     }
@@ -243,7 +224,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_aboutdata_create_empty() -> alljoyn_aboutdata {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_create_empty() -> alljoyn_aboutdata;
     }
@@ -256,7 +236,6 @@ where
     P0: ::std::convert::Into<alljoyn_msgarg>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_create_full(arg: alljoyn_msgarg, language: ::windows::core::PCSTR) -> alljoyn_aboutdata;
     }
@@ -270,7 +249,6 @@ where
     P1: ::std::convert::Into<alljoyn_msgarg>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_createfrommsgarg(data: alljoyn_aboutdata, arg: alljoyn_msgarg, language: ::windows::core::PCSTR) -> QStatus;
     }
@@ -283,7 +261,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_createfromxml(data: alljoyn_aboutdata, aboutdataxml: ::windows::core::PCSTR) -> QStatus;
     }
@@ -295,7 +272,6 @@ pub unsafe fn alljoyn_aboutdata_destroy<'a, P0>(data: P0)
 where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_destroy(data: alljoyn_aboutdata);
     }
@@ -309,7 +285,6 @@ where
     P1: ::std::convert::Into<alljoyn_msgarg>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_getaboutdata(data: alljoyn_aboutdata, msgarg: alljoyn_msgarg, language: ::windows::core::PCSTR) -> QStatus;
     }
@@ -321,7 +296,6 @@ pub unsafe fn alljoyn_aboutdata_getajsoftwareversion<'a, P0>(data: P0, ajsoftwar
 where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_getajsoftwareversion(data: alljoyn_aboutdata, ajsoftwareversion: *mut *mut i8) -> QStatus;
     }
@@ -334,7 +308,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
     P1: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_getannouncedaboutdata(data: alljoyn_aboutdata, msgarg: alljoyn_msgarg) -> QStatus;
     }
@@ -346,7 +319,6 @@ pub unsafe fn alljoyn_aboutdata_getappid<'a, P0>(data: P0, appid: *mut *mut u8, 
 where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_getappid(data: alljoyn_aboutdata, appid: *mut *mut u8, num: *mut usize) -> QStatus;
     }
@@ -359,7 +331,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_getappname(data: alljoyn_aboutdata, appname: *mut *mut i8, language: ::windows::core::PCSTR) -> QStatus;
     }
@@ -371,7 +342,6 @@ pub unsafe fn alljoyn_aboutdata_getdateofmanufacture<'a, P0>(data: P0, dateofman
 where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_getdateofmanufacture(data: alljoyn_aboutdata, dateofmanufacture: *mut *mut i8) -> QStatus;
     }
@@ -383,7 +353,6 @@ pub unsafe fn alljoyn_aboutdata_getdefaultlanguage<'a, P0>(data: P0, defaultlang
 where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_getdefaultlanguage(data: alljoyn_aboutdata, defaultlanguage: *mut *mut i8) -> QStatus;
     }
@@ -396,7 +365,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_getdescription(data: alljoyn_aboutdata, description: *mut *mut i8, language: ::windows::core::PCSTR) -> QStatus;
     }
@@ -408,7 +376,6 @@ pub unsafe fn alljoyn_aboutdata_getdeviceid<'a, P0>(data: P0, deviceid: *mut *mu
 where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_getdeviceid(data: alljoyn_aboutdata, deviceid: *mut *mut i8) -> QStatus;
     }
@@ -421,7 +388,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_getdevicename(data: alljoyn_aboutdata, devicename: *mut *mut i8, language: ::windows::core::PCSTR) -> QStatus;
     }
@@ -435,7 +401,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_getfield(data: alljoyn_aboutdata, name: ::windows::core::PCSTR, value: *mut alljoyn_msgarg, language: ::windows::core::PCSTR) -> QStatus;
     }
@@ -447,7 +412,6 @@ pub unsafe fn alljoyn_aboutdata_getfields<'a, P0>(data: P0, fields: *const *cons
 where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_getfields(data: alljoyn_aboutdata, fields: *const *const i8, num_fields: usize) -> usize;
     }
@@ -460,7 +424,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_getfieldsignature(data: alljoyn_aboutdata, fieldname: ::windows::core::PCSTR) -> ::windows::core::PSTR;
     }
@@ -472,7 +435,6 @@ pub unsafe fn alljoyn_aboutdata_gethardwareversion<'a, P0>(data: P0, hardwarever
 where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_gethardwareversion(data: alljoyn_aboutdata, hardwareversion: *mut *mut i8) -> QStatus;
     }
@@ -485,7 +447,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_getmanufacturer(data: alljoyn_aboutdata, manufacturer: *mut *mut i8, language: ::windows::core::PCSTR) -> QStatus;
     }
@@ -497,7 +458,6 @@ pub unsafe fn alljoyn_aboutdata_getmodelnumber<'a, P0>(data: P0, modelnumber: *m
 where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_getmodelnumber(data: alljoyn_aboutdata, modelnumber: *mut *mut i8) -> QStatus;
     }
@@ -509,7 +469,6 @@ pub unsafe fn alljoyn_aboutdata_getsoftwareversion<'a, P0>(data: P0, softwarever
 where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_getsoftwareversion(data: alljoyn_aboutdata, softwareversion: *mut *mut i8) -> QStatus;
     }
@@ -521,7 +480,6 @@ pub unsafe fn alljoyn_aboutdata_getsupportedlanguages<'a, P0>(data: P0, language
 where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_getsupportedlanguages(data: alljoyn_aboutdata, languagetags: *const *const i8, num: usize) -> usize;
     }
@@ -533,7 +491,6 @@ pub unsafe fn alljoyn_aboutdata_getsupporturl<'a, P0>(data: P0, supporturl: *mut
 where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_getsupporturl(data: alljoyn_aboutdata, supporturl: *mut *mut i8) -> QStatus;
     }
@@ -546,7 +503,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_isfieldannounced(data: alljoyn_aboutdata, fieldname: ::windows::core::PCSTR) -> u8;
     }
@@ -559,7 +515,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_isfieldlocalized(data: alljoyn_aboutdata, fieldname: ::windows::core::PCSTR) -> u8;
     }
@@ -572,7 +527,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_isfieldrequired(data: alljoyn_aboutdata, fieldname: ::windows::core::PCSTR) -> u8;
     }
@@ -585,7 +539,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_isvalid(data: alljoyn_aboutdata, language: ::windows::core::PCSTR) -> u8;
     }
@@ -597,7 +550,6 @@ pub unsafe fn alljoyn_aboutdata_setappid<'a, P0>(data: P0, appid: *const u8, num
 where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_setappid(data: alljoyn_aboutdata, appid: *const u8, num: usize) -> QStatus;
     }
@@ -610,7 +562,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_setappid_fromstring(data: alljoyn_aboutdata, appid: ::windows::core::PCSTR) -> QStatus;
     }
@@ -624,7 +575,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_setappname(data: alljoyn_aboutdata, appname: ::windows::core::PCSTR, language: ::windows::core::PCSTR) -> QStatus;
     }
@@ -637,7 +587,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_setdateofmanufacture(data: alljoyn_aboutdata, dateofmanufacture: ::windows::core::PCSTR) -> QStatus;
     }
@@ -650,7 +599,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_setdefaultlanguage(data: alljoyn_aboutdata, defaultlanguage: ::windows::core::PCSTR) -> QStatus;
     }
@@ -664,7 +612,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_setdescription(data: alljoyn_aboutdata, description: ::windows::core::PCSTR, language: ::windows::core::PCSTR) -> QStatus;
     }
@@ -677,7 +624,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_setdeviceid(data: alljoyn_aboutdata, deviceid: ::windows::core::PCSTR) -> QStatus;
     }
@@ -691,7 +637,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_setdevicename(data: alljoyn_aboutdata, devicename: ::windows::core::PCSTR, language: ::windows::core::PCSTR) -> QStatus;
     }
@@ -706,7 +651,6 @@ where
     P2: ::std::convert::Into<alljoyn_msgarg>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_setfield(data: alljoyn_aboutdata, name: ::windows::core::PCSTR, value: alljoyn_msgarg, language: ::windows::core::PCSTR) -> QStatus;
     }
@@ -719,7 +663,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_sethardwareversion(data: alljoyn_aboutdata, hardwareversion: ::windows::core::PCSTR) -> QStatus;
     }
@@ -733,7 +676,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_setmanufacturer(data: alljoyn_aboutdata, manufacturer: ::windows::core::PCSTR, language: ::windows::core::PCSTR) -> QStatus;
     }
@@ -746,7 +688,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_setmodelnumber(data: alljoyn_aboutdata, modelnumber: ::windows::core::PCSTR) -> QStatus;
     }
@@ -759,7 +700,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_setsoftwareversion(data: alljoyn_aboutdata, softwareversion: ::windows::core::PCSTR) -> QStatus;
     }
@@ -772,7 +712,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_setsupportedlanguage(data: alljoyn_aboutdata, language: ::windows::core::PCSTR) -> QStatus;
     }
@@ -785,7 +724,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutdata>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdata_setsupporturl(data: alljoyn_aboutdata, supporturl: ::windows::core::PCSTR) -> QStatus;
     }
@@ -794,7 +732,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_aboutdatalistener_create(callbacks: *const alljoyn_aboutdatalistener_callbacks, context: *const ::core::ffi::c_void) -> alljoyn_aboutdatalistener {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdatalistener_create(callbacks: *const alljoyn_aboutdatalistener_callbacks, context: *const ::core::ffi::c_void) -> alljoyn_aboutdatalistener;
     }
@@ -806,7 +743,6 @@ pub unsafe fn alljoyn_aboutdatalistener_destroy<'a, P0>(listener: P0)
 where
     P0: ::std::convert::Into<alljoyn_aboutdatalistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutdatalistener_destroy(listener: alljoyn_aboutdatalistener);
     }
@@ -815,7 +751,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_abouticon_clear(icon: *mut _alljoyn_abouticon_handle) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_abouticon_clear(icon: *mut _alljoyn_abouticon_handle);
     }
@@ -824,7 +759,6 @@ pub unsafe fn alljoyn_abouticon_clear(icon: *mut _alljoyn_abouticon_handle) {
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_abouticon_create() -> *mut _alljoyn_abouticon_handle {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_abouticon_create() -> *mut _alljoyn_abouticon_handle;
     }
@@ -833,7 +767,6 @@ pub unsafe fn alljoyn_abouticon_create() -> *mut _alljoyn_abouticon_handle {
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_abouticon_destroy(icon: *mut _alljoyn_abouticon_handle) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_abouticon_destroy(icon: *mut _alljoyn_abouticon_handle);
     }
@@ -842,7 +775,6 @@ pub unsafe fn alljoyn_abouticon_destroy(icon: *mut _alljoyn_abouticon_handle) {
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_abouticon_getcontent(icon: *mut _alljoyn_abouticon_handle, data: *const *const u8, size: *mut usize) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_abouticon_getcontent(icon: *mut _alljoyn_abouticon_handle, data: *const *const u8, size: *mut usize);
     }
@@ -851,7 +783,6 @@ pub unsafe fn alljoyn_abouticon_getcontent(icon: *mut _alljoyn_abouticon_handle,
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_abouticon_geturl(icon: *mut _alljoyn_abouticon_handle, r#type: *const *const i8, url: *const *const i8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_abouticon_geturl(icon: *mut _alljoyn_abouticon_handle, r#type: *const *const i8, url: *const *const i8);
     }
@@ -863,7 +794,6 @@ pub unsafe fn alljoyn_abouticon_setcontent<'a, P0>(icon: *mut _alljoyn_abouticon
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_abouticon_setcontent(icon: *mut _alljoyn_abouticon_handle, r#type: ::windows::core::PCSTR, data: *mut u8, csize: usize, ownsdata: u8) -> QStatus;
     }
@@ -875,7 +805,6 @@ pub unsafe fn alljoyn_abouticon_setcontent_frommsgarg<'a, P0>(icon: *mut _alljoy
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_abouticon_setcontent_frommsgarg(icon: *mut _alljoyn_abouticon_handle, arg: alljoyn_msgarg) -> QStatus;
     }
@@ -888,7 +817,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_abouticon_seturl(icon: *mut _alljoyn_abouticon_handle, r#type: ::windows::core::PCSTR, url: ::windows::core::PCSTR) -> QStatus;
     }
@@ -900,7 +828,6 @@ pub unsafe fn alljoyn_abouticonobj_create<'a, P0>(bus: P0, icon: *mut _alljoyn_a
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_abouticonobj_create(bus: alljoyn_busattachment, icon: *mut _alljoyn_abouticon_handle) -> *mut _alljoyn_abouticonobj_handle;
     }
@@ -909,7 +836,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_abouticonobj_destroy(icon: *mut _alljoyn_abouticonobj_handle) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_abouticonobj_destroy(icon: *mut _alljoyn_abouticonobj_handle);
     }
@@ -922,7 +848,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_abouticonproxy_create(bus: alljoyn_busattachment, busname: ::windows::core::PCSTR, sessionid: u32) -> *mut _alljoyn_abouticonproxy_handle;
     }
@@ -931,7 +856,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_abouticonproxy_destroy(proxy: *mut _alljoyn_abouticonproxy_handle) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_abouticonproxy_destroy(proxy: *mut _alljoyn_abouticonproxy_handle);
     }
@@ -940,7 +864,6 @@ pub unsafe fn alljoyn_abouticonproxy_destroy(proxy: *mut _alljoyn_abouticonproxy
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_abouticonproxy_geticon(proxy: *mut _alljoyn_abouticonproxy_handle, icon: *mut _alljoyn_abouticon_handle) -> QStatus {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_abouticonproxy_geticon(proxy: *mut _alljoyn_abouticonproxy_handle, icon: *mut _alljoyn_abouticon_handle) -> QStatus;
     }
@@ -949,7 +872,6 @@ pub unsafe fn alljoyn_abouticonproxy_geticon(proxy: *mut _alljoyn_abouticonproxy
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_abouticonproxy_getversion(proxy: *mut _alljoyn_abouticonproxy_handle, version: *mut u16) -> QStatus {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_abouticonproxy_getversion(proxy: *mut _alljoyn_abouticonproxy_handle, version: *mut u16) -> QStatus;
     }
@@ -958,7 +880,6 @@ pub unsafe fn alljoyn_abouticonproxy_getversion(proxy: *mut _alljoyn_abouticonpr
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_aboutlistener_create(callback: *const alljoyn_aboutlistener_callback, context: *const ::core::ffi::c_void) -> alljoyn_aboutlistener {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutlistener_create(callback: *const alljoyn_aboutlistener_callback, context: *const ::core::ffi::c_void) -> alljoyn_aboutlistener;
     }
@@ -970,7 +891,6 @@ pub unsafe fn alljoyn_aboutlistener_destroy<'a, P0>(listener: P0)
 where
     P0: ::std::convert::Into<alljoyn_aboutlistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutlistener_destroy(listener: alljoyn_aboutlistener);
     }
@@ -983,7 +903,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutobj>,
     P1: ::std::convert::Into<alljoyn_aboutdata>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutobj_announce(obj: alljoyn_aboutobj, sessionport: u16, aboutdata: alljoyn_aboutdata) -> QStatus;
     }
@@ -996,7 +915,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutobj>,
     P1: ::std::convert::Into<alljoyn_aboutdatalistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutobj_announce_using_datalistener(obj: alljoyn_aboutobj, sessionport: u16, aboutlistener: alljoyn_aboutdatalistener) -> QStatus;
     }
@@ -1008,7 +926,6 @@ pub unsafe fn alljoyn_aboutobj_create<'a, P0>(bus: P0, isannounced: alljoyn_abou
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutobj_create(bus: alljoyn_busattachment, isannounced: alljoyn_about_announceflag) -> alljoyn_aboutobj;
     }
@@ -1020,7 +937,6 @@ pub unsafe fn alljoyn_aboutobj_destroy<'a, P0>(obj: P0)
 where
     P0: ::std::convert::Into<alljoyn_aboutobj>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutobj_destroy(obj: alljoyn_aboutobj);
     }
@@ -1032,7 +948,6 @@ pub unsafe fn alljoyn_aboutobj_unannounce<'a, P0>(obj: P0) -> QStatus
 where
     P0: ::std::convert::Into<alljoyn_aboutobj>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutobj_unannounce(obj: alljoyn_aboutobj) -> QStatus;
     }
@@ -1044,7 +959,6 @@ pub unsafe fn alljoyn_aboutobjectdescription_clear<'a, P0>(description: P0)
 where
     P0: ::std::convert::Into<alljoyn_aboutobjectdescription>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutobjectdescription_clear(description: alljoyn_aboutobjectdescription);
     }
@@ -1053,7 +967,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_aboutobjectdescription_create() -> alljoyn_aboutobjectdescription {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutobjectdescription_create() -> alljoyn_aboutobjectdescription;
     }
@@ -1065,7 +978,6 @@ pub unsafe fn alljoyn_aboutobjectdescription_create_full<'a, P0>(arg: P0) -> all
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutobjectdescription_create_full(arg: alljoyn_msgarg) -> alljoyn_aboutobjectdescription;
     }
@@ -1078,7 +990,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutobjectdescription>,
     P1: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutobjectdescription_createfrommsgarg(description: alljoyn_aboutobjectdescription, arg: alljoyn_msgarg) -> QStatus;
     }
@@ -1090,7 +1001,6 @@ pub unsafe fn alljoyn_aboutobjectdescription_destroy<'a, P0>(description: P0)
 where
     P0: ::std::convert::Into<alljoyn_aboutobjectdescription>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutobjectdescription_destroy(description: alljoyn_aboutobjectdescription);
     }
@@ -1103,7 +1013,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutobjectdescription>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutobjectdescription_getinterfacepaths(description: alljoyn_aboutobjectdescription, interfacename: ::windows::core::PCSTR, paths: *const *const i8, numpaths: usize) -> usize;
     }
@@ -1116,7 +1025,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutobjectdescription>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutobjectdescription_getinterfaces(description: alljoyn_aboutobjectdescription, path: ::windows::core::PCSTR, interfaces: *const *const i8, numinterfaces: usize) -> usize;
     }
@@ -1129,7 +1037,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutobjectdescription>,
     P1: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutobjectdescription_getmsgarg(description: alljoyn_aboutobjectdescription, msgarg: alljoyn_msgarg) -> QStatus;
     }
@@ -1141,7 +1048,6 @@ pub unsafe fn alljoyn_aboutobjectdescription_getpaths<'a, P0>(description: P0, p
 where
     P0: ::std::convert::Into<alljoyn_aboutobjectdescription>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutobjectdescription_getpaths(description: alljoyn_aboutobjectdescription, paths: *const *const i8, numpaths: usize) -> usize;
     }
@@ -1154,7 +1060,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutobjectdescription>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutobjectdescription_hasinterface(description: alljoyn_aboutobjectdescription, interfacename: ::windows::core::PCSTR) -> u8;
     }
@@ -1168,7 +1073,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutobjectdescription_hasinterfaceatpath(description: alljoyn_aboutobjectdescription, path: ::windows::core::PCSTR, interfacename: ::windows::core::PCSTR) -> u8;
     }
@@ -1181,7 +1085,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutobjectdescription>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutobjectdescription_haspath(description: alljoyn_aboutobjectdescription, path: ::windows::core::PCSTR) -> u8;
     }
@@ -1194,7 +1097,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutproxy_create(bus: alljoyn_busattachment, busname: ::windows::core::PCSTR, sessionid: u32) -> alljoyn_aboutproxy;
     }
@@ -1206,7 +1108,6 @@ pub unsafe fn alljoyn_aboutproxy_destroy<'a, P0>(proxy: P0)
 where
     P0: ::std::convert::Into<alljoyn_aboutproxy>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutproxy_destroy(proxy: alljoyn_aboutproxy);
     }
@@ -1220,7 +1121,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutproxy_getaboutdata(proxy: alljoyn_aboutproxy, language: ::windows::core::PCSTR, data: alljoyn_msgarg) -> QStatus;
     }
@@ -1233,7 +1133,6 @@ where
     P0: ::std::convert::Into<alljoyn_aboutproxy>,
     P1: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutproxy_getobjectdescription(proxy: alljoyn_aboutproxy, objectdesc: alljoyn_msgarg) -> QStatus;
     }
@@ -1245,7 +1144,6 @@ pub unsafe fn alljoyn_aboutproxy_getversion<'a, P0>(proxy: P0, version: *mut u16
 where
     P0: ::std::convert::Into<alljoyn_aboutproxy>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_aboutproxy_getversion(proxy: alljoyn_aboutproxy, version: *mut u16) -> QStatus;
     }
@@ -1254,7 +1152,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_applicationstatelistener_create(callbacks: *const alljoyn_applicationstatelistener_callbacks, context: *mut ::core::ffi::c_void) -> alljoyn_applicationstatelistener {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_applicationstatelistener_create(callbacks: *const alljoyn_applicationstatelistener_callbacks, context: *mut ::core::ffi::c_void) -> alljoyn_applicationstatelistener;
     }
@@ -1266,7 +1163,6 @@ pub unsafe fn alljoyn_applicationstatelistener_destroy<'a, P0>(listener: P0)
 where
     P0: ::std::convert::Into<alljoyn_applicationstatelistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_applicationstatelistener_destroy(listener: alljoyn_applicationstatelistener);
     }
@@ -1275,7 +1171,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_authlistener_create(callbacks: *const alljoyn_authlistener_callbacks, context: *const ::core::ffi::c_void) -> alljoyn_authlistener {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_authlistener_create(callbacks: *const alljoyn_authlistener_callbacks, context: *const ::core::ffi::c_void) -> alljoyn_authlistener;
     }
@@ -1287,7 +1182,6 @@ pub unsafe fn alljoyn_authlistener_destroy<'a, P0>(listener: P0)
 where
     P0: ::std::convert::Into<alljoyn_authlistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_authlistener_destroy(listener: alljoyn_authlistener);
     }
@@ -1300,7 +1194,6 @@ where
     P0: ::std::convert::Into<alljoyn_authlistener>,
     P1: ::std::convert::Into<alljoyn_credentials>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_authlistener_requestcredentialsresponse(listener: alljoyn_authlistener, authcontext: *mut ::core::ffi::c_void, accept: i32, credentials: alljoyn_credentials) -> QStatus;
     }
@@ -1312,7 +1205,6 @@ pub unsafe fn alljoyn_authlistener_setsharedsecret<'a, P0>(listener: P0, shareds
 where
     P0: ::std::convert::Into<alljoyn_authlistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_authlistener_setsharedsecret(listener: alljoyn_authlistener, sharedsecret: *const u8, sharedsecretsize: usize) -> QStatus;
     }
@@ -1324,7 +1216,6 @@ pub unsafe fn alljoyn_authlistener_verifycredentialsresponse<'a, P0>(listener: P
 where
     P0: ::std::convert::Into<alljoyn_authlistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_authlistener_verifycredentialsresponse(listener: alljoyn_authlistener, authcontext: *mut ::core::ffi::c_void, accept: i32) -> QStatus;
     }
@@ -1333,7 +1224,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_authlistenerasync_create(callbacks: *const alljoyn_authlistenerasync_callbacks, context: *const ::core::ffi::c_void) -> alljoyn_authlistener {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_authlistenerasync_create(callbacks: *const alljoyn_authlistenerasync_callbacks, context: *const ::core::ffi::c_void) -> alljoyn_authlistener;
     }
@@ -1345,7 +1235,6 @@ pub unsafe fn alljoyn_authlistenerasync_destroy<'a, P0>(listener: P0)
 where
     P0: ::std::convert::Into<alljoyn_authlistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_authlistenerasync_destroy(listener: alljoyn_authlistener);
     }
@@ -1359,7 +1248,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_autopinger_adddestination(autopinger: alljoyn_autopinger, group: ::windows::core::PCSTR, destination: ::windows::core::PCSTR) -> QStatus;
     }
@@ -1373,7 +1261,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<alljoyn_pinglistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_autopinger_addpinggroup(autopinger: alljoyn_autopinger, group: ::windows::core::PCSTR, listener: alljoyn_pinglistener, pinginterval: u32);
     }
@@ -1385,7 +1272,6 @@ pub unsafe fn alljoyn_autopinger_create<'a, P0>(bus: P0) -> alljoyn_autopinger
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_autopinger_create(bus: alljoyn_busattachment) -> alljoyn_autopinger;
     }
@@ -1397,7 +1283,6 @@ pub unsafe fn alljoyn_autopinger_destroy<'a, P0>(autopinger: P0)
 where
     P0: ::std::convert::Into<alljoyn_autopinger>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_autopinger_destroy(autopinger: alljoyn_autopinger);
     }
@@ -1409,7 +1294,6 @@ pub unsafe fn alljoyn_autopinger_pause<'a, P0>(autopinger: P0)
 where
     P0: ::std::convert::Into<alljoyn_autopinger>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_autopinger_pause(autopinger: alljoyn_autopinger);
     }
@@ -1423,7 +1307,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_autopinger_removedestination(autopinger: alljoyn_autopinger, group: ::windows::core::PCSTR, destination: ::windows::core::PCSTR, removeall: i32) -> QStatus;
     }
@@ -1436,7 +1319,6 @@ where
     P0: ::std::convert::Into<alljoyn_autopinger>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_autopinger_removepinggroup(autopinger: alljoyn_autopinger, group: ::windows::core::PCSTR);
     }
@@ -1448,7 +1330,6 @@ pub unsafe fn alljoyn_autopinger_resume<'a, P0>(autopinger: P0)
 where
     P0: ::std::convert::Into<alljoyn_autopinger>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_autopinger_resume(autopinger: alljoyn_autopinger);
     }
@@ -1461,7 +1342,6 @@ where
     P0: ::std::convert::Into<alljoyn_autopinger>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_autopinger_setpinginterval(autopinger: alljoyn_autopinger, group: ::windows::core::PCSTR, pinginterval: u32) -> QStatus;
     }
@@ -1476,7 +1356,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_addlogonentry(bus: alljoyn_busattachment, authmechanism: ::windows::core::PCSTR, username: ::windows::core::PCSTR, password: ::windows::core::PCSTR) -> QStatus;
     }
@@ -1489,7 +1368,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_addmatch(bus: alljoyn_busattachment, rule: ::windows::core::PCSTR) -> QStatus;
     }
@@ -1502,7 +1380,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_advertisename(bus: alljoyn_busattachment, name: ::windows::core::PCSTR, transports: u16) -> QStatus;
     }
@@ -1516,7 +1393,6 @@ where
     P1: ::std::convert::Into<alljoyn_sessionopts>,
     P2: ::std::convert::Into<alljoyn_sessionportlistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_bindsessionport(bus: alljoyn_busattachment, sessionport: *mut u16, opts: alljoyn_sessionopts, listener: alljoyn_sessionportlistener) -> QStatus;
     }
@@ -1529,7 +1405,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_canceladvertisename(bus: alljoyn_busattachment, name: ::windows::core::PCSTR, transports: u16) -> QStatus;
     }
@@ -1542,7 +1417,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_cancelfindadvertisedname(bus: alljoyn_busattachment, nameprefix: ::windows::core::PCSTR) -> QStatus;
     }
@@ -1555,7 +1429,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_cancelfindadvertisednamebytransport(bus: alljoyn_busattachment, nameprefix: ::windows::core::PCSTR, transports: u16) -> QStatus;
     }
@@ -1568,7 +1441,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_cancelwhoimplements_interface(bus: alljoyn_busattachment, implementsinterface: ::windows::core::PCSTR) -> QStatus;
     }
@@ -1580,7 +1452,6 @@ pub unsafe fn alljoyn_busattachment_cancelwhoimplements_interfaces<'a, P0>(bus: 
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_cancelwhoimplements_interfaces(bus: alljoyn_busattachment, implementsinterfaces: *const *const i8, numberinterfaces: usize) -> QStatus;
     }
@@ -1593,7 +1464,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_clearkeys(bus: alljoyn_busattachment, guid: ::windows::core::PCSTR) -> QStatus;
     }
@@ -1605,7 +1475,6 @@ pub unsafe fn alljoyn_busattachment_clearkeystore<'a, P0>(bus: P0)
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_clearkeystore(bus: alljoyn_busattachment);
     }
@@ -1618,7 +1487,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_connect(bus: alljoyn_busattachment, connectspec: ::windows::core::PCSTR) -> QStatus;
     }
@@ -1630,7 +1498,6 @@ pub unsafe fn alljoyn_busattachment_create<'a, P0>(applicationname: P0, allowrem
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_create(applicationname: ::windows::core::PCSTR, allowremotemessages: i32) -> alljoyn_busattachment;
     }
@@ -1642,7 +1509,6 @@ pub unsafe fn alljoyn_busattachment_create_concurrency<'a, P0>(applicationname: 
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_create_concurrency(applicationname: ::windows::core::PCSTR, allowremotemessages: i32, concurrency: u32) -> alljoyn_busattachment;
     }
@@ -1655,7 +1521,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_createinterface(bus: alljoyn_busattachment, name: ::windows::core::PCSTR, iface: *mut alljoyn_interfacedescription) -> QStatus;
     }
@@ -1668,7 +1533,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_createinterface_secure(bus: alljoyn_busattachment, name: ::windows::core::PCSTR, iface: *mut alljoyn_interfacedescription, secpolicy: alljoyn_interfacedescription_securitypolicy) -> QStatus;
     }
@@ -1681,7 +1545,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_createinterfacesfromxml(bus: alljoyn_busattachment, xml: ::windows::core::PCSTR) -> QStatus;
     }
@@ -1693,7 +1556,6 @@ pub unsafe fn alljoyn_busattachment_deletedefaultkeystore<'a, P0>(applicationnam
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_deletedefaultkeystore(applicationname: ::windows::core::PCSTR) -> QStatus;
     }
@@ -1706,7 +1568,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<alljoyn_interfacedescription>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_deleteinterface(bus: alljoyn_busattachment, iface: alljoyn_interfacedescription) -> QStatus;
     }
@@ -1718,7 +1579,6 @@ pub unsafe fn alljoyn_busattachment_destroy<'a, P0>(bus: P0)
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_destroy(bus: alljoyn_busattachment);
     }
@@ -1731,7 +1591,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_disconnect(bus: alljoyn_busattachment, unused: ::windows::core::PCSTR) -> QStatus;
     }
@@ -1743,7 +1602,6 @@ pub unsafe fn alljoyn_busattachment_enableconcurrentcallbacks<'a, P0>(bus: P0)
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_enableconcurrentcallbacks(bus: alljoyn_busattachment);
     }
@@ -1758,7 +1616,6 @@ where
     P2: ::std::convert::Into<alljoyn_authlistener>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_enablepeersecurity(bus: alljoyn_busattachment, authmechanisms: ::windows::core::PCSTR, listener: alljoyn_authlistener, keystorefilename: ::windows::core::PCSTR, isshared: i32) -> QStatus;
     }
@@ -1774,7 +1631,6 @@ where
     P3: ::std::convert::Into<::windows::core::PCSTR>,
     P4: ::std::convert::Into<alljoyn_permissionconfigurationlistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_enablepeersecuritywithpermissionconfigurationlistener(bus: alljoyn_busattachment, authmechanisms: ::windows::core::PCSTR, authlistener: alljoyn_authlistener, keystorefilename: ::windows::core::PCSTR, isshared: i32, permissionconfigurationlistener: alljoyn_permissionconfigurationlistener) -> QStatus;
     }
@@ -1787,7 +1643,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_findadvertisedname(bus: alljoyn_busattachment, nameprefix: ::windows::core::PCSTR) -> QStatus;
     }
@@ -1800,7 +1655,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_findadvertisednamebytransport(bus: alljoyn_busattachment, nameprefix: ::windows::core::PCSTR, transports: u16) -> QStatus;
     }
@@ -1812,7 +1666,6 @@ pub unsafe fn alljoyn_busattachment_getalljoyndebugobj<'a, P0>(bus: P0) -> alljo
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_getalljoyndebugobj(bus: alljoyn_busattachment) -> alljoyn_proxybusobject;
     }
@@ -1824,7 +1677,6 @@ pub unsafe fn alljoyn_busattachment_getalljoynproxyobj<'a, P0>(bus: P0) -> alljo
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_getalljoynproxyobj(bus: alljoyn_busattachment) -> alljoyn_proxybusobject;
     }
@@ -1836,7 +1688,6 @@ pub unsafe fn alljoyn_busattachment_getconcurrency<'a, P0>(bus: P0) -> u32
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_getconcurrency(bus: alljoyn_busattachment) -> u32;
     }
@@ -1848,7 +1699,6 @@ pub unsafe fn alljoyn_busattachment_getconnectspec<'a, P0>(bus: P0) -> ::windows
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_getconnectspec(bus: alljoyn_busattachment) -> ::windows::core::PSTR;
     }
@@ -1860,7 +1710,6 @@ pub unsafe fn alljoyn_busattachment_getdbusproxyobj<'a, P0>(bus: P0) -> alljoyn_
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_getdbusproxyobj(bus: alljoyn_busattachment) -> alljoyn_proxybusobject;
     }
@@ -1872,7 +1721,6 @@ pub unsafe fn alljoyn_busattachment_getglobalguidstring<'a, P0>(bus: P0) -> ::wi
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_getglobalguidstring(bus: alljoyn_busattachment) -> ::windows::core::PSTR;
     }
@@ -1885,7 +1733,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_getinterface(bus: alljoyn_busattachment, name: ::windows::core::PCSTR) -> alljoyn_interfacedescription;
     }
@@ -1897,7 +1744,6 @@ pub unsafe fn alljoyn_busattachment_getinterfaces<'a, P0>(bus: P0, ifaces: *cons
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_getinterfaces(bus: alljoyn_busattachment, ifaces: *const alljoyn_interfacedescription, numifaces: usize) -> usize;
     }
@@ -1910,7 +1756,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_getkeyexpiration(bus: alljoyn_busattachment, guid: ::windows::core::PCSTR, timeout: *mut u32) -> QStatus;
     }
@@ -1924,7 +1769,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_getpeerguid(bus: alljoyn_busattachment, name: ::windows::core::PCSTR, guid: ::windows::core::PCSTR, guidsz: *mut usize) -> QStatus;
     }
@@ -1936,7 +1780,6 @@ pub unsafe fn alljoyn_busattachment_getpermissionconfigurator<'a, P0>(bus: P0) -
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_getpermissionconfigurator(bus: alljoyn_busattachment) -> alljoyn_permissionconfigurator;
     }
@@ -1945,7 +1788,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_busattachment_gettimestamp() -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_gettimestamp() -> u32;
     }
@@ -1957,7 +1799,6 @@ pub unsafe fn alljoyn_busattachment_getuniquename<'a, P0>(bus: P0) -> ::windows:
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_getuniquename(bus: alljoyn_busattachment) -> ::windows::core::PSTR;
     }
@@ -1969,7 +1810,6 @@ pub unsafe fn alljoyn_busattachment_isconnected<'a, P0>(bus: P0) -> i32
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_isconnected(bus: alljoyn_busattachment) -> i32;
     }
@@ -1981,7 +1821,6 @@ pub unsafe fn alljoyn_busattachment_ispeersecurityenabled<'a, P0>(bus: P0) -> i3
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_ispeersecurityenabled(bus: alljoyn_busattachment) -> i32;
     }
@@ -1993,7 +1832,6 @@ pub unsafe fn alljoyn_busattachment_isstarted<'a, P0>(bus: P0) -> i32
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_isstarted(bus: alljoyn_busattachment) -> i32;
     }
@@ -2005,7 +1843,6 @@ pub unsafe fn alljoyn_busattachment_isstopping<'a, P0>(bus: P0) -> i32
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_isstopping(bus: alljoyn_busattachment) -> i32;
     }
@@ -2017,7 +1854,6 @@ pub unsafe fn alljoyn_busattachment_join<'a, P0>(bus: P0) -> QStatus
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_join(bus: alljoyn_busattachment) -> QStatus;
     }
@@ -2032,7 +1868,6 @@ where
     P2: ::std::convert::Into<alljoyn_sessionlistener>,
     P3: ::std::convert::Into<alljoyn_sessionopts>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_joinsession(bus: alljoyn_busattachment, sessionhost: ::windows::core::PCSTR, sessionport: u16, listener: alljoyn_sessionlistener, sessionid: *mut u32, opts: alljoyn_sessionopts) -> QStatus;
     }
@@ -2047,7 +1882,6 @@ where
     P2: ::std::convert::Into<alljoyn_sessionlistener>,
     P3: ::std::convert::Into<alljoyn_sessionopts>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_joinsessionasync(bus: alljoyn_busattachment, sessionhost: ::windows::core::PCSTR, sessionport: u16, listener: alljoyn_sessionlistener, opts: alljoyn_sessionopts, callback: *mut ::core::ffi::c_void, context: *mut ::core::ffi::c_void) -> QStatus;
     }
@@ -2059,7 +1893,6 @@ pub unsafe fn alljoyn_busattachment_leavesession<'a, P0>(bus: P0, sessionid: u32
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_leavesession(bus: alljoyn_busattachment, sessionid: u32) -> QStatus;
     }
@@ -2072,7 +1905,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_namehasowner(bus: alljoyn_busattachment, name: ::windows::core::PCSTR, hasowner: *mut i32) -> QStatus;
     }
@@ -2085,7 +1917,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_ping(bus: alljoyn_busattachment, name: ::windows::core::PCSTR, timeout: u32) -> QStatus;
     }
@@ -2098,7 +1929,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<alljoyn_aboutlistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_registeraboutlistener(bus: alljoyn_busattachment, aboutlistener: alljoyn_aboutlistener);
     }
@@ -2111,7 +1941,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<alljoyn_applicationstatelistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_registerapplicationstatelistener(bus: alljoyn_busattachment, listener: alljoyn_applicationstatelistener) -> QStatus;
     }
@@ -2124,7 +1953,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<alljoyn_buslistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_registerbuslistener(bus: alljoyn_busattachment, listener: alljoyn_buslistener);
     }
@@ -2137,7 +1965,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<alljoyn_busobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_registerbusobject(bus: alljoyn_busattachment, obj: alljoyn_busobject) -> QStatus;
     }
@@ -2150,7 +1977,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<alljoyn_busobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_registerbusobject_secure(bus: alljoyn_busattachment, obj: alljoyn_busobject) -> QStatus;
     }
@@ -2163,7 +1989,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<alljoyn_keystorelistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_registerkeystorelistener(bus: alljoyn_busattachment, listener: alljoyn_keystorelistener) -> QStatus;
     }
@@ -2176,7 +2001,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_registersignalhandler(bus: alljoyn_busattachment, signal_handler: *mut ::core::ffi::c_void, member: alljoyn_interfacedescription_member, srcpath: ::windows::core::PCSTR) -> QStatus;
     }
@@ -2189,7 +2013,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_registersignalhandlerwithrule(bus: alljoyn_busattachment, signal_handler: *mut ::core::ffi::c_void, member: alljoyn_interfacedescription_member, matchrule: ::windows::core::PCSTR) -> QStatus;
     }
@@ -2202,7 +2025,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_releasename(bus: alljoyn_busattachment, name: ::windows::core::PCSTR) -> QStatus;
     }
@@ -2214,7 +2036,6 @@ pub unsafe fn alljoyn_busattachment_reloadkeystore<'a, P0>(bus: P0) -> QStatus
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_reloadkeystore(bus: alljoyn_busattachment) -> QStatus;
     }
@@ -2227,7 +2048,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_removematch(bus: alljoyn_busattachment, rule: ::windows::core::PCSTR) -> QStatus;
     }
@@ -2240,7 +2060,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_removesessionmember(bus: alljoyn_busattachment, sessionid: u32, membername: ::windows::core::PCSTR) -> QStatus;
     }
@@ -2253,7 +2072,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_requestname(bus: alljoyn_busattachment, requestedname: ::windows::core::PCSTR, flags: u32) -> QStatus;
     }
@@ -2266,7 +2084,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_secureconnection(bus: alljoyn_busattachment, name: ::windows::core::PCSTR, forceauth: i32) -> QStatus;
     }
@@ -2279,7 +2096,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_secureconnectionasync(bus: alljoyn_busattachment, name: ::windows::core::PCSTR, forceauth: i32) -> QStatus;
     }
@@ -2292,7 +2108,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_setdaemondebug(bus: alljoyn_busattachment, module: ::windows::core::PCSTR, level: u32) -> QStatus;
     }
@@ -2305,7 +2120,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_setkeyexpiration(bus: alljoyn_busattachment, guid: ::windows::core::PCSTR, timeout: u32) -> QStatus;
     }
@@ -2317,7 +2131,6 @@ pub unsafe fn alljoyn_busattachment_setlinktimeout<'a, P0>(bus: P0, sessionid: u
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_setlinktimeout(bus: alljoyn_busattachment, sessionid: u32, linktimeout: *mut u32) -> QStatus;
     }
@@ -2329,7 +2142,6 @@ pub unsafe fn alljoyn_busattachment_setlinktimeoutasync<'a, P0>(bus: P0, session
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_setlinktimeoutasync(bus: alljoyn_busattachment, sessionid: u32, linktimeout: u32, callback: *mut ::core::ffi::c_void, context: *mut ::core::ffi::c_void) -> QStatus;
     }
@@ -2342,7 +2154,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<alljoyn_sessionlistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_setsessionlistener(bus: alljoyn_busattachment, sessionid: u32, listener: alljoyn_sessionlistener) -> QStatus;
     }
@@ -2354,7 +2165,6 @@ pub unsafe fn alljoyn_busattachment_start<'a, P0>(bus: P0) -> QStatus
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_start(bus: alljoyn_busattachment) -> QStatus;
     }
@@ -2366,7 +2176,6 @@ pub unsafe fn alljoyn_busattachment_stop<'a, P0>(bus: P0) -> QStatus
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_stop(bus: alljoyn_busattachment) -> QStatus;
     }
@@ -2378,7 +2187,6 @@ pub unsafe fn alljoyn_busattachment_unbindsessionport<'a, P0>(bus: P0, sessionpo
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_unbindsessionport(bus: alljoyn_busattachment, sessionport: u16) -> QStatus;
     }
@@ -2391,7 +2199,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<alljoyn_aboutlistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_unregisteraboutlistener(bus: alljoyn_busattachment, aboutlistener: alljoyn_aboutlistener);
     }
@@ -2403,7 +2210,6 @@ pub unsafe fn alljoyn_busattachment_unregisterallaboutlisteners<'a, P0>(bus: P0)
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_unregisterallaboutlisteners(bus: alljoyn_busattachment);
     }
@@ -2415,7 +2221,6 @@ pub unsafe fn alljoyn_busattachment_unregisterallhandlers<'a, P0>(bus: P0) -> QS
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_unregisterallhandlers(bus: alljoyn_busattachment) -> QStatus;
     }
@@ -2428,7 +2233,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<alljoyn_applicationstatelistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_unregisterapplicationstatelistener(bus: alljoyn_busattachment, listener: alljoyn_applicationstatelistener) -> QStatus;
     }
@@ -2441,7 +2245,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<alljoyn_buslistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_unregisterbuslistener(bus: alljoyn_busattachment, listener: alljoyn_buslistener);
     }
@@ -2454,7 +2257,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<alljoyn_busobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_unregisterbusobject(bus: alljoyn_busattachment, object: alljoyn_busobject);
     }
@@ -2467,7 +2269,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_unregistersignalhandler(bus: alljoyn_busattachment, signal_handler: *mut ::core::ffi::c_void, member: alljoyn_interfacedescription_member, srcpath: ::windows::core::PCSTR) -> QStatus;
     }
@@ -2480,7 +2281,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_unregistersignalhandlerwithrule(bus: alljoyn_busattachment, signal_handler: *mut ::core::ffi::c_void, member: alljoyn_interfacedescription_member, matchrule: ::windows::core::PCSTR) -> QStatus;
     }
@@ -2493,7 +2293,6 @@ where
     P0: ::std::convert::Into<alljoyn_busattachment>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_whoimplements_interface(bus: alljoyn_busattachment, implementsinterface: ::windows::core::PCSTR) -> QStatus;
     }
@@ -2505,7 +2304,6 @@ pub unsafe fn alljoyn_busattachment_whoimplements_interfaces<'a, P0>(bus: P0, im
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busattachment_whoimplements_interfaces(bus: alljoyn_busattachment, implementsinterfaces: *const *const i8, numberinterfaces: usize) -> QStatus;
     }
@@ -2514,7 +2312,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_buslistener_create(callbacks: *const alljoyn_buslistener_callbacks, context: *const ::core::ffi::c_void) -> alljoyn_buslistener {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_buslistener_create(callbacks: *const alljoyn_buslistener_callbacks, context: *const ::core::ffi::c_void) -> alljoyn_buslistener;
     }
@@ -2526,7 +2323,6 @@ pub unsafe fn alljoyn_buslistener_destroy<'a, P0>(listener: P0)
 where
     P0: ::std::convert::Into<alljoyn_buslistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_buslistener_destroy(listener: alljoyn_buslistener);
     }
@@ -2539,7 +2335,6 @@ where
     P0: ::std::convert::Into<alljoyn_busobject>,
     P1: ::std::convert::Into<alljoyn_interfacedescription>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busobject_addinterface(bus: alljoyn_busobject, iface: alljoyn_interfacedescription) -> QStatus;
     }
@@ -2552,7 +2347,6 @@ where
     P0: ::std::convert::Into<alljoyn_busobject>,
     P1: ::std::convert::Into<alljoyn_interfacedescription>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busobject_addinterface_announced(bus: alljoyn_busobject, iface: alljoyn_interfacedescription) -> QStatus;
     }
@@ -2564,7 +2358,6 @@ pub unsafe fn alljoyn_busobject_addmethodhandler<'a, P0>(bus: P0, member: alljoy
 where
     P0: ::std::convert::Into<alljoyn_busobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busobject_addmethodhandler(bus: alljoyn_busobject, member: alljoyn_interfacedescription_member, handler: *mut ::core::ffi::c_void, context: *mut ::core::ffi::c_void) -> QStatus;
     }
@@ -2576,7 +2369,6 @@ pub unsafe fn alljoyn_busobject_addmethodhandlers<'a, P0>(bus: P0, entries: *con
 where
     P0: ::std::convert::Into<alljoyn_busobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busobject_addmethodhandlers(bus: alljoyn_busobject, entries: *const alljoyn_busobject_methodentry, numentries: usize) -> QStatus;
     }
@@ -2589,7 +2381,6 @@ where
     P0: ::std::convert::Into<alljoyn_busobject>,
     P1: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busobject_cancelsessionlessmessage(bus: alljoyn_busobject, msg: alljoyn_message) -> QStatus;
     }
@@ -2601,7 +2392,6 @@ pub unsafe fn alljoyn_busobject_cancelsessionlessmessage_serial<'a, P0>(bus: P0,
 where
     P0: ::std::convert::Into<alljoyn_busobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busobject_cancelsessionlessmessage_serial(bus: alljoyn_busobject, serialnumber: u32) -> QStatus;
     }
@@ -2613,7 +2403,6 @@ pub unsafe fn alljoyn_busobject_create<'a, P0>(path: P0, isplaceholder: i32, cal
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busobject_create(path: ::windows::core::PCSTR, isplaceholder: i32, callbacks_in: *const alljoyn_busobject_callbacks, context_in: *const ::core::ffi::c_void) -> alljoyn_busobject;
     }
@@ -2625,7 +2414,6 @@ pub unsafe fn alljoyn_busobject_destroy<'a, P0>(bus: P0)
 where
     P0: ::std::convert::Into<alljoyn_busobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busobject_destroy(bus: alljoyn_busobject);
     }
@@ -2638,7 +2426,6 @@ where
     P0: ::std::convert::Into<alljoyn_busobject>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busobject_emitpropertieschanged(bus: alljoyn_busobject, ifcname: ::windows::core::PCSTR, propnames: *const *const i8, numprops: usize, id: u32);
     }
@@ -2653,7 +2440,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busobject_emitpropertychanged(bus: alljoyn_busobject, ifcname: ::windows::core::PCSTR, propname: ::windows::core::PCSTR, val: alljoyn_msgarg, id: u32);
     }
@@ -2665,7 +2451,6 @@ pub unsafe fn alljoyn_busobject_getannouncedinterfacenames<'a, P0>(bus: P0, inte
 where
     P0: ::std::convert::Into<alljoyn_busobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busobject_getannouncedinterfacenames(bus: alljoyn_busobject, interfaces: *const *const i8, numinterfaces: usize) -> usize;
     }
@@ -2677,7 +2462,6 @@ pub unsafe fn alljoyn_busobject_getbusattachment<'a, P0>(bus: P0) -> alljoyn_bus
 where
     P0: ::std::convert::Into<alljoyn_busobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busobject_getbusattachment(bus: alljoyn_busobject) -> alljoyn_busattachment;
     }
@@ -2690,7 +2474,6 @@ where
     P0: ::std::convert::Into<alljoyn_busobject>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busobject_getname(bus: alljoyn_busobject, buffer: ::windows::core::PCSTR, buffersz: usize) -> usize;
     }
@@ -2702,7 +2485,6 @@ pub unsafe fn alljoyn_busobject_getpath<'a, P0>(bus: P0) -> ::windows::core::PST
 where
     P0: ::std::convert::Into<alljoyn_busobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busobject_getpath(bus: alljoyn_busobject) -> ::windows::core::PSTR;
     }
@@ -2714,7 +2496,6 @@ pub unsafe fn alljoyn_busobject_issecure<'a, P0>(bus: P0) -> i32
 where
     P0: ::std::convert::Into<alljoyn_busobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busobject_issecure(bus: alljoyn_busobject) -> i32;
     }
@@ -2728,7 +2509,6 @@ where
     P1: ::std::convert::Into<alljoyn_message>,
     P2: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busobject_methodreply_args(bus: alljoyn_busobject, msg: alljoyn_message, args: alljoyn_msgarg, numargs: usize) -> QStatus;
     }
@@ -2743,7 +2523,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busobject_methodreply_err(bus: alljoyn_busobject, msg: alljoyn_message, error: ::windows::core::PCSTR, errormessage: ::windows::core::PCSTR) -> QStatus;
     }
@@ -2756,7 +2535,6 @@ where
     P0: ::std::convert::Into<alljoyn_busobject>,
     P1: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busobject_methodreply_status(bus: alljoyn_busobject, msg: alljoyn_message, status: QStatus) -> QStatus;
     }
@@ -2769,7 +2547,6 @@ where
     P0: ::std::convert::Into<alljoyn_busobject>,
     P1: ::std::convert::Into<alljoyn_interfacedescription>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busobject_setannounceflag(bus: alljoyn_busobject, iface: alljoyn_interfacedescription, isannounced: alljoyn_about_announceflag) -> QStatus;
     }
@@ -2784,7 +2561,6 @@ where
     P2: ::std::convert::Into<alljoyn_msgarg>,
     P3: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_busobject_signal(bus: alljoyn_busobject, destination: ::windows::core::PCSTR, sessionid: u32, signal: alljoyn_interfacedescription_member, args: alljoyn_msgarg, numargs: usize, timetolive: u16, flags: u8, msg: alljoyn_message) -> QStatus;
     }
@@ -2796,7 +2572,6 @@ pub unsafe fn alljoyn_credentials_clear<'a, P0>(cred: P0)
 where
     P0: ::std::convert::Into<alljoyn_credentials>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_credentials_clear(cred: alljoyn_credentials);
     }
@@ -2805,7 +2580,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_credentials_create() -> alljoyn_credentials {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_credentials_create() -> alljoyn_credentials;
     }
@@ -2817,7 +2591,6 @@ pub unsafe fn alljoyn_credentials_destroy<'a, P0>(cred: P0)
 where
     P0: ::std::convert::Into<alljoyn_credentials>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_credentials_destroy(cred: alljoyn_credentials);
     }
@@ -2829,7 +2602,6 @@ pub unsafe fn alljoyn_credentials_getcertchain<'a, P0>(cred: P0) -> ::windows::c
 where
     P0: ::std::convert::Into<alljoyn_credentials>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_credentials_getcertchain(cred: alljoyn_credentials) -> ::windows::core::PSTR;
     }
@@ -2841,7 +2613,6 @@ pub unsafe fn alljoyn_credentials_getexpiration<'a, P0>(cred: P0) -> u32
 where
     P0: ::std::convert::Into<alljoyn_credentials>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_credentials_getexpiration(cred: alljoyn_credentials) -> u32;
     }
@@ -2853,7 +2624,6 @@ pub unsafe fn alljoyn_credentials_getlogonentry<'a, P0>(cred: P0) -> ::windows::
 where
     P0: ::std::convert::Into<alljoyn_credentials>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_credentials_getlogonentry(cred: alljoyn_credentials) -> ::windows::core::PSTR;
     }
@@ -2865,7 +2635,6 @@ pub unsafe fn alljoyn_credentials_getpassword<'a, P0>(cred: P0) -> ::windows::co
 where
     P0: ::std::convert::Into<alljoyn_credentials>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_credentials_getpassword(cred: alljoyn_credentials) -> ::windows::core::PSTR;
     }
@@ -2877,7 +2646,6 @@ pub unsafe fn alljoyn_credentials_getprivateKey<'a, P0>(cred: P0) -> ::windows::
 where
     P0: ::std::convert::Into<alljoyn_credentials>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_credentials_getprivateKey(cred: alljoyn_credentials) -> ::windows::core::PSTR;
     }
@@ -2889,7 +2657,6 @@ pub unsafe fn alljoyn_credentials_getusername<'a, P0>(cred: P0) -> ::windows::co
 where
     P0: ::std::convert::Into<alljoyn_credentials>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_credentials_getusername(cred: alljoyn_credentials) -> ::windows::core::PSTR;
     }
@@ -2901,7 +2668,6 @@ pub unsafe fn alljoyn_credentials_isset<'a, P0>(cred: P0, creds: u16) -> i32
 where
     P0: ::std::convert::Into<alljoyn_credentials>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_credentials_isset(cred: alljoyn_credentials, creds: u16) -> i32;
     }
@@ -2914,7 +2680,6 @@ where
     P0: ::std::convert::Into<alljoyn_credentials>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_credentials_setcertchain(cred: alljoyn_credentials, certchain: ::windows::core::PCSTR);
     }
@@ -2926,7 +2691,6 @@ pub unsafe fn alljoyn_credentials_setexpiration<'a, P0>(cred: P0, expiration: u3
 where
     P0: ::std::convert::Into<alljoyn_credentials>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_credentials_setexpiration(cred: alljoyn_credentials, expiration: u32);
     }
@@ -2939,7 +2703,6 @@ where
     P0: ::std::convert::Into<alljoyn_credentials>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_credentials_setlogonentry(cred: alljoyn_credentials, logonentry: ::windows::core::PCSTR);
     }
@@ -2952,7 +2715,6 @@ where
     P0: ::std::convert::Into<alljoyn_credentials>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_credentials_setpassword(cred: alljoyn_credentials, pwd: ::windows::core::PCSTR);
     }
@@ -2965,7 +2727,6 @@ where
     P0: ::std::convert::Into<alljoyn_credentials>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_credentials_setprivatekey(cred: alljoyn_credentials, pk: ::windows::core::PCSTR);
     }
@@ -2978,7 +2739,6 @@ where
     P0: ::std::convert::Into<alljoyn_credentials>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_credentials_setusername(cred: alljoyn_credentials, username: ::windows::core::PCSTR);
     }
@@ -2987,7 +2747,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_getbuildinfo() -> ::windows::core::PSTR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_getbuildinfo() -> ::windows::core::PSTR;
     }
@@ -2996,7 +2755,6 @@ pub unsafe fn alljoyn_getbuildinfo() -> ::windows::core::PSTR {
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_getnumericversion() -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_getnumericversion() -> u32;
     }
@@ -3005,7 +2763,6 @@ pub unsafe fn alljoyn_getnumericversion() -> u32 {
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_getversion() -> ::windows::core::PSTR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_getversion() -> ::windows::core::PSTR;
     }
@@ -3014,7 +2771,6 @@ pub unsafe fn alljoyn_getversion() -> ::windows::core::PSTR {
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_init() -> QStatus {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_init() -> QStatus;
     }
@@ -3026,7 +2782,6 @@ pub unsafe fn alljoyn_interfacedescription_activate<'a, P0>(iface: P0)
 where
     P0: ::std::convert::Into<alljoyn_interfacedescription>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_activate(iface: alljoyn_interfacedescription);
     }
@@ -3040,7 +2795,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_addannotation(iface: alljoyn_interfacedescription, name: ::windows::core::PCSTR, value: ::windows::core::PCSTR) -> QStatus;
     }
@@ -3056,7 +2810,6 @@ where
     P3: ::std::convert::Into<::windows::core::PCSTR>,
     P4: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_addargannotation(iface: alljoyn_interfacedescription, member: ::windows::core::PCSTR, argname: ::windows::core::PCSTR, name: ::windows::core::PCSTR, value: ::windows::core::PCSTR) -> QStatus;
     }
@@ -3072,7 +2825,6 @@ where
     P3: ::std::convert::Into<::windows::core::PCSTR>,
     P4: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_addmember(iface: alljoyn_interfacedescription, r#type: alljoyn_messagetype, name: ::windows::core::PCSTR, inputsig: ::windows::core::PCSTR, outsig: ::windows::core::PCSTR, argnames: ::windows::core::PCSTR, annotation: u8) -> QStatus;
     }
@@ -3087,7 +2839,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_addmemberannotation(iface: alljoyn_interfacedescription, member: ::windows::core::PCSTR, name: ::windows::core::PCSTR, value: ::windows::core::PCSTR) -> QStatus;
     }
@@ -3104,7 +2855,6 @@ where
     P4: ::std::convert::Into<::windows::core::PCSTR>,
     P5: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_addmethod(iface: alljoyn_interfacedescription, name: ::windows::core::PCSTR, inputsig: ::windows::core::PCSTR, outsig: ::windows::core::PCSTR, argnames: ::windows::core::PCSTR, annotation: u8, accessperms: ::windows::core::PCSTR) -> QStatus;
     }
@@ -3118,7 +2868,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_addproperty(iface: alljoyn_interfacedescription, name: ::windows::core::PCSTR, signature: ::windows::core::PCSTR, access: u8) -> QStatus;
     }
@@ -3133,7 +2882,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_addpropertyannotation(iface: alljoyn_interfacedescription, property: ::windows::core::PCSTR, name: ::windows::core::PCSTR, value: ::windows::core::PCSTR) -> QStatus;
     }
@@ -3149,7 +2897,6 @@ where
     P3: ::std::convert::Into<::windows::core::PCSTR>,
     P4: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_addsignal(iface: alljoyn_interfacedescription, name: ::windows::core::PCSTR, sig: ::windows::core::PCSTR, argnames: ::windows::core::PCSTR, annotation: u8, accessperms: ::windows::core::PCSTR) -> QStatus;
     }
@@ -3162,7 +2909,6 @@ where
     P0: ::std::convert::Into<alljoyn_interfacedescription>,
     P1: ::std::convert::Into<alljoyn_interfacedescription>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_eql(one: alljoyn_interfacedescription, other: alljoyn_interfacedescription) -> i32;
     }
@@ -3176,7 +2922,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_getannotation(iface: alljoyn_interfacedescription, name: ::windows::core::PCSTR, value: ::windows::core::PCSTR, value_size: *mut usize) -> i32;
     }
@@ -3190,7 +2935,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_getannotationatindex(iface: alljoyn_interfacedescription, index: usize, name: ::windows::core::PCSTR, name_size: *mut usize, value: ::windows::core::PCSTR, value_size: *mut usize);
     }
@@ -3202,7 +2946,6 @@ pub unsafe fn alljoyn_interfacedescription_getannotationscount<'a, P0>(iface: P0
 where
     P0: ::std::convert::Into<alljoyn_interfacedescription>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_getannotationscount(iface: alljoyn_interfacedescription) -> usize;
     }
@@ -3218,7 +2961,6 @@ where
     P3: ::std::convert::Into<::windows::core::PCSTR>,
     P4: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_getargdescriptionforlanguage(iface: alljoyn_interfacedescription, member: ::windows::core::PCSTR, arg: ::windows::core::PCSTR, description: ::windows::core::PCSTR, maxlanguagelength: usize, languagetag: ::windows::core::PCSTR) -> usize;
     }
@@ -3232,7 +2974,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_getdescriptionforlanguage(iface: alljoyn_interfacedescription, description: ::windows::core::PCSTR, maxlanguagelength: usize, languagetag: ::windows::core::PCSTR) -> usize;
     }
@@ -3244,7 +2985,6 @@ pub unsafe fn alljoyn_interfacedescription_getdescriptionlanguages<'a, P0>(iface
 where
     P0: ::std::convert::Into<alljoyn_interfacedescription>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_getdescriptionlanguages(iface: alljoyn_interfacedescription, languages: *const *const i8, size: usize) -> usize;
     }
@@ -3257,7 +2997,6 @@ where
     P0: ::std::convert::Into<alljoyn_interfacedescription>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_getdescriptionlanguages2(iface: alljoyn_interfacedescription, languages: ::windows::core::PCSTR, languagessize: usize) -> usize;
     }
@@ -3269,7 +3008,6 @@ pub unsafe fn alljoyn_interfacedescription_getdescriptiontranslationcallback<'a,
 where
     P0: ::std::convert::Into<alljoyn_interfacedescription>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_getdescriptiontranslationcallback(iface: alljoyn_interfacedescription) -> alljoyn_interfacedescription_translation_callback_ptr;
     }
@@ -3282,7 +3020,6 @@ where
     P0: ::std::convert::Into<alljoyn_interfacedescription>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_getmember(iface: alljoyn_interfacedescription, name: ::windows::core::PCSTR, member: *mut alljoyn_interfacedescription_member) -> i32;
     }
@@ -3297,7 +3034,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_getmemberannotation(iface: alljoyn_interfacedescription, member: ::windows::core::PCSTR, name: ::windows::core::PCSTR, value: ::windows::core::PCSTR, value_size: *mut usize) -> i32;
     }
@@ -3313,7 +3049,6 @@ where
     P3: ::std::convert::Into<::windows::core::PCSTR>,
     P4: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_getmemberargannotation(iface: alljoyn_interfacedescription, member: ::windows::core::PCSTR, argname: ::windows::core::PCSTR, name: ::windows::core::PCSTR, value: ::windows::core::PCSTR, value_size: *mut usize) -> i32;
     }
@@ -3328,7 +3063,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_getmemberdescriptionforlanguage(iface: alljoyn_interfacedescription, member: ::windows::core::PCSTR, description: ::windows::core::PCSTR, maxlanguagelength: usize, languagetag: ::windows::core::PCSTR) -> usize;
     }
@@ -3340,7 +3074,6 @@ pub unsafe fn alljoyn_interfacedescription_getmembers<'a, P0>(iface: P0, members
 where
     P0: ::std::convert::Into<alljoyn_interfacedescription>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_getmembers(iface: alljoyn_interfacedescription, members: *mut alljoyn_interfacedescription_member, nummembers: usize) -> usize;
     }
@@ -3353,7 +3086,6 @@ where
     P0: ::std::convert::Into<alljoyn_interfacedescription>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_getmethod(iface: alljoyn_interfacedescription, name: ::windows::core::PCSTR, member: *mut alljoyn_interfacedescription_member) -> i32;
     }
@@ -3365,7 +3097,6 @@ pub unsafe fn alljoyn_interfacedescription_getname<'a, P0>(iface: P0) -> ::windo
 where
     P0: ::std::convert::Into<alljoyn_interfacedescription>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_getname(iface: alljoyn_interfacedescription) -> ::windows::core::PSTR;
     }
@@ -3377,7 +3108,6 @@ pub unsafe fn alljoyn_interfacedescription_getproperties<'a, P0>(iface: P0, prop
 where
     P0: ::std::convert::Into<alljoyn_interfacedescription>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_getproperties(iface: alljoyn_interfacedescription, props: *mut alljoyn_interfacedescription_property, numprops: usize) -> usize;
     }
@@ -3390,7 +3120,6 @@ where
     P0: ::std::convert::Into<alljoyn_interfacedescription>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_getproperty(iface: alljoyn_interfacedescription, name: ::windows::core::PCSTR, property: *mut alljoyn_interfacedescription_property) -> i32;
     }
@@ -3405,7 +3134,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_getpropertyannotation(iface: alljoyn_interfacedescription, property: ::windows::core::PCSTR, name: ::windows::core::PCSTR, value: ::windows::core::PCSTR, str_size: *mut usize) -> i32;
     }
@@ -3420,7 +3148,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_getpropertydescriptionforlanguage(iface: alljoyn_interfacedescription, property: ::windows::core::PCSTR, description: ::windows::core::PCSTR, maxlanguagelength: usize, languagetag: ::windows::core::PCSTR) -> usize;
     }
@@ -3432,7 +3159,6 @@ pub unsafe fn alljoyn_interfacedescription_getsecuritypolicy<'a, P0>(iface: P0) 
 where
     P0: ::std::convert::Into<alljoyn_interfacedescription>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_getsecuritypolicy(iface: alljoyn_interfacedescription) -> alljoyn_interfacedescription_securitypolicy;
     }
@@ -3445,7 +3171,6 @@ where
     P0: ::std::convert::Into<alljoyn_interfacedescription>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_getsignal(iface: alljoyn_interfacedescription, name: ::windows::core::PCSTR, member: *mut alljoyn_interfacedescription_member) -> i32;
     }
@@ -3457,7 +3182,6 @@ pub unsafe fn alljoyn_interfacedescription_hasdescription<'a, P0>(iface: P0) -> 
 where
     P0: ::std::convert::Into<alljoyn_interfacedescription>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_hasdescription(iface: alljoyn_interfacedescription) -> i32;
     }
@@ -3472,7 +3196,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_hasmember(iface: alljoyn_interfacedescription, name: ::windows::core::PCSTR, insig: ::windows::core::PCSTR, outsig: ::windows::core::PCSTR) -> i32;
     }
@@ -3484,7 +3207,6 @@ pub unsafe fn alljoyn_interfacedescription_hasproperties<'a, P0>(iface: P0) -> i
 where
     P0: ::std::convert::Into<alljoyn_interfacedescription>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_hasproperties(iface: alljoyn_interfacedescription) -> i32;
     }
@@ -3497,7 +3219,6 @@ where
     P0: ::std::convert::Into<alljoyn_interfacedescription>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_hasproperty(iface: alljoyn_interfacedescription, name: ::windows::core::PCSTR) -> i32;
     }
@@ -3510,7 +3231,6 @@ where
     P0: ::std::convert::Into<alljoyn_interfacedescription>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_introspect(iface: alljoyn_interfacedescription, str: ::windows::core::PCSTR, buf: usize, indent: usize) -> usize;
     }
@@ -3522,7 +3242,6 @@ pub unsafe fn alljoyn_interfacedescription_issecure<'a, P0>(iface: P0) -> i32
 where
     P0: ::std::convert::Into<alljoyn_interfacedescription>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_issecure(iface: alljoyn_interfacedescription) -> i32;
     }
@@ -3531,7 +3250,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_interfacedescription_member_eql(one: alljoyn_interfacedescription_member, other: alljoyn_interfacedescription_member) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_member_eql(one: alljoyn_interfacedescription_member, other: alljoyn_interfacedescription_member) -> i32;
     }
@@ -3544,7 +3262,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_member_getannotation(member: alljoyn_interfacedescription_member, name: ::windows::core::PCSTR, value: ::windows::core::PCSTR, value_size: *mut usize) -> i32;
     }
@@ -3557,7 +3274,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_member_getannotationatindex(member: alljoyn_interfacedescription_member, index: usize, name: ::windows::core::PCSTR, name_size: *mut usize, value: ::windows::core::PCSTR, value_size: *mut usize);
     }
@@ -3566,7 +3282,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_interfacedescription_member_getannotationscount(member: alljoyn_interfacedescription_member) -> usize {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_member_getannotationscount(member: alljoyn_interfacedescription_member) -> usize;
     }
@@ -3580,7 +3295,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_member_getargannotation(member: alljoyn_interfacedescription_member, argname: ::windows::core::PCSTR, name: ::windows::core::PCSTR, value: ::windows::core::PCSTR, value_size: *mut usize) -> i32;
     }
@@ -3594,7 +3308,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_member_getargannotationatindex(member: alljoyn_interfacedescription_member, argname: ::windows::core::PCSTR, index: usize, name: ::windows::core::PCSTR, name_size: *mut usize, value: ::windows::core::PCSTR, value_size: *mut usize);
     }
@@ -3606,7 +3319,6 @@ pub unsafe fn alljoyn_interfacedescription_member_getargannotationscount<'a, P0>
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_member_getargannotationscount(member: alljoyn_interfacedescription_member, argname: ::windows::core::PCSTR) -> usize;
     }
@@ -3615,7 +3327,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_interfacedescription_property_eql(one: alljoyn_interfacedescription_property, other: alljoyn_interfacedescription_property) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_property_eql(one: alljoyn_interfacedescription_property, other: alljoyn_interfacedescription_property) -> i32;
     }
@@ -3628,7 +3339,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_property_getannotation(property: alljoyn_interfacedescription_property, name: ::windows::core::PCSTR, value: ::windows::core::PCSTR, value_size: *mut usize) -> i32;
     }
@@ -3641,7 +3351,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_property_getannotationatindex(property: alljoyn_interfacedescription_property, index: usize, name: ::windows::core::PCSTR, name_size: *mut usize, value: ::windows::core::PCSTR, value_size: *mut usize);
     }
@@ -3650,7 +3359,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_interfacedescription_property_getannotationscount(property: alljoyn_interfacedescription_property) -> usize {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_property_getannotationscount(property: alljoyn_interfacedescription_property) -> usize;
     }
@@ -3665,7 +3373,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_setargdescription(iface: alljoyn_interfacedescription, member: ::windows::core::PCSTR, argname: ::windows::core::PCSTR, description: ::windows::core::PCSTR) -> QStatus;
     }
@@ -3681,7 +3388,6 @@ where
     P3: ::std::convert::Into<::windows::core::PCSTR>,
     P4: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_setargdescriptionforlanguage(iface: alljoyn_interfacedescription, member: ::windows::core::PCSTR, arg: ::windows::core::PCSTR, description: ::windows::core::PCSTR, languagetag: ::windows::core::PCSTR) -> QStatus;
     }
@@ -3694,7 +3400,6 @@ where
     P0: ::std::convert::Into<alljoyn_interfacedescription>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_setdescription(iface: alljoyn_interfacedescription, description: ::windows::core::PCSTR);
     }
@@ -3708,7 +3413,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_setdescriptionforlanguage(iface: alljoyn_interfacedescription, description: ::windows::core::PCSTR, languagetag: ::windows::core::PCSTR) -> QStatus;
     }
@@ -3721,7 +3425,6 @@ where
     P0: ::std::convert::Into<alljoyn_interfacedescription>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_setdescriptionlanguage(iface: alljoyn_interfacedescription, language: ::windows::core::PCSTR);
     }
@@ -3733,7 +3436,6 @@ pub unsafe fn alljoyn_interfacedescription_setdescriptiontranslationcallback<'a,
 where
     P0: ::std::convert::Into<alljoyn_interfacedescription>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_setdescriptiontranslationcallback(iface: alljoyn_interfacedescription, translationcallback: *mut ::core::ffi::c_void);
     }
@@ -3747,7 +3449,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_setmemberdescription(iface: alljoyn_interfacedescription, member: ::windows::core::PCSTR, description: ::windows::core::PCSTR) -> QStatus;
     }
@@ -3762,7 +3463,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_setmemberdescriptionforlanguage(iface: alljoyn_interfacedescription, member: ::windows::core::PCSTR, description: ::windows::core::PCSTR, languagetag: ::windows::core::PCSTR) -> QStatus;
     }
@@ -3776,7 +3476,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_setpropertydescription(iface: alljoyn_interfacedescription, name: ::windows::core::PCSTR, description: ::windows::core::PCSTR) -> QStatus;
     }
@@ -3791,7 +3490,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_interfacedescription_setpropertydescriptionforlanguage(iface: alljoyn_interfacedescription, name: ::windows::core::PCSTR, description: ::windows::core::PCSTR, languagetag: ::windows::core::PCSTR) -> QStatus;
     }
@@ -3800,7 +3498,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_keystorelistener_create(callbacks: *const alljoyn_keystorelistener_callbacks, context: *const ::core::ffi::c_void) -> alljoyn_keystorelistener {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_keystorelistener_create(callbacks: *const alljoyn_keystorelistener_callbacks, context: *const ::core::ffi::c_void) -> alljoyn_keystorelistener;
     }
@@ -3812,7 +3509,6 @@ pub unsafe fn alljoyn_keystorelistener_destroy<'a, P0>(listener: P0)
 where
     P0: ::std::convert::Into<alljoyn_keystorelistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_keystorelistener_destroy(listener: alljoyn_keystorelistener);
     }
@@ -3826,7 +3522,6 @@ where
     P1: ::std::convert::Into<alljoyn_keystore>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_keystorelistener_getkeys(listener: alljoyn_keystorelistener, keystore: alljoyn_keystore, sink: ::windows::core::PCSTR, sink_sz: *mut usize) -> QStatus;
     }
@@ -3841,7 +3536,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_keystorelistener_putkeys(listener: alljoyn_keystorelistener, keystore: alljoyn_keystore, source: ::windows::core::PCSTR, password: ::windows::core::PCSTR) -> QStatus;
     }
@@ -3850,7 +3544,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_keystorelistener_with_synchronization_create(callbacks: *const alljoyn_keystorelistener_with_synchronization_callbacks, context: *mut ::core::ffi::c_void) -> alljoyn_keystorelistener {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_keystorelistener_with_synchronization_create(callbacks: *const alljoyn_keystorelistener_with_synchronization_callbacks, context: *mut ::core::ffi::c_void) -> alljoyn_keystorelistener;
     }
@@ -3862,7 +3555,6 @@ pub unsafe fn alljoyn_message_create<'a, P0>(bus: P0) -> alljoyn_message
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_create(bus: alljoyn_busattachment) -> alljoyn_message;
     }
@@ -3875,7 +3567,6 @@ where
     P0: ::std::convert::Into<alljoyn_message>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_description(msg: alljoyn_message, str: ::windows::core::PCSTR, buf: usize) -> usize;
     }
@@ -3887,7 +3578,6 @@ pub unsafe fn alljoyn_message_destroy<'a, P0>(msg: P0)
 where
     P0: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_destroy(msg: alljoyn_message);
     }
@@ -3900,7 +3590,6 @@ where
     P0: ::std::convert::Into<alljoyn_message>,
     P1: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_eql(one: alljoyn_message, other: alljoyn_message) -> i32;
     }
@@ -3912,7 +3601,6 @@ pub unsafe fn alljoyn_message_getarg<'a, P0>(msg: P0, argn: usize) -> alljoyn_ms
 where
     P0: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_getarg(msg: alljoyn_message, argn: usize) -> alljoyn_msgarg;
     }
@@ -3924,7 +3612,6 @@ pub unsafe fn alljoyn_message_getargs<'a, P0>(msg: P0, numargs: *mut usize, args
 where
     P0: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_getargs(msg: alljoyn_message, numargs: *mut usize, args: *mut alljoyn_msgarg);
     }
@@ -3936,7 +3623,6 @@ pub unsafe fn alljoyn_message_getauthmechanism<'a, P0>(msg: P0) -> ::windows::co
 where
     P0: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_getauthmechanism(msg: alljoyn_message) -> ::windows::core::PSTR;
     }
@@ -3948,7 +3634,6 @@ pub unsafe fn alljoyn_message_getcallserial<'a, P0>(msg: P0) -> u32
 where
     P0: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_getcallserial(msg: alljoyn_message) -> u32;
     }
@@ -3960,7 +3645,6 @@ pub unsafe fn alljoyn_message_getcompressiontoken<'a, P0>(msg: P0) -> u32
 where
     P0: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_getcompressiontoken(msg: alljoyn_message) -> u32;
     }
@@ -3972,7 +3656,6 @@ pub unsafe fn alljoyn_message_getdestination<'a, P0>(msg: P0) -> ::windows::core
 where
     P0: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_getdestination(msg: alljoyn_message) -> ::windows::core::PSTR;
     }
@@ -3985,7 +3668,6 @@ where
     P0: ::std::convert::Into<alljoyn_message>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_geterrorname(msg: alljoyn_message, errormessage: ::windows::core::PCSTR, errormessage_size: *mut usize) -> ::windows::core::PSTR;
     }
@@ -3997,7 +3679,6 @@ pub unsafe fn alljoyn_message_getflags<'a, P0>(msg: P0) -> u8
 where
     P0: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_getflags(msg: alljoyn_message) -> u8;
     }
@@ -4009,7 +3690,6 @@ pub unsafe fn alljoyn_message_getinterface<'a, P0>(msg: P0) -> ::windows::core::
 where
     P0: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_getinterface(msg: alljoyn_message) -> ::windows::core::PSTR;
     }
@@ -4021,7 +3701,6 @@ pub unsafe fn alljoyn_message_getmembername<'a, P0>(msg: P0) -> ::windows::core:
 where
     P0: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_getmembername(msg: alljoyn_message) -> ::windows::core::PSTR;
     }
@@ -4033,7 +3712,6 @@ pub unsafe fn alljoyn_message_getobjectpath<'a, P0>(msg: P0) -> ::windows::core:
 where
     P0: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_getobjectpath(msg: alljoyn_message) -> ::windows::core::PSTR;
     }
@@ -4045,7 +3723,6 @@ pub unsafe fn alljoyn_message_getreceiveendpointname<'a, P0>(msg: P0) -> ::windo
 where
     P0: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_getreceiveendpointname(msg: alljoyn_message) -> ::windows::core::PSTR;
     }
@@ -4057,7 +3734,6 @@ pub unsafe fn alljoyn_message_getreplyserial<'a, P0>(msg: P0) -> u32
 where
     P0: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_getreplyserial(msg: alljoyn_message) -> u32;
     }
@@ -4069,7 +3745,6 @@ pub unsafe fn alljoyn_message_getsender<'a, P0>(msg: P0) -> ::windows::core::PST
 where
     P0: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_getsender(msg: alljoyn_message) -> ::windows::core::PSTR;
     }
@@ -4081,7 +3756,6 @@ pub unsafe fn alljoyn_message_getsessionid<'a, P0>(msg: P0) -> u32
 where
     P0: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_getsessionid(msg: alljoyn_message) -> u32;
     }
@@ -4093,7 +3767,6 @@ pub unsafe fn alljoyn_message_getsignature<'a, P0>(msg: P0) -> ::windows::core::
 where
     P0: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_getsignature(msg: alljoyn_message) -> ::windows::core::PSTR;
     }
@@ -4105,7 +3778,6 @@ pub unsafe fn alljoyn_message_gettimestamp<'a, P0>(msg: P0) -> u32
 where
     P0: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_gettimestamp(msg: alljoyn_message) -> u32;
     }
@@ -4117,7 +3789,6 @@ pub unsafe fn alljoyn_message_gettype<'a, P0>(msg: P0) -> alljoyn_messagetype
 where
     P0: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_gettype(msg: alljoyn_message) -> alljoyn_messagetype;
     }
@@ -4129,7 +3800,6 @@ pub unsafe fn alljoyn_message_isbroadcastsignal<'a, P0>(msg: P0) -> i32
 where
     P0: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_isbroadcastsignal(msg: alljoyn_message) -> i32;
     }
@@ -4141,7 +3811,6 @@ pub unsafe fn alljoyn_message_isencrypted<'a, P0>(msg: P0) -> i32
 where
     P0: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_isencrypted(msg: alljoyn_message) -> i32;
     }
@@ -4153,7 +3822,6 @@ pub unsafe fn alljoyn_message_isexpired<'a, P0>(msg: P0, tillexpirems: *mut u32)
 where
     P0: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_isexpired(msg: alljoyn_message, tillexpirems: *mut u32) -> i32;
     }
@@ -4165,7 +3833,6 @@ pub unsafe fn alljoyn_message_isglobalbroadcast<'a, P0>(msg: P0) -> i32
 where
     P0: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_isglobalbroadcast(msg: alljoyn_message) -> i32;
     }
@@ -4177,7 +3844,6 @@ pub unsafe fn alljoyn_message_issessionless<'a, P0>(msg: P0) -> i32
 where
     P0: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_issessionless(msg: alljoyn_message) -> i32;
     }
@@ -4189,7 +3855,6 @@ pub unsafe fn alljoyn_message_isunreliable<'a, P0>(msg: P0) -> i32
 where
     P0: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_isunreliable(msg: alljoyn_message) -> i32;
     }
@@ -4198,7 +3863,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_message_setendianess(endian: i8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_setendianess(endian: i8);
     }
@@ -4211,7 +3875,6 @@ where
     P0: ::std::convert::Into<alljoyn_message>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_message_tostring(msg: alljoyn_message, str: ::windows::core::PCSTR, buf: usize) -> usize;
     }
@@ -4220,7 +3883,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_msgarg_array_create(size: usize) -> alljoyn_msgarg {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_array_create(size: usize) -> alljoyn_msgarg;
     }
@@ -4232,7 +3894,6 @@ pub unsafe fn alljoyn_msgarg_array_element<'a, P0>(arg: P0, index: usize) -> all
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_array_element(arg: alljoyn_msgarg, index: usize) -> alljoyn_msgarg;
     }
@@ -4245,7 +3906,6 @@ where
     P0: ::std::convert::Into<alljoyn_msgarg>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_array_signature(values: alljoyn_msgarg, numvalues: usize, str: ::windows::core::PCSTR, buf: usize) -> usize;
     }
@@ -4258,7 +3918,6 @@ where
     P0: ::std::convert::Into<alljoyn_msgarg>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_array_tostring(args: alljoyn_msgarg, numargs: usize, str: ::windows::core::PCSTR, buf: usize, indent: usize) -> usize;
     }
@@ -4270,7 +3929,6 @@ pub unsafe fn alljoyn_msgarg_clear<'a, P0>(arg: P0)
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_clear(arg: alljoyn_msgarg);
     }
@@ -4283,7 +3941,6 @@ where
     P0: ::std::convert::Into<alljoyn_msgarg>,
     P1: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_clone(destination: alljoyn_msgarg, source: alljoyn_msgarg);
     }
@@ -4295,7 +3952,6 @@ pub unsafe fn alljoyn_msgarg_copy<'a, P0>(source: P0) -> alljoyn_msgarg
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_copy(source: alljoyn_msgarg) -> alljoyn_msgarg;
     }
@@ -4304,7 +3960,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_msgarg_create() -> alljoyn_msgarg {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_create() -> alljoyn_msgarg;
     }
@@ -4316,7 +3971,6 @@ pub unsafe fn alljoyn_msgarg_destroy<'a, P0>(arg: P0)
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_destroy(arg: alljoyn_msgarg);
     }
@@ -4329,7 +3983,6 @@ where
     P0: ::std::convert::Into<alljoyn_msgarg>,
     P1: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_equal(lhv: alljoyn_msgarg, rhv: alljoyn_msgarg) -> i32;
     }
@@ -4341,7 +3994,6 @@ pub unsafe fn alljoyn_msgarg_get_array_element<'a, P0>(arg: P0, index: usize, el
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_get_array_element(arg: alljoyn_msgarg, index: usize, element: *mut alljoyn_msgarg);
     }
@@ -4353,7 +4005,6 @@ pub unsafe fn alljoyn_msgarg_get_array_elementsignature<'a, P0>(arg: P0, index: 
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_get_array_elementsignature(arg: alljoyn_msgarg, index: usize) -> ::windows::core::PSTR;
     }
@@ -4365,7 +4016,6 @@ pub unsafe fn alljoyn_msgarg_get_array_numberofelements<'a, P0>(arg: P0) -> usiz
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_get_array_numberofelements(arg: alljoyn_msgarg) -> usize;
     }
@@ -4377,7 +4027,6 @@ pub unsafe fn alljoyn_msgarg_get_bool<'a, P0>(arg: P0, b: *mut i32) -> QStatus
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_get_bool(arg: alljoyn_msgarg, b: *mut i32) -> QStatus;
     }
@@ -4389,7 +4038,6 @@ pub unsafe fn alljoyn_msgarg_get_bool_array<'a, P0>(arg: P0, length: *mut usize,
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_get_bool_array(arg: alljoyn_msgarg, length: *mut usize, ab: *mut i32) -> QStatus;
     }
@@ -4401,7 +4049,6 @@ pub unsafe fn alljoyn_msgarg_get_double<'a, P0>(arg: P0, d: *mut f64) -> QStatus
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_get_double(arg: alljoyn_msgarg, d: *mut f64) -> QStatus;
     }
@@ -4413,7 +4060,6 @@ pub unsafe fn alljoyn_msgarg_get_double_array<'a, P0>(arg: P0, length: *mut usiz
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_get_double_array(arg: alljoyn_msgarg, length: *mut usize, ad: *mut f64) -> QStatus;
     }
@@ -4425,7 +4071,6 @@ pub unsafe fn alljoyn_msgarg_get_int16<'a, P0>(arg: P0, n: *mut i16) -> QStatus
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_get_int16(arg: alljoyn_msgarg, n: *mut i16) -> QStatus;
     }
@@ -4437,7 +4082,6 @@ pub unsafe fn alljoyn_msgarg_get_int16_array<'a, P0>(arg: P0, length: *mut usize
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_get_int16_array(arg: alljoyn_msgarg, length: *mut usize, an: *mut i16) -> QStatus;
     }
@@ -4449,7 +4093,6 @@ pub unsafe fn alljoyn_msgarg_get_int32<'a, P0>(arg: P0, i: *mut i32) -> QStatus
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_get_int32(arg: alljoyn_msgarg, i: *mut i32) -> QStatus;
     }
@@ -4461,7 +4104,6 @@ pub unsafe fn alljoyn_msgarg_get_int32_array<'a, P0>(arg: P0, length: *mut usize
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_get_int32_array(arg: alljoyn_msgarg, length: *mut usize, ai: *mut i32) -> QStatus;
     }
@@ -4473,7 +4115,6 @@ pub unsafe fn alljoyn_msgarg_get_int64<'a, P0>(arg: P0, x: *mut i64) -> QStatus
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_get_int64(arg: alljoyn_msgarg, x: *mut i64) -> QStatus;
     }
@@ -4485,7 +4126,6 @@ pub unsafe fn alljoyn_msgarg_get_int64_array<'a, P0>(arg: P0, length: *mut usize
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_get_int64_array(arg: alljoyn_msgarg, length: *mut usize, ax: *mut i64) -> QStatus;
     }
@@ -4497,7 +4137,6 @@ pub unsafe fn alljoyn_msgarg_get_objectpath<'a, P0>(arg: P0, o: *mut *mut i8) ->
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_get_objectpath(arg: alljoyn_msgarg, o: *mut *mut i8) -> QStatus;
     }
@@ -4509,7 +4148,6 @@ pub unsafe fn alljoyn_msgarg_get_signature<'a, P0>(arg: P0, g: *mut *mut i8) -> 
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_get_signature(arg: alljoyn_msgarg, g: *mut *mut i8) -> QStatus;
     }
@@ -4521,7 +4159,6 @@ pub unsafe fn alljoyn_msgarg_get_string<'a, P0>(arg: P0, s: *mut *mut i8) -> QSt
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_get_string(arg: alljoyn_msgarg, s: *mut *mut i8) -> QStatus;
     }
@@ -4533,7 +4170,6 @@ pub unsafe fn alljoyn_msgarg_get_uint16<'a, P0>(arg: P0, q: *mut u16) -> QStatus
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_get_uint16(arg: alljoyn_msgarg, q: *mut u16) -> QStatus;
     }
@@ -4545,7 +4181,6 @@ pub unsafe fn alljoyn_msgarg_get_uint16_array<'a, P0>(arg: P0, length: *mut usiz
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_get_uint16_array(arg: alljoyn_msgarg, length: *mut usize, aq: *mut u16) -> QStatus;
     }
@@ -4557,7 +4192,6 @@ pub unsafe fn alljoyn_msgarg_get_uint32<'a, P0>(arg: P0, u: *mut u32) -> QStatus
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_get_uint32(arg: alljoyn_msgarg, u: *mut u32) -> QStatus;
     }
@@ -4569,7 +4203,6 @@ pub unsafe fn alljoyn_msgarg_get_uint32_array<'a, P0>(arg: P0, length: *mut usiz
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_get_uint32_array(arg: alljoyn_msgarg, length: *mut usize, au: *mut u32) -> QStatus;
     }
@@ -4581,7 +4214,6 @@ pub unsafe fn alljoyn_msgarg_get_uint64<'a, P0>(arg: P0, t: *mut u64) -> QStatus
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_get_uint64(arg: alljoyn_msgarg, t: *mut u64) -> QStatus;
     }
@@ -4593,7 +4225,6 @@ pub unsafe fn alljoyn_msgarg_get_uint64_array<'a, P0>(arg: P0, length: *mut usiz
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_get_uint64_array(arg: alljoyn_msgarg, length: *mut usize, at: *mut u64) -> QStatus;
     }
@@ -4605,7 +4236,6 @@ pub unsafe fn alljoyn_msgarg_get_uint8<'a, P0>(arg: P0, y: *mut u8) -> QStatus
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_get_uint8(arg: alljoyn_msgarg, y: *mut u8) -> QStatus;
     }
@@ -4617,7 +4247,6 @@ pub unsafe fn alljoyn_msgarg_get_uint8_array<'a, P0>(arg: P0, length: *mut usize
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_get_uint8_array(arg: alljoyn_msgarg, length: *mut usize, ay: *mut u8) -> QStatus;
     }
@@ -4630,7 +4259,6 @@ where
     P0: ::std::convert::Into<alljoyn_msgarg>,
     P1: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_get_variant(arg: alljoyn_msgarg, v: alljoyn_msgarg) -> QStatus;
     }
@@ -4643,7 +4271,6 @@ where
     P0: ::std::convert::Into<alljoyn_msgarg>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_get_variant_array(arg: alljoyn_msgarg, signature: ::windows::core::PCSTR, length: *mut usize, av: *mut alljoyn_msgarg) -> QStatus;
     }
@@ -4655,7 +4282,6 @@ pub unsafe fn alljoyn_msgarg_getkey<'a, P0>(arg: P0) -> alljoyn_msgarg
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_getkey(arg: alljoyn_msgarg) -> alljoyn_msgarg;
     }
@@ -4667,7 +4293,6 @@ pub unsafe fn alljoyn_msgarg_getmember<'a, P0>(arg: P0, index: usize) -> alljoyn
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_getmember(arg: alljoyn_msgarg, index: usize) -> alljoyn_msgarg;
     }
@@ -4679,7 +4304,6 @@ pub unsafe fn alljoyn_msgarg_getnummembers<'a, P0>(arg: P0) -> usize
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_getnummembers(arg: alljoyn_msgarg) -> usize;
     }
@@ -4691,7 +4315,6 @@ pub unsafe fn alljoyn_msgarg_gettype<'a, P0>(arg: P0) -> alljoyn_typeid
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_gettype(arg: alljoyn_msgarg) -> alljoyn_typeid;
     }
@@ -4703,7 +4326,6 @@ pub unsafe fn alljoyn_msgarg_getvalue<'a, P0>(arg: P0) -> alljoyn_msgarg
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_getvalue(arg: alljoyn_msgarg) -> alljoyn_msgarg;
     }
@@ -4716,7 +4338,6 @@ where
     P0: ::std::convert::Into<alljoyn_msgarg>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_hassignature(arg: alljoyn_msgarg, signature: ::windows::core::PCSTR) -> i32;
     }
@@ -4728,7 +4349,6 @@ pub unsafe fn alljoyn_msgarg_set_bool<'a, P0>(arg: P0, b: i32) -> QStatus
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_set_bool(arg: alljoyn_msgarg, b: i32) -> QStatus;
     }
@@ -4740,7 +4360,6 @@ pub unsafe fn alljoyn_msgarg_set_bool_array<'a, P0>(arg: P0, length: usize, ab: 
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_set_bool_array(arg: alljoyn_msgarg, length: usize, ab: *mut i32) -> QStatus;
     }
@@ -4752,7 +4371,6 @@ pub unsafe fn alljoyn_msgarg_set_double<'a, P0>(arg: P0, d: f64) -> QStatus
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_set_double(arg: alljoyn_msgarg, d: f64) -> QStatus;
     }
@@ -4764,7 +4382,6 @@ pub unsafe fn alljoyn_msgarg_set_double_array<'a, P0>(arg: P0, length: usize, ad
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_set_double_array(arg: alljoyn_msgarg, length: usize, ad: *mut f64) -> QStatus;
     }
@@ -4776,7 +4393,6 @@ pub unsafe fn alljoyn_msgarg_set_int16<'a, P0>(arg: P0, n: i16) -> QStatus
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_set_int16(arg: alljoyn_msgarg, n: i16) -> QStatus;
     }
@@ -4788,7 +4404,6 @@ pub unsafe fn alljoyn_msgarg_set_int16_array<'a, P0>(arg: P0, length: usize, an:
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_set_int16_array(arg: alljoyn_msgarg, length: usize, an: *mut i16) -> QStatus;
     }
@@ -4800,7 +4415,6 @@ pub unsafe fn alljoyn_msgarg_set_int32<'a, P0>(arg: P0, i: i32) -> QStatus
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_set_int32(arg: alljoyn_msgarg, i: i32) -> QStatus;
     }
@@ -4812,7 +4426,6 @@ pub unsafe fn alljoyn_msgarg_set_int32_array<'a, P0>(arg: P0, length: usize, ai:
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_set_int32_array(arg: alljoyn_msgarg, length: usize, ai: *mut i32) -> QStatus;
     }
@@ -4824,7 +4437,6 @@ pub unsafe fn alljoyn_msgarg_set_int64<'a, P0>(arg: P0, x: i64) -> QStatus
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_set_int64(arg: alljoyn_msgarg, x: i64) -> QStatus;
     }
@@ -4836,7 +4448,6 @@ pub unsafe fn alljoyn_msgarg_set_int64_array<'a, P0>(arg: P0, length: usize, ax:
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_set_int64_array(arg: alljoyn_msgarg, length: usize, ax: *mut i64) -> QStatus;
     }
@@ -4849,7 +4460,6 @@ where
     P0: ::std::convert::Into<alljoyn_msgarg>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_set_objectpath(arg: alljoyn_msgarg, o: ::windows::core::PCSTR) -> QStatus;
     }
@@ -4861,7 +4471,6 @@ pub unsafe fn alljoyn_msgarg_set_objectpath_array<'a, P0>(arg: P0, length: usize
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_set_objectpath_array(arg: alljoyn_msgarg, length: usize, ao: *const *const i8) -> QStatus;
     }
@@ -4874,7 +4483,6 @@ where
     P0: ::std::convert::Into<alljoyn_msgarg>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_set_signature(arg: alljoyn_msgarg, g: ::windows::core::PCSTR) -> QStatus;
     }
@@ -4886,7 +4494,6 @@ pub unsafe fn alljoyn_msgarg_set_signature_array<'a, P0>(arg: P0, length: usize,
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_set_signature_array(arg: alljoyn_msgarg, length: usize, ag: *const *const i8) -> QStatus;
     }
@@ -4899,7 +4506,6 @@ where
     P0: ::std::convert::Into<alljoyn_msgarg>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_set_string(arg: alljoyn_msgarg, s: ::windows::core::PCSTR) -> QStatus;
     }
@@ -4911,7 +4517,6 @@ pub unsafe fn alljoyn_msgarg_set_string_array<'a, P0>(arg: P0, length: usize, r#
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_set_string_array(arg: alljoyn_msgarg, length: usize, r#as: *const *const i8) -> QStatus;
     }
@@ -4923,7 +4528,6 @@ pub unsafe fn alljoyn_msgarg_set_uint16<'a, P0>(arg: P0, q: u16) -> QStatus
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_set_uint16(arg: alljoyn_msgarg, q: u16) -> QStatus;
     }
@@ -4935,7 +4539,6 @@ pub unsafe fn alljoyn_msgarg_set_uint16_array<'a, P0>(arg: P0, length: usize, aq
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_set_uint16_array(arg: alljoyn_msgarg, length: usize, aq: *mut u16) -> QStatus;
     }
@@ -4947,7 +4550,6 @@ pub unsafe fn alljoyn_msgarg_set_uint32<'a, P0>(arg: P0, u: u32) -> QStatus
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_set_uint32(arg: alljoyn_msgarg, u: u32) -> QStatus;
     }
@@ -4959,7 +4561,6 @@ pub unsafe fn alljoyn_msgarg_set_uint32_array<'a, P0>(arg: P0, length: usize, au
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_set_uint32_array(arg: alljoyn_msgarg, length: usize, au: *mut u32) -> QStatus;
     }
@@ -4971,7 +4572,6 @@ pub unsafe fn alljoyn_msgarg_set_uint64<'a, P0>(arg: P0, t: u64) -> QStatus
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_set_uint64(arg: alljoyn_msgarg, t: u64) -> QStatus;
     }
@@ -4983,7 +4583,6 @@ pub unsafe fn alljoyn_msgarg_set_uint64_array<'a, P0>(arg: P0, length: usize, at
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_set_uint64_array(arg: alljoyn_msgarg, length: usize, at: *mut u64) -> QStatus;
     }
@@ -4995,7 +4594,6 @@ pub unsafe fn alljoyn_msgarg_set_uint8<'a, P0>(arg: P0, y: u8) -> QStatus
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_set_uint8(arg: alljoyn_msgarg, y: u8) -> QStatus;
     }
@@ -5007,7 +4605,6 @@ pub unsafe fn alljoyn_msgarg_set_uint8_array<'a, P0>(arg: P0, length: usize, ay:
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_set_uint8_array(arg: alljoyn_msgarg, length: usize, ay: *mut u8) -> QStatus;
     }
@@ -5021,7 +4618,6 @@ where
     P1: ::std::convert::Into<alljoyn_msgarg>,
     P2: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_setdictentry(arg: alljoyn_msgarg, key: alljoyn_msgarg, value: alljoyn_msgarg) -> QStatus;
     }
@@ -5034,7 +4630,6 @@ where
     P0: ::std::convert::Into<alljoyn_msgarg>,
     P1: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_setstruct(arg: alljoyn_msgarg, struct_members: alljoyn_msgarg, num_members: usize) -> QStatus;
     }
@@ -5047,7 +4642,6 @@ where
     P0: ::std::convert::Into<alljoyn_msgarg>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_signature(arg: alljoyn_msgarg, str: ::windows::core::PCSTR, buf: usize) -> usize;
     }
@@ -5059,7 +4653,6 @@ pub unsafe fn alljoyn_msgarg_stabilize<'a, P0>(arg: P0)
 where
     P0: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_stabilize(arg: alljoyn_msgarg);
     }
@@ -5072,7 +4665,6 @@ where
     P0: ::std::convert::Into<alljoyn_msgarg>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_msgarg_tostring(arg: alljoyn_msgarg, str: ::windows::core::PCSTR, buf: usize, indent: usize) -> usize;
     }
@@ -5084,7 +4676,6 @@ pub unsafe fn alljoyn_observer_create<'a, P0>(bus: P0, mandatoryinterfaces: *con
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_observer_create(bus: alljoyn_busattachment, mandatoryinterfaces: *const *const i8, nummandatoryinterfaces: usize) -> alljoyn_observer;
     }
@@ -5096,7 +4687,6 @@ pub unsafe fn alljoyn_observer_destroy<'a, P0>(observer: P0)
 where
     P0: ::std::convert::Into<alljoyn_observer>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_observer_destroy(observer: alljoyn_observer);
     }
@@ -5110,7 +4700,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_observer_get(observer: alljoyn_observer, uniquebusname: ::windows::core::PCSTR, objectpath: ::windows::core::PCSTR) -> alljoyn_proxybusobject_ref;
     }
@@ -5122,7 +4711,6 @@ pub unsafe fn alljoyn_observer_getfirst<'a, P0>(observer: P0) -> alljoyn_proxybu
 where
     P0: ::std::convert::Into<alljoyn_observer>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_observer_getfirst(observer: alljoyn_observer) -> alljoyn_proxybusobject_ref;
     }
@@ -5135,7 +4723,6 @@ where
     P0: ::std::convert::Into<alljoyn_observer>,
     P1: ::std::convert::Into<alljoyn_proxybusobject_ref>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_observer_getnext(observer: alljoyn_observer, proxyref: alljoyn_proxybusobject_ref) -> alljoyn_proxybusobject_ref;
     }
@@ -5148,7 +4735,6 @@ where
     P0: ::std::convert::Into<alljoyn_observer>,
     P1: ::std::convert::Into<alljoyn_observerlistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_observer_registerlistener(observer: alljoyn_observer, listener: alljoyn_observerlistener, triggeronexisting: i32);
     }
@@ -5160,7 +4746,6 @@ pub unsafe fn alljoyn_observer_unregisteralllisteners<'a, P0>(observer: P0)
 where
     P0: ::std::convert::Into<alljoyn_observer>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_observer_unregisteralllisteners(observer: alljoyn_observer);
     }
@@ -5173,7 +4758,6 @@ where
     P0: ::std::convert::Into<alljoyn_observer>,
     P1: ::std::convert::Into<alljoyn_observerlistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_observer_unregisterlistener(observer: alljoyn_observer, listener: alljoyn_observerlistener);
     }
@@ -5182,7 +4766,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_observerlistener_create(callback: *const alljoyn_observerlistener_callback, context: *const ::core::ffi::c_void) -> alljoyn_observerlistener {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_observerlistener_create(callback: *const alljoyn_observerlistener_callback, context: *const ::core::ffi::c_void) -> alljoyn_observerlistener;
     }
@@ -5194,7 +4777,6 @@ pub unsafe fn alljoyn_observerlistener_destroy<'a, P0>(listener: P0)
 where
     P0: ::std::convert::Into<alljoyn_observerlistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_observerlistener_destroy(listener: alljoyn_observerlistener);
     }
@@ -5207,7 +4789,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_passwordmanager_setcredentials(authmechanism: ::windows::core::PCSTR, password: ::windows::core::PCSTR) -> QStatus;
     }
@@ -5216,7 +4797,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_permissionconfigurationlistener_create(callbacks: *const alljoyn_permissionconfigurationlistener_callbacks, context: *const ::core::ffi::c_void) -> alljoyn_permissionconfigurationlistener {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurationlistener_create(callbacks: *const alljoyn_permissionconfigurationlistener_callbacks, context: *const ::core::ffi::c_void) -> alljoyn_permissionconfigurationlistener;
     }
@@ -5228,7 +4808,6 @@ pub unsafe fn alljoyn_permissionconfigurationlistener_destroy<'a, P0>(listener: 
 where
     P0: ::std::convert::Into<alljoyn_permissionconfigurationlistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurationlistener_destroy(listener: alljoyn_permissionconfigurationlistener);
     }
@@ -5237,7 +4816,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_permissionconfigurator_certificatechain_destroy(certificatechain: *mut i8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_certificatechain_destroy(certificatechain: *mut i8);
     }
@@ -5246,7 +4824,6 @@ pub unsafe fn alljoyn_permissionconfigurator_certificatechain_destroy(certificat
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_permissionconfigurator_certificateid_cleanup(certificateid: *mut alljoyn_certificateid) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_certificateid_cleanup(certificateid: *mut alljoyn_certificateid);
     }
@@ -5255,7 +4832,6 @@ pub unsafe fn alljoyn_permissionconfigurator_certificateid_cleanup(certificateid
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_permissionconfigurator_certificateidarray_cleanup(certificateidarray: *mut alljoyn_certificateidarray) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_certificateidarray_cleanup(certificateidarray: *mut alljoyn_certificateidarray);
     }
@@ -5267,7 +4843,6 @@ pub unsafe fn alljoyn_permissionconfigurator_claim<'a, P0>(configurator: P0, cak
 where
     P0: ::std::convert::Into<alljoyn_permissionconfigurator>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_claim(configurator: alljoyn_permissionconfigurator, cakey: *mut i8, identitycertificatechain: *mut i8, groupid: *const u8, groupsize: usize, groupauthority: *mut i8, manifestsxmls: *mut *mut i8, manifestscount: usize) -> QStatus;
     }
@@ -5279,7 +4854,6 @@ pub unsafe fn alljoyn_permissionconfigurator_endmanagement<'a, P0>(configurator:
 where
     P0: ::std::convert::Into<alljoyn_permissionconfigurator>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_endmanagement(configurator: alljoyn_permissionconfigurator) -> QStatus;
     }
@@ -5291,7 +4865,6 @@ pub unsafe fn alljoyn_permissionconfigurator_getapplicationstate<'a, P0>(configu
 where
     P0: ::std::convert::Into<alljoyn_permissionconfigurator>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_getapplicationstate(configurator: alljoyn_permissionconfigurator, state: *mut alljoyn_applicationstate) -> QStatus;
     }
@@ -5303,7 +4876,6 @@ pub unsafe fn alljoyn_permissionconfigurator_getclaimcapabilities<'a, P0>(config
 where
     P0: ::std::convert::Into<alljoyn_permissionconfigurator>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_getclaimcapabilities(configurator: alljoyn_permissionconfigurator, claimcapabilities: *mut u16) -> QStatus;
     }
@@ -5315,7 +4887,6 @@ pub unsafe fn alljoyn_permissionconfigurator_getclaimcapabilitiesadditionalinfo<
 where
     P0: ::std::convert::Into<alljoyn_permissionconfigurator>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_getclaimcapabilitiesadditionalinfo(configurator: alljoyn_permissionconfigurator, additionalinfo: *mut u16) -> QStatus;
     }
@@ -5324,7 +4895,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_permissionconfigurator_getdefaultclaimcapabilities() -> u16 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_getdefaultclaimcapabilities() -> u16;
     }
@@ -5336,7 +4906,6 @@ pub unsafe fn alljoyn_permissionconfigurator_getdefaultpolicy<'a, P0>(configurat
 where
     P0: ::std::convert::Into<alljoyn_permissionconfigurator>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_getdefaultpolicy(configurator: alljoyn_permissionconfigurator, policyxml: *mut *mut i8) -> QStatus;
     }
@@ -5348,7 +4917,6 @@ pub unsafe fn alljoyn_permissionconfigurator_getidentity<'a, P0>(configurator: P
 where
     P0: ::std::convert::Into<alljoyn_permissionconfigurator>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_getidentity(configurator: alljoyn_permissionconfigurator, identitycertificatechain: *mut *mut i8) -> QStatus;
     }
@@ -5360,7 +4928,6 @@ pub unsafe fn alljoyn_permissionconfigurator_getidentitycertificateid<'a, P0>(co
 where
     P0: ::std::convert::Into<alljoyn_permissionconfigurator>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_getidentitycertificateid(configurator: alljoyn_permissionconfigurator, certificateid: *mut alljoyn_certificateid) -> QStatus;
     }
@@ -5372,7 +4939,6 @@ pub unsafe fn alljoyn_permissionconfigurator_getmanifests<'a, P0>(configurator: 
 where
     P0: ::std::convert::Into<alljoyn_permissionconfigurator>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_getmanifests(configurator: alljoyn_permissionconfigurator, manifestarray: *mut alljoyn_manifestarray) -> QStatus;
     }
@@ -5384,7 +4950,6 @@ pub unsafe fn alljoyn_permissionconfigurator_getmanifesttemplate<'a, P0>(configu
 where
     P0: ::std::convert::Into<alljoyn_permissionconfigurator>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_getmanifesttemplate(configurator: alljoyn_permissionconfigurator, manifesttemplatexml: *mut *mut i8) -> QStatus;
     }
@@ -5396,7 +4961,6 @@ pub unsafe fn alljoyn_permissionconfigurator_getmembershipsummaries<'a, P0>(conf
 where
     P0: ::std::convert::Into<alljoyn_permissionconfigurator>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_getmembershipsummaries(configurator: alljoyn_permissionconfigurator, certificateids: *mut alljoyn_certificateidarray) -> QStatus;
     }
@@ -5408,7 +4972,6 @@ pub unsafe fn alljoyn_permissionconfigurator_getpolicy<'a, P0>(configurator: P0,
 where
     P0: ::std::convert::Into<alljoyn_permissionconfigurator>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_getpolicy(configurator: alljoyn_permissionconfigurator, policyxml: *mut *mut i8) -> QStatus;
     }
@@ -5420,7 +4983,6 @@ pub unsafe fn alljoyn_permissionconfigurator_getpublickey<'a, P0>(configurator: 
 where
     P0: ::std::convert::Into<alljoyn_permissionconfigurator>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_getpublickey(configurator: alljoyn_permissionconfigurator, publickey: *mut *mut i8) -> QStatus;
     }
@@ -5432,7 +4994,6 @@ pub unsafe fn alljoyn_permissionconfigurator_installmanifests<'a, P0>(configurat
 where
     P0: ::std::convert::Into<alljoyn_permissionconfigurator>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_installmanifests(configurator: alljoyn_permissionconfigurator, manifestsxmls: *mut *mut i8, manifestscount: usize, append: i32) -> QStatus;
     }
@@ -5444,7 +5005,6 @@ pub unsafe fn alljoyn_permissionconfigurator_installmembership<'a, P0>(configura
 where
     P0: ::std::convert::Into<alljoyn_permissionconfigurator>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_installmembership(configurator: alljoyn_permissionconfigurator, membershipcertificatechain: *mut i8) -> QStatus;
     }
@@ -5453,7 +5013,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_permissionconfigurator_manifestarray_cleanup(manifestarray: *mut alljoyn_manifestarray) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_manifestarray_cleanup(manifestarray: *mut alljoyn_manifestarray);
     }
@@ -5462,7 +5021,6 @@ pub unsafe fn alljoyn_permissionconfigurator_manifestarray_cleanup(manifestarray
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_permissionconfigurator_manifesttemplate_destroy(manifesttemplatexml: *mut i8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_manifesttemplate_destroy(manifesttemplatexml: *mut i8);
     }
@@ -5471,7 +5029,6 @@ pub unsafe fn alljoyn_permissionconfigurator_manifesttemplate_destroy(manifestte
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_permissionconfigurator_policy_destroy(policyxml: *mut i8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_policy_destroy(policyxml: *mut i8);
     }
@@ -5480,7 +5037,6 @@ pub unsafe fn alljoyn_permissionconfigurator_policy_destroy(policyxml: *mut i8) 
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_permissionconfigurator_publickey_destroy(publickey: *mut i8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_publickey_destroy(publickey: *mut i8);
     }
@@ -5492,7 +5048,6 @@ pub unsafe fn alljoyn_permissionconfigurator_removemembership<'a, P0>(configurat
 where
     P0: ::std::convert::Into<alljoyn_permissionconfigurator>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_removemembership(configurator: alljoyn_permissionconfigurator, serial: *const u8, seriallen: usize, issuerpublickey: *mut i8, issueraki: *const u8, issuerakilen: usize) -> QStatus;
     }
@@ -5504,7 +5059,6 @@ pub unsafe fn alljoyn_permissionconfigurator_reset<'a, P0>(configurator: P0) -> 
 where
     P0: ::std::convert::Into<alljoyn_permissionconfigurator>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_reset(configurator: alljoyn_permissionconfigurator) -> QStatus;
     }
@@ -5516,7 +5070,6 @@ pub unsafe fn alljoyn_permissionconfigurator_resetpolicy<'a, P0>(configurator: P
 where
     P0: ::std::convert::Into<alljoyn_permissionconfigurator>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_resetpolicy(configurator: alljoyn_permissionconfigurator) -> QStatus;
     }
@@ -5528,7 +5081,6 @@ pub unsafe fn alljoyn_permissionconfigurator_setapplicationstate<'a, P0>(configu
 where
     P0: ::std::convert::Into<alljoyn_permissionconfigurator>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_setapplicationstate(configurator: alljoyn_permissionconfigurator, state: alljoyn_applicationstate) -> QStatus;
     }
@@ -5540,7 +5092,6 @@ pub unsafe fn alljoyn_permissionconfigurator_setclaimcapabilities<'a, P0>(config
 where
     P0: ::std::convert::Into<alljoyn_permissionconfigurator>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_setclaimcapabilities(configurator: alljoyn_permissionconfigurator, claimcapabilities: u16) -> QStatus;
     }
@@ -5552,7 +5103,6 @@ pub unsafe fn alljoyn_permissionconfigurator_setclaimcapabilitiesadditionalinfo<
 where
     P0: ::std::convert::Into<alljoyn_permissionconfigurator>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_setclaimcapabilitiesadditionalinfo(configurator: alljoyn_permissionconfigurator, additionalinfo: u16) -> QStatus;
     }
@@ -5564,7 +5114,6 @@ pub unsafe fn alljoyn_permissionconfigurator_setmanifesttemplatefromxml<'a, P0>(
 where
     P0: ::std::convert::Into<alljoyn_permissionconfigurator>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_setmanifesttemplatefromxml(configurator: alljoyn_permissionconfigurator, manifesttemplatexml: *mut i8) -> QStatus;
     }
@@ -5576,7 +5125,6 @@ pub unsafe fn alljoyn_permissionconfigurator_startmanagement<'a, P0>(configurato
 where
     P0: ::std::convert::Into<alljoyn_permissionconfigurator>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_startmanagement(configurator: alljoyn_permissionconfigurator) -> QStatus;
     }
@@ -5588,7 +5136,6 @@ pub unsafe fn alljoyn_permissionconfigurator_updateidentity<'a, P0>(configurator
 where
     P0: ::std::convert::Into<alljoyn_permissionconfigurator>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_updateidentity(configurator: alljoyn_permissionconfigurator, identitycertificatechain: *mut i8, manifestsxmls: *mut *mut i8, manifestscount: usize) -> QStatus;
     }
@@ -5600,7 +5147,6 @@ pub unsafe fn alljoyn_permissionconfigurator_updatepolicy<'a, P0>(configurator: 
 where
     P0: ::std::convert::Into<alljoyn_permissionconfigurator>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_permissionconfigurator_updatepolicy(configurator: alljoyn_permissionconfigurator, policyxml: *mut i8) -> QStatus;
     }
@@ -5609,7 +5155,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_pinglistener_create(callback: *const alljoyn_pinglistener_callback, context: *const ::core::ffi::c_void) -> alljoyn_pinglistener {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_pinglistener_create(callback: *const alljoyn_pinglistener_callback, context: *const ::core::ffi::c_void) -> alljoyn_pinglistener;
     }
@@ -5621,7 +5166,6 @@ pub unsafe fn alljoyn_pinglistener_destroy<'a, P0>(listener: P0)
 where
     P0: ::std::convert::Into<alljoyn_pinglistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_pinglistener_destroy(listener: alljoyn_pinglistener);
     }
@@ -5634,7 +5178,6 @@ where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
     P1: ::std::convert::Into<alljoyn_proxybusobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_addchild(proxyobj: alljoyn_proxybusobject, child: alljoyn_proxybusobject) -> QStatus;
     }
@@ -5647,7 +5190,6 @@ where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
     P1: ::std::convert::Into<alljoyn_interfacedescription>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_addinterface(proxyobj: alljoyn_proxybusobject, iface: alljoyn_interfacedescription) -> QStatus;
     }
@@ -5660,7 +5202,6 @@ where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_addinterface_by_name(proxyobj: alljoyn_proxybusobject, name: ::windows::core::PCSTR) -> QStatus;
     }
@@ -5672,7 +5213,6 @@ pub unsafe fn alljoyn_proxybusobject_copy<'a, P0>(source: P0) -> alljoyn_proxybu
 where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_copy(source: alljoyn_proxybusobject) -> alljoyn_proxybusobject;
     }
@@ -5686,7 +5226,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_create(bus: alljoyn_busattachment, service: ::windows::core::PCSTR, path: ::windows::core::PCSTR, sessionid: u32) -> alljoyn_proxybusobject;
     }
@@ -5700,7 +5239,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_create_secure(bus: alljoyn_busattachment, service: ::windows::core::PCSTR, path: ::windows::core::PCSTR, sessionid: u32) -> alljoyn_proxybusobject;
     }
@@ -5712,7 +5250,6 @@ pub unsafe fn alljoyn_proxybusobject_destroy<'a, P0>(proxyobj: P0)
 where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_destroy(proxyobj: alljoyn_proxybusobject);
     }
@@ -5724,7 +5261,6 @@ pub unsafe fn alljoyn_proxybusobject_enablepropertycaching<'a, P0>(proxyobj: P0)
 where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_enablepropertycaching(proxyobj: alljoyn_proxybusobject);
     }
@@ -5738,7 +5274,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_getallproperties(proxyobj: alljoyn_proxybusobject, iface: ::windows::core::PCSTR, values: alljoyn_msgarg) -> QStatus;
     }
@@ -5751,7 +5286,6 @@ where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_getallpropertiesasync(proxyobj: alljoyn_proxybusobject, iface: ::windows::core::PCSTR, callback: *mut ::core::ffi::c_void, timeout: u32, context: *mut ::core::ffi::c_void) -> QStatus;
     }
@@ -5764,7 +5298,6 @@ where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_getchild(proxyobj: alljoyn_proxybusobject, path: ::windows::core::PCSTR) -> alljoyn_proxybusobject;
     }
@@ -5776,7 +5309,6 @@ pub unsafe fn alljoyn_proxybusobject_getchildren<'a, P0>(proxyobj: P0, children:
 where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_getchildren(proxyobj: alljoyn_proxybusobject, children: *mut alljoyn_proxybusobject, numchildren: usize) -> usize;
     }
@@ -5789,7 +5321,6 @@ where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_getinterface(proxyobj: alljoyn_proxybusobject, iface: ::windows::core::PCSTR) -> alljoyn_interfacedescription;
     }
@@ -5801,7 +5332,6 @@ pub unsafe fn alljoyn_proxybusobject_getinterfaces<'a, P0>(proxyobj: P0, ifaces:
 where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_getinterfaces(proxyobj: alljoyn_proxybusobject, ifaces: *const alljoyn_interfacedescription, numifaces: usize) -> usize;
     }
@@ -5813,7 +5343,6 @@ pub unsafe fn alljoyn_proxybusobject_getpath<'a, P0>(proxyobj: P0) -> ::windows:
 where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_getpath(proxyobj: alljoyn_proxybusobject) -> ::windows::core::PSTR;
     }
@@ -5828,7 +5357,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_getproperty(proxyobj: alljoyn_proxybusobject, iface: ::windows::core::PCSTR, property: ::windows::core::PCSTR, value: alljoyn_msgarg) -> QStatus;
     }
@@ -5842,7 +5370,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_getpropertyasync(proxyobj: alljoyn_proxybusobject, iface: ::windows::core::PCSTR, property: ::windows::core::PCSTR, callback: *mut ::core::ffi::c_void, timeout: u32, context: *mut ::core::ffi::c_void) -> QStatus;
     }
@@ -5854,7 +5381,6 @@ pub unsafe fn alljoyn_proxybusobject_getservicename<'a, P0>(proxyobj: P0) -> ::w
 where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_getservicename(proxyobj: alljoyn_proxybusobject) -> ::windows::core::PSTR;
     }
@@ -5866,7 +5392,6 @@ pub unsafe fn alljoyn_proxybusobject_getsessionid<'a, P0>(proxyobj: P0) -> u32
 where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_getsessionid(proxyobj: alljoyn_proxybusobject) -> u32;
     }
@@ -5878,7 +5403,6 @@ pub unsafe fn alljoyn_proxybusobject_getuniquename<'a, P0>(proxyobj: P0) -> ::wi
 where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_getuniquename(proxyobj: alljoyn_proxybusobject) -> ::windows::core::PSTR;
     }
@@ -5891,7 +5415,6 @@ where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_implementsinterface(proxyobj: alljoyn_proxybusobject, iface: ::windows::core::PCSTR) -> i32;
     }
@@ -5903,7 +5426,6 @@ pub unsafe fn alljoyn_proxybusobject_introspectremoteobject<'a, P0>(proxyobj: P0
 where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_introspectremoteobject(proxyobj: alljoyn_proxybusobject) -> QStatus;
     }
@@ -5915,7 +5437,6 @@ pub unsafe fn alljoyn_proxybusobject_introspectremoteobjectasync<'a, P0>(proxyob
 where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_introspectremoteobjectasync(proxyobj: alljoyn_proxybusobject, callback: *mut ::core::ffi::c_void, context: *mut ::core::ffi::c_void) -> QStatus;
     }
@@ -5927,7 +5448,6 @@ pub unsafe fn alljoyn_proxybusobject_issecure<'a, P0>(proxyobj: P0) -> i32
 where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_issecure(proxyobj: alljoyn_proxybusobject) -> i32;
     }
@@ -5939,7 +5459,6 @@ pub unsafe fn alljoyn_proxybusobject_isvalid<'a, P0>(proxyobj: P0) -> i32
 where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_isvalid(proxyobj: alljoyn_proxybusobject) -> i32;
     }
@@ -5955,7 +5474,6 @@ where
     P3: ::std::convert::Into<alljoyn_msgarg>,
     P4: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_methodcall(proxyobj: alljoyn_proxybusobject, ifacename: ::windows::core::PCSTR, methodname: ::windows::core::PCSTR, args: alljoyn_msgarg, numargs: usize, replymsg: alljoyn_message, timeout: u32, flags: u8) -> QStatus;
     }
@@ -5969,7 +5487,6 @@ where
     P1: ::std::convert::Into<alljoyn_msgarg>,
     P2: ::std::convert::Into<alljoyn_message>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_methodcall_member(proxyobj: alljoyn_proxybusobject, method: alljoyn_interfacedescription_member, args: alljoyn_msgarg, numargs: usize, replymsg: alljoyn_message, timeout: u32, flags: u8) -> QStatus;
     }
@@ -5982,7 +5499,6 @@ where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
     P1: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_methodcall_member_noreply(proxyobj: alljoyn_proxybusobject, method: alljoyn_interfacedescription_member, args: alljoyn_msgarg, numargs: usize, flags: u8) -> QStatus;
     }
@@ -5997,7 +5513,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_methodcall_noreply(proxyobj: alljoyn_proxybusobject, ifacename: ::windows::core::PCSTR, methodname: ::windows::core::PCSTR, args: alljoyn_msgarg, numargs: usize, flags: u8) -> QStatus;
     }
@@ -6012,7 +5527,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_methodcallasync(proxyobj: alljoyn_proxybusobject, ifacename: ::windows::core::PCSTR, methodname: ::windows::core::PCSTR, replyfunc: *mut ::core::ffi::c_void, args: alljoyn_msgarg, numargs: usize, context: *mut ::core::ffi::c_void, timeout: u32, flags: u8) -> QStatus;
     }
@@ -6025,7 +5539,6 @@ where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
     P1: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_methodcallasync_member(proxyobj: alljoyn_proxybusobject, method: alljoyn_interfacedescription_member, replyfunc: *mut ::core::ffi::c_void, args: alljoyn_msgarg, numargs: usize, context: *mut ::core::ffi::c_void, timeout: u32, flags: u8) -> QStatus;
     }
@@ -6039,7 +5552,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_parsexml(proxyobj: alljoyn_proxybusobject, xml: ::windows::core::PCSTR, identifier: ::windows::core::PCSTR) -> QStatus;
     }
@@ -6051,7 +5563,6 @@ pub unsafe fn alljoyn_proxybusobject_ref_create<'a, P0>(proxy: P0) -> alljoyn_pr
 where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_ref_create(proxy: alljoyn_proxybusobject) -> alljoyn_proxybusobject_ref;
     }
@@ -6063,7 +5574,6 @@ pub unsafe fn alljoyn_proxybusobject_ref_decref<'a, P0>(r#ref: P0)
 where
     P0: ::std::convert::Into<alljoyn_proxybusobject_ref>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_ref_decref(r#ref: alljoyn_proxybusobject_ref);
     }
@@ -6075,7 +5585,6 @@ pub unsafe fn alljoyn_proxybusobject_ref_get<'a, P0>(r#ref: P0) -> alljoyn_proxy
 where
     P0: ::std::convert::Into<alljoyn_proxybusobject_ref>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_ref_get(r#ref: alljoyn_proxybusobject_ref) -> alljoyn_proxybusobject;
     }
@@ -6087,7 +5596,6 @@ pub unsafe fn alljoyn_proxybusobject_ref_incref<'a, P0>(r#ref: P0)
 where
     P0: ::std::convert::Into<alljoyn_proxybusobject_ref>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_ref_incref(r#ref: alljoyn_proxybusobject_ref);
     }
@@ -6100,7 +5608,6 @@ where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_registerpropertieschangedlistener(proxyobj: alljoyn_proxybusobject, iface: ::windows::core::PCSTR, properties: *const *const i8, numproperties: usize, callback: *mut ::core::ffi::c_void, context: *mut ::core::ffi::c_void) -> QStatus;
     }
@@ -6113,7 +5620,6 @@ where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_removechild(proxyobj: alljoyn_proxybusobject, path: ::windows::core::PCSTR) -> QStatus;
     }
@@ -6125,7 +5631,6 @@ pub unsafe fn alljoyn_proxybusobject_secureconnection<'a, P0>(proxyobj: P0, forc
 where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_secureconnection(proxyobj: alljoyn_proxybusobject, forceauth: i32) -> QStatus;
     }
@@ -6137,7 +5642,6 @@ pub unsafe fn alljoyn_proxybusobject_secureconnectionasync<'a, P0>(proxyobj: P0,
 where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_secureconnectionasync(proxyobj: alljoyn_proxybusobject, forceauth: i32) -> QStatus;
     }
@@ -6152,7 +5656,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_setproperty(proxyobj: alljoyn_proxybusobject, iface: ::windows::core::PCSTR, property: ::windows::core::PCSTR, value: alljoyn_msgarg) -> QStatus;
     }
@@ -6167,7 +5670,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<alljoyn_msgarg>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_setpropertyasync(proxyobj: alljoyn_proxybusobject, iface: ::windows::core::PCSTR, property: ::windows::core::PCSTR, value: alljoyn_msgarg, callback: *mut ::core::ffi::c_void, timeout: u32, context: *mut ::core::ffi::c_void) -> QStatus;
     }
@@ -6180,7 +5682,6 @@ where
     P0: ::std::convert::Into<alljoyn_proxybusobject>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_proxybusobject_unregisterpropertieschangedlistener(proxyobj: alljoyn_proxybusobject, iface: ::windows::core::PCSTR, callback: *mut ::core::ffi::c_void) -> QStatus;
     }
@@ -6189,7 +5690,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_routerinit() -> QStatus {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_routerinit() -> QStatus;
     }
@@ -6198,7 +5698,6 @@ pub unsafe fn alljoyn_routerinit() -> QStatus {
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_routerinitwithconfig(configxml: *mut i8) -> QStatus {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_routerinitwithconfig(configxml: *mut i8) -> QStatus;
     }
@@ -6207,7 +5706,6 @@ pub unsafe fn alljoyn_routerinitwithconfig(configxml: *mut i8) -> QStatus {
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_routershutdown() -> QStatus {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_routershutdown() -> QStatus;
     }
@@ -6219,7 +5717,6 @@ pub unsafe fn alljoyn_securityapplicationproxy_claim<'a, P0>(proxy: P0, cakey: *
 where
     P0: ::std::convert::Into<alljoyn_securityapplicationproxy>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_securityapplicationproxy_claim(proxy: alljoyn_securityapplicationproxy, cakey: *mut i8, identitycertificatechain: *mut i8, groupid: *const u8, groupsize: usize, groupauthority: *mut i8, manifestsxmls: *mut *mut i8, manifestscount: usize) -> QStatus;
     }
@@ -6228,7 +5725,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_securityapplicationproxy_computemanifestdigest(unsignedmanifestxml: *mut i8, identitycertificatepem: *mut i8, digest: *mut *mut u8, digestsize: *mut usize) -> QStatus {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_securityapplicationproxy_computemanifestdigest(unsignedmanifestxml: *mut i8, identitycertificatepem: *mut i8, digest: *mut *mut u8, digestsize: *mut usize) -> QStatus;
     }
@@ -6240,7 +5736,6 @@ pub unsafe fn alljoyn_securityapplicationproxy_create<'a, P0>(bus: P0, appbusnam
 where
     P0: ::std::convert::Into<alljoyn_busattachment>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_securityapplicationproxy_create(bus: alljoyn_busattachment, appbusname: *mut i8, sessionid: u32) -> alljoyn_securityapplicationproxy;
     }
@@ -6252,7 +5747,6 @@ pub unsafe fn alljoyn_securityapplicationproxy_destroy<'a, P0>(proxy: P0)
 where
     P0: ::std::convert::Into<alljoyn_securityapplicationproxy>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_securityapplicationproxy_destroy(proxy: alljoyn_securityapplicationproxy);
     }
@@ -6261,7 +5755,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_securityapplicationproxy_digest_destroy(digest: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_securityapplicationproxy_digest_destroy(digest: *mut u8);
     }
@@ -6270,7 +5763,6 @@ pub unsafe fn alljoyn_securityapplicationproxy_digest_destroy(digest: *mut u8) {
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_securityapplicationproxy_eccpublickey_destroy(eccpublickey: *mut i8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_securityapplicationproxy_eccpublickey_destroy(eccpublickey: *mut i8);
     }
@@ -6282,7 +5774,6 @@ pub unsafe fn alljoyn_securityapplicationproxy_endmanagement<'a, P0>(proxy: P0) 
 where
     P0: ::std::convert::Into<alljoyn_securityapplicationproxy>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_securityapplicationproxy_endmanagement(proxy: alljoyn_securityapplicationproxy) -> QStatus;
     }
@@ -6294,7 +5785,6 @@ pub unsafe fn alljoyn_securityapplicationproxy_getapplicationstate<'a, P0>(proxy
 where
     P0: ::std::convert::Into<alljoyn_securityapplicationproxy>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_securityapplicationproxy_getapplicationstate(proxy: alljoyn_securityapplicationproxy, applicationstate: *mut alljoyn_applicationstate) -> QStatus;
     }
@@ -6306,7 +5796,6 @@ pub unsafe fn alljoyn_securityapplicationproxy_getclaimcapabilities<'a, P0>(prox
 where
     P0: ::std::convert::Into<alljoyn_securityapplicationproxy>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_securityapplicationproxy_getclaimcapabilities(proxy: alljoyn_securityapplicationproxy, capabilities: *mut u16) -> QStatus;
     }
@@ -6318,7 +5807,6 @@ pub unsafe fn alljoyn_securityapplicationproxy_getclaimcapabilitiesadditionalinf
 where
     P0: ::std::convert::Into<alljoyn_securityapplicationproxy>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_securityapplicationproxy_getclaimcapabilitiesadditionalinfo(proxy: alljoyn_securityapplicationproxy, additionalinfo: *mut u16) -> QStatus;
     }
@@ -6330,7 +5818,6 @@ pub unsafe fn alljoyn_securityapplicationproxy_getdefaultpolicy<'a, P0>(proxy: P
 where
     P0: ::std::convert::Into<alljoyn_securityapplicationproxy>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_securityapplicationproxy_getdefaultpolicy(proxy: alljoyn_securityapplicationproxy, policyxml: *mut *mut i8) -> QStatus;
     }
@@ -6342,7 +5829,6 @@ pub unsafe fn alljoyn_securityapplicationproxy_geteccpublickey<'a, P0>(proxy: P0
 where
     P0: ::std::convert::Into<alljoyn_securityapplicationproxy>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_securityapplicationproxy_geteccpublickey(proxy: alljoyn_securityapplicationproxy, eccpublickey: *mut *mut i8) -> QStatus;
     }
@@ -6354,7 +5840,6 @@ pub unsafe fn alljoyn_securityapplicationproxy_getmanifesttemplate<'a, P0>(proxy
 where
     P0: ::std::convert::Into<alljoyn_securityapplicationproxy>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_securityapplicationproxy_getmanifesttemplate(proxy: alljoyn_securityapplicationproxy, manifesttemplatexml: *mut *mut i8) -> QStatus;
     }
@@ -6363,7 +5848,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_securityapplicationproxy_getpermissionmanagementsessionport() -> u16 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_securityapplicationproxy_getpermissionmanagementsessionport() -> u16;
     }
@@ -6375,7 +5859,6 @@ pub unsafe fn alljoyn_securityapplicationproxy_getpolicy<'a, P0>(proxy: P0, poli
 where
     P0: ::std::convert::Into<alljoyn_securityapplicationproxy>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_securityapplicationproxy_getpolicy(proxy: alljoyn_securityapplicationproxy, policyxml: *mut *mut i8) -> QStatus;
     }
@@ -6387,7 +5870,6 @@ pub unsafe fn alljoyn_securityapplicationproxy_installmembership<'a, P0>(proxy: 
 where
     P0: ::std::convert::Into<alljoyn_securityapplicationproxy>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_securityapplicationproxy_installmembership(proxy: alljoyn_securityapplicationproxy, membershipcertificatechain: *mut i8) -> QStatus;
     }
@@ -6396,7 +5878,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_securityapplicationproxy_manifest_destroy(signedmanifestxml: *mut i8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_securityapplicationproxy_manifest_destroy(signedmanifestxml: *mut i8);
     }
@@ -6405,7 +5886,6 @@ pub unsafe fn alljoyn_securityapplicationproxy_manifest_destroy(signedmanifestxm
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_securityapplicationproxy_manifesttemplate_destroy(manifesttemplatexml: *mut i8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_securityapplicationproxy_manifesttemplate_destroy(manifesttemplatexml: *mut i8);
     }
@@ -6414,7 +5894,6 @@ pub unsafe fn alljoyn_securityapplicationproxy_manifesttemplate_destroy(manifest
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_securityapplicationproxy_policy_destroy(policyxml: *mut i8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_securityapplicationproxy_policy_destroy(policyxml: *mut i8);
     }
@@ -6426,7 +5905,6 @@ pub unsafe fn alljoyn_securityapplicationproxy_reset<'a, P0>(proxy: P0) -> QStat
 where
     P0: ::std::convert::Into<alljoyn_securityapplicationproxy>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_securityapplicationproxy_reset(proxy: alljoyn_securityapplicationproxy) -> QStatus;
     }
@@ -6438,7 +5916,6 @@ pub unsafe fn alljoyn_securityapplicationproxy_resetpolicy<'a, P0>(proxy: P0) ->
 where
     P0: ::std::convert::Into<alljoyn_securityapplicationproxy>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_securityapplicationproxy_resetpolicy(proxy: alljoyn_securityapplicationproxy) -> QStatus;
     }
@@ -6447,7 +5924,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_securityapplicationproxy_setmanifestsignature(unsignedmanifestxml: *mut i8, identitycertificatepem: *mut i8, signature: *const u8, signaturesize: usize, signedmanifestxml: *mut *mut i8) -> QStatus {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_securityapplicationproxy_setmanifestsignature(unsignedmanifestxml: *mut i8, identitycertificatepem: *mut i8, signature: *const u8, signaturesize: usize, signedmanifestxml: *mut *mut i8) -> QStatus;
     }
@@ -6456,7 +5932,6 @@ pub unsafe fn alljoyn_securityapplicationproxy_setmanifestsignature(unsignedmani
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_securityapplicationproxy_signmanifest(unsignedmanifestxml: *mut i8, identitycertificatepem: *mut i8, signingprivatekeypem: *mut i8, signedmanifestxml: *mut *mut i8) -> QStatus {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_securityapplicationproxy_signmanifest(unsignedmanifestxml: *mut i8, identitycertificatepem: *mut i8, signingprivatekeypem: *mut i8, signedmanifestxml: *mut *mut i8) -> QStatus;
     }
@@ -6468,7 +5943,6 @@ pub unsafe fn alljoyn_securityapplicationproxy_startmanagement<'a, P0>(proxy: P0
 where
     P0: ::std::convert::Into<alljoyn_securityapplicationproxy>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_securityapplicationproxy_startmanagement(proxy: alljoyn_securityapplicationproxy) -> QStatus;
     }
@@ -6480,7 +5954,6 @@ pub unsafe fn alljoyn_securityapplicationproxy_updateidentity<'a, P0>(proxy: P0,
 where
     P0: ::std::convert::Into<alljoyn_securityapplicationproxy>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_securityapplicationproxy_updateidentity(proxy: alljoyn_securityapplicationproxy, identitycertificatechain: *mut i8, manifestsxmls: *mut *mut i8, manifestscount: usize) -> QStatus;
     }
@@ -6492,7 +5965,6 @@ pub unsafe fn alljoyn_securityapplicationproxy_updatepolicy<'a, P0>(proxy: P0, p
 where
     P0: ::std::convert::Into<alljoyn_securityapplicationproxy>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_securityapplicationproxy_updatepolicy(proxy: alljoyn_securityapplicationproxy, policyxml: *mut i8) -> QStatus;
     }
@@ -6501,7 +5973,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_sessionlistener_create(callbacks: *const alljoyn_sessionlistener_callbacks, context: *const ::core::ffi::c_void) -> alljoyn_sessionlistener {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_sessionlistener_create(callbacks: *const alljoyn_sessionlistener_callbacks, context: *const ::core::ffi::c_void) -> alljoyn_sessionlistener;
     }
@@ -6513,7 +5984,6 @@ pub unsafe fn alljoyn_sessionlistener_destroy<'a, P0>(listener: P0)
 where
     P0: ::std::convert::Into<alljoyn_sessionlistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_sessionlistener_destroy(listener: alljoyn_sessionlistener);
     }
@@ -6526,7 +5996,6 @@ where
     P0: ::std::convert::Into<alljoyn_sessionopts>,
     P1: ::std::convert::Into<alljoyn_sessionopts>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_sessionopts_cmp(one: alljoyn_sessionopts, other: alljoyn_sessionopts) -> i32;
     }
@@ -6535,7 +6004,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_sessionopts_create(traffic: u8, ismultipoint: i32, proximity: u8, transports: u16) -> alljoyn_sessionopts {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_sessionopts_create(traffic: u8, ismultipoint: i32, proximity: u8, transports: u16) -> alljoyn_sessionopts;
     }
@@ -6547,7 +6015,6 @@ pub unsafe fn alljoyn_sessionopts_destroy<'a, P0>(opts: P0)
 where
     P0: ::std::convert::Into<alljoyn_sessionopts>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_sessionopts_destroy(opts: alljoyn_sessionopts);
     }
@@ -6559,7 +6026,6 @@ pub unsafe fn alljoyn_sessionopts_get_multipoint<'a, P0>(opts: P0) -> i32
 where
     P0: ::std::convert::Into<alljoyn_sessionopts>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_sessionopts_get_multipoint(opts: alljoyn_sessionopts) -> i32;
     }
@@ -6571,7 +6037,6 @@ pub unsafe fn alljoyn_sessionopts_get_proximity<'a, P0>(opts: P0) -> u8
 where
     P0: ::std::convert::Into<alljoyn_sessionopts>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_sessionopts_get_proximity(opts: alljoyn_sessionopts) -> u8;
     }
@@ -6583,7 +6048,6 @@ pub unsafe fn alljoyn_sessionopts_get_traffic<'a, P0>(opts: P0) -> u8
 where
     P0: ::std::convert::Into<alljoyn_sessionopts>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_sessionopts_get_traffic(opts: alljoyn_sessionopts) -> u8;
     }
@@ -6595,7 +6059,6 @@ pub unsafe fn alljoyn_sessionopts_get_transports<'a, P0>(opts: P0) -> u16
 where
     P0: ::std::convert::Into<alljoyn_sessionopts>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_sessionopts_get_transports(opts: alljoyn_sessionopts) -> u16;
     }
@@ -6608,7 +6071,6 @@ where
     P0: ::std::convert::Into<alljoyn_sessionopts>,
     P1: ::std::convert::Into<alljoyn_sessionopts>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_sessionopts_iscompatible(one: alljoyn_sessionopts, other: alljoyn_sessionopts) -> i32;
     }
@@ -6620,7 +6082,6 @@ pub unsafe fn alljoyn_sessionopts_set_multipoint<'a, P0>(opts: P0, ismultipoint:
 where
     P0: ::std::convert::Into<alljoyn_sessionopts>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_sessionopts_set_multipoint(opts: alljoyn_sessionopts, ismultipoint: i32);
     }
@@ -6632,7 +6093,6 @@ pub unsafe fn alljoyn_sessionopts_set_proximity<'a, P0>(opts: P0, proximity: u8)
 where
     P0: ::std::convert::Into<alljoyn_sessionopts>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_sessionopts_set_proximity(opts: alljoyn_sessionopts, proximity: u8);
     }
@@ -6644,7 +6104,6 @@ pub unsafe fn alljoyn_sessionopts_set_traffic<'a, P0>(opts: P0, traffic: u8)
 where
     P0: ::std::convert::Into<alljoyn_sessionopts>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_sessionopts_set_traffic(opts: alljoyn_sessionopts, traffic: u8);
     }
@@ -6656,7 +6115,6 @@ pub unsafe fn alljoyn_sessionopts_set_transports<'a, P0>(opts: P0, transports: u
 where
     P0: ::std::convert::Into<alljoyn_sessionopts>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_sessionopts_set_transports(opts: alljoyn_sessionopts, transports: u16);
     }
@@ -6665,7 +6123,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_sessionportlistener_create(callbacks: *const alljoyn_sessionportlistener_callbacks, context: *const ::core::ffi::c_void) -> alljoyn_sessionportlistener {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_sessionportlistener_create(callbacks: *const alljoyn_sessionportlistener_callbacks, context: *const ::core::ffi::c_void) -> alljoyn_sessionportlistener;
     }
@@ -6677,7 +6134,6 @@ pub unsafe fn alljoyn_sessionportlistener_destroy<'a, P0>(listener: P0)
 where
     P0: ::std::convert::Into<alljoyn_sessionportlistener>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_sessionportlistener_destroy(listener: alljoyn_sessionportlistener);
     }
@@ -6686,7 +6142,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_shutdown() -> QStatus {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_shutdown() -> QStatus;
     }
@@ -6695,7 +6150,6 @@ pub unsafe fn alljoyn_shutdown() -> QStatus {
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_unity_deferred_callbacks_process() -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_unity_deferred_callbacks_process() -> i32;
     }
@@ -6704,7 +6158,6 @@ pub unsafe fn alljoyn_unity_deferred_callbacks_process() -> i32 {
 #[doc = "*Required features: `\"Win32_Devices_AllJoyn\"`*"]
 #[inline]
 pub unsafe fn alljoyn_unity_set_deferred_callback_mainthread_only(mainthread_only: i32) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn alljoyn_unity_set_deferred_callback_mainthread_only(mainthread_only: i32);
     }

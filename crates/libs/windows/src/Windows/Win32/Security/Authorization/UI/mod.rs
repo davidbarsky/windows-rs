@@ -5,7 +5,6 @@ pub unsafe fn CreateSecurityPage<'a, P0>(psi: P0) -> ::windows::core::Result<sup
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ISecurityInformation>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateSecurityPage(psi: *mut ::core::ffi::c_void) -> super::super::super::UI::Controls::HPROPSHEETPAGE;
     }
@@ -20,7 +19,6 @@ where
     P0: ::std::convert::Into<super::super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::InParam<'a, ISecurityInformation>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EditSecurity(hwndowner: super::super::super::Foundation::HWND, psi: *mut ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
     }
@@ -34,7 +32,6 @@ where
     P0: ::std::convert::Into<super::super::super::Foundation::HWND>,
     P1: ::std::convert::Into<::windows::core::InParam<'a, ISecurityInformation>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EditSecurityAdvanced(hwndowner: super::super::super::Foundation::HWND, psi: *mut ::core::ffi::c_void, usipage: SI_PAGE_TYPE) -> ::windows::core::HRESULT;
     }

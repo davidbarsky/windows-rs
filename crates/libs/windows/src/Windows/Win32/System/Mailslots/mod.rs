@@ -5,7 +5,6 @@ pub unsafe fn CreateMailslotA<'a, P0>(lpname: P0, nmaxmessagesize: u32, lreadtim
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateMailslotA(lpname: ::windows::core::PCSTR, nmaxmessagesize: u32, lreadtimeout: u32, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::HANDLE;
     }
@@ -19,7 +18,6 @@ pub unsafe fn CreateMailslotW<'a, P0>(lpname: P0, nmaxmessagesize: u32, lreadtim
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateMailslotW(lpname: ::windows::core::PCWSTR, nmaxmessagesize: u32, lreadtimeout: u32, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::HANDLE;
     }
@@ -33,7 +31,6 @@ pub unsafe fn GetMailslotInfo<'a, P0>(hmailslot: P0, lpmaxmessagesize: ::core::o
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetMailslotInfo(hmailslot: super::super::Foundation::HANDLE, lpmaxmessagesize: *mut u32, lpnextsize: *mut u32, lpmessagecount: *mut u32, lpreadtimeout: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -46,7 +43,6 @@ pub unsafe fn SetMailslotInfo<'a, P0>(hmailslot: P0, lreadtimeout: u32) -> super
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetMailslotInfo(hmailslot: super::super::Foundation::HANDLE, lreadtimeout: u32) -> super::super::Foundation::BOOL;
     }

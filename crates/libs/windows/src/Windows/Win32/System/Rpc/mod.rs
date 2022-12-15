@@ -2,7 +2,6 @@
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn Ndr64AsyncClientCall(pproxyinfo: *mut MIDL_STUBLESS_PROXY_INFO, nprocnum: u32, preturnvalue: *mut ::core::ffi::c_void) -> CLIENT_CALL_RETURN {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn Ndr64AsyncClientCall(pproxyinfo: *mut MIDL_STUBLESS_PROXY_INFO, nprocnum: u32, preturnvalue: *mut ::core::ffi::c_void) -> CLIENT_CALL_RETURN;
     }
@@ -12,7 +11,6 @@ pub unsafe fn Ndr64AsyncClientCall(pproxyinfo: *mut MIDL_STUBLESS_PROXY_INFO, np
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn Ndr64DcomAsyncClientCall(pproxyinfo: *mut MIDL_STUBLESS_PROXY_INFO, nprocnum: u32, preturnvalue: *mut ::core::ffi::c_void) -> CLIENT_CALL_RETURN {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn Ndr64DcomAsyncClientCall(pproxyinfo: *mut MIDL_STUBLESS_PROXY_INFO, nprocnum: u32, preturnvalue: *mut ::core::ffi::c_void) -> CLIENT_CALL_RETURN;
     }
@@ -22,7 +20,6 @@ pub unsafe fn Ndr64DcomAsyncClientCall(pproxyinfo: *mut MIDL_STUBLESS_PROXY_INFO
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrAsyncClientCall(pstubdescriptor: *mut MIDL_STUB_DESC, pformat: *mut u8) -> CLIENT_CALL_RETURN {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn NdrAsyncClientCall(pstubdescriptor: *mut MIDL_STUB_DESC, pformat: *mut u8) -> CLIENT_CALL_RETURN;
     }
@@ -32,7 +29,6 @@ pub unsafe fn NdrAsyncClientCall(pstubdescriptor: *mut MIDL_STUB_DESC, pformat: 
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrClientCall2(pstubdescriptor: *mut MIDL_STUB_DESC, pformat: *mut u8) -> CLIENT_CALL_RETURN {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn NdrClientCall2(pstubdescriptor: *mut MIDL_STUB_DESC, pformat: *mut u8) -> CLIENT_CALL_RETURN;
     }
@@ -42,7 +38,6 @@ pub unsafe fn NdrClientCall2(pstubdescriptor: *mut MIDL_STUB_DESC, pformat: *mut
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrClientCall3(pproxyinfo: *mut MIDL_STUBLESS_PROXY_INFO, nprocnum: u32, preturnvalue: *mut ::core::ffi::c_void) -> CLIENT_CALL_RETURN {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn NdrClientCall3(pproxyinfo: *mut MIDL_STUBLESS_PROXY_INFO, nprocnum: u32, preturnvalue: *mut ::core::ffi::c_void) -> CLIENT_CALL_RETURN;
     }
@@ -52,7 +47,6 @@ pub unsafe fn NdrClientCall3(pproxyinfo: *mut MIDL_STUBLESS_PROXY_INFO, nprocnum
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrDcomAsyncClientCall(pstubdescriptor: *mut MIDL_STUB_DESC, pformat: *mut u8) -> CLIENT_CALL_RETURN {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn NdrDcomAsyncClientCall(pstubdescriptor: *mut MIDL_STUB_DESC, pformat: *mut u8) -> CLIENT_CALL_RETURN;
     }
@@ -62,7 +56,6 @@ pub unsafe fn NdrDcomAsyncClientCall(pstubdescriptor: *mut MIDL_STUB_DESC, pform
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrMesProcEncodeDecode(handle: *mut ::core::ffi::c_void, pstubdesc: *const MIDL_STUB_DESC, pformatstring: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn NdrMesProcEncodeDecode(handle: *mut ::core::ffi::c_void, pstubdesc: *const MIDL_STUB_DESC, pformatstring: *mut u8);
     }
@@ -72,7 +65,6 @@ pub unsafe fn NdrMesProcEncodeDecode(handle: *mut ::core::ffi::c_void, pstubdesc
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrMesProcEncodeDecode2(handle: *mut ::core::ffi::c_void, pstubdesc: *const MIDL_STUB_DESC, pformatstring: *mut u8) -> CLIENT_CALL_RETURN {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn NdrMesProcEncodeDecode2(handle: *mut ::core::ffi::c_void, pstubdesc: *const MIDL_STUB_DESC, pformatstring: *mut u8) -> CLIENT_CALL_RETURN;
     }
@@ -82,7 +74,6 @@ pub unsafe fn NdrMesProcEncodeDecode2(handle: *mut ::core::ffi::c_void, pstubdes
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrMesProcEncodeDecode3(handle: *mut ::core::ffi::c_void, pproxyinfo: *const MIDL_STUBLESS_PROXY_INFO, nprocnum: u32, preturnvalue: *mut ::core::ffi::c_void) -> CLIENT_CALL_RETURN {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn NdrMesProcEncodeDecode3(handle: *mut ::core::ffi::c_void, pproxyinfo: *const MIDL_STUBLESS_PROXY_INFO, nprocnum: u32, preturnvalue: *mut ::core::ffi::c_void) -> CLIENT_CALL_RETURN;
     }
@@ -91,7 +82,6 @@ pub unsafe fn NdrMesProcEncodeDecode3(handle: *mut ::core::ffi::c_void, pproxyin
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn DceErrorInqTextA(rpcstatus: RPC_STATUS, errortext: &mut [u8; 256]) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DceErrorInqTextA(rpcstatus: RPC_STATUS, errortext: *mut u8) -> RPC_STATUS;
     }
@@ -100,7 +90,6 @@ pub unsafe fn DceErrorInqTextA(rpcstatus: RPC_STATUS, errortext: &mut [u8; 256])
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn DceErrorInqTextW(rpcstatus: RPC_STATUS, errortext: &mut [u16; 256]) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DceErrorInqTextW(rpcstatus: RPC_STATUS, errortext: *mut u16) -> RPC_STATUS;
     }
@@ -112,7 +101,6 @@ pub unsafe fn IUnknown_AddRef_Proxy<'a, P0>(this: P0) -> u32
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IUnknown_AddRef_Proxy(this: *mut ::core::ffi::c_void) -> u32;
     }
@@ -124,7 +112,6 @@ pub unsafe fn IUnknown_QueryInterface_Proxy<'a, P0>(this: P0, riid: *const ::win
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IUnknown_QueryInterface_Proxy(this: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -136,7 +123,6 @@ pub unsafe fn IUnknown_Release_Proxy<'a, P0>(this: P0) -> u32
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IUnknown_Release_Proxy(this: *mut ::core::ffi::c_void) -> u32;
     }
@@ -145,7 +131,6 @@ where
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcAllocate(size: u32) -> *mut ::core::ffi::c_void {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcAllocate(size: u32) -> *mut ::core::ffi::c_void;
     }
@@ -155,7 +140,6 @@ pub unsafe fn I_RpcAllocate(size: u32) -> *mut ::core::ffi::c_void {
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
 pub unsafe fn I_RpcAsyncAbortCall(pasync: *const RPC_ASYNC_STATE, exceptioncode: u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcAsyncAbortCall(pasync: *const RPC_ASYNC_STATE, exceptioncode: u32) -> RPC_STATUS;
     }
@@ -165,7 +149,6 @@ pub unsafe fn I_RpcAsyncAbortCall(pasync: *const RPC_ASYNC_STATE, exceptioncode:
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
 pub unsafe fn I_RpcAsyncSetHandle(message: *const RPC_MESSAGE, pasync: *const RPC_ASYNC_STATE) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcAsyncSetHandle(message: *const RPC_MESSAGE, pasync: *const RPC_ASYNC_STATE) -> RPC_STATUS;
     }
@@ -174,7 +157,6 @@ pub unsafe fn I_RpcAsyncSetHandle(message: *const RPC_MESSAGE, pasync: *const RP
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcBindingCopy(sourcebinding: *mut ::core::ffi::c_void, destinationbinding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcBindingCopy(sourcebinding: *mut ::core::ffi::c_void, destinationbinding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -183,7 +165,6 @@ pub unsafe fn I_RpcBindingCopy(sourcebinding: *mut ::core::ffi::c_void, destinat
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcBindingCreateNP(servername: *const u16, servicename: *const u16, networkoptions: *const u16, binding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcBindingCreateNP(servername: *const u16, servicename: *const u16, networkoptions: *const u16, binding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -192,7 +173,6 @@ pub unsafe fn I_RpcBindingCreateNP(servername: *const u16, servicename: *const u
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcBindingHandleToAsyncHandle(binding: *mut ::core::ffi::c_void, asynchandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcBindingHandleToAsyncHandle(binding: *mut ::core::ffi::c_void, asynchandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -202,7 +182,6 @@ pub unsafe fn I_RpcBindingHandleToAsyncHandle(binding: *mut ::core::ffi::c_void,
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn I_RpcBindingInqClientTokenAttributes(binding: *const ::core::ffi::c_void, tokenid: ::core::option::Option<*mut super::super::Foundation::LUID>, authenticationid: ::core::option::Option<*mut super::super::Foundation::LUID>, modifiedid: ::core::option::Option<*mut super::super::Foundation::LUID>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcBindingInqClientTokenAttributes(binding: *const ::core::ffi::c_void, tokenid: *mut super::super::Foundation::LUID, authenticationid: *mut super::super::Foundation::LUID, modifiedid: *mut super::super::Foundation::LUID) -> RPC_STATUS;
     }
@@ -211,7 +190,6 @@ pub unsafe fn I_RpcBindingInqClientTokenAttributes(binding: *const ::core::ffi::
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcBindingInqDynamicEndpointA(binding: *const ::core::ffi::c_void, dynamicendpoint: ::core::option::Option<*mut *mut u8>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcBindingInqDynamicEndpointA(binding: *const ::core::ffi::c_void, dynamicendpoint: *mut *mut u8) -> RPC_STATUS;
     }
@@ -220,7 +198,6 @@ pub unsafe fn I_RpcBindingInqDynamicEndpointA(binding: *const ::core::ffi::c_voi
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcBindingInqDynamicEndpointW(binding: *const ::core::ffi::c_void, dynamicendpoint: ::core::option::Option<*mut *mut u16>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcBindingInqDynamicEndpointW(binding: *const ::core::ffi::c_void, dynamicendpoint: *mut *mut u16) -> RPC_STATUS;
     }
@@ -229,7 +206,6 @@ pub unsafe fn I_RpcBindingInqDynamicEndpointW(binding: *const ::core::ffi::c_voi
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcBindingInqLocalClientPID(binding: *mut ::core::ffi::c_void, pid: *mut u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcBindingInqLocalClientPID(binding: *mut ::core::ffi::c_void, pid: *mut u32) -> RPC_STATUS;
     }
@@ -238,7 +214,6 @@ pub unsafe fn I_RpcBindingInqLocalClientPID(binding: *mut ::core::ffi::c_void, p
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcBindingInqMarshalledTargetInfo(binding: *const ::core::ffi::c_void, marshalledtargetinfosize: *mut u32, marshalledtargetinfo: *mut *mut u8) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcBindingInqMarshalledTargetInfo(binding: *const ::core::ffi::c_void, marshalledtargetinfosize: *mut u32, marshalledtargetinfo: *mut *mut u8) -> RPC_STATUS;
     }
@@ -247,7 +222,6 @@ pub unsafe fn I_RpcBindingInqMarshalledTargetInfo(binding: *const ::core::ffi::c
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcBindingInqSecurityContext(binding: *mut ::core::ffi::c_void, securitycontexthandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcBindingInqSecurityContext(binding: *mut ::core::ffi::c_void, securitycontexthandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -256,7 +230,6 @@ pub unsafe fn I_RpcBindingInqSecurityContext(binding: *mut ::core::ffi::c_void, 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcBindingInqSecurityContextKeyInfo(binding: ::core::option::Option<*const ::core::ffi::c_void>, keyinfo: *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcBindingInqSecurityContextKeyInfo(binding: *const ::core::ffi::c_void, keyinfo: *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -265,7 +238,6 @@ pub unsafe fn I_RpcBindingInqSecurityContextKeyInfo(binding: ::core::option::Opt
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcBindingInqTransportType(binding: *mut ::core::ffi::c_void, r#type: *mut u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcBindingInqTransportType(binding: *mut ::core::ffi::c_void, r#type: *mut u32) -> RPC_STATUS;
     }
@@ -274,7 +246,6 @@ pub unsafe fn I_RpcBindingInqTransportType(binding: *mut ::core::ffi::c_void, r#
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcBindingInqWireIdForSnego(binding: *const ::core::ffi::c_void, wireid: *mut u8) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcBindingInqWireIdForSnego(binding: *const ::core::ffi::c_void, wireid: *mut u8) -> RPC_STATUS;
     }
@@ -283,7 +254,6 @@ pub unsafe fn I_RpcBindingInqWireIdForSnego(binding: *const ::core::ffi::c_void,
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcBindingIsClientLocal(bindinghandle: *mut ::core::ffi::c_void, clientlocalflag: *mut u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcBindingIsClientLocal(bindinghandle: *mut ::core::ffi::c_void, clientlocalflag: *mut u32) -> RPC_STATUS;
     }
@@ -292,7 +262,6 @@ pub unsafe fn I_RpcBindingIsClientLocal(bindinghandle: *mut ::core::ffi::c_void,
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcBindingIsServerLocal(binding: *const ::core::ffi::c_void, serverlocalflag: *mut u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcBindingIsServerLocal(binding: *const ::core::ffi::c_void, serverlocalflag: *mut u32) -> RPC_STATUS;
     }
@@ -301,7 +270,6 @@ pub unsafe fn I_RpcBindingIsServerLocal(binding: *const ::core::ffi::c_void, ser
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcBindingSetPrivateOption(hbinding: *const ::core::ffi::c_void, option: u32, optionvalue: usize) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcBindingSetPrivateOption(hbinding: *const ::core::ffi::c_void, option: u32, optionvalue: usize) -> RPC_STATUS;
     }
@@ -310,7 +278,6 @@ pub unsafe fn I_RpcBindingSetPrivateOption(hbinding: *const ::core::ffi::c_void,
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcBindingToStaticStringBindingW(binding: *mut ::core::ffi::c_void, stringbinding: *mut *mut u16) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcBindingToStaticStringBindingW(binding: *mut ::core::ffi::c_void, stringbinding: *mut *mut u16) -> RPC_STATUS;
     }
@@ -319,7 +286,6 @@ pub unsafe fn I_RpcBindingToStaticStringBindingW(binding: *mut ::core::ffi::c_vo
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcClearMutex(mutex: *mut ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcClearMutex(mutex: *mut ::core::ffi::c_void);
     }
@@ -328,7 +294,6 @@ pub unsafe fn I_RpcClearMutex(mutex: *mut ::core::ffi::c_void) {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcDeleteMutex(mutex: *mut ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcDeleteMutex(mutex: *mut ::core::ffi::c_void);
     }
@@ -337,7 +302,6 @@ pub unsafe fn I_RpcDeleteMutex(mutex: *mut ::core::ffi::c_void) {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcExceptionFilter(exceptioncode: u32) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcExceptionFilter(exceptioncode: u32) -> i32;
     }
@@ -346,7 +310,6 @@ pub unsafe fn I_RpcExceptionFilter(exceptioncode: u32) -> i32 {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcFree(object: *mut ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcFree(object: *mut ::core::ffi::c_void);
     }
@@ -355,7 +318,6 @@ pub unsafe fn I_RpcFree(object: *mut ::core::ffi::c_void) {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcFreeBuffer(message: *mut RPC_MESSAGE) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcFreeBuffer(message: *mut RPC_MESSAGE) -> RPC_STATUS;
     }
@@ -364,7 +326,6 @@ pub unsafe fn I_RpcFreeBuffer(message: *mut RPC_MESSAGE) -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcFreePipeBuffer(message: *mut RPC_MESSAGE) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcFreePipeBuffer(message: *mut RPC_MESSAGE) -> RPC_STATUS;
     }
@@ -373,7 +334,6 @@ pub unsafe fn I_RpcFreePipeBuffer(message: *mut RPC_MESSAGE) -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcGetBuffer(message: *mut RPC_MESSAGE) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcGetBuffer(message: *mut RPC_MESSAGE) -> RPC_STATUS;
     }
@@ -382,7 +342,6 @@ pub unsafe fn I_RpcGetBuffer(message: *mut RPC_MESSAGE) -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcGetBufferWithObject(message: *mut RPC_MESSAGE, objectuuid: *mut ::windows::core::GUID) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcGetBufferWithObject(message: *mut RPC_MESSAGE, objectuuid: *mut ::windows::core::GUID) -> RPC_STATUS;
     }
@@ -391,7 +350,6 @@ pub unsafe fn I_RpcGetBufferWithObject(message: *mut RPC_MESSAGE, objectuuid: *m
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcGetCurrentCallHandle() -> *mut ::core::ffi::c_void {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcGetCurrentCallHandle() -> *mut ::core::ffi::c_void;
     }
@@ -400,7 +358,6 @@ pub unsafe fn I_RpcGetCurrentCallHandle() -> *mut ::core::ffi::c_void {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcGetDefaultSD(ppsecuritydescriptor: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcGetDefaultSD(ppsecuritydescriptor: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -409,7 +366,6 @@ pub unsafe fn I_RpcGetDefaultSD(ppsecuritydescriptor: *mut *mut ::core::ffi::c_v
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcGetExtendedError() -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcGetExtendedError() -> RPC_STATUS;
     }
@@ -418,7 +374,6 @@ pub unsafe fn I_RpcGetExtendedError() -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcIfInqTransferSyntaxes(rpcifhandle: *mut ::core::ffi::c_void, transfersyntaxes: *mut RPC_TRANSFER_SYNTAX, transfersyntaxsize: u32, transfersyntaxcount: *mut u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcIfInqTransferSyntaxes(rpcifhandle: *mut ::core::ffi::c_void, transfersyntaxes: *mut RPC_TRANSFER_SYNTAX, transfersyntaxsize: u32, transfersyntaxcount: *mut u32) -> RPC_STATUS;
     }
@@ -427,7 +382,6 @@ pub unsafe fn I_RpcIfInqTransferSyntaxes(rpcifhandle: *mut ::core::ffi::c_void, 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcMapWin32Status(status: RPC_STATUS) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcMapWin32Status(status: RPC_STATUS) -> i32;
     }
@@ -436,7 +390,6 @@ pub unsafe fn I_RpcMapWin32Status(status: RPC_STATUS) -> i32 {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcMgmtEnableDedicatedThreadPool() -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcMgmtEnableDedicatedThreadPool() -> RPC_STATUS;
     }
@@ -445,7 +398,6 @@ pub unsafe fn I_RpcMgmtEnableDedicatedThreadPool() -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcNegotiateTransferSyntax(message: *mut RPC_MESSAGE) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcNegotiateTransferSyntax(message: *mut RPC_MESSAGE) -> RPC_STATUS;
     }
@@ -454,7 +406,6 @@ pub unsafe fn I_RpcNegotiateTransferSyntax(message: *mut RPC_MESSAGE) -> RPC_STA
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcNsBindingSetEntryNameA(binding: *const ::core::ffi::c_void, entrynamesyntax: u32, entryname: *const u8) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcNsBindingSetEntryNameA(binding: *const ::core::ffi::c_void, entrynamesyntax: u32, entryname: *const u8) -> RPC_STATUS;
     }
@@ -463,7 +414,6 @@ pub unsafe fn I_RpcNsBindingSetEntryNameA(binding: *const ::core::ffi::c_void, e
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcNsBindingSetEntryNameW(binding: *const ::core::ffi::c_void, entrynamesyntax: u32, entryname: *const u16) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcNsBindingSetEntryNameW(binding: *const ::core::ffi::c_void, entrynamesyntax: u32, entryname: *const u16) -> RPC_STATUS;
     }
@@ -472,7 +422,6 @@ pub unsafe fn I_RpcNsBindingSetEntryNameW(binding: *const ::core::ffi::c_void, e
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcNsGetBuffer(message: *mut RPC_MESSAGE) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcNsGetBuffer(message: *mut RPC_MESSAGE) -> RPC_STATUS;
     }
@@ -481,7 +430,6 @@ pub unsafe fn I_RpcNsGetBuffer(message: *mut RPC_MESSAGE) -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcNsInterfaceExported(entrynamesyntax: u32, entryname: *mut u16, rpcinterfaceinformation: *mut RPC_SERVER_INTERFACE) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcNsInterfaceExported(entrynamesyntax: u32, entryname: *mut u16, rpcinterfaceinformation: *mut RPC_SERVER_INTERFACE) -> RPC_STATUS;
     }
@@ -490,7 +438,6 @@ pub unsafe fn I_RpcNsInterfaceExported(entrynamesyntax: u32, entryname: *mut u16
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcNsInterfaceUnexported(entrynamesyntax: u32, entryname: *mut u16, rpcinterfaceinformation: *mut RPC_SERVER_INTERFACE) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcNsInterfaceUnexported(entrynamesyntax: u32, entryname: *mut u16, rpcinterfaceinformation: *mut RPC_SERVER_INTERFACE) -> RPC_STATUS;
     }
@@ -499,7 +446,6 @@ pub unsafe fn I_RpcNsInterfaceUnexported(entrynamesyntax: u32, entryname: *mut u
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcNsRaiseException(message: *mut RPC_MESSAGE, status: RPC_STATUS) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcNsRaiseException(message: *mut RPC_MESSAGE, status: RPC_STATUS);
     }
@@ -508,7 +454,6 @@ pub unsafe fn I_RpcNsRaiseException(message: *mut RPC_MESSAGE, status: RPC_STATU
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcNsSendReceive(message: *mut RPC_MESSAGE, handle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcNsSendReceive(message: *mut RPC_MESSAGE, handle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -517,7 +462,6 @@ pub unsafe fn I_RpcNsSendReceive(message: *mut RPC_MESSAGE, handle: *mut *mut ::
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcOpenClientProcess(binding: ::core::option::Option<*const ::core::ffi::c_void>, desiredaccess: u32, clientprocess: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcOpenClientProcess(binding: *const ::core::ffi::c_void, desiredaccess: u32, clientprocess: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -526,7 +470,6 @@ pub unsafe fn I_RpcOpenClientProcess(binding: ::core::option::Option<*const ::co
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcPauseExecution(milliseconds: u32) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcPauseExecution(milliseconds: u32);
     }
@@ -535,7 +478,6 @@ pub unsafe fn I_RpcPauseExecution(milliseconds: u32) {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcReBindBuffer(message: *mut RPC_MESSAGE) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcReBindBuffer(message: *mut RPC_MESSAGE) -> RPC_STATUS;
     }
@@ -544,7 +486,6 @@ pub unsafe fn I_RpcReBindBuffer(message: *mut RPC_MESSAGE) -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcReallocPipeBuffer(message: *const RPC_MESSAGE, newsize: u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcReallocPipeBuffer(message: *const RPC_MESSAGE, newsize: u32) -> RPC_STATUS;
     }
@@ -553,7 +494,6 @@ pub unsafe fn I_RpcReallocPipeBuffer(message: *const RPC_MESSAGE, newsize: u32) 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcReceive(message: *mut RPC_MESSAGE, size: u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcReceive(message: *mut RPC_MESSAGE, size: u32) -> RPC_STATUS;
     }
@@ -562,7 +502,6 @@ pub unsafe fn I_RpcReceive(message: *mut RPC_MESSAGE, size: u32) -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcRecordCalloutFailure(rpcstatus: RPC_STATUS, calloutstate: *mut RDR_CALLOUT_STATE, dllname: *mut u16) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcRecordCalloutFailure(rpcstatus: RPC_STATUS, calloutstate: *mut RDR_CALLOUT_STATE, dllname: *mut u16);
     }
@@ -571,7 +510,6 @@ pub unsafe fn I_RpcRecordCalloutFailure(rpcstatus: RPC_STATUS, calloutstate: *mu
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcRequestMutex(mutex: *mut *mut ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcRequestMutex(mutex: *mut *mut ::core::ffi::c_void);
     }
@@ -580,7 +518,6 @@ pub unsafe fn I_RpcRequestMutex(mutex: *mut *mut ::core::ffi::c_void) {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcSend(message: *mut RPC_MESSAGE) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcSend(message: *mut RPC_MESSAGE) -> RPC_STATUS;
     }
@@ -589,7 +526,6 @@ pub unsafe fn I_RpcSend(message: *mut RPC_MESSAGE) -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcSendReceive(message: *mut RPC_MESSAGE) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcSendReceive(message: *mut RPC_MESSAGE) -> RPC_STATUS;
     }
@@ -598,7 +534,6 @@ pub unsafe fn I_RpcSendReceive(message: *mut RPC_MESSAGE) -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcServerCheckClientRestriction(context: *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcServerCheckClientRestriction(context: *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -607,7 +542,6 @@ pub unsafe fn I_RpcServerCheckClientRestriction(context: *mut ::core::ffi::c_voi
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcServerDisableExceptionFilter() -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcServerDisableExceptionFilter() -> i32;
     }
@@ -616,7 +550,6 @@ pub unsafe fn I_RpcServerDisableExceptionFilter() -> i32 {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcServerGetAssociationID(binding: ::core::option::Option<*const ::core::ffi::c_void>, associationid: *mut u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcServerGetAssociationID(binding: *const ::core::ffi::c_void, associationid: *mut u32) -> RPC_STATUS;
     }
@@ -625,7 +558,6 @@ pub unsafe fn I_RpcServerGetAssociationID(binding: ::core::option::Option<*const
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcServerInqAddressChangeFn() -> *mut RPC_ADDRESS_CHANGE_FN {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcServerInqAddressChangeFn() -> *mut RPC_ADDRESS_CHANGE_FN;
     }
@@ -634,7 +566,6 @@ pub unsafe fn I_RpcServerInqAddressChangeFn() -> *mut RPC_ADDRESS_CHANGE_FN {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcServerInqLocalConnAddress(binding: *mut ::core::ffi::c_void, buffer: *mut ::core::ffi::c_void, buffersize: *mut u32, addressformat: *mut u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcServerInqLocalConnAddress(binding: *mut ::core::ffi::c_void, buffer: *mut ::core::ffi::c_void, buffersize: *mut u32, addressformat: *mut u32) -> RPC_STATUS;
     }
@@ -643,7 +574,6 @@ pub unsafe fn I_RpcServerInqLocalConnAddress(binding: *mut ::core::ffi::c_void, 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcServerInqRemoteConnAddress(binding: *mut ::core::ffi::c_void, buffer: *mut ::core::ffi::c_void, buffersize: *mut u32, addressformat: *mut u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcServerInqRemoteConnAddress(binding: *mut ::core::ffi::c_void, buffer: *mut ::core::ffi::c_void, buffersize: *mut u32, addressformat: *mut u32) -> RPC_STATUS;
     }
@@ -652,7 +582,6 @@ pub unsafe fn I_RpcServerInqRemoteConnAddress(binding: *mut ::core::ffi::c_void,
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcServerInqTransportType(r#type: *mut u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcServerInqTransportType(r#type: *mut u32) -> RPC_STATUS;
     }
@@ -661,7 +590,6 @@ pub unsafe fn I_RpcServerInqTransportType(r#type: *mut u32) -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcServerRegisterForwardFunction(pforwardfunction: *mut RPC_FORWARD_FUNCTION) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcServerRegisterForwardFunction(pforwardfunction: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -670,7 +598,6 @@ pub unsafe fn I_RpcServerRegisterForwardFunction(pforwardfunction: *mut RPC_FORW
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcServerSetAddressChangeFn(paddresschangefn: *mut RPC_ADDRESS_CHANGE_FN) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcServerSetAddressChangeFn(paddresschangefn: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -679,7 +606,6 @@ pub unsafe fn I_RpcServerSetAddressChangeFn(paddresschangefn: *mut RPC_ADDRESS_C
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcServerStartService(protseq: *const u16, endpoint: *const u16, ifspec: *const ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcServerStartService(protseq: *const u16, endpoint: *const u16, ifspec: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -688,7 +614,6 @@ pub unsafe fn I_RpcServerStartService(protseq: *const u16, endpoint: *const u16,
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcServerSubscribeForDisconnectNotification(binding: ::core::option::Option<*const ::core::ffi::c_void>, hevent: ::core::option::Option<*const ::core::ffi::c_void>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcServerSubscribeForDisconnectNotification(binding: *const ::core::ffi::c_void, hevent: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -697,7 +622,6 @@ pub unsafe fn I_RpcServerSubscribeForDisconnectNotification(binding: ::core::opt
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcServerSubscribeForDisconnectNotification2(binding: ::core::option::Option<*const ::core::ffi::c_void>, hevent: *const ::core::ffi::c_void, subscriptionid: *mut ::windows::core::GUID) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcServerSubscribeForDisconnectNotification2(binding: *const ::core::ffi::c_void, hevent: *const ::core::ffi::c_void, subscriptionid: *mut ::windows::core::GUID) -> RPC_STATUS;
     }
@@ -706,7 +630,6 @@ pub unsafe fn I_RpcServerSubscribeForDisconnectNotification2(binding: ::core::op
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcServerUnsubscribeForDisconnectNotification(binding: ::core::option::Option<*const ::core::ffi::c_void>, subscriptionid: ::windows::core::GUID) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcServerUnsubscribeForDisconnectNotification(binding: *const ::core::ffi::c_void, subscriptionid: ::windows::core::GUID) -> RPC_STATUS;
     }
@@ -715,7 +638,6 @@ pub unsafe fn I_RpcServerUnsubscribeForDisconnectNotification(binding: ::core::o
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcServerUseProtseq2A(networkaddress: ::core::option::Option<*const u8>, protseq: *const u8, maxcalls: u32, securitydescriptor: ::core::option::Option<*const ::core::ffi::c_void>, policy: *const ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcServerUseProtseq2A(networkaddress: *const u8, protseq: *const u8, maxcalls: u32, securitydescriptor: *const ::core::ffi::c_void, policy: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -724,7 +646,6 @@ pub unsafe fn I_RpcServerUseProtseq2A(networkaddress: ::core::option::Option<*co
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcServerUseProtseq2W(networkaddress: ::core::option::Option<*const u16>, protseq: *const u16, maxcalls: u32, securitydescriptor: ::core::option::Option<*const ::core::ffi::c_void>, policy: *const ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcServerUseProtseq2W(networkaddress: *const u16, protseq: *const u16, maxcalls: u32, securitydescriptor: *const ::core::ffi::c_void, policy: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -733,7 +654,6 @@ pub unsafe fn I_RpcServerUseProtseq2W(networkaddress: ::core::option::Option<*co
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcServerUseProtseqEp2A(networkaddress: ::core::option::Option<*const u8>, protseq: *const u8, maxcalls: u32, endpoint: *const u8, securitydescriptor: ::core::option::Option<*const ::core::ffi::c_void>, policy: *const ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcServerUseProtseqEp2A(networkaddress: *const u8, protseq: *const u8, maxcalls: u32, endpoint: *const u8, securitydescriptor: *const ::core::ffi::c_void, policy: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -742,7 +662,6 @@ pub unsafe fn I_RpcServerUseProtseqEp2A(networkaddress: ::core::option::Option<*
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcServerUseProtseqEp2W(networkaddress: ::core::option::Option<*const u16>, protseq: *const u16, maxcalls: u32, endpoint: *const u16, securitydescriptor: ::core::option::Option<*const ::core::ffi::c_void>, policy: *const ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcServerUseProtseqEp2W(networkaddress: *const u16, protseq: *const u16, maxcalls: u32, endpoint: *const u16, securitydescriptor: *const ::core::ffi::c_void, policy: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -751,7 +670,6 @@ pub unsafe fn I_RpcServerUseProtseqEp2W(networkaddress: ::core::option::Option<*
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcSessionStrictContextHandle() {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcSessionStrictContextHandle();
     }
@@ -760,7 +678,6 @@ pub unsafe fn I_RpcSessionStrictContextHandle() {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcSsDontSerializeContext() {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcSsDontSerializeContext();
     }
@@ -769,7 +686,6 @@ pub unsafe fn I_RpcSsDontSerializeContext() {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcSystemHandleTypeSpecificWork(handle: *mut ::core::ffi::c_void, actualtype: u8, idltype: u8, marshaldirection: LRPC_SYSTEM_HANDLE_MARSHAL_DIRECTION) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcSystemHandleTypeSpecificWork(handle: *mut ::core::ffi::c_void, actualtype: u8, idltype: u8, marshaldirection: LRPC_SYSTEM_HANDLE_MARSHAL_DIRECTION) -> RPC_STATUS;
     }
@@ -778,7 +694,6 @@ pub unsafe fn I_RpcSystemHandleTypeSpecificWork(handle: *mut ::core::ffi::c_void
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_RpcTurnOnEEInfoPropagation() -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_RpcTurnOnEEInfoPropagation() -> RPC_STATUS;
     }
@@ -787,7 +702,6 @@ pub unsafe fn I_RpcTurnOnEEInfoPropagation() -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn I_UuidCreate(uuid: *mut ::windows::core::GUID) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn I_UuidCreate(uuid: *mut ::windows::core::GUID) -> RPC_STATUS;
     }
@@ -796,7 +710,6 @@ pub unsafe fn I_UuidCreate(uuid: *mut ::windows::core::GUID) -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn MesBufferHandleReset(handle: *const ::core::ffi::c_void, handlestyle: u32, operation: MIDL_ES_CODE, pbuffer: ::core::option::Option<&[u8]>, pencodedsize: ::core::option::Option<*mut u32>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MesBufferHandleReset(handle: *const ::core::ffi::c_void, handlestyle: u32, operation: MIDL_ES_CODE, pbuffer: *const *const i8, buffersize: u32, pencodedsize: *mut u32) -> RPC_STATUS;
     }
@@ -805,7 +718,6 @@ pub unsafe fn MesBufferHandleReset(handle: *const ::core::ffi::c_void, handlesty
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn MesDecodeBufferHandleCreate(buffer: &[u8], phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MesDecodeBufferHandleCreate(buffer: ::windows::core::PCSTR, buffersize: u32, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -814,7 +726,6 @@ pub unsafe fn MesDecodeBufferHandleCreate(buffer: &[u8], phandle: *mut *mut ::co
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn MesDecodeIncrementalHandleCreate(userstate: *mut ::core::ffi::c_void, readfn: MIDL_ES_READ, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MesDecodeIncrementalHandleCreate(userstate: *mut ::core::ffi::c_void, readfn: *mut ::core::ffi::c_void, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -823,7 +734,6 @@ pub unsafe fn MesDecodeIncrementalHandleCreate(userstate: *mut ::core::ffi::c_vo
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn MesEncodeDynBufferHandleCreate(pbuffer: *mut *mut i8, pencodedsize: *mut u32, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MesEncodeDynBufferHandleCreate(pbuffer: *mut *mut i8, pencodedsize: *mut u32, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -832,7 +742,6 @@ pub unsafe fn MesEncodeDynBufferHandleCreate(pbuffer: *mut *mut i8, pencodedsize
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn MesEncodeFixedBufferHandleCreate(pbuffer: &mut [u8], pencodedsize: *mut u32, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MesEncodeFixedBufferHandleCreate(pbuffer: ::windows::core::PSTR, buffersize: u32, pencodedsize: *mut u32, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -841,7 +750,6 @@ pub unsafe fn MesEncodeFixedBufferHandleCreate(pbuffer: &mut [u8], pencodedsize:
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn MesEncodeIncrementalHandleCreate(userstate: *mut ::core::ffi::c_void, allocfn: MIDL_ES_ALLOC, writefn: MIDL_ES_WRITE, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MesEncodeIncrementalHandleCreate(userstate: *mut ::core::ffi::c_void, allocfn: *mut ::core::ffi::c_void, writefn: *mut ::core::ffi::c_void, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -850,7 +758,6 @@ pub unsafe fn MesEncodeIncrementalHandleCreate(userstate: *mut ::core::ffi::c_vo
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn MesHandleFree(handle: *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MesHandleFree(handle: *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -859,7 +766,6 @@ pub unsafe fn MesHandleFree(handle: *mut ::core::ffi::c_void) -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn MesIncrementalHandleReset(handle: *mut ::core::ffi::c_void, userstate: *mut ::core::ffi::c_void, allocfn: MIDL_ES_ALLOC, writefn: MIDL_ES_WRITE, readfn: MIDL_ES_READ, operation: MIDL_ES_CODE) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MesIncrementalHandleReset(handle: *mut ::core::ffi::c_void, userstate: *mut ::core::ffi::c_void, allocfn: *mut ::core::ffi::c_void, writefn: *mut ::core::ffi::c_void, readfn: *mut ::core::ffi::c_void, operation: MIDL_ES_CODE) -> RPC_STATUS;
     }
@@ -868,7 +774,6 @@ pub unsafe fn MesIncrementalHandleReset(handle: *mut ::core::ffi::c_void, userst
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn MesInqProcEncodingId(handle: *mut ::core::ffi::c_void, pinterfaceid: *mut RPC_SYNTAX_IDENTIFIER, pprocnum: *mut u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MesInqProcEncodingId(handle: *mut ::core::ffi::c_void, pinterfaceid: *mut RPC_SYNTAX_IDENTIFIER, pprocnum: *mut u32) -> RPC_STATUS;
     }
@@ -877,7 +782,6 @@ pub unsafe fn MesInqProcEncodingId(handle: *mut ::core::ffi::c_void, pinterfacei
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn NDRCContextBinding(ccontext: isize) -> *mut ::core::ffi::c_void {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NDRCContextBinding(ccontext: isize) -> *mut ::core::ffi::c_void;
     }
@@ -886,7 +790,6 @@ pub unsafe fn NDRCContextBinding(ccontext: isize) -> *mut ::core::ffi::c_void {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn NDRCContextMarshall(ccontext: isize, pbuff: *mut ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NDRCContextMarshall(ccontext: isize, pbuff: *mut ::core::ffi::c_void);
     }
@@ -895,7 +798,6 @@ pub unsafe fn NDRCContextMarshall(ccontext: isize, pbuff: *mut ::core::ffi::c_vo
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn NDRCContextUnmarshall(pccontext: ::core::option::Option<*mut isize>, hbinding: *const ::core::ffi::c_void, pbuff: *const ::core::ffi::c_void, datarepresentation: u32) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NDRCContextUnmarshall(pccontext: *mut isize, hbinding: *const ::core::ffi::c_void, pbuff: *const ::core::ffi::c_void, datarepresentation: u32);
     }
@@ -904,7 +806,6 @@ pub unsafe fn NDRCContextUnmarshall(pccontext: ::core::option::Option<*mut isize
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn NDRSContextMarshall(ccontext: *const NDR_SCONTEXT_1, pbuff: *mut ::core::ffi::c_void, userrundownin: NDR_RUNDOWN) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NDRSContextMarshall(ccontext: *const NDR_SCONTEXT_1, pbuff: *mut ::core::ffi::c_void, userrundownin: *mut ::core::ffi::c_void);
     }
@@ -913,7 +814,6 @@ pub unsafe fn NDRSContextMarshall(ccontext: *const NDR_SCONTEXT_1, pbuff: *mut :
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn NDRSContextMarshall2(bindinghandle: *const ::core::ffi::c_void, ccontext: *const NDR_SCONTEXT_1, pbuff: *mut ::core::ffi::c_void, userrundownin: NDR_RUNDOWN, ctxguard: ::core::option::Option<*const ::core::ffi::c_void>, flags: u32) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NDRSContextMarshall2(bindinghandle: *const ::core::ffi::c_void, ccontext: *const NDR_SCONTEXT_1, pbuff: *mut ::core::ffi::c_void, userrundownin: *mut ::core::ffi::c_void, ctxguard: *const ::core::ffi::c_void, flags: u32);
     }
@@ -922,7 +822,6 @@ pub unsafe fn NDRSContextMarshall2(bindinghandle: *const ::core::ffi::c_void, cc
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn NDRSContextMarshallEx(bindinghandle: *const ::core::ffi::c_void, ccontext: *const NDR_SCONTEXT_1, pbuff: *mut ::core::ffi::c_void, userrundownin: NDR_RUNDOWN) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NDRSContextMarshallEx(bindinghandle: *const ::core::ffi::c_void, ccontext: *const NDR_SCONTEXT_1, pbuff: *mut ::core::ffi::c_void, userrundownin: *mut ::core::ffi::c_void);
     }
@@ -931,7 +830,6 @@ pub unsafe fn NDRSContextMarshallEx(bindinghandle: *const ::core::ffi::c_void, c
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn NDRSContextUnmarshall(pbuff: *const ::core::ffi::c_void, datarepresentation: u32) -> *mut NDR_SCONTEXT_1 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NDRSContextUnmarshall(pbuff: *const ::core::ffi::c_void, datarepresentation: u32) -> *mut NDR_SCONTEXT_1;
     }
@@ -940,7 +838,6 @@ pub unsafe fn NDRSContextUnmarshall(pbuff: *const ::core::ffi::c_void, datarepre
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn NDRSContextUnmarshall2(bindinghandle: *const ::core::ffi::c_void, pbuff: ::core::option::Option<*const ::core::ffi::c_void>, datarepresentation: u32, ctxguard: ::core::option::Option<*const ::core::ffi::c_void>, flags: u32) -> *mut NDR_SCONTEXT_1 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NDRSContextUnmarshall2(bindinghandle: *const ::core::ffi::c_void, pbuff: *const ::core::ffi::c_void, datarepresentation: u32, ctxguard: *const ::core::ffi::c_void, flags: u32) -> *mut NDR_SCONTEXT_1;
     }
@@ -949,7 +846,6 @@ pub unsafe fn NDRSContextUnmarshall2(bindinghandle: *const ::core::ffi::c_void, 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn NDRSContextUnmarshallEx(bindinghandle: *const ::core::ffi::c_void, pbuff: *const ::core::ffi::c_void, datarepresentation: u32) -> *mut NDR_SCONTEXT_1 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NDRSContextUnmarshallEx(bindinghandle: *const ::core::ffi::c_void, pbuff: *const ::core::ffi::c_void, datarepresentation: u32) -> *mut NDR_SCONTEXT_1;
     }
@@ -958,7 +854,6 @@ pub unsafe fn NDRSContextUnmarshallEx(bindinghandle: *const ::core::ffi::c_void,
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn Ndr64AsyncServerCall64(prpcmsg: *mut RPC_MESSAGE) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn Ndr64AsyncServerCall64(prpcmsg: *mut RPC_MESSAGE);
     }
@@ -967,7 +862,6 @@ pub unsafe fn Ndr64AsyncServerCall64(prpcmsg: *mut RPC_MESSAGE) {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn Ndr64AsyncServerCallAll(prpcmsg: *mut RPC_MESSAGE) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn Ndr64AsyncServerCallAll(prpcmsg: *mut RPC_MESSAGE);
     }
@@ -981,7 +875,6 @@ where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::Com::IRpcStubBuffer>>,
     P1: ::std::convert::Into<::windows::core::InParam<'a, super::Com::IRpcChannelBuffer>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn Ndr64DcomAsyncStubCall(pthis: *mut ::core::ffi::c_void, pchannel: *mut ::core::ffi::c_void, prpcmsg: *mut RPC_MESSAGE, pdwstubphase: *mut u32) -> i32;
     }
@@ -991,7 +884,6 @@ where
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrAllocate(pstubmsg: *mut MIDL_STUB_MESSAGE, len: usize) -> *mut ::core::ffi::c_void {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrAllocate(pstubmsg: *mut MIDL_STUB_MESSAGE, len: usize) -> *mut ::core::ffi::c_void;
     }
@@ -1000,7 +892,6 @@ pub unsafe fn NdrAllocate(pstubmsg: *mut MIDL_STUB_MESSAGE, len: usize) -> *mut 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn NdrAsyncServerCall(prpcmsg: *mut RPC_MESSAGE) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrAsyncServerCall(prpcmsg: *mut RPC_MESSAGE);
     }
@@ -1010,7 +901,6 @@ pub unsafe fn NdrAsyncServerCall(prpcmsg: *mut RPC_MESSAGE) {
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrByteCountPointerBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrByteCountPointerBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -1020,7 +910,6 @@ pub unsafe fn NdrByteCountPointerBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pm
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrByteCountPointerFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrByteCountPointerFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -1030,7 +919,6 @@ pub unsafe fn NdrByteCountPointerFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory:
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrByteCountPointerMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrByteCountPointerMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8;
     }
@@ -1040,7 +928,6 @@ pub unsafe fn NdrByteCountPointerMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmem
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrByteCountPointerUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrByteCountPointerUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8;
     }
@@ -1050,7 +937,6 @@ pub unsafe fn NdrByteCountPointerUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pp
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrClearOutParameters(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8, argaddr: *mut ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrClearOutParameters(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8, argaddr: *mut ::core::ffi::c_void);
     }
@@ -1060,7 +946,6 @@ pub unsafe fn NdrClearOutParameters(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrClientContextMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, contexthandle: isize, fcheck: i32) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrClientContextMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, contexthandle: isize, fcheck: i32);
     }
@@ -1070,7 +955,6 @@ pub unsafe fn NdrClientContextMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, context
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrClientContextUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pcontexthandle: *mut isize, bindhandle: *mut ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrClientContextUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pcontexthandle: *mut isize, bindhandle: *mut ::core::ffi::c_void);
     }
@@ -1080,7 +964,6 @@ pub unsafe fn NdrClientContextUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pcont
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrClientInitialize(prpcmsg: *mut RPC_MESSAGE, pstubmsg: *mut MIDL_STUB_MESSAGE, pstubdescriptor: *mut MIDL_STUB_DESC, procnum: u32) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrClientInitialize(prpcmsg: *mut RPC_MESSAGE, pstubmsg: *mut MIDL_STUB_MESSAGE, pstubdescriptor: *mut MIDL_STUB_DESC, procnum: u32);
     }
@@ -1090,7 +973,6 @@ pub unsafe fn NdrClientInitialize(prpcmsg: *mut RPC_MESSAGE, pstubmsg: *mut MIDL
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrClientInitializeNew(prpcmsg: *mut RPC_MESSAGE, pstubmsg: *mut MIDL_STUB_MESSAGE, pstubdescriptor: *mut MIDL_STUB_DESC, procnum: u32) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrClientInitializeNew(prpcmsg: *mut RPC_MESSAGE, pstubmsg: *mut MIDL_STUB_MESSAGE, pstubdescriptor: *mut MIDL_STUB_DESC, procnum: u32);
     }
@@ -1100,7 +982,6 @@ pub unsafe fn NdrClientInitializeNew(prpcmsg: *mut RPC_MESSAGE, pstubmsg: *mut M
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrComplexArrayBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrComplexArrayBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -1110,7 +991,6 @@ pub unsafe fn NdrComplexArrayBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemor
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrComplexArrayFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrComplexArrayFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -1120,7 +1000,6 @@ pub unsafe fn NdrComplexArrayFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mu
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrComplexArrayMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrComplexArrayMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8;
     }
@@ -1130,7 +1009,6 @@ pub unsafe fn NdrComplexArrayMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory:
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrComplexArrayMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrComplexArrayMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32;
     }
@@ -1140,7 +1018,6 @@ pub unsafe fn NdrComplexArrayMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pforma
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrComplexArrayUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrComplexArrayUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8;
     }
@@ -1150,7 +1027,6 @@ pub unsafe fn NdrComplexArrayUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemo
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrComplexStructBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrComplexStructBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -1160,7 +1036,6 @@ pub unsafe fn NdrComplexStructBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemo
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrComplexStructFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrComplexStructFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -1170,7 +1045,6 @@ pub unsafe fn NdrComplexStructFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *m
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrComplexStructMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrComplexStructMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8;
     }
@@ -1180,7 +1054,6 @@ pub unsafe fn NdrComplexStructMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrComplexStructMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrComplexStructMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32;
     }
@@ -1190,7 +1063,6 @@ pub unsafe fn NdrComplexStructMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pform
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrComplexStructUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrComplexStructUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8;
     }
@@ -1200,7 +1072,6 @@ pub unsafe fn NdrComplexStructUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmem
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrConformantArrayBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrConformantArrayBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -1210,7 +1081,6 @@ pub unsafe fn NdrConformantArrayBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pme
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrConformantArrayFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrConformantArrayFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -1220,7 +1090,6 @@ pub unsafe fn NdrConformantArrayFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: 
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrConformantArrayMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrConformantArrayMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8;
     }
@@ -1230,7 +1099,6 @@ pub unsafe fn NdrConformantArrayMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemo
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrConformantArrayMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrConformantArrayMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32;
     }
@@ -1240,7 +1108,6 @@ pub unsafe fn NdrConformantArrayMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pfo
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrConformantArrayUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrConformantArrayUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8;
     }
@@ -1250,7 +1117,6 @@ pub unsafe fn NdrConformantArrayUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppm
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrConformantStringBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrConformantStringBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -1260,7 +1126,6 @@ pub unsafe fn NdrConformantStringBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pm
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrConformantStringMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrConformantStringMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8;
     }
@@ -1270,7 +1135,6 @@ pub unsafe fn NdrConformantStringMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmem
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrConformantStringMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrConformantStringMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32;
     }
@@ -1280,7 +1144,6 @@ pub unsafe fn NdrConformantStringMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pf
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrConformantStringUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrConformantStringUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8;
     }
@@ -1290,7 +1153,6 @@ pub unsafe fn NdrConformantStringUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pp
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrConformantStructBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrConformantStructBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -1300,7 +1162,6 @@ pub unsafe fn NdrConformantStructBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pm
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrConformantStructFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrConformantStructFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -1310,7 +1171,6 @@ pub unsafe fn NdrConformantStructFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory:
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrConformantStructMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrConformantStructMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8;
     }
@@ -1320,7 +1180,6 @@ pub unsafe fn NdrConformantStructMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmem
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrConformantStructMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrConformantStructMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32;
     }
@@ -1330,7 +1189,6 @@ pub unsafe fn NdrConformantStructMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pf
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrConformantStructUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrConformantStructUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8;
     }
@@ -1340,7 +1198,6 @@ pub unsafe fn NdrConformantStructUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pp
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrConformantVaryingArrayBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrConformantVaryingArrayBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -1350,7 +1207,6 @@ pub unsafe fn NdrConformantVaryingArrayBufferSize(pstubmsg: *mut MIDL_STUB_MESSA
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrConformantVaryingArrayFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrConformantVaryingArrayFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -1360,7 +1216,6 @@ pub unsafe fn NdrConformantVaryingArrayFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pm
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrConformantVaryingArrayMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrConformantVaryingArrayMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8;
     }
@@ -1370,7 +1225,6 @@ pub unsafe fn NdrConformantVaryingArrayMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrConformantVaryingArrayMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrConformantVaryingArrayMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32;
     }
@@ -1380,7 +1234,6 @@ pub unsafe fn NdrConformantVaryingArrayMemorySize(pstubmsg: *mut MIDL_STUB_MESSA
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrConformantVaryingArrayUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrConformantVaryingArrayUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8;
     }
@@ -1390,7 +1243,6 @@ pub unsafe fn NdrConformantVaryingArrayUnmarshall(pstubmsg: *mut MIDL_STUB_MESSA
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrConformantVaryingStructBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrConformantVaryingStructBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -1400,7 +1252,6 @@ pub unsafe fn NdrConformantVaryingStructBufferSize(pstubmsg: *mut MIDL_STUB_MESS
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrConformantVaryingStructFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrConformantVaryingStructFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -1410,7 +1261,6 @@ pub unsafe fn NdrConformantVaryingStructFree(pstubmsg: *mut MIDL_STUB_MESSAGE, p
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrConformantVaryingStructMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrConformantVaryingStructMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8;
     }
@@ -1420,7 +1270,6 @@ pub unsafe fn NdrConformantVaryingStructMarshall(pstubmsg: *mut MIDL_STUB_MESSAG
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrConformantVaryingStructMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrConformantVaryingStructMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32;
     }
@@ -1430,7 +1279,6 @@ pub unsafe fn NdrConformantVaryingStructMemorySize(pstubmsg: *mut MIDL_STUB_MESS
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrConformantVaryingStructUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrConformantVaryingStructUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8;
     }
@@ -1440,7 +1288,6 @@ pub unsafe fn NdrConformantVaryingStructUnmarshall(pstubmsg: *mut MIDL_STUB_MESS
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrContextHandleInitialize(pstubmsg: *const MIDL_STUB_MESSAGE, pformat: *const u8) -> *mut NDR_SCONTEXT_1 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrContextHandleInitialize(pstubmsg: *const MIDL_STUB_MESSAGE, pformat: *const u8) -> *mut NDR_SCONTEXT_1;
     }
@@ -1450,7 +1297,6 @@ pub unsafe fn NdrContextHandleInitialize(pstubmsg: *const MIDL_STUB_MESSAGE, pfo
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrContextHandleSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrContextHandleSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -1460,7 +1306,6 @@ pub unsafe fn NdrContextHandleSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *m
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrConvert(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrConvert(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8);
     }
@@ -1470,7 +1315,6 @@ pub unsafe fn NdrConvert(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) {
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrConvert2(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8, numberparams: i32) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrConvert2(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8, numberparams: i32);
     }
@@ -1480,7 +1324,6 @@ pub unsafe fn NdrConvert2(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8, nu
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrCorrelationFree(pstubmsg: *mut MIDL_STUB_MESSAGE) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrCorrelationFree(pstubmsg: *mut MIDL_STUB_MESSAGE);
     }
@@ -1490,7 +1333,6 @@ pub unsafe fn NdrCorrelationFree(pstubmsg: *mut MIDL_STUB_MESSAGE) {
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrCorrelationInitialize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut ::core::ffi::c_void, cachesize: u32, flags: u32) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrCorrelationInitialize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut ::core::ffi::c_void, cachesize: u32, flags: u32);
     }
@@ -1500,7 +1342,6 @@ pub unsafe fn NdrCorrelationInitialize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrCorrelationPass(pstubmsg: *mut MIDL_STUB_MESSAGE) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrCorrelationPass(pstubmsg: *mut MIDL_STUB_MESSAGE);
     }
@@ -1513,7 +1354,6 @@ pub unsafe fn NdrCreateServerInterfaceFromStub<'a, P0>(pstub: P0, pserverif: *mu
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::Com::IRpcStubBuffer>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrCreateServerInterfaceFromStub(pstub: *mut ::core::ffi::c_void, pserverif: *mut RPC_SERVER_INTERFACE) -> RPC_STATUS;
     }
@@ -1527,7 +1367,6 @@ where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::Com::IRpcStubBuffer>>,
     P1: ::std::convert::Into<::windows::core::InParam<'a, super::Com::IRpcChannelBuffer>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrDcomAsyncStubCall(pthis: *mut ::core::ffi::c_void, pchannel: *mut ::core::ffi::c_void, prpcmsg: *mut RPC_MESSAGE, pdwstubphase: *mut u32) -> i32;
     }
@@ -1537,7 +1376,6 @@ where
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrEncapsulatedUnionBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrEncapsulatedUnionBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -1547,7 +1385,6 @@ pub unsafe fn NdrEncapsulatedUnionBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, p
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrEncapsulatedUnionFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrEncapsulatedUnionFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -1557,7 +1394,6 @@ pub unsafe fn NdrEncapsulatedUnionFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrEncapsulatedUnionMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrEncapsulatedUnionMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8;
     }
@@ -1567,7 +1403,6 @@ pub unsafe fn NdrEncapsulatedUnionMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pme
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrEncapsulatedUnionMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrEncapsulatedUnionMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32;
     }
@@ -1577,7 +1412,6 @@ pub unsafe fn NdrEncapsulatedUnionMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, p
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrEncapsulatedUnionUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrEncapsulatedUnionUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8;
     }
@@ -1587,7 +1421,6 @@ pub unsafe fn NdrEncapsulatedUnionUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, p
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrFixedArrayBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrFixedArrayBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -1597,7 +1430,6 @@ pub unsafe fn NdrFixedArrayBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory:
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrFixedArrayFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrFixedArrayFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -1607,7 +1439,6 @@ pub unsafe fn NdrFixedArrayFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut 
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrFixedArrayMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrFixedArrayMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8;
     }
@@ -1617,7 +1448,6 @@ pub unsafe fn NdrFixedArrayMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrFixedArrayMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrFixedArrayMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32;
     }
@@ -1627,7 +1457,6 @@ pub unsafe fn NdrFixedArrayMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat:
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrFixedArrayUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrFixedArrayUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8;
     }
@@ -1637,7 +1466,6 @@ pub unsafe fn NdrFixedArrayUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrFreeBuffer(pstubmsg: *mut MIDL_STUB_MESSAGE) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrFreeBuffer(pstubmsg: *mut MIDL_STUB_MESSAGE);
     }
@@ -1646,7 +1474,6 @@ pub unsafe fn NdrFreeBuffer(pstubmsg: *mut MIDL_STUB_MESSAGE) {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn NdrFullPointerXlatFree(pxlattables: *mut FULL_PTR_XLAT_TABLES) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrFullPointerXlatFree(pxlattables: *mut FULL_PTR_XLAT_TABLES);
     }
@@ -1655,7 +1482,6 @@ pub unsafe fn NdrFullPointerXlatFree(pxlattables: *mut FULL_PTR_XLAT_TABLES) {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn NdrFullPointerXlatInit(numberofpointers: u32, xlatside: XLAT_SIDE) -> *mut FULL_PTR_XLAT_TABLES {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrFullPointerXlatInit(numberofpointers: u32, xlatside: XLAT_SIDE) -> *mut FULL_PTR_XLAT_TABLES;
     }
@@ -1665,7 +1491,6 @@ pub unsafe fn NdrFullPointerXlatInit(numberofpointers: u32, xlatside: XLAT_SIDE)
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrGetBuffer(pstubmsg: *mut MIDL_STUB_MESSAGE, bufferlength: u32, handle: *mut ::core::ffi::c_void) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrGetBuffer(pstubmsg: *mut MIDL_STUB_MESSAGE, bufferlength: u32, handle: *mut ::core::ffi::c_void) -> *mut u8;
     }
@@ -1675,7 +1500,6 @@ pub unsafe fn NdrGetBuffer(pstubmsg: *mut MIDL_STUB_MESSAGE, bufferlength: u32, 
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrGetDcomProtocolVersion(pstubmsg: *mut MIDL_STUB_MESSAGE, pversion: *mut RPC_VERSION) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrGetDcomProtocolVersion(pstubmsg: *mut MIDL_STUB_MESSAGE, pversion: *mut RPC_VERSION) -> ::windows::core::HRESULT;
     }
@@ -1685,7 +1509,6 @@ pub unsafe fn NdrGetDcomProtocolVersion(pstubmsg: *mut MIDL_STUB_MESSAGE, pversi
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrGetUserMarshalInfo(pflags: *const u32, informationlevel: u32, pmarshalinfo: *mut NDR_USER_MARSHAL_INFO) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrGetUserMarshalInfo(pflags: *const u32, informationlevel: u32, pmarshalinfo: *mut NDR_USER_MARSHAL_INFO) -> RPC_STATUS;
     }
@@ -1695,7 +1518,6 @@ pub unsafe fn NdrGetUserMarshalInfo(pflags: *const u32, informationlevel: u32, p
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrInterfacePointerBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrInterfacePointerBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -1705,7 +1527,6 @@ pub unsafe fn NdrInterfacePointerBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pm
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrInterfacePointerFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrInterfacePointerFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -1715,7 +1536,6 @@ pub unsafe fn NdrInterfacePointerFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory:
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrInterfacePointerMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrInterfacePointerMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8;
     }
@@ -1725,7 +1545,6 @@ pub unsafe fn NdrInterfacePointerMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmem
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrInterfacePointerMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrInterfacePointerMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32;
     }
@@ -1735,7 +1554,6 @@ pub unsafe fn NdrInterfacePointerMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pf
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrInterfacePointerUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrInterfacePointerUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8;
     }
@@ -1745,7 +1563,6 @@ pub unsafe fn NdrInterfacePointerUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pp
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrMapCommAndFaultStatus(pstubmsg: *mut MIDL_STUB_MESSAGE, pcommstatus: *mut u32, pfaultstatus: *mut u32, status: RPC_STATUS) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrMapCommAndFaultStatus(pstubmsg: *mut MIDL_STUB_MESSAGE, pcommstatus: *mut u32, pfaultstatus: *mut u32, status: RPC_STATUS) -> RPC_STATUS;
     }
@@ -1754,7 +1571,6 @@ pub unsafe fn NdrMapCommAndFaultStatus(pstubmsg: *mut MIDL_STUB_MESSAGE, pcommst
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn NdrMesSimpleTypeAlignSize(param0: *mut ::core::ffi::c_void) -> usize {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrMesSimpleTypeAlignSize(param0: *mut ::core::ffi::c_void) -> usize;
     }
@@ -1764,7 +1580,6 @@ pub unsafe fn NdrMesSimpleTypeAlignSize(param0: *mut ::core::ffi::c_void) -> usi
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrMesSimpleTypeAlignSizeAll(handle: *mut ::core::ffi::c_void, pproxyinfo: *const MIDL_STUBLESS_PROXY_INFO) -> usize {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrMesSimpleTypeAlignSizeAll(handle: *mut ::core::ffi::c_void, pproxyinfo: *const MIDL_STUBLESS_PROXY_INFO) -> usize;
     }
@@ -1773,7 +1588,6 @@ pub unsafe fn NdrMesSimpleTypeAlignSizeAll(handle: *mut ::core::ffi::c_void, ppr
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn NdrMesSimpleTypeDecode(handle: *mut ::core::ffi::c_void, pobject: *mut ::core::ffi::c_void, size: i16) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrMesSimpleTypeDecode(handle: *mut ::core::ffi::c_void, pobject: *mut ::core::ffi::c_void, size: i16);
     }
@@ -1783,7 +1597,6 @@ pub unsafe fn NdrMesSimpleTypeDecode(handle: *mut ::core::ffi::c_void, pobject: 
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrMesSimpleTypeDecodeAll(handle: *mut ::core::ffi::c_void, pproxyinfo: *const MIDL_STUBLESS_PROXY_INFO, pobject: *mut ::core::ffi::c_void, size: i16) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrMesSimpleTypeDecodeAll(handle: *mut ::core::ffi::c_void, pproxyinfo: *const MIDL_STUBLESS_PROXY_INFO, pobject: *mut ::core::ffi::c_void, size: i16);
     }
@@ -1793,7 +1606,6 @@ pub unsafe fn NdrMesSimpleTypeDecodeAll(handle: *mut ::core::ffi::c_void, pproxy
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrMesSimpleTypeEncode(handle: *mut ::core::ffi::c_void, pstubdesc: *const MIDL_STUB_DESC, pobject: *const ::core::ffi::c_void, size: i16) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrMesSimpleTypeEncode(handle: *mut ::core::ffi::c_void, pstubdesc: *const MIDL_STUB_DESC, pobject: *const ::core::ffi::c_void, size: i16);
     }
@@ -1803,7 +1615,6 @@ pub unsafe fn NdrMesSimpleTypeEncode(handle: *mut ::core::ffi::c_void, pstubdesc
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrMesSimpleTypeEncodeAll(handle: *mut ::core::ffi::c_void, pproxyinfo: *const MIDL_STUBLESS_PROXY_INFO, pobject: *const ::core::ffi::c_void, size: i16) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrMesSimpleTypeEncodeAll(handle: *mut ::core::ffi::c_void, pproxyinfo: *const MIDL_STUBLESS_PROXY_INFO, pobject: *const ::core::ffi::c_void, size: i16);
     }
@@ -1813,7 +1624,6 @@ pub unsafe fn NdrMesSimpleTypeEncodeAll(handle: *mut ::core::ffi::c_void, pproxy
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrMesTypeAlignSize(handle: *mut ::core::ffi::c_void, pstubdesc: *const MIDL_STUB_DESC, pformatstring: *mut u8, pobject: *const ::core::ffi::c_void) -> usize {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrMesTypeAlignSize(handle: *mut ::core::ffi::c_void, pstubdesc: *const MIDL_STUB_DESC, pformatstring: *mut u8, pobject: *const ::core::ffi::c_void) -> usize;
     }
@@ -1823,7 +1633,6 @@ pub unsafe fn NdrMesTypeAlignSize(handle: *mut ::core::ffi::c_void, pstubdesc: *
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrMesTypeAlignSize2(handle: *mut ::core::ffi::c_void, ppicklinginfo: *const MIDL_TYPE_PICKLING_INFO, pstubdesc: *const MIDL_STUB_DESC, pformatstring: *mut u8, pobject: *const ::core::ffi::c_void) -> usize {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrMesTypeAlignSize2(handle: *mut ::core::ffi::c_void, ppicklinginfo: *const MIDL_TYPE_PICKLING_INFO, pstubdesc: *const MIDL_STUB_DESC, pformatstring: *mut u8, pobject: *const ::core::ffi::c_void) -> usize;
     }
@@ -1833,7 +1642,6 @@ pub unsafe fn NdrMesTypeAlignSize2(handle: *mut ::core::ffi::c_void, ppicklingin
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrMesTypeAlignSize3(handle: *mut ::core::ffi::c_void, ppicklinginfo: *const MIDL_TYPE_PICKLING_INFO, pproxyinfo: *const MIDL_STUBLESS_PROXY_INFO, arrtypeoffset: *const *const u32, ntypeindex: u32, pobject: *const ::core::ffi::c_void) -> usize {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrMesTypeAlignSize3(handle: *mut ::core::ffi::c_void, ppicklinginfo: *const MIDL_TYPE_PICKLING_INFO, pproxyinfo: *const MIDL_STUBLESS_PROXY_INFO, arrtypeoffset: *const *const u32, ntypeindex: u32, pobject: *const ::core::ffi::c_void) -> usize;
     }
@@ -1843,7 +1651,6 @@ pub unsafe fn NdrMesTypeAlignSize3(handle: *mut ::core::ffi::c_void, ppicklingin
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrMesTypeDecode(handle: *mut ::core::ffi::c_void, pstubdesc: *const MIDL_STUB_DESC, pformatstring: *mut u8, pobject: *mut ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrMesTypeDecode(handle: *mut ::core::ffi::c_void, pstubdesc: *const MIDL_STUB_DESC, pformatstring: *mut u8, pobject: *mut ::core::ffi::c_void);
     }
@@ -1853,7 +1660,6 @@ pub unsafe fn NdrMesTypeDecode(handle: *mut ::core::ffi::c_void, pstubdesc: *con
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrMesTypeDecode2(handle: *mut ::core::ffi::c_void, ppicklinginfo: *const MIDL_TYPE_PICKLING_INFO, pstubdesc: *const MIDL_STUB_DESC, pformatstring: *mut u8, pobject: *mut ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrMesTypeDecode2(handle: *mut ::core::ffi::c_void, ppicklinginfo: *const MIDL_TYPE_PICKLING_INFO, pstubdesc: *const MIDL_STUB_DESC, pformatstring: *mut u8, pobject: *mut ::core::ffi::c_void);
     }
@@ -1863,7 +1669,6 @@ pub unsafe fn NdrMesTypeDecode2(handle: *mut ::core::ffi::c_void, ppicklinginfo:
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrMesTypeDecode3(handle: *mut ::core::ffi::c_void, ppicklinginfo: *const MIDL_TYPE_PICKLING_INFO, pproxyinfo: *const MIDL_STUBLESS_PROXY_INFO, arrtypeoffset: *const *const u32, ntypeindex: u32, pobject: *mut ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrMesTypeDecode3(handle: *mut ::core::ffi::c_void, ppicklinginfo: *const MIDL_TYPE_PICKLING_INFO, pproxyinfo: *const MIDL_STUBLESS_PROXY_INFO, arrtypeoffset: *const *const u32, ntypeindex: u32, pobject: *mut ::core::ffi::c_void);
     }
@@ -1873,7 +1678,6 @@ pub unsafe fn NdrMesTypeDecode3(handle: *mut ::core::ffi::c_void, ppicklinginfo:
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrMesTypeEncode(handle: *mut ::core::ffi::c_void, pstubdesc: *const MIDL_STUB_DESC, pformatstring: *mut u8, pobject: *const ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrMesTypeEncode(handle: *mut ::core::ffi::c_void, pstubdesc: *const MIDL_STUB_DESC, pformatstring: *mut u8, pobject: *const ::core::ffi::c_void);
     }
@@ -1883,7 +1687,6 @@ pub unsafe fn NdrMesTypeEncode(handle: *mut ::core::ffi::c_void, pstubdesc: *con
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrMesTypeEncode2(handle: *mut ::core::ffi::c_void, ppicklinginfo: *const MIDL_TYPE_PICKLING_INFO, pstubdesc: *const MIDL_STUB_DESC, pformatstring: *mut u8, pobject: *const ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrMesTypeEncode2(handle: *mut ::core::ffi::c_void, ppicklinginfo: *const MIDL_TYPE_PICKLING_INFO, pstubdesc: *const MIDL_STUB_DESC, pformatstring: *mut u8, pobject: *const ::core::ffi::c_void);
     }
@@ -1893,7 +1696,6 @@ pub unsafe fn NdrMesTypeEncode2(handle: *mut ::core::ffi::c_void, ppicklinginfo:
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrMesTypeEncode3(handle: *mut ::core::ffi::c_void, ppicklinginfo: *const MIDL_TYPE_PICKLING_INFO, pproxyinfo: *const MIDL_STUBLESS_PROXY_INFO, arrtypeoffset: *const *const u32, ntypeindex: u32, pobject: *const ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrMesTypeEncode3(handle: *mut ::core::ffi::c_void, ppicklinginfo: *const MIDL_TYPE_PICKLING_INFO, pproxyinfo: *const MIDL_STUBLESS_PROXY_INFO, arrtypeoffset: *const *const u32, ntypeindex: u32, pobject: *const ::core::ffi::c_void);
     }
@@ -1903,7 +1705,6 @@ pub unsafe fn NdrMesTypeEncode3(handle: *mut ::core::ffi::c_void, ppicklinginfo:
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrMesTypeFree2(handle: *mut ::core::ffi::c_void, ppicklinginfo: *const MIDL_TYPE_PICKLING_INFO, pstubdesc: *const MIDL_STUB_DESC, pformatstring: *mut u8, pobject: *mut ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrMesTypeFree2(handle: *mut ::core::ffi::c_void, ppicklinginfo: *const MIDL_TYPE_PICKLING_INFO, pstubdesc: *const MIDL_STUB_DESC, pformatstring: *mut u8, pobject: *mut ::core::ffi::c_void);
     }
@@ -1913,7 +1714,6 @@ pub unsafe fn NdrMesTypeFree2(handle: *mut ::core::ffi::c_void, ppicklinginfo: *
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrMesTypeFree3(handle: *mut ::core::ffi::c_void, ppicklinginfo: *const MIDL_TYPE_PICKLING_INFO, pproxyinfo: *const MIDL_STUBLESS_PROXY_INFO, arrtypeoffset: *const *const u32, ntypeindex: u32, pobject: *mut ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrMesTypeFree3(handle: *mut ::core::ffi::c_void, ppicklinginfo: *const MIDL_TYPE_PICKLING_INFO, pproxyinfo: *const MIDL_STUBLESS_PROXY_INFO, arrtypeoffset: *const *const u32, ntypeindex: u32, pobject: *mut ::core::ffi::c_void);
     }
@@ -1923,7 +1723,6 @@ pub unsafe fn NdrMesTypeFree3(handle: *mut ::core::ffi::c_void, ppicklinginfo: *
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrNonConformantStringBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrNonConformantStringBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -1933,7 +1732,6 @@ pub unsafe fn NdrNonConformantStringBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE,
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrNonConformantStringMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrNonConformantStringMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8;
     }
@@ -1943,7 +1741,6 @@ pub unsafe fn NdrNonConformantStringMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, p
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrNonConformantStringMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrNonConformantStringMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32;
     }
@@ -1953,7 +1750,6 @@ pub unsafe fn NdrNonConformantStringMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE,
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrNonConformantStringUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrNonConformantStringUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8;
     }
@@ -1963,7 +1759,6 @@ pub unsafe fn NdrNonConformantStringUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE,
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrNonEncapsulatedUnionBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrNonEncapsulatedUnionBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -1973,7 +1768,6 @@ pub unsafe fn NdrNonEncapsulatedUnionBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrNonEncapsulatedUnionFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrNonEncapsulatedUnionFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -1983,7 +1777,6 @@ pub unsafe fn NdrNonEncapsulatedUnionFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmem
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrNonEncapsulatedUnionMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrNonEncapsulatedUnionMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8;
     }
@@ -1993,7 +1786,6 @@ pub unsafe fn NdrNonEncapsulatedUnionMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, 
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrNonEncapsulatedUnionMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrNonEncapsulatedUnionMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32;
     }
@@ -2003,7 +1795,6 @@ pub unsafe fn NdrNonEncapsulatedUnionMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrNonEncapsulatedUnionUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrNonEncapsulatedUnionUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8;
     }
@@ -2013,7 +1804,6 @@ pub unsafe fn NdrNonEncapsulatedUnionUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrNsGetBuffer(pstubmsg: *mut MIDL_STUB_MESSAGE, bufferlength: u32, handle: *mut ::core::ffi::c_void) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrNsGetBuffer(pstubmsg: *mut MIDL_STUB_MESSAGE, bufferlength: u32, handle: *mut ::core::ffi::c_void) -> *mut u8;
     }
@@ -2023,7 +1813,6 @@ pub unsafe fn NdrNsGetBuffer(pstubmsg: *mut MIDL_STUB_MESSAGE, bufferlength: u32
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrNsSendReceive(pstubmsg: *mut MIDL_STUB_MESSAGE, pbufferend: *mut u8, pautohandle: *mut *mut ::core::ffi::c_void) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrNsSendReceive(pstubmsg: *mut MIDL_STUB_MESSAGE, pbufferend: *mut u8, pautohandle: *mut *mut ::core::ffi::c_void) -> *mut u8;
     }
@@ -2032,7 +1821,6 @@ pub unsafe fn NdrNsSendReceive(pstubmsg: *mut MIDL_STUB_MESSAGE, pbufferend: *mu
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn NdrOleAllocate(size: usize) -> *mut ::core::ffi::c_void {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrOleAllocate(size: usize) -> *mut ::core::ffi::c_void;
     }
@@ -2041,7 +1829,6 @@ pub unsafe fn NdrOleAllocate(size: usize) -> *mut ::core::ffi::c_void {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn NdrOleFree(nodetofree: *const ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrOleFree(nodetofree: *const ::core::ffi::c_void);
     }
@@ -2051,7 +1838,6 @@ pub unsafe fn NdrOleFree(nodetofree: *const ::core::ffi::c_void) {
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrPartialIgnoreClientBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrPartialIgnoreClientBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut ::core::ffi::c_void);
     }
@@ -2061,7 +1847,6 @@ pub unsafe fn NdrPartialIgnoreClientBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE,
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrPartialIgnoreClientMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrPartialIgnoreClientMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut ::core::ffi::c_void);
     }
@@ -2071,7 +1856,6 @@ pub unsafe fn NdrPartialIgnoreClientMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, p
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrPartialIgnoreServerInitialize(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut ::core::ffi::c_void, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrPartialIgnoreServerInitialize(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut ::core::ffi::c_void, pformat: *mut u8);
     }
@@ -2081,7 +1865,6 @@ pub unsafe fn NdrPartialIgnoreServerInitialize(pstubmsg: *mut MIDL_STUB_MESSAGE,
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrPartialIgnoreServerUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrPartialIgnoreServerUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut ::core::ffi::c_void);
     }
@@ -2091,7 +1874,6 @@ pub unsafe fn NdrPartialIgnoreServerUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE,
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrPointerBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrPointerBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -2101,7 +1883,6 @@ pub unsafe fn NdrPointerBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *m
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrPointerFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrPointerFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -2111,7 +1892,6 @@ pub unsafe fn NdrPointerFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8,
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrPointerMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrPointerMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8;
     }
@@ -2121,7 +1901,6 @@ pub unsafe fn NdrPointerMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrPointerMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrPointerMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32;
     }
@@ -2131,7 +1910,6 @@ pub unsafe fn NdrPointerMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *m
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrPointerUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrPointerUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8;
     }
@@ -2141,7 +1919,6 @@ pub unsafe fn NdrPointerUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrRangeUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrRangeUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8;
     }
@@ -2150,7 +1927,6 @@ pub unsafe fn NdrRangeUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mu
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn NdrRpcSmClientAllocate(size: usize) -> *mut ::core::ffi::c_void {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrRpcSmClientAllocate(size: usize) -> *mut ::core::ffi::c_void;
     }
@@ -2159,7 +1935,6 @@ pub unsafe fn NdrRpcSmClientAllocate(size: usize) -> *mut ::core::ffi::c_void {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn NdrRpcSmClientFree(nodetofree: *const ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrRpcSmClientFree(nodetofree: *const ::core::ffi::c_void);
     }
@@ -2169,7 +1944,6 @@ pub unsafe fn NdrRpcSmClientFree(nodetofree: *const ::core::ffi::c_void) {
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrRpcSmSetClientToOsf(pmessage: *mut MIDL_STUB_MESSAGE) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrRpcSmSetClientToOsf(pmessage: *mut MIDL_STUB_MESSAGE);
     }
@@ -2178,7 +1952,6 @@ pub unsafe fn NdrRpcSmSetClientToOsf(pmessage: *mut MIDL_STUB_MESSAGE) {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn NdrRpcSsDefaultAllocate(size: usize) -> *mut ::core::ffi::c_void {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrRpcSsDefaultAllocate(size: usize) -> *mut ::core::ffi::c_void;
     }
@@ -2187,7 +1960,6 @@ pub unsafe fn NdrRpcSsDefaultAllocate(size: usize) -> *mut ::core::ffi::c_void {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn NdrRpcSsDefaultFree(nodetofree: *const ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrRpcSsDefaultFree(nodetofree: *const ::core::ffi::c_void);
     }
@@ -2197,7 +1969,6 @@ pub unsafe fn NdrRpcSsDefaultFree(nodetofree: *const ::core::ffi::c_void) {
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrRpcSsDisableAllocate(pmessage: *mut MIDL_STUB_MESSAGE) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrRpcSsDisableAllocate(pmessage: *mut MIDL_STUB_MESSAGE);
     }
@@ -2207,7 +1978,6 @@ pub unsafe fn NdrRpcSsDisableAllocate(pmessage: *mut MIDL_STUB_MESSAGE) {
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrRpcSsEnableAllocate(pmessage: *mut MIDL_STUB_MESSAGE) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrRpcSsEnableAllocate(pmessage: *mut MIDL_STUB_MESSAGE);
     }
@@ -2217,7 +1987,6 @@ pub unsafe fn NdrRpcSsEnableAllocate(pmessage: *mut MIDL_STUB_MESSAGE) {
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrSendReceive(pstubmsg: *mut MIDL_STUB_MESSAGE, pbufferend: *mut u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrSendReceive(pstubmsg: *mut MIDL_STUB_MESSAGE, pbufferend: *mut u8) -> *mut u8;
     }
@@ -2226,7 +1995,6 @@ pub unsafe fn NdrSendReceive(pstubmsg: *mut MIDL_STUB_MESSAGE, pbufferend: *mut 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn NdrServerCall2(prpcmsg: *mut RPC_MESSAGE) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrServerCall2(prpcmsg: *mut RPC_MESSAGE);
     }
@@ -2235,7 +2003,6 @@ pub unsafe fn NdrServerCall2(prpcmsg: *mut RPC_MESSAGE) {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn NdrServerCallAll(prpcmsg: *mut RPC_MESSAGE) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrServerCallAll(prpcmsg: *mut RPC_MESSAGE);
     }
@@ -2244,7 +2011,6 @@ pub unsafe fn NdrServerCallAll(prpcmsg: *mut RPC_MESSAGE) {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn NdrServerCallNdr64(prpcmsg: *mut RPC_MESSAGE) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrServerCallNdr64(prpcmsg: *mut RPC_MESSAGE);
     }
@@ -2254,7 +2020,6 @@ pub unsafe fn NdrServerCallNdr64(prpcmsg: *mut RPC_MESSAGE) {
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrServerContextMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, contexthandle: *mut NDR_SCONTEXT_1, rundownroutine: NDR_RUNDOWN) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrServerContextMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, contexthandle: *mut NDR_SCONTEXT_1, rundownroutine: *mut ::core::ffi::c_void);
     }
@@ -2264,7 +2029,6 @@ pub unsafe fn NdrServerContextMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, context
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrServerContextNewMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, contexthandle: *mut NDR_SCONTEXT_1, rundownroutine: NDR_RUNDOWN, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrServerContextNewMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, contexthandle: *mut NDR_SCONTEXT_1, rundownroutine: *mut ::core::ffi::c_void, pformat: *mut u8);
     }
@@ -2274,7 +2038,6 @@ pub unsafe fn NdrServerContextNewMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, cont
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrServerContextNewUnmarshall(pstubmsg: *const MIDL_STUB_MESSAGE, pformat: *const u8) -> *mut NDR_SCONTEXT_1 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrServerContextNewUnmarshall(pstubmsg: *const MIDL_STUB_MESSAGE, pformat: *const u8) -> *mut NDR_SCONTEXT_1;
     }
@@ -2284,7 +2047,6 @@ pub unsafe fn NdrServerContextNewUnmarshall(pstubmsg: *const MIDL_STUB_MESSAGE, 
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrServerContextUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE) -> *mut NDR_SCONTEXT_1 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrServerContextUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE) -> *mut NDR_SCONTEXT_1;
     }
@@ -2294,7 +2056,6 @@ pub unsafe fn NdrServerContextUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE) -> *m
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrServerInitialize(prpcmsg: *mut RPC_MESSAGE, pstubmsg: *mut MIDL_STUB_MESSAGE, pstubdescriptor: *mut MIDL_STUB_DESC) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrServerInitialize(prpcmsg: *mut RPC_MESSAGE, pstubmsg: *mut MIDL_STUB_MESSAGE, pstubdescriptor: *mut MIDL_STUB_DESC) -> *mut u8;
     }
@@ -2304,7 +2065,6 @@ pub unsafe fn NdrServerInitialize(prpcmsg: *mut RPC_MESSAGE, pstubmsg: *mut MIDL
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrServerInitializeMarshall(prpcmsg: *mut RPC_MESSAGE, pstubmsg: *mut MIDL_STUB_MESSAGE) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrServerInitializeMarshall(prpcmsg: *mut RPC_MESSAGE, pstubmsg: *mut MIDL_STUB_MESSAGE);
     }
@@ -2314,7 +2074,6 @@ pub unsafe fn NdrServerInitializeMarshall(prpcmsg: *mut RPC_MESSAGE, pstubmsg: *
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrServerInitializeNew(prpcmsg: *mut RPC_MESSAGE, pstubmsg: *mut MIDL_STUB_MESSAGE, pstubdescriptor: *mut MIDL_STUB_DESC) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrServerInitializeNew(prpcmsg: *mut RPC_MESSAGE, pstubmsg: *mut MIDL_STUB_MESSAGE, pstubdescriptor: *mut MIDL_STUB_DESC) -> *mut u8;
     }
@@ -2324,7 +2083,6 @@ pub unsafe fn NdrServerInitializeNew(prpcmsg: *mut RPC_MESSAGE, pstubmsg: *mut M
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrServerInitializePartial(prpcmsg: *mut RPC_MESSAGE, pstubmsg: *mut MIDL_STUB_MESSAGE, pstubdescriptor: *mut MIDL_STUB_DESC, requestedbuffersize: u32) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrServerInitializePartial(prpcmsg: *mut RPC_MESSAGE, pstubmsg: *mut MIDL_STUB_MESSAGE, pstubdescriptor: *mut MIDL_STUB_DESC, requestedbuffersize: u32);
     }
@@ -2334,7 +2092,6 @@ pub unsafe fn NdrServerInitializePartial(prpcmsg: *mut RPC_MESSAGE, pstubmsg: *m
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrServerInitializeUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pstubdescriptor: *mut MIDL_STUB_DESC, prpcmsg: *mut RPC_MESSAGE) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrServerInitializeUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pstubdescriptor: *mut MIDL_STUB_DESC, prpcmsg: *mut RPC_MESSAGE) -> *mut u8;
     }
@@ -2344,7 +2101,6 @@ pub unsafe fn NdrServerInitializeUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ps
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrSimpleStructBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrSimpleStructBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -2354,7 +2110,6 @@ pub unsafe fn NdrSimpleStructBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemor
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrSimpleStructFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrSimpleStructFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -2364,7 +2119,6 @@ pub unsafe fn NdrSimpleStructFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mu
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrSimpleStructMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrSimpleStructMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8;
     }
@@ -2374,7 +2128,6 @@ pub unsafe fn NdrSimpleStructMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory:
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrSimpleStructMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrSimpleStructMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32;
     }
@@ -2384,7 +2137,6 @@ pub unsafe fn NdrSimpleStructMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pforma
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrSimpleStructUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrSimpleStructUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8;
     }
@@ -2394,7 +2146,6 @@ pub unsafe fn NdrSimpleStructUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemo
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrSimpleTypeMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, formatchar: u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrSimpleTypeMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, formatchar: u8);
     }
@@ -2404,7 +2155,6 @@ pub unsafe fn NdrSimpleTypeMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrSimpleTypeUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, formatchar: u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrSimpleTypeUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, formatchar: u8);
     }
@@ -2413,7 +2163,6 @@ pub unsafe fn NdrSimpleTypeUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory:
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn NdrStubCall2(pthis: *mut ::core::ffi::c_void, pchannel: *mut ::core::ffi::c_void, prpcmsg: *mut RPC_MESSAGE, pdwstubphase: *mut u32) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrStubCall2(pthis: *mut ::core::ffi::c_void, pchannel: *mut ::core::ffi::c_void, prpcmsg: *mut RPC_MESSAGE, pdwstubphase: *mut u32) -> i32;
     }
@@ -2422,7 +2171,6 @@ pub unsafe fn NdrStubCall2(pthis: *mut ::core::ffi::c_void, pchannel: *mut ::cor
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn NdrStubCall3(pthis: *mut ::core::ffi::c_void, pchannel: *mut ::core::ffi::c_void, prpcmsg: *mut RPC_MESSAGE, pdwstubphase: *mut u32) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrStubCall3(pthis: *mut ::core::ffi::c_void, pchannel: *mut ::core::ffi::c_void, prpcmsg: *mut RPC_MESSAGE, pdwstubphase: *mut u32) -> i32;
     }
@@ -2432,7 +2180,6 @@ pub unsafe fn NdrStubCall3(pthis: *mut ::core::ffi::c_void, pchannel: *mut ::cor
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrUserMarshalBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrUserMarshalBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -2442,7 +2189,6 @@ pub unsafe fn NdrUserMarshalBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrUserMarshalFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrUserMarshalFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -2452,7 +2198,6 @@ pub unsafe fn NdrUserMarshalFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrUserMarshalMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrUserMarshalMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8;
     }
@@ -2462,7 +2207,6 @@ pub unsafe fn NdrUserMarshalMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: 
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrUserMarshalMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrUserMarshalMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32;
     }
@@ -2471,7 +2215,6 @@ pub unsafe fn NdrUserMarshalMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn NdrUserMarshalSimpleTypeConvert(pflags: *mut u32, pbuffer: *mut u8, formatchar: u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrUserMarshalSimpleTypeConvert(pflags: *mut u32, pbuffer: *mut u8, formatchar: u8) -> *mut u8;
     }
@@ -2481,7 +2224,6 @@ pub unsafe fn NdrUserMarshalSimpleTypeConvert(pflags: *mut u32, pbuffer: *mut u8
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrUserMarshalUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrUserMarshalUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8;
     }
@@ -2491,7 +2233,6 @@ pub unsafe fn NdrUserMarshalUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemor
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrVaryingArrayBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrVaryingArrayBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -2501,7 +2242,6 @@ pub unsafe fn NdrVaryingArrayBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemor
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrVaryingArrayFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrVaryingArrayFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -2511,7 +2251,6 @@ pub unsafe fn NdrVaryingArrayFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mu
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrVaryingArrayMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrVaryingArrayMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8;
     }
@@ -2521,7 +2260,6 @@ pub unsafe fn NdrVaryingArrayMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory:
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrVaryingArrayMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrVaryingArrayMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32;
     }
@@ -2531,7 +2269,6 @@ pub unsafe fn NdrVaryingArrayMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pforma
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrVaryingArrayUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrVaryingArrayUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8;
     }
@@ -2541,7 +2278,6 @@ pub unsafe fn NdrVaryingArrayUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemo
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrXmitOrRepAsBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrXmitOrRepAsBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -2551,7 +2287,6 @@ pub unsafe fn NdrXmitOrRepAsBufferSize(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrXmitOrRepAsFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrXmitOrRepAsFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8);
     }
@@ -2561,7 +2296,6 @@ pub unsafe fn NdrXmitOrRepAsFree(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrXmitOrRepAsMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrXmitOrRepAsMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: *mut u8, pformat: *mut u8) -> *mut u8;
     }
@@ -2571,7 +2305,6 @@ pub unsafe fn NdrXmitOrRepAsMarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, pmemory: 
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrXmitOrRepAsMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrXmitOrRepAsMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat: *mut u8) -> u32;
     }
@@ -2581,7 +2314,6 @@ pub unsafe fn NdrXmitOrRepAsMemorySize(pstubmsg: *mut MIDL_STUB_MESSAGE, pformat
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn NdrXmitOrRepAsUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NdrXmitOrRepAsUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemory: *mut *mut u8, pformat: *mut u8, fmustalloc: u8) -> *mut u8;
     }
@@ -2591,7 +2323,6 @@ pub unsafe fn NdrXmitOrRepAsUnmarshall(pstubmsg: *mut MIDL_STUB_MESSAGE, ppmemor
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
 pub unsafe fn RpcAsyncAbortCall(pasync: *mut RPC_ASYNC_STATE, exceptioncode: u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcAsyncAbortCall(pasync: *mut RPC_ASYNC_STATE, exceptioncode: u32) -> RPC_STATUS;
     }
@@ -2604,7 +2335,6 @@ pub unsafe fn RpcAsyncCancelCall<'a, P0>(pasync: *mut RPC_ASYNC_STATE, fabort: P
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcAsyncCancelCall(pasync: *mut RPC_ASYNC_STATE, fabort: super::super::Foundation::BOOL) -> RPC_STATUS;
     }
@@ -2614,7 +2344,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
 pub unsafe fn RpcAsyncCompleteCall(pasync: *mut RPC_ASYNC_STATE, reply: ::core::option::Option<*mut ::core::ffi::c_void>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcAsyncCompleteCall(pasync: *mut RPC_ASYNC_STATE, reply: *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -2624,7 +2353,6 @@ pub unsafe fn RpcAsyncCompleteCall(pasync: *mut RPC_ASYNC_STATE, reply: ::core::
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
 pub unsafe fn RpcAsyncGetCallStatus(pasync: *const RPC_ASYNC_STATE) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcAsyncGetCallStatus(pasync: *const RPC_ASYNC_STATE) -> RPC_STATUS;
     }
@@ -2634,7 +2362,6 @@ pub unsafe fn RpcAsyncGetCallStatus(pasync: *const RPC_ASYNC_STATE) -> RPC_STATU
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
 pub unsafe fn RpcAsyncInitializeHandle(pasync: *mut RPC_ASYNC_STATE, size: u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcAsyncInitializeHandle(pasync: *mut RPC_ASYNC_STATE, size: u32) -> RPC_STATUS;
     }
@@ -2644,7 +2371,6 @@ pub unsafe fn RpcAsyncInitializeHandle(pasync: *mut RPC_ASYNC_STATE, size: u32) 
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
 pub unsafe fn RpcAsyncRegisterInfo(pasync: *const RPC_ASYNC_STATE) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcAsyncRegisterInfo(pasync: *const RPC_ASYNC_STATE) -> RPC_STATUS;
     }
@@ -2654,7 +2380,6 @@ pub unsafe fn RpcAsyncRegisterInfo(pasync: *const RPC_ASYNC_STATE) -> RPC_STATUS
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
 pub unsafe fn RpcBindingBind(pasync: ::core::option::Option<*const RPC_ASYNC_STATE>, binding: *const ::core::ffi::c_void, ifspec: *const ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingBind(pasync: *const RPC_ASYNC_STATE, binding: *const ::core::ffi::c_void, ifspec: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -2663,7 +2388,6 @@ pub unsafe fn RpcBindingBind(pasync: ::core::option::Option<*const RPC_ASYNC_STA
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcBindingCopy(sourcebinding: *const ::core::ffi::c_void, destinationbinding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingCopy(sourcebinding: *const ::core::ffi::c_void, destinationbinding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -2673,7 +2397,6 @@ pub unsafe fn RpcBindingCopy(sourcebinding: *const ::core::ffi::c_void, destinat
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn RpcBindingCreateA(template: *const RPC_BINDING_HANDLE_TEMPLATE_V1_A, security: ::core::option::Option<*const RPC_BINDING_HANDLE_SECURITY_V1_A>, options: ::core::option::Option<*const RPC_BINDING_HANDLE_OPTIONS_V1>, binding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingCreateA(template: *const RPC_BINDING_HANDLE_TEMPLATE_V1_A, security: *const RPC_BINDING_HANDLE_SECURITY_V1_A, options: *const RPC_BINDING_HANDLE_OPTIONS_V1, binding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -2683,7 +2406,6 @@ pub unsafe fn RpcBindingCreateA(template: *const RPC_BINDING_HANDLE_TEMPLATE_V1_
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn RpcBindingCreateW(template: *const RPC_BINDING_HANDLE_TEMPLATE_V1_W, security: ::core::option::Option<*const RPC_BINDING_HANDLE_SECURITY_V1_W>, options: ::core::option::Option<*const RPC_BINDING_HANDLE_OPTIONS_V1>, binding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingCreateW(template: *const RPC_BINDING_HANDLE_TEMPLATE_V1_W, security: *const RPC_BINDING_HANDLE_SECURITY_V1_W, options: *const RPC_BINDING_HANDLE_OPTIONS_V1, binding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -2692,7 +2414,6 @@ pub unsafe fn RpcBindingCreateW(template: *const RPC_BINDING_HANDLE_TEMPLATE_V1_
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcBindingFree(binding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingFree(binding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -2701,7 +2422,6 @@ pub unsafe fn RpcBindingFree(binding: *mut *mut ::core::ffi::c_void) -> RPC_STAT
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcBindingFromStringBindingA(stringbinding: *const u8, binding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingFromStringBindingA(stringbinding: *const u8, binding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -2710,7 +2430,6 @@ pub unsafe fn RpcBindingFromStringBindingA(stringbinding: *const u8, binding: *m
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcBindingFromStringBindingW(stringbinding: *const u16, binding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingFromStringBindingW(stringbinding: *const u16, binding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -2719,7 +2438,6 @@ pub unsafe fn RpcBindingFromStringBindingW(stringbinding: *const u16, binding: *
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcBindingInqAuthClientA(clientbinding: ::core::option::Option<*const ::core::ffi::c_void>, privs: *mut *mut ::core::ffi::c_void, serverprincname: ::core::option::Option<*mut *mut u8>, authnlevel: ::core::option::Option<*mut u32>, authnsvc: ::core::option::Option<*mut u32>, authzsvc: ::core::option::Option<*mut u32>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingInqAuthClientA(clientbinding: *const ::core::ffi::c_void, privs: *mut *mut ::core::ffi::c_void, serverprincname: *mut *mut u8, authnlevel: *mut u32, authnsvc: *mut u32, authzsvc: *mut u32) -> RPC_STATUS;
     }
@@ -2728,7 +2446,6 @@ pub unsafe fn RpcBindingInqAuthClientA(clientbinding: ::core::option::Option<*co
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcBindingInqAuthClientExA(clientbinding: ::core::option::Option<*const ::core::ffi::c_void>, privs: *mut *mut ::core::ffi::c_void, serverprincname: ::core::option::Option<*mut *mut u8>, authnlevel: ::core::option::Option<*mut u32>, authnsvc: ::core::option::Option<*mut u32>, authzsvc: ::core::option::Option<*mut u32>, flags: u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingInqAuthClientExA(clientbinding: *const ::core::ffi::c_void, privs: *mut *mut ::core::ffi::c_void, serverprincname: *mut *mut u8, authnlevel: *mut u32, authnsvc: *mut u32, authzsvc: *mut u32, flags: u32) -> RPC_STATUS;
     }
@@ -2737,7 +2454,6 @@ pub unsafe fn RpcBindingInqAuthClientExA(clientbinding: ::core::option::Option<*
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcBindingInqAuthClientExW(clientbinding: ::core::option::Option<*const ::core::ffi::c_void>, privs: *mut *mut ::core::ffi::c_void, serverprincname: ::core::option::Option<*mut *mut u16>, authnlevel: ::core::option::Option<*mut u32>, authnsvc: ::core::option::Option<*mut u32>, authzsvc: ::core::option::Option<*mut u32>, flags: u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingInqAuthClientExW(clientbinding: *const ::core::ffi::c_void, privs: *mut *mut ::core::ffi::c_void, serverprincname: *mut *mut u16, authnlevel: *mut u32, authnsvc: *mut u32, authzsvc: *mut u32, flags: u32) -> RPC_STATUS;
     }
@@ -2746,7 +2462,6 @@ pub unsafe fn RpcBindingInqAuthClientExW(clientbinding: ::core::option::Option<*
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcBindingInqAuthClientW(clientbinding: ::core::option::Option<*const ::core::ffi::c_void>, privs: *mut *mut ::core::ffi::c_void, serverprincname: ::core::option::Option<*mut *mut u16>, authnlevel: ::core::option::Option<*mut u32>, authnsvc: ::core::option::Option<*mut u32>, authzsvc: ::core::option::Option<*mut u32>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingInqAuthClientW(clientbinding: *const ::core::ffi::c_void, privs: *mut *mut ::core::ffi::c_void, serverprincname: *mut *mut u16, authnlevel: *mut u32, authnsvc: *mut u32, authzsvc: *mut u32) -> RPC_STATUS;
     }
@@ -2755,7 +2470,6 @@ pub unsafe fn RpcBindingInqAuthClientW(clientbinding: ::core::option::Option<*co
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcBindingInqAuthInfoA(binding: *const ::core::ffi::c_void, serverprincname: ::core::option::Option<*mut *mut u8>, authnlevel: ::core::option::Option<*mut u32>, authnsvc: ::core::option::Option<*mut u32>, authidentity: ::core::option::Option<*mut *mut ::core::ffi::c_void>, authzsvc: ::core::option::Option<*mut u32>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingInqAuthInfoA(binding: *const ::core::ffi::c_void, serverprincname: *mut *mut u8, authnlevel: *mut u32, authnsvc: *mut u32, authidentity: *mut *mut ::core::ffi::c_void, authzsvc: *mut u32) -> RPC_STATUS;
     }
@@ -2765,7 +2479,6 @@ pub unsafe fn RpcBindingInqAuthInfoA(binding: *const ::core::ffi::c_void, server
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn RpcBindingInqAuthInfoExA(binding: *const ::core::ffi::c_void, serverprincname: ::core::option::Option<*mut *mut u8>, authnlevel: ::core::option::Option<*mut u32>, authnsvc: ::core::option::Option<*mut u32>, authidentity: ::core::option::Option<*mut *mut ::core::ffi::c_void>, authzsvc: ::core::option::Option<*mut u32>, rpcqosversion: u32, securityqos: ::core::option::Option<*mut RPC_SECURITY_QOS>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingInqAuthInfoExA(binding: *const ::core::ffi::c_void, serverprincname: *mut *mut u8, authnlevel: *mut u32, authnsvc: *mut u32, authidentity: *mut *mut ::core::ffi::c_void, authzsvc: *mut u32, rpcqosversion: u32, securityqos: *mut RPC_SECURITY_QOS) -> RPC_STATUS;
     }
@@ -2775,7 +2488,6 @@ pub unsafe fn RpcBindingInqAuthInfoExA(binding: *const ::core::ffi::c_void, serv
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn RpcBindingInqAuthInfoExW(binding: *const ::core::ffi::c_void, serverprincname: ::core::option::Option<*mut *mut u16>, authnlevel: ::core::option::Option<*mut u32>, authnsvc: ::core::option::Option<*mut u32>, authidentity: ::core::option::Option<*mut *mut ::core::ffi::c_void>, authzsvc: ::core::option::Option<*mut u32>, rpcqosversion: u32, securityqos: ::core::option::Option<*mut RPC_SECURITY_QOS>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingInqAuthInfoExW(binding: *const ::core::ffi::c_void, serverprincname: *mut *mut u16, authnlevel: *mut u32, authnsvc: *mut u32, authidentity: *mut *mut ::core::ffi::c_void, authzsvc: *mut u32, rpcqosversion: u32, securityqos: *mut RPC_SECURITY_QOS) -> RPC_STATUS;
     }
@@ -2784,7 +2496,6 @@ pub unsafe fn RpcBindingInqAuthInfoExW(binding: *const ::core::ffi::c_void, serv
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcBindingInqAuthInfoW(binding: *const ::core::ffi::c_void, serverprincname: ::core::option::Option<*mut *mut u16>, authnlevel: ::core::option::Option<*mut u32>, authnsvc: ::core::option::Option<*mut u32>, authidentity: ::core::option::Option<*mut *mut ::core::ffi::c_void>, authzsvc: ::core::option::Option<*mut u32>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingInqAuthInfoW(binding: *const ::core::ffi::c_void, serverprincname: *mut *mut u16, authnlevel: *mut u32, authnsvc: *mut u32, authidentity: *mut *mut ::core::ffi::c_void, authzsvc: *mut u32) -> RPC_STATUS;
     }
@@ -2793,7 +2504,6 @@ pub unsafe fn RpcBindingInqAuthInfoW(binding: *const ::core::ffi::c_void, server
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcBindingInqMaxCalls(binding: *const ::core::ffi::c_void, maxcalls: *mut u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingInqMaxCalls(binding: *const ::core::ffi::c_void, maxcalls: *mut u32) -> RPC_STATUS;
     }
@@ -2802,7 +2512,6 @@ pub unsafe fn RpcBindingInqMaxCalls(binding: *const ::core::ffi::c_void, maxcall
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcBindingInqObject(binding: *const ::core::ffi::c_void, objectuuid: *mut ::windows::core::GUID) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingInqObject(binding: *const ::core::ffi::c_void, objectuuid: *mut ::windows::core::GUID) -> RPC_STATUS;
     }
@@ -2811,7 +2520,6 @@ pub unsafe fn RpcBindingInqObject(binding: *const ::core::ffi::c_void, objectuui
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcBindingInqOption(hbinding: *const ::core::ffi::c_void, option: u32, poptionvalue: *mut usize) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingInqOption(hbinding: *const ::core::ffi::c_void, option: u32, poptionvalue: *mut usize) -> RPC_STATUS;
     }
@@ -2820,7 +2528,6 @@ pub unsafe fn RpcBindingInqOption(hbinding: *const ::core::ffi::c_void, option: 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcBindingReset(binding: *const ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingReset(binding: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -2829,7 +2536,6 @@ pub unsafe fn RpcBindingReset(binding: *const ::core::ffi::c_void) -> RPC_STATUS
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcBindingServerFromClient(clientbinding: ::core::option::Option<*const ::core::ffi::c_void>, serverbinding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingServerFromClient(clientbinding: *const ::core::ffi::c_void, serverbinding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -2838,7 +2544,6 @@ pub unsafe fn RpcBindingServerFromClient(clientbinding: ::core::option::Option<*
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcBindingSetAuthInfoA(binding: *const ::core::ffi::c_void, serverprincname: ::core::option::Option<*const u8>, authnlevel: u32, authnsvc: u32, authidentity: ::core::option::Option<*const ::core::ffi::c_void>, authzsvc: u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingSetAuthInfoA(binding: *const ::core::ffi::c_void, serverprincname: *const u8, authnlevel: u32, authnsvc: u32, authidentity: *const ::core::ffi::c_void, authzsvc: u32) -> RPC_STATUS;
     }
@@ -2848,7 +2553,6 @@ pub unsafe fn RpcBindingSetAuthInfoA(binding: *const ::core::ffi::c_void, server
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn RpcBindingSetAuthInfoExA(binding: *const ::core::ffi::c_void, serverprincname: ::core::option::Option<*const u8>, authnlevel: u32, authnsvc: u32, authidentity: ::core::option::Option<*const ::core::ffi::c_void>, authzsvc: u32, securityqos: ::core::option::Option<*const RPC_SECURITY_QOS>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingSetAuthInfoExA(binding: *const ::core::ffi::c_void, serverprincname: *const u8, authnlevel: u32, authnsvc: u32, authidentity: *const ::core::ffi::c_void, authzsvc: u32, securityqos: *const RPC_SECURITY_QOS) -> RPC_STATUS;
     }
@@ -2858,7 +2562,6 @@ pub unsafe fn RpcBindingSetAuthInfoExA(binding: *const ::core::ffi::c_void, serv
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn RpcBindingSetAuthInfoExW(binding: *const ::core::ffi::c_void, serverprincname: ::core::option::Option<*const u16>, authnlevel: u32, authnsvc: u32, authidentity: ::core::option::Option<*const ::core::ffi::c_void>, authzsvc: u32, securityqos: ::core::option::Option<*const RPC_SECURITY_QOS>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingSetAuthInfoExW(binding: *const ::core::ffi::c_void, serverprincname: *const u16, authnlevel: u32, authnsvc: u32, authidentity: *const ::core::ffi::c_void, authzsvc: u32, securityqos: *const RPC_SECURITY_QOS) -> RPC_STATUS;
     }
@@ -2867,7 +2570,6 @@ pub unsafe fn RpcBindingSetAuthInfoExW(binding: *const ::core::ffi::c_void, serv
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcBindingSetAuthInfoW(binding: *const ::core::ffi::c_void, serverprincname: ::core::option::Option<*const u16>, authnlevel: u32, authnsvc: u32, authidentity: ::core::option::Option<*const ::core::ffi::c_void>, authzsvc: u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingSetAuthInfoW(binding: *const ::core::ffi::c_void, serverprincname: *const u16, authnlevel: u32, authnsvc: u32, authidentity: *const ::core::ffi::c_void, authzsvc: u32) -> RPC_STATUS;
     }
@@ -2876,7 +2578,6 @@ pub unsafe fn RpcBindingSetAuthInfoW(binding: *const ::core::ffi::c_void, server
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcBindingSetObject(binding: *const ::core::ffi::c_void, objectuuid: *const ::windows::core::GUID) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingSetObject(binding: *const ::core::ffi::c_void, objectuuid: *const ::windows::core::GUID) -> RPC_STATUS;
     }
@@ -2885,7 +2586,6 @@ pub unsafe fn RpcBindingSetObject(binding: *const ::core::ffi::c_void, objectuui
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcBindingSetOption(hbinding: *const ::core::ffi::c_void, option: u32, optionvalue: usize) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingSetOption(hbinding: *const ::core::ffi::c_void, option: u32, optionvalue: usize) -> RPC_STATUS;
     }
@@ -2894,7 +2594,6 @@ pub unsafe fn RpcBindingSetOption(hbinding: *const ::core::ffi::c_void, option: 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcBindingToStringBindingA(binding: *const ::core::ffi::c_void, stringbinding: *mut *mut u8) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingToStringBindingA(binding: *const ::core::ffi::c_void, stringbinding: *mut *mut u8) -> RPC_STATUS;
     }
@@ -2903,7 +2602,6 @@ pub unsafe fn RpcBindingToStringBindingA(binding: *const ::core::ffi::c_void, st
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcBindingToStringBindingW(binding: *const ::core::ffi::c_void, stringbinding: *mut *mut u16) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingToStringBindingW(binding: *const ::core::ffi::c_void, stringbinding: *mut *mut u16) -> RPC_STATUS;
     }
@@ -2912,7 +2610,6 @@ pub unsafe fn RpcBindingToStringBindingW(binding: *const ::core::ffi::c_void, st
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcBindingUnbind(binding: *const ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingUnbind(binding: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -2921,7 +2618,6 @@ pub unsafe fn RpcBindingUnbind(binding: *const ::core::ffi::c_void) -> RPC_STATU
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcBindingVectorFree(bindingvector: *mut *mut RPC_BINDING_VECTOR) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcBindingVectorFree(bindingvector: *mut *mut RPC_BINDING_VECTOR) -> RPC_STATUS;
     }
@@ -2930,7 +2626,6 @@ pub unsafe fn RpcBindingVectorFree(bindingvector: *mut *mut RPC_BINDING_VECTOR) 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcCancelThread(thread: *const ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcCancelThread(thread: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -2939,7 +2634,6 @@ pub unsafe fn RpcCancelThread(thread: *const ::core::ffi::c_void) -> RPC_STATUS 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcCancelThreadEx(thread: *const ::core::ffi::c_void, timeout: i32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcCancelThreadEx(thread: *const ::core::ffi::c_void, timeout: i32) -> RPC_STATUS;
     }
@@ -2949,7 +2643,6 @@ pub unsafe fn RpcCancelThreadEx(thread: *const ::core::ffi::c_void, timeout: i32
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
 #[inline]
 pub unsafe fn RpcCertGeneratePrincipalNameA(context: *const super::super::Security::Cryptography::CERT_CONTEXT, flags: u32, pbuffer: *mut *mut u8) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcCertGeneratePrincipalNameA(context: *const super::super::Security::Cryptography::CERT_CONTEXT, flags: u32, pbuffer: *mut *mut u8) -> RPC_STATUS;
     }
@@ -2959,7 +2652,6 @@ pub unsafe fn RpcCertGeneratePrincipalNameA(context: *const super::super::Securi
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
 #[inline]
 pub unsafe fn RpcCertGeneratePrincipalNameW(context: *const super::super::Security::Cryptography::CERT_CONTEXT, flags: u32, pbuffer: *mut *mut u16) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcCertGeneratePrincipalNameW(context: *const super::super::Security::Cryptography::CERT_CONTEXT, flags: u32, pbuffer: *mut *mut u16) -> RPC_STATUS;
     }
@@ -2968,7 +2660,6 @@ pub unsafe fn RpcCertGeneratePrincipalNameW(context: *const super::super::Securi
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcEpRegisterA(ifspec: *const ::core::ffi::c_void, bindingvector: *const RPC_BINDING_VECTOR, uuidvector: ::core::option::Option<*const UUID_VECTOR>, annotation: ::core::option::Option<*const u8>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcEpRegisterA(ifspec: *const ::core::ffi::c_void, bindingvector: *const RPC_BINDING_VECTOR, uuidvector: *const UUID_VECTOR, annotation: *const u8) -> RPC_STATUS;
     }
@@ -2977,7 +2668,6 @@ pub unsafe fn RpcEpRegisterA(ifspec: *const ::core::ffi::c_void, bindingvector: 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcEpRegisterNoReplaceA(ifspec: *const ::core::ffi::c_void, bindingvector: *const RPC_BINDING_VECTOR, uuidvector: ::core::option::Option<*const UUID_VECTOR>, annotation: ::core::option::Option<*const u8>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcEpRegisterNoReplaceA(ifspec: *const ::core::ffi::c_void, bindingvector: *const RPC_BINDING_VECTOR, uuidvector: *const UUID_VECTOR, annotation: *const u8) -> RPC_STATUS;
     }
@@ -2986,7 +2676,6 @@ pub unsafe fn RpcEpRegisterNoReplaceA(ifspec: *const ::core::ffi::c_void, bindin
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcEpRegisterNoReplaceW(ifspec: *const ::core::ffi::c_void, bindingvector: *const RPC_BINDING_VECTOR, uuidvector: ::core::option::Option<*const UUID_VECTOR>, annotation: ::core::option::Option<*const u16>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcEpRegisterNoReplaceW(ifspec: *const ::core::ffi::c_void, bindingvector: *const RPC_BINDING_VECTOR, uuidvector: *const UUID_VECTOR, annotation: *const u16) -> RPC_STATUS;
     }
@@ -2995,7 +2684,6 @@ pub unsafe fn RpcEpRegisterNoReplaceW(ifspec: *const ::core::ffi::c_void, bindin
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcEpRegisterW(ifspec: *const ::core::ffi::c_void, bindingvector: *const RPC_BINDING_VECTOR, uuidvector: ::core::option::Option<*const UUID_VECTOR>, annotation: ::core::option::Option<*const u16>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcEpRegisterW(ifspec: *const ::core::ffi::c_void, bindingvector: *const RPC_BINDING_VECTOR, uuidvector: *const UUID_VECTOR, annotation: *const u16) -> RPC_STATUS;
     }
@@ -3004,7 +2692,6 @@ pub unsafe fn RpcEpRegisterW(ifspec: *const ::core::ffi::c_void, bindingvector: 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcEpResolveBinding(binding: *const ::core::ffi::c_void, ifspec: *const ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcEpResolveBinding(binding: *const ::core::ffi::c_void, ifspec: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3013,7 +2700,6 @@ pub unsafe fn RpcEpResolveBinding(binding: *const ::core::ffi::c_void, ifspec: *
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcEpUnregister(ifspec: *const ::core::ffi::c_void, bindingvector: *const RPC_BINDING_VECTOR, uuidvector: ::core::option::Option<*const UUID_VECTOR>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcEpUnregister(ifspec: *const ::core::ffi::c_void, bindingvector: *const RPC_BINDING_VECTOR, uuidvector: *const UUID_VECTOR) -> RPC_STATUS;
     }
@@ -3023,7 +2709,6 @@ pub unsafe fn RpcEpUnregister(ifspec: *const ::core::ffi::c_void, bindingvector:
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn RpcErrorAddRecord(errorinfo: *const RPC_EXTENDED_ERROR_INFO) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcErrorAddRecord(errorinfo: *const RPC_EXTENDED_ERROR_INFO) -> RPC_STATUS;
     }
@@ -3032,7 +2717,6 @@ pub unsafe fn RpcErrorAddRecord(errorinfo: *const RPC_EXTENDED_ERROR_INFO) -> RP
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcErrorClearInformation() {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcErrorClearInformation();
     }
@@ -3041,7 +2725,6 @@ pub unsafe fn RpcErrorClearInformation() {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcErrorEndEnumeration(enumhandle: *mut RPC_ERROR_ENUM_HANDLE) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcErrorEndEnumeration(enumhandle: *mut RPC_ERROR_ENUM_HANDLE) -> RPC_STATUS;
     }
@@ -3054,7 +2737,6 @@ pub unsafe fn RpcErrorGetNextRecord<'a, P0>(enumhandle: *const RPC_ERROR_ENUM_HA
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcErrorGetNextRecord(enumhandle: *const RPC_ERROR_ENUM_HANDLE, copystrings: super::super::Foundation::BOOL, errorinfo: *mut RPC_EXTENDED_ERROR_INFO) -> RPC_STATUS;
     }
@@ -3063,7 +2745,6 @@ where
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcErrorGetNumberOfRecords(enumhandle: *const RPC_ERROR_ENUM_HANDLE, records: *mut i32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcErrorGetNumberOfRecords(enumhandle: *const RPC_ERROR_ENUM_HANDLE, records: *mut i32) -> RPC_STATUS;
     }
@@ -3072,7 +2753,6 @@ pub unsafe fn RpcErrorGetNumberOfRecords(enumhandle: *const RPC_ERROR_ENUM_HANDL
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcErrorLoadErrorInfo(errorblob: *const ::core::ffi::c_void, blobsize: usize, enumhandle: *mut RPC_ERROR_ENUM_HANDLE) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcErrorLoadErrorInfo(errorblob: *const ::core::ffi::c_void, blobsize: usize, enumhandle: *mut RPC_ERROR_ENUM_HANDLE) -> RPC_STATUS;
     }
@@ -3081,7 +2761,6 @@ pub unsafe fn RpcErrorLoadErrorInfo(errorblob: *const ::core::ffi::c_void, blobs
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcErrorResetEnumeration(enumhandle: *mut RPC_ERROR_ENUM_HANDLE) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcErrorResetEnumeration(enumhandle: *mut RPC_ERROR_ENUM_HANDLE) -> RPC_STATUS;
     }
@@ -3090,7 +2769,6 @@ pub unsafe fn RpcErrorResetEnumeration(enumhandle: *mut RPC_ERROR_ENUM_HANDLE) -
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcErrorSaveErrorInfo(enumhandle: *const RPC_ERROR_ENUM_HANDLE, errorblob: *mut *mut ::core::ffi::c_void, blobsize: *mut usize) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcErrorSaveErrorInfo(enumhandle: *const RPC_ERROR_ENUM_HANDLE, errorblob: *mut *mut ::core::ffi::c_void, blobsize: *mut usize) -> RPC_STATUS;
     }
@@ -3099,7 +2777,6 @@ pub unsafe fn RpcErrorSaveErrorInfo(enumhandle: *const RPC_ERROR_ENUM_HANDLE, er
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcErrorStartEnumeration(enumhandle: *mut RPC_ERROR_ENUM_HANDLE) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcErrorStartEnumeration(enumhandle: *mut RPC_ERROR_ENUM_HANDLE) -> RPC_STATUS;
     }
@@ -3108,7 +2785,6 @@ pub unsafe fn RpcErrorStartEnumeration(enumhandle: *mut RPC_ERROR_ENUM_HANDLE) -
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcExceptionFilter(exceptioncode: u32) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcExceptionFilter(exceptioncode: u32) -> i32;
     }
@@ -3117,7 +2793,6 @@ pub unsafe fn RpcExceptionFilter(exceptioncode: u32) -> i32 {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcFreeAuthorizationContext(pauthzclientcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcFreeAuthorizationContext(pauthzclientcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3130,7 +2805,6 @@ pub unsafe fn RpcGetAuthorizationContextForClient<'a, P0>(clientbinding: ::core:
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcGetAuthorizationContextForClient(clientbinding: *const ::core::ffi::c_void, impersonateonreturn: super::super::Foundation::BOOL, reserved1: *const ::core::ffi::c_void, pexpirationtime: *const i64, reserved2: super::super::Foundation::LUID, reserved3: u32, reserved4: *const ::core::ffi::c_void, pauthzclientcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3139,7 +2813,6 @@ where
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcIfIdVectorFree(ifidvector: *mut *mut RPC_IF_ID_VECTOR) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcIfIdVectorFree(ifidvector: *mut *mut RPC_IF_ID_VECTOR) -> RPC_STATUS;
     }
@@ -3148,7 +2821,6 @@ pub unsafe fn RpcIfIdVectorFree(ifidvector: *mut *mut RPC_IF_ID_VECTOR) -> RPC_S
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcIfInqId(rpcifhandle: *const ::core::ffi::c_void, rpcifid: *mut RPC_IF_ID) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcIfInqId(rpcifhandle: *const ::core::ffi::c_void, rpcifid: *mut RPC_IF_ID) -> RPC_STATUS;
     }
@@ -3157,7 +2829,6 @@ pub unsafe fn RpcIfInqId(rpcifhandle: *const ::core::ffi::c_void, rpcifid: *mut 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcImpersonateClient(bindinghandle: ::core::option::Option<*const ::core::ffi::c_void>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcImpersonateClient(bindinghandle: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3166,7 +2837,6 @@ pub unsafe fn RpcImpersonateClient(bindinghandle: ::core::option::Option<*const 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcImpersonateClient2(bindinghandle: ::core::option::Option<*const ::core::ffi::c_void>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcImpersonateClient2(bindinghandle: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3175,7 +2845,6 @@ pub unsafe fn RpcImpersonateClient2(bindinghandle: ::core::option::Option<*const
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcImpersonateClientContainer(bindinghandle: ::core::option::Option<*const ::core::ffi::c_void>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcImpersonateClientContainer(bindinghandle: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3184,7 +2853,6 @@ pub unsafe fn RpcImpersonateClientContainer(bindinghandle: ::core::option::Optio
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcMgmtEnableIdleCleanup() -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcMgmtEnableIdleCleanup() -> RPC_STATUS;
     }
@@ -3193,7 +2861,6 @@ pub unsafe fn RpcMgmtEnableIdleCleanup() -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcMgmtEpEltInqBegin(epbinding: ::core::option::Option<*const ::core::ffi::c_void>, inquirytype: u32, ifid: ::core::option::Option<*const RPC_IF_ID>, versoption: u32, objectuuid: ::core::option::Option<*const ::windows::core::GUID>, inquirycontext: *mut *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcMgmtEpEltInqBegin(epbinding: *const ::core::ffi::c_void, inquirytype: u32, ifid: *const RPC_IF_ID, versoption: u32, objectuuid: *const ::windows::core::GUID, inquirycontext: *mut *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3202,7 +2869,6 @@ pub unsafe fn RpcMgmtEpEltInqBegin(epbinding: ::core::option::Option<*const ::co
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcMgmtEpEltInqDone(inquirycontext: *mut *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcMgmtEpEltInqDone(inquirycontext: *mut *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3211,7 +2877,6 @@ pub unsafe fn RpcMgmtEpEltInqDone(inquirycontext: *mut *mut *mut ::core::ffi::c_
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcMgmtEpEltInqNextA(inquirycontext: *const *const ::core::ffi::c_void, ifid: *mut RPC_IF_ID, binding: ::core::option::Option<*mut *mut ::core::ffi::c_void>, objectuuid: ::core::option::Option<*mut ::windows::core::GUID>, annotation: ::core::option::Option<*mut *mut u8>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcMgmtEpEltInqNextA(inquirycontext: *const *const ::core::ffi::c_void, ifid: *mut RPC_IF_ID, binding: *mut *mut ::core::ffi::c_void, objectuuid: *mut ::windows::core::GUID, annotation: *mut *mut u8) -> RPC_STATUS;
     }
@@ -3220,7 +2885,6 @@ pub unsafe fn RpcMgmtEpEltInqNextA(inquirycontext: *const *const ::core::ffi::c_
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcMgmtEpEltInqNextW(inquirycontext: *const *const ::core::ffi::c_void, ifid: *mut RPC_IF_ID, binding: ::core::option::Option<*mut *mut ::core::ffi::c_void>, objectuuid: ::core::option::Option<*mut ::windows::core::GUID>, annotation: ::core::option::Option<*mut *mut u16>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcMgmtEpEltInqNextW(inquirycontext: *const *const ::core::ffi::c_void, ifid: *mut RPC_IF_ID, binding: *mut *mut ::core::ffi::c_void, objectuuid: *mut ::windows::core::GUID, annotation: *mut *mut u16) -> RPC_STATUS;
     }
@@ -3229,7 +2893,6 @@ pub unsafe fn RpcMgmtEpEltInqNextW(inquirycontext: *const *const ::core::ffi::c_
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcMgmtEpUnregister(epbinding: ::core::option::Option<*const ::core::ffi::c_void>, ifid: *const RPC_IF_ID, binding: *const ::core::ffi::c_void, objectuuid: ::core::option::Option<*const ::windows::core::GUID>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcMgmtEpUnregister(epbinding: *const ::core::ffi::c_void, ifid: *const RPC_IF_ID, binding: *const ::core::ffi::c_void, objectuuid: *const ::windows::core::GUID) -> RPC_STATUS;
     }
@@ -3238,7 +2901,6 @@ pub unsafe fn RpcMgmtEpUnregister(epbinding: ::core::option::Option<*const ::cor
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcMgmtInqComTimeout(binding: *const ::core::ffi::c_void, timeout: *mut u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcMgmtInqComTimeout(binding: *const ::core::ffi::c_void, timeout: *mut u32) -> RPC_STATUS;
     }
@@ -3247,7 +2909,6 @@ pub unsafe fn RpcMgmtInqComTimeout(binding: *const ::core::ffi::c_void, timeout:
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcMgmtInqDefaultProtectLevel(authnsvc: u32, authnlevel: *mut u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcMgmtInqDefaultProtectLevel(authnsvc: u32, authnlevel: *mut u32) -> RPC_STATUS;
     }
@@ -3256,7 +2917,6 @@ pub unsafe fn RpcMgmtInqDefaultProtectLevel(authnsvc: u32, authnlevel: *mut u32)
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcMgmtInqIfIds(binding: ::core::option::Option<*const ::core::ffi::c_void>, ifidvector: *mut *mut RPC_IF_ID_VECTOR) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcMgmtInqIfIds(binding: *const ::core::ffi::c_void, ifidvector: *mut *mut RPC_IF_ID_VECTOR) -> RPC_STATUS;
     }
@@ -3265,7 +2925,6 @@ pub unsafe fn RpcMgmtInqIfIds(binding: ::core::option::Option<*const ::core::ffi
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcMgmtInqServerPrincNameA(binding: ::core::option::Option<*const ::core::ffi::c_void>, authnsvc: u32, serverprincname: *mut *mut u8) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcMgmtInqServerPrincNameA(binding: *const ::core::ffi::c_void, authnsvc: u32, serverprincname: *mut *mut u8) -> RPC_STATUS;
     }
@@ -3274,7 +2933,6 @@ pub unsafe fn RpcMgmtInqServerPrincNameA(binding: ::core::option::Option<*const 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcMgmtInqServerPrincNameW(binding: ::core::option::Option<*const ::core::ffi::c_void>, authnsvc: u32, serverprincname: *mut *mut u16) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcMgmtInqServerPrincNameW(binding: *const ::core::ffi::c_void, authnsvc: u32, serverprincname: *mut *mut u16) -> RPC_STATUS;
     }
@@ -3283,7 +2941,6 @@ pub unsafe fn RpcMgmtInqServerPrincNameW(binding: ::core::option::Option<*const 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcMgmtInqStats(binding: ::core::option::Option<*const ::core::ffi::c_void>, statistics: *mut *mut RPC_STATS_VECTOR) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcMgmtInqStats(binding: *const ::core::ffi::c_void, statistics: *mut *mut RPC_STATS_VECTOR) -> RPC_STATUS;
     }
@@ -3292,7 +2949,6 @@ pub unsafe fn RpcMgmtInqStats(binding: ::core::option::Option<*const ::core::ffi
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcMgmtIsServerListening(binding: ::core::option::Option<*const ::core::ffi::c_void>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcMgmtIsServerListening(binding: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3301,7 +2957,6 @@ pub unsafe fn RpcMgmtIsServerListening(binding: ::core::option::Option<*const ::
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcMgmtSetAuthorizationFn(authorizationfn: RPC_MGMT_AUTHORIZATION_FN) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcMgmtSetAuthorizationFn(authorizationfn: *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3310,7 +2965,6 @@ pub unsafe fn RpcMgmtSetAuthorizationFn(authorizationfn: RPC_MGMT_AUTHORIZATION_
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcMgmtSetCancelTimeout(timeout: i32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcMgmtSetCancelTimeout(timeout: i32) -> RPC_STATUS;
     }
@@ -3319,7 +2973,6 @@ pub unsafe fn RpcMgmtSetCancelTimeout(timeout: i32) -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcMgmtSetComTimeout(binding: *const ::core::ffi::c_void, timeout: u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcMgmtSetComTimeout(binding: *const ::core::ffi::c_void, timeout: u32) -> RPC_STATUS;
     }
@@ -3328,7 +2981,6 @@ pub unsafe fn RpcMgmtSetComTimeout(binding: *const ::core::ffi::c_void, timeout:
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcMgmtSetServerStackSize(threadstacksize: u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcMgmtSetServerStackSize(threadstacksize: u32) -> RPC_STATUS;
     }
@@ -3337,7 +2989,6 @@ pub unsafe fn RpcMgmtSetServerStackSize(threadstacksize: u32) -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcMgmtStatsVectorFree(statsvector: *mut *mut RPC_STATS_VECTOR) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcMgmtStatsVectorFree(statsvector: *mut *mut RPC_STATS_VECTOR) -> RPC_STATUS;
     }
@@ -3346,7 +2997,6 @@ pub unsafe fn RpcMgmtStatsVectorFree(statsvector: *mut *mut RPC_STATS_VECTOR) ->
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcMgmtStopServerListening(binding: ::core::option::Option<*const ::core::ffi::c_void>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcMgmtStopServerListening(binding: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3355,7 +3005,6 @@ pub unsafe fn RpcMgmtStopServerListening(binding: ::core::option::Option<*const 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcMgmtWaitServerListen() -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcMgmtWaitServerListen() -> RPC_STATUS;
     }
@@ -3364,7 +3013,6 @@ pub unsafe fn RpcMgmtWaitServerListen() -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNetworkInqProtseqsA(protseqvector: *mut *mut RPC_PROTSEQ_VECTORA) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNetworkInqProtseqsA(protseqvector: *mut *mut RPC_PROTSEQ_VECTORA) -> RPC_STATUS;
     }
@@ -3373,7 +3021,6 @@ pub unsafe fn RpcNetworkInqProtseqsA(protseqvector: *mut *mut RPC_PROTSEQ_VECTOR
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNetworkInqProtseqsW(protseqvector: *mut *mut RPC_PROTSEQ_VECTORW) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNetworkInqProtseqsW(protseqvector: *mut *mut RPC_PROTSEQ_VECTORW) -> RPC_STATUS;
     }
@@ -3382,7 +3029,6 @@ pub unsafe fn RpcNetworkInqProtseqsW(protseqvector: *mut *mut RPC_PROTSEQ_VECTOR
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNetworkIsProtseqValidA(protseq: *const u8) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNetworkIsProtseqValidA(protseq: *const u8) -> RPC_STATUS;
     }
@@ -3391,7 +3037,6 @@ pub unsafe fn RpcNetworkIsProtseqValidA(protseq: *const u8) -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNetworkIsProtseqValidW(protseq: *const u16) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNetworkIsProtseqValidW(protseq: *const u16) -> RPC_STATUS;
     }
@@ -3400,7 +3045,6 @@ pub unsafe fn RpcNetworkIsProtseqValidW(protseq: *const u16) -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsBindingExportA(entrynamesyntax: u32, entryname: ::core::option::Option<*const u8>, ifspec: ::core::option::Option<*const ::core::ffi::c_void>, bindingvec: ::core::option::Option<*const RPC_BINDING_VECTOR>, objectuuidvec: ::core::option::Option<*const UUID_VECTOR>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsBindingExportA(entrynamesyntax: u32, entryname: *const u8, ifspec: *const ::core::ffi::c_void, bindingvec: *const RPC_BINDING_VECTOR, objectuuidvec: *const UUID_VECTOR) -> RPC_STATUS;
     }
@@ -3409,7 +3053,6 @@ pub unsafe fn RpcNsBindingExportA(entrynamesyntax: u32, entryname: ::core::optio
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsBindingExportPnPA(entrynamesyntax: u32, entryname: ::core::option::Option<*const u8>, ifspec: ::core::option::Option<*const ::core::ffi::c_void>, objectvector: ::core::option::Option<*const UUID_VECTOR>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsBindingExportPnPA(entrynamesyntax: u32, entryname: *const u8, ifspec: *const ::core::ffi::c_void, objectvector: *const UUID_VECTOR) -> RPC_STATUS;
     }
@@ -3418,7 +3061,6 @@ pub unsafe fn RpcNsBindingExportPnPA(entrynamesyntax: u32, entryname: ::core::op
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsBindingExportPnPW(entrynamesyntax: u32, entryname: ::core::option::Option<*const u16>, ifspec: ::core::option::Option<*const ::core::ffi::c_void>, objectvector: ::core::option::Option<*const UUID_VECTOR>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsBindingExportPnPW(entrynamesyntax: u32, entryname: *const u16, ifspec: *const ::core::ffi::c_void, objectvector: *const UUID_VECTOR) -> RPC_STATUS;
     }
@@ -3427,7 +3069,6 @@ pub unsafe fn RpcNsBindingExportPnPW(entrynamesyntax: u32, entryname: ::core::op
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsBindingExportW(entrynamesyntax: u32, entryname: ::core::option::Option<*const u16>, ifspec: ::core::option::Option<*const ::core::ffi::c_void>, bindingvec: ::core::option::Option<*const RPC_BINDING_VECTOR>, objectuuidvec: ::core::option::Option<*const UUID_VECTOR>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsBindingExportW(entrynamesyntax: u32, entryname: *const u16, ifspec: *const ::core::ffi::c_void, bindingvec: *const RPC_BINDING_VECTOR, objectuuidvec: *const UUID_VECTOR) -> RPC_STATUS;
     }
@@ -3436,7 +3077,6 @@ pub unsafe fn RpcNsBindingExportW(entrynamesyntax: u32, entryname: ::core::optio
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsBindingImportBeginA(entrynamesyntax: u32, entryname: ::core::option::Option<*const u8>, ifspec: ::core::option::Option<*const ::core::ffi::c_void>, objuuid: ::core::option::Option<*const ::windows::core::GUID>, importcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsBindingImportBeginA(entrynamesyntax: u32, entryname: *const u8, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows::core::GUID, importcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3445,7 +3085,6 @@ pub unsafe fn RpcNsBindingImportBeginA(entrynamesyntax: u32, entryname: ::core::
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsBindingImportBeginW(entrynamesyntax: u32, entryname: ::core::option::Option<*const u16>, ifspec: ::core::option::Option<*const ::core::ffi::c_void>, objuuid: ::core::option::Option<*const ::windows::core::GUID>, importcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsBindingImportBeginW(entrynamesyntax: u32, entryname: *const u16, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows::core::GUID, importcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3454,7 +3093,6 @@ pub unsafe fn RpcNsBindingImportBeginW(entrynamesyntax: u32, entryname: ::core::
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsBindingImportDone(importcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsBindingImportDone(importcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3463,7 +3101,6 @@ pub unsafe fn RpcNsBindingImportDone(importcontext: *mut *mut ::core::ffi::c_voi
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsBindingImportNext(importcontext: *mut ::core::ffi::c_void, binding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsBindingImportNext(importcontext: *mut ::core::ffi::c_void, binding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3472,7 +3109,6 @@ pub unsafe fn RpcNsBindingImportNext(importcontext: *mut ::core::ffi::c_void, bi
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsBindingInqEntryNameA(binding: *const ::core::ffi::c_void, entrynamesyntax: u32, entryname: *mut *mut u8) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsBindingInqEntryNameA(binding: *const ::core::ffi::c_void, entrynamesyntax: u32, entryname: *mut *mut u8) -> RPC_STATUS;
     }
@@ -3481,7 +3117,6 @@ pub unsafe fn RpcNsBindingInqEntryNameA(binding: *const ::core::ffi::c_void, ent
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsBindingInqEntryNameW(binding: *const ::core::ffi::c_void, entrynamesyntax: u32, entryname: *mut *mut u16) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsBindingInqEntryNameW(binding: *const ::core::ffi::c_void, entrynamesyntax: u32, entryname: *mut *mut u16) -> RPC_STATUS;
     }
@@ -3490,7 +3125,6 @@ pub unsafe fn RpcNsBindingInqEntryNameW(binding: *const ::core::ffi::c_void, ent
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsBindingLookupBeginA(entrynamesyntax: u32, entryname: ::core::option::Option<*const u8>, ifspec: ::core::option::Option<*const ::core::ffi::c_void>, objuuid: ::core::option::Option<*const ::windows::core::GUID>, bindingmaxcount: u32, lookupcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsBindingLookupBeginA(entrynamesyntax: u32, entryname: *const u8, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows::core::GUID, bindingmaxcount: u32, lookupcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3499,7 +3133,6 @@ pub unsafe fn RpcNsBindingLookupBeginA(entrynamesyntax: u32, entryname: ::core::
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsBindingLookupBeginW(entrynamesyntax: u32, entryname: ::core::option::Option<*const u16>, ifspec: ::core::option::Option<*const ::core::ffi::c_void>, objuuid: ::core::option::Option<*const ::windows::core::GUID>, bindingmaxcount: u32, lookupcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsBindingLookupBeginW(entrynamesyntax: u32, entryname: *const u16, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows::core::GUID, bindingmaxcount: u32, lookupcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3508,7 +3141,6 @@ pub unsafe fn RpcNsBindingLookupBeginW(entrynamesyntax: u32, entryname: ::core::
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsBindingLookupDone(lookupcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsBindingLookupDone(lookupcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3517,7 +3149,6 @@ pub unsafe fn RpcNsBindingLookupDone(lookupcontext: *mut *mut ::core::ffi::c_voi
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsBindingLookupNext(lookupcontext: *mut ::core::ffi::c_void, bindingvec: *mut *mut RPC_BINDING_VECTOR) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsBindingLookupNext(lookupcontext: *mut ::core::ffi::c_void, bindingvec: *mut *mut RPC_BINDING_VECTOR) -> RPC_STATUS;
     }
@@ -3526,7 +3157,6 @@ pub unsafe fn RpcNsBindingLookupNext(lookupcontext: *mut ::core::ffi::c_void, bi
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsBindingSelect(bindingvec: *mut RPC_BINDING_VECTOR, binding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsBindingSelect(bindingvec: *mut RPC_BINDING_VECTOR, binding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3535,7 +3165,6 @@ pub unsafe fn RpcNsBindingSelect(bindingvec: *mut RPC_BINDING_VECTOR, binding: *
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsBindingUnexportA(entrynamesyntax: u32, entryname: ::core::option::Option<*const u8>, ifspec: ::core::option::Option<*const ::core::ffi::c_void>, objectuuidvec: ::core::option::Option<*const UUID_VECTOR>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsBindingUnexportA(entrynamesyntax: u32, entryname: *const u8, ifspec: *const ::core::ffi::c_void, objectuuidvec: *const UUID_VECTOR) -> RPC_STATUS;
     }
@@ -3544,7 +3173,6 @@ pub unsafe fn RpcNsBindingUnexportA(entrynamesyntax: u32, entryname: ::core::opt
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsBindingUnexportPnPA(entrynamesyntax: u32, entryname: ::core::option::Option<*const u8>, ifspec: ::core::option::Option<*const ::core::ffi::c_void>, objectvector: ::core::option::Option<*const UUID_VECTOR>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsBindingUnexportPnPA(entrynamesyntax: u32, entryname: *const u8, ifspec: *const ::core::ffi::c_void, objectvector: *const UUID_VECTOR) -> RPC_STATUS;
     }
@@ -3553,7 +3181,6 @@ pub unsafe fn RpcNsBindingUnexportPnPA(entrynamesyntax: u32, entryname: ::core::
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsBindingUnexportPnPW(entrynamesyntax: u32, entryname: ::core::option::Option<*const u16>, ifspec: ::core::option::Option<*const ::core::ffi::c_void>, objectvector: ::core::option::Option<*const UUID_VECTOR>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsBindingUnexportPnPW(entrynamesyntax: u32, entryname: *const u16, ifspec: *const ::core::ffi::c_void, objectvector: *const UUID_VECTOR) -> RPC_STATUS;
     }
@@ -3562,7 +3189,6 @@ pub unsafe fn RpcNsBindingUnexportPnPW(entrynamesyntax: u32, entryname: ::core::
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsBindingUnexportW(entrynamesyntax: u32, entryname: ::core::option::Option<*const u16>, ifspec: ::core::option::Option<*const ::core::ffi::c_void>, objectuuidvec: ::core::option::Option<*const UUID_VECTOR>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsBindingUnexportW(entrynamesyntax: u32, entryname: *const u16, ifspec: *const ::core::ffi::c_void, objectuuidvec: *const UUID_VECTOR) -> RPC_STATUS;
     }
@@ -3571,7 +3197,6 @@ pub unsafe fn RpcNsBindingUnexportW(entrynamesyntax: u32, entryname: ::core::opt
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsEntryExpandNameA(entrynamesyntax: u32, entryname: *const u8, expandedname: *mut *mut u8) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsEntryExpandNameA(entrynamesyntax: u32, entryname: *const u8, expandedname: *mut *mut u8) -> RPC_STATUS;
     }
@@ -3580,7 +3205,6 @@ pub unsafe fn RpcNsEntryExpandNameA(entrynamesyntax: u32, entryname: *const u8, 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsEntryExpandNameW(entrynamesyntax: u32, entryname: *const u16, expandedname: *mut *mut u16) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsEntryExpandNameW(entrynamesyntax: u32, entryname: *const u16, expandedname: *mut *mut u16) -> RPC_STATUS;
     }
@@ -3589,7 +3213,6 @@ pub unsafe fn RpcNsEntryExpandNameW(entrynamesyntax: u32, entryname: *const u16,
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsEntryObjectInqBeginA(entrynamesyntax: u32, entryname: *const u8, inquirycontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsEntryObjectInqBeginA(entrynamesyntax: u32, entryname: *const u8, inquirycontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3598,7 +3221,6 @@ pub unsafe fn RpcNsEntryObjectInqBeginA(entrynamesyntax: u32, entryname: *const 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsEntryObjectInqBeginW(entrynamesyntax: u32, entryname: *const u16, inquirycontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsEntryObjectInqBeginW(entrynamesyntax: u32, entryname: *const u16, inquirycontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3607,7 +3229,6 @@ pub unsafe fn RpcNsEntryObjectInqBeginW(entrynamesyntax: u32, entryname: *const 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsEntryObjectInqDone(inquirycontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsEntryObjectInqDone(inquirycontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3616,7 +3237,6 @@ pub unsafe fn RpcNsEntryObjectInqDone(inquirycontext: *mut *mut ::core::ffi::c_v
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsEntryObjectInqNext(inquirycontext: *mut ::core::ffi::c_void, objuuid: *mut ::windows::core::GUID) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsEntryObjectInqNext(inquirycontext: *mut ::core::ffi::c_void, objuuid: *mut ::windows::core::GUID) -> RPC_STATUS;
     }
@@ -3625,7 +3245,6 @@ pub unsafe fn RpcNsEntryObjectInqNext(inquirycontext: *mut ::core::ffi::c_void, 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsGroupDeleteA(groupnamesyntax: GROUP_NAME_SYNTAX, groupname: ::core::option::Option<*const u8>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsGroupDeleteA(groupnamesyntax: GROUP_NAME_SYNTAX, groupname: *const u8) -> RPC_STATUS;
     }
@@ -3634,7 +3253,6 @@ pub unsafe fn RpcNsGroupDeleteA(groupnamesyntax: GROUP_NAME_SYNTAX, groupname: :
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsGroupDeleteW(groupnamesyntax: GROUP_NAME_SYNTAX, groupname: ::core::option::Option<*const u16>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsGroupDeleteW(groupnamesyntax: GROUP_NAME_SYNTAX, groupname: *const u16) -> RPC_STATUS;
     }
@@ -3643,7 +3261,6 @@ pub unsafe fn RpcNsGroupDeleteW(groupnamesyntax: GROUP_NAME_SYNTAX, groupname: :
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsGroupMbrAddA(groupnamesyntax: u32, groupname: *const u8, membernamesyntax: u32, membername: *const u8) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsGroupMbrAddA(groupnamesyntax: u32, groupname: *const u8, membernamesyntax: u32, membername: *const u8) -> RPC_STATUS;
     }
@@ -3652,7 +3269,6 @@ pub unsafe fn RpcNsGroupMbrAddA(groupnamesyntax: u32, groupname: *const u8, memb
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsGroupMbrAddW(groupnamesyntax: u32, groupname: *const u16, membernamesyntax: u32, membername: *const u16) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsGroupMbrAddW(groupnamesyntax: u32, groupname: *const u16, membernamesyntax: u32, membername: *const u16) -> RPC_STATUS;
     }
@@ -3661,7 +3277,6 @@ pub unsafe fn RpcNsGroupMbrAddW(groupnamesyntax: u32, groupname: *const u16, mem
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsGroupMbrInqBeginA(groupnamesyntax: u32, groupname: *const u8, membernamesyntax: u32, inquirycontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsGroupMbrInqBeginA(groupnamesyntax: u32, groupname: *const u8, membernamesyntax: u32, inquirycontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3670,7 +3285,6 @@ pub unsafe fn RpcNsGroupMbrInqBeginA(groupnamesyntax: u32, groupname: *const u8,
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsGroupMbrInqBeginW(groupnamesyntax: u32, groupname: *const u16, membernamesyntax: u32, inquirycontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsGroupMbrInqBeginW(groupnamesyntax: u32, groupname: *const u16, membernamesyntax: u32, inquirycontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3679,7 +3293,6 @@ pub unsafe fn RpcNsGroupMbrInqBeginW(groupnamesyntax: u32, groupname: *const u16
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsGroupMbrInqDone(inquirycontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsGroupMbrInqDone(inquirycontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3688,7 +3301,6 @@ pub unsafe fn RpcNsGroupMbrInqDone(inquirycontext: *mut *mut ::core::ffi::c_void
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsGroupMbrInqNextA(inquirycontext: *mut ::core::ffi::c_void, membername: *mut *mut u8) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsGroupMbrInqNextA(inquirycontext: *mut ::core::ffi::c_void, membername: *mut *mut u8) -> RPC_STATUS;
     }
@@ -3697,7 +3309,6 @@ pub unsafe fn RpcNsGroupMbrInqNextA(inquirycontext: *mut ::core::ffi::c_void, me
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsGroupMbrInqNextW(inquirycontext: *mut ::core::ffi::c_void, membername: *mut *mut u16) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsGroupMbrInqNextW(inquirycontext: *mut ::core::ffi::c_void, membername: *mut *mut u16) -> RPC_STATUS;
     }
@@ -3706,7 +3317,6 @@ pub unsafe fn RpcNsGroupMbrInqNextW(inquirycontext: *mut ::core::ffi::c_void, me
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsGroupMbrRemoveA(groupnamesyntax: u32, groupname: *const u8, membernamesyntax: u32, membername: *const u8) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsGroupMbrRemoveA(groupnamesyntax: u32, groupname: *const u8, membernamesyntax: u32, membername: *const u8) -> RPC_STATUS;
     }
@@ -3715,7 +3325,6 @@ pub unsafe fn RpcNsGroupMbrRemoveA(groupnamesyntax: u32, groupname: *const u8, m
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsGroupMbrRemoveW(groupnamesyntax: u32, groupname: *const u16, membernamesyntax: u32, membername: *const u16) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsGroupMbrRemoveW(groupnamesyntax: u32, groupname: *const u16, membernamesyntax: u32, membername: *const u16) -> RPC_STATUS;
     }
@@ -3724,7 +3333,6 @@ pub unsafe fn RpcNsGroupMbrRemoveW(groupnamesyntax: u32, groupname: *const u16, 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsMgmtBindingUnexportA(entrynamesyntax: u32, entryname: *const u8, ifid: ::core::option::Option<*const RPC_IF_ID>, versoption: u32, objectuuidvec: ::core::option::Option<*const UUID_VECTOR>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsMgmtBindingUnexportA(entrynamesyntax: u32, entryname: *const u8, ifid: *const RPC_IF_ID, versoption: u32, objectuuidvec: *const UUID_VECTOR) -> RPC_STATUS;
     }
@@ -3733,7 +3341,6 @@ pub unsafe fn RpcNsMgmtBindingUnexportA(entrynamesyntax: u32, entryname: *const 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsMgmtBindingUnexportW(entrynamesyntax: u32, entryname: *const u16, ifid: ::core::option::Option<*const RPC_IF_ID>, versoption: u32, objectuuidvec: ::core::option::Option<*const UUID_VECTOR>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsMgmtBindingUnexportW(entrynamesyntax: u32, entryname: *const u16, ifid: *const RPC_IF_ID, versoption: u32, objectuuidvec: *const UUID_VECTOR) -> RPC_STATUS;
     }
@@ -3742,7 +3349,6 @@ pub unsafe fn RpcNsMgmtBindingUnexportW(entrynamesyntax: u32, entryname: *const 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsMgmtEntryCreateA(entrynamesyntax: u32, entryname: *const u8) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsMgmtEntryCreateA(entrynamesyntax: u32, entryname: *const u8) -> RPC_STATUS;
     }
@@ -3751,7 +3357,6 @@ pub unsafe fn RpcNsMgmtEntryCreateA(entrynamesyntax: u32, entryname: *const u8) 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsMgmtEntryCreateW(entrynamesyntax: u32, entryname: *const u16) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsMgmtEntryCreateW(entrynamesyntax: u32, entryname: *const u16) -> RPC_STATUS;
     }
@@ -3760,7 +3365,6 @@ pub unsafe fn RpcNsMgmtEntryCreateW(entrynamesyntax: u32, entryname: *const u16)
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsMgmtEntryDeleteA(entrynamesyntax: u32, entryname: *const u8) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsMgmtEntryDeleteA(entrynamesyntax: u32, entryname: *const u8) -> RPC_STATUS;
     }
@@ -3769,7 +3373,6 @@ pub unsafe fn RpcNsMgmtEntryDeleteA(entrynamesyntax: u32, entryname: *const u8) 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsMgmtEntryDeleteW(entrynamesyntax: u32, entryname: *const u16) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsMgmtEntryDeleteW(entrynamesyntax: u32, entryname: *const u16) -> RPC_STATUS;
     }
@@ -3778,7 +3381,6 @@ pub unsafe fn RpcNsMgmtEntryDeleteW(entrynamesyntax: u32, entryname: *const u16)
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsMgmtEntryInqIfIdsA(entrynamesyntax: u32, entryname: *const u8, ifidvec: *mut *mut RPC_IF_ID_VECTOR) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsMgmtEntryInqIfIdsA(entrynamesyntax: u32, entryname: *const u8, ifidvec: *mut *mut RPC_IF_ID_VECTOR) -> RPC_STATUS;
     }
@@ -3787,7 +3389,6 @@ pub unsafe fn RpcNsMgmtEntryInqIfIdsA(entrynamesyntax: u32, entryname: *const u8
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsMgmtEntryInqIfIdsW(entrynamesyntax: u32, entryname: *const u16, ifidvec: *mut *mut RPC_IF_ID_VECTOR) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsMgmtEntryInqIfIdsW(entrynamesyntax: u32, entryname: *const u16, ifidvec: *mut *mut RPC_IF_ID_VECTOR) -> RPC_STATUS;
     }
@@ -3796,7 +3397,6 @@ pub unsafe fn RpcNsMgmtEntryInqIfIdsW(entrynamesyntax: u32, entryname: *const u1
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsMgmtHandleSetExpAge(nshandle: *mut ::core::ffi::c_void, expirationage: u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsMgmtHandleSetExpAge(nshandle: *mut ::core::ffi::c_void, expirationage: u32) -> RPC_STATUS;
     }
@@ -3805,7 +3405,6 @@ pub unsafe fn RpcNsMgmtHandleSetExpAge(nshandle: *mut ::core::ffi::c_void, expir
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsMgmtInqExpAge(expirationage: *mut u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsMgmtInqExpAge(expirationage: *mut u32) -> RPC_STATUS;
     }
@@ -3814,7 +3413,6 @@ pub unsafe fn RpcNsMgmtInqExpAge(expirationage: *mut u32) -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsMgmtSetExpAge(expirationage: u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsMgmtSetExpAge(expirationage: u32) -> RPC_STATUS;
     }
@@ -3823,7 +3421,6 @@ pub unsafe fn RpcNsMgmtSetExpAge(expirationage: u32) -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsProfileDeleteA(profilenamesyntax: u32, profilename: *const u8) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsProfileDeleteA(profilenamesyntax: u32, profilename: *const u8) -> RPC_STATUS;
     }
@@ -3832,7 +3429,6 @@ pub unsafe fn RpcNsProfileDeleteA(profilenamesyntax: u32, profilename: *const u8
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsProfileDeleteW(profilenamesyntax: u32, profilename: *const u16) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsProfileDeleteW(profilenamesyntax: u32, profilename: *const u16) -> RPC_STATUS;
     }
@@ -3841,7 +3437,6 @@ pub unsafe fn RpcNsProfileDeleteW(profilenamesyntax: u32, profilename: *const u1
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsProfileEltAddA(profilenamesyntax: u32, profilename: *const u8, ifid: ::core::option::Option<*const RPC_IF_ID>, membernamesyntax: u32, membername: *const u8, priority: u32, annotation: ::core::option::Option<*const u8>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsProfileEltAddA(profilenamesyntax: u32, profilename: *const u8, ifid: *const RPC_IF_ID, membernamesyntax: u32, membername: *const u8, priority: u32, annotation: *const u8) -> RPC_STATUS;
     }
@@ -3850,7 +3445,6 @@ pub unsafe fn RpcNsProfileEltAddA(profilenamesyntax: u32, profilename: *const u8
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsProfileEltAddW(profilenamesyntax: u32, profilename: *const u16, ifid: ::core::option::Option<*const RPC_IF_ID>, membernamesyntax: u32, membername: *const u16, priority: u32, annotation: ::core::option::Option<*const u16>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsProfileEltAddW(profilenamesyntax: u32, profilename: *const u16, ifid: *const RPC_IF_ID, membernamesyntax: u32, membername: *const u16, priority: u32, annotation: *const u16) -> RPC_STATUS;
     }
@@ -3859,7 +3453,6 @@ pub unsafe fn RpcNsProfileEltAddW(profilenamesyntax: u32, profilename: *const u1
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsProfileEltInqBeginA(profilenamesyntax: u32, profilename: *const u8, inquirytype: u32, ifid: ::core::option::Option<*const RPC_IF_ID>, versoption: u32, membernamesyntax: u32, membername: ::core::option::Option<*const u8>, inquirycontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsProfileEltInqBeginA(profilenamesyntax: u32, profilename: *const u8, inquirytype: u32, ifid: *const RPC_IF_ID, versoption: u32, membernamesyntax: u32, membername: *const u8, inquirycontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3868,7 +3461,6 @@ pub unsafe fn RpcNsProfileEltInqBeginA(profilenamesyntax: u32, profilename: *con
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsProfileEltInqBeginW(profilenamesyntax: u32, profilename: *const u16, inquirytype: u32, ifid: ::core::option::Option<*const RPC_IF_ID>, versoption: u32, membernamesyntax: u32, membername: ::core::option::Option<*const u16>, inquirycontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsProfileEltInqBeginW(profilenamesyntax: u32, profilename: *const u16, inquirytype: u32, ifid: *const RPC_IF_ID, versoption: u32, membernamesyntax: u32, membername: *const u16, inquirycontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3877,7 +3469,6 @@ pub unsafe fn RpcNsProfileEltInqBeginW(profilenamesyntax: u32, profilename: *con
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsProfileEltInqDone(inquirycontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsProfileEltInqDone(inquirycontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3886,7 +3477,6 @@ pub unsafe fn RpcNsProfileEltInqDone(inquirycontext: *mut *mut ::core::ffi::c_vo
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsProfileEltInqNextA(inquirycontext: *const ::core::ffi::c_void, ifid: ::core::option::Option<*mut RPC_IF_ID>, membername: *mut *mut u8, priority: *mut u32, annotation: *mut *mut u8) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsProfileEltInqNextA(inquirycontext: *const ::core::ffi::c_void, ifid: *mut RPC_IF_ID, membername: *mut *mut u8, priority: *mut u32, annotation: *mut *mut u8) -> RPC_STATUS;
     }
@@ -3895,7 +3485,6 @@ pub unsafe fn RpcNsProfileEltInqNextA(inquirycontext: *const ::core::ffi::c_void
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsProfileEltInqNextW(inquirycontext: *const ::core::ffi::c_void, ifid: ::core::option::Option<*mut RPC_IF_ID>, membername: *mut *mut u16, priority: *mut u32, annotation: *mut *mut u16) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsProfileEltInqNextW(inquirycontext: *const ::core::ffi::c_void, ifid: *mut RPC_IF_ID, membername: *mut *mut u16, priority: *mut u32, annotation: *mut *mut u16) -> RPC_STATUS;
     }
@@ -3904,7 +3493,6 @@ pub unsafe fn RpcNsProfileEltInqNextW(inquirycontext: *const ::core::ffi::c_void
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsProfileEltRemoveA(profilenamesyntax: u32, profilename: *const u8, ifid: ::core::option::Option<*const RPC_IF_ID>, membernamesyntax: u32, membername: *const u8) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsProfileEltRemoveA(profilenamesyntax: u32, profilename: *const u8, ifid: *const RPC_IF_ID, membernamesyntax: u32, membername: *const u8) -> RPC_STATUS;
     }
@@ -3913,7 +3501,6 @@ pub unsafe fn RpcNsProfileEltRemoveA(profilenamesyntax: u32, profilename: *const
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcNsProfileEltRemoveW(profilenamesyntax: u32, profilename: *const u16, ifid: ::core::option::Option<*const RPC_IF_ID>, membernamesyntax: u32, membername: *const u16) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcNsProfileEltRemoveW(profilenamesyntax: u32, profilename: *const u16, ifid: *const RPC_IF_ID, membernamesyntax: u32, membername: *const u16) -> RPC_STATUS;
     }
@@ -3922,7 +3509,6 @@ pub unsafe fn RpcNsProfileEltRemoveW(profilenamesyntax: u32, profilename: *const
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcObjectInqType(objuuid: *const ::windows::core::GUID, typeuuid: ::core::option::Option<*mut ::windows::core::GUID>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcObjectInqType(objuuid: *const ::windows::core::GUID, typeuuid: *mut ::windows::core::GUID) -> RPC_STATUS;
     }
@@ -3931,7 +3517,6 @@ pub unsafe fn RpcObjectInqType(objuuid: *const ::windows::core::GUID, typeuuid: 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcObjectSetInqFn(inquiryfn: RPC_OBJECT_INQ_FN) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcObjectSetInqFn(inquiryfn: *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -3940,7 +3525,6 @@ pub unsafe fn RpcObjectSetInqFn(inquiryfn: RPC_OBJECT_INQ_FN) -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcObjectSetType(objuuid: *const ::windows::core::GUID, typeuuid: ::core::option::Option<*const ::windows::core::GUID>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcObjectSetType(objuuid: *const ::windows::core::GUID, typeuuid: *const ::windows::core::GUID) -> RPC_STATUS;
     }
@@ -3949,7 +3533,6 @@ pub unsafe fn RpcObjectSetType(objuuid: *const ::windows::core::GUID, typeuuid: 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcProtseqVectorFreeA(protseqvector: *mut *mut RPC_PROTSEQ_VECTORA) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcProtseqVectorFreeA(protseqvector: *mut *mut RPC_PROTSEQ_VECTORA) -> RPC_STATUS;
     }
@@ -3958,7 +3541,6 @@ pub unsafe fn RpcProtseqVectorFreeA(protseqvector: *mut *mut RPC_PROTSEQ_VECTORA
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcProtseqVectorFreeW(protseqvector: *mut *mut RPC_PROTSEQ_VECTORW) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcProtseqVectorFreeW(protseqvector: *mut *mut RPC_PROTSEQ_VECTORW) -> RPC_STATUS;
     }
@@ -3967,7 +3549,6 @@ pub unsafe fn RpcProtseqVectorFreeW(protseqvector: *mut *mut RPC_PROTSEQ_VECTORW
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcRaiseException(exception: RPC_STATUS) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcRaiseException(exception: RPC_STATUS);
     }
@@ -3976,7 +3557,6 @@ pub unsafe fn RpcRaiseException(exception: RPC_STATUS) {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcRevertContainerImpersonation() -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcRevertContainerImpersonation() -> RPC_STATUS;
     }
@@ -3985,7 +3565,6 @@ pub unsafe fn RpcRevertContainerImpersonation() -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcRevertToSelf() -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcRevertToSelf() -> RPC_STATUS;
     }
@@ -3994,7 +3573,6 @@ pub unsafe fn RpcRevertToSelf() -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcRevertToSelfEx(bindinghandle: ::core::option::Option<*const ::core::ffi::c_void>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcRevertToSelfEx(bindinghandle: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4003,7 +3581,6 @@ pub unsafe fn RpcRevertToSelfEx(bindinghandle: ::core::option::Option<*const ::c
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerCompleteSecurityCallback(bindinghandle: *const ::core::ffi::c_void, status: RPC_STATUS) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerCompleteSecurityCallback(bindinghandle: *const ::core::ffi::c_void, status: RPC_STATUS) -> RPC_STATUS;
     }
@@ -4012,7 +3589,6 @@ pub unsafe fn RpcServerCompleteSecurityCallback(bindinghandle: *const ::core::ff
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerInqBindingHandle(binding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerInqBindingHandle(binding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4021,7 +3597,6 @@ pub unsafe fn RpcServerInqBindingHandle(binding: *mut *mut ::core::ffi::c_void) 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerInqBindings(bindingvector: *mut *mut RPC_BINDING_VECTOR) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerInqBindings(bindingvector: *mut *mut RPC_BINDING_VECTOR) -> RPC_STATUS;
     }
@@ -4030,7 +3605,6 @@ pub unsafe fn RpcServerInqBindings(bindingvector: *mut *mut RPC_BINDING_VECTOR) 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerInqBindingsEx(securitydescriptor: ::core::option::Option<*const ::core::ffi::c_void>, bindingvector: *mut *mut RPC_BINDING_VECTOR) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerInqBindingsEx(securitydescriptor: *const ::core::ffi::c_void, bindingvector: *mut *mut RPC_BINDING_VECTOR) -> RPC_STATUS;
     }
@@ -4039,7 +3613,6 @@ pub unsafe fn RpcServerInqBindingsEx(securitydescriptor: ::core::option::Option<
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerInqCallAttributesA(clientbinding: ::core::option::Option<*const ::core::ffi::c_void>, rpccallattributes: *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerInqCallAttributesA(clientbinding: *const ::core::ffi::c_void, rpccallattributes: *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4048,7 +3621,6 @@ pub unsafe fn RpcServerInqCallAttributesA(clientbinding: ::core::option::Option<
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerInqCallAttributesW(clientbinding: ::core::option::Option<*const ::core::ffi::c_void>, rpccallattributes: *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerInqCallAttributesW(clientbinding: *const ::core::ffi::c_void, rpccallattributes: *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4057,7 +3629,6 @@ pub unsafe fn RpcServerInqCallAttributesW(clientbinding: ::core::option::Option<
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerInqDefaultPrincNameA(authnsvc: u32, princname: *mut *mut u8) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerInqDefaultPrincNameA(authnsvc: u32, princname: *mut *mut u8) -> RPC_STATUS;
     }
@@ -4066,7 +3637,6 @@ pub unsafe fn RpcServerInqDefaultPrincNameA(authnsvc: u32, princname: *mut *mut 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerInqDefaultPrincNameW(authnsvc: u32, princname: *mut *mut u16) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerInqDefaultPrincNameW(authnsvc: u32, princname: *mut *mut u16) -> RPC_STATUS;
     }
@@ -4075,7 +3645,6 @@ pub unsafe fn RpcServerInqDefaultPrincNameW(authnsvc: u32, princname: *mut *mut 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerInqIf(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: ::core::option::Option<*const ::windows::core::GUID>, mgrepv: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerInqIf(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows::core::GUID, mgrepv: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4084,7 +3653,6 @@ pub unsafe fn RpcServerInqIf(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: ::
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerInterfaceGroupActivate(ifgroup: *const ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerInterfaceGroupActivate(ifgroup: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4093,7 +3661,6 @@ pub unsafe fn RpcServerInterfaceGroupActivate(ifgroup: *const ::core::ffi::c_voi
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerInterfaceGroupClose(ifgroup: *const ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerInterfaceGroupClose(ifgroup: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4102,7 +3669,6 @@ pub unsafe fn RpcServerInterfaceGroupClose(ifgroup: *const ::core::ffi::c_void) 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerInterfaceGroupCreateA(interfaces: &[RPC_INTERFACE_TEMPLATEA], endpoints: &[RPC_ENDPOINT_TEMPLATEA], idleperiod: u32, idlecallbackfn: RPC_INTERFACE_GROUP_IDLE_CALLBACK_FN, idlecallbackcontext: *const ::core::ffi::c_void, ifgroup: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerInterfaceGroupCreateA(interfaces: *const RPC_INTERFACE_TEMPLATEA, numifs: u32, endpoints: *const RPC_ENDPOINT_TEMPLATEA, numendpoints: u32, idleperiod: u32, idlecallbackfn: *mut ::core::ffi::c_void, idlecallbackcontext: *const ::core::ffi::c_void, ifgroup: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4111,7 +3677,6 @@ pub unsafe fn RpcServerInterfaceGroupCreateA(interfaces: &[RPC_INTERFACE_TEMPLAT
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerInterfaceGroupCreateW(interfaces: &[RPC_INTERFACE_TEMPLATEW], endpoints: &[RPC_ENDPOINT_TEMPLATEW], idleperiod: u32, idlecallbackfn: RPC_INTERFACE_GROUP_IDLE_CALLBACK_FN, idlecallbackcontext: *const ::core::ffi::c_void, ifgroup: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerInterfaceGroupCreateW(interfaces: *const RPC_INTERFACE_TEMPLATEW, numifs: u32, endpoints: *const RPC_ENDPOINT_TEMPLATEW, numendpoints: u32, idleperiod: u32, idlecallbackfn: *mut ::core::ffi::c_void, idlecallbackcontext: *const ::core::ffi::c_void, ifgroup: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4120,7 +3685,6 @@ pub unsafe fn RpcServerInterfaceGroupCreateW(interfaces: &[RPC_INTERFACE_TEMPLAT
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerInterfaceGroupDeactivate(ifgroup: *const ::core::ffi::c_void, forcedeactivation: u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerInterfaceGroupDeactivate(ifgroup: *const ::core::ffi::c_void, forcedeactivation: u32) -> RPC_STATUS;
     }
@@ -4129,7 +3693,6 @@ pub unsafe fn RpcServerInterfaceGroupDeactivate(ifgroup: *const ::core::ffi::c_v
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerInterfaceGroupInqBindings(ifgroup: *const ::core::ffi::c_void, bindingvector: *mut *mut RPC_BINDING_VECTOR) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerInterfaceGroupInqBindings(ifgroup: *const ::core::ffi::c_void, bindingvector: *mut *mut RPC_BINDING_VECTOR) -> RPC_STATUS;
     }
@@ -4138,7 +3701,6 @@ pub unsafe fn RpcServerInterfaceGroupInqBindings(ifgroup: *const ::core::ffi::c_
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerListen(minimumcallthreads: u32, maxcalls: u32, dontwait: u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerListen(minimumcallthreads: u32, maxcalls: u32, dontwait: u32) -> RPC_STATUS;
     }
@@ -4147,7 +3709,6 @@ pub unsafe fn RpcServerListen(minimumcallthreads: u32, maxcalls: u32, dontwait: 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerRegisterAuthInfoA(serverprincname: ::core::option::Option<*const u8>, authnsvc: u32, getkeyfn: RPC_AUTH_KEY_RETRIEVAL_FN, arg: ::core::option::Option<*const ::core::ffi::c_void>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerRegisterAuthInfoA(serverprincname: *const u8, authnsvc: u32, getkeyfn: *mut ::core::ffi::c_void, arg: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4156,7 +3717,6 @@ pub unsafe fn RpcServerRegisterAuthInfoA(serverprincname: ::core::option::Option
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerRegisterAuthInfoW(serverprincname: ::core::option::Option<*const u16>, authnsvc: u32, getkeyfn: RPC_AUTH_KEY_RETRIEVAL_FN, arg: ::core::option::Option<*const ::core::ffi::c_void>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerRegisterAuthInfoW(serverprincname: *const u16, authnsvc: u32, getkeyfn: *mut ::core::ffi::c_void, arg: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4165,7 +3725,6 @@ pub unsafe fn RpcServerRegisterAuthInfoW(serverprincname: ::core::option::Option
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerRegisterIf(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: ::core::option::Option<*const ::windows::core::GUID>, mgrepv: ::core::option::Option<*const ::core::ffi::c_void>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerRegisterIf(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows::core::GUID, mgrepv: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4174,7 +3733,6 @@ pub unsafe fn RpcServerRegisterIf(ifspec: *const ::core::ffi::c_void, mgrtypeuui
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerRegisterIf2(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: ::core::option::Option<*const ::windows::core::GUID>, mgrepv: ::core::option::Option<*const ::core::ffi::c_void>, flags: u32, maxcalls: u32, maxrpcsize: u32, ifcallbackfn: RPC_IF_CALLBACK_FN) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerRegisterIf2(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows::core::GUID, mgrepv: *const ::core::ffi::c_void, flags: u32, maxcalls: u32, maxrpcsize: u32, ifcallbackfn: *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4183,7 +3741,6 @@ pub unsafe fn RpcServerRegisterIf2(ifspec: *const ::core::ffi::c_void, mgrtypeuu
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerRegisterIf3(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: ::core::option::Option<*const ::windows::core::GUID>, mgrepv: ::core::option::Option<*const ::core::ffi::c_void>, flags: u32, maxcalls: u32, maxrpcsize: u32, ifcallback: RPC_IF_CALLBACK_FN, securitydescriptor: ::core::option::Option<*const ::core::ffi::c_void>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerRegisterIf3(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows::core::GUID, mgrepv: *const ::core::ffi::c_void, flags: u32, maxcalls: u32, maxrpcsize: u32, ifcallback: *mut ::core::ffi::c_void, securitydescriptor: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4192,7 +3749,6 @@ pub unsafe fn RpcServerRegisterIf3(ifspec: *const ::core::ffi::c_void, mgrtypeuu
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerRegisterIfEx(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: ::core::option::Option<*const ::windows::core::GUID>, mgrepv: ::core::option::Option<*const ::core::ffi::c_void>, flags: u32, maxcalls: u32, ifcallback: RPC_IF_CALLBACK_FN) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerRegisterIfEx(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows::core::GUID, mgrepv: *const ::core::ffi::c_void, flags: u32, maxcalls: u32, ifcallback: *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4202,7 +3758,6 @@ pub unsafe fn RpcServerRegisterIfEx(ifspec: *const ::core::ffi::c_void, mgrtypeu
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
 pub unsafe fn RpcServerSubscribeForNotification(binding: ::core::option::Option<*const ::core::ffi::c_void>, notification: RPC_NOTIFICATIONS, notificationtype: RPC_NOTIFICATION_TYPES, notificationinfo: *const RPC_ASYNC_NOTIFICATION_INFO) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerSubscribeForNotification(binding: *const ::core::ffi::c_void, notification: RPC_NOTIFICATIONS, notificationtype: RPC_NOTIFICATION_TYPES, notificationinfo: *const RPC_ASYNC_NOTIFICATION_INFO) -> RPC_STATUS;
     }
@@ -4211,7 +3766,6 @@ pub unsafe fn RpcServerSubscribeForNotification(binding: ::core::option::Option<
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerTestCancel(bindinghandle: ::core::option::Option<*const ::core::ffi::c_void>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerTestCancel(bindinghandle: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4220,7 +3774,6 @@ pub unsafe fn RpcServerTestCancel(bindinghandle: ::core::option::Option<*const :
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerUnregisterIf(ifspec: ::core::option::Option<*const ::core::ffi::c_void>, mgrtypeuuid: ::core::option::Option<*const ::windows::core::GUID>, waitforcallstocomplete: u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerUnregisterIf(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows::core::GUID, waitforcallstocomplete: u32) -> RPC_STATUS;
     }
@@ -4229,7 +3782,6 @@ pub unsafe fn RpcServerUnregisterIf(ifspec: ::core::option::Option<*const ::core
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerUnregisterIfEx(ifspec: ::core::option::Option<*const ::core::ffi::c_void>, mgrtypeuuid: ::core::option::Option<*const ::windows::core::GUID>, rundowncontexthandles: i32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerUnregisterIfEx(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows::core::GUID, rundowncontexthandles: i32) -> RPC_STATUS;
     }
@@ -4238,7 +3790,6 @@ pub unsafe fn RpcServerUnregisterIfEx(ifspec: ::core::option::Option<*const ::co
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerUnsubscribeForNotification(binding: ::core::option::Option<*const ::core::ffi::c_void>, notification: RPC_NOTIFICATIONS, notificationsqueued: *mut u32) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerUnsubscribeForNotification(binding: *const ::core::ffi::c_void, notification: RPC_NOTIFICATIONS, notificationsqueued: *mut u32) -> RPC_STATUS;
     }
@@ -4247,7 +3798,6 @@ pub unsafe fn RpcServerUnsubscribeForNotification(binding: ::core::option::Optio
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerUseAllProtseqs(maxcalls: u32, securitydescriptor: ::core::option::Option<*const ::core::ffi::c_void>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerUseAllProtseqs(maxcalls: u32, securitydescriptor: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4256,7 +3806,6 @@ pub unsafe fn RpcServerUseAllProtseqs(maxcalls: u32, securitydescriptor: ::core:
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerUseAllProtseqsEx(maxcalls: u32, securitydescriptor: ::core::option::Option<*const ::core::ffi::c_void>, policy: *const RPC_POLICY) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerUseAllProtseqsEx(maxcalls: u32, securitydescriptor: *const ::core::ffi::c_void, policy: *const RPC_POLICY) -> RPC_STATUS;
     }
@@ -4265,7 +3814,6 @@ pub unsafe fn RpcServerUseAllProtseqsEx(maxcalls: u32, securitydescriptor: ::cor
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerUseAllProtseqsIf(maxcalls: u32, ifspec: *const ::core::ffi::c_void, securitydescriptor: ::core::option::Option<*const ::core::ffi::c_void>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerUseAllProtseqsIf(maxcalls: u32, ifspec: *const ::core::ffi::c_void, securitydescriptor: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4274,7 +3822,6 @@ pub unsafe fn RpcServerUseAllProtseqsIf(maxcalls: u32, ifspec: *const ::core::ff
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerUseAllProtseqsIfEx(maxcalls: u32, ifspec: *const ::core::ffi::c_void, securitydescriptor: ::core::option::Option<*const ::core::ffi::c_void>, policy: *const RPC_POLICY) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerUseAllProtseqsIfEx(maxcalls: u32, ifspec: *const ::core::ffi::c_void, securitydescriptor: *const ::core::ffi::c_void, policy: *const RPC_POLICY) -> RPC_STATUS;
     }
@@ -4283,7 +3830,6 @@ pub unsafe fn RpcServerUseAllProtseqsIfEx(maxcalls: u32, ifspec: *const ::core::
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerUseProtseqA(protseq: *const u8, maxcalls: u32, securitydescriptor: ::core::option::Option<*const ::core::ffi::c_void>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerUseProtseqA(protseq: *const u8, maxcalls: u32, securitydescriptor: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4292,7 +3838,6 @@ pub unsafe fn RpcServerUseProtseqA(protseq: *const u8, maxcalls: u32, securityde
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerUseProtseqEpA(protseq: *const u8, maxcalls: u32, endpoint: *const u8, securitydescriptor: ::core::option::Option<*const ::core::ffi::c_void>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerUseProtseqEpA(protseq: *const u8, maxcalls: u32, endpoint: *const u8, securitydescriptor: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4301,7 +3846,6 @@ pub unsafe fn RpcServerUseProtseqEpA(protseq: *const u8, maxcalls: u32, endpoint
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerUseProtseqEpExA(protseq: *const u8, maxcalls: u32, endpoint: *const u8, securitydescriptor: ::core::option::Option<*const ::core::ffi::c_void>, policy: *const RPC_POLICY) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerUseProtseqEpExA(protseq: *const u8, maxcalls: u32, endpoint: *const u8, securitydescriptor: *const ::core::ffi::c_void, policy: *const RPC_POLICY) -> RPC_STATUS;
     }
@@ -4310,7 +3854,6 @@ pub unsafe fn RpcServerUseProtseqEpExA(protseq: *const u8, maxcalls: u32, endpoi
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerUseProtseqEpExW(protseq: *const u16, maxcalls: u32, endpoint: *const u16, securitydescriptor: ::core::option::Option<*const ::core::ffi::c_void>, policy: *const RPC_POLICY) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerUseProtseqEpExW(protseq: *const u16, maxcalls: u32, endpoint: *const u16, securitydescriptor: *const ::core::ffi::c_void, policy: *const RPC_POLICY) -> RPC_STATUS;
     }
@@ -4319,7 +3862,6 @@ pub unsafe fn RpcServerUseProtseqEpExW(protseq: *const u16, maxcalls: u32, endpo
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerUseProtseqEpW(protseq: *const u16, maxcalls: u32, endpoint: *const u16, securitydescriptor: ::core::option::Option<*const ::core::ffi::c_void>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerUseProtseqEpW(protseq: *const u16, maxcalls: u32, endpoint: *const u16, securitydescriptor: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4328,7 +3870,6 @@ pub unsafe fn RpcServerUseProtseqEpW(protseq: *const u16, maxcalls: u32, endpoin
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerUseProtseqExA(protseq: *const u8, maxcalls: u32, securitydescriptor: ::core::option::Option<*const ::core::ffi::c_void>, policy: *const RPC_POLICY) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerUseProtseqExA(protseq: *const u8, maxcalls: u32, securitydescriptor: *const ::core::ffi::c_void, policy: *const RPC_POLICY) -> RPC_STATUS;
     }
@@ -4337,7 +3878,6 @@ pub unsafe fn RpcServerUseProtseqExA(protseq: *const u8, maxcalls: u32, security
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerUseProtseqExW(protseq: *const u16, maxcalls: u32, securitydescriptor: ::core::option::Option<*const ::core::ffi::c_void>, policy: *const RPC_POLICY) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerUseProtseqExW(protseq: *const u16, maxcalls: u32, securitydescriptor: *const ::core::ffi::c_void, policy: *const RPC_POLICY) -> RPC_STATUS;
     }
@@ -4346,7 +3886,6 @@ pub unsafe fn RpcServerUseProtseqExW(protseq: *const u16, maxcalls: u32, securit
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerUseProtseqIfA(protseq: *const u8, maxcalls: u32, ifspec: *const ::core::ffi::c_void, securitydescriptor: ::core::option::Option<*const ::core::ffi::c_void>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerUseProtseqIfA(protseq: *const u8, maxcalls: u32, ifspec: *const ::core::ffi::c_void, securitydescriptor: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4355,7 +3894,6 @@ pub unsafe fn RpcServerUseProtseqIfA(protseq: *const u8, maxcalls: u32, ifspec: 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerUseProtseqIfExA(protseq: *const u8, maxcalls: u32, ifspec: *const ::core::ffi::c_void, securitydescriptor: ::core::option::Option<*const ::core::ffi::c_void>, policy: *const RPC_POLICY) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerUseProtseqIfExA(protseq: *const u8, maxcalls: u32, ifspec: *const ::core::ffi::c_void, securitydescriptor: *const ::core::ffi::c_void, policy: *const RPC_POLICY) -> RPC_STATUS;
     }
@@ -4364,7 +3902,6 @@ pub unsafe fn RpcServerUseProtseqIfExA(protseq: *const u8, maxcalls: u32, ifspec
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerUseProtseqIfExW(protseq: *const u16, maxcalls: u32, ifspec: *const ::core::ffi::c_void, securitydescriptor: ::core::option::Option<*const ::core::ffi::c_void>, policy: *const RPC_POLICY) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerUseProtseqIfExW(protseq: *const u16, maxcalls: u32, ifspec: *const ::core::ffi::c_void, securitydescriptor: *const ::core::ffi::c_void, policy: *const RPC_POLICY) -> RPC_STATUS;
     }
@@ -4373,7 +3910,6 @@ pub unsafe fn RpcServerUseProtseqIfExW(protseq: *const u16, maxcalls: u32, ifspe
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerUseProtseqIfW(protseq: *const u16, maxcalls: u32, ifspec: *const ::core::ffi::c_void, securitydescriptor: ::core::option::Option<*const ::core::ffi::c_void>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerUseProtseqIfW(protseq: *const u16, maxcalls: u32, ifspec: *const ::core::ffi::c_void, securitydescriptor: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4382,7 +3918,6 @@ pub unsafe fn RpcServerUseProtseqIfW(protseq: *const u16, maxcalls: u32, ifspec:
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerUseProtseqW(protseq: *const u16, maxcalls: u32, securitydescriptor: ::core::option::Option<*const ::core::ffi::c_void>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerUseProtseqW(protseq: *const u16, maxcalls: u32, securitydescriptor: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4391,7 +3926,6 @@ pub unsafe fn RpcServerUseProtseqW(protseq: *const u16, maxcalls: u32, securityd
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcServerYield() {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcServerYield();
     }
@@ -4400,7 +3934,6 @@ pub unsafe fn RpcServerYield() {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcSmAllocate(size: usize, pstatus: *mut RPC_STATUS) -> *mut ::core::ffi::c_void {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcSmAllocate(size: usize, pstatus: *mut RPC_STATUS) -> *mut ::core::ffi::c_void;
     }
@@ -4409,7 +3942,6 @@ pub unsafe fn RpcSmAllocate(size: usize, pstatus: *mut RPC_STATUS) -> *mut ::cor
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcSmClientFree(pnodetofree: *const ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcSmClientFree(pnodetofree: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4418,7 +3950,6 @@ pub unsafe fn RpcSmClientFree(pnodetofree: *const ::core::ffi::c_void) -> RPC_ST
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcSmDestroyClientContext(contexthandle: *const *const ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcSmDestroyClientContext(contexthandle: *const *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4427,7 +3958,6 @@ pub unsafe fn RpcSmDestroyClientContext(contexthandle: *const *const ::core::ffi
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcSmDisableAllocate() -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcSmDisableAllocate() -> RPC_STATUS;
     }
@@ -4436,7 +3966,6 @@ pub unsafe fn RpcSmDisableAllocate() -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcSmEnableAllocate() -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcSmEnableAllocate() -> RPC_STATUS;
     }
@@ -4445,7 +3974,6 @@ pub unsafe fn RpcSmEnableAllocate() -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcSmFree(nodetofree: *const ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcSmFree(nodetofree: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4454,7 +3982,6 @@ pub unsafe fn RpcSmFree(nodetofree: *const ::core::ffi::c_void) -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcSmGetThreadHandle(pstatus: *mut RPC_STATUS) -> *mut ::core::ffi::c_void {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcSmGetThreadHandle(pstatus: *mut RPC_STATUS) -> *mut ::core::ffi::c_void;
     }
@@ -4463,7 +3990,6 @@ pub unsafe fn RpcSmGetThreadHandle(pstatus: *mut RPC_STATUS) -> *mut ::core::ffi
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcSmSetClientAllocFree(clientalloc: RPC_CLIENT_ALLOC, clientfree: RPC_CLIENT_FREE) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcSmSetClientAllocFree(clientalloc: *mut ::core::ffi::c_void, clientfree: *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4472,7 +3998,6 @@ pub unsafe fn RpcSmSetClientAllocFree(clientalloc: RPC_CLIENT_ALLOC, clientfree:
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcSmSetThreadHandle(id: *const ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcSmSetThreadHandle(id: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4481,7 +4006,6 @@ pub unsafe fn RpcSmSetThreadHandle(id: *const ::core::ffi::c_void) -> RPC_STATUS
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcSmSwapClientAllocFree(clientalloc: RPC_CLIENT_ALLOC, clientfree: RPC_CLIENT_FREE, oldclientalloc: *mut RPC_CLIENT_ALLOC, oldclientfree: *mut RPC_CLIENT_FREE) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcSmSwapClientAllocFree(clientalloc: *mut ::core::ffi::c_void, clientfree: *mut ::core::ffi::c_void, oldclientalloc: *mut *mut ::core::ffi::c_void, oldclientfree: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4490,7 +4014,6 @@ pub unsafe fn RpcSmSwapClientAllocFree(clientalloc: RPC_CLIENT_ALLOC, clientfree
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcSsAllocate(size: usize) -> *mut ::core::ffi::c_void {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcSsAllocate(size: usize) -> *mut ::core::ffi::c_void;
     }
@@ -4499,7 +4022,6 @@ pub unsafe fn RpcSsAllocate(size: usize) -> *mut ::core::ffi::c_void {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcSsContextLockExclusive(serverbindinghandle: ::core::option::Option<*const ::core::ffi::c_void>, usercontext: *const ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcSsContextLockExclusive(serverbindinghandle: *const ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4508,7 +4030,6 @@ pub unsafe fn RpcSsContextLockExclusive(serverbindinghandle: ::core::option::Opt
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcSsContextLockShared(serverbindinghandle: *const ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcSsContextLockShared(serverbindinghandle: *const ::core::ffi::c_void, usercontext: *const ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4517,7 +4038,6 @@ pub unsafe fn RpcSsContextLockShared(serverbindinghandle: *const ::core::ffi::c_
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcSsDestroyClientContext(contexthandle: *const *const ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcSsDestroyClientContext(contexthandle: *const *const ::core::ffi::c_void);
     }
@@ -4526,7 +4046,6 @@ pub unsafe fn RpcSsDestroyClientContext(contexthandle: *const *const ::core::ffi
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcSsDisableAllocate() {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcSsDisableAllocate();
     }
@@ -4535,7 +4054,6 @@ pub unsafe fn RpcSsDisableAllocate() {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcSsDontSerializeContext() {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcSsDontSerializeContext();
     }
@@ -4544,7 +4062,6 @@ pub unsafe fn RpcSsDontSerializeContext() {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcSsEnableAllocate() {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcSsEnableAllocate();
     }
@@ -4553,7 +4070,6 @@ pub unsafe fn RpcSsEnableAllocate() {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcSsFree(nodetofree: *const ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcSsFree(nodetofree: *const ::core::ffi::c_void);
     }
@@ -4562,7 +4078,6 @@ pub unsafe fn RpcSsFree(nodetofree: *const ::core::ffi::c_void) {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcSsGetContextBinding(contexthandle: *const ::core::ffi::c_void, binding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcSsGetContextBinding(contexthandle: *const ::core::ffi::c_void, binding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     }
@@ -4571,7 +4086,6 @@ pub unsafe fn RpcSsGetContextBinding(contexthandle: *const ::core::ffi::c_void, 
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcSsGetThreadHandle() -> *mut ::core::ffi::c_void {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcSsGetThreadHandle() -> *mut ::core::ffi::c_void;
     }
@@ -4580,7 +4094,6 @@ pub unsafe fn RpcSsGetThreadHandle() -> *mut ::core::ffi::c_void {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcSsSetClientAllocFree(clientalloc: RPC_CLIENT_ALLOC, clientfree: RPC_CLIENT_FREE) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcSsSetClientAllocFree(clientalloc: *mut ::core::ffi::c_void, clientfree: *mut ::core::ffi::c_void);
     }
@@ -4589,7 +4102,6 @@ pub unsafe fn RpcSsSetClientAllocFree(clientalloc: RPC_CLIENT_ALLOC, clientfree:
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcSsSetThreadHandle(id: *const ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcSsSetThreadHandle(id: *const ::core::ffi::c_void);
     }
@@ -4598,7 +4110,6 @@ pub unsafe fn RpcSsSetThreadHandle(id: *const ::core::ffi::c_void) {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcSsSwapClientAllocFree(clientalloc: RPC_CLIENT_ALLOC, clientfree: RPC_CLIENT_FREE, oldclientalloc: *mut RPC_CLIENT_ALLOC, oldclientfree: *mut RPC_CLIENT_FREE) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcSsSwapClientAllocFree(clientalloc: *mut ::core::ffi::c_void, clientfree: *mut ::core::ffi::c_void, oldclientalloc: *mut *mut ::core::ffi::c_void, oldclientfree: *mut *mut ::core::ffi::c_void);
     }
@@ -4607,7 +4118,6 @@ pub unsafe fn RpcSsSwapClientAllocFree(clientalloc: RPC_CLIENT_ALLOC, clientfree
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcStringBindingComposeA(objuuid: ::core::option::Option<*const u8>, protseq: ::core::option::Option<*const u8>, networkaddr: ::core::option::Option<*const u8>, endpoint: ::core::option::Option<*const u8>, options: ::core::option::Option<*const u8>, stringbinding: ::core::option::Option<*mut *mut u8>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcStringBindingComposeA(objuuid: *const u8, protseq: *const u8, networkaddr: *const u8, endpoint: *const u8, options: *const u8, stringbinding: *mut *mut u8) -> RPC_STATUS;
     }
@@ -4616,7 +4126,6 @@ pub unsafe fn RpcStringBindingComposeA(objuuid: ::core::option::Option<*const u8
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcStringBindingComposeW(objuuid: ::core::option::Option<*const u16>, protseq: ::core::option::Option<*const u16>, networkaddr: ::core::option::Option<*const u16>, endpoint: ::core::option::Option<*const u16>, options: ::core::option::Option<*const u16>, stringbinding: ::core::option::Option<*mut *mut u16>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcStringBindingComposeW(objuuid: *const u16, protseq: *const u16, networkaddr: *const u16, endpoint: *const u16, options: *const u16, stringbinding: *mut *mut u16) -> RPC_STATUS;
     }
@@ -4625,7 +4134,6 @@ pub unsafe fn RpcStringBindingComposeW(objuuid: ::core::option::Option<*const u1
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcStringBindingParseA(stringbinding: *const u8, objuuid: ::core::option::Option<*mut *mut u8>, protseq: ::core::option::Option<*mut *mut u8>, networkaddr: ::core::option::Option<*mut *mut u8>, endpoint: ::core::option::Option<*mut *mut u8>, networkoptions: ::core::option::Option<*mut *mut u8>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcStringBindingParseA(stringbinding: *const u8, objuuid: *mut *mut u8, protseq: *mut *mut u8, networkaddr: *mut *mut u8, endpoint: *mut *mut u8, networkoptions: *mut *mut u8) -> RPC_STATUS;
     }
@@ -4634,7 +4142,6 @@ pub unsafe fn RpcStringBindingParseA(stringbinding: *const u8, objuuid: ::core::
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcStringBindingParseW(stringbinding: *const u16, objuuid: ::core::option::Option<*mut *mut u16>, protseq: ::core::option::Option<*mut *mut u16>, networkaddr: ::core::option::Option<*mut *mut u16>, endpoint: ::core::option::Option<*mut *mut u16>, networkoptions: ::core::option::Option<*mut *mut u16>) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcStringBindingParseW(stringbinding: *const u16, objuuid: *mut *mut u16, protseq: *mut *mut u16, networkaddr: *mut *mut u16, endpoint: *mut *mut u16, networkoptions: *mut *mut u16) -> RPC_STATUS;
     }
@@ -4643,7 +4150,6 @@ pub unsafe fn RpcStringBindingParseW(stringbinding: *const u16, objuuid: ::core:
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcStringFreeA(string: *mut *mut u8) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcStringFreeA(string: *mut *mut u8) -> RPC_STATUS;
     }
@@ -4652,7 +4158,6 @@ pub unsafe fn RpcStringFreeA(string: *mut *mut u8) -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcStringFreeW(string: *mut *mut u16) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcStringFreeW(string: *mut *mut u16) -> RPC_STATUS;
     }
@@ -4661,7 +4166,6 @@ pub unsafe fn RpcStringFreeW(string: *mut *mut u16) -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcTestCancel() -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcTestCancel() -> RPC_STATUS;
     }
@@ -4670,7 +4174,6 @@ pub unsafe fn RpcTestCancel() -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn RpcUserFree(asynchandle: *mut ::core::ffi::c_void, pbuffer: *mut ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RpcUserFree(asynchandle: *mut ::core::ffi::c_void, pbuffer: *mut ::core::ffi::c_void);
     }
@@ -4679,7 +4182,6 @@ pub unsafe fn RpcUserFree(asynchandle: *mut ::core::ffi::c_void, pbuffer: *mut :
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn UuidCompare(uuid1: *const ::windows::core::GUID, uuid2: *const ::windows::core::GUID, status: *mut RPC_STATUS) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UuidCompare(uuid1: *const ::windows::core::GUID, uuid2: *const ::windows::core::GUID, status: *mut RPC_STATUS) -> i32;
     }
@@ -4688,7 +4190,6 @@ pub unsafe fn UuidCompare(uuid1: *const ::windows::core::GUID, uuid2: *const ::w
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn UuidCreate(uuid: *mut ::windows::core::GUID) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UuidCreate(uuid: *mut ::windows::core::GUID) -> RPC_STATUS;
     }
@@ -4697,7 +4198,6 @@ pub unsafe fn UuidCreate(uuid: *mut ::windows::core::GUID) -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn UuidCreateNil(niluuid: *mut ::windows::core::GUID) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UuidCreateNil(niluuid: *mut ::windows::core::GUID) -> RPC_STATUS;
     }
@@ -4706,7 +4206,6 @@ pub unsafe fn UuidCreateNil(niluuid: *mut ::windows::core::GUID) -> RPC_STATUS {
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn UuidCreateSequential(uuid: *mut ::windows::core::GUID) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UuidCreateSequential(uuid: *mut ::windows::core::GUID) -> RPC_STATUS;
     }
@@ -4715,7 +4214,6 @@ pub unsafe fn UuidCreateSequential(uuid: *mut ::windows::core::GUID) -> RPC_STAT
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn UuidEqual(uuid1: *const ::windows::core::GUID, uuid2: *const ::windows::core::GUID, status: *mut RPC_STATUS) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UuidEqual(uuid1: *const ::windows::core::GUID, uuid2: *const ::windows::core::GUID, status: *mut RPC_STATUS) -> i32;
     }
@@ -4724,7 +4222,6 @@ pub unsafe fn UuidEqual(uuid1: *const ::windows::core::GUID, uuid2: *const ::win
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn UuidFromStringA(stringuuid: ::core::option::Option<*const u8>, uuid: *mut ::windows::core::GUID) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UuidFromStringA(stringuuid: *const u8, uuid: *mut ::windows::core::GUID) -> RPC_STATUS;
     }
@@ -4733,7 +4230,6 @@ pub unsafe fn UuidFromStringA(stringuuid: ::core::option::Option<*const u8>, uui
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn UuidFromStringW(stringuuid: ::core::option::Option<*const u16>, uuid: *mut ::windows::core::GUID) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UuidFromStringW(stringuuid: *const u16, uuid: *mut ::windows::core::GUID) -> RPC_STATUS;
     }
@@ -4742,7 +4238,6 @@ pub unsafe fn UuidFromStringW(stringuuid: ::core::option::Option<*const u16>, uu
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn UuidHash(uuid: *const ::windows::core::GUID, status: *mut RPC_STATUS) -> u16 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UuidHash(uuid: *const ::windows::core::GUID, status: *mut RPC_STATUS) -> u16;
     }
@@ -4751,7 +4246,6 @@ pub unsafe fn UuidHash(uuid: *const ::windows::core::GUID, status: *mut RPC_STAT
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn UuidIsNil(uuid: *const ::windows::core::GUID, status: *mut RPC_STATUS) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UuidIsNil(uuid: *const ::windows::core::GUID, status: *mut RPC_STATUS) -> i32;
     }
@@ -4760,7 +4254,6 @@ pub unsafe fn UuidIsNil(uuid: *const ::windows::core::GUID, status: *mut RPC_STA
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn UuidToStringA(uuid: *const ::windows::core::GUID, stringuuid: *mut *mut u8) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UuidToStringA(uuid: *const ::windows::core::GUID, stringuuid: *mut *mut u8) -> RPC_STATUS;
     }
@@ -4769,7 +4262,6 @@ pub unsafe fn UuidToStringA(uuid: *const ::windows::core::GUID, stringuuid: *mut
 #[doc = "*Required features: `\"Win32_System_Rpc\"`*"]
 #[inline]
 pub unsafe fn UuidToStringW(uuid: *const ::windows::core::GUID, stringuuid: *mut *mut u16) -> RPC_STATUS {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UuidToStringW(uuid: *const ::windows::core::GUID, stringuuid: *mut *mut u16) -> RPC_STATUS;
     }

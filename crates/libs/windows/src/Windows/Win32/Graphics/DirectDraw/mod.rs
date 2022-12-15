@@ -4,7 +4,6 @@ pub unsafe fn DirectDrawCreate<'a, P0>(lpguid: *mut ::windows::core::GUID, lplpd
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DirectDrawCreate(lpguid: *mut ::windows::core::GUID, lplpdd: *mut *mut ::core::ffi::c_void, punkouter: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -16,7 +15,6 @@ pub unsafe fn DirectDrawCreateClipper<'a, P0>(dwflags: u32, lplpddclipper: *mut 
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DirectDrawCreateClipper(dwflags: u32, lplpddclipper: *mut *mut ::core::ffi::c_void, punkouter: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -28,7 +26,6 @@ pub unsafe fn DirectDrawCreateEx<'a, P0>(lpguid: *mut ::windows::core::GUID, lpl
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DirectDrawCreateEx(lpguid: *mut ::windows::core::GUID, lplpdd: *mut *mut ::core::ffi::c_void, iid: *const ::windows::core::GUID, punkouter: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -38,7 +35,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DirectDrawEnumerateA(lpcallback: LPDDENUMCALLBACKA, lpcontext: *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DirectDrawEnumerateA(lpcallback: *mut ::core::ffi::c_void, lpcontext: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -48,7 +44,6 @@ pub unsafe fn DirectDrawEnumerateA(lpcallback: LPDDENUMCALLBACKA, lpcontext: *mu
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
 pub unsafe fn DirectDrawEnumerateExA(lpcallback: LPDDENUMCALLBACKEXA, lpcontext: *mut ::core::ffi::c_void, dwflags: u32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DirectDrawEnumerateExA(lpcallback: *mut ::core::ffi::c_void, lpcontext: *mut ::core::ffi::c_void, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -58,7 +53,6 @@ pub unsafe fn DirectDrawEnumerateExA(lpcallback: LPDDENUMCALLBACKEXA, lpcontext:
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 #[inline]
 pub unsafe fn DirectDrawEnumerateExW(lpcallback: LPDDENUMCALLBACKEXW, lpcontext: *mut ::core::ffi::c_void, dwflags: u32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DirectDrawEnumerateExW(lpcallback: *mut ::core::ffi::c_void, lpcontext: *mut ::core::ffi::c_void, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -68,7 +62,6 @@ pub unsafe fn DirectDrawEnumerateExW(lpcallback: LPDDENUMCALLBACKEXW, lpcontext:
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DirectDrawEnumerateW(lpcallback: LPDDENUMCALLBACKW, lpcontext: *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DirectDrawEnumerateW(lpcallback: *mut ::core::ffi::c_void, lpcontext: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }

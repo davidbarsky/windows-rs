@@ -5,7 +5,6 @@ pub unsafe fn ADsBuildEnumerator<'a, P0>(padscontainer: P0) -> ::windows::core::
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IADsContainer>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ADsBuildEnumerator(padscontainer: *mut ::core::ffi::c_void, ppenumvariant: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -16,7 +15,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 #[inline]
 pub unsafe fn ADsBuildVarArrayInt(lpdwobjecttypes: *mut u32, dwobjecttypes: u32, pvar: *mut super::super::System::Com::VARIANT) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ADsBuildVarArrayInt(lpdwobjecttypes: *mut u32, dwobjecttypes: u32, pvar: *mut super::super::System::Com::VARIANT) -> ::windows::core::HRESULT;
     }
@@ -26,7 +24,6 @@ pub unsafe fn ADsBuildVarArrayInt(lpdwobjecttypes: *mut u32, dwobjecttypes: u32,
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 #[inline]
 pub unsafe fn ADsBuildVarArrayStr(lpppathnames: &[::windows::core::PWSTR], pvar: *mut super::super::System::Com::VARIANT) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ADsBuildVarArrayStr(lpppathnames: *const ::windows::core::PWSTR, dwpathnames: u32, pvar: *mut super::super::System::Com::VARIANT) -> ::windows::core::HRESULT;
     }
@@ -38,7 +35,6 @@ pub unsafe fn ADsDecodeBinaryData<'a, P0>(szsrcdata: P0, ppbdestdata: *mut *mut 
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ADsDecodeBinaryData(szsrcdata: ::windows::core::PCWSTR, ppbdestdata: *mut *mut u8, pdwdestlen: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -47,7 +43,6 @@ where
 #[doc = "*Required features: `\"Win32_Networking_ActiveDirectory\"`*"]
 #[inline]
 pub unsafe fn ADsEncodeBinaryData(pbsrcdata: *mut u8, dwsrclen: u32, ppszdestdata: *mut ::windows::core::PWSTR) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ADsEncodeBinaryData(pbsrcdata: *mut u8, dwsrclen: u32, ppszdestdata: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -60,7 +55,6 @@ pub unsafe fn ADsEnumerateNext<'a, P0>(penumvariant: P0, celements: u32, pvar: *
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Ole::IEnumVARIANT>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ADsEnumerateNext(penumvariant: *mut ::core::ffi::c_void, celements: u32, pvar: *mut super::super::System::Com::VARIANT, pcelementsfetched: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -73,7 +67,6 @@ pub unsafe fn ADsFreeEnumerator<'a, P0>(penumvariant: P0) -> ::windows::core::Re
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Ole::IEnumVARIANT>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ADsFreeEnumerator(penumvariant: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -82,7 +75,6 @@ where
 #[doc = "*Required features: `\"Win32_Networking_ActiveDirectory\"`*"]
 #[inline]
 pub unsafe fn ADsGetLastError(lperror: *mut u32, lperrorbuf: &mut [u16], lpnamebuf: &mut [u16]) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ADsGetLastError(lperror: *mut u32, lperrorbuf: ::windows::core::PWSTR, dwerrorbuflen: u32, lpnamebuf: ::windows::core::PWSTR, dwnamebuflen: u32) -> ::windows::core::HRESULT;
     }
@@ -94,7 +86,6 @@ pub unsafe fn ADsGetObject<'a, P0>(lpszpathname: P0, riid: *const ::windows::cor
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ADsGetObject(lpszpathname: ::windows::core::PCWSTR, riid: *const ::windows::core::GUID, ppobject: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -108,7 +99,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ADsOpenObject(lpszpathname: ::windows::core::PCWSTR, lpszusername: ::windows::core::PCWSTR, lpszpassword: ::windows::core::PCWSTR, dwreserved: ADS_AUTHENTICATION_ENUM, riid: *const ::windows::core::GUID, ppobject: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -121,7 +111,6 @@ pub unsafe fn ADsPropCheckIfWritable<'a, P0>(pwzattr: P0, pwritableattrs: *const
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ADsPropCheckIfWritable(pwzattr: ::windows::core::PCWSTR, pwritableattrs: *const ADS_ATTR_INFO) -> super::super::Foundation::BOOL;
     }
@@ -135,7 +124,6 @@ where
     P0: ::std::convert::Into<::windows::core::InParam<'a, super::super::System::Com::IDataObject>>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ADsPropCreateNotifyObj(pappthddataobj: *mut ::core::ffi::c_void, pwzadsobjname: ::windows::core::PCWSTR, phnotifyobj: *mut super::super::Foundation::HWND) -> ::windows::core::HRESULT;
     }
@@ -148,7 +136,6 @@ pub unsafe fn ADsPropGetInitInfo<'a, P0>(hnotifyobj: P0, pinitparams: *mut ADSPR
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ADsPropGetInitInfo(hnotifyobj: super::super::Foundation::HWND, pinitparams: *mut ADSPROPINITPARAMS) -> super::super::Foundation::BOOL;
     }
@@ -161,7 +148,6 @@ pub unsafe fn ADsPropSendErrorMessage<'a, P0>(hnotifyobj: P0, perror: *mut ADSPR
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ADsPropSendErrorMessage(hnotifyobj: super::super::Foundation::HWND, perror: *mut ADSPROPERROR) -> super::super::Foundation::BOOL;
     }
@@ -175,7 +161,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ADsPropSetHwnd(hnotifyobj: super::super::Foundation::HWND, hpage: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -189,7 +174,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ADsPropSetHwndWithTitle(hnotifyobj: super::super::Foundation::HWND, hpage: super::super::Foundation::HWND, ptztitle: *const i8) -> super::super::Foundation::BOOL;
     }
@@ -203,7 +187,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ADsPropShowErrorDialog(hnotifyobj: super::super::Foundation::HWND, hpage: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     }
@@ -216,7 +199,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ADsSetLastError(dwerr: u32, pszerror: ::windows::core::PCWSTR, pszprovider: ::windows::core::PCWSTR);
     }
@@ -226,7 +208,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn AdsFreeAdsValues(padsvalues: *mut ADSVALUE, dwnumvalues: u32) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AdsFreeAdsValues(padsvalues: *mut ADSVALUE, dwnumvalues: u32);
     }
@@ -236,7 +217,6 @@ pub unsafe fn AdsFreeAdsValues(padsvalues: *mut ADSVALUE, dwnumvalues: u32) {
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 #[inline]
 pub unsafe fn AdsTypeToPropVariant(padsvalues: *mut ADSVALUE, dwnumvalues: u32, pvariant: *mut super::super::System::Com::VARIANT) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AdsTypeToPropVariant(padsvalues: *mut ADSVALUE, dwnumvalues: u32, pvariant: *mut super::super::System::Com::VARIANT) -> ::windows::core::HRESULT;
     }
@@ -245,7 +225,6 @@ pub unsafe fn AdsTypeToPropVariant(padsvalues: *mut ADSVALUE, dwnumvalues: u32, 
 #[doc = "*Required features: `\"Win32_Networking_ActiveDirectory\"`*"]
 #[inline]
 pub unsafe fn AllocADsMem(cb: u32) -> *mut ::core::ffi::c_void {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AllocADsMem(cb: u32) -> *mut ::core::ffi::c_void;
     }
@@ -257,7 +236,6 @@ pub unsafe fn AllocADsStr<'a, P0>(pstr: P0) -> ::windows::core::PWSTR
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AllocADsStr(pstr: ::windows::core::PCWSTR) -> ::windows::core::PWSTR;
     }
@@ -273,7 +251,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BinarySDToSecurityDescriptor(psecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR, pvarsec: *mut super::super::System::Com::VARIANT, pszservername: ::windows::core::PCWSTR, username: ::windows::core::PCWSTR, password: ::windows::core::PCWSTR, dwflags: u32) -> ::windows::core::HRESULT;
     }
@@ -291,7 +268,6 @@ where
     P4: ::std::convert::Into<::windows::core::PCSTR>,
     P5: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsAddSidHistoryA(hds: super::super::Foundation::HANDLE, flags: u32, srcdomain: ::windows::core::PCSTR, srcprincipal: ::windows::core::PCSTR, srcdomaincontroller: ::windows::core::PCSTR, srcdomaincreds: *const ::core::ffi::c_void, dstdomain: ::windows::core::PCSTR, dstprincipal: ::windows::core::PCSTR) -> u32;
     }
@@ -309,7 +285,6 @@ where
     P4: ::std::convert::Into<::windows::core::PCWSTR>,
     P5: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsAddSidHistoryW(hds: super::super::Foundation::HANDLE, flags: u32, srcdomain: ::windows::core::PCWSTR, srcprincipal: ::windows::core::PCWSTR, srcdomaincontroller: ::windows::core::PCWSTR, srcdomaincreds: *const ::core::ffi::c_void, dstdomain: ::windows::core::PCWSTR, dstprincipal: ::windows::core::PCWSTR) -> u32;
     }
@@ -322,7 +297,6 @@ pub unsafe fn DsAddressToSiteNamesA<'a, P0>(computername: P0, socketaddresses: &
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsAddressToSiteNamesA(computername: ::windows::core::PCSTR, entrycount: u32, socketaddresses: *const super::WinSock::SOCKET_ADDRESS, sitenames: *mut *mut ::windows::core::PSTR) -> u32;
     }
@@ -335,7 +309,6 @@ pub unsafe fn DsAddressToSiteNamesExA<'a, P0>(computername: P0, socketaddresses:
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsAddressToSiteNamesExA(computername: ::windows::core::PCSTR, entrycount: u32, socketaddresses: *const super::WinSock::SOCKET_ADDRESS, sitenames: *mut *mut ::windows::core::PSTR, subnetnames: *mut *mut ::windows::core::PSTR) -> u32;
     }
@@ -348,7 +321,6 @@ pub unsafe fn DsAddressToSiteNamesExW<'a, P0>(computername: P0, socketaddresses:
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsAddressToSiteNamesExW(computername: ::windows::core::PCWSTR, entrycount: u32, socketaddresses: *const super::WinSock::SOCKET_ADDRESS, sitenames: *mut *mut ::windows::core::PWSTR, subnetnames: *mut *mut ::windows::core::PWSTR) -> u32;
     }
@@ -361,7 +333,6 @@ pub unsafe fn DsAddressToSiteNamesW<'a, P0>(computername: P0, socketaddresses: &
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsAddressToSiteNamesW(computername: ::windows::core::PCWSTR, entrycount: u32, socketaddresses: *const super::WinSock::SOCKET_ADDRESS, sitenames: *mut *mut ::windows::core::PWSTR) -> u32;
     }
@@ -375,7 +346,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsBindA(domaincontrollername: ::windows::core::PCSTR, dnsdomainname: ::windows::core::PCSTR, phds: *mut super::super::Foundation::HANDLE) -> u32;
     }
@@ -391,7 +361,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsBindByInstanceA(servername: ::windows::core::PCSTR, annotation: ::windows::core::PCSTR, instanceguid: *const ::windows::core::GUID, dnsdomainname: ::windows::core::PCSTR, authidentity: *const ::core::ffi::c_void, serviceprincipalname: ::windows::core::PCSTR, bindflags: u32, phds: *mut super::super::Foundation::HANDLE) -> u32;
     }
@@ -407,7 +376,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsBindByInstanceW(servername: ::windows::core::PCWSTR, annotation: ::windows::core::PCWSTR, instanceguid: *const ::windows::core::GUID, dnsdomainname: ::windows::core::PCWSTR, authidentity: *const ::core::ffi::c_void, serviceprincipalname: ::windows::core::PCWSTR, bindflags: u32, phds: *mut super::super::Foundation::HANDLE) -> u32;
     }
@@ -420,7 +388,6 @@ pub unsafe fn DsBindToISTGA<'a, P0>(sitename: P0, phds: *mut super::super::Found
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsBindToISTGA(sitename: ::windows::core::PCSTR, phds: *mut super::super::Foundation::HANDLE) -> u32;
     }
@@ -433,7 +400,6 @@ pub unsafe fn DsBindToISTGW<'a, P0>(sitename: P0, phds: *mut super::super::Found
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsBindToISTGW(sitename: ::windows::core::PCWSTR, phds: *mut super::super::Foundation::HANDLE) -> u32;
     }
@@ -447,7 +413,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsBindW(domaincontrollername: ::windows::core::PCWSTR, dnsdomainname: ::windows::core::PCWSTR, phds: *mut super::super::Foundation::HANDLE) -> u32;
     }
@@ -461,7 +426,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsBindWithCredA(domaincontrollername: ::windows::core::PCSTR, dnsdomainname: ::windows::core::PCSTR, authidentity: *const ::core::ffi::c_void, phds: *mut super::super::Foundation::HANDLE) -> u32;
     }
@@ -475,7 +439,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsBindWithCredW(domaincontrollername: ::windows::core::PCWSTR, dnsdomainname: ::windows::core::PCWSTR, authidentity: *const ::core::ffi::c_void, phds: *mut super::super::Foundation::HANDLE) -> u32;
     }
@@ -490,7 +453,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsBindWithSpnA(domaincontrollername: ::windows::core::PCSTR, dnsdomainname: ::windows::core::PCSTR, authidentity: *const ::core::ffi::c_void, serviceprincipalname: ::windows::core::PCSTR, phds: *mut super::super::Foundation::HANDLE) -> u32;
     }
@@ -505,7 +467,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsBindWithSpnExA(domaincontrollername: ::windows::core::PCSTR, dnsdomainname: ::windows::core::PCSTR, authidentity: *const ::core::ffi::c_void, serviceprincipalname: ::windows::core::PCSTR, bindflags: u32, phds: *mut super::super::Foundation::HANDLE) -> u32;
     }
@@ -520,7 +481,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsBindWithSpnExW(domaincontrollername: ::windows::core::PCWSTR, dnsdomainname: ::windows::core::PCWSTR, authidentity: *const ::core::ffi::c_void, serviceprincipalname: ::windows::core::PCWSTR, bindflags: u32, phds: *mut super::super::Foundation::HANDLE) -> u32;
     }
@@ -535,7 +495,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsBindWithSpnW(domaincontrollername: ::windows::core::PCWSTR, dnsdomainname: ::windows::core::PCWSTR, authidentity: *const ::core::ffi::c_void, serviceprincipalname: ::windows::core::PCWSTR, phds: *mut super::super::Foundation::HANDLE) -> u32;
     }
@@ -548,7 +507,6 @@ pub unsafe fn DsBindingSetTimeout<'a, P0>(hds: P0, ctimeoutsecs: u32) -> u32
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsBindingSetTimeout(hds: super::super::Foundation::HANDLE, ctimeoutsecs: u32) -> u32;
     }
@@ -558,7 +516,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell"))]
 #[inline]
 pub unsafe fn DsBrowseForContainerA(pinfo: *mut DSBROWSEINFOA) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsBrowseForContainerA(pinfo: *mut DSBROWSEINFOA) -> i32;
     }
@@ -568,7 +525,6 @@ pub unsafe fn DsBrowseForContainerA(pinfo: *mut DSBROWSEINFOA) -> i32 {
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_Shell"))]
 #[inline]
 pub unsafe fn DsBrowseForContainerW(pinfo: *mut DSBROWSEINFOW) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsBrowseForContainerW(pinfo: *mut DSBROWSEINFOW) -> i32;
     }
@@ -581,7 +537,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsClientMakeSpnForTargetServerA(serviceclass: ::windows::core::PCSTR, servicename: ::windows::core::PCSTR, pcspnlength: *mut u32, pszspn: ::windows::core::PSTR) -> u32;
     }
@@ -594,7 +549,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsClientMakeSpnForTargetServerW(serviceclass: ::windows::core::PCWSTR, servicename: ::windows::core::PCWSTR, pcspnlength: *mut u32, pszspn: ::windows::core::PWSTR) -> u32;
     }
@@ -607,7 +561,6 @@ pub unsafe fn DsCrackNamesA<'a, P0>(hds: P0, flags: DS_NAME_FLAGS, formatoffered
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsCrackNamesA(hds: super::super::Foundation::HANDLE, flags: DS_NAME_FLAGS, formatoffered: DS_NAME_FORMAT, formatdesired: DS_NAME_FORMAT, cnames: u32, rpnames: *const ::windows::core::PSTR, ppresult: *mut *mut DS_NAME_RESULTA) -> u32;
     }
@@ -620,7 +573,6 @@ pub unsafe fn DsCrackNamesW<'a, P0>(hds: P0, flags: DS_NAME_FLAGS, formatoffered
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsCrackNamesW(hds: super::super::Foundation::HANDLE, flags: DS_NAME_FLAGS, formatoffered: DS_NAME_FORMAT, formatdesired: DS_NAME_FORMAT, cnames: u32, rpnames: *const ::windows::core::PWSTR, ppresult: *mut *mut DS_NAME_RESULTW) -> u32;
     }
@@ -629,7 +581,6 @@ where
 #[doc = "*Required features: `\"Win32_Networking_ActiveDirectory\"`*"]
 #[inline]
 pub unsafe fn DsCrackSpn2A(pszspn: &[u8], pcserviceclass: ::core::option::Option<*mut u32>, serviceclass: ::windows::core::PSTR, pcservicename: ::core::option::Option<*mut u32>, servicename: ::windows::core::PSTR, pcinstancename: ::core::option::Option<*mut u32>, instancename: ::windows::core::PSTR, pinstanceport: ::core::option::Option<*mut u16>) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsCrackSpn2A(pszspn: ::windows::core::PCSTR, cspn: u32, pcserviceclass: *mut u32, serviceclass: ::windows::core::PSTR, pcservicename: *mut u32, servicename: ::windows::core::PSTR, pcinstancename: *mut u32, instancename: ::windows::core::PSTR, pinstanceport: *mut u16) -> u32;
     }
@@ -638,7 +589,6 @@ pub unsafe fn DsCrackSpn2A(pszspn: &[u8], pcserviceclass: ::core::option::Option
 #[doc = "*Required features: `\"Win32_Networking_ActiveDirectory\"`*"]
 #[inline]
 pub unsafe fn DsCrackSpn2W(pszspn: &[u16], pcserviceclass: ::core::option::Option<*mut u32>, serviceclass: ::windows::core::PWSTR, pcservicename: ::core::option::Option<*mut u32>, servicename: ::windows::core::PWSTR, pcinstancename: ::core::option::Option<*mut u32>, instancename: ::windows::core::PWSTR, pinstanceport: ::core::option::Option<*mut u16>) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsCrackSpn2W(pszspn: ::windows::core::PCWSTR, cspn: u32, pcserviceclass: *mut u32, serviceclass: ::windows::core::PWSTR, pcservicename: *mut u32, servicename: ::windows::core::PWSTR, pcinstancename: *mut u32, instancename: ::windows::core::PWSTR, pinstanceport: *mut u16) -> u32;
     }
@@ -650,7 +600,6 @@ pub unsafe fn DsCrackSpn3W<'a, P0>(pszspn: P0, cspn: u32, pchostname: *mut u32, 
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsCrackSpn3W(pszspn: ::windows::core::PCWSTR, cspn: u32, pchostname: *mut u32, hostname: ::windows::core::PWSTR, pcinstancename: *mut u32, instancename: ::windows::core::PWSTR, pportnumber: *mut u16, pcdomainname: *mut u32, domainname: ::windows::core::PWSTR, pcrealmname: *mut u32, realmname: ::windows::core::PWSTR) -> u32;
     }
@@ -662,7 +611,6 @@ pub unsafe fn DsCrackSpn4W<'a, P0>(pszspn: P0, cspn: u32, pchostname: *mut u32, 
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsCrackSpn4W(pszspn: ::windows::core::PCWSTR, cspn: u32, pchostname: *mut u32, hostname: ::windows::core::PWSTR, pcinstancename: *mut u32, instancename: ::windows::core::PWSTR, pcportname: *mut u32, portname: ::windows::core::PWSTR, pcdomainname: *mut u32, domainname: ::windows::core::PWSTR, pcrealmname: *mut u32, realmname: ::windows::core::PWSTR) -> u32;
     }
@@ -674,7 +622,6 @@ pub unsafe fn DsCrackSpnA<'a, P0>(pszspn: P0, pcserviceclass: ::core::option::Op
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsCrackSpnA(pszspn: ::windows::core::PCSTR, pcserviceclass: *mut u32, serviceclass: ::windows::core::PSTR, pcservicename: *mut u32, servicename: ::windows::core::PSTR, pcinstancename: *mut u32, instancename: ::windows::core::PSTR, pinstanceport: *mut u16) -> u32;
     }
@@ -686,7 +633,6 @@ pub unsafe fn DsCrackSpnW<'a, P0>(pszspn: P0, pcserviceclass: ::core::option::Op
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsCrackSpnW(pszspn: ::windows::core::PCWSTR, pcserviceclass: *mut u32, serviceclass: ::windows::core::PWSTR, pcservicename: *mut u32, servicename: ::windows::core::PWSTR, pcinstancename: *mut u32, instancename: ::windows::core::PWSTR, pinstanceport: *mut u16) -> u32;
     }
@@ -696,7 +642,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DsCrackUnquotedMangledRdnA(pszrdn: &[u8], pguid: ::core::option::Option<*mut ::windows::core::GUID>, pedsmanglefor: ::core::option::Option<*mut DS_MANGLE_FOR>) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsCrackUnquotedMangledRdnA(pszrdn: ::windows::core::PCSTR, cchrdn: u32, pguid: *mut ::windows::core::GUID, pedsmanglefor: *mut DS_MANGLE_FOR) -> super::super::Foundation::BOOL;
     }
@@ -706,7 +651,6 @@ pub unsafe fn DsCrackUnquotedMangledRdnA(pszrdn: &[u8], pguid: ::core::option::O
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DsCrackUnquotedMangledRdnW(pszrdn: &[u16], pguid: ::core::option::Option<*mut ::windows::core::GUID>, pedsmanglefor: ::core::option::Option<*mut DS_MANGLE_FOR>) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsCrackUnquotedMangledRdnW(pszrdn: ::windows::core::PCWSTR, cchrdn: u32, pguid: *mut ::windows::core::GUID, pedsmanglefor: *mut DS_MANGLE_FOR) -> super::super::Foundation::BOOL;
     }
@@ -720,7 +664,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsDeregisterDnsHostRecordsA(servername: ::windows::core::PCSTR, dnsdomainname: ::windows::core::PCSTR, domainguid: *const ::windows::core::GUID, dsaguid: *const ::windows::core::GUID, dnshostname: ::windows::core::PCSTR) -> u32;
     }
@@ -734,7 +677,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsDeregisterDnsHostRecordsW(servername: ::windows::core::PCWSTR, dnsdomainname: ::windows::core::PCWSTR, domainguid: *const ::windows::core::GUID, dsaguid: *const ::windows::core::GUID, dnshostname: ::windows::core::PCWSTR) -> u32;
     }
@@ -747,7 +689,6 @@ pub unsafe fn DsEnumerateDomainTrustsA<'a, P0>(servername: P0, flags: u32, domai
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsEnumerateDomainTrustsA(servername: ::windows::core::PCSTR, flags: u32, domains: *mut *mut DS_DOMAIN_TRUSTSA, domaincount: *mut u32) -> u32;
     }
@@ -760,7 +701,6 @@ pub unsafe fn DsEnumerateDomainTrustsW<'a, P0>(servername: P0, flags: u32, domai
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsEnumerateDomainTrustsW(servername: ::windows::core::PCWSTR, flags: u32, domains: *mut *mut DS_DOMAIN_TRUSTSW, domaincount: *mut u32) -> u32;
     }
@@ -769,7 +709,6 @@ where
 #[doc = "*Required features: `\"Win32_Networking_ActiveDirectory\"`*"]
 #[inline]
 pub unsafe fn DsFreeDomainControllerInfoA(infolevel: u32, pinfo: &[u8]) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsFreeDomainControllerInfoA(infolevel: u32, cinfo: u32, pinfo: *const ::core::ffi::c_void);
     }
@@ -778,7 +717,6 @@ pub unsafe fn DsFreeDomainControllerInfoA(infolevel: u32, pinfo: &[u8]) {
 #[doc = "*Required features: `\"Win32_Networking_ActiveDirectory\"`*"]
 #[inline]
 pub unsafe fn DsFreeDomainControllerInfoW(infolevel: u32, pinfo: &[u8]) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsFreeDomainControllerInfoW(infolevel: u32, cinfo: u32, pinfo: *const ::core::ffi::c_void);
     }
@@ -787,7 +725,6 @@ pub unsafe fn DsFreeDomainControllerInfoW(infolevel: u32, pinfo: &[u8]) {
 #[doc = "*Required features: `\"Win32_Networking_ActiveDirectory\"`*"]
 #[inline]
 pub unsafe fn DsFreeNameResultA(presult: *const DS_NAME_RESULTA) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsFreeNameResultA(presult: *const DS_NAME_RESULTA);
     }
@@ -796,7 +733,6 @@ pub unsafe fn DsFreeNameResultA(presult: *const DS_NAME_RESULTA) {
 #[doc = "*Required features: `\"Win32_Networking_ActiveDirectory\"`*"]
 #[inline]
 pub unsafe fn DsFreeNameResultW(presult: *const DS_NAME_RESULTW) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsFreeNameResultW(presult: *const DS_NAME_RESULTW);
     }
@@ -805,7 +741,6 @@ pub unsafe fn DsFreeNameResultW(presult: *const DS_NAME_RESULTW) {
 #[doc = "*Required features: `\"Win32_Networking_ActiveDirectory\"`*"]
 #[inline]
 pub unsafe fn DsFreePasswordCredentials(authidentity: *const ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsFreePasswordCredentials(authidentity: *const ::core::ffi::c_void);
     }
@@ -814,7 +749,6 @@ pub unsafe fn DsFreePasswordCredentials(authidentity: *const ::core::ffi::c_void
 #[doc = "*Required features: `\"Win32_Networking_ActiveDirectory\"`*"]
 #[inline]
 pub unsafe fn DsFreeSchemaGuidMapA(pguidmap: *const DS_SCHEMA_GUID_MAPA) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsFreeSchemaGuidMapA(pguidmap: *const DS_SCHEMA_GUID_MAPA);
     }
@@ -823,7 +757,6 @@ pub unsafe fn DsFreeSchemaGuidMapA(pguidmap: *const DS_SCHEMA_GUID_MAPA) {
 #[doc = "*Required features: `\"Win32_Networking_ActiveDirectory\"`*"]
 #[inline]
 pub unsafe fn DsFreeSchemaGuidMapW(pguidmap: *const DS_SCHEMA_GUID_MAPW) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsFreeSchemaGuidMapW(pguidmap: *const DS_SCHEMA_GUID_MAPW);
     }
@@ -832,7 +765,6 @@ pub unsafe fn DsFreeSchemaGuidMapW(pguidmap: *const DS_SCHEMA_GUID_MAPW) {
 #[doc = "*Required features: `\"Win32_Networking_ActiveDirectory\"`*"]
 #[inline]
 pub unsafe fn DsFreeSpnArrayA(rpszspn: &mut [::windows::core::PSTR]) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsFreeSpnArrayA(cspn: u32, rpszspn: *mut ::windows::core::PSTR);
     }
@@ -841,7 +773,6 @@ pub unsafe fn DsFreeSpnArrayA(rpszspn: &mut [::windows::core::PSTR]) {
 #[doc = "*Required features: `\"Win32_Networking_ActiveDirectory\"`*"]
 #[inline]
 pub unsafe fn DsFreeSpnArrayW(rpszspn: &mut [::windows::core::PWSTR]) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsFreeSpnArrayW(cspn: u32, rpszspn: *mut ::windows::core::PWSTR);
     }
@@ -853,7 +784,6 @@ pub unsafe fn DsGetDcCloseW<'a, P0>(getdccontexthandle: P0)
 where
     P0: ::std::convert::Into<GetDcContextHandle>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsGetDcCloseW(getdccontexthandle: GetDcContextHandle);
     }
@@ -867,7 +797,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsGetDcNameA(computername: ::windows::core::PCSTR, domainname: ::windows::core::PCSTR, domainguid: *const ::windows::core::GUID, sitename: ::windows::core::PCSTR, flags: u32, domaincontrollerinfo: *mut *mut DOMAIN_CONTROLLER_INFOA) -> u32;
     }
@@ -881,7 +810,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsGetDcNameW(computername: ::windows::core::PCWSTR, domainname: ::windows::core::PCWSTR, domainguid: *const ::windows::core::GUID, sitename: ::windows::core::PCWSTR, flags: u32, domaincontrollerinfo: *mut *mut DOMAIN_CONTROLLER_INFOW) -> u32;
     }
@@ -894,7 +822,6 @@ pub unsafe fn DsGetDcNextA<'a, P0>(getdccontexthandle: P0, sockaddresscount: ::c
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsGetDcNextA(getdccontexthandle: super::super::Foundation::HANDLE, sockaddresscount: *mut u32, sockaddresses: *mut *mut super::WinSock::SOCKET_ADDRESS, dnshostname: *mut ::windows::core::PSTR) -> u32;
     }
@@ -907,7 +834,6 @@ pub unsafe fn DsGetDcNextW<'a, P0>(getdccontexthandle: P0, sockaddresscount: ::c
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsGetDcNextW(getdccontexthandle: super::super::Foundation::HANDLE, sockaddresscount: *mut u32, sockaddresses: *mut *mut super::WinSock::SOCKET_ADDRESS, dnshostname: *mut ::windows::core::PWSTR) -> u32;
     }
@@ -921,7 +847,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsGetDcOpenA(dnsname: ::windows::core::PCSTR, optionflags: u32, sitename: ::windows::core::PCSTR, domainguid: *const ::windows::core::GUID, dnsforestname: ::windows::core::PCSTR, dcflags: u32, retgetdccontext: *mut GetDcContextHandle) -> u32;
     }
@@ -935,7 +860,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsGetDcOpenW(dnsname: ::windows::core::PCWSTR, optionflags: u32, sitename: ::windows::core::PCWSTR, domainguid: *const ::windows::core::GUID, dnsforestname: ::windows::core::PCWSTR, dcflags: u32, retgetdccontext: *mut GetDcContextHandle) -> u32;
     }
@@ -947,7 +871,6 @@ pub unsafe fn DsGetDcSiteCoverageA<'a, P0>(servername: P0, entrycount: *mut u32,
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsGetDcSiteCoverageA(servername: ::windows::core::PCSTR, entrycount: *mut u32, sitenames: *mut *mut ::windows::core::PSTR) -> u32;
     }
@@ -959,7 +882,6 @@ pub unsafe fn DsGetDcSiteCoverageW<'a, P0>(servername: P0, entrycount: *mut u32,
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsGetDcSiteCoverageW(servername: ::windows::core::PCWSTR, entrycount: *mut u32, sitenames: *mut *mut ::windows::core::PWSTR) -> u32;
     }
@@ -973,7 +895,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsGetDomainControllerInfoA(hds: super::super::Foundation::HANDLE, domainname: ::windows::core::PCSTR, infolevel: u32, pcout: *mut u32, ppinfo: *mut *mut ::core::ffi::c_void) -> u32;
     }
@@ -987,7 +908,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsGetDomainControllerInfoW(hds: super::super::Foundation::HANDLE, domainname: ::windows::core::PCWSTR, infolevel: u32, pcout: *mut u32, ppinfo: *mut *mut ::core::ffi::c_void) -> u32;
     }
@@ -1001,7 +921,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsGetForestTrustInformationW(servername: ::windows::core::PCWSTR, trusteddomainname: ::windows::core::PCWSTR, flags: u32, foresttrustinfo: *mut *mut super::super::Security::Authentication::Identity::LSA_FOREST_TRUST_INFORMATION) -> u32;
     }
@@ -1013,7 +932,6 @@ pub unsafe fn DsGetFriendlyClassName<'a, P0>(pszobjectclass: P0, pszbuffer: &mut
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsGetFriendlyClassName(pszobjectclass: ::windows::core::PCWSTR, pszbuffer: ::windows::core::PWSTR, cchbuffer: u32) -> ::windows::core::HRESULT;
     }
@@ -1026,7 +944,6 @@ pub unsafe fn DsGetIcon<'a, P0>(dwflags: u32, pszobjectclass: P0, cximage: i32, 
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsGetIcon(dwflags: u32, pszobjectclass: ::windows::core::PCWSTR, cximage: i32, cyimage: i32) -> super::super::UI::WindowsAndMessaging::HICON;
     }
@@ -1035,7 +952,6 @@ where
 #[doc = "*Required features: `\"Win32_Networking_ActiveDirectory\"`*"]
 #[inline]
 pub unsafe fn DsGetRdnW(ppdn: *mut ::windows::core::PWSTR, pcdn: *mut u32, ppkey: *mut ::windows::core::PWSTR, pckey: *mut u32, ppval: *mut ::windows::core::PWSTR, pcval: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsGetRdnW(ppdn: *mut ::windows::core::PWSTR, pcdn: *mut u32, ppkey: *mut ::windows::core::PWSTR, pckey: *mut u32, ppval: *mut ::windows::core::PWSTR, pcval: *mut u32) -> u32;
     }
@@ -1047,7 +963,6 @@ pub unsafe fn DsGetSiteNameA<'a, P0>(computername: P0, sitename: *mut ::windows:
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsGetSiteNameA(computername: ::windows::core::PCSTR, sitename: *mut ::windows::core::PSTR) -> u32;
     }
@@ -1059,7 +974,6 @@ pub unsafe fn DsGetSiteNameW<'a, P0>(computername: P0, sitename: *mut ::windows:
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsGetSiteNameW(computername: ::windows::core::PCWSTR, sitename: *mut ::windows::core::PWSTR) -> u32;
     }
@@ -1072,7 +986,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsGetSpnA(servicetype: DS_SPN_NAME_TYPE, serviceclass: ::windows::core::PCSTR, servicename: ::windows::core::PCSTR, instanceport: u16, cinstancenames: u16, pinstancenames: *const ::windows::core::PSTR, pinstanceports: *const u16, pcspn: *mut u32, prpszspn: *mut *mut ::windows::core::PSTR) -> u32;
     }
@@ -1085,7 +998,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsGetSpnW(servicetype: DS_SPN_NAME_TYPE, serviceclass: ::windows::core::PCWSTR, servicename: ::windows::core::PCWSTR, instanceport: u16, cinstancenames: u16, pinstancenames: *const ::windows::core::PWSTR, pinstanceports: *const u16, pcspn: *mut u32, prpszspn: *mut *mut ::windows::core::PWSTR) -> u32;
     }
@@ -1100,7 +1012,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsInheritSecurityIdentityA(hds: super::super::Foundation::HANDLE, flags: u32, srcprincipal: ::windows::core::PCSTR, dstprincipal: ::windows::core::PCSTR) -> u32;
     }
@@ -1115,7 +1026,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsInheritSecurityIdentityW(hds: super::super::Foundation::HANDLE, flags: u32, srcprincipal: ::windows::core::PCWSTR, dstprincipal: ::windows::core::PCWSTR) -> u32;
     }
@@ -1128,7 +1038,6 @@ pub unsafe fn DsIsMangledDnA<'a, P0>(pszdn: P0, edsmanglefor: DS_MANGLE_FOR) -> 
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsIsMangledDnA(pszdn: ::windows::core::PCSTR, edsmanglefor: DS_MANGLE_FOR) -> super::super::Foundation::BOOL;
     }
@@ -1141,7 +1050,6 @@ pub unsafe fn DsIsMangledDnW<'a, P0>(pszdn: P0, edsmanglefor: DS_MANGLE_FOR) -> 
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsIsMangledDnW(pszdn: ::windows::core::PCWSTR, edsmanglefor: DS_MANGLE_FOR) -> super::super::Foundation::BOOL;
     }
@@ -1151,7 +1059,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DsIsMangledRdnValueA(pszrdn: &[u8], edsmanglefordesired: DS_MANGLE_FOR) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsIsMangledRdnValueA(pszrdn: ::windows::core::PCSTR, crdn: u32, edsmanglefordesired: DS_MANGLE_FOR) -> super::super::Foundation::BOOL;
     }
@@ -1161,7 +1068,6 @@ pub unsafe fn DsIsMangledRdnValueA(pszrdn: &[u8], edsmanglefordesired: DS_MANGLE
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DsIsMangledRdnValueW(pszrdn: &[u16], edsmanglefordesired: DS_MANGLE_FOR) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsIsMangledRdnValueW(pszrdn: ::windows::core::PCWSTR, crdn: u32, edsmanglefordesired: DS_MANGLE_FOR) -> super::super::Foundation::BOOL;
     }
@@ -1175,7 +1081,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsListDomainsInSiteA(hds: super::super::Foundation::HANDLE, site: ::windows::core::PCSTR, ppdomains: *mut *mut DS_NAME_RESULTA) -> u32;
     }
@@ -1189,7 +1094,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsListDomainsInSiteW(hds: super::super::Foundation::HANDLE, site: ::windows::core::PCWSTR, ppdomains: *mut *mut DS_NAME_RESULTW) -> u32;
     }
@@ -1203,7 +1107,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsListInfoForServerA(hds: super::super::Foundation::HANDLE, server: ::windows::core::PCSTR, ppinfo: *mut *mut DS_NAME_RESULTA) -> u32;
     }
@@ -1217,7 +1120,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsListInfoForServerW(hds: super::super::Foundation::HANDLE, server: ::windows::core::PCWSTR, ppinfo: *mut *mut DS_NAME_RESULTW) -> u32;
     }
@@ -1230,7 +1132,6 @@ pub unsafe fn DsListRolesA<'a, P0>(hds: P0, pproles: *mut *mut DS_NAME_RESULTA) 
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsListRolesA(hds: super::super::Foundation::HANDLE, pproles: *mut *mut DS_NAME_RESULTA) -> u32;
     }
@@ -1243,7 +1144,6 @@ pub unsafe fn DsListRolesW<'a, P0>(hds: P0, pproles: *mut *mut DS_NAME_RESULTW) 
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsListRolesW(hds: super::super::Foundation::HANDLE, pproles: *mut *mut DS_NAME_RESULTW) -> u32;
     }
@@ -1258,7 +1158,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsListServersForDomainInSiteA(hds: super::super::Foundation::HANDLE, domain: ::windows::core::PCSTR, site: ::windows::core::PCSTR, ppservers: *mut *mut DS_NAME_RESULTA) -> u32;
     }
@@ -1273,7 +1172,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsListServersForDomainInSiteW(hds: super::super::Foundation::HANDLE, domain: ::windows::core::PCWSTR, site: ::windows::core::PCWSTR, ppservers: *mut *mut DS_NAME_RESULTW) -> u32;
     }
@@ -1287,7 +1185,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsListServersInSiteA(hds: super::super::Foundation::HANDLE, site: ::windows::core::PCSTR, ppservers: *mut *mut DS_NAME_RESULTA) -> u32;
     }
@@ -1301,7 +1198,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsListServersInSiteW(hds: super::super::Foundation::HANDLE, site: ::windows::core::PCWSTR, ppservers: *mut *mut DS_NAME_RESULTW) -> u32;
     }
@@ -1314,7 +1210,6 @@ pub unsafe fn DsListSitesA<'a, P0>(hds: P0, ppsites: *mut *mut DS_NAME_RESULTA) 
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsListSitesA(hds: super::super::Foundation::HANDLE, ppsites: *mut *mut DS_NAME_RESULTA) -> u32;
     }
@@ -1327,7 +1222,6 @@ pub unsafe fn DsListSitesW<'a, P0>(hds: P0, ppsites: *mut *mut DS_NAME_RESULTW) 
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsListSitesW(hds: super::super::Foundation::HANDLE, ppsites: *mut *mut DS_NAME_RESULTW) -> u32;
     }
@@ -1341,7 +1235,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsMakePasswordCredentialsA(user: ::windows::core::PCSTR, domain: ::windows::core::PCSTR, password: ::windows::core::PCSTR, pauthidentity: *mut *mut ::core::ffi::c_void) -> u32;
     }
@@ -1355,7 +1248,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsMakePasswordCredentialsW(user: ::windows::core::PCWSTR, domain: ::windows::core::PCWSTR, password: ::windows::core::PCWSTR, pauthidentity: *mut *mut ::core::ffi::c_void) -> u32;
     }
@@ -1370,7 +1262,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsMakeSpnA(serviceclass: ::windows::core::PCSTR, servicename: ::windows::core::PCSTR, instancename: ::windows::core::PCSTR, instanceport: u16, referrer: ::windows::core::PCSTR, pcspnlength: *mut u32, pszspn: ::windows::core::PSTR) -> u32;
     }
@@ -1385,7 +1276,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsMakeSpnW(serviceclass: ::windows::core::PCWSTR, servicename: ::windows::core::PCWSTR, instancename: ::windows::core::PCWSTR, instanceport: u16, referrer: ::windows::core::PCWSTR, pcspnlength: *mut u32, pszspn: ::windows::core::PWSTR) -> u32;
     }
@@ -1398,7 +1288,6 @@ pub unsafe fn DsMapSchemaGuidsA<'a, P0>(hds: P0, rguids: &[::windows::core::GUID
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsMapSchemaGuidsA(hds: super::super::Foundation::HANDLE, cguids: u32, rguids: *const ::windows::core::GUID, ppguidmap: *mut *mut DS_SCHEMA_GUID_MAPA) -> u32;
     }
@@ -1411,7 +1300,6 @@ pub unsafe fn DsMapSchemaGuidsW<'a, P0>(hds: P0, rguids: &[::windows::core::GUID
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsMapSchemaGuidsW(hds: super::super::Foundation::HANDLE, cguids: u32, rguids: *const ::windows::core::GUID, ppguidmap: *mut *mut DS_SCHEMA_GUID_MAPW) -> u32;
     }
@@ -1424,7 +1312,6 @@ pub unsafe fn DsMergeForestTrustInformationW<'a, P0>(domainname: P0, newforesttr
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsMergeForestTrustInformationW(domainname: ::windows::core::PCWSTR, newforesttrustinfo: *const super::super::Security::Authentication::Identity::LSA_FOREST_TRUST_INFORMATION, oldforesttrustinfo: *const super::super::Security::Authentication::Identity::LSA_FOREST_TRUST_INFORMATION, mergedforesttrustinfo: *mut *mut super::super::Security::Authentication::Identity::LSA_FOREST_TRUST_INFORMATION) -> u32;
     }
@@ -1438,7 +1325,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsQuerySitesByCostA(hds: super::super::Foundation::HANDLE, pszfromsite: ::windows::core::PCSTR, rgsztosites: *const ::windows::core::PSTR, ctosites: u32, dwflags: u32, prgsiteinfo: *mut *mut DS_SITE_COST_INFO) -> u32;
     }
@@ -1452,7 +1338,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsQuerySitesByCostW(hds: super::super::Foundation::HANDLE, pwszfromsite: ::windows::core::PCWSTR, rgwsztosites: *const ::windows::core::PWSTR, ctosites: u32, dwflags: u32, prgsiteinfo: *mut *mut DS_SITE_COST_INFO) -> u32;
     }
@@ -1461,7 +1346,6 @@ where
 #[doc = "*Required features: `\"Win32_Networking_ActiveDirectory\"`*"]
 #[inline]
 pub unsafe fn DsQuerySitesFree(rgsiteinfo: *const DS_SITE_COST_INFO) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsQuerySitesFree(rgsiteinfo: *const DS_SITE_COST_INFO);
     }
@@ -1470,7 +1354,6 @@ pub unsafe fn DsQuerySitesFree(rgsiteinfo: *const DS_SITE_COST_INFO) {
 #[doc = "*Required features: `\"Win32_Networking_ActiveDirectory\"`*"]
 #[inline]
 pub unsafe fn DsQuoteRdnValueA(psunquotedrdnvalue: &[u8], pcquotedrdnvaluelength: *mut u32, psquotedrdnvalue: ::windows::core::PSTR) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsQuoteRdnValueA(cunquotedrdnvaluelength: u32, psunquotedrdnvalue: ::windows::core::PCSTR, pcquotedrdnvaluelength: *mut u32, psquotedrdnvalue: ::windows::core::PSTR) -> u32;
     }
@@ -1479,7 +1362,6 @@ pub unsafe fn DsQuoteRdnValueA(psunquotedrdnvalue: &[u8], pcquotedrdnvaluelength
 #[doc = "*Required features: `\"Win32_Networking_ActiveDirectory\"`*"]
 #[inline]
 pub unsafe fn DsQuoteRdnValueW(psunquotedrdnvalue: &[u16], pcquotedrdnvaluelength: *mut u32, psquotedrdnvalue: ::windows::core::PWSTR) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsQuoteRdnValueW(cunquotedrdnvaluelength: u32, psunquotedrdnvalue: ::windows::core::PCWSTR, pcquotedrdnvaluelength: *mut u32, psquotedrdnvalue: ::windows::core::PWSTR) -> u32;
     }
@@ -1493,7 +1375,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsRemoveDsDomainA(hds: super::super::Foundation::HANDLE, domaindn: ::windows::core::PCSTR) -> u32;
     }
@@ -1507,7 +1388,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsRemoveDsDomainW(hds: super::super::Foundation::HANDLE, domaindn: ::windows::core::PCWSTR) -> u32;
     }
@@ -1523,7 +1403,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsRemoveDsServerA(hds: super::super::Foundation::HANDLE, serverdn: ::windows::core::PCSTR, domaindn: ::windows::core::PCSTR, flastdcindomain: *mut super::super::Foundation::BOOL, fcommit: super::super::Foundation::BOOL) -> u32;
     }
@@ -1539,7 +1418,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsRemoveDsServerW(hds: super::super::Foundation::HANDLE, serverdn: ::windows::core::PCWSTR, domaindn: ::windows::core::PCWSTR, flastdcindomain: *mut super::super::Foundation::BOOL, fcommit: super::super::Foundation::BOOL) -> u32;
     }
@@ -1556,7 +1434,6 @@ where
     P3: ::std::convert::Into<::windows::core::PCSTR>,
     P4: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsReplicaAddA(hds: super::super::Foundation::HANDLE, namecontext: ::windows::core::PCSTR, sourcedsadn: ::windows::core::PCSTR, transportdn: ::windows::core::PCSTR, sourcedsaaddress: ::windows::core::PCSTR, pschedule: *const SCHEDULE, options: u32) -> u32;
     }
@@ -1573,7 +1450,6 @@ where
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
     P4: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsReplicaAddW(hds: super::super::Foundation::HANDLE, namecontext: ::windows::core::PCWSTR, sourcedsadn: ::windows::core::PCWSTR, transportdn: ::windows::core::PCWSTR, sourcedsaaddress: ::windows::core::PCWSTR, pschedule: *const SCHEDULE, options: u32) -> u32;
     }
@@ -1586,7 +1462,6 @@ pub unsafe fn DsReplicaConsistencyCheck<'a, P0>(hds: P0, taskid: DS_KCC_TASKID, 
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsReplicaConsistencyCheck(hds: super::super::Foundation::HANDLE, taskid: DS_KCC_TASKID, dwflags: u32) -> u32;
     }
@@ -1601,7 +1476,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsReplicaDelA(hds: super::super::Foundation::HANDLE, namecontext: ::windows::core::PCSTR, dsasrc: ::windows::core::PCSTR, options: u32) -> u32;
     }
@@ -1616,7 +1490,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsReplicaDelW(hds: super::super::Foundation::HANDLE, namecontext: ::windows::core::PCWSTR, dsasrc: ::windows::core::PCWSTR, options: u32) -> u32;
     }
@@ -1625,7 +1498,6 @@ where
 #[doc = "*Required features: `\"Win32_Networking_ActiveDirectory\"`*"]
 #[inline]
 pub unsafe fn DsReplicaFreeInfo(infotype: DS_REPL_INFO_TYPE, pinfo: *const ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsReplicaFreeInfo(infotype: DS_REPL_INFO_TYPE, pinfo: *const ::core::ffi::c_void);
     }
@@ -1641,7 +1513,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsReplicaGetInfo2W(hds: super::super::Foundation::HANDLE, infotype: DS_REPL_INFO_TYPE, pszobject: ::windows::core::PCWSTR, puuidforsourcedsaobjguid: *const ::windows::core::GUID, pszattributename: ::windows::core::PCWSTR, pszvalue: ::windows::core::PCWSTR, dwflags: u32, dwenumerationcontext: u32, ppinfo: *mut *mut ::core::ffi::c_void) -> u32;
     }
@@ -1655,7 +1526,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsReplicaGetInfoW(hds: super::super::Foundation::HANDLE, infotype: DS_REPL_INFO_TYPE, pszobject: ::windows::core::PCWSTR, puuidforsourcedsaobjguid: *const ::windows::core::GUID, ppinfo: *mut *mut ::core::ffi::c_void) -> u32;
     }
@@ -1671,7 +1541,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCSTR>,
     P3: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsReplicaModifyA(hds: super::super::Foundation::HANDLE, namecontext: ::windows::core::PCSTR, puuidsourcedsa: *const ::windows::core::GUID, transportdn: ::windows::core::PCSTR, sourcedsaaddress: ::windows::core::PCSTR, pschedule: *const SCHEDULE, replicaflags: u32, modifyfields: u32, options: u32) -> u32;
     }
@@ -1687,7 +1556,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsReplicaModifyW(hds: super::super::Foundation::HANDLE, namecontext: ::windows::core::PCWSTR, puuidsourcedsa: *const ::windows::core::GUID, transportdn: ::windows::core::PCWSTR, sourcedsaaddress: ::windows::core::PCWSTR, pschedule: *const SCHEDULE, replicaflags: u32, modifyfields: u32, options: u32) -> u32;
     }
@@ -1701,7 +1569,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsReplicaSyncA(hds: super::super::Foundation::HANDLE, namecontext: ::windows::core::PCSTR, puuiddsasrc: *const ::windows::core::GUID, options: u32) -> u32;
     }
@@ -1715,7 +1582,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsReplicaSyncAllA(hds: super::super::Foundation::HANDLE, psznamecontext: ::windows::core::PCSTR, ulflags: u32, pfncallback: isize, pcallbackdata: *const ::core::ffi::c_void, perrors: *mut *mut *mut DS_REPSYNCALL_ERRINFOA) -> u32;
     }
@@ -1729,7 +1595,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsReplicaSyncAllW(hds: super::super::Foundation::HANDLE, psznamecontext: ::windows::core::PCWSTR, ulflags: u32, pfncallback: isize, pcallbackdata: *const ::core::ffi::c_void, perrors: *mut *mut *mut DS_REPSYNCALL_ERRINFOW) -> u32;
     }
@@ -1743,7 +1608,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsReplicaSyncW(hds: super::super::Foundation::HANDLE, namecontext: ::windows::core::PCWSTR, puuiddsasrc: *const ::windows::core::GUID, options: u32) -> u32;
     }
@@ -1758,7 +1622,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsReplicaUpdateRefsA(hds: super::super::Foundation::HANDLE, namecontext: ::windows::core::PCSTR, dsadest: ::windows::core::PCSTR, puuiddsadest: *const ::windows::core::GUID, options: u32) -> u32;
     }
@@ -1773,7 +1636,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsReplicaUpdateRefsW(hds: super::super::Foundation::HANDLE, namecontext: ::windows::core::PCWSTR, dsadest: ::windows::core::PCWSTR, puuiddsadest: *const ::windows::core::GUID, options: u32) -> u32;
     }
@@ -1787,7 +1649,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsReplicaVerifyObjectsA(hds: super::super::Foundation::HANDLE, namecontext: ::windows::core::PCSTR, puuiddsasrc: *const ::windows::core::GUID, uloptions: u32) -> u32;
     }
@@ -1801,7 +1662,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsReplicaVerifyObjectsW(hds: super::super::Foundation::HANDLE, namecontext: ::windows::core::PCWSTR, puuiddsasrc: *const ::windows::core::GUID, uloptions: u32) -> u32;
     }
@@ -1810,7 +1670,6 @@ where
 #[doc = "*Required features: `\"Win32_Networking_ActiveDirectory\"`*"]
 #[inline]
 pub unsafe fn DsRoleFreeMemory(buffer: *mut ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsRoleFreeMemory(buffer: *mut ::core::ffi::c_void);
     }
@@ -1822,7 +1681,6 @@ pub unsafe fn DsRoleGetPrimaryDomainInformation<'a, P0>(lpserver: P0, infolevel:
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsRoleGetPrimaryDomainInformation(lpserver: ::windows::core::PCWSTR, infolevel: DSROLE_PRIMARY_DOMAIN_INFO_LEVEL, buffer: *mut *mut u8) -> u32;
     }
@@ -1835,7 +1693,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsServerRegisterSpnA(operation: DS_SPN_WRITE_OP, serviceclass: ::windows::core::PCSTR, userobjectdn: ::windows::core::PCSTR) -> u32;
     }
@@ -1848,7 +1705,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsServerRegisterSpnW(operation: DS_SPN_WRITE_OP, serviceclass: ::windows::core::PCWSTR, userobjectdn: ::windows::core::PCWSTR) -> u32;
     }
@@ -1858,7 +1714,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DsUnBindA(phds: *const super::super::Foundation::HANDLE) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsUnBindA(phds: *const super::super::Foundation::HANDLE) -> u32;
     }
@@ -1868,7 +1723,6 @@ pub unsafe fn DsUnBindA(phds: *const super::super::Foundation::HANDLE) -> u32 {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DsUnBindW(phds: *const super::super::Foundation::HANDLE) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsUnBindW(phds: *const super::super::Foundation::HANDLE) -> u32;
     }
@@ -1877,7 +1731,6 @@ pub unsafe fn DsUnBindW(phds: *const super::super::Foundation::HANDLE) -> u32 {
 #[doc = "*Required features: `\"Win32_Networking_ActiveDirectory\"`*"]
 #[inline]
 pub unsafe fn DsUnquoteRdnValueA(psquotedrdnvalue: &[u8], pcunquotedrdnvaluelength: *mut u32, psunquotedrdnvalue: ::windows::core::PSTR) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsUnquoteRdnValueA(cquotedrdnvaluelength: u32, psquotedrdnvalue: ::windows::core::PCSTR, pcunquotedrdnvaluelength: *mut u32, psunquotedrdnvalue: ::windows::core::PSTR) -> u32;
     }
@@ -1886,7 +1739,6 @@ pub unsafe fn DsUnquoteRdnValueA(psquotedrdnvalue: &[u8], pcunquotedrdnvalueleng
 #[doc = "*Required features: `\"Win32_Networking_ActiveDirectory\"`*"]
 #[inline]
 pub unsafe fn DsUnquoteRdnValueW(psquotedrdnvalue: &[u16], pcunquotedrdnvaluelength: *mut u32, psunquotedrdnvalue: ::windows::core::PWSTR) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsUnquoteRdnValueW(cquotedrdnvaluelength: u32, psquotedrdnvalue: ::windows::core::PCWSTR, pcunquotedrdnvaluelength: *mut u32, psunquotedrdnvalue: ::windows::core::PWSTR) -> u32;
     }
@@ -1898,7 +1750,6 @@ pub unsafe fn DsValidateSubnetNameA<'a, P0>(subnetname: P0) -> u32
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsValidateSubnetNameA(subnetname: ::windows::core::PCSTR) -> u32;
     }
@@ -1910,7 +1761,6 @@ pub unsafe fn DsValidateSubnetNameW<'a, P0>(subnetname: P0) -> u32
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsValidateSubnetNameW(subnetname: ::windows::core::PCWSTR) -> u32;
     }
@@ -1924,7 +1774,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsWriteAccountSpnA(hds: super::super::Foundation::HANDLE, operation: DS_SPN_WRITE_OP, pszaccount: ::windows::core::PCSTR, cspn: u32, rpszspn: *const ::windows::core::PSTR) -> u32;
     }
@@ -1938,7 +1787,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DsWriteAccountSpnW(hds: super::super::Foundation::HANDLE, operation: DS_SPN_WRITE_OP, pszaccount: ::windows::core::PCWSTR, cspn: u32, rpszspn: *const ::windows::core::PWSTR) -> u32;
     }
@@ -1948,7 +1796,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn FreeADsMem(pmem: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FreeADsMem(pmem: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -1961,7 +1808,6 @@ pub unsafe fn FreeADsStr<'a, P0>(pstr: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FreeADsStr(pstr: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -1971,7 +1817,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 #[inline]
 pub unsafe fn PropVariantToAdsType(pvariant: *mut super::super::System::Com::VARIANT, dwnumvariant: u32, ppadsvalues: *mut *mut ADSVALUE, pdwnumvalues: *mut u32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PropVariantToAdsType(pvariant: *mut super::super::System::Com::VARIANT, dwnumvariant: u32, ppadsvalues: *mut *mut ADSVALUE, pdwnumvalues: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -1980,7 +1825,6 @@ pub unsafe fn PropVariantToAdsType(pvariant: *mut super::super::System::Com::VAR
 #[doc = "*Required features: `\"Win32_Networking_ActiveDirectory\"`*"]
 #[inline]
 pub unsafe fn ReallocADsMem(poldmem: *mut ::core::ffi::c_void, cbold: u32, cbnew: u32) -> *mut ::core::ffi::c_void {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReallocADsMem(poldmem: *mut ::core::ffi::c_void, cbold: u32, cbnew: u32) -> *mut ::core::ffi::c_void;
     }
@@ -1993,7 +1837,6 @@ pub unsafe fn ReallocADsStr<'a, P0>(ppstr: *mut ::windows::core::PWSTR, pstr: P0
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReallocADsStr(ppstr: *mut ::windows::core::PWSTR, pstr: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -2009,7 +1852,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SecurityDescriptorToBinarySD(vvarsecdes: ::core::mem::ManuallyDrop<super::super::System::Com::VARIANT>, ppsecuritydescriptor: *mut super::super::Security::PSECURITY_DESCRIPTOR, pdwsdlength: *mut u32, pszservername: ::windows::core::PCWSTR, username: ::windows::core::PCWSTR, password: ::windows::core::PCWSTR, dwflags: u32) -> ::windows::core::HRESULT;
     }

@@ -5,7 +5,6 @@ pub unsafe fn BuildCommDCBA<'a, P0>(lpdef: P0, lpdcb: *mut DCB) -> super::super:
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BuildCommDCBA(lpdef: ::windows::core::PCSTR, lpdcb: *mut DCB) -> super::super::Foundation::BOOL;
     }
@@ -18,7 +17,6 @@ pub unsafe fn BuildCommDCBAndTimeoutsA<'a, P0>(lpdef: P0, lpdcb: *mut DCB, lpcom
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BuildCommDCBAndTimeoutsA(lpdef: ::windows::core::PCSTR, lpdcb: *mut DCB, lpcommtimeouts: *mut COMMTIMEOUTS) -> super::super::Foundation::BOOL;
     }
@@ -31,7 +29,6 @@ pub unsafe fn BuildCommDCBAndTimeoutsW<'a, P0>(lpdef: P0, lpdcb: *mut DCB, lpcom
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BuildCommDCBAndTimeoutsW(lpdef: ::windows::core::PCWSTR, lpdcb: *mut DCB, lpcommtimeouts: *mut COMMTIMEOUTS) -> super::super::Foundation::BOOL;
     }
@@ -44,7 +41,6 @@ pub unsafe fn BuildCommDCBW<'a, P0>(lpdef: P0, lpdcb: *mut DCB) -> super::super:
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BuildCommDCBW(lpdef: ::windows::core::PCWSTR, lpdcb: *mut DCB) -> super::super::Foundation::BOOL;
     }
@@ -57,7 +53,6 @@ pub unsafe fn ClearCommBreak<'a, P0>(hfile: P0) -> super::super::Foundation::BOO
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ClearCommBreak(hfile: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -70,7 +65,6 @@ pub unsafe fn ClearCommError<'a, P0>(hfile: P0, lperrors: ::core::option::Option
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ClearCommError(hfile: super::super::Foundation::HANDLE, lperrors: *mut CLEAR_COMM_ERROR_FLAGS, lpstat: *mut COMSTAT) -> super::super::Foundation::BOOL;
     }
@@ -84,7 +78,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CommConfigDialogA(lpszname: ::windows::core::PCSTR, hwnd: super::super::Foundation::HWND, lpcc: *mut COMMCONFIG) -> super::super::Foundation::BOOL;
     }
@@ -98,7 +91,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CommConfigDialogW(lpszname: ::windows::core::PCWSTR, hwnd: super::super::Foundation::HWND, lpcc: *mut COMMCONFIG) -> super::super::Foundation::BOOL;
     }
@@ -111,7 +103,6 @@ pub unsafe fn EscapeCommFunction<'a, P0>(hfile: P0, dwfunc: ESCAPE_COMM_FUNCTION
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EscapeCommFunction(hfile: super::super::Foundation::HANDLE, dwfunc: ESCAPE_COMM_FUNCTION) -> super::super::Foundation::BOOL;
     }
@@ -124,7 +115,6 @@ pub unsafe fn GetCommConfig<'a, P0>(hcommdev: P0, lpcc: ::core::option::Option<*
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCommConfig(hcommdev: super::super::Foundation::HANDLE, lpcc: *mut COMMCONFIG, lpdwsize: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -137,7 +127,6 @@ pub unsafe fn GetCommMask<'a, P0>(hfile: P0, lpevtmask: *mut COMM_EVENT_MASK) ->
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCommMask(hfile: super::super::Foundation::HANDLE, lpevtmask: *mut COMM_EVENT_MASK) -> super::super::Foundation::BOOL;
     }
@@ -150,7 +139,6 @@ pub unsafe fn GetCommModemStatus<'a, P0>(hfile: P0, lpmodemstat: *mut MODEM_STAT
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCommModemStatus(hfile: super::super::Foundation::HANDLE, lpmodemstat: *mut MODEM_STATUS_FLAGS) -> super::super::Foundation::BOOL;
     }
@@ -159,7 +147,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_Communication\"`*"]
 #[inline]
 pub unsafe fn GetCommPorts(lpportnumbers: &mut [u32], puportnumbersfound: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCommPorts(lpportnumbers: *mut u32, uportnumberscount: u32, puportnumbersfound: *mut u32) -> u32;
     }
@@ -172,7 +159,6 @@ pub unsafe fn GetCommProperties<'a, P0>(hfile: P0, lpcommprop: *mut COMMPROP) ->
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCommProperties(hfile: super::super::Foundation::HANDLE, lpcommprop: *mut COMMPROP) -> super::super::Foundation::BOOL;
     }
@@ -185,7 +171,6 @@ pub unsafe fn GetCommState<'a, P0>(hfile: P0, lpdcb: *mut DCB) -> super::super::
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCommState(hfile: super::super::Foundation::HANDLE, lpdcb: *mut DCB) -> super::super::Foundation::BOOL;
     }
@@ -198,7 +183,6 @@ pub unsafe fn GetCommTimeouts<'a, P0>(hfile: P0, lpcommtimeouts: *mut COMMTIMEOU
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCommTimeouts(hfile: super::super::Foundation::HANDLE, lpcommtimeouts: *mut COMMTIMEOUTS) -> super::super::Foundation::BOOL;
     }
@@ -211,7 +195,6 @@ pub unsafe fn GetDefaultCommConfigA<'a, P0>(lpszname: P0, lpcc: *mut COMMCONFIG,
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDefaultCommConfigA(lpszname: ::windows::core::PCSTR, lpcc: *mut COMMCONFIG, lpdwsize: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -224,7 +207,6 @@ pub unsafe fn GetDefaultCommConfigW<'a, P0>(lpszname: P0, lpcc: *mut COMMCONFIG,
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDefaultCommConfigW(lpszname: ::windows::core::PCWSTR, lpcc: *mut COMMCONFIG, lpdwsize: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -234,7 +216,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn OpenCommPort(uportnumber: u32, dwdesiredaccess: u32, dwflagsandattributes: u32) -> super::super::Foundation::HANDLE {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenCommPort(uportnumber: u32, dwdesiredaccess: u32, dwflagsandattributes: u32) -> super::super::Foundation::HANDLE;
     }
@@ -247,7 +228,6 @@ pub unsafe fn PurgeComm<'a, P0>(hfile: P0, dwflags: PURGE_COMM_FLAGS) -> super::
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PurgeComm(hfile: super::super::Foundation::HANDLE, dwflags: PURGE_COMM_FLAGS) -> super::super::Foundation::BOOL;
     }
@@ -260,7 +240,6 @@ pub unsafe fn SetCommBreak<'a, P0>(hfile: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetCommBreak(hfile: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -273,7 +252,6 @@ pub unsafe fn SetCommConfig<'a, P0>(hcommdev: P0, lpcc: *const COMMCONFIG, dwsiz
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetCommConfig(hcommdev: super::super::Foundation::HANDLE, lpcc: *const COMMCONFIG, dwsize: u32) -> super::super::Foundation::BOOL;
     }
@@ -286,7 +264,6 @@ pub unsafe fn SetCommMask<'a, P0>(hfile: P0, dwevtmask: COMM_EVENT_MASK) -> supe
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetCommMask(hfile: super::super::Foundation::HANDLE, dwevtmask: COMM_EVENT_MASK) -> super::super::Foundation::BOOL;
     }
@@ -299,7 +276,6 @@ pub unsafe fn SetCommState<'a, P0>(hfile: P0, lpdcb: *const DCB) -> super::super
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetCommState(hfile: super::super::Foundation::HANDLE, lpdcb: *const DCB) -> super::super::Foundation::BOOL;
     }
@@ -312,7 +288,6 @@ pub unsafe fn SetCommTimeouts<'a, P0>(hfile: P0, lpcommtimeouts: *const COMMTIME
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetCommTimeouts(hfile: super::super::Foundation::HANDLE, lpcommtimeouts: *const COMMTIMEOUTS) -> super::super::Foundation::BOOL;
     }
@@ -325,7 +300,6 @@ pub unsafe fn SetDefaultCommConfigA<'a, P0>(lpszname: P0, lpcc: *const COMMCONFI
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetDefaultCommConfigA(lpszname: ::windows::core::PCSTR, lpcc: *const COMMCONFIG, dwsize: u32) -> super::super::Foundation::BOOL;
     }
@@ -338,7 +312,6 @@ pub unsafe fn SetDefaultCommConfigW<'a, P0>(lpszname: P0, lpcc: *const COMMCONFI
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetDefaultCommConfigW(lpszname: ::windows::core::PCWSTR, lpcc: *const COMMCONFIG, dwsize: u32) -> super::super::Foundation::BOOL;
     }
@@ -351,7 +324,6 @@ pub unsafe fn SetupComm<'a, P0>(hfile: P0, dwinqueue: u32, dwoutqueue: u32) -> s
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetupComm(hfile: super::super::Foundation::HANDLE, dwinqueue: u32, dwoutqueue: u32) -> super::super::Foundation::BOOL;
     }
@@ -365,7 +337,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::CHAR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TransmitCommChar(hfile: super::super::Foundation::HANDLE, cchar: super::super::Foundation::CHAR) -> super::super::Foundation::BOOL;
     }
@@ -378,7 +349,6 @@ pub unsafe fn WaitCommEvent<'a, P0>(hfile: P0, lpevtmask: *mut COMM_EVENT_MASK, 
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WaitCommEvent(hfile: super::super::Foundation::HANDLE, lpevtmask: *mut COMM_EVENT_MASK, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
     }

@@ -9,7 +9,6 @@ where
     P3: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
     P4: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StartXpsPrintJob(printername: ::windows::core::PCWSTR, jobname: ::windows::core::PCWSTR, outputfilename: ::windows::core::PCWSTR, progressevent: super::super::super::Foundation::HANDLE, completionevent: super::super::super::Foundation::HANDLE, printablepageson: *const u8, printablepagesoncount: u32, xpsprintjob: *mut *mut ::core::ffi::c_void, documentstream: *mut *mut ::core::ffi::c_void, printticketstream: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -26,7 +25,6 @@ where
     P3: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
     P4: ::std::convert::Into<super::super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StartXpsPrintJob1(printername: ::windows::core::PCWSTR, jobname: ::windows::core::PCWSTR, outputfilename: ::windows::core::PCWSTR, progressevent: super::super::super::Foundation::HANDLE, completionevent: super::super::super::Foundation::HANDLE, xpsprintjob: *mut *mut ::core::ffi::c_void, printcontentreceiver: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }

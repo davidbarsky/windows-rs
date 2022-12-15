@@ -1,7 +1,6 @@
 #[doc = "*Required features: `\"Win32_AI_MachineLearning_WinML\"`*"]
 #[inline]
 pub unsafe fn MLCreateOperatorRegistry() -> ::windows::core::Result<IMLOperatorRegistry> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MLCreateOperatorRegistry(registry: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -11,7 +10,6 @@ pub unsafe fn MLCreateOperatorRegistry() -> ::windows::core::Result<IMLOperatorR
 #[doc = "*Required features: `\"Win32_AI_MachineLearning_WinML\"`*"]
 #[inline]
 pub unsafe fn WinMLCreateRuntime() -> ::windows::core::Result<IWinMLRuntime> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WinMLCreateRuntime(runtime: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }

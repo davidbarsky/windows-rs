@@ -4,7 +4,6 @@ pub unsafe fn WslConfigureDistribution<'a, P0>(distributionname: P0, defaultuid:
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WslConfigureDistribution(distributionname: ::windows::core::PCWSTR, defaultuid: u32, wsldistributionflags: WSL_DISTRIBUTION_FLAGS) -> ::windows::core::HRESULT;
     }
@@ -16,7 +15,6 @@ pub unsafe fn WslGetDistributionConfiguration<'a, P0>(distributionname: P0, dist
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WslGetDistributionConfiguration(distributionname: ::windows::core::PCWSTR, distributionversion: *mut u32, defaultuid: *mut u32, wsldistributionflags: *mut WSL_DISTRIBUTION_FLAGS, defaultenvironmentvariables: *mut *mut ::windows::core::PSTR, defaultenvironmentvariablecount: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -29,7 +27,6 @@ pub unsafe fn WslIsDistributionRegistered<'a, P0>(distributionname: P0) -> super
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WslIsDistributionRegistered(distributionname: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -47,7 +44,6 @@ where
     P4: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P5: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WslLaunch(distributionname: ::windows::core::PCWSTR, command: ::windows::core::PCWSTR, usecurrentworkingdirectory: super::super::Foundation::BOOL, stdin: super::super::Foundation::HANDLE, stdout: super::super::Foundation::HANDLE, stderr: super::super::Foundation::HANDLE, process: *mut super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
     }
@@ -63,7 +59,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WslLaunchInteractive(distributionname: ::windows::core::PCWSTR, command: ::windows::core::PCWSTR, usecurrentworkingdirectory: super::super::Foundation::BOOL, exitcode: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -77,7 +72,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WslRegisterDistribution(distributionname: ::windows::core::PCWSTR, targzfilename: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -89,7 +83,6 @@ pub unsafe fn WslUnregisterDistribution<'a, P0>(distributionname: P0) -> ::windo
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WslUnregisterDistribution(distributionname: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }

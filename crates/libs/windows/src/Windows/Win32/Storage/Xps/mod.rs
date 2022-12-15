@@ -7,7 +7,6 @@ pub unsafe fn AbortDoc<'a, P0>(hdc: P0) -> i32
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AbortDoc(hdc: super::super::Graphics::Gdi::HDC) -> i32;
     }
@@ -21,7 +20,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeviceCapabilitiesA(pdevice: ::windows::core::PCSTR, pport: ::windows::core::PCSTR, fwcapability: DEVICE_CAPABILITIES, poutput: ::windows::core::PSTR, pdevmode: *const super::super::Graphics::Gdi::DEVMODEA) -> i32;
     }
@@ -35,7 +33,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeviceCapabilitiesW(pdevice: ::windows::core::PCWSTR, pport: ::windows::core::PCWSTR, fwcapability: DEVICE_CAPABILITIES, poutput: ::windows::core::PWSTR, pdevmode: *const super::super::Graphics::Gdi::DEVMODEW) -> i32;
     }
@@ -48,7 +45,6 @@ pub unsafe fn EndDoc<'a, P0>(hdc: P0) -> i32
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EndDoc(hdc: super::super::Graphics::Gdi::HDC) -> i32;
     }
@@ -61,7 +57,6 @@ pub unsafe fn EndPage<'a, P0>(hdc: P0) -> i32
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EndPage(hdc: super::super::Graphics::Gdi::HDC) -> i32;
     }
@@ -74,7 +69,6 @@ pub unsafe fn Escape<'a, P0>(hdc: P0, iescape: i32, pvin: ::core::option::Option
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn Escape(hdc: super::super::Graphics::Gdi::HDC, iescape: i32, cjin: i32, pvin: ::windows::core::PCSTR, pvout: *mut ::core::ffi::c_void) -> i32;
     }
@@ -87,7 +81,6 @@ pub unsafe fn ExtEscape<'a, P0>(hdc: P0, iescape: i32, lpindata: ::core::option:
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ExtEscape(hdc: super::super::Graphics::Gdi::HDC, iescape: i32, cjinput: i32, lpindata: ::windows::core::PCSTR, cjoutput: i32, lpoutdata: ::windows::core::PSTR) -> i32;
     }
@@ -101,7 +94,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PrintWindow(hwnd: super::super::Foundation::HWND, hdcblt: super::super::Graphics::Gdi::HDC, nflags: PRINT_WINDOW_FLAGS) -> super::super::Foundation::BOOL;
     }
@@ -114,7 +106,6 @@ pub unsafe fn SetAbortProc<'a, P0>(hdc: P0, proc: ABORTPROC) -> i32
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetAbortProc(hdc: super::super::Graphics::Gdi::HDC, proc: *mut ::core::ffi::c_void) -> i32;
     }
@@ -127,7 +118,6 @@ pub unsafe fn StartDocA<'a, P0>(hdc: P0, lpdi: *const DOCINFOA) -> i32
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StartDocA(hdc: super::super::Graphics::Gdi::HDC, lpdi: *const DOCINFOA) -> i32;
     }
@@ -140,7 +130,6 @@ pub unsafe fn StartDocW<'a, P0>(hdc: P0, lpdi: *const DOCINFOW) -> i32
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StartDocW(hdc: super::super::Graphics::Gdi::HDC, lpdi: *const DOCINFOW) -> i32;
     }
@@ -153,7 +142,6 @@ pub unsafe fn StartPage<'a, P0>(hdc: P0) -> i32
 where
     P0: ::std::convert::Into<super::super::Graphics::Gdi::HDC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn StartPage(hdc: super::super::Graphics::Gdi::HDC) -> i32;
     }

@@ -1,7 +1,6 @@
 #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
 #[inline]
 pub unsafe fn WSDAllocateLinkedMemory(pparent: *mut ::core::ffi::c_void, cbsize: usize) -> *mut ::core::ffi::c_void {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDAllocateLinkedMemory(pparent: *mut ::core::ffi::c_void, cbsize: usize) -> *mut ::core::ffi::c_void;
     }
@@ -10,7 +9,6 @@ pub unsafe fn WSDAllocateLinkedMemory(pparent: *mut ::core::ffi::c_void, cbsize:
 #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
 #[inline]
 pub unsafe fn WSDAttachLinkedMemory(pparent: *mut ::core::ffi::c_void, pchild: *mut ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDAttachLinkedMemory(pparent: *mut ::core::ffi::c_void, pchild: *mut ::core::ffi::c_void);
     }
@@ -23,7 +21,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::InParam<'a, IWSDXMLContext>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDCreateDeviceHost(pszlocalid: ::windows::core::PCWSTR, pcontext: *mut ::core::ffi::c_void, ppdevicehost: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -37,7 +34,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::InParam<'a, IWSDXMLContext>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDCreateDeviceHost2(pszlocalid: ::windows::core::PCWSTR, pcontext: *mut ::core::ffi::c_void, pconfigparams: *const WSD_CONFIG_PARAM, dwconfigparamcount: u32, ppdevicehost: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -51,7 +47,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::InParam<'a, IWSDXMLContext>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDCreateDeviceHostAdvanced(pszlocalid: ::windows::core::PCWSTR, pcontext: *mut ::core::ffi::c_void, pphostaddresses: *const *mut ::core::ffi::c_void, dwhostaddresscount: u32, ppdevicehost: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -66,7 +61,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::InParam<'a, IWSDXMLContext>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDCreateDeviceProxy(pszdeviceid: ::windows::core::PCWSTR, pszlocalid: ::windows::core::PCWSTR, pcontext: *mut ::core::ffi::c_void, ppdeviceproxy: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -81,7 +75,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::InParam<'a, IWSDXMLContext>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDCreateDeviceProxy2(pszdeviceid: ::windows::core::PCWSTR, pszlocalid: ::windows::core::PCWSTR, pcontext: *mut ::core::ffi::c_void, pconfigparams: *const WSD_CONFIG_PARAM, dwconfigparamcount: u32, ppdeviceproxy: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -97,7 +90,6 @@ where
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
     P3: ::std::convert::Into<::windows::core::InParam<'a, IWSDXMLContext>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDCreateDeviceProxyAdvanced(pszdeviceid: ::windows::core::PCWSTR, pdeviceaddress: *mut ::core::ffi::c_void, pszlocalid: ::windows::core::PCWSTR, pcontext: *mut ::core::ffi::c_void, ppdeviceproxy: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -110,7 +102,6 @@ pub unsafe fn WSDCreateDiscoveryProvider<'a, P0>(pcontext: P0) -> ::windows::cor
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IWSDXMLContext>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDCreateDiscoveryProvider(pcontext: *mut ::core::ffi::c_void, ppprovider: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -123,7 +114,6 @@ pub unsafe fn WSDCreateDiscoveryProvider2<'a, P0>(pcontext: P0, pconfigparams: :
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IWSDXMLContext>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDCreateDiscoveryProvider2(pcontext: *mut ::core::ffi::c_void, pconfigparams: *const WSD_CONFIG_PARAM, dwconfigparamcount: u32, ppprovider: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -136,7 +126,6 @@ pub unsafe fn WSDCreateDiscoveryPublisher<'a, P0>(pcontext: P0) -> ::windows::co
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IWSDXMLContext>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDCreateDiscoveryPublisher(pcontext: *mut ::core::ffi::c_void, pppublisher: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -149,7 +138,6 @@ pub unsafe fn WSDCreateDiscoveryPublisher2<'a, P0>(pcontext: P0, pconfigparams: 
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, IWSDXMLContext>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDCreateDiscoveryPublisher2(pcontext: *mut ::core::ffi::c_void, pconfigparams: *const WSD_CONFIG_PARAM, dwconfigparamcount: u32, pppublisher: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -159,7 +147,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
 #[inline]
 pub unsafe fn WSDCreateHttpAddress() -> ::windows::core::Result<IWSDHttpAddress> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDCreateHttpAddress(ppaddress: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -169,7 +156,6 @@ pub unsafe fn WSDCreateHttpAddress() -> ::windows::core::Result<IWSDHttpAddress>
 #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
 #[inline]
 pub unsafe fn WSDCreateHttpMessageParameters() -> ::windows::core::Result<IWSDHttpMessageParameters> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDCreateHttpMessageParameters(pptxparams: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -179,7 +165,6 @@ pub unsafe fn WSDCreateHttpMessageParameters() -> ::windows::core::Result<IWSDHt
 #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
 #[inline]
 pub unsafe fn WSDCreateOutboundAttachment() -> ::windows::core::Result<IWSDOutboundAttachment> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDCreateOutboundAttachment(ppattachment: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -189,7 +174,6 @@ pub unsafe fn WSDCreateOutboundAttachment() -> ::windows::core::Result<IWSDOutbo
 #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
 #[inline]
 pub unsafe fn WSDCreateUdpAddress() -> ::windows::core::Result<IWSDUdpAddress> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDCreateUdpAddress(ppaddress: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -199,7 +183,6 @@ pub unsafe fn WSDCreateUdpAddress() -> ::windows::core::Result<IWSDUdpAddress> {
 #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
 #[inline]
 pub unsafe fn WSDCreateUdpMessageParameters() -> ::windows::core::Result<IWSDUdpMessageParameters> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDCreateUdpMessageParameters(pptxparams: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -209,7 +192,6 @@ pub unsafe fn WSDCreateUdpMessageParameters() -> ::windows::core::Result<IWSDUdp
 #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
 #[inline]
 pub unsafe fn WSDDetachLinkedMemory(pvoid: *mut ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDDetachLinkedMemory(pvoid: *mut ::core::ffi::c_void);
     }
@@ -218,7 +200,6 @@ pub unsafe fn WSDDetachLinkedMemory(pvoid: *mut ::core::ffi::c_void) {
 #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
 #[inline]
 pub unsafe fn WSDFreeLinkedMemory(pvoid: *mut ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDFreeLinkedMemory(pvoid: *mut ::core::ffi::c_void);
     }
@@ -234,7 +215,6 @@ where
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
     P4: ::std::convert::Into<::windows::core::InParam<'a, IWSDXMLContext>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDGenerateFault(pszcode: ::windows::core::PCWSTR, pszsubcode: ::windows::core::PCWSTR, pszreason: ::windows::core::PCWSTR, pszdetail: ::windows::core::PCWSTR, pcontext: *mut ::core::ffi::c_void, ppfault: *mut *mut WSD_SOAP_FAULT) -> ::windows::core::HRESULT;
     }
@@ -247,7 +227,6 @@ pub unsafe fn WSDGenerateFaultEx<'a, P0>(pcode: *const WSDXML_NAME, psubcode: ::
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDGenerateFaultEx(pcode: *const WSDXML_NAME, psubcode: *const WSDXML_NAME, preasons: *const WSD_LOCALIZED_STRING_LIST, pszdetail: ::windows::core::PCWSTR, ppfault: *mut *mut WSD_SOAP_FAULT) -> ::windows::core::HRESULT;
     }
@@ -257,7 +236,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
 #[inline]
 pub unsafe fn WSDGetConfigurationOption(dwoption: u32, pvoid: *mut ::core::ffi::c_void, cboutbuffer: u32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDGetConfigurationOption(dwoption: u32, pvoid: *mut ::core::ffi::c_void, cboutbuffer: u32) -> ::windows::core::HRESULT;
     }
@@ -266,7 +244,6 @@ pub unsafe fn WSDGetConfigurationOption(dwoption: u32, pvoid: *mut ::core::ffi::
 #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
 #[inline]
 pub unsafe fn WSDSetConfigurationOption(dwoption: u32, pvoid: *const ::core::ffi::c_void, cbinbuffer: u32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDSetConfigurationOption(dwoption: u32, pvoid: *const ::core::ffi::c_void, cbinbuffer: u32) -> ::windows::core::HRESULT;
     }
@@ -275,7 +252,6 @@ pub unsafe fn WSDSetConfigurationOption(dwoption: u32, pvoid: *const ::core::ffi
 #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
 #[inline]
 pub unsafe fn WSDUriDecode(source: &[u16], destout: *mut ::windows::core::PWSTR, cchdestout: ::core::option::Option<*mut u32>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDUriDecode(source: ::windows::core::PCWSTR, cchsource: u32, destout: *mut ::windows::core::PWSTR, cchdestout: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -284,7 +260,6 @@ pub unsafe fn WSDUriDecode(source: &[u16], destout: *mut ::windows::core::PWSTR,
 #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
 #[inline]
 pub unsafe fn WSDUriEncode(source: &[u16], destout: *mut ::windows::core::PWSTR, cchdestout: ::core::option::Option<*mut u32>) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDUriEncode(source: ::windows::core::PCWSTR, cchsource: u32, destout: *mut ::windows::core::PWSTR, cchdestout: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -293,7 +268,6 @@ pub unsafe fn WSDUriEncode(source: &[u16], destout: *mut ::windows::core::PWSTR,
 #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
 #[inline]
 pub unsafe fn WSDXMLAddChild(pparent: *mut WSDXML_ELEMENT, pchild: *mut WSDXML_ELEMENT) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDXMLAddChild(pparent: *mut WSDXML_ELEMENT, pchild: *mut WSDXML_ELEMENT) -> ::windows::core::HRESULT;
     }
@@ -302,7 +276,6 @@ pub unsafe fn WSDXMLAddChild(pparent: *mut WSDXML_ELEMENT, pchild: *mut WSDXML_E
 #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
 #[inline]
 pub unsafe fn WSDXMLAddSibling(pfirst: *mut WSDXML_ELEMENT, psecond: *mut WSDXML_ELEMENT) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDXMLAddSibling(pfirst: *mut WSDXML_ELEMENT, psecond: *mut WSDXML_ELEMENT) -> ::windows::core::HRESULT;
     }
@@ -314,7 +287,6 @@ pub unsafe fn WSDXMLBuildAnyForSingleElement<'a, P0>(pelementname: *mut WSDXML_N
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDXMLBuildAnyForSingleElement(pelementname: *mut WSDXML_NAME, psztext: ::windows::core::PCWSTR, ppany: *mut *mut WSDXML_ELEMENT) -> ::windows::core::HRESULT;
     }
@@ -323,7 +295,6 @@ where
 #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
 #[inline]
 pub unsafe fn WSDXMLCleanupElement(pany: *mut WSDXML_ELEMENT) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDXMLCleanupElement(pany: *mut WSDXML_ELEMENT) -> ::windows::core::HRESULT;
     }
@@ -332,7 +303,6 @@ pub unsafe fn WSDXMLCleanupElement(pany: *mut WSDXML_ELEMENT) -> ::windows::core
 #[doc = "*Required features: `\"Win32_Devices_WebServicesOnDevices\"`*"]
 #[inline]
 pub unsafe fn WSDXMLCreateContext() -> ::windows::core::Result<IWSDXMLContext> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDXMLCreateContext(ppcontext: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -346,7 +316,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDXMLGetNameFromBuiltinNamespace(psznamespace: ::windows::core::PCWSTR, pszname: ::windows::core::PCWSTR, ppname: *mut *mut WSDXML_NAME) -> ::windows::core::HRESULT;
     }
@@ -360,7 +329,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WSDXMLGetValueFromAny(psznamespace: ::windows::core::PCWSTR, pszname: ::windows::core::PCWSTR, pany: *mut WSDXML_ELEMENT, ppszvalue: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }

@@ -6,7 +6,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddLogContainer(hlog: super::super::Foundation::HANDLE, pcbcontainer: *const u64, pwszcontainerpath: ::windows::core::PCWSTR, preserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -19,7 +18,6 @@ pub unsafe fn AddLogContainerSet<'a, P0>(hlog: P0, pcbcontainer: ::core::option:
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddLogContainerSet(hlog: super::super::Foundation::HANDLE, ccontainer: u16, pcbcontainer: *const u64, rgwszcontainerpath: *const ::windows::core::PWSTR, preserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -32,7 +30,6 @@ pub unsafe fn AddUsersToEncryptedFile<'a, P0>(lpfilename: P0, pencryptioncertifi
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AddUsersToEncryptedFile(lpfilename: ::windows::core::PCWSTR, pencryptioncertificates: *const ENCRYPTION_CERTIFICATE_LIST) -> u32;
     }
@@ -42,7 +39,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
 pub unsafe fn AdvanceLogBase(pvmarshal: *mut ::core::ffi::c_void, plsnbase: *mut CLS_LSN, fflags: u32, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AdvanceLogBase(pvmarshal: *mut ::core::ffi::c_void, plsnbase: *mut CLS_LSN, fflags: u32, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
     }
@@ -52,7 +48,6 @@ pub unsafe fn AdvanceLogBase(pvmarshal: *mut ::core::ffi::c_void, plsnbase: *mut
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn AlignReservedLog(pvmarshal: *mut ::core::ffi::c_void, creservedrecords: u32, rgcbreservation: *mut i64, pcbalignreservation: *mut i64) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AlignReservedLog(pvmarshal: *mut ::core::ffi::c_void, creservedrecords: u32, rgcbreservation: *mut i64, pcbalignreservation: *mut i64) -> super::super::Foundation::BOOL;
     }
@@ -62,7 +57,6 @@ pub unsafe fn AlignReservedLog(pvmarshal: *mut ::core::ffi::c_void, creservedrec
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn AllocReservedLog(pvmarshal: *mut ::core::ffi::c_void, creservedrecords: u32, pcbadjustment: *mut i64) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AllocReservedLog(pvmarshal: *mut ::core::ffi::c_void, creservedrecords: u32, pcbadjustment: *mut i64) -> super::super::Foundation::BOOL;
     }
@@ -72,7 +66,6 @@ pub unsafe fn AllocReservedLog(pvmarshal: *mut ::core::ffi::c_void, creservedrec
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn AreFileApisANSI() -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AreFileApisANSI() -> super::super::Foundation::BOOL;
     }
@@ -85,7 +78,6 @@ pub unsafe fn AreShortNamesEnabled<'a, P0>(handle: P0, enabled: *mut super::supe
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn AreShortNamesEnabled(handle: super::super::Foundation::HANDLE, enabled: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -100,7 +92,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BackupRead(hfile: super::super::Foundation::HANDLE, lpbuffer: *mut u8, nnumberofbytestoread: u32, lpnumberofbytesread: *mut u32, babort: super::super::Foundation::BOOL, bprocesssecurity: super::super::Foundation::BOOL, lpcontext: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -113,7 +104,6 @@ pub unsafe fn BackupSeek<'a, P0>(hfile: P0, dwlowbytestoseek: u32, dwhighbytesto
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BackupSeek(hfile: super::super::Foundation::HANDLE, dwlowbytestoseek: u32, dwhighbytestoseek: u32, lpdwlowbyteseeked: *mut u32, lpdwhighbyteseeked: *mut u32, lpcontext: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -128,7 +118,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BackupWrite(hfile: super::super::Foundation::HANDLE, lpbuffer: *const u8, nnumberofbytestowrite: u32, lpnumberofbyteswritten: *mut u32, babort: super::super::Foundation::BOOL, bprocesssecurity: super::super::Foundation::BOOL, lpcontext: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -138,7 +127,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn BuildIoRingCancelRequest(ioring: *const HIORING__, file: IORING_HANDLE_REF, optocancel: usize, userdata: usize) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BuildIoRingCancelRequest(ioring: *const HIORING__, file: IORING_HANDLE_REF, optocancel: usize, userdata: usize) -> ::windows::core::HRESULT;
     }
@@ -148,7 +136,6 @@ pub unsafe fn BuildIoRingCancelRequest(ioring: *const HIORING__, file: IORING_HA
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn BuildIoRingReadFile(ioring: *const HIORING__, fileref: IORING_HANDLE_REF, dataref: IORING_BUFFER_REF, numberofbytestoread: u32, fileoffset: u64, userdata: usize, flags: IORING_SQE_FLAGS) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BuildIoRingReadFile(ioring: *const HIORING__, fileref: IORING_HANDLE_REF, dataref: IORING_BUFFER_REF, numberofbytestoread: u32, fileoffset: u64, userdata: usize, flags: IORING_SQE_FLAGS) -> ::windows::core::HRESULT;
     }
@@ -157,7 +144,6 @@ pub unsafe fn BuildIoRingReadFile(ioring: *const HIORING__, fileref: IORING_HAND
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn BuildIoRingRegisterBuffers(ioring: *const HIORING__, buffers: &[IORING_BUFFER_INFO], userdata: usize) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BuildIoRingRegisterBuffers(ioring: *const HIORING__, count: u32, buffers: *const IORING_BUFFER_INFO, userdata: usize) -> ::windows::core::HRESULT;
     }
@@ -167,7 +153,6 @@ pub unsafe fn BuildIoRingRegisterBuffers(ioring: *const HIORING__, buffers: &[IO
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn BuildIoRingRegisterFileHandles(ioring: *const HIORING__, handles: &[super::super::Foundation::HANDLE], userdata: usize) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn BuildIoRingRegisterFileHandles(ioring: *const HIORING__, count: u32, handles: *const super::super::Foundation::HANDLE, userdata: usize) -> ::windows::core::HRESULT;
     }
@@ -180,7 +165,6 @@ pub unsafe fn CheckNameLegalDOS8Dot3A<'a, P0>(lpname: P0, lpoemname: ::core::opt
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CheckNameLegalDOS8Dot3A(lpname: ::windows::core::PCSTR, lpoemname: ::windows::core::PSTR, oemnamesize: u32, pbnamecontainsspaces: *mut super::super::Foundation::BOOL, pbnamelegal: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -193,7 +177,6 @@ pub unsafe fn CheckNameLegalDOS8Dot3W<'a, P0>(lpname: P0, lpoemname: ::core::opt
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CheckNameLegalDOS8Dot3W(lpname: ::windows::core::PCWSTR, lpoemname: ::windows::core::PSTR, oemnamesize: u32, pbnamecontainsspaces: *mut super::super::Foundation::BOOL, pbnamelegal: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -206,7 +189,6 @@ pub unsafe fn CloseAndResetLogFile<'a, P0>(hlog: P0) -> super::super::Foundation
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CloseAndResetLogFile(hlog: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -215,7 +197,6 @@ where
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn CloseEncryptedFileRaw(pvcontext: *const ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CloseEncryptedFileRaw(pvcontext: *const ::core::ffi::c_void);
     }
@@ -224,7 +205,6 @@ pub unsafe fn CloseEncryptedFileRaw(pvcontext: *const ::core::ffi::c_void) {
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn CloseIoRing(ioring: *const HIORING__) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CloseIoRing(ioring: *const HIORING__) -> ::windows::core::HRESULT;
     }
@@ -237,7 +217,6 @@ pub unsafe fn CommitComplete<'a, P0>(enlistmenthandle: P0, tmvirtualclock: *mut 
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CommitComplete(enlistmenthandle: super::super::Foundation::HANDLE, tmvirtualclock: *mut i64) -> super::super::Foundation::BOOL;
     }
@@ -250,7 +229,6 @@ pub unsafe fn CommitEnlistment<'a, P0>(enlistmenthandle: P0, tmvirtualclock: *mu
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CommitEnlistment(enlistmenthandle: super::super::Foundation::HANDLE, tmvirtualclock: *mut i64) -> super::super::Foundation::BOOL;
     }
@@ -263,7 +241,6 @@ pub unsafe fn CommitTransaction<'a, P0>(transactionhandle: P0) -> super::super::
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CommitTransaction(transactionhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -276,7 +253,6 @@ pub unsafe fn CommitTransactionAsync<'a, P0>(transactionhandle: P0) -> super::su
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CommitTransactionAsync(transactionhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -286,7 +262,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn CompareFileTime(lpfiletime1: *const super::super::Foundation::FILETIME, lpfiletime2: *const super::super::Foundation::FILETIME) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CompareFileTime(lpfiletime1: *const super::super::Foundation::FILETIME, lpfiletime2: *const super::super::Foundation::FILETIME) -> i32;
     }
@@ -300,7 +275,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CopyFile2(pwszexistingfilename: ::windows::core::PCWSTR, pwsznewfilename: ::windows::core::PCWSTR, pextendedparameters: *const COPYFILE2_EXTENDED_PARAMETERS) -> ::windows::core::HRESULT;
     }
@@ -315,7 +289,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CopyFileA(lpexistingfilename: ::windows::core::PCSTR, lpnewfilename: ::windows::core::PCSTR, bfailifexists: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -329,7 +302,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CopyFileExA(lpexistingfilename: ::windows::core::PCSTR, lpnewfilename: ::windows::core::PCSTR, lpprogressroutine: *mut ::core::ffi::c_void, lpdata: *const ::core::ffi::c_void, pbcancel: *mut i32, dwcopyflags: u32) -> super::super::Foundation::BOOL;
     }
@@ -343,7 +315,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CopyFileExW(lpexistingfilename: ::windows::core::PCWSTR, lpnewfilename: ::windows::core::PCWSTR, lpprogressroutine: *mut ::core::ffi::c_void, lpdata: *const ::core::ffi::c_void, pbcancel: *mut i32, dwcopyflags: u32) -> super::super::Foundation::BOOL;
     }
@@ -358,7 +329,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CopyFileFromAppW(lpexistingfilename: ::windows::core::PCWSTR, lpnewfilename: ::windows::core::PCWSTR, bfailifexists: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -373,7 +343,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CopyFileTransactedA(lpexistingfilename: ::windows::core::PCSTR, lpnewfilename: ::windows::core::PCSTR, lpprogressroutine: *mut ::core::ffi::c_void, lpdata: *const ::core::ffi::c_void, pbcancel: *const i32, dwcopyflags: u32, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -388,7 +357,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CopyFileTransactedW(lpexistingfilename: ::windows::core::PCWSTR, lpnewfilename: ::windows::core::PCWSTR, lpprogressroutine: *mut ::core::ffi::c_void, lpdata: *const ::core::ffi::c_void, pbcancel: *const i32, dwcopyflags: u32, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -403,7 +371,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CopyFileW(lpexistingfilename: ::windows::core::PCWSTR, lpnewfilename: ::windows::core::PCWSTR, bfailifexists: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -412,7 +379,6 @@ where
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn CopyLZFile(hfsource: i32, hfdest: i32) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CopyLZFile(hfsource: i32, hfdest: i32) -> i32;
     }
@@ -425,7 +391,6 @@ pub unsafe fn CreateDirectoryA<'a, P0>(lppathname: P0, lpsecurityattributes: ::c
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateDirectoryA(lppathname: ::windows::core::PCSTR, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::BOOL;
     }
@@ -439,7 +404,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateDirectoryExA(lptemplatedirectory: ::windows::core::PCSTR, lpnewdirectory: ::windows::core::PCSTR, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::BOOL;
     }
@@ -453,7 +417,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateDirectoryExW(lptemplatedirectory: ::windows::core::PCWSTR, lpnewdirectory: ::windows::core::PCWSTR, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::BOOL;
     }
@@ -466,7 +429,6 @@ pub unsafe fn CreateDirectoryFromAppW<'a, P0>(lppathname: P0, lpsecurityattribut
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateDirectoryFromAppW(lppathname: ::windows::core::PCWSTR, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::BOOL;
     }
@@ -481,7 +443,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateDirectoryTransactedA(lptemplatedirectory: ::windows::core::PCSTR, lpnewdirectory: ::windows::core::PCSTR, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -496,7 +457,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateDirectoryTransactedW(lptemplatedirectory: ::windows::core::PCWSTR, lpnewdirectory: ::windows::core::PCWSTR, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -509,7 +469,6 @@ pub unsafe fn CreateDirectoryW<'a, P0>(lppathname: P0, lpsecurityattributes: ::c
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateDirectoryW(lppathname: ::windows::core::PCWSTR, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::BOOL;
     }
@@ -523,7 +482,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateEnlistment(lpenlistmentattributes: *mut super::super::Security::SECURITY_ATTRIBUTES, resourcemanagerhandle: super::super::Foundation::HANDLE, transactionhandle: super::super::Foundation::HANDLE, notificationmask: u32, createoptions: u32, enlistmentkey: *mut ::core::ffi::c_void) -> super::super::Foundation::HANDLE;
     }
@@ -537,7 +495,6 @@ pub unsafe fn CreateFile2<'a, P0>(lpfilename: P0, dwdesiredaccess: FILE_ACCESS_F
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateFile2(lpfilename: ::windows::core::PCWSTR, dwdesiredaccess: FILE_ACCESS_FLAGS, dwsharemode: FILE_SHARE_MODE, dwcreationdisposition: FILE_CREATION_DISPOSITION, pcreateexparams: *const CREATEFILE2_EXTENDED_PARAMETERS) -> super::super::Foundation::HANDLE;
     }
@@ -551,7 +508,6 @@ pub unsafe fn CreateFile2FromAppW<'a, P0>(lpfilename: P0, dwdesiredaccess: u32, 
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateFile2FromAppW(lpfilename: ::windows::core::PCWSTR, dwdesiredaccess: u32, dwsharemode: u32, dwcreationdisposition: u32, pcreateexparams: *const CREATEFILE2_EXTENDED_PARAMETERS) -> super::super::Foundation::HANDLE;
     }
@@ -565,7 +521,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateFileA(lpfilename: ::windows::core::PCSTR, dwdesiredaccess: FILE_ACCESS_FLAGS, dwsharemode: FILE_SHARE_MODE, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, dwcreationdisposition: FILE_CREATION_DISPOSITION, dwflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES, htemplatefile: super::super::Foundation::HANDLE) -> super::super::Foundation::HANDLE;
     }
@@ -580,7 +535,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateFileFromAppW(lpfilename: ::windows::core::PCWSTR, dwdesiredaccess: u32, dwsharemode: u32, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, dwcreationdisposition: u32, dwflagsandattributes: u32, htemplatefile: super::super::Foundation::HANDLE) -> super::super::Foundation::HANDLE;
     }
@@ -595,7 +549,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P2: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateFileTransactedA(lpfilename: ::windows::core::PCSTR, dwdesiredaccess: u32, dwsharemode: FILE_SHARE_MODE, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, dwcreationdisposition: FILE_CREATION_DISPOSITION, dwflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES, htemplatefile: super::super::Foundation::HANDLE, htransaction: super::super::Foundation::HANDLE, pusminiversion: *const TXFS_MINIVERSION, lpextendedparameter: *mut ::core::ffi::c_void) -> super::super::Foundation::HANDLE;
     }
@@ -611,7 +564,6 @@ where
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P2: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateFileTransactedW(lpfilename: ::windows::core::PCWSTR, dwdesiredaccess: u32, dwsharemode: FILE_SHARE_MODE, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, dwcreationdisposition: FILE_CREATION_DISPOSITION, dwflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES, htemplatefile: super::super::Foundation::HANDLE, htransaction: super::super::Foundation::HANDLE, pusminiversion: *const TXFS_MINIVERSION, lpextendedparameter: *mut ::core::ffi::c_void) -> super::super::Foundation::HANDLE;
     }
@@ -626,7 +578,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateFileW(lpfilename: ::windows::core::PCWSTR, dwdesiredaccess: FILE_ACCESS_FLAGS, dwsharemode: FILE_SHARE_MODE, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, dwcreationdisposition: FILE_CREATION_DISPOSITION, dwflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES, htemplatefile: super::super::Foundation::HANDLE) -> super::super::Foundation::HANDLE;
     }
@@ -641,7 +592,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateHardLinkA(lpfilename: ::windows::core::PCSTR, lpexistingfilename: ::windows::core::PCSTR, lpsecurityattributes: *mut super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::BOOL;
     }
@@ -656,7 +606,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateHardLinkTransactedA(lpfilename: ::windows::core::PCSTR, lpexistingfilename: ::windows::core::PCSTR, lpsecurityattributes: *mut super::super::Security::SECURITY_ATTRIBUTES, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -671,7 +620,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateHardLinkTransactedW(lpfilename: ::windows::core::PCWSTR, lpexistingfilename: ::windows::core::PCWSTR, lpsecurityattributes: *mut super::super::Security::SECURITY_ATTRIBUTES, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -685,7 +633,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateHardLinkW(lpfilename: ::windows::core::PCWSTR, lpexistingfilename: ::windows::core::PCWSTR, lpsecurityattributes: *mut super::super::Security::SECURITY_ATTRIBUTES) -> super::super::Foundation::BOOL;
     }
@@ -694,7 +641,6 @@ where
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn CreateIoRing(ioringversion: IORING_VERSION, flags: IORING_CREATE_FLAGS, submissionqueuesize: u32, completionqueuesize: u32) -> ::windows::core::Result<*mut HIORING__> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateIoRing(ioringversion: IORING_VERSION, flags: IORING_CREATE_FLAGS, submissionqueuesize: u32, completionqueuesize: u32, h: *mut *mut HIORING__) -> ::windows::core::HRESULT;
     }
@@ -708,7 +654,6 @@ pub unsafe fn CreateLogContainerScanContext<'a, P0>(hlog: P0, cfromcontainer: u3
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateLogContainerScanContext(hlog: super::super::Foundation::HANDLE, cfromcontainer: u32, ccontainers: u32, escanmode: u8, pcxscan: *mut CLS_SCAN_CONTEXT, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
     }
@@ -721,7 +666,6 @@ pub unsafe fn CreateLogFile<'a, P0>(pszlogfilename: P0, fdesiredaccess: FILE_ACC
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateLogFile(pszlogfilename: ::windows::core::PCWSTR, fdesiredaccess: FILE_ACCESS_FLAGS, dwsharemode: FILE_SHARE_MODE, psalogfile: *mut super::super::Security::SECURITY_ATTRIBUTES, fcreatedisposition: FILE_CREATION_DISPOSITION, fflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES) -> super::super::Foundation::HANDLE;
     }
@@ -735,7 +679,6 @@ pub unsafe fn CreateLogMarshallingArea<'a, P0>(hlog: P0, pfnallocbuffer: CLFS_BL
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateLogMarshallingArea(hlog: super::super::Foundation::HANDLE, pfnallocbuffer: *mut ::core::ffi::c_void, pfnfreebuffer: *mut ::core::ffi::c_void, pvblockalloccontext: *mut ::core::ffi::c_void, cbmarshallingbuffer: u32, cmaxwritebuffers: u32, cmaxreadbuffers: u32, ppvmarshal: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -749,7 +692,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateResourceManager(lpresourcemanagerattributes: *mut super::super::Security::SECURITY_ATTRIBUTES, resourcemanagerid: *mut ::windows::core::GUID, createoptions: u32, tmhandle: super::super::Foundation::HANDLE, description: ::windows::core::PCWSTR) -> super::super::Foundation::HANDLE;
     }
@@ -764,7 +706,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateSymbolicLinkA(lpsymlinkfilename: ::windows::core::PCSTR, lptargetfilename: ::windows::core::PCSTR, dwflags: SYMBOLIC_LINK_FLAGS) -> super::super::Foundation::BOOLEAN;
     }
@@ -779,7 +720,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateSymbolicLinkTransactedA(lpsymlinkfilename: ::windows::core::PCSTR, lptargetfilename: ::windows::core::PCSTR, dwflags: SYMBOLIC_LINK_FLAGS, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOLEAN;
     }
@@ -794,7 +734,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateSymbolicLinkTransactedW(lpsymlinkfilename: ::windows::core::PCWSTR, lptargetfilename: ::windows::core::PCWSTR, dwflags: SYMBOLIC_LINK_FLAGS, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOLEAN;
     }
@@ -808,7 +747,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateSymbolicLinkW(lpsymlinkfilename: ::windows::core::PCWSTR, lptargetfilename: ::windows::core::PCWSTR, dwflags: SYMBOLIC_LINK_FLAGS) -> super::super::Foundation::BOOLEAN;
     }
@@ -821,7 +759,6 @@ pub unsafe fn CreateTapePartition<'a, P0>(hdevice: P0, dwpartitionmethod: CREATE
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateTapePartition(hdevice: super::super::Foundation::HANDLE, dwpartitionmethod: CREATE_TAPE_PARTITION_METHOD, dwcount: u32, dwsize: u32) -> u32;
     }
@@ -834,7 +771,6 @@ pub unsafe fn CreateTransaction<'a, P0>(lptransactionattributes: *mut super::sup
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateTransaction(lptransactionattributes: *mut super::super::Security::SECURITY_ATTRIBUTES, uow: *mut ::windows::core::GUID, createoptions: u32, isolationlevel: u32, isolationflags: u32, timeout: u32, description: ::windows::core::PCWSTR) -> super::super::Foundation::HANDLE;
     }
@@ -848,7 +784,6 @@ pub unsafe fn CreateTransactionManager<'a, P0>(lptransactionattributes: *mut sup
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateTransactionManager(lptransactionattributes: *mut super::super::Security::SECURITY_ATTRIBUTES, logfilename: ::windows::core::PCWSTR, createoptions: u32, commitstrength: u32) -> super::super::Foundation::HANDLE;
     }
@@ -862,7 +797,6 @@ pub unsafe fn DecryptFileA<'a, P0>(lpfilename: P0, dwreserved: u32) -> super::su
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DecryptFileA(lpfilename: ::windows::core::PCSTR, dwreserved: u32) -> super::super::Foundation::BOOL;
     }
@@ -875,7 +809,6 @@ pub unsafe fn DecryptFileW<'a, P0>(lpfilename: P0, dwreserved: u32) -> super::su
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DecryptFileW(lpfilename: ::windows::core::PCWSTR, dwreserved: u32) -> super::super::Foundation::BOOL;
     }
@@ -889,7 +822,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DefineDosDeviceA(dwflags: DEFINE_DOS_DEVICE_FLAGS, lpdevicename: ::windows::core::PCSTR, lptargetpath: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -903,7 +835,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DefineDosDeviceW(dwflags: DEFINE_DOS_DEVICE_FLAGS, lpdevicename: ::windows::core::PCWSTR, lptargetpath: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -916,7 +847,6 @@ pub unsafe fn DeleteFileA<'a, P0>(lpfilename: P0) -> super::super::Foundation::B
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeleteFileA(lpfilename: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -929,7 +859,6 @@ pub unsafe fn DeleteFileFromAppW<'a, P0>(lpfilename: P0) -> super::super::Founda
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeleteFileFromAppW(lpfilename: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -943,7 +872,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeleteFileTransactedA(lpfilename: ::windows::core::PCSTR, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -957,7 +885,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeleteFileTransactedW(lpfilename: ::windows::core::PCWSTR, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -970,7 +897,6 @@ pub unsafe fn DeleteFileW<'a, P0>(lpfilename: P0) -> super::super::Foundation::B
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeleteFileW(lpfilename: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -983,7 +909,6 @@ pub unsafe fn DeleteLogByHandle<'a, P0>(hlog: P0) -> super::super::Foundation::B
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeleteLogByHandle(hlog: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -996,7 +921,6 @@ pub unsafe fn DeleteLogFile<'a, P0>(pszlogfilename: P0, pvreserved: *mut ::core:
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeleteLogFile(pszlogfilename: ::windows::core::PCWSTR, pvreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -1006,7 +930,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn DeleteLogMarshallingArea(pvmarshal: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeleteLogMarshallingArea(pvmarshal: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -1019,7 +942,6 @@ pub unsafe fn DeleteVolumeMountPointA<'a, P0>(lpszvolumemountpoint: P0) -> super
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeleteVolumeMountPointA(lpszvolumemountpoint: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -1032,7 +954,6 @@ pub unsafe fn DeleteVolumeMountPointW<'a, P0>(lpszvolumemountpoint: P0) -> super
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeleteVolumeMountPointW(lpszvolumemountpoint: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -1045,7 +966,6 @@ pub unsafe fn DeregisterManageableLogClient<'a, P0>(hlog: P0) -> super::super::F
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DeregisterManageableLogClient(hlog: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -1059,7 +979,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DuplicateEncryptionInfoFile(srcfilename: ::windows::core::PCWSTR, dstfilename: ::windows::core::PCWSTR, dwcreationdistribution: u32, dwattributes: u32, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES) -> u32;
     }
@@ -1072,7 +991,6 @@ pub unsafe fn EncryptFileA<'a, P0>(lpfilename: P0) -> super::super::Foundation::
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EncryptFileA(lpfilename: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -1085,7 +1003,6 @@ pub unsafe fn EncryptFileW<'a, P0>(lpfilename: P0) -> super::super::Foundation::
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EncryptFileW(lpfilename: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -1099,7 +1016,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EncryptionDisable(dirpath: ::windows::core::PCWSTR, disable: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -1113,7 +1029,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn EraseTape(hdevice: super::super::Foundation::HANDLE, dwerasetype: ERASE_TAPE_TYPE, bimmediate: super::super::Foundation::BOOL) -> u32;
     }
@@ -1126,7 +1041,6 @@ pub unsafe fn FileEncryptionStatusA<'a, P0>(lpfilename: P0, lpstatus: *mut u32) 
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FileEncryptionStatusA(lpfilename: ::windows::core::PCSTR, lpstatus: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1139,7 +1053,6 @@ pub unsafe fn FileEncryptionStatusW<'a, P0>(lpfilename: P0, lpstatus: *mut u32) 
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FileEncryptionStatusW(lpfilename: ::windows::core::PCWSTR, lpstatus: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1149,7 +1062,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn FileTimeToLocalFileTime(lpfiletime: *const super::super::Foundation::FILETIME, lplocalfiletime: *mut super::super::Foundation::FILETIME) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FileTimeToLocalFileTime(lpfiletime: *const super::super::Foundation::FILETIME, lplocalfiletime: *mut super::super::Foundation::FILETIME) -> super::super::Foundation::BOOL;
     }
@@ -1162,7 +1074,6 @@ pub unsafe fn FindClose<'a, P0>(hfindfile: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<FindFileHandle>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindClose(hfindfile: FindFileHandle) -> super::super::Foundation::BOOL;
     }
@@ -1175,7 +1086,6 @@ pub unsafe fn FindCloseChangeNotification<'a, P0>(hchangehandle: P0) -> super::s
 where
     P0: ::std::convert::Into<FindChangeNotificationHandle>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindCloseChangeNotification(hchangehandle: FindChangeNotificationHandle) -> super::super::Foundation::BOOL;
     }
@@ -1189,7 +1099,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindFirstChangeNotificationA(lppathname: ::windows::core::PCSTR, bwatchsubtree: super::super::Foundation::BOOL, dwnotifyfilter: FILE_NOTIFY_CHANGE) -> FindChangeNotificationHandle;
     }
@@ -1204,7 +1113,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindFirstChangeNotificationW(lppathname: ::windows::core::PCWSTR, bwatchsubtree: super::super::Foundation::BOOL, dwnotifyfilter: FILE_NOTIFY_CHANGE) -> FindChangeNotificationHandle;
     }
@@ -1218,7 +1126,6 @@ pub unsafe fn FindFirstFileA<'a, P0>(lpfilename: P0, lpfindfiledata: *mut WIN32_
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindFirstFileA(lpfilename: ::windows::core::PCSTR, lpfindfiledata: *mut WIN32_FIND_DATAA) -> FindFileHandle;
     }
@@ -1231,7 +1138,6 @@ pub unsafe fn FindFirstFileExA<'a, P0>(lpfilename: P0, finfolevelid: FINDEX_INFO
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindFirstFileExA(lpfilename: ::windows::core::PCSTR, finfolevelid: FINDEX_INFO_LEVELS, lpfindfiledata: *mut ::core::ffi::c_void, fsearchop: FINDEX_SEARCH_OPS, lpsearchfilter: *mut ::core::ffi::c_void, dwadditionalflags: FIND_FIRST_EX_FLAGS) -> FindFileHandle;
     }
@@ -1245,7 +1151,6 @@ pub unsafe fn FindFirstFileExFromAppW<'a, P0>(lpfilename: P0, finfolevelid: FIND
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindFirstFileExFromAppW(lpfilename: ::windows::core::PCWSTR, finfolevelid: FINDEX_INFO_LEVELS, lpfindfiledata: *mut ::core::ffi::c_void, fsearchop: FINDEX_SEARCH_OPS, lpsearchfilter: *mut ::core::ffi::c_void, dwadditionalflags: u32) -> super::super::Foundation::HANDLE;
     }
@@ -1257,7 +1162,6 @@ pub unsafe fn FindFirstFileExW<'a, P0>(lpfilename: P0, finfolevelid: FINDEX_INFO
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindFirstFileExW(lpfilename: ::windows::core::PCWSTR, finfolevelid: FINDEX_INFO_LEVELS, lpfindfiledata: *mut ::core::ffi::c_void, fsearchop: FINDEX_SEARCH_OPS, lpsearchfilter: *mut ::core::ffi::c_void, dwadditionalflags: FIND_FIRST_EX_FLAGS) -> FindFileHandle;
     }
@@ -1272,7 +1176,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindFirstFileNameTransactedW(lpfilename: ::windows::core::PCWSTR, dwflags: u32, stringlength: *mut u32, linkname: ::windows::core::PWSTR, htransaction: super::super::Foundation::HANDLE) -> FindFileNameHandle;
     }
@@ -1285,7 +1188,6 @@ pub unsafe fn FindFirstFileNameW<'a, P0>(lpfilename: P0, dwflags: u32, stringlen
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindFirstFileNameW(lpfilename: ::windows::core::PCWSTR, dwflags: u32, stringlength: *mut u32, linkname: ::windows::core::PWSTR) -> FindFileNameHandle;
     }
@@ -1300,7 +1202,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindFirstFileTransactedA(lpfilename: ::windows::core::PCSTR, finfolevelid: FINDEX_INFO_LEVELS, lpfindfiledata: *mut ::core::ffi::c_void, fsearchop: FINDEX_SEARCH_OPS, lpsearchfilter: *mut ::core::ffi::c_void, dwadditionalflags: u32, htransaction: super::super::Foundation::HANDLE) -> FindFileHandle;
     }
@@ -1315,7 +1216,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindFirstFileTransactedW(lpfilename: ::windows::core::PCWSTR, finfolevelid: FINDEX_INFO_LEVELS, lpfindfiledata: *mut ::core::ffi::c_void, fsearchop: FINDEX_SEARCH_OPS, lpsearchfilter: *mut ::core::ffi::c_void, dwadditionalflags: u32, htransaction: super::super::Foundation::HANDLE) -> FindFileHandle;
     }
@@ -1329,7 +1229,6 @@ pub unsafe fn FindFirstFileW<'a, P0>(lpfilename: P0, lpfindfiledata: *mut WIN32_
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindFirstFileW(lpfilename: ::windows::core::PCWSTR, lpfindfiledata: *mut WIN32_FIND_DATAW) -> FindFileHandle;
     }
@@ -1344,7 +1243,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindFirstStreamTransactedW(lpfilename: ::windows::core::PCWSTR, infolevel: STREAM_INFO_LEVELS, lpfindstreamdata: *mut ::core::ffi::c_void, dwflags: u32, htransaction: super::super::Foundation::HANDLE) -> FindStreamHandle;
     }
@@ -1357,7 +1255,6 @@ pub unsafe fn FindFirstStreamW<'a, P0>(lpfilename: P0, infolevel: STREAM_INFO_LE
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindFirstStreamW(lpfilename: ::windows::core::PCWSTR, infolevel: STREAM_INFO_LEVELS, lpfindstreamdata: *mut ::core::ffi::c_void, dwflags: u32) -> FindStreamHandle;
     }
@@ -1367,7 +1264,6 @@ where
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn FindFirstVolumeA(lpszvolumename: &mut [u8]) -> ::windows::core::Result<FindVolumeHandle> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindFirstVolumeA(lpszvolumename: ::windows::core::PSTR, cchbufferlength: u32) -> FindVolumeHandle;
     }
@@ -1380,7 +1276,6 @@ pub unsafe fn FindFirstVolumeMountPointA<'a, P0>(lpszrootpathname: P0, lpszvolum
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindFirstVolumeMountPointA(lpszrootpathname: ::windows::core::PCSTR, lpszvolumemountpoint: ::windows::core::PSTR, cchbufferlength: u32) -> FindVolumeMointPointHandle;
     }
@@ -1393,7 +1288,6 @@ pub unsafe fn FindFirstVolumeMountPointW<'a, P0>(lpszrootpathname: P0, lpszvolum
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindFirstVolumeMountPointW(lpszrootpathname: ::windows::core::PCWSTR, lpszvolumemountpoint: ::windows::core::PWSTR, cchbufferlength: u32) -> FindVolumeMointPointHandle;
     }
@@ -1403,7 +1297,6 @@ where
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn FindFirstVolumeW(lpszvolumename: &mut [u16]) -> ::windows::core::Result<FindVolumeHandle> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindFirstVolumeW(lpszvolumename: ::windows::core::PWSTR, cchbufferlength: u32) -> FindVolumeHandle;
     }
@@ -1417,7 +1310,6 @@ pub unsafe fn FindNextChangeNotification<'a, P0>(hchangehandle: P0) -> super::su
 where
     P0: ::std::convert::Into<FindChangeNotificationHandle>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindNextChangeNotification(hchangehandle: FindChangeNotificationHandle) -> super::super::Foundation::BOOL;
     }
@@ -1430,7 +1322,6 @@ pub unsafe fn FindNextFileA<'a, P0>(hfindfile: P0, lpfindfiledata: *mut WIN32_FI
 where
     P0: ::std::convert::Into<FindFileHandle>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindNextFileA(hfindfile: FindFileHandle, lpfindfiledata: *mut WIN32_FIND_DATAA) -> super::super::Foundation::BOOL;
     }
@@ -1443,7 +1334,6 @@ pub unsafe fn FindNextFileNameW<'a, P0>(hfindstream: P0, stringlength: *mut u32,
 where
     P0: ::std::convert::Into<FindFileNameHandle>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindNextFileNameW(hfindstream: FindFileNameHandle, stringlength: *mut u32, linkname: ::windows::core::PWSTR) -> super::super::Foundation::BOOL;
     }
@@ -1456,7 +1346,6 @@ pub unsafe fn FindNextFileW<'a, P0>(hfindfile: P0, lpfindfiledata: *mut WIN32_FI
 where
     P0: ::std::convert::Into<FindFileHandle>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindNextFileW(hfindfile: FindFileHandle, lpfindfiledata: *mut WIN32_FIND_DATAW) -> super::super::Foundation::BOOL;
     }
@@ -1469,7 +1358,6 @@ pub unsafe fn FindNextStreamW<'a, P0>(hfindstream: P0, lpfindstreamdata: *mut ::
 where
     P0: ::std::convert::Into<FindStreamHandle>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindNextStreamW(hfindstream: FindStreamHandle, lpfindstreamdata: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -1482,7 +1370,6 @@ pub unsafe fn FindNextVolumeA<'a, P0>(hfindvolume: P0, lpszvolumename: &mut [u8]
 where
     P0: ::std::convert::Into<FindVolumeHandle>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindNextVolumeA(hfindvolume: FindVolumeHandle, lpszvolumename: ::windows::core::PSTR, cchbufferlength: u32) -> super::super::Foundation::BOOL;
     }
@@ -1495,7 +1382,6 @@ pub unsafe fn FindNextVolumeMountPointA<'a, P0>(hfindvolumemountpoint: P0, lpszv
 where
     P0: ::std::convert::Into<FindVolumeMointPointHandle>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindNextVolumeMountPointA(hfindvolumemountpoint: FindVolumeMointPointHandle, lpszvolumemountpoint: ::windows::core::PSTR, cchbufferlength: u32) -> super::super::Foundation::BOOL;
     }
@@ -1508,7 +1394,6 @@ pub unsafe fn FindNextVolumeMountPointW<'a, P0>(hfindvolumemountpoint: P0, lpszv
 where
     P0: ::std::convert::Into<FindVolumeMointPointHandle>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindNextVolumeMountPointW(hfindvolumemountpoint: FindVolumeMointPointHandle, lpszvolumemountpoint: ::windows::core::PWSTR, cchbufferlength: u32) -> super::super::Foundation::BOOL;
     }
@@ -1521,7 +1406,6 @@ pub unsafe fn FindNextVolumeW<'a, P0>(hfindvolume: P0, lpszvolumename: &mut [u16
 where
     P0: ::std::convert::Into<FindVolumeHandle>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindNextVolumeW(hfindvolume: FindVolumeHandle, lpszvolumename: ::windows::core::PWSTR, cchbufferlength: u32) -> super::super::Foundation::BOOL;
     }
@@ -1534,7 +1418,6 @@ pub unsafe fn FindVolumeClose<'a, P0>(hfindvolume: P0) -> super::super::Foundati
 where
     P0: ::std::convert::Into<FindVolumeHandle>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindVolumeClose(hfindvolume: FindVolumeHandle) -> super::super::Foundation::BOOL;
     }
@@ -1547,7 +1430,6 @@ pub unsafe fn FindVolumeMountPointClose<'a, P0>(hfindvolumemountpoint: P0) -> su
 where
     P0: ::std::convert::Into<FindVolumeMointPointHandle>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FindVolumeMountPointClose(hfindvolumemountpoint: FindVolumeMointPointHandle) -> super::super::Foundation::BOOL;
     }
@@ -1560,7 +1442,6 @@ pub unsafe fn FlushFileBuffers<'a, P0>(hfile: P0) -> super::super::Foundation::B
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FlushFileBuffers(hfile: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -1570,7 +1451,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
 pub unsafe fn FlushLogBuffers(pvmarshal: *mut ::core::ffi::c_void, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FlushLogBuffers(pvmarshal: *mut ::core::ffi::c_void, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
     }
@@ -1580,7 +1460,6 @@ pub unsafe fn FlushLogBuffers(pvmarshal: *mut ::core::ffi::c_void, poverlapped: 
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
 pub unsafe fn FlushLogToLsn(pvmarshalcontext: *mut ::core::ffi::c_void, plsnflush: *mut CLS_LSN, plsnlastflushed: *mut CLS_LSN, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FlushLogToLsn(pvmarshalcontext: *mut ::core::ffi::c_void, plsnflush: *mut CLS_LSN, plsnlastflushed: *mut CLS_LSN, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
     }
@@ -1589,7 +1468,6 @@ pub unsafe fn FlushLogToLsn(pvmarshalcontext: *mut ::core::ffi::c_void, plsnflus
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn FreeEncryptedFileMetadata(pbmetadata: *const u8) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FreeEncryptedFileMetadata(pbmetadata: *const u8);
     }
@@ -1599,7 +1477,6 @@ pub unsafe fn FreeEncryptedFileMetadata(pbmetadata: *const u8) {
 #[cfg(feature = "Win32_Security")]
 #[inline]
 pub unsafe fn FreeEncryptionCertificateHashList(pusers: *const ENCRYPTION_CERTIFICATE_HASH_LIST) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FreeEncryptionCertificateHashList(pusers: *const ENCRYPTION_CERTIFICATE_HASH_LIST);
     }
@@ -1609,7 +1486,6 @@ pub unsafe fn FreeEncryptionCertificateHashList(pusers: *const ENCRYPTION_CERTIF
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn FreeReservedLog(pvmarshal: *mut ::core::ffi::c_void, creservedrecords: u32, pcbadjustment: *mut i64) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn FreeReservedLog(pvmarshal: *mut ::core::ffi::c_void, creservedrecords: u32, pcbadjustment: *mut i64) -> super::super::Foundation::BOOL;
     }
@@ -1622,7 +1498,6 @@ pub unsafe fn GetBinaryTypeA<'a, P0>(lpapplicationname: P0, lpbinarytype: *mut u
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetBinaryTypeA(lpapplicationname: ::windows::core::PCSTR, lpbinarytype: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1635,7 +1510,6 @@ pub unsafe fn GetBinaryTypeW<'a, P0>(lpapplicationname: P0, lpbinarytype: *mut u
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetBinaryTypeW(lpapplicationname: ::windows::core::PCWSTR, lpbinarytype: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1647,7 +1521,6 @@ pub unsafe fn GetCompressedFileSizeA<'a, P0>(lpfilename: P0, lpfilesizehigh: ::c
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCompressedFileSizeA(lpfilename: ::windows::core::PCSTR, lpfilesizehigh: *mut u32) -> u32;
     }
@@ -1661,7 +1534,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCompressedFileSizeTransactedA(lpfilename: ::windows::core::PCSTR, lpfilesizehigh: *mut u32, htransaction: super::super::Foundation::HANDLE) -> u32;
     }
@@ -1675,7 +1547,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCompressedFileSizeTransactedW(lpfilename: ::windows::core::PCWSTR, lpfilesizehigh: *mut u32, htransaction: super::super::Foundation::HANDLE) -> u32;
     }
@@ -1687,7 +1558,6 @@ pub unsafe fn GetCompressedFileSizeW<'a, P0>(lpfilename: P0, lpfilesizehigh: ::c
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCompressedFileSizeW(lpfilename: ::windows::core::PCWSTR, lpfilesizehigh: *mut u32) -> u32;
     }
@@ -1700,7 +1570,6 @@ pub unsafe fn GetCurrentClockTransactionManager<'a, P0>(transactionmanagerhandle
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetCurrentClockTransactionManager(transactionmanagerhandle: super::super::Foundation::HANDLE, tmvirtualclock: *mut i64) -> super::super::Foundation::BOOL;
     }
@@ -1713,7 +1582,6 @@ pub unsafe fn GetDiskFreeSpaceA<'a, P0>(lprootpathname: P0, lpsectorspercluster:
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDiskFreeSpaceA(lprootpathname: ::windows::core::PCSTR, lpsectorspercluster: *mut u32, lpbytespersector: *mut u32, lpnumberoffreeclusters: *mut u32, lptotalnumberofclusters: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1726,7 +1594,6 @@ pub unsafe fn GetDiskFreeSpaceExA<'a, P0>(lpdirectoryname: P0, lpfreebytesavaila
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDiskFreeSpaceExA(lpdirectoryname: ::windows::core::PCSTR, lpfreebytesavailabletocaller: *mut u64, lptotalnumberofbytes: *mut u64, lptotalnumberoffreebytes: *mut u64) -> super::super::Foundation::BOOL;
     }
@@ -1739,7 +1606,6 @@ pub unsafe fn GetDiskFreeSpaceExW<'a, P0>(lpdirectoryname: P0, lpfreebytesavaila
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDiskFreeSpaceExW(lpdirectoryname: ::windows::core::PCWSTR, lpfreebytesavailabletocaller: *mut u64, lptotalnumberofbytes: *mut u64, lptotalnumberoffreebytes: *mut u64) -> super::super::Foundation::BOOL;
     }
@@ -1752,7 +1618,6 @@ pub unsafe fn GetDiskFreeSpaceW<'a, P0>(lprootpathname: P0, lpsectorspercluster:
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDiskFreeSpaceW(lprootpathname: ::windows::core::PCWSTR, lpsectorspercluster: *mut u32, lpbytespersector: *mut u32, lpnumberoffreeclusters: *mut u32, lptotalnumberofclusters: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1764,7 +1629,6 @@ pub unsafe fn GetDiskSpaceInformationA<'a, P0>(rootpath: P0) -> ::windows::core:
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDiskSpaceInformationA(rootpath: ::windows::core::PCSTR, diskspaceinfo: *mut DISK_SPACE_INFORMATION) -> ::windows::core::HRESULT;
     }
@@ -1777,7 +1641,6 @@ pub unsafe fn GetDiskSpaceInformationW<'a, P0>(rootpath: P0) -> ::windows::core:
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDiskSpaceInformationW(rootpath: ::windows::core::PCWSTR, diskspaceinfo: *mut DISK_SPACE_INFORMATION) -> ::windows::core::HRESULT;
     }
@@ -1790,7 +1653,6 @@ pub unsafe fn GetDriveTypeA<'a, P0>(lprootpathname: P0) -> u32
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDriveTypeA(lprootpathname: ::windows::core::PCSTR) -> u32;
     }
@@ -1802,7 +1664,6 @@ pub unsafe fn GetDriveTypeW<'a, P0>(lprootpathname: P0) -> u32
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetDriveTypeW(lprootpathname: ::windows::core::PCWSTR) -> u32;
     }
@@ -1814,7 +1675,6 @@ pub unsafe fn GetEncryptedFileMetadata<'a, P0>(lpfilename: P0, pcbmetadata: *mut
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetEncryptedFileMetadata(lpfilename: ::windows::core::PCWSTR, pcbmetadata: *mut u32, ppbmetadata: *mut *mut u8) -> u32;
     }
@@ -1827,7 +1687,6 @@ pub unsafe fn GetEnlistmentId<'a, P0>(enlistmenthandle: P0, enlistmentid: *mut :
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetEnlistmentId(enlistmenthandle: super::super::Foundation::HANDLE, enlistmentid: *mut ::windows::core::GUID) -> super::super::Foundation::BOOL;
     }
@@ -1840,7 +1699,6 @@ pub unsafe fn GetEnlistmentRecoveryInformation<'a, P0>(enlistmenthandle: P0, buf
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetEnlistmentRecoveryInformation(enlistmenthandle: super::super::Foundation::HANDLE, buffersize: u32, buffer: *mut ::core::ffi::c_void, bufferused: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1852,7 +1710,6 @@ pub unsafe fn GetExpandedNameA<'a, P0>(lpszsource: P0, lpszbuffer: &mut [u8; 260
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetExpandedNameA(lpszsource: ::windows::core::PCSTR, lpszbuffer: ::windows::core::PSTR) -> i32;
     }
@@ -1864,7 +1721,6 @@ pub unsafe fn GetExpandedNameW<'a, P0>(lpszsource: P0, lpszbuffer: &mut [u16; 26
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetExpandedNameW(lpszsource: ::windows::core::PCWSTR, lpszbuffer: ::windows::core::PWSTR) -> i32;
     }
@@ -1876,7 +1732,6 @@ pub unsafe fn GetFileAttributesA<'a, P0>(lpfilename: P0) -> u32
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFileAttributesA(lpfilename: ::windows::core::PCSTR) -> u32;
     }
@@ -1889,7 +1744,6 @@ pub unsafe fn GetFileAttributesExA<'a, P0>(lpfilename: P0, finfolevelid: GET_FIL
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFileAttributesExA(lpfilename: ::windows::core::PCSTR, finfolevelid: GET_FILEEX_INFO_LEVELS, lpfileinformation: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -1902,7 +1756,6 @@ pub unsafe fn GetFileAttributesExFromAppW<'a, P0>(lpfilename: P0, finfolevelid: 
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFileAttributesExFromAppW(lpfilename: ::windows::core::PCWSTR, finfolevelid: GET_FILEEX_INFO_LEVELS, lpfileinformation: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -1915,7 +1768,6 @@ pub unsafe fn GetFileAttributesExW<'a, P0>(lpfilename: P0, finfolevelid: GET_FIL
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFileAttributesExW(lpfilename: ::windows::core::PCWSTR, finfolevelid: GET_FILEEX_INFO_LEVELS, lpfileinformation: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -1929,7 +1781,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFileAttributesTransactedA(lpfilename: ::windows::core::PCSTR, finfolevelid: GET_FILEEX_INFO_LEVELS, lpfileinformation: *mut ::core::ffi::c_void, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -1943,7 +1794,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFileAttributesTransactedW(lpfilename: ::windows::core::PCWSTR, finfolevelid: GET_FILEEX_INFO_LEVELS, lpfileinformation: *mut ::core::ffi::c_void, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -1955,7 +1805,6 @@ pub unsafe fn GetFileAttributesW<'a, P0>(lpfilename: P0) -> u32
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFileAttributesW(lpfilename: ::windows::core::PCWSTR) -> u32;
     }
@@ -1968,7 +1817,6 @@ pub unsafe fn GetFileBandwidthReservation<'a, P0>(hfile: P0, lpperiodmillisecond
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFileBandwidthReservation(hfile: super::super::Foundation::HANDLE, lpperiodmilliseconds: *mut u32, lpbytesperperiod: *mut u32, pdiscardable: *mut i32, lptransfersize: *mut u32, lpnumoutstandingrequests: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -1981,7 +1829,6 @@ pub unsafe fn GetFileInformationByHandle<'a, P0>(hfile: P0, lpfileinformation: *
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFileInformationByHandle(hfile: super::super::Foundation::HANDLE, lpfileinformation: *mut BY_HANDLE_FILE_INFORMATION) -> super::super::Foundation::BOOL;
     }
@@ -1994,7 +1841,6 @@ pub unsafe fn GetFileInformationByHandleEx<'a, P0>(hfile: P0, fileinformationcla
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFileInformationByHandleEx(hfile: super::super::Foundation::HANDLE, fileinformationclass: FILE_INFO_BY_HANDLE_CLASS, lpfileinformation: *mut ::core::ffi::c_void, dwbuffersize: u32) -> super::super::Foundation::BOOL;
     }
@@ -2007,7 +1853,6 @@ pub unsafe fn GetFileSize<'a, P0>(hfile: P0, lpfilesizehigh: ::core::option::Opt
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFileSize(hfile: super::super::Foundation::HANDLE, lpfilesizehigh: *mut u32) -> u32;
     }
@@ -2020,7 +1865,6 @@ pub unsafe fn GetFileSizeEx<'a, P0>(hfile: P0, lpfilesize: *mut i64) -> super::s
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFileSizeEx(hfile: super::super::Foundation::HANDLE, lpfilesize: *mut i64) -> super::super::Foundation::BOOL;
     }
@@ -2033,7 +1877,6 @@ pub unsafe fn GetFileTime<'a, P0>(hfile: P0, lpcreationtime: ::core::option::Opt
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFileTime(hfile: super::super::Foundation::HANDLE, lpcreationtime: *mut super::super::Foundation::FILETIME, lplastaccesstime: *mut super::super::Foundation::FILETIME, lplastwritetime: *mut super::super::Foundation::FILETIME) -> super::super::Foundation::BOOL;
     }
@@ -2046,7 +1889,6 @@ pub unsafe fn GetFileType<'a, P0>(hfile: P0) -> u32
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFileType(hfile: super::super::Foundation::HANDLE) -> u32;
     }
@@ -2059,7 +1901,6 @@ pub unsafe fn GetFileVersionInfoA<'a, P0>(lptstrfilename: P0, dwhandle: u32, dwl
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFileVersionInfoA(lptstrfilename: ::windows::core::PCSTR, dwhandle: u32, dwlen: u32, lpdata: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -2072,7 +1913,6 @@ pub unsafe fn GetFileVersionInfoExA<'a, P0>(dwflags: GET_FILE_VERSION_INFO_FLAGS
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFileVersionInfoExA(dwflags: GET_FILE_VERSION_INFO_FLAGS, lpwstrfilename: ::windows::core::PCSTR, dwhandle: u32, dwlen: u32, lpdata: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -2085,7 +1925,6 @@ pub unsafe fn GetFileVersionInfoExW<'a, P0>(dwflags: GET_FILE_VERSION_INFO_FLAGS
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFileVersionInfoExW(dwflags: GET_FILE_VERSION_INFO_FLAGS, lpwstrfilename: ::windows::core::PCWSTR, dwhandle: u32, dwlen: u32, lpdata: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -2097,7 +1936,6 @@ pub unsafe fn GetFileVersionInfoSizeA<'a, P0>(lptstrfilename: P0, lpdwhandle: ::
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFileVersionInfoSizeA(lptstrfilename: ::windows::core::PCSTR, lpdwhandle: *mut u32) -> u32;
     }
@@ -2109,7 +1947,6 @@ pub unsafe fn GetFileVersionInfoSizeExA<'a, P0>(dwflags: GET_FILE_VERSION_INFO_F
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFileVersionInfoSizeExA(dwflags: GET_FILE_VERSION_INFO_FLAGS, lpwstrfilename: ::windows::core::PCSTR, lpdwhandle: *mut u32) -> u32;
     }
@@ -2121,7 +1958,6 @@ pub unsafe fn GetFileVersionInfoSizeExW<'a, P0>(dwflags: GET_FILE_VERSION_INFO_F
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFileVersionInfoSizeExW(dwflags: GET_FILE_VERSION_INFO_FLAGS, lpwstrfilename: ::windows::core::PCWSTR, lpdwhandle: *mut u32) -> u32;
     }
@@ -2133,7 +1969,6 @@ pub unsafe fn GetFileVersionInfoSizeW<'a, P0>(lptstrfilename: P0, lpdwhandle: ::
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFileVersionInfoSizeW(lptstrfilename: ::windows::core::PCWSTR, lpdwhandle: *mut u32) -> u32;
     }
@@ -2146,7 +1981,6 @@ pub unsafe fn GetFileVersionInfoW<'a, P0>(lptstrfilename: P0, dwhandle: u32, dwl
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFileVersionInfoW(lptstrfilename: ::windows::core::PCWSTR, dwhandle: u32, dwlen: u32, lpdata: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -2159,7 +1993,6 @@ pub unsafe fn GetFinalPathNameByHandleA<'a, P0>(hfile: P0, lpszfilepath: &mut [u
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFinalPathNameByHandleA(hfile: super::super::Foundation::HANDLE, lpszfilepath: ::windows::core::PSTR, cchfilepath: u32, dwflags: FILE_NAME) -> u32;
     }
@@ -2172,7 +2005,6 @@ pub unsafe fn GetFinalPathNameByHandleW<'a, P0>(hfile: P0, lpszfilepath: &mut [u
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFinalPathNameByHandleW(hfile: super::super::Foundation::HANDLE, lpszfilepath: ::windows::core::PWSTR, cchfilepath: u32, dwflags: FILE_NAME) -> u32;
     }
@@ -2184,7 +2016,6 @@ pub unsafe fn GetFullPathNameA<'a, P0>(lpfilename: P0, lpbuffer: ::core::option:
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFullPathNameA(lpfilename: ::windows::core::PCSTR, nbufferlength: u32, lpbuffer: ::windows::core::PSTR, lpfilepart: *mut ::windows::core::PSTR) -> u32;
     }
@@ -2198,7 +2029,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFullPathNameTransactedA(lpfilename: ::windows::core::PCSTR, nbufferlength: u32, lpbuffer: ::windows::core::PSTR, lpfilepart: *mut ::windows::core::PSTR, htransaction: super::super::Foundation::HANDLE) -> u32;
     }
@@ -2212,7 +2042,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFullPathNameTransactedW(lpfilename: ::windows::core::PCWSTR, nbufferlength: u32, lpbuffer: ::windows::core::PWSTR, lpfilepart: *mut ::windows::core::PWSTR, htransaction: super::super::Foundation::HANDLE) -> u32;
     }
@@ -2224,7 +2053,6 @@ pub unsafe fn GetFullPathNameW<'a, P0>(lpfilename: P0, lpbuffer: ::core::option:
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetFullPathNameW(lpfilename: ::windows::core::PCWSTR, nbufferlength: u32, lpbuffer: ::windows::core::PWSTR, lpfilepart: *mut ::windows::core::PWSTR) -> u32;
     }
@@ -2233,7 +2061,6 @@ where
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn GetIoRingInfo(ioring: *const HIORING__) -> ::windows::core::Result<IORING_INFO> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetIoRingInfo(ioring: *const HIORING__, info: *mut IORING_INFO) -> ::windows::core::HRESULT;
     }
@@ -2248,7 +2075,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetLogContainerName(hlog: super::super::Foundation::HANDLE, cidlogicalcontainer: u32, pwstrcontainername: ::windows::core::PCWSTR, clencontainername: u32, pcactuallencontainername: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -2261,7 +2087,6 @@ pub unsafe fn GetLogFileInformation<'a, P0>(hlog: P0, pinfobuffer: *mut CLS_INFO
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetLogFileInformation(hlog: super::super::Foundation::HANDLE, pinfobuffer: *mut CLS_INFORMATION, cbbuffer: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -2274,7 +2099,6 @@ pub unsafe fn GetLogIoStatistics<'a, P0>(hlog: P0, pvstatsbuffer: *mut ::core::f
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetLogIoStatistics(hlog: super::super::Foundation::HANDLE, pvstatsbuffer: *mut ::core::ffi::c_void, cbstatsbuffer: u32, estatsclass: CLFS_IOSTATS_CLASS, pcbstatswritten: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -2284,7 +2108,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetLogReservationInfo(pvmarshal: *const ::core::ffi::c_void, pcbrecordnumber: *mut u32, pcbuserreservation: *mut i64, pcbcommitreservation: *mut i64) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetLogReservationInfo(pvmarshal: *const ::core::ffi::c_void, pcbrecordnumber: *mut u32, pcbuserreservation: *mut i64, pcbcommitreservation: *mut i64) -> super::super::Foundation::BOOL;
     }
@@ -2293,7 +2116,6 @@ pub unsafe fn GetLogReservationInfo(pvmarshal: *const ::core::ffi::c_void, pcbre
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn GetLogicalDriveStringsA(lpbuffer: ::core::option::Option<&mut [u8]>) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetLogicalDriveStringsA(nbufferlength: u32, lpbuffer: ::windows::core::PSTR) -> u32;
     }
@@ -2302,7 +2124,6 @@ pub unsafe fn GetLogicalDriveStringsA(lpbuffer: ::core::option::Option<&mut [u8]
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn GetLogicalDriveStringsW(lpbuffer: ::core::option::Option<&mut [u16]>) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetLogicalDriveStringsW(nbufferlength: u32, lpbuffer: ::windows::core::PWSTR) -> u32;
     }
@@ -2311,7 +2132,6 @@ pub unsafe fn GetLogicalDriveStringsW(lpbuffer: ::core::option::Option<&mut [u16
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn GetLogicalDrives() -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetLogicalDrives() -> u32;
     }
@@ -2323,7 +2143,6 @@ pub unsafe fn GetLongPathNameA<'a, P0>(lpszshortpath: P0, lpszlongpath: ::core::
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetLongPathNameA(lpszshortpath: ::windows::core::PCSTR, lpszlongpath: ::windows::core::PSTR, cchbuffer: u32) -> u32;
     }
@@ -2337,7 +2156,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetLongPathNameTransactedA(lpszshortpath: ::windows::core::PCSTR, lpszlongpath: ::windows::core::PSTR, cchbuffer: u32, htransaction: super::super::Foundation::HANDLE) -> u32;
     }
@@ -2351,7 +2169,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetLongPathNameTransactedW(lpszshortpath: ::windows::core::PCWSTR, lpszlongpath: ::windows::core::PWSTR, cchbuffer: u32, htransaction: super::super::Foundation::HANDLE) -> u32;
     }
@@ -2363,7 +2180,6 @@ pub unsafe fn GetLongPathNameW<'a, P0>(lpszshortpath: P0, lpszlongpath: ::core::
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetLongPathNameW(lpszshortpath: ::windows::core::PCWSTR, lpszlongpath: ::windows::core::PWSTR, cchbuffer: u32) -> u32;
     }
@@ -2373,7 +2189,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn GetNextLogArchiveExtent(pvarchivecontext: *mut ::core::ffi::c_void, rgadextent: *mut CLS_ARCHIVE_DESCRIPTOR, cdescriptors: u32, pcdescriptorsreturned: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetNextLogArchiveExtent(pvarchivecontext: *mut ::core::ffi::c_void, rgadextent: *mut CLS_ARCHIVE_DESCRIPTOR, cdescriptors: u32, pcdescriptorsreturned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -2386,7 +2201,6 @@ pub unsafe fn GetNotificationResourceManager<'a, P0>(resourcemanagerhandle: P0, 
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetNotificationResourceManager(resourcemanagerhandle: super::super::Foundation::HANDLE, transactionnotification: *mut TRANSACTION_NOTIFICATION, notificationlength: u32, dwmilliseconds: u32, returnlength: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -2399,7 +2213,6 @@ pub unsafe fn GetNotificationResourceManagerAsync<'a, P0>(resourcemanagerhandle:
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetNotificationResourceManagerAsync(resourcemanagerhandle: super::super::Foundation::HANDLE, transactionnotification: *mut TRANSACTION_NOTIFICATION, transactionnotificationlength: u32, returnlength: *mut u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
     }
@@ -2411,7 +2224,6 @@ pub unsafe fn GetShortPathNameA<'a, P0>(lpszlongpath: P0, lpszshortpath: ::core:
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetShortPathNameA(lpszlongpath: ::windows::core::PCSTR, lpszshortpath: ::windows::core::PSTR, cchbuffer: u32) -> u32;
     }
@@ -2423,7 +2235,6 @@ pub unsafe fn GetShortPathNameW<'a, P0>(lpszlongpath: P0, lpszshortpath: ::core:
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetShortPathNameW(lpszlongpath: ::windows::core::PCWSTR, lpszshortpath: ::windows::core::PWSTR, cchbuffer: u32) -> u32;
     }
@@ -2436,7 +2247,6 @@ pub unsafe fn GetTapeParameters<'a, P0>(hdevice: P0, dwoperation: GET_TAPE_DRIVE
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetTapeParameters(hdevice: super::super::Foundation::HANDLE, dwoperation: GET_TAPE_DRIVE_PARAMETERS_OPERATION, lpdwsize: *mut u32, lptapeinformation: *mut ::core::ffi::c_void) -> u32;
     }
@@ -2449,7 +2259,6 @@ pub unsafe fn GetTapePosition<'a, P0>(hdevice: P0, dwpositiontype: TAPE_POSITION
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetTapePosition(hdevice: super::super::Foundation::HANDLE, dwpositiontype: TAPE_POSITION_TYPE, lpdwpartition: *mut u32, lpdwoffsetlow: *mut u32, lpdwoffsethigh: *mut u32) -> u32;
     }
@@ -2462,7 +2271,6 @@ pub unsafe fn GetTapeStatus<'a, P0>(hdevice: P0) -> u32
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetTapeStatus(hdevice: super::super::Foundation::HANDLE) -> u32;
     }
@@ -2475,7 +2283,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetTempFileNameA(lppathname: ::windows::core::PCSTR, lpprefixstring: ::windows::core::PCSTR, uunique: u32, lptempfilename: ::windows::core::PSTR) -> u32;
     }
@@ -2488,7 +2295,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetTempFileNameW(lppathname: ::windows::core::PCWSTR, lpprefixstring: ::windows::core::PCWSTR, uunique: u32, lptempfilename: ::windows::core::PWSTR) -> u32;
     }
@@ -2497,7 +2303,6 @@ where
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn GetTempPath2A(buffer: ::core::option::Option<&mut [u8]>) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetTempPath2A(bufferlength: u32, buffer: ::windows::core::PSTR) -> u32;
     }
@@ -2506,7 +2311,6 @@ pub unsafe fn GetTempPath2A(buffer: ::core::option::Option<&mut [u8]>) -> u32 {
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn GetTempPath2W(buffer: ::core::option::Option<&mut [u16]>) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetTempPath2W(bufferlength: u32, buffer: ::windows::core::PWSTR) -> u32;
     }
@@ -2515,7 +2319,6 @@ pub unsafe fn GetTempPath2W(buffer: ::core::option::Option<&mut [u16]>) -> u32 {
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn GetTempPathA(lpbuffer: ::core::option::Option<&mut [u8]>) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetTempPathA(nbufferlength: u32, lpbuffer: ::windows::core::PSTR) -> u32;
     }
@@ -2524,7 +2327,6 @@ pub unsafe fn GetTempPathA(lpbuffer: ::core::option::Option<&mut [u8]>) -> u32 {
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn GetTempPathW(lpbuffer: ::core::option::Option<&mut [u16]>) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetTempPathW(nbufferlength: u32, lpbuffer: ::windows::core::PWSTR) -> u32;
     }
@@ -2537,7 +2339,6 @@ pub unsafe fn GetTransactionId<'a, P0>(transactionhandle: P0, transactionid: *mu
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetTransactionId(transactionhandle: super::super::Foundation::HANDLE, transactionid: *mut ::windows::core::GUID) -> super::super::Foundation::BOOL;
     }
@@ -2550,7 +2351,6 @@ pub unsafe fn GetTransactionInformation<'a, P0>(transactionhandle: P0, outcome: 
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetTransactionInformation(transactionhandle: super::super::Foundation::HANDLE, outcome: *mut u32, isolationlevel: *mut u32, isolationflags: *mut u32, timeout: *mut u32, bufferlength: u32, description: ::windows::core::PWSTR) -> super::super::Foundation::BOOL;
     }
@@ -2563,7 +2363,6 @@ pub unsafe fn GetTransactionManagerId<'a, P0>(transactionmanagerhandle: P0, tran
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetTransactionManagerId(transactionmanagerhandle: super::super::Foundation::HANDLE, transactionmanagerid: *mut ::windows::core::GUID) -> super::super::Foundation::BOOL;
     }
@@ -2576,7 +2375,6 @@ pub unsafe fn GetVolumeInformationA<'a, P0>(lprootpathname: P0, lpvolumenamebuff
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetVolumeInformationA(lprootpathname: ::windows::core::PCSTR, lpvolumenamebuffer: ::windows::core::PSTR, nvolumenamesize: u32, lpvolumeserialnumber: *mut u32, lpmaximumcomponentlength: *mut u32, lpfilesystemflags: *mut u32, lpfilesystemnamebuffer: ::windows::core::PSTR, nfilesystemnamesize: u32) -> super::super::Foundation::BOOL;
     }
@@ -2598,7 +2396,6 @@ pub unsafe fn GetVolumeInformationByHandleW<'a, P0>(hfile: P0, lpvolumenamebuffe
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetVolumeInformationByHandleW(hfile: super::super::Foundation::HANDLE, lpvolumenamebuffer: ::windows::core::PWSTR, nvolumenamesize: u32, lpvolumeserialnumber: *mut u32, lpmaximumcomponentlength: *mut u32, lpfilesystemflags: *mut u32, lpfilesystemnamebuffer: ::windows::core::PWSTR, nfilesystemnamesize: u32) -> super::super::Foundation::BOOL;
     }
@@ -2620,7 +2417,6 @@ pub unsafe fn GetVolumeInformationW<'a, P0>(lprootpathname: P0, lpvolumenamebuff
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetVolumeInformationW(lprootpathname: ::windows::core::PCWSTR, lpvolumenamebuffer: ::windows::core::PWSTR, nvolumenamesize: u32, lpvolumeserialnumber: *mut u32, lpmaximumcomponentlength: *mut u32, lpfilesystemflags: *mut u32, lpfilesystemnamebuffer: ::windows::core::PWSTR, nfilesystemnamesize: u32) -> super::super::Foundation::BOOL;
     }
@@ -2642,7 +2438,6 @@ pub unsafe fn GetVolumeNameForVolumeMountPointA<'a, P0>(lpszvolumemountpoint: P0
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetVolumeNameForVolumeMountPointA(lpszvolumemountpoint: ::windows::core::PCSTR, lpszvolumename: ::windows::core::PSTR, cchbufferlength: u32) -> super::super::Foundation::BOOL;
     }
@@ -2655,7 +2450,6 @@ pub unsafe fn GetVolumeNameForVolumeMountPointW<'a, P0>(lpszvolumemountpoint: P0
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetVolumeNameForVolumeMountPointW(lpszvolumemountpoint: ::windows::core::PCWSTR, lpszvolumename: ::windows::core::PWSTR, cchbufferlength: u32) -> super::super::Foundation::BOOL;
     }
@@ -2668,7 +2462,6 @@ pub unsafe fn GetVolumePathNameA<'a, P0>(lpszfilename: P0, lpszvolumepathname: &
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetVolumePathNameA(lpszfilename: ::windows::core::PCSTR, lpszvolumepathname: ::windows::core::PSTR, cchbufferlength: u32) -> super::super::Foundation::BOOL;
     }
@@ -2681,7 +2474,6 @@ pub unsafe fn GetVolumePathNameW<'a, P0>(lpszfilename: P0, lpszvolumepathname: &
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetVolumePathNameW(lpszfilename: ::windows::core::PCWSTR, lpszvolumepathname: ::windows::core::PWSTR, cchbufferlength: u32) -> super::super::Foundation::BOOL;
     }
@@ -2694,7 +2486,6 @@ pub unsafe fn GetVolumePathNamesForVolumeNameA<'a, P0>(lpszvolumename: P0, lpszv
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetVolumePathNamesForVolumeNameA(lpszvolumename: ::windows::core::PCSTR, lpszvolumepathnames: ::windows::core::PSTR, cchbufferlength: u32, lpcchreturnlength: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -2707,7 +2498,6 @@ pub unsafe fn GetVolumePathNamesForVolumeNameW<'a, P0>(lpszvolumename: P0, lpszv
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetVolumePathNamesForVolumeNameW(lpszvolumename: ::windows::core::PCWSTR, lpszvolumepathnames: ::windows::core::PWSTR, cchbufferlength: u32, lpcchreturnlength: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -2720,7 +2510,6 @@ pub unsafe fn HandleLogFull<'a, P0>(hlog: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn HandleLogFull(hlog: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -2733,7 +2522,6 @@ pub unsafe fn InstallLogPolicy<'a, P0>(hlog: P0, ppolicy: *mut CLFS_MGMT_POLICY)
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn InstallLogPolicy(hlog: super::super::Foundation::HANDLE, ppolicy: *mut CLFS_MGMT_POLICY) -> super::super::Foundation::BOOL;
     }
@@ -2743,7 +2531,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn IsIoRingOpSupported(ioring: *const HIORING__, op: IORING_OP_CODE) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn IsIoRingOpSupported(ioring: *const HIORING__, op: IORING_OP_CODE) -> super::super::Foundation::BOOL;
     }
@@ -2752,7 +2539,6 @@ pub unsafe fn IsIoRingOpSupported(ioring: *const HIORING__, op: IORING_OP_CODE) 
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn LZClose(hfile: i32) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LZClose(hfile: i32);
     }
@@ -2761,7 +2547,6 @@ pub unsafe fn LZClose(hfile: i32) {
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn LZCopy(hfsource: i32, hfdest: i32) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LZCopy(hfsource: i32, hfdest: i32) -> i32;
     }
@@ -2770,7 +2555,6 @@ pub unsafe fn LZCopy(hfsource: i32, hfdest: i32) -> i32 {
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn LZDone() {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LZDone();
     }
@@ -2779,7 +2563,6 @@ pub unsafe fn LZDone() {
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn LZInit(hfsource: i32) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LZInit(hfsource: i32) -> i32;
     }
@@ -2792,7 +2575,6 @@ pub unsafe fn LZOpenFileA<'a, P0>(lpfilename: P0, lpreopenbuf: *mut OFSTRUCT, ws
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LZOpenFileA(lpfilename: ::windows::core::PCSTR, lpreopenbuf: *mut OFSTRUCT, wstyle: LZOPENFILE_STYLE) -> i32;
     }
@@ -2805,7 +2587,6 @@ pub unsafe fn LZOpenFileW<'a, P0>(lpfilename: P0, lpreopenbuf: *mut OFSTRUCT, ws
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LZOpenFileW(lpfilename: ::windows::core::PCWSTR, lpreopenbuf: *mut OFSTRUCT, wstyle: LZOPENFILE_STYLE) -> i32;
     }
@@ -2814,7 +2595,6 @@ where
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn LZRead(hfile: i32, lpbuffer: &mut [u8]) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LZRead(hfile: i32, lpbuffer: ::windows::core::PSTR, cbread: i32) -> i32;
     }
@@ -2823,7 +2603,6 @@ pub unsafe fn LZRead(hfile: i32, lpbuffer: &mut [u8]) -> i32 {
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn LZSeek(hfile: i32, loffset: i32, iorigin: i32) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LZSeek(hfile: i32, loffset: i32, iorigin: i32) -> i32;
     }
@@ -2832,7 +2611,6 @@ pub unsafe fn LZSeek(hfile: i32, loffset: i32, iorigin: i32) -> i32 {
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn LZStart() -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LZStart() -> i32;
     }
@@ -2842,7 +2620,6 @@ pub unsafe fn LZStart() -> i32 {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn LocalFileTimeToFileTime(lplocalfiletime: *const super::super::Foundation::FILETIME, lpfiletime: *mut super::super::Foundation::FILETIME) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LocalFileTimeToFileTime(lplocalfiletime: *const super::super::Foundation::FILETIME, lpfiletime: *mut super::super::Foundation::FILETIME) -> super::super::Foundation::BOOL;
     }
@@ -2855,7 +2632,6 @@ pub unsafe fn LockFile<'a, P0>(hfile: P0, dwfileoffsetlow: u32, dwfileoffsethigh
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LockFile(hfile: super::super::Foundation::HANDLE, dwfileoffsetlow: u32, dwfileoffsethigh: u32, nnumberofbytestolocklow: u32, nnumberofbytestolockhigh: u32) -> super::super::Foundation::BOOL;
     }
@@ -2868,7 +2644,6 @@ pub unsafe fn LockFileEx<'a, P0>(hfile: P0, dwflags: LOCK_FILE_FLAGS, dwreserved
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LockFileEx(hfile: super::super::Foundation::HANDLE, dwflags: LOCK_FILE_FLAGS, dwreserved: u32, nnumberofbytestolocklow: u32, nnumberofbytestolockhigh: u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
     }
@@ -2881,7 +2656,6 @@ pub unsafe fn LogTailAdvanceFailure<'a, P0>(hlog: P0, dwreason: u32) -> super::s
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LogTailAdvanceFailure(hlog: super::super::Foundation::HANDLE, dwreason: u32) -> super::super::Foundation::BOOL;
     }
@@ -2890,7 +2664,6 @@ where
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn LsnBlockOffset(plsn: *const CLS_LSN) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LsnBlockOffset(plsn: *const CLS_LSN) -> u32;
     }
@@ -2899,7 +2672,6 @@ pub unsafe fn LsnBlockOffset(plsn: *const CLS_LSN) -> u32 {
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn LsnContainer(plsn: *const CLS_LSN) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LsnContainer(plsn: *const CLS_LSN) -> u32;
     }
@@ -2908,7 +2680,6 @@ pub unsafe fn LsnContainer(plsn: *const CLS_LSN) -> u32 {
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn LsnCreate(cidcontainer: u32, offblock: u32, crecord: u32) -> CLS_LSN {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LsnCreate(cidcontainer: u32, offblock: u32, crecord: u32) -> CLS_LSN;
     }
@@ -2918,7 +2689,6 @@ pub unsafe fn LsnCreate(cidcontainer: u32, offblock: u32, crecord: u32) -> CLS_L
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn LsnEqual(plsn1: *const CLS_LSN, plsn2: *const CLS_LSN) -> super::super::Foundation::BOOLEAN {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LsnEqual(plsn1: *const CLS_LSN, plsn2: *const CLS_LSN) -> super::super::Foundation::BOOLEAN;
     }
@@ -2928,7 +2698,6 @@ pub unsafe fn LsnEqual(plsn1: *const CLS_LSN, plsn2: *const CLS_LSN) -> super::s
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn LsnGreater(plsn1: *const CLS_LSN, plsn2: *const CLS_LSN) -> super::super::Foundation::BOOLEAN {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LsnGreater(plsn1: *const CLS_LSN, plsn2: *const CLS_LSN) -> super::super::Foundation::BOOLEAN;
     }
@@ -2937,7 +2706,6 @@ pub unsafe fn LsnGreater(plsn1: *const CLS_LSN, plsn2: *const CLS_LSN) -> super:
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn LsnIncrement(plsn: *const CLS_LSN) -> CLS_LSN {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LsnIncrement(plsn: *const CLS_LSN) -> CLS_LSN;
     }
@@ -2947,7 +2715,6 @@ pub unsafe fn LsnIncrement(plsn: *const CLS_LSN) -> CLS_LSN {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn LsnInvalid(plsn: *const CLS_LSN) -> super::super::Foundation::BOOLEAN {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LsnInvalid(plsn: *const CLS_LSN) -> super::super::Foundation::BOOLEAN;
     }
@@ -2957,7 +2724,6 @@ pub unsafe fn LsnInvalid(plsn: *const CLS_LSN) -> super::super::Foundation::BOOL
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn LsnLess(plsn1: *const CLS_LSN, plsn2: *const CLS_LSN) -> super::super::Foundation::BOOLEAN {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LsnLess(plsn1: *const CLS_LSN, plsn2: *const CLS_LSN) -> super::super::Foundation::BOOLEAN;
     }
@@ -2967,7 +2733,6 @@ pub unsafe fn LsnLess(plsn1: *const CLS_LSN, plsn2: *const CLS_LSN) -> super::su
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn LsnNull(plsn: *const CLS_LSN) -> super::super::Foundation::BOOLEAN {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LsnNull(plsn: *const CLS_LSN) -> super::super::Foundation::BOOLEAN;
     }
@@ -2976,7 +2741,6 @@ pub unsafe fn LsnNull(plsn: *const CLS_LSN) -> super::super::Foundation::BOOLEAN
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn LsnRecordSequence(plsn: *const CLS_LSN) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn LsnRecordSequence(plsn: *const CLS_LSN) -> u32;
     }
@@ -2990,7 +2754,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MoveFileA(lpexistingfilename: ::windows::core::PCSTR, lpnewfilename: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -3004,7 +2767,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MoveFileExA(lpexistingfilename: ::windows::core::PCSTR, lpnewfilename: ::windows::core::PCSTR, dwflags: MOVE_FILE_FLAGS) -> super::super::Foundation::BOOL;
     }
@@ -3018,7 +2780,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MoveFileExW(lpexistingfilename: ::windows::core::PCWSTR, lpnewfilename: ::windows::core::PCWSTR, dwflags: MOVE_FILE_FLAGS) -> super::super::Foundation::BOOL;
     }
@@ -3032,7 +2793,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MoveFileFromAppW(lpexistingfilename: ::windows::core::PCWSTR, lpnewfilename: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -3047,7 +2807,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MoveFileTransactedA(lpexistingfilename: ::windows::core::PCSTR, lpnewfilename: ::windows::core::PCSTR, lpprogressroutine: *mut ::core::ffi::c_void, lpdata: *const ::core::ffi::c_void, dwflags: MOVE_FILE_FLAGS, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -3062,7 +2821,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MoveFileTransactedW(lpexistingfilename: ::windows::core::PCWSTR, lpnewfilename: ::windows::core::PCWSTR, lpprogressroutine: *mut ::core::ffi::c_void, lpdata: *const ::core::ffi::c_void, dwflags: MOVE_FILE_FLAGS, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -3076,7 +2834,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MoveFileW(lpexistingfilename: ::windows::core::PCWSTR, lpnewfilename: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -3090,7 +2847,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MoveFileWithProgressA(lpexistingfilename: ::windows::core::PCSTR, lpnewfilename: ::windows::core::PCSTR, lpprogressroutine: *mut ::core::ffi::c_void, lpdata: *const ::core::ffi::c_void, dwflags: MOVE_FILE_FLAGS) -> super::super::Foundation::BOOL;
     }
@@ -3104,7 +2860,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MoveFileWithProgressW(lpexistingfilename: ::windows::core::PCWSTR, lpnewfilename: ::windows::core::PCWSTR, lpprogressroutine: *mut ::core::ffi::c_void, lpdata: *const ::core::ffi::c_void, dwflags: MOVE_FILE_FLAGS) -> super::super::Foundation::BOOL;
     }
@@ -3117,7 +2872,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NetConnectionEnum(servername: ::windows::core::PCWSTR, qualifier: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
     }
@@ -3129,7 +2883,6 @@ pub unsafe fn NetFileClose<'a, P0>(servername: P0, fileid: u32) -> u32
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NetFileClose(servername: ::windows::core::PCWSTR, fileid: u32) -> u32;
     }
@@ -3143,7 +2896,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NetFileEnum(servername: ::windows::core::PCWSTR, basepath: ::windows::core::PCWSTR, username: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut usize) -> u32;
     }
@@ -3155,7 +2907,6 @@ pub unsafe fn NetFileGetInfo<'a, P0>(servername: P0, fileid: u32, level: u32, bu
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NetFileGetInfo(servername: ::windows::core::PCWSTR, fileid: u32, level: u32, bufptr: *mut *mut u8) -> u32;
     }
@@ -3167,7 +2918,6 @@ pub unsafe fn NetServerAliasAdd<'a, P0>(servername: P0, level: u32, buf: *const 
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NetServerAliasAdd(servername: ::windows::core::PCWSTR, level: u32, buf: *const u8) -> u32;
     }
@@ -3179,7 +2929,6 @@ pub unsafe fn NetServerAliasDel<'a, P0>(servername: P0, level: u32, buf: *const 
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NetServerAliasDel(servername: ::windows::core::PCWSTR, level: u32, buf: *const u8) -> u32;
     }
@@ -3191,7 +2940,6 @@ pub unsafe fn NetServerAliasEnum<'a, P0>(servername: P0, level: u32, bufptr: *mu
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NetServerAliasEnum(servername: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32;
     }
@@ -3205,7 +2953,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NetSessionDel(servername: ::windows::core::PCWSTR, uncclientname: ::windows::core::PCWSTR, username: ::windows::core::PCWSTR) -> u32;
     }
@@ -3219,7 +2966,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NetSessionEnum(servername: ::windows::core::PCWSTR, uncclientname: ::windows::core::PCWSTR, username: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
     }
@@ -3233,7 +2979,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NetSessionGetInfo(servername: ::windows::core::PCWSTR, uncclientname: ::windows::core::PCWSTR, username: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
     }
@@ -3245,7 +2990,6 @@ pub unsafe fn NetShareAdd<'a, P0>(servername: P0, level: u32, buf: *const u8, pa
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NetShareAdd(servername: ::windows::core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
     }
@@ -3258,7 +3002,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NetShareCheck(servername: ::windows::core::PCWSTR, device: ::windows::core::PCWSTR, r#type: *mut u32) -> u32;
     }
@@ -3271,7 +3014,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NetShareDel(servername: ::windows::core::PCWSTR, netname: ::windows::core::PCWSTR, reserved: u32) -> u32;
     }
@@ -3283,7 +3025,6 @@ pub unsafe fn NetShareDelEx<'a, P0>(servername: P0, level: u32, buf: *const u8) 
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NetShareDelEx(servername: ::windows::core::PCWSTR, level: u32, buf: *const u8) -> u32;
     }
@@ -3296,7 +3037,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NetShareDelSticky(servername: ::windows::core::PCWSTR, netname: ::windows::core::PCWSTR, reserved: u32) -> u32;
     }
@@ -3308,7 +3048,6 @@ pub unsafe fn NetShareEnum<'a, P0>(servername: P0, level: u32, bufptr: *mut *mut
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NetShareEnum(servername: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
     }
@@ -3320,7 +3059,6 @@ pub unsafe fn NetShareEnumSticky<'a, P0>(servername: P0, level: u32, bufptr: *mu
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NetShareEnumSticky(servername: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
     }
@@ -3333,7 +3071,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NetShareGetInfo(servername: ::windows::core::PCWSTR, netname: ::windows::core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
     }
@@ -3346,7 +3083,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NetShareSetInfo(servername: ::windows::core::PCWSTR, netname: ::windows::core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
     }
@@ -3355,7 +3091,6 @@ where
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn NetStatisticsGet(servername: *const i8, service: *const i8, level: u32, options: u32, buffer: *mut *mut u8) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NetStatisticsGet(servername: *const i8, service: *const i8, level: u32, options: u32, buffer: *mut *mut u8) -> u32;
     }
@@ -3365,7 +3100,6 @@ pub unsafe fn NetStatisticsGet(servername: *const i8, service: *const i8, level:
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_WindowsProgramming"))]
 #[inline]
 pub unsafe fn NtCreateFile(filehandle: *mut super::super::Foundation::HANDLE, desiredaccess: u32, objectattributes: *mut super::super::System::WindowsProgramming::OBJECT_ATTRIBUTES, iostatusblock: *mut super::super::System::WindowsProgramming::IO_STATUS_BLOCK, allocationsize: *mut i64, fileattributes: u32, shareaccess: FILE_SHARE_MODE, createdisposition: NT_CREATE_FILE_DISPOSITION, createoptions: u32, eabuffer: *mut ::core::ffi::c_void, ealength: u32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn NtCreateFile(filehandle: *mut super::super::Foundation::HANDLE, desiredaccess: u32, objectattributes: *mut super::super::System::WindowsProgramming::OBJECT_ATTRIBUTES, iostatusblock: *mut super::super::System::WindowsProgramming::IO_STATUS_BLOCK, allocationsize: *mut i64, fileattributes: u32, shareaccess: FILE_SHARE_MODE, createdisposition: NT_CREATE_FILE_DISPOSITION, createoptions: u32, eabuffer: *mut ::core::ffi::c_void, ealength: u32) -> super::super::Foundation::NTSTATUS;
     }
@@ -3377,7 +3111,6 @@ pub unsafe fn OpenEncryptedFileRawA<'a, P0>(lpfilename: P0, ulflags: u32, pvcont
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenEncryptedFileRawA(lpfilename: ::windows::core::PCSTR, ulflags: u32, pvcontext: *mut *mut ::core::ffi::c_void) -> u32;
     }
@@ -3389,7 +3122,6 @@ pub unsafe fn OpenEncryptedFileRawW<'a, P0>(lpfilename: P0, ulflags: u32, pvcont
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenEncryptedFileRawW(lpfilename: ::windows::core::PCWSTR, ulflags: u32, pvcontext: *mut *mut ::core::ffi::c_void) -> u32;
     }
@@ -3402,7 +3134,6 @@ pub unsafe fn OpenEnlistment<'a, P0>(dwdesiredaccess: u32, resourcemanagerhandle
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenEnlistment(dwdesiredaccess: u32, resourcemanagerhandle: super::super::Foundation::HANDLE, enlistmentid: *mut ::windows::core::GUID) -> super::super::Foundation::HANDLE;
     }
@@ -3416,7 +3147,6 @@ pub unsafe fn OpenFile<'a, P0>(lpfilename: P0, lpreopenbuff: *mut OFSTRUCT, usty
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenFile(lpfilename: ::windows::core::PCSTR, lpreopenbuff: *mut OFSTRUCT, ustyle: u32) -> i32;
     }
@@ -3429,7 +3159,6 @@ pub unsafe fn OpenFileById<'a, P0>(hvolumehint: P0, lpfileid: *const FILE_ID_DES
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenFileById(hvolumehint: super::super::Foundation::HANDLE, lpfileid: *const FILE_ID_DESCRIPTOR, dwdesiredaccess: FILE_ACCESS_FLAGS, dwsharemode: FILE_SHARE_MODE, lpsecurityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, dwflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES) -> super::super::Foundation::HANDLE;
     }
@@ -3443,7 +3172,6 @@ pub unsafe fn OpenResourceManager<'a, P0>(dwdesiredaccess: u32, tmhandle: P0, re
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenResourceManager(dwdesiredaccess: u32, tmhandle: super::super::Foundation::HANDLE, resourcemanagerid: *mut ::windows::core::GUID) -> super::super::Foundation::HANDLE;
     }
@@ -3454,7 +3182,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn OpenTransaction(dwdesiredaccess: u32, transactionid: *mut ::windows::core::GUID) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenTransaction(dwdesiredaccess: u32, transactionid: *mut ::windows::core::GUID) -> super::super::Foundation::HANDLE;
     }
@@ -3468,7 +3195,6 @@ pub unsafe fn OpenTransactionManager<'a, P0>(logfilename: P0, desiredaccess: u32
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenTransactionManager(logfilename: ::windows::core::PCWSTR, desiredaccess: u32, openoptions: u32) -> super::super::Foundation::HANDLE;
     }
@@ -3479,7 +3205,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn OpenTransactionManagerById(transactionmanagerid: *const ::windows::core::GUID, desiredaccess: u32, openoptions: u32) -> ::windows::core::Result<super::super::Foundation::HANDLE> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn OpenTransactionManagerById(transactionmanagerid: *const ::windows::core::GUID, desiredaccess: u32, openoptions: u32) -> super::super::Foundation::HANDLE;
     }
@@ -3489,7 +3214,6 @@ pub unsafe fn OpenTransactionManagerById(transactionmanagerid: *const ::windows:
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn PopIoRingCompletion(ioring: *const HIORING__) -> ::windows::core::Result<IORING_CQE> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PopIoRingCompletion(ioring: *const HIORING__, cqe: *mut IORING_CQE) -> ::windows::core::HRESULT;
     }
@@ -3503,7 +3227,6 @@ pub unsafe fn PrePrepareComplete<'a, P0>(enlistmenthandle: P0, tmvirtualclock: *
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PrePrepareComplete(enlistmenthandle: super::super::Foundation::HANDLE, tmvirtualclock: *mut i64) -> super::super::Foundation::BOOL;
     }
@@ -3516,7 +3239,6 @@ pub unsafe fn PrePrepareEnlistment<'a, P0>(enlistmenthandle: P0, tmvirtualclock:
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PrePrepareEnlistment(enlistmenthandle: super::super::Foundation::HANDLE, tmvirtualclock: *mut i64) -> super::super::Foundation::BOOL;
     }
@@ -3529,7 +3251,6 @@ pub unsafe fn PrepareComplete<'a, P0>(enlistmenthandle: P0, tmvirtualclock: *mut
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PrepareComplete(enlistmenthandle: super::super::Foundation::HANDLE, tmvirtualclock: *mut i64) -> super::super::Foundation::BOOL;
     }
@@ -3542,7 +3263,6 @@ pub unsafe fn PrepareEnlistment<'a, P0>(enlistmenthandle: P0, tmvirtualclock: *m
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PrepareEnlistment(enlistmenthandle: super::super::Foundation::HANDLE, tmvirtualclock: *mut i64) -> super::super::Foundation::BOOL;
     }
@@ -3555,7 +3275,6 @@ pub unsafe fn PrepareLogArchive<'a, P0>(hlog: P0, pszbaselogfilename: &mut [u16]
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PrepareLogArchive(hlog: super::super::Foundation::HANDLE, pszbaselogfilename: ::windows::core::PWSTR, clen: u32, plsnlow: *const CLS_LSN, plsnhigh: *const CLS_LSN, pcactuallength: *mut u32, poffbaselogfiledata: *mut u64, pcbbaselogfilelength: *mut u64, plsnbase: *mut CLS_LSN, plsnlast: *mut CLS_LSN, plsncurrentarchivetail: *mut CLS_LSN, ppvarchivecontext: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -3582,7 +3301,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn PrepareTape(hdevice: super::super::Foundation::HANDLE, dwoperation: PREPARE_TAPE_OPERATION, bimmediate: super::super::Foundation::BOOL) -> u32;
     }
@@ -3594,7 +3312,6 @@ pub unsafe fn QueryDosDeviceA<'a, P0>(lpdevicename: P0, lptargetpath: ::core::op
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn QueryDosDeviceA(lpdevicename: ::windows::core::PCSTR, lptargetpath: ::windows::core::PSTR, ucchmax: u32) -> u32;
     }
@@ -3606,7 +3323,6 @@ pub unsafe fn QueryDosDeviceW<'a, P0>(lpdevicename: P0, lptargetpath: ::core::op
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn QueryDosDeviceW(lpdevicename: ::windows::core::PCWSTR, lptargetpath: ::windows::core::PWSTR, ucchmax: u32) -> u32;
     }
@@ -3615,7 +3331,6 @@ where
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn QueryIoRingCapabilities() -> ::windows::core::Result<IORING_CAPABILITIES> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn QueryIoRingCapabilities(capabilities: *mut IORING_CAPABILITIES) -> ::windows::core::HRESULT;
     }
@@ -3629,7 +3344,6 @@ pub unsafe fn QueryLogPolicy<'a, P0>(hlog: P0, epolicytype: CLFS_MGMT_POLICY_TYP
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn QueryLogPolicy(hlog: super::super::Foundation::HANDLE, epolicytype: CLFS_MGMT_POLICY_TYPE, ppolicybuffer: *mut CLFS_MGMT_POLICY, pcbpolicybuffer: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -3642,7 +3356,6 @@ pub unsafe fn QueryRecoveryAgentsOnEncryptedFile<'a, P0>(lpfilename: P0, precove
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn QueryRecoveryAgentsOnEncryptedFile(lpfilename: ::windows::core::PCWSTR, precoveryagents: *mut *mut ENCRYPTION_CERTIFICATE_HASH_LIST) -> u32;
     }
@@ -3655,7 +3368,6 @@ pub unsafe fn QueryUsersOnEncryptedFile<'a, P0>(lpfilename: P0, pusers: *mut *mu
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn QueryUsersOnEncryptedFile(lpfilename: ::windows::core::PCWSTR, pusers: *mut *mut ENCRYPTION_CERTIFICATE_HASH_LIST) -> u32;
     }
@@ -3668,7 +3380,6 @@ pub unsafe fn ReOpenFile<'a, P0>(horiginalfile: P0, dwdesiredaccess: FILE_ACCESS
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReOpenFile(horiginalfile: super::super::Foundation::HANDLE, dwdesiredaccess: FILE_ACCESS_FLAGS, dwsharemode: FILE_SHARE_MODE, dwflagsandattributes: FILE_FLAGS_AND_ATTRIBUTES) -> super::super::Foundation::HANDLE;
     }
@@ -3683,7 +3394,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReadDirectoryChangesExW(hdirectory: super::super::Foundation::HANDLE, lpbuffer: *mut ::core::ffi::c_void, nbufferlength: u32, bwatchsubtree: super::super::Foundation::BOOL, dwnotifyfilter: FILE_NOTIFY_CHANGE, lpbytesreturned: *mut u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED, lpcompletionroutine: *mut ::core::ffi::c_void, readdirectorynotifyinformationclass: READ_DIRECTORY_NOTIFY_INFORMATION_CLASS) -> super::super::Foundation::BOOL;
     }
@@ -3697,7 +3407,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReadDirectoryChangesW(hdirectory: super::super::Foundation::HANDLE, lpbuffer: *mut ::core::ffi::c_void, nbufferlength: u32, bwatchsubtree: super::super::Foundation::BOOL, dwnotifyfilter: FILE_NOTIFY_CHANGE, lpbytesreturned: *mut u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED, lpcompletionroutine: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -3706,7 +3415,6 @@ where
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn ReadEncryptedFileRaw(pfexportcallback: PFE_EXPORT_FUNC, pvcallbackcontext: ::core::option::Option<*const ::core::ffi::c_void>, pvcontext: *const ::core::ffi::c_void) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReadEncryptedFileRaw(pfexportcallback: *mut ::core::ffi::c_void, pvcallbackcontext: *const ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> u32;
     }
@@ -3719,7 +3427,6 @@ pub unsafe fn ReadFile<'a, P0>(hfile: P0, lpbuffer: ::core::option::Option<*mut 
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReadFile(hfile: super::super::Foundation::HANDLE, lpbuffer: *mut ::core::ffi::c_void, nnumberofbytestoread: u32, lpnumberofbytesread: *mut u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
     }
@@ -3732,7 +3439,6 @@ pub unsafe fn ReadFileEx<'a, P0>(hfile: P0, lpbuffer: ::core::option::Option<*mu
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReadFileEx(hfile: super::super::Foundation::HANDLE, lpbuffer: *mut ::core::ffi::c_void, nnumberofbytestoread: u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED, lpcompletionroutine: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -3745,7 +3451,6 @@ pub unsafe fn ReadFileScatter<'a, P0>(hfile: P0, asegmentarray: *const FILE_SEGM
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReadFileScatter(hfile: super::super::Foundation::HANDLE, asegmentarray: *const FILE_SEGMENT_ELEMENT, nnumberofbytestoread: u32, lpreserved: *mut u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
     }
@@ -3755,7 +3460,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ReadLogArchiveMetadata(pvarchivecontext: *mut ::core::ffi::c_void, cboffset: u32, cbbytestoread: u32, pbreadbuffer: *mut u8, pcbbytesread: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReadLogArchiveMetadata(pvarchivecontext: *mut ::core::ffi::c_void, cboffset: u32, cbbytestoread: u32, pbreadbuffer: *mut u8, pcbbytesread: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -3768,7 +3472,6 @@ pub unsafe fn ReadLogNotification<'a, P0>(hlog: P0, pnotification: *mut CLFS_MGM
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReadLogNotification(hlog: super::super::Foundation::HANDLE, pnotification: *mut CLFS_MGMT_NOTIFICATION, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
     }
@@ -3778,7 +3481,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
 pub unsafe fn ReadLogRecord(pvmarshal: *mut ::core::ffi::c_void, plsnfirst: *mut CLS_LSN, econtextmode: CLFS_CONTEXT_MODE, ppvreadbuffer: *mut *mut ::core::ffi::c_void, pcbreadbuffer: *mut u32, perecordtype: *mut u8, plsnundonext: *mut CLS_LSN, plsnprevious: *mut CLS_LSN, ppvreadcontext: *mut *mut ::core::ffi::c_void, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReadLogRecord(pvmarshal: *mut ::core::ffi::c_void, plsnfirst: *mut CLS_LSN, econtextmode: CLFS_CONTEXT_MODE, ppvreadbuffer: *mut *mut ::core::ffi::c_void, pcbreadbuffer: *mut u32, perecordtype: *mut u8, plsnundonext: *mut CLS_LSN, plsnprevious: *mut CLS_LSN, ppvreadcontext: *mut *mut ::core::ffi::c_void, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
     }
@@ -3788,7 +3490,6 @@ pub unsafe fn ReadLogRecord(pvmarshal: *mut ::core::ffi::c_void, plsnfirst: *mut
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
 pub unsafe fn ReadLogRestartArea(pvmarshal: *mut ::core::ffi::c_void, ppvrestartbuffer: *mut *mut ::core::ffi::c_void, pcbrestartbuffer: *mut u32, plsn: *mut CLS_LSN, ppvcontext: *mut *mut ::core::ffi::c_void, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReadLogRestartArea(pvmarshal: *mut ::core::ffi::c_void, ppvrestartbuffer: *mut *mut ::core::ffi::c_void, pcbrestartbuffer: *mut u32, plsn: *mut CLS_LSN, ppvcontext: *mut *mut ::core::ffi::c_void, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
     }
@@ -3798,7 +3499,6 @@ pub unsafe fn ReadLogRestartArea(pvmarshal: *mut ::core::ffi::c_void, ppvrestart
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
 pub unsafe fn ReadNextLogRecord(pvreadcontext: *mut ::core::ffi::c_void, ppvbuffer: *mut *mut ::core::ffi::c_void, pcbbuffer: *mut u32, perecordtype: *mut u8, plsnuser: *mut CLS_LSN, plsnundonext: *mut CLS_LSN, plsnprevious: *mut CLS_LSN, plsnrecord: *mut CLS_LSN, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReadNextLogRecord(pvreadcontext: *mut ::core::ffi::c_void, ppvbuffer: *mut *mut ::core::ffi::c_void, pcbbuffer: *mut u32, perecordtype: *mut u8, plsnuser: *mut CLS_LSN, plsnundonext: *mut CLS_LSN, plsnprevious: *mut CLS_LSN, plsnrecord: *mut CLS_LSN, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
     }
@@ -3811,7 +3511,6 @@ pub unsafe fn ReadOnlyEnlistment<'a, P0>(enlistmenthandle: P0, tmvirtualclock: *
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReadOnlyEnlistment(enlistmenthandle: super::super::Foundation::HANDLE, tmvirtualclock: *mut i64) -> super::super::Foundation::BOOL;
     }
@@ -3821,7 +3520,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
 pub unsafe fn ReadPreviousLogRestartArea(pvreadcontext: *mut ::core::ffi::c_void, ppvrestartbuffer: *mut *mut ::core::ffi::c_void, pcbrestartbuffer: *mut u32, plsnrestart: *mut CLS_LSN, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReadPreviousLogRestartArea(pvreadcontext: *mut ::core::ffi::c_void, ppvrestartbuffer: *mut *mut ::core::ffi::c_void, pcbrestartbuffer: *mut u32, plsnrestart: *mut CLS_LSN, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
     }
@@ -3834,7 +3532,6 @@ pub unsafe fn RecoverEnlistment<'a, P0>(enlistmenthandle: P0, enlistmentkey: *mu
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RecoverEnlistment(enlistmenthandle: super::super::Foundation::HANDLE, enlistmentkey: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -3847,7 +3544,6 @@ pub unsafe fn RecoverResourceManager<'a, P0>(resourcemanagerhandle: P0) -> super
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RecoverResourceManager(resourcemanagerhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -3860,7 +3556,6 @@ pub unsafe fn RecoverTransactionManager<'a, P0>(transactionmanagerhandle: P0) ->
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RecoverTransactionManager(transactionmanagerhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -3874,7 +3569,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterForLogWriteNotification(hlog: super::super::Foundation::HANDLE, cbthreshold: u32, fenable: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     }
@@ -3887,7 +3581,6 @@ pub unsafe fn RegisterManageableLogClient<'a, P0>(hlog: P0, pcallbacks: *mut LOG
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RegisterManageableLogClient(hlog: super::super::Foundation::HANDLE, pcallbacks: *mut LOG_MANAGEMENT_CALLBACKS) -> super::super::Foundation::BOOL;
     }
@@ -3900,7 +3593,6 @@ pub unsafe fn RemoveDirectoryA<'a, P0>(lppathname: P0) -> super::super::Foundati
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RemoveDirectoryA(lppathname: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -3913,7 +3605,6 @@ pub unsafe fn RemoveDirectoryFromAppW<'a, P0>(lppathname: P0) -> super::super::F
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RemoveDirectoryFromAppW(lppathname: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -3927,7 +3618,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RemoveDirectoryTransactedA(lppathname: ::windows::core::PCSTR, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -3941,7 +3631,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RemoveDirectoryTransactedW(lppathname: ::windows::core::PCWSTR, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -3954,7 +3643,6 @@ pub unsafe fn RemoveDirectoryW<'a, P0>(lppathname: P0) -> super::super::Foundati
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RemoveDirectoryW(lppathname: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -3969,7 +3657,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RemoveLogContainer(hlog: super::super::Foundation::HANDLE, pwszcontainerpath: ::windows::core::PCWSTR, fforce: super::super::Foundation::BOOL, preserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -3983,7 +3670,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RemoveLogContainerSet(hlog: super::super::Foundation::HANDLE, ccontainer: u16, rgwszcontainerpath: *const ::windows::core::PWSTR, fforce: super::super::Foundation::BOOL, preserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -3996,7 +3682,6 @@ pub unsafe fn RemoveLogPolicy<'a, P0>(hlog: P0, epolicytype: CLFS_MGMT_POLICY_TY
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RemoveLogPolicy(hlog: super::super::Foundation::HANDLE, epolicytype: CLFS_MGMT_POLICY_TYPE) -> super::super::Foundation::BOOL;
     }
@@ -4009,7 +3694,6 @@ pub unsafe fn RemoveUsersFromEncryptedFile<'a, P0>(lpfilename: P0, phashes: *con
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RemoveUsersFromEncryptedFile(lpfilename: ::windows::core::PCWSTR, phashes: *const ENCRYPTION_CERTIFICATE_HASH_LIST) -> u32;
     }
@@ -4022,7 +3706,6 @@ pub unsafe fn RenameTransactionManager<'a, P0>(logfilename: P0, existingtransact
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RenameTransactionManager(logfilename: ::windows::core::PCWSTR, existingtransactionmanagerguid: *mut ::windows::core::GUID) -> super::super::Foundation::BOOL;
     }
@@ -4037,7 +3720,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReplaceFileA(lpreplacedfilename: ::windows::core::PCSTR, lpreplacementfilename: ::windows::core::PCSTR, lpbackupfilename: ::windows::core::PCSTR, dwreplaceflags: REPLACE_FILE_FLAGS, lpexclude: *mut ::core::ffi::c_void, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -4052,7 +3734,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReplaceFileFromAppW(lpreplacedfilename: ::windows::core::PCWSTR, lpreplacementfilename: ::windows::core::PCWSTR, lpbackupfilename: ::windows::core::PCWSTR, dwreplaceflags: u32, lpexclude: *mut ::core::ffi::c_void, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -4067,7 +3748,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReplaceFileW(lpreplacedfilename: ::windows::core::PCWSTR, lpreplacementfilename: ::windows::core::PCWSTR, lpbackupfilename: ::windows::core::PCWSTR, dwreplaceflags: REPLACE_FILE_FLAGS, lpexclude: *mut ::core::ffi::c_void, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -4077,7 +3757,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
 pub unsafe fn ReserveAndAppendLog(pvmarshal: *mut ::core::ffi::c_void, rgwriteentries: *mut CLS_WRITE_ENTRY, cwriteentries: u32, plsnundonext: *mut CLS_LSN, plsnprevious: *mut CLS_LSN, creserverecords: u32, rgcbreservation: *mut i64, fflags: CLFS_FLAG, plsn: *mut CLS_LSN, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReserveAndAppendLog(pvmarshal: *mut ::core::ffi::c_void, rgwriteentries: *mut CLS_WRITE_ENTRY, cwriteentries: u32, plsnundonext: *mut CLS_LSN, plsnprevious: *mut CLS_LSN, creserverecords: u32, rgcbreservation: *mut i64, fflags: CLFS_FLAG, plsn: *mut CLS_LSN, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
     }
@@ -4087,7 +3766,6 @@ pub unsafe fn ReserveAndAppendLog(pvmarshal: *mut ::core::ffi::c_void, rgwriteen
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
 pub unsafe fn ReserveAndAppendLogAligned(pvmarshal: *mut ::core::ffi::c_void, rgwriteentries: *mut CLS_WRITE_ENTRY, cwriteentries: u32, cbentryalignment: u32, plsnundonext: *mut CLS_LSN, plsnprevious: *mut CLS_LSN, creserverecords: u32, rgcbreservation: *mut i64, fflags: CLFS_FLAG, plsn: *mut CLS_LSN, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ReserveAndAppendLogAligned(pvmarshal: *mut ::core::ffi::c_void, rgwriteentries: *mut CLS_WRITE_ENTRY, cwriteentries: u32, cbentryalignment: u32, plsnundonext: *mut CLS_LSN, plsnprevious: *mut CLS_LSN, creserverecords: u32, rgcbreservation: *mut i64, fflags: CLFS_FLAG, plsn: *mut CLS_LSN, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
     }
@@ -4100,7 +3778,6 @@ pub unsafe fn RollbackComplete<'a, P0>(enlistmenthandle: P0, tmvirtualclock: *mu
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RollbackComplete(enlistmenthandle: super::super::Foundation::HANDLE, tmvirtualclock: *mut i64) -> super::super::Foundation::BOOL;
     }
@@ -4113,7 +3790,6 @@ pub unsafe fn RollbackEnlistment<'a, P0>(enlistmenthandle: P0, tmvirtualclock: *
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RollbackEnlistment(enlistmenthandle: super::super::Foundation::HANDLE, tmvirtualclock: *mut i64) -> super::super::Foundation::BOOL;
     }
@@ -4126,7 +3802,6 @@ pub unsafe fn RollbackTransaction<'a, P0>(transactionhandle: P0) -> super::super
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RollbackTransaction(transactionhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -4139,7 +3814,6 @@ pub unsafe fn RollbackTransactionAsync<'a, P0>(transactionhandle: P0) -> super::
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RollbackTransactionAsync(transactionhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -4152,7 +3826,6 @@ pub unsafe fn RollforwardTransactionManager<'a, P0>(transactionmanagerhandle: P0
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn RollforwardTransactionManager(transactionmanagerhandle: super::super::Foundation::HANDLE, tmvirtualclock: *mut i64) -> super::super::Foundation::BOOL;
     }
@@ -4162,7 +3835,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ScanLogContainers(pcxscan: *mut CLS_SCAN_CONTEXT, escanmode: u8, preserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ScanLogContainers(pcxscan: *mut CLS_SCAN_CONTEXT, escanmode: u8, preserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -4176,7 +3848,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SearchPathA(lppath: ::windows::core::PCSTR, lpfilename: ::windows::core::PCSTR, lpextension: ::windows::core::PCSTR, nbufferlength: u32, lpbuffer: ::windows::core::PSTR, lpfilepart: *mut ::windows::core::PSTR) -> u32;
     }
@@ -4190,7 +3861,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SearchPathW(lppath: ::windows::core::PCWSTR, lpfilename: ::windows::core::PCWSTR, lpextension: ::windows::core::PCWSTR, nbufferlength: u32, lpbuffer: ::windows::core::PWSTR, lpfilepart: *mut ::windows::core::PWSTR) -> u32;
     }
@@ -4203,7 +3873,6 @@ pub unsafe fn SetEncryptedFileMetadata<'a, P0>(lpfilename: P0, pboldmetadata: ::
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetEncryptedFileMetadata(lpfilename: ::windows::core::PCWSTR, pboldmetadata: *const u8, pbnewmetadata: *const u8, pownerhash: *const ENCRYPTION_CERTIFICATE_HASH, dwoperation: u32, pcertificatesadded: *const ENCRYPTION_CERTIFICATE_HASH_LIST) -> u32;
     }
@@ -4216,7 +3885,6 @@ pub unsafe fn SetEndOfFile<'a, P0>(hfile: P0) -> super::super::Foundation::BOOL
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetEndOfFile(hfile: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -4229,7 +3897,6 @@ pub unsafe fn SetEndOfLog<'a, P0>(hlog: P0, plsnend: *mut CLS_LSN, lpoverlapped:
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetEndOfLog(hlog: super::super::Foundation::HANDLE, plsnend: *mut CLS_LSN, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
     }
@@ -4242,7 +3909,6 @@ pub unsafe fn SetEnlistmentRecoveryInformation<'a, P0>(enlistmenthandle: P0, buf
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetEnlistmentRecoveryInformation(enlistmenthandle: super::super::Foundation::HANDLE, buffersize: u32, buffer: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -4251,7 +3917,6 @@ where
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn SetFileApisToANSI() {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetFileApisToANSI();
     }
@@ -4260,7 +3925,6 @@ pub unsafe fn SetFileApisToANSI() {
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn SetFileApisToOEM() {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetFileApisToOEM();
     }
@@ -4273,7 +3937,6 @@ pub unsafe fn SetFileAttributesA<'a, P0>(lpfilename: P0, dwfileattributes: FILE_
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetFileAttributesA(lpfilename: ::windows::core::PCSTR, dwfileattributes: FILE_FLAGS_AND_ATTRIBUTES) -> super::super::Foundation::BOOL;
     }
@@ -4286,7 +3949,6 @@ pub unsafe fn SetFileAttributesFromAppW<'a, P0>(lpfilename: P0, dwfileattributes
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetFileAttributesFromAppW(lpfilename: ::windows::core::PCWSTR, dwfileattributes: u32) -> super::super::Foundation::BOOL;
     }
@@ -4300,7 +3962,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetFileAttributesTransactedA(lpfilename: ::windows::core::PCSTR, dwfileattributes: u32, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -4314,7 +3975,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetFileAttributesTransactedW(lpfilename: ::windows::core::PCWSTR, dwfileattributes: u32, htransaction: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -4327,7 +3987,6 @@ pub unsafe fn SetFileAttributesW<'a, P0>(lpfilename: P0, dwfileattributes: FILE_
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetFileAttributesW(lpfilename: ::windows::core::PCWSTR, dwfileattributes: FILE_FLAGS_AND_ATTRIBUTES) -> super::super::Foundation::BOOL;
     }
@@ -4341,7 +4000,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetFileBandwidthReservation(hfile: super::super::Foundation::HANDLE, nperiodmilliseconds: u32, nbytesperperiod: u32, bdiscardable: super::super::Foundation::BOOL, lptransfersize: *mut u32, lpnumoutstandingrequests: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -4354,7 +4012,6 @@ pub unsafe fn SetFileCompletionNotificationModes<'a, P0>(filehandle: P0, flags: 
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetFileCompletionNotificationModes(filehandle: super::super::Foundation::HANDLE, flags: u8) -> super::super::Foundation::BOOL;
     }
@@ -4367,7 +4024,6 @@ pub unsafe fn SetFileInformationByHandle<'a, P0>(hfile: P0, fileinformationclass
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetFileInformationByHandle(hfile: super::super::Foundation::HANDLE, fileinformationclass: FILE_INFO_BY_HANDLE_CLASS, lpfileinformation: *const ::core::ffi::c_void, dwbuffersize: u32) -> super::super::Foundation::BOOL;
     }
@@ -4380,7 +4036,6 @@ pub unsafe fn SetFileIoOverlappedRange<'a, P0>(filehandle: P0, overlappedrangest
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetFileIoOverlappedRange(filehandle: super::super::Foundation::HANDLE, overlappedrangestart: *const u8, length: u32) -> super::super::Foundation::BOOL;
     }
@@ -4393,7 +4048,6 @@ pub unsafe fn SetFilePointer<'a, P0>(hfile: P0, ldistancetomove: i32, lpdistance
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetFilePointer(hfile: super::super::Foundation::HANDLE, ldistancetomove: i32, lpdistancetomovehigh: *mut i32, dwmovemethod: SET_FILE_POINTER_MOVE_METHOD) -> u32;
     }
@@ -4406,7 +4060,6 @@ pub unsafe fn SetFilePointerEx<'a, P0>(hfile: P0, lidistancetomove: i64, lpnewfi
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetFilePointerEx(hfile: super::super::Foundation::HANDLE, lidistancetomove: i64, lpnewfilepointer: *mut i64, dwmovemethod: SET_FILE_POINTER_MOVE_METHOD) -> super::super::Foundation::BOOL;
     }
@@ -4420,7 +4073,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetFileShortNameA(hfile: super::super::Foundation::HANDLE, lpshortname: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -4434,7 +4086,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetFileShortNameW(hfile: super::super::Foundation::HANDLE, lpshortname: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -4447,7 +4098,6 @@ pub unsafe fn SetFileTime<'a, P0>(hfile: P0, lpcreationtime: ::core::option::Opt
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetFileTime(hfile: super::super::Foundation::HANDLE, lpcreationtime: *const super::super::Foundation::FILETIME, lplastaccesstime: *const super::super::Foundation::FILETIME, lplastwritetime: *const super::super::Foundation::FILETIME) -> super::super::Foundation::BOOL;
     }
@@ -4460,7 +4110,6 @@ pub unsafe fn SetFileValidData<'a, P0>(hfile: P0, validdatalength: i64) -> super
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetFileValidData(hfile: super::super::Foundation::HANDLE, validdatalength: i64) -> super::super::Foundation::BOOL;
     }
@@ -4473,7 +4122,6 @@ pub unsafe fn SetIoRingCompletionEvent<'a, P0>(ioring: *const HIORING__, hevent:
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetIoRingCompletionEvent(ioring: *const HIORING__, hevent: super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
     }
@@ -4486,7 +4134,6 @@ pub unsafe fn SetLogArchiveMode<'a, P0>(hlog: P0, emode: CLFS_LOG_ARCHIVE_MODE) 
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetLogArchiveMode(hlog: super::super::Foundation::HANDLE, emode: CLFS_LOG_ARCHIVE_MODE) -> super::super::Foundation::BOOL;
     }
@@ -4499,7 +4146,6 @@ pub unsafe fn SetLogArchiveTail<'a, P0>(hlog: P0, plsnarchivetail: *mut CLS_LSN,
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetLogArchiveTail(hlog: super::super::Foundation::HANDLE, plsnarchivetail: *mut CLS_LSN, preserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -4512,7 +4158,6 @@ pub unsafe fn SetLogFileSizeWithPolicy<'a, P0>(hlog: P0, pdesiredsize: *mut u64,
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetLogFileSizeWithPolicy(hlog: super::super::Foundation::HANDLE, pdesiredsize: *mut u64, presultingsize: *mut u64) -> super::super::Foundation::BOOL;
     }
@@ -4526,7 +4171,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetResourceManagerCompletionPort(resourcemanagerhandle: super::super::Foundation::HANDLE, iocompletionporthandle: super::super::Foundation::HANDLE, completionkey: usize) -> super::super::Foundation::BOOL;
     }
@@ -4536,7 +4180,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SetSearchPathMode(flags: u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetSearchPathMode(flags: u32) -> super::super::Foundation::BOOL;
     }
@@ -4549,7 +4192,6 @@ pub unsafe fn SetTapeParameters<'a, P0>(hdevice: P0, dwoperation: TAPE_INFORMATI
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetTapeParameters(hdevice: super::super::Foundation::HANDLE, dwoperation: TAPE_INFORMATION_TYPE, lptapeinformation: *const ::core::ffi::c_void) -> u32;
     }
@@ -4563,7 +4205,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetTapePosition(hdevice: super::super::Foundation::HANDLE, dwpositionmethod: TAPE_POSITION_METHOD, dwpartition: u32, dwoffsetlow: u32, dwoffsethigh: u32, bimmediate: super::super::Foundation::BOOL) -> u32;
     }
@@ -4577,7 +4218,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetTransactionInformation(transactionhandle: super::super::Foundation::HANDLE, isolationlevel: u32, isolationflags: u32, timeout: u32, description: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -4587,7 +4227,6 @@ where
 #[cfg(feature = "Win32_Security")]
 #[inline]
 pub unsafe fn SetUserFileEncryptionKey(pencryptioncertificate: ::core::option::Option<*const ENCRYPTION_CERTIFICATE>) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetUserFileEncryptionKey(pencryptioncertificate: *const ENCRYPTION_CERTIFICATE) -> u32;
     }
@@ -4597,7 +4236,6 @@ pub unsafe fn SetUserFileEncryptionKey(pencryptioncertificate: ::core::option::O
 #[cfg(feature = "Win32_Security")]
 #[inline]
 pub unsafe fn SetUserFileEncryptionKeyEx(pencryptioncertificate: ::core::option::Option<*const ENCRYPTION_CERTIFICATE>, dwcapabilities: u32, dwflags: u32, pvreserved: ::core::option::Option<*mut ::core::ffi::c_void>) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetUserFileEncryptionKeyEx(pencryptioncertificate: *const ENCRYPTION_CERTIFICATE, dwcapabilities: u32, dwflags: u32, pvreserved: *mut ::core::ffi::c_void) -> u32;
     }
@@ -4611,7 +4249,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetVolumeLabelA(lprootpathname: ::windows::core::PCSTR, lpvolumename: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -4625,7 +4262,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetVolumeLabelW(lprootpathname: ::windows::core::PCWSTR, lpvolumename: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -4639,7 +4275,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetVolumeMountPointA(lpszvolumemountpoint: ::windows::core::PCSTR, lpszvolumename: ::windows::core::PCSTR) -> super::super::Foundation::BOOL;
     }
@@ -4653,7 +4288,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SetVolumeMountPointW(lpszvolumemountpoint: ::windows::core::PCWSTR, lpszvolumename: ::windows::core::PCWSTR) -> super::super::Foundation::BOOL;
     }
@@ -4666,7 +4300,6 @@ pub unsafe fn SinglePhaseReject<'a, P0>(enlistmenthandle: P0, tmvirtualclock: *m
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SinglePhaseReject(enlistmenthandle: super::super::Foundation::HANDLE, tmvirtualclock: *mut i64) -> super::super::Foundation::BOOL;
     }
@@ -4675,7 +4308,6 @@ where
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn SubmitIoRing(ioring: *const HIORING__, waitoperations: u32, milliseconds: u32) -> ::windows::core::Result<u32> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SubmitIoRing(ioring: *const HIORING__, waitoperations: u32, milliseconds: u32, submittedentries: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -4686,7 +4318,6 @@ pub unsafe fn SubmitIoRing(ioring: *const HIORING__, waitoperations: u32, millis
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn TerminateLogArchive(pvarchivecontext: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TerminateLogArchive(pvarchivecontext: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -4696,7 +4327,6 @@ pub unsafe fn TerminateLogArchive(pvarchivecontext: *mut ::core::ffi::c_void) ->
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn TerminateReadLog(pvcursorcontext: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TerminateReadLog(pvcursorcontext: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -4706,7 +4336,6 @@ pub unsafe fn TerminateReadLog(pvcursorcontext: *mut ::core::ffi::c_void) -> sup
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
 pub unsafe fn TruncateLog(pvmarshal: *const ::core::ffi::c_void, plsnend: *const CLS_LSN, lpoverlapped: ::core::option::Option<*mut super::super::System::IO::OVERLAPPED>) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TruncateLog(pvmarshal: *const ::core::ffi::c_void, plsnend: *const CLS_LSN, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
     }
@@ -4715,7 +4344,6 @@ pub unsafe fn TruncateLog(pvmarshal: *const ::core::ffi::c_void, plsnend: *const
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn TxfGetThreadMiniVersionForCreate(miniversion: *mut u16) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TxfGetThreadMiniVersionForCreate(miniversion: *mut u16);
     }
@@ -4728,7 +4356,6 @@ pub unsafe fn TxfLogCreateFileReadContext<'a, P0>(logpath: P0, beginninglsn: CLS
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TxfLogCreateFileReadContext(logpath: ::windows::core::PCWSTR, beginninglsn: CLS_LSN, endinglsn: CLS_LSN, txffileid: *const TXF_ID, txflogcontext: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -4741,7 +4368,6 @@ pub unsafe fn TxfLogCreateRangeReadContext<'a, P0>(logpath: P0, beginninglsn: CL
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TxfLogCreateRangeReadContext(logpath: ::windows::core::PCWSTR, beginninglsn: CLS_LSN, endinglsn: CLS_LSN, beginningvirtualclock: *const i64, endingvirtualclock: *const i64, recordtypemask: u32, txflogcontext: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -4751,7 +4377,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn TxfLogDestroyReadContext(txflogcontext: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TxfLogDestroyReadContext(txflogcontext: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -4761,7 +4386,6 @@ pub unsafe fn TxfLogDestroyReadContext(txflogcontext: *const ::core::ffi::c_void
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn TxfLogReadRecords(txflogcontext: *const ::core::ffi::c_void, bufferlength: u32, buffer: *mut ::core::ffi::c_void, bytesused: *mut u32, recordcount: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TxfLogReadRecords(txflogcontext: *const ::core::ffi::c_void, bufferlength: u32, buffer: *mut ::core::ffi::c_void, bytesused: *mut u32, recordcount: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -4771,7 +4395,6 @@ pub unsafe fn TxfLogReadRecords(txflogcontext: *const ::core::ffi::c_void, buffe
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn TxfLogRecordGetFileName(recordbuffer: *const ::core::ffi::c_void, recordbufferlengthinbytes: u32, namebuffer: ::windows::core::PWSTR, namebufferlengthinbytes: *mut u32, txfid: ::core::option::Option<*mut TXF_ID>) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TxfLogRecordGetFileName(recordbuffer: *const ::core::ffi::c_void, recordbufferlengthinbytes: u32, namebuffer: ::windows::core::PWSTR, namebufferlengthinbytes: *mut u32, txfid: *mut TXF_ID) -> super::super::Foundation::BOOL;
     }
@@ -4781,7 +4404,6 @@ pub unsafe fn TxfLogRecordGetFileName(recordbuffer: *const ::core::ffi::c_void, 
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn TxfLogRecordGetGenericType(recordbuffer: *const ::core::ffi::c_void, recordbufferlengthinbytes: u32, generictype: *mut u32, virtualclock: ::core::option::Option<*mut i64>) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TxfLogRecordGetGenericType(recordbuffer: *const ::core::ffi::c_void, recordbufferlengthinbytes: u32, generictype: *mut u32, virtualclock: *mut i64) -> super::super::Foundation::BOOL;
     }
@@ -4794,7 +4416,6 @@ pub unsafe fn TxfReadMetadataInfo<'a, P0>(filehandle: P0, txffileid: *mut TXF_ID
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TxfReadMetadataInfo(filehandle: super::super::Foundation::HANDLE, txffileid: *mut TXF_ID, lastlsn: *mut CLS_LSN, transactionstate: *mut u32, lockingtransaction: *mut ::windows::core::GUID) -> super::super::Foundation::BOOL;
     }
@@ -4803,7 +4424,6 @@ where
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn TxfSetThreadMiniVersionForCreate(miniversion: u16) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn TxfSetThreadMiniVersionForCreate(miniversion: u16);
     }
@@ -4816,7 +4436,6 @@ pub unsafe fn UnlockFile<'a, P0>(hfile: P0, dwfileoffsetlow: u32, dwfileoffsethi
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UnlockFile(hfile: super::super::Foundation::HANDLE, dwfileoffsetlow: u32, dwfileoffsethigh: u32, nnumberofbytestounlocklow: u32, nnumberofbytestounlockhigh: u32) -> super::super::Foundation::BOOL;
     }
@@ -4829,7 +4448,6 @@ pub unsafe fn UnlockFileEx<'a, P0>(hfile: P0, dwreserved: u32, nnumberofbytestou
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn UnlockFileEx(hfile: super::super::Foundation::HANDLE, dwreserved: u32, nnumberofbytestounlocklow: u32, nnumberofbytestounlockhigh: u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
     }
@@ -4842,7 +4460,6 @@ pub unsafe fn ValidateLog<'a, P0>(pszlogfilename: P0, psalogfile: *mut super::su
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ValidateLog(pszlogfilename: ::windows::core::PCWSTR, psalogfile: *mut super::super::Security::SECURITY_ATTRIBUTES, pinfobuffer: *mut CLS_INFORMATION, pcbbuffer: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -4856,7 +4473,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn VerFindFileA(uflags: VER_FIND_FILE_FLAGS, szfilename: ::windows::core::PCSTR, szwindir: ::windows::core::PCSTR, szappdir: ::windows::core::PCSTR, szcurdir: ::windows::core::PSTR, pucurdirlen: *mut u32, szdestdir: ::windows::core::PSTR, pudestdirlen: *mut u32) -> VER_FIND_FILE_STATUS;
     }
@@ -4870,7 +4486,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn VerFindFileW(uflags: VER_FIND_FILE_FLAGS, szfilename: ::windows::core::PCWSTR, szwindir: ::windows::core::PCWSTR, szappdir: ::windows::core::PCWSTR, szcurdir: ::windows::core::PWSTR, pucurdirlen: *mut u32, szdestdir: ::windows::core::PWSTR, pudestdirlen: *mut u32) -> VER_FIND_FILE_STATUS;
     }
@@ -4886,7 +4501,6 @@ where
     P3: ::std::convert::Into<::windows::core::PCSTR>,
     P4: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn VerInstallFileA(uflags: VER_INSTALL_FILE_FLAGS, szsrcfilename: ::windows::core::PCSTR, szdestfilename: ::windows::core::PCSTR, szsrcdir: ::windows::core::PCSTR, szdestdir: ::windows::core::PCSTR, szcurdir: ::windows::core::PCSTR, sztmpfile: ::windows::core::PSTR, putmpfilelen: *mut u32) -> VER_INSTALL_FILE_STATUS;
     }
@@ -4902,7 +4516,6 @@ where
     P3: ::std::convert::Into<::windows::core::PCWSTR>,
     P4: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn VerInstallFileW(uflags: VER_INSTALL_FILE_FLAGS, szsrcfilename: ::windows::core::PCWSTR, szdestfilename: ::windows::core::PCWSTR, szsrcdir: ::windows::core::PCWSTR, szdestdir: ::windows::core::PCWSTR, szcurdir: ::windows::core::PCWSTR, sztmpfile: ::windows::core::PWSTR, putmpfilelen: *mut u32) -> VER_INSTALL_FILE_STATUS;
     }
@@ -4911,7 +4524,6 @@ where
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn VerLanguageNameA(wlang: u32, szlang: &mut [u8]) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn VerLanguageNameA(wlang: u32, szlang: ::windows::core::PSTR, cchlang: u32) -> u32;
     }
@@ -4920,7 +4532,6 @@ pub unsafe fn VerLanguageNameA(wlang: u32, szlang: &mut [u8]) -> u32 {
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn VerLanguageNameW(wlang: u32, szlang: &mut [u16]) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn VerLanguageNameW(wlang: u32, szlang: ::windows::core::PWSTR, cchlang: u32) -> u32;
     }
@@ -4933,7 +4544,6 @@ pub unsafe fn VerQueryValueA<'a, P0>(pblock: *const ::core::ffi::c_void, lpsubbl
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn VerQueryValueA(pblock: *const ::core::ffi::c_void, lpsubblock: ::windows::core::PCSTR, lplpbuffer: *mut *mut ::core::ffi::c_void, pulen: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -4946,7 +4556,6 @@ pub unsafe fn VerQueryValueW<'a, P0>(pblock: *const ::core::ffi::c_void, lpsubbl
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn VerQueryValueW(pblock: *const ::core::ffi::c_void, lpsubblock: ::windows::core::PCWSTR, lplpbuffer: *mut *mut ::core::ffi::c_void, pulen: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -4959,7 +4568,6 @@ pub unsafe fn WofEnumEntries<'a, P0>(volumename: P0, provider: u32, enumproc: Wo
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WofEnumEntries(volumename: ::windows::core::PCWSTR, provider: u32, enumproc: *mut ::core::ffi::c_void, userdata: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4972,7 +4580,6 @@ pub unsafe fn WofFileEnumFiles<'a, P0>(volumename: P0, algorithm: u32, enumproc:
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WofFileEnumFiles(volumename: ::windows::core::PCWSTR, algorithm: u32, enumproc: *mut ::core::ffi::c_void, userdata: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -4985,7 +4592,6 @@ pub unsafe fn WofGetDriverVersion<'a, P0>(fileorvolumehandle: P0, provider: u32)
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WofGetDriverVersion(fileorvolumehandle: super::super::Foundation::HANDLE, provider: u32, wofversion: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -4999,7 +4605,6 @@ pub unsafe fn WofIsExternalFile<'a, P0>(filepath: P0, isexternalfile: ::core::op
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WofIsExternalFile(filepath: ::windows::core::PCWSTR, isexternalfile: *mut super::super::Foundation::BOOL, provider: *mut u32, externalfileinfo: *mut ::core::ffi::c_void, bufferlength: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -5012,7 +4617,6 @@ pub unsafe fn WofSetFileDataLocation<'a, P0>(filehandle: P0, provider: u32, exte
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WofSetFileDataLocation(filehandle: super::super::Foundation::HANDLE, provider: u32, externalfileinfo: *const ::core::ffi::c_void, length: u32) -> ::windows::core::HRESULT;
     }
@@ -5025,7 +4629,6 @@ pub unsafe fn WofShouldCompressBinaries<'a, P0>(volume: P0, algorithm: *mut u32)
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WofShouldCompressBinaries(volume: ::windows::core::PCWSTR, algorithm: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -5038,7 +4641,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WofWimAddEntry(volumename: ::windows::core::PCWSTR, wimpath: ::windows::core::PCWSTR, wimtype: u32, wimindex: u32, datasourceid: *mut i64) -> ::windows::core::HRESULT;
     }
@@ -5052,7 +4654,6 @@ pub unsafe fn WofWimEnumFiles<'a, P0>(volumename: P0, datasourceid: i64, enumpro
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WofWimEnumFiles(volumename: ::windows::core::PCWSTR, datasourceid: i64, enumproc: *mut ::core::ffi::c_void, userdata: *const ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -5064,7 +4665,6 @@ pub unsafe fn WofWimRemoveEntry<'a, P0>(volumename: P0, datasourceid: i64) -> ::
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WofWimRemoveEntry(volumename: ::windows::core::PCWSTR, datasourceid: i64) -> ::windows::core::HRESULT;
     }
@@ -5076,7 +4676,6 @@ pub unsafe fn WofWimSuspendEntry<'a, P0>(volumename: P0, datasourceid: i64) -> :
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WofWimSuspendEntry(volumename: ::windows::core::PCWSTR, datasourceid: i64) -> ::windows::core::HRESULT;
     }
@@ -5089,7 +4688,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WofWimUpdateEntry(volumename: ::windows::core::PCWSTR, datasourceid: i64, newwimpath: ::windows::core::PCWSTR) -> ::windows::core::HRESULT;
     }
@@ -5099,7 +4697,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn Wow64DisableWow64FsRedirection(oldvalue: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn Wow64DisableWow64FsRedirection(oldvalue: *mut *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -5112,7 +4709,6 @@ pub unsafe fn Wow64EnableWow64FsRedirection<'a, P0>(wow64fsenableredirection: P0
 where
     P0: ::std::convert::Into<super::super::Foundation::BOOLEAN>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn Wow64EnableWow64FsRedirection(wow64fsenableredirection: super::super::Foundation::BOOLEAN) -> super::super::Foundation::BOOLEAN;
     }
@@ -5122,7 +4718,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn Wow64RevertWow64FsRedirection(olvalue: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn Wow64RevertWow64FsRedirection(olvalue: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -5131,7 +4726,6 @@ pub unsafe fn Wow64RevertWow64FsRedirection(olvalue: *const ::core::ffi::c_void)
 #[doc = "*Required features: `\"Win32_Storage_FileSystem\"`*"]
 #[inline]
 pub unsafe fn WriteEncryptedFileRaw(pfimportcallback: PFE_IMPORT_FUNC, pvcallbackcontext: ::core::option::Option<*const ::core::ffi::c_void>, pvcontext: *const ::core::ffi::c_void) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WriteEncryptedFileRaw(pfimportcallback: *mut ::core::ffi::c_void, pvcallbackcontext: *const ::core::ffi::c_void, pvcontext: *const ::core::ffi::c_void) -> u32;
     }
@@ -5144,7 +4738,6 @@ pub unsafe fn WriteFile<'a, P0>(hfile: P0, lpbuffer: ::core::option::Option<*con
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WriteFile(hfile: super::super::Foundation::HANDLE, lpbuffer: *const ::core::ffi::c_void, nnumberofbytestowrite: u32, lpnumberofbyteswritten: *mut u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
     }
@@ -5157,7 +4750,6 @@ pub unsafe fn WriteFileEx<'a, P0>(hfile: P0, lpbuffer: ::core::option::Option<*c
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WriteFileEx(hfile: super::super::Foundation::HANDLE, lpbuffer: *const ::core::ffi::c_void, nnumberofbytestowrite: u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED, lpcompletionroutine: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -5170,7 +4762,6 @@ pub unsafe fn WriteFileGather<'a, P0>(hfile: P0, asegmentarray: *const FILE_SEGM
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WriteFileGather(hfile: super::super::Foundation::HANDLE, asegmentarray: *const FILE_SEGMENT_ELEMENT, nnumberofbytestowrite: u32, lpreserved: *mut u32, lpoverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
     }
@@ -5180,7 +4771,6 @@ where
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
 #[inline]
 pub unsafe fn WriteLogRestartArea(pvmarshal: *mut ::core::ffi::c_void, pvrestartbuffer: *mut ::core::ffi::c_void, cbrestartbuffer: u32, plsnbase: *mut CLS_LSN, fflags: CLFS_FLAG, pcbwritten: *mut u32, plsnnext: *mut CLS_LSN, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WriteLogRestartArea(pvmarshal: *mut ::core::ffi::c_void, pvrestartbuffer: *mut ::core::ffi::c_void, cbrestartbuffer: u32, plsnbase: *mut CLS_LSN, fflags: CLFS_FLAG, pcbwritten: *mut u32, plsnnext: *mut CLS_LSN, poverlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::BOOL;
     }
@@ -5194,7 +4784,6 @@ where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
     P1: ::std::convert::Into<super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WriteTapemark(hdevice: super::super::Foundation::HANDLE, dwtapemarktype: TAPEMARK_TYPE, dwtapemarkcount: u32, bimmediate: super::super::Foundation::BOOL) -> u32;
     }

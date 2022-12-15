@@ -1,7 +1,6 @@
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 #[inline]
 pub unsafe fn GetDispenserManager() -> ::windows::core::Result<IDispenserManager> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn GetDispenserManager(param0: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -11,7 +10,6 @@ pub unsafe fn GetDispenserManager() -> ::windows::core::Result<IDispenserManager
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 #[inline]
 pub unsafe fn RecycleSurrogate(lreasoncode: i32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn RecycleSurrogate(lreasoncode: i32) -> ::windows::core::HRESULT;
     }
@@ -23,7 +21,6 @@ pub unsafe fn SafeRef<'a, P0>(rid: *const ::windows::core::GUID, punk: P0) -> *m
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn SafeRef(rid: *const ::windows::core::GUID, punk: *mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void;
     }
@@ -35,7 +32,6 @@ pub unsafe fn CoCreateActivity<'a, P0>(piunknown: P0, riid: *const ::windows::co
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoCreateActivity(piunknown: *mut ::core::ffi::c_void, riid: *const ::windows::core::GUID, ppobj: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -47,7 +43,6 @@ pub unsafe fn CoEnterServiceDomain<'a, P0>(pconfigobject: P0) -> ::windows::core
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoEnterServiceDomain(pconfigobject: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -57,7 +52,6 @@ where
 #[cfg(feature = "Win32_System_Com")]
 #[inline]
 pub unsafe fn CoGetDefaultContext(apttype: super::Com::APTTYPE, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoGetDefaultContext(apttype: super::Com::APTTYPE, riid: *const ::windows::core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -69,7 +63,6 @@ pub unsafe fn CoLeaveServiceDomain<'a, P0>(punkstatus: P0)
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CoLeaveServiceDomain(punkstatus: *mut ::core::ffi::c_void);
     }
@@ -78,7 +71,6 @@ where
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 #[inline]
 pub unsafe fn GetManagedExtensions(dwexts: *mut u32) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn GetManagedExtensions(dwexts: *mut u32) -> ::windows::core::HRESULT;
     }
@@ -87,7 +79,6 @@ pub unsafe fn GetManagedExtensions(dwexts: *mut u32) -> ::windows::core::Result<
 #[doc = "*Required features: `\"Win32_System_ComponentServices\"`*"]
 #[inline]
 pub unsafe fn MTSCreateActivity(riid: *const ::windows::core::GUID, ppobj: *mut *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn MTSCreateActivity(riid: *const ::windows::core::GUID, ppobj: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }

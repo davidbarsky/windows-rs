@@ -6,7 +6,6 @@ where
     P0: ::std::convert::Into<super::super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmAssociateContext(param0: super::super::super::Foundation::HWND, param1: super::super::super::Globalization::HIMC) -> super::super::super::Globalization::HIMC;
     }
@@ -20,7 +19,6 @@ where
     P0: ::std::convert::Into<super::super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmAssociateContextEx(param0: super::super::super::Foundation::HWND, param1: super::super::super::Globalization::HIMC, param2: u32) -> super::super::super::Foundation::BOOL;
     }
@@ -34,7 +32,6 @@ where
     P0: ::std::convert::Into<super::super::TextServices::HKL>,
     P1: ::std::convert::Into<super::super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmConfigureIMEA(param0: super::super::TextServices::HKL, param1: super::super::super::Foundation::HWND, param2: u32, param3: *mut ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
     }
@@ -48,7 +45,6 @@ where
     P0: ::std::convert::Into<super::super::TextServices::HKL>,
     P1: ::std::convert::Into<super::super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmConfigureIMEW(param0: super::super::TextServices::HKL, param1: super::super::super::Foundation::HWND, param2: u32, param3: *mut ::core::ffi::c_void) -> super::super::super::Foundation::BOOL;
     }
@@ -58,7 +54,6 @@ where
 #[cfg(feature = "Win32_Globalization")]
 #[inline]
 pub unsafe fn ImmCreateContext() -> super::super::super::Globalization::HIMC {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmCreateContext() -> super::super::super::Globalization::HIMC;
     }
@@ -68,7 +63,6 @@ pub unsafe fn ImmCreateContext() -> super::super::super::Globalization::HIMC {
 #[cfg(feature = "Win32_Globalization")]
 #[inline]
 pub unsafe fn ImmCreateIMCC(param0: u32) -> super::super::super::Globalization::HIMCC {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmCreateIMCC(param0: u32) -> super::super::super::Globalization::HIMCC;
     }
@@ -81,7 +75,6 @@ pub unsafe fn ImmCreateSoftKeyboard<'a, P0>(param0: u32, param1: P0, param2: i32
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmCreateSoftKeyboard(param0: u32, param1: super::super::super::Foundation::HWND, param2: i32, param3: i32) -> super::super::super::Foundation::HWND;
     }
@@ -94,7 +87,6 @@ pub unsafe fn ImmDestroyContext<'a, P0>(param0: P0) -> super::super::super::Foun
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmDestroyContext(param0: super::super::super::Globalization::HIMC) -> super::super::super::Foundation::BOOL;
     }
@@ -107,7 +99,6 @@ pub unsafe fn ImmDestroyIMCC<'a, P0>(param0: P0) -> super::super::super::Globali
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMCC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmDestroyIMCC(param0: super::super::super::Globalization::HIMCC) -> super::super::super::Globalization::HIMCC;
     }
@@ -120,7 +111,6 @@ pub unsafe fn ImmDestroySoftKeyboard<'a, P0>(param0: P0) -> super::super::super:
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmDestroySoftKeyboard(param0: super::super::super::Foundation::HWND) -> super::super::super::Foundation::BOOL;
     }
@@ -130,7 +120,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ImmDisableIME(param0: u32) -> super::super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmDisableIME(param0: u32) -> super::super::super::Foundation::BOOL;
     }
@@ -140,7 +129,6 @@ pub unsafe fn ImmDisableIME(param0: u32) -> super::super::super::Foundation::BOO
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ImmDisableLegacyIME() -> super::super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmDisableLegacyIME() -> super::super::super::Foundation::BOOL;
     }
@@ -150,7 +138,6 @@ pub unsafe fn ImmDisableLegacyIME() -> super::super::super::Foundation::BOOL {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ImmDisableTextFrameService(idthread: u32) -> super::super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmDisableTextFrameService(idthread: u32) -> super::super::super::Foundation::BOOL;
     }
@@ -163,7 +150,6 @@ pub unsafe fn ImmEnumInputContext<'a, P0>(idthread: u32, lpfn: IMCENUMPROC, lpar
 where
     P0: ::std::convert::Into<super::super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmEnumInputContext(idthread: u32, lpfn: *mut ::core::ffi::c_void, lparam: super::super::super::Foundation::LPARAM) -> super::super::super::Foundation::BOOL;
     }
@@ -178,7 +164,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmEnumRegisterWordA(param0: super::super::TextServices::HKL, param1: *mut ::core::ffi::c_void, lpszreading: ::windows::core::PCSTR, param3: u32, lpszregister: ::windows::core::PCSTR, param5: *mut ::core::ffi::c_void) -> u32;
     }
@@ -193,7 +178,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmEnumRegisterWordW(param0: super::super::TextServices::HKL, param1: *mut ::core::ffi::c_void, lpszreading: ::windows::core::PCWSTR, param3: u32, lpszregister: ::windows::core::PCWSTR, param5: *mut ::core::ffi::c_void) -> u32;
     }
@@ -207,7 +191,6 @@ where
     P0: ::std::convert::Into<super::super::TextServices::HKL>,
     P1: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmEscapeA(param0: super::super::TextServices::HKL, param1: super::super::super::Globalization::HIMC, param2: IME_ESCAPE, param3: *mut ::core::ffi::c_void) -> super::super::super::Foundation::LRESULT;
     }
@@ -221,7 +204,6 @@ where
     P0: ::std::convert::Into<super::super::TextServices::HKL>,
     P1: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmEscapeW(param0: super::super::TextServices::HKL, param1: super::super::super::Globalization::HIMC, param2: IME_ESCAPE, param3: *mut ::core::ffi::c_void) -> super::super::super::Foundation::LRESULT;
     }
@@ -234,7 +216,6 @@ pub unsafe fn ImmGenerateMessage<'a, P0>(param0: P0) -> super::super::super::Fou
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGenerateMessage(param0: super::super::super::Globalization::HIMC) -> super::super::super::Foundation::BOOL;
     }
@@ -247,7 +228,6 @@ pub unsafe fn ImmGetCandidateListA<'a, P0>(param0: P0, deindex: u32, lpcandlist:
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetCandidateListA(param0: super::super::super::Globalization::HIMC, deindex: u32, lpcandlist: *mut CANDIDATELIST, dwbuflen: u32) -> u32;
     }
@@ -260,7 +240,6 @@ pub unsafe fn ImmGetCandidateListCountA<'a, P0>(param0: P0, lpdwlistcount: *mut 
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetCandidateListCountA(param0: super::super::super::Globalization::HIMC, lpdwlistcount: *mut u32) -> u32;
     }
@@ -273,7 +252,6 @@ pub unsafe fn ImmGetCandidateListCountW<'a, P0>(param0: P0, lpdwlistcount: *mut 
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetCandidateListCountW(param0: super::super::super::Globalization::HIMC, lpdwlistcount: *mut u32) -> u32;
     }
@@ -286,7 +264,6 @@ pub unsafe fn ImmGetCandidateListW<'a, P0>(param0: P0, deindex: u32, lpcandlist:
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetCandidateListW(param0: super::super::super::Globalization::HIMC, deindex: u32, lpcandlist: *mut CANDIDATELIST, dwbuflen: u32) -> u32;
     }
@@ -299,7 +276,6 @@ pub unsafe fn ImmGetCandidateWindow<'a, P0>(param0: P0, param1: u32, lpcandidate
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetCandidateWindow(param0: super::super::super::Globalization::HIMC, param1: u32, lpcandidate: *mut CANDIDATEFORM) -> super::super::super::Foundation::BOOL;
     }
@@ -312,7 +288,6 @@ pub unsafe fn ImmGetCompositionFontA<'a, P0>(param0: P0, lplf: *mut super::super
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetCompositionFontA(param0: super::super::super::Globalization::HIMC, lplf: *mut super::super::super::Graphics::Gdi::LOGFONTA) -> super::super::super::Foundation::BOOL;
     }
@@ -325,7 +300,6 @@ pub unsafe fn ImmGetCompositionFontW<'a, P0>(param0: P0, lplf: *mut super::super
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetCompositionFontW(param0: super::super::super::Globalization::HIMC, lplf: *mut super::super::super::Graphics::Gdi::LOGFONTW) -> super::super::super::Foundation::BOOL;
     }
@@ -338,7 +312,6 @@ pub unsafe fn ImmGetCompositionStringA<'a, P0>(param0: P0, param1: IME_COMPOSITI
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetCompositionStringA(param0: super::super::super::Globalization::HIMC, param1: IME_COMPOSITION_STRING, lpbuf: *mut ::core::ffi::c_void, dwbuflen: u32) -> i32;
     }
@@ -351,7 +324,6 @@ pub unsafe fn ImmGetCompositionStringW<'a, P0>(param0: P0, param1: IME_COMPOSITI
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetCompositionStringW(param0: super::super::super::Globalization::HIMC, param1: IME_COMPOSITION_STRING, lpbuf: *mut ::core::ffi::c_void, dwbuflen: u32) -> i32;
     }
@@ -364,7 +336,6 @@ pub unsafe fn ImmGetCompositionWindow<'a, P0>(param0: P0, lpcompform: *mut COMPO
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetCompositionWindow(param0: super::super::super::Globalization::HIMC, lpcompform: *mut COMPOSITIONFORM) -> super::super::super::Foundation::BOOL;
     }
@@ -377,7 +348,6 @@ pub unsafe fn ImmGetContext<'a, P0>(param0: P0) -> super::super::super::Globaliz
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetContext(param0: super::super::super::Foundation::HWND) -> super::super::super::Globalization::HIMC;
     }
@@ -392,7 +362,6 @@ where
     P1: ::std::convert::Into<super::super::super::Globalization::HIMC>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetConversionListA(param0: super::super::TextServices::HKL, param1: super::super::super::Globalization::HIMC, lpsrc: ::windows::core::PCSTR, lpdst: *mut CANDIDATELIST, dwbuflen: u32, uflag: GET_CONVERSION_LIST_FLAG) -> u32;
     }
@@ -407,7 +376,6 @@ where
     P1: ::std::convert::Into<super::super::super::Globalization::HIMC>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetConversionListW(param0: super::super::TextServices::HKL, param1: super::super::super::Globalization::HIMC, lpsrc: ::windows::core::PCWSTR, lpdst: *mut CANDIDATELIST, dwbuflen: u32, uflag: GET_CONVERSION_LIST_FLAG) -> u32;
     }
@@ -420,7 +388,6 @@ pub unsafe fn ImmGetConversionStatus<'a, P0>(param0: P0, lpfdwconversion: ::core
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetConversionStatus(param0: super::super::super::Globalization::HIMC, lpfdwconversion: *mut IME_CONVERSION_MODE, lpfdwsentence: *mut IME_SENTENCE_MODE) -> super::super::super::Foundation::BOOL;
     }
@@ -433,7 +400,6 @@ pub unsafe fn ImmGetDefaultIMEWnd<'a, P0>(param0: P0) -> super::super::super::Fo
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetDefaultIMEWnd(param0: super::super::super::Foundation::HWND) -> super::super::super::Foundation::HWND;
     }
@@ -446,7 +412,6 @@ pub unsafe fn ImmGetDescriptionA<'a, P0>(param0: P0, lpszdescription: ::core::op
 where
     P0: ::std::convert::Into<super::super::TextServices::HKL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetDescriptionA(param0: super::super::TextServices::HKL, lpszdescription: ::windows::core::PSTR, ubuflen: u32) -> u32;
     }
@@ -459,7 +424,6 @@ pub unsafe fn ImmGetDescriptionW<'a, P0>(param0: P0, lpszdescription: ::core::op
 where
     P0: ::std::convert::Into<super::super::TextServices::HKL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetDescriptionW(param0: super::super::TextServices::HKL, lpszdescription: ::windows::core::PWSTR, ubuflen: u32) -> u32;
     }
@@ -472,7 +436,6 @@ pub unsafe fn ImmGetGuideLineA<'a, P0>(param0: P0, dwindex: GET_GUIDE_LINE_TYPE,
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetGuideLineA(param0: super::super::super::Globalization::HIMC, dwindex: GET_GUIDE_LINE_TYPE, lpbuf: ::windows::core::PSTR, dwbuflen: u32) -> u32;
     }
@@ -485,7 +448,6 @@ pub unsafe fn ImmGetGuideLineW<'a, P0>(param0: P0, dwindex: GET_GUIDE_LINE_TYPE,
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetGuideLineW(param0: super::super::super::Globalization::HIMC, dwindex: GET_GUIDE_LINE_TYPE, lpbuf: ::windows::core::PWSTR, dwbuflen: u32) -> u32;
     }
@@ -495,7 +457,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn ImmGetHotKey(param0: u32, lpumodifiers: *mut u32, lpuvkey: *mut u32, phkl: *mut isize) -> super::super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetHotKey(param0: u32, lpumodifiers: *mut u32, lpuvkey: *mut u32, phkl: *mut isize) -> super::super::super::Foundation::BOOL;
     }
@@ -508,7 +469,6 @@ pub unsafe fn ImmGetIMCCLockCount<'a, P0>(param0: P0) -> u32
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMCC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetIMCCLockCount(param0: super::super::super::Globalization::HIMCC) -> u32;
     }
@@ -521,7 +481,6 @@ pub unsafe fn ImmGetIMCCSize<'a, P0>(param0: P0) -> u32
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMCC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetIMCCSize(param0: super::super::super::Globalization::HIMCC) -> u32;
     }
@@ -534,7 +493,6 @@ pub unsafe fn ImmGetIMCLockCount<'a, P0>(param0: P0) -> u32
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetIMCLockCount(param0: super::super::super::Globalization::HIMC) -> u32;
     }
@@ -547,7 +505,6 @@ pub unsafe fn ImmGetIMEFileNameA<'a, P0>(param0: P0, lpszfilename: ::core::optio
 where
     P0: ::std::convert::Into<super::super::TextServices::HKL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetIMEFileNameA(param0: super::super::TextServices::HKL, lpszfilename: ::windows::core::PSTR, ubuflen: u32) -> u32;
     }
@@ -560,7 +517,6 @@ pub unsafe fn ImmGetIMEFileNameW<'a, P0>(param0: P0, lpszfilename: ::core::optio
 where
     P0: ::std::convert::Into<super::super::TextServices::HKL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetIMEFileNameW(param0: super::super::TextServices::HKL, lpszfilename: ::windows::core::PWSTR, ubuflen: u32) -> u32;
     }
@@ -573,7 +529,6 @@ pub unsafe fn ImmGetImeMenuItemsA<'a, P0>(param0: P0, param1: u32, param2: u32, 
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetImeMenuItemsA(param0: super::super::super::Globalization::HIMC, param1: u32, param2: u32, lpimeparentmenu: *mut IMEMENUITEMINFOA, lpimemenu: *mut IMEMENUITEMINFOA, dwsize: u32) -> u32;
     }
@@ -586,7 +541,6 @@ pub unsafe fn ImmGetImeMenuItemsW<'a, P0>(param0: P0, param1: u32, param2: u32, 
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetImeMenuItemsW(param0: super::super::super::Globalization::HIMC, param1: u32, param2: u32, lpimeparentmenu: *mut IMEMENUITEMINFOW, lpimemenu: *mut IMEMENUITEMINFOW, dwsize: u32) -> u32;
     }
@@ -599,7 +553,6 @@ pub unsafe fn ImmGetOpenStatus<'a, P0>(param0: P0) -> super::super::super::Found
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetOpenStatus(param0: super::super::super::Globalization::HIMC) -> super::super::super::Foundation::BOOL;
     }
@@ -612,7 +565,6 @@ pub unsafe fn ImmGetProperty<'a, P0>(param0: P0, param1: u32) -> u32
 where
     P0: ::std::convert::Into<super::super::TextServices::HKL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetProperty(param0: super::super::TextServices::HKL, param1: u32) -> u32;
     }
@@ -625,7 +577,6 @@ pub unsafe fn ImmGetRegisterWordStyleA<'a, P0>(param0: P0, lpstylebuf: &mut [STY
 where
     P0: ::std::convert::Into<super::super::TextServices::HKL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetRegisterWordStyleA(param0: super::super::TextServices::HKL, nitem: u32, lpstylebuf: *mut STYLEBUFA) -> u32;
     }
@@ -638,7 +589,6 @@ pub unsafe fn ImmGetRegisterWordStyleW<'a, P0>(param0: P0, lpstylebuf: &mut [STY
 where
     P0: ::std::convert::Into<super::super::TextServices::HKL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetRegisterWordStyleW(param0: super::super::TextServices::HKL, nitem: u32, lpstylebuf: *mut STYLEBUFW) -> u32;
     }
@@ -651,7 +601,6 @@ pub unsafe fn ImmGetStatusWindowPos<'a, P0>(param0: P0, lpptpos: *mut super::sup
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetStatusWindowPos(param0: super::super::super::Globalization::HIMC, lpptpos: *mut super::super::super::Foundation::POINT) -> super::super::super::Foundation::BOOL;
     }
@@ -664,7 +613,6 @@ pub unsafe fn ImmGetVirtualKey<'a, P0>(param0: P0) -> u32
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmGetVirtualKey(param0: super::super::super::Foundation::HWND) -> u32;
     }
@@ -678,7 +626,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmInstallIMEA(lpszimefilename: ::windows::core::PCSTR, lpszlayouttext: ::windows::core::PCSTR) -> super::super::TextServices::HKL;
     }
@@ -692,7 +639,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmInstallIMEW(lpszimefilename: ::windows::core::PCWSTR, lpszlayouttext: ::windows::core::PCWSTR) -> super::super::TextServices::HKL;
     }
@@ -705,7 +651,6 @@ pub unsafe fn ImmIsIME<'a, P0>(param0: P0) -> super::super::super::Foundation::B
 where
     P0: ::std::convert::Into<super::super::TextServices::HKL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmIsIME(param0: super::super::TextServices::HKL) -> super::super::super::Foundation::BOOL;
     }
@@ -720,7 +665,6 @@ where
     P1: ::std::convert::Into<super::super::super::Foundation::WPARAM>,
     P2: ::std::convert::Into<super::super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmIsUIMessageA(param0: super::super::super::Foundation::HWND, param1: u32, param2: super::super::super::Foundation::WPARAM, param3: super::super::super::Foundation::LPARAM) -> super::super::super::Foundation::BOOL;
     }
@@ -735,7 +679,6 @@ where
     P1: ::std::convert::Into<super::super::super::Foundation::WPARAM>,
     P2: ::std::convert::Into<super::super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmIsUIMessageW(param0: super::super::super::Foundation::HWND, param1: u32, param2: super::super::super::Foundation::WPARAM, param3: super::super::super::Foundation::LPARAM) -> super::super::super::Foundation::BOOL;
     }
@@ -748,7 +691,6 @@ pub unsafe fn ImmLockIMC<'a, P0>(param0: P0) -> *mut INPUTCONTEXT
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmLockIMC(param0: super::super::super::Globalization::HIMC) -> *mut INPUTCONTEXT;
     }
@@ -761,7 +703,6 @@ pub unsafe fn ImmLockIMCC<'a, P0>(param0: P0) -> *mut ::core::ffi::c_void
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMCC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmLockIMCC(param0: super::super::super::Globalization::HIMCC) -> *mut ::core::ffi::c_void;
     }
@@ -774,7 +715,6 @@ pub unsafe fn ImmNotifyIME<'a, P0>(param0: P0, dwaction: NOTIFY_IME_ACTION, dwin
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmNotifyIME(param0: super::super::super::Globalization::HIMC, dwaction: NOTIFY_IME_ACTION, dwindex: NOTIFY_IME_INDEX, dwvalue: u32) -> super::super::super::Foundation::BOOL;
     }
@@ -787,7 +727,6 @@ pub unsafe fn ImmReSizeIMCC<'a, P0>(param0: P0, param1: u32) -> super::super::su
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMCC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmReSizeIMCC(param0: super::super::super::Globalization::HIMCC, param1: u32) -> super::super::super::Globalization::HIMCC;
     }
@@ -802,7 +741,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmRegisterWordA(param0: super::super::TextServices::HKL, lpszreading: ::windows::core::PCSTR, param2: u32, lpszregister: ::windows::core::PCSTR) -> super::super::super::Foundation::BOOL;
     }
@@ -817,7 +755,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmRegisterWordW(param0: super::super::TextServices::HKL, lpszreading: ::windows::core::PCWSTR, param2: u32, lpszregister: ::windows::core::PCWSTR) -> super::super::super::Foundation::BOOL;
     }
@@ -831,7 +768,6 @@ where
     P0: ::std::convert::Into<super::super::super::Foundation::HWND>,
     P1: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmReleaseContext(param0: super::super::super::Foundation::HWND, param1: super::super::super::Globalization::HIMC) -> super::super::super::Foundation::BOOL;
     }
@@ -846,7 +782,6 @@ where
     P1: ::std::convert::Into<super::super::super::Foundation::WPARAM>,
     P2: ::std::convert::Into<super::super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmRequestMessageA(param0: super::super::super::Globalization::HIMC, param1: super::super::super::Foundation::WPARAM, param2: super::super::super::Foundation::LPARAM) -> super::super::super::Foundation::LRESULT;
     }
@@ -861,7 +796,6 @@ where
     P1: ::std::convert::Into<super::super::super::Foundation::WPARAM>,
     P2: ::std::convert::Into<super::super::super::Foundation::LPARAM>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmRequestMessageW(param0: super::super::super::Globalization::HIMC, param1: super::super::super::Foundation::WPARAM, param2: super::super::super::Foundation::LPARAM) -> super::super::super::Foundation::LRESULT;
     }
@@ -874,7 +808,6 @@ pub unsafe fn ImmSetCandidateWindow<'a, P0>(param0: P0, lpcandidate: *const CAND
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmSetCandidateWindow(param0: super::super::super::Globalization::HIMC, lpcandidate: *const CANDIDATEFORM) -> super::super::super::Foundation::BOOL;
     }
@@ -887,7 +820,6 @@ pub unsafe fn ImmSetCompositionFontA<'a, P0>(param0: P0, lplf: *const super::sup
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmSetCompositionFontA(param0: super::super::super::Globalization::HIMC, lplf: *const super::super::super::Graphics::Gdi::LOGFONTA) -> super::super::super::Foundation::BOOL;
     }
@@ -900,7 +832,6 @@ pub unsafe fn ImmSetCompositionFontW<'a, P0>(param0: P0, lplf: *const super::sup
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmSetCompositionFontW(param0: super::super::super::Globalization::HIMC, lplf: *const super::super::super::Graphics::Gdi::LOGFONTW) -> super::super::super::Foundation::BOOL;
     }
@@ -913,7 +844,6 @@ pub unsafe fn ImmSetCompositionStringA<'a, P0>(param0: P0, dwindex: SET_COMPOSIT
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmSetCompositionStringA(param0: super::super::super::Globalization::HIMC, dwindex: SET_COMPOSITION_STRING_TYPE, lpcomp: *const ::core::ffi::c_void, dwcomplen: u32, lpread: *const ::core::ffi::c_void, dwreadlen: u32) -> super::super::super::Foundation::BOOL;
     }
@@ -926,7 +856,6 @@ pub unsafe fn ImmSetCompositionStringW<'a, P0>(param0: P0, dwindex: SET_COMPOSIT
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmSetCompositionStringW(param0: super::super::super::Globalization::HIMC, dwindex: SET_COMPOSITION_STRING_TYPE, lpcomp: *const ::core::ffi::c_void, dwcomplen: u32, lpread: *const ::core::ffi::c_void, dwreadlen: u32) -> super::super::super::Foundation::BOOL;
     }
@@ -939,7 +868,6 @@ pub unsafe fn ImmSetCompositionWindow<'a, P0>(param0: P0, lpcompform: *const COM
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmSetCompositionWindow(param0: super::super::super::Globalization::HIMC, lpcompform: *const COMPOSITIONFORM) -> super::super::super::Foundation::BOOL;
     }
@@ -952,7 +880,6 @@ pub unsafe fn ImmSetConversionStatus<'a, P0>(param0: P0, param1: IME_CONVERSION_
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmSetConversionStatus(param0: super::super::super::Globalization::HIMC, param1: IME_CONVERSION_MODE, param2: IME_SENTENCE_MODE) -> super::super::super::Foundation::BOOL;
     }
@@ -965,7 +892,6 @@ pub unsafe fn ImmSetHotKey<'a, P0>(param0: u32, param1: u32, param2: u32, param3
 where
     P0: ::std::convert::Into<super::super::TextServices::HKL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmSetHotKey(param0: u32, param1: u32, param2: u32, param3: super::super::TextServices::HKL) -> super::super::super::Foundation::BOOL;
     }
@@ -979,7 +905,6 @@ where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
     P1: ::std::convert::Into<super::super::super::Foundation::BOOL>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmSetOpenStatus(param0: super::super::super::Globalization::HIMC, param1: super::super::super::Foundation::BOOL) -> super::super::super::Foundation::BOOL;
     }
@@ -992,7 +917,6 @@ pub unsafe fn ImmSetStatusWindowPos<'a, P0>(param0: P0, lpptpos: *const super::s
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmSetStatusWindowPos(param0: super::super::super::Globalization::HIMC, lpptpos: *const super::super::super::Foundation::POINT) -> super::super::super::Foundation::BOOL;
     }
@@ -1005,7 +929,6 @@ pub unsafe fn ImmShowSoftKeyboard<'a, P0>(param0: P0, param1: i32) -> super::sup
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmShowSoftKeyboard(param0: super::super::super::Foundation::HWND, param1: i32) -> super::super::super::Foundation::BOOL;
     }
@@ -1018,7 +941,6 @@ pub unsafe fn ImmSimulateHotKey<'a, P0>(param0: P0, param1: IME_HOTKEY_IDENTIFIE
 where
     P0: ::std::convert::Into<super::super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmSimulateHotKey(param0: super::super::super::Foundation::HWND, param1: IME_HOTKEY_IDENTIFIER) -> super::super::super::Foundation::BOOL;
     }
@@ -1031,7 +953,6 @@ pub unsafe fn ImmUnlockIMC<'a, P0>(param0: P0) -> super::super::super::Foundatio
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmUnlockIMC(param0: super::super::super::Globalization::HIMC) -> super::super::super::Foundation::BOOL;
     }
@@ -1044,7 +965,6 @@ pub unsafe fn ImmUnlockIMCC<'a, P0>(param0: P0) -> super::super::super::Foundati
 where
     P0: ::std::convert::Into<super::super::super::Globalization::HIMCC>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmUnlockIMCC(param0: super::super::super::Globalization::HIMCC) -> super::super::super::Foundation::BOOL;
     }
@@ -1059,7 +979,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCSTR>,
     P2: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmUnregisterWordA(param0: super::super::TextServices::HKL, lpszreading: ::windows::core::PCSTR, param2: u32, lpszunregister: ::windows::core::PCSTR) -> super::super::super::Foundation::BOOL;
     }
@@ -1074,7 +993,6 @@ where
     P1: ::std::convert::Into<::windows::core::PCWSTR>,
     P2: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn ImmUnregisterWordW(param0: super::super::TextServices::HKL, lpszreading: ::windows::core::PCWSTR, param2: u32, lpszunregister: ::windows::core::PCWSTR) -> super::super::super::Foundation::BOOL;
     }

@@ -1,7 +1,6 @@
 #[doc = "*Required features: `\"Win32_System_SecurityCenter\"`*"]
 #[inline]
 pub unsafe fn WscGetAntiMalwareUri() -> ::windows::core::Result<::windows::core::PWSTR> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WscGetAntiMalwareUri(ppszuri: *mut ::windows::core::PWSTR) -> ::windows::core::HRESULT;
     }
@@ -11,7 +10,6 @@ pub unsafe fn WscGetAntiMalwareUri() -> ::windows::core::Result<::windows::core:
 #[doc = "*Required features: `\"Win32_System_SecurityCenter\"`*"]
 #[inline]
 pub unsafe fn WscGetSecurityProviderHealth(providers: u32, phealth: *mut WSC_SECURITY_PROVIDER_HEALTH) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WscGetSecurityProviderHealth(providers: u32, phealth: *mut WSC_SECURITY_PROVIDER_HEALTH) -> ::windows::core::HRESULT;
     }
@@ -20,7 +18,6 @@ pub unsafe fn WscGetSecurityProviderHealth(providers: u32, phealth: *mut WSC_SEC
 #[doc = "*Required features: `\"Win32_System_SecurityCenter\"`*"]
 #[inline]
 pub unsafe fn WscQueryAntiMalwareUri() -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WscQueryAntiMalwareUri() -> ::windows::core::HRESULT;
     }
@@ -30,7 +27,6 @@ pub unsafe fn WscQueryAntiMalwareUri() -> ::windows::core::Result<()> {
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Threading"))]
 #[inline]
 pub unsafe fn WscRegisterForChanges(reserved: *mut ::core::ffi::c_void, phcallbackregistration: *mut super::super::Foundation::HANDLE, lpcallbackaddress: super::Threading::LPTHREAD_START_ROUTINE, pcontext: *mut ::core::ffi::c_void) -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WscRegisterForChanges(reserved: *mut ::core::ffi::c_void, phcallbackregistration: *mut super::super::Foundation::HANDLE, lpcallbackaddress: *mut ::core::ffi::c_void, pcontext: *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -39,7 +35,6 @@ pub unsafe fn WscRegisterForChanges(reserved: *mut ::core::ffi::c_void, phcallba
 #[doc = "*Required features: `\"Win32_System_SecurityCenter\"`*"]
 #[inline]
 pub unsafe fn WscRegisterForUserNotifications() -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WscRegisterForUserNotifications() -> ::windows::core::HRESULT;
     }
@@ -52,7 +47,6 @@ pub unsafe fn WscUnRegisterChanges<'a, P0>(hregistrationhandle: P0) -> ::windows
 where
     P0: ::std::convert::Into<super::super::Foundation::HANDLE>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WscUnRegisterChanges(hregistrationhandle: super::super::Foundation::HANDLE) -> ::windows::core::HRESULT;
     }

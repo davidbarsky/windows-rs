@@ -6,7 +6,6 @@ pub unsafe fn CreateDXGIFactory<T>() -> ::windows::core::Result<T>
 where
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateDXGIFactory(riid: *const ::windows::core::GUID, ppfactory: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -19,7 +18,6 @@ pub unsafe fn CreateDXGIFactory1<T>() -> ::windows::core::Result<T>
 where
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateDXGIFactory1(riid: *const ::windows::core::GUID, ppfactory: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -32,7 +30,6 @@ pub unsafe fn CreateDXGIFactory2<T>(flags: u32) -> ::windows::core::Result<T>
 where
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn CreateDXGIFactory2(flags: u32, riid: *const ::windows::core::GUID, ppfactory: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -42,7 +39,6 @@ where
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
 #[inline]
 pub unsafe fn DXGIDeclareAdapterRemovalSupport() -> ::windows::core::Result<()> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DXGIDeclareAdapterRemovalSupport() -> ::windows::core::HRESULT;
     }
@@ -54,7 +50,6 @@ pub unsafe fn DXGIGetDebugInterface1<T>(flags: u32) -> ::windows::core::Result<T
 where
     T: ::windows::core::Interface,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn DXGIGetDebugInterface1(flags: u32, riid: *const ::windows::core::GUID, pdebug: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }

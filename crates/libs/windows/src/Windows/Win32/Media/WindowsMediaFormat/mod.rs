@@ -4,7 +4,6 @@ pub unsafe fn WMCreateBackupRestorer<'a, P0>(pcallback: P0) -> ::windows::core::
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WMCreateBackupRestorer(pcallback: *mut ::core::ffi::c_void, ppbackup: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -14,7 +13,6 @@ where
 #[doc = "*Required features: `\"Win32_Media_WindowsMediaFormat\"`*"]
 #[inline]
 pub unsafe fn WMCreateEditor() -> ::windows::core::Result<IWMMetadataEditor> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WMCreateEditor(ppeditor: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -24,7 +22,6 @@ pub unsafe fn WMCreateEditor() -> ::windows::core::Result<IWMMetadataEditor> {
 #[doc = "*Required features: `\"Win32_Media_WindowsMediaFormat\"`*"]
 #[inline]
 pub unsafe fn WMCreateIndexer() -> ::windows::core::Result<IWMIndexer> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WMCreateIndexer(ppindexer: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -34,7 +31,6 @@ pub unsafe fn WMCreateIndexer() -> ::windows::core::Result<IWMIndexer> {
 #[doc = "*Required features: `\"Win32_Media_WindowsMediaFormat\"`*"]
 #[inline]
 pub unsafe fn WMCreateProfileManager() -> ::windows::core::Result<IWMProfileManager> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WMCreateProfileManager(ppprofilemanager: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -47,7 +43,6 @@ pub unsafe fn WMCreateReader<'a, P0>(punkcert: P0, dwrights: u32) -> ::windows::
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WMCreateReader(punkcert: *mut ::core::ffi::c_void, dwrights: u32, ppreader: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -60,7 +55,6 @@ pub unsafe fn WMCreateSyncReader<'a, P0>(punkcert: P0, dwrights: u32) -> ::windo
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WMCreateSyncReader(punkcert: *mut ::core::ffi::c_void, dwrights: u32, ppsyncreader: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -73,7 +67,6 @@ pub unsafe fn WMCreateWriter<'a, P0>(punkcert: P0) -> ::windows::core::Result<IW
 where
     P0: ::std::convert::Into<::windows::core::InParam<'a, ::windows::core::IUnknown>>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WMCreateWriter(punkcert: *mut ::core::ffi::c_void, ppwriter: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -83,7 +76,6 @@ where
 #[doc = "*Required features: `\"Win32_Media_WindowsMediaFormat\"`*"]
 #[inline]
 pub unsafe fn WMCreateWriterFileSink() -> ::windows::core::Result<IWMWriterFileSink> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WMCreateWriterFileSink(ppsink: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -93,7 +85,6 @@ pub unsafe fn WMCreateWriterFileSink() -> ::windows::core::Result<IWMWriterFileS
 #[doc = "*Required features: `\"Win32_Media_WindowsMediaFormat\"`*"]
 #[inline]
 pub unsafe fn WMCreateWriterNetworkSink() -> ::windows::core::Result<IWMWriterNetworkSink> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WMCreateWriterNetworkSink(ppsink: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -103,7 +94,6 @@ pub unsafe fn WMCreateWriterNetworkSink() -> ::windows::core::Result<IWMWriterNe
 #[doc = "*Required features: `\"Win32_Media_WindowsMediaFormat\"`*"]
 #[inline]
 pub unsafe fn WMCreateWriterPushSink() -> ::windows::core::Result<IWMWriterPushSink> {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WMCreateWriterPushSink(ppsink: *mut *mut ::core::ffi::c_void) -> ::windows::core::HRESULT;
     }
@@ -117,7 +107,6 @@ pub unsafe fn WMIsContentProtected<'a, P0>(pwszfilename: P0, pfisprotected: *mut
 where
     P0: ::std::convert::Into<::windows::core::PCWSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn WMIsContentProtected(pwszfilename: ::windows::core::PCWSTR, pfisprotected: *mut super::super::Foundation::BOOL) -> ::windows::core::HRESULT;
     }

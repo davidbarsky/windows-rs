@@ -4,7 +4,6 @@ pub unsafe fn SnmpUtilDbgPrint<'a, P0>(nloglevel: SNMP_LOG, szformat: P0)
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "cdecl" {
         fn SnmpUtilDbgPrint(nloglevel: SNMP_LOG, szformat: ::windows::core::PCSTR);
     }
@@ -13,7 +12,6 @@ where
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpCancelMsg(session: isize, reqid: i32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpCancelMsg(session: isize, reqid: i32) -> u32;
     }
@@ -22,7 +20,6 @@ pub unsafe fn SnmpCancelMsg(session: isize, reqid: i32) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpCleanup() -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpCleanup() -> u32;
     }
@@ -31,7 +28,6 @@ pub unsafe fn SnmpCleanup() -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpCleanupEx() -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpCleanupEx() -> u32;
     }
@@ -40,7 +36,6 @@ pub unsafe fn SnmpCleanupEx() -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpClose(session: isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpClose(session: isize) -> u32;
     }
@@ -49,7 +44,6 @@ pub unsafe fn SnmpClose(session: isize) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpContextToStr(context: isize, string: *mut smiOCTETS) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpContextToStr(context: isize, string: *mut smiOCTETS) -> u32;
     }
@@ -58,7 +52,6 @@ pub unsafe fn SnmpContextToStr(context: isize, string: *mut smiOCTETS) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpCountVbl(vbl: isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpCountVbl(vbl: isize) -> u32;
     }
@@ -67,7 +60,6 @@ pub unsafe fn SnmpCountVbl(vbl: isize) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpCreatePdu(session: isize, pdu_type: SNMP_PDU_TYPE, request_id: i32, error_status: i32, error_index: i32, varbindlist: isize) -> isize {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpCreatePdu(session: isize, pdu_type: SNMP_PDU_TYPE, request_id: i32, error_status: i32, error_index: i32, varbindlist: isize) -> isize;
     }
@@ -80,7 +72,6 @@ pub unsafe fn SnmpCreateSession<'a, P0>(hwnd: P0, wmsg: u32, fcallback: SNMPAPI_
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpCreateSession(hwnd: super::super::Foundation::HWND, wmsg: u32, fcallback: *mut ::core::ffi::c_void, lpclientdata: *mut ::core::ffi::c_void) -> isize;
     }
@@ -89,7 +80,6 @@ where
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpCreateVbl(session: isize, name: *mut smiOID, value: *mut smiVALUE) -> isize {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpCreateVbl(session: isize, name: *mut smiOID, value: *mut smiVALUE) -> isize;
     }
@@ -98,7 +88,6 @@ pub unsafe fn SnmpCreateVbl(session: isize, name: *mut smiOID, value: *mut smiVA
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpDecodeMsg(session: isize, srcentity: *mut isize, dstentity: *mut isize, context: *mut isize, pdu: *mut isize, msgbufdesc: *mut smiOCTETS) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpDecodeMsg(session: isize, srcentity: *mut isize, dstentity: *mut isize, context: *mut isize, pdu: *mut isize, msgbufdesc: *mut smiOCTETS) -> u32;
     }
@@ -107,7 +96,6 @@ pub unsafe fn SnmpDecodeMsg(session: isize, srcentity: *mut isize, dstentity: *m
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpDeleteVb(vbl: isize, index: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpDeleteVb(vbl: isize, index: u32) -> u32;
     }
@@ -116,7 +104,6 @@ pub unsafe fn SnmpDeleteVb(vbl: isize, index: u32) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpDuplicatePdu(session: isize, pdu: isize) -> isize {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpDuplicatePdu(session: isize, pdu: isize) -> isize;
     }
@@ -125,7 +112,6 @@ pub unsafe fn SnmpDuplicatePdu(session: isize, pdu: isize) -> isize {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpDuplicateVbl(session: isize, vbl: isize) -> isize {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpDuplicateVbl(session: isize, vbl: isize) -> isize;
     }
@@ -134,7 +120,6 @@ pub unsafe fn SnmpDuplicateVbl(session: isize, vbl: isize) -> isize {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpEncodeMsg(session: isize, srcentity: isize, dstentity: isize, context: isize, pdu: isize, msgbufdesc: *mut smiOCTETS) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpEncodeMsg(session: isize, srcentity: isize, dstentity: isize, context: isize, pdu: isize, msgbufdesc: *mut smiOCTETS) -> u32;
     }
@@ -143,7 +128,6 @@ pub unsafe fn SnmpEncodeMsg(session: isize, srcentity: isize, dstentity: isize, 
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpEntityToStr(entity: isize, string: &mut [u8]) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpEntityToStr(entity: isize, size: u32, string: ::windows::core::PSTR) -> u32;
     }
@@ -152,7 +136,6 @@ pub unsafe fn SnmpEntityToStr(entity: isize, string: &mut [u8]) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpFreeContext(context: isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpFreeContext(context: isize) -> u32;
     }
@@ -161,7 +144,6 @@ pub unsafe fn SnmpFreeContext(context: isize) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpFreeDescriptor(syntax: u32, descriptor: *mut smiOCTETS) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpFreeDescriptor(syntax: u32, descriptor: *mut smiOCTETS) -> u32;
     }
@@ -170,7 +152,6 @@ pub unsafe fn SnmpFreeDescriptor(syntax: u32, descriptor: *mut smiOCTETS) -> u32
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpFreeEntity(entity: isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpFreeEntity(entity: isize) -> u32;
     }
@@ -179,7 +160,6 @@ pub unsafe fn SnmpFreeEntity(entity: isize) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpFreePdu(pdu: isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpFreePdu(pdu: isize) -> u32;
     }
@@ -188,7 +168,6 @@ pub unsafe fn SnmpFreePdu(pdu: isize) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpFreeVbl(vbl: isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpFreeVbl(vbl: isize) -> u32;
     }
@@ -197,7 +176,6 @@ pub unsafe fn SnmpFreeVbl(vbl: isize) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpGetLastError(session: isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpGetLastError(session: isize) -> u32;
     }
@@ -206,7 +184,6 @@ pub unsafe fn SnmpGetLastError(session: isize) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpGetPduData(pdu: isize, pdu_type: *mut SNMP_PDU_TYPE, request_id: *mut i32, error_status: *mut SNMP_ERROR, error_index: *mut i32, varbindlist: *mut isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpGetPduData(pdu: isize, pdu_type: *mut SNMP_PDU_TYPE, request_id: *mut i32, error_status: *mut SNMP_ERROR, error_index: *mut i32, varbindlist: *mut isize) -> u32;
     }
@@ -215,7 +192,6 @@ pub unsafe fn SnmpGetPduData(pdu: isize, pdu_type: *mut SNMP_PDU_TYPE, request_i
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpGetRetransmitMode(nretransmitmode: *mut SNMP_STATUS) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpGetRetransmitMode(nretransmitmode: *mut SNMP_STATUS) -> u32;
     }
@@ -224,7 +200,6 @@ pub unsafe fn SnmpGetRetransmitMode(nretransmitmode: *mut SNMP_STATUS) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpGetRetry(hentity: isize, npolicyretry: *mut u32, nactualretry: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpGetRetry(hentity: isize, npolicyretry: *mut u32, nactualretry: *mut u32) -> u32;
     }
@@ -233,7 +208,6 @@ pub unsafe fn SnmpGetRetry(hentity: isize, npolicyretry: *mut u32, nactualretry:
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpGetTimeout(hentity: isize, npolicytimeout: *mut u32, nactualtimeout: *mut u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpGetTimeout(hentity: isize, npolicytimeout: *mut u32, nactualtimeout: *mut u32) -> u32;
     }
@@ -242,7 +216,6 @@ pub unsafe fn SnmpGetTimeout(hentity: isize, npolicytimeout: *mut u32, nactualti
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpGetTranslateMode(ntranslatemode: *mut SNMP_API_TRANSLATE_MODE) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpGetTranslateMode(ntranslatemode: *mut SNMP_API_TRANSLATE_MODE) -> u32;
     }
@@ -251,7 +224,6 @@ pub unsafe fn SnmpGetTranslateMode(ntranslatemode: *mut SNMP_API_TRANSLATE_MODE)
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpGetVb(vbl: isize, index: u32, name: *mut smiOID, value: *mut smiVALUE) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpGetVb(vbl: isize, index: u32, name: *mut smiOID, value: *mut smiVALUE) -> u32;
     }
@@ -261,7 +233,6 @@ pub unsafe fn SnmpGetVb(vbl: isize, index: u32, name: *mut smiOID, value: *mut s
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SnmpGetVendorInfo(vendorinfo: *mut smiVENDORINFO) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpGetVendorInfo(vendorinfo: *mut smiVENDORINFO) -> u32;
     }
@@ -270,7 +241,6 @@ pub unsafe fn SnmpGetVendorInfo(vendorinfo: *mut smiVENDORINFO) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpListen(hentity: isize, lstatus: SNMP_STATUS) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpListen(hentity: isize, lstatus: SNMP_STATUS) -> u32;
     }
@@ -279,7 +249,6 @@ pub unsafe fn SnmpListen(hentity: isize, lstatus: SNMP_STATUS) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpListenEx(hentity: isize, lstatus: u32, nuseentityaddr: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpListenEx(hentity: isize, lstatus: u32, nuseentityaddr: u32) -> u32;
     }
@@ -289,7 +258,6 @@ pub unsafe fn SnmpListenEx(hentity: isize, lstatus: u32, nuseentityaddr: u32) ->
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SnmpMgrClose(session: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpMgrClose(session: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     }
@@ -299,7 +267,6 @@ pub unsafe fn SnmpMgrClose(session: *mut ::core::ffi::c_void) -> super::super::F
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SnmpMgrCtl(session: *mut ::core::ffi::c_void, dwctlcode: u32, lpvinbuffer: *mut ::core::ffi::c_void, cbinbuffer: u32, lpvoutbuffer: *mut ::core::ffi::c_void, cboutbuffer: u32, lpcbbytesreturned: *mut u32) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpMgrCtl(session: *mut ::core::ffi::c_void, dwctlcode: u32, lpvinbuffer: *mut ::core::ffi::c_void, cbinbuffer: u32, lpvoutbuffer: *mut ::core::ffi::c_void, cboutbuffer: u32, lpcbbytesreturned: *mut u32) -> super::super::Foundation::BOOL;
     }
@@ -309,7 +276,6 @@ pub unsafe fn SnmpMgrCtl(session: *mut ::core::ffi::c_void, dwctlcode: u32, lpvi
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SnmpMgrGetTrap(enterprise: *mut AsnObjectIdentifier, ipaddress: *mut AsnOctetString, generictrap: *mut SNMP_GENERICTRAP, specifictrap: *mut i32, timestamp: *mut u32, variablebindings: *mut SnmpVarBindList) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpMgrGetTrap(enterprise: *mut AsnObjectIdentifier, ipaddress: *mut AsnOctetString, generictrap: *mut SNMP_GENERICTRAP, specifictrap: *mut i32, timestamp: *mut u32, variablebindings: *mut SnmpVarBindList) -> super::super::Foundation::BOOL;
     }
@@ -319,7 +285,6 @@ pub unsafe fn SnmpMgrGetTrap(enterprise: *mut AsnObjectIdentifier, ipaddress: *m
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SnmpMgrGetTrapEx(enterprise: *mut AsnObjectIdentifier, agentaddress: *mut AsnOctetString, sourceaddress: *mut AsnOctetString, generictrap: *mut SNMP_GENERICTRAP, specifictrap: *mut i32, community: *mut AsnOctetString, timestamp: *mut u32, variablebindings: *mut SnmpVarBindList) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpMgrGetTrapEx(enterprise: *mut AsnObjectIdentifier, agentaddress: *mut AsnOctetString, sourceaddress: *mut AsnOctetString, generictrap: *mut SNMP_GENERICTRAP, specifictrap: *mut i32, community: *mut AsnOctetString, timestamp: *mut u32, variablebindings: *mut SnmpVarBindList) -> super::super::Foundation::BOOL;
     }
@@ -329,7 +294,6 @@ pub unsafe fn SnmpMgrGetTrapEx(enterprise: *mut AsnObjectIdentifier, agentaddres
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SnmpMgrOidToStr(oid: *mut AsnObjectIdentifier, string: ::core::option::Option<*mut ::windows::core::PSTR>) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpMgrOidToStr(oid: *mut AsnObjectIdentifier, string: *mut ::windows::core::PSTR) -> super::super::Foundation::BOOL;
     }
@@ -342,7 +306,6 @@ where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
     P1: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpMgrOpen(lpagentaddress: ::windows::core::PCSTR, lpagentcommunity: ::windows::core::PCSTR, ntimeout: i32, nretries: i32) -> *mut ::core::ffi::c_void;
     }
@@ -352,7 +315,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SnmpMgrRequest(session: *mut ::core::ffi::c_void, requesttype: u8, variablebindings: *mut SnmpVarBindList, errorstatus: *mut SNMP_ERROR_STATUS, errorindex: *mut i32) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpMgrRequest(session: *mut ::core::ffi::c_void, requesttype: u8, variablebindings: *mut SnmpVarBindList, errorstatus: *mut SNMP_ERROR_STATUS, errorindex: *mut i32) -> i32;
     }
@@ -365,7 +327,6 @@ pub unsafe fn SnmpMgrStrToOid<'a, P0>(string: P0, oid: *mut AsnObjectIdentifier)
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpMgrStrToOid(string: ::windows::core::PCSTR, oid: *mut AsnObjectIdentifier) -> super::super::Foundation::BOOL;
     }
@@ -375,7 +336,6 @@ where
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SnmpMgrTrapListen(phtrapavailable: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpMgrTrapListen(phtrapavailable: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     }
@@ -384,7 +344,6 @@ pub unsafe fn SnmpMgrTrapListen(phtrapavailable: *mut super::super::Foundation::
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpOidCompare(xoid: *mut smiOID, yoid: *mut smiOID, maxlen: u32, result: *mut i32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpOidCompare(xoid: *mut smiOID, yoid: *mut smiOID, maxlen: u32, result: *mut i32) -> u32;
     }
@@ -393,7 +352,6 @@ pub unsafe fn SnmpOidCompare(xoid: *mut smiOID, yoid: *mut smiOID, maxlen: u32, 
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpOidCopy(srcoid: *mut smiOID, dstoid: *mut smiOID) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpOidCopy(srcoid: *mut smiOID, dstoid: *mut smiOID) -> u32;
     }
@@ -402,7 +360,6 @@ pub unsafe fn SnmpOidCopy(srcoid: *mut smiOID, dstoid: *mut smiOID) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpOidToStr(srcoid: *const smiOID, string: &mut [u8]) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpOidToStr(srcoid: *const smiOID, size: u32, string: ::windows::core::PSTR) -> u32;
     }
@@ -415,7 +372,6 @@ pub unsafe fn SnmpOpen<'a, P0>(hwnd: P0, wmsg: u32) -> isize
 where
     P0: ::std::convert::Into<super::super::Foundation::HWND>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpOpen(hwnd: super::super::Foundation::HWND, wmsg: u32) -> isize;
     }
@@ -424,7 +380,6 @@ where
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpRecvMsg(session: isize, srcentity: *mut isize, dstentity: *mut isize, context: *mut isize, pdu: *mut isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpRecvMsg(session: isize, srcentity: *mut isize, dstentity: *mut isize, context: *mut isize, pdu: *mut isize) -> u32;
     }
@@ -433,7 +388,6 @@ pub unsafe fn SnmpRecvMsg(session: isize, srcentity: *mut isize, dstentity: *mut
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpRegister(session: isize, srcentity: isize, dstentity: isize, context: isize, notification: *mut smiOID, state: SNMP_STATUS) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpRegister(session: isize, srcentity: isize, dstentity: isize, context: isize, notification: *mut smiOID, state: SNMP_STATUS) -> u32;
     }
@@ -442,7 +396,6 @@ pub unsafe fn SnmpRegister(session: isize, srcentity: isize, dstentity: isize, c
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpSendMsg(session: isize, srcentity: isize, dstentity: isize, context: isize, pdu: isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpSendMsg(session: isize, srcentity: isize, dstentity: isize, context: isize, pdu: isize) -> u32;
     }
@@ -451,7 +404,6 @@ pub unsafe fn SnmpSendMsg(session: isize, srcentity: isize, dstentity: isize, co
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpSetPduData(pdu: isize, pdu_type: *const i32, request_id: *const i32, non_repeaters: *const i32, max_repetitions: *const i32, varbindlist: *const isize) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpSetPduData(pdu: isize, pdu_type: *const i32, request_id: *const i32, non_repeaters: *const i32, max_repetitions: *const i32, varbindlist: *const isize) -> u32;
     }
@@ -460,7 +412,6 @@ pub unsafe fn SnmpSetPduData(pdu: isize, pdu_type: *const i32, request_id: *cons
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpSetPort(hentity: isize, nport: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpSetPort(hentity: isize, nport: u32) -> u32;
     }
@@ -469,7 +420,6 @@ pub unsafe fn SnmpSetPort(hentity: isize, nport: u32) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpSetRetransmitMode(nretransmitmode: SNMP_STATUS) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpSetRetransmitMode(nretransmitmode: SNMP_STATUS) -> u32;
     }
@@ -478,7 +428,6 @@ pub unsafe fn SnmpSetRetransmitMode(nretransmitmode: SNMP_STATUS) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpSetRetry(hentity: isize, npolicyretry: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpSetRetry(hentity: isize, npolicyretry: u32) -> u32;
     }
@@ -487,7 +436,6 @@ pub unsafe fn SnmpSetRetry(hentity: isize, npolicyretry: u32) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpSetTimeout(hentity: isize, npolicytimeout: u32) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpSetTimeout(hentity: isize, npolicytimeout: u32) -> u32;
     }
@@ -496,7 +444,6 @@ pub unsafe fn SnmpSetTimeout(hentity: isize, npolicytimeout: u32) -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpSetTranslateMode(ntranslatemode: SNMP_API_TRANSLATE_MODE) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpSetTranslateMode(ntranslatemode: SNMP_API_TRANSLATE_MODE) -> u32;
     }
@@ -505,7 +452,6 @@ pub unsafe fn SnmpSetTranslateMode(ntranslatemode: SNMP_API_TRANSLATE_MODE) -> u
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpSetVb(vbl: isize, index: u32, name: *mut smiOID, value: *mut smiVALUE) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpSetVb(vbl: isize, index: u32, name: *mut smiOID, value: *mut smiVALUE) -> u32;
     }
@@ -514,7 +460,6 @@ pub unsafe fn SnmpSetVb(vbl: isize, index: u32, name: *mut smiOID, value: *mut s
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpStartup(nmajorversion: *mut u32, nminorversion: *mut u32, nlevel: *mut u32, ntranslatemode: *mut SNMP_API_TRANSLATE_MODE, nretransmitmode: *mut SNMP_STATUS) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpStartup(nmajorversion: *mut u32, nminorversion: *mut u32, nlevel: *mut u32, ntranslatemode: *mut SNMP_API_TRANSLATE_MODE, nretransmitmode: *mut SNMP_STATUS) -> u32;
     }
@@ -523,7 +468,6 @@ pub unsafe fn SnmpStartup(nmajorversion: *mut u32, nminorversion: *mut u32, nlev
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpStartupEx(nmajorversion: *mut u32, nminorversion: *mut u32, nlevel: *mut u32, ntranslatemode: *mut SNMP_API_TRANSLATE_MODE, nretransmitmode: *mut SNMP_STATUS) -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpStartupEx(nmajorversion: *mut u32, nminorversion: *mut u32, nlevel: *mut u32, ntranslatemode: *mut SNMP_API_TRANSLATE_MODE, nretransmitmode: *mut SNMP_STATUS) -> u32;
     }
@@ -532,7 +476,6 @@ pub unsafe fn SnmpStartupEx(nmajorversion: *mut u32, nminorversion: *mut u32, nl
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpStrToContext(session: isize, string: *mut smiOCTETS) -> isize {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpStrToContext(session: isize, string: *mut smiOCTETS) -> isize;
     }
@@ -544,7 +487,6 @@ pub unsafe fn SnmpStrToEntity<'a, P0>(session: isize, string: P0) -> isize
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpStrToEntity(session: isize, string: ::windows::core::PCSTR) -> isize;
     }
@@ -556,7 +498,6 @@ pub unsafe fn SnmpStrToOid<'a, P0>(string: P0, dstoid: *mut smiOID) -> u32
 where
     P0: ::std::convert::Into<::windows::core::PCSTR>,
 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpStrToOid(string: ::windows::core::PCSTR, dstoid: *mut smiOID) -> u32;
     }
@@ -565,7 +506,6 @@ where
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpSvcGetUptime() -> u32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpSvcGetUptime() -> u32;
     }
@@ -574,7 +514,6 @@ pub unsafe fn SnmpSvcGetUptime() -> u32 {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpSvcSetLogLevel(nloglevel: SNMP_LOG) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpSvcSetLogLevel(nloglevel: SNMP_LOG);
     }
@@ -583,7 +522,6 @@ pub unsafe fn SnmpSvcSetLogLevel(nloglevel: SNMP_LOG) {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpSvcSetLogType(nlogtype: SNMP_OUTPUT_LOG_TYPE) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpSvcSetLogType(nlogtype: SNMP_OUTPUT_LOG_TYPE);
     }
@@ -593,7 +531,6 @@ pub unsafe fn SnmpSvcSetLogType(nlogtype: SNMP_OUTPUT_LOG_TYPE) {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SnmpUtilAsnAnyCpy(panydst: *mut AsnAny, panysrc: *mut AsnAny) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpUtilAsnAnyCpy(panydst: *mut AsnAny, panysrc: *mut AsnAny) -> i32;
     }
@@ -603,7 +540,6 @@ pub unsafe fn SnmpUtilAsnAnyCpy(panydst: *mut AsnAny, panysrc: *mut AsnAny) -> i
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SnmpUtilAsnAnyFree(pany: *mut AsnAny) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpUtilAsnAnyFree(pany: *mut AsnAny);
     }
@@ -612,7 +548,6 @@ pub unsafe fn SnmpUtilAsnAnyFree(pany: *mut AsnAny) {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpUtilIdsToA(ids: *mut u32, idlength: u32) -> ::windows::core::PSTR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpUtilIdsToA(ids: *mut u32, idlength: u32) -> ::windows::core::PSTR;
     }
@@ -621,7 +556,6 @@ pub unsafe fn SnmpUtilIdsToA(ids: *mut u32, idlength: u32) -> ::windows::core::P
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpUtilMemAlloc(nbytes: u32) -> *mut ::core::ffi::c_void {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpUtilMemAlloc(nbytes: u32) -> *mut ::core::ffi::c_void;
     }
@@ -630,7 +564,6 @@ pub unsafe fn SnmpUtilMemAlloc(nbytes: u32) -> *mut ::core::ffi::c_void {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpUtilMemFree(pmem: *mut ::core::ffi::c_void) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpUtilMemFree(pmem: *mut ::core::ffi::c_void);
     }
@@ -639,7 +572,6 @@ pub unsafe fn SnmpUtilMemFree(pmem: *mut ::core::ffi::c_void) {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpUtilMemReAlloc(pmem: *mut ::core::ffi::c_void, nbytes: u32) -> *mut ::core::ffi::c_void {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpUtilMemReAlloc(pmem: *mut ::core::ffi::c_void, nbytes: u32) -> *mut ::core::ffi::c_void;
     }
@@ -649,7 +581,6 @@ pub unsafe fn SnmpUtilMemReAlloc(pmem: *mut ::core::ffi::c_void, nbytes: u32) ->
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SnmpUtilOctetsCmp(poctets1: *mut AsnOctetString, poctets2: *mut AsnOctetString) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpUtilOctetsCmp(poctets1: *mut AsnOctetString, poctets2: *mut AsnOctetString) -> i32;
     }
@@ -659,7 +590,6 @@ pub unsafe fn SnmpUtilOctetsCmp(poctets1: *mut AsnOctetString, poctets2: *mut As
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SnmpUtilOctetsCpy(poctetsdst: *mut AsnOctetString, poctetssrc: *mut AsnOctetString) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpUtilOctetsCpy(poctetsdst: *mut AsnOctetString, poctetssrc: *mut AsnOctetString) -> i32;
     }
@@ -669,7 +599,6 @@ pub unsafe fn SnmpUtilOctetsCpy(poctetsdst: *mut AsnOctetString, poctetssrc: *mu
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SnmpUtilOctetsFree(poctets: *mut AsnOctetString) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpUtilOctetsFree(poctets: *mut AsnOctetString);
     }
@@ -679,7 +608,6 @@ pub unsafe fn SnmpUtilOctetsFree(poctets: *mut AsnOctetString) {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SnmpUtilOctetsNCmp(poctets1: *mut AsnOctetString, poctets2: *mut AsnOctetString, nchars: u32) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpUtilOctetsNCmp(poctets1: *mut AsnOctetString, poctets2: *mut AsnOctetString, nchars: u32) -> i32;
     }
@@ -688,7 +616,6 @@ pub unsafe fn SnmpUtilOctetsNCmp(poctets1: *mut AsnOctetString, poctets2: *mut A
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpUtilOidAppend(poiddst: *mut AsnObjectIdentifier, poidsrc: *mut AsnObjectIdentifier) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpUtilOidAppend(poiddst: *mut AsnObjectIdentifier, poidsrc: *mut AsnObjectIdentifier) -> i32;
     }
@@ -697,7 +624,6 @@ pub unsafe fn SnmpUtilOidAppend(poiddst: *mut AsnObjectIdentifier, poidsrc: *mut
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpUtilOidCmp(poid1: *mut AsnObjectIdentifier, poid2: *mut AsnObjectIdentifier) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpUtilOidCmp(poid1: *mut AsnObjectIdentifier, poid2: *mut AsnObjectIdentifier) -> i32;
     }
@@ -706,7 +632,6 @@ pub unsafe fn SnmpUtilOidCmp(poid1: *mut AsnObjectIdentifier, poid2: *mut AsnObj
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpUtilOidCpy(poiddst: *mut AsnObjectIdentifier, poidsrc: *mut AsnObjectIdentifier) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpUtilOidCpy(poiddst: *mut AsnObjectIdentifier, poidsrc: *mut AsnObjectIdentifier) -> i32;
     }
@@ -715,7 +640,6 @@ pub unsafe fn SnmpUtilOidCpy(poiddst: *mut AsnObjectIdentifier, poidsrc: *mut As
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpUtilOidFree(poid: *mut AsnObjectIdentifier) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpUtilOidFree(poid: *mut AsnObjectIdentifier);
     }
@@ -724,7 +648,6 @@ pub unsafe fn SnmpUtilOidFree(poid: *mut AsnObjectIdentifier) {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpUtilOidNCmp(poid1: *mut AsnObjectIdentifier, poid2: *mut AsnObjectIdentifier, nsubids: u32) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpUtilOidNCmp(poid1: *mut AsnObjectIdentifier, poid2: *mut AsnObjectIdentifier, nsubids: u32) -> i32;
     }
@@ -733,7 +656,6 @@ pub unsafe fn SnmpUtilOidNCmp(poid1: *mut AsnObjectIdentifier, poid2: *mut AsnOb
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpUtilOidToA(oid: *mut AsnObjectIdentifier) -> ::windows::core::PSTR {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpUtilOidToA(oid: *mut AsnObjectIdentifier) -> ::windows::core::PSTR;
     }
@@ -743,7 +665,6 @@ pub unsafe fn SnmpUtilOidToA(oid: *mut AsnObjectIdentifier) -> ::windows::core::
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SnmpUtilPrintAsnAny(pany: *mut AsnAny) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpUtilPrintAsnAny(pany: *mut AsnAny);
     }
@@ -752,7 +673,6 @@ pub unsafe fn SnmpUtilPrintAsnAny(pany: *mut AsnAny) {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Snmp\"`*"]
 #[inline]
 pub unsafe fn SnmpUtilPrintOid(oid: *mut AsnObjectIdentifier) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpUtilPrintOid(oid: *mut AsnObjectIdentifier);
     }
@@ -762,7 +682,6 @@ pub unsafe fn SnmpUtilPrintOid(oid: *mut AsnObjectIdentifier) {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SnmpUtilVarBindCpy(pvbdst: *mut SnmpVarBind, pvbsrc: *mut SnmpVarBind) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpUtilVarBindCpy(pvbdst: *mut SnmpVarBind, pvbsrc: *mut SnmpVarBind) -> i32;
     }
@@ -772,7 +691,6 @@ pub unsafe fn SnmpUtilVarBindCpy(pvbdst: *mut SnmpVarBind, pvbsrc: *mut SnmpVarB
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SnmpUtilVarBindFree(pvb: *mut SnmpVarBind) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpUtilVarBindFree(pvb: *mut SnmpVarBind);
     }
@@ -782,7 +700,6 @@ pub unsafe fn SnmpUtilVarBindFree(pvb: *mut SnmpVarBind) {
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SnmpUtilVarBindListCpy(pvbldst: *mut SnmpVarBindList, pvblsrc: *mut SnmpVarBindList) -> i32 {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpUtilVarBindListCpy(pvbldst: *mut SnmpVarBindList, pvblsrc: *mut SnmpVarBindList) -> i32;
     }
@@ -792,7 +709,6 @@ pub unsafe fn SnmpUtilVarBindListCpy(pvbldst: *mut SnmpVarBindList, pvblsrc: *mu
 #[cfg(feature = "Win32_Foundation")]
 #[inline]
 pub unsafe fn SnmpUtilVarBindListFree(pvbl: *mut SnmpVarBindList) {
-    #[cfg_attr(windows, link(name = "windows"))]
     extern "system" {
         fn SnmpUtilVarBindListFree(pvbl: *mut SnmpVarBindList);
     }
